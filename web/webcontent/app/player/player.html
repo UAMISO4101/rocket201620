@@ -1,0 +1,38 @@
+<div class="player">
+    <div class="now-playing">
+        <img width="20" height="20" src="{{ ctrl.playerService.track.image }}"/>
+    </div>
+
+    <div class="player-buttons">
+        <button class="prev" ng-click="ctrl.prev()">
+            <i class="glyphicon glyphicon-step-backward"></i>
+        </button>
+        <button class="playpause"
+                ng-click="ctrl.playerService.playpause()"
+                ng-class="{paused:ctrl.playerService.audio.paused}">
+            <span class="play-text"><i class="glyphicon glyphicon-play"></i> </span>
+            <span class="pause-text"><i class="glyphicon glyphicon-pause"></i> </span>
+        </button>
+        <button class="next" ng-click="ctrl.next()">
+            <i class="glyphicon glyphicon-step-forward"></i>
+        </button>
+    </div>
+
+    <div class="player-time">
+        <input min="0"
+               max="{{ ctrl.playerService.audio.duration }}"
+               step="0.01"
+               type="range"
+               ng-model="ctrl.playerService.audio.currentTime"/>
+
+    </div>
+
+    <div class="player-volume">
+        <input min="0"
+               max="1"
+               step="0.01"
+               type="range"
+               ng-model="ctrl.playerService.audio.volume"/>
+
+    </div>
+</div>

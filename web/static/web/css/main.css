@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900|Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+/*Bootstrap*/
+@import url(../css/bootstrap.css);
+
+/*Icons*/
+@import url(../fonts/icomoon/icomoon.css);
+@import url(../fonts/basicicons/basicicons.css);
+
+/*Item list*/
+@import url(../css/item-list.css);
+
+html, body {
+    color: white;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.wrap {
+    height: 100vh;
+}
+
+.wrap .topbar,
+.wrap > .flex,
+.wrap .footer {
+    width: 100%;
+}
+
+.wrap .topbar {
+    height: 60px;
+    background-color: #363c43;
+    border-bottom: 1px solid #000;
+}
+
+.wrap .sidebar {
+    min-width: 200px;
+    width: 12%;
+    background-color: #363c43;
+}
+
+.wrap .main {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: calc(100vh - 70px);
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.wrap .footer {
+    height: 70px;
+    background-color: #363c43;
+    border-top: 1px solid #000;
+}
+
+/* sidebar*/
+.wrap .sidebar .app-title {
+    text-align: center;
+    font-family: 'Amatic SC';
+    color: white;
+    margin-top: 38px;
+}
+
+.wrap .sidebar > h4 {
+    font-size: 12px;
+    margin-top: 25px;
+    padding-left: 15px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-sidebar > li > a {
+    margin: 1px 0;
+    padding: 0;
+    width: 96%;
+    display: inline-block;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(54, 60, 67, 0.4);
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.nav-sidebar > li > a:hover {
+    color: rgba(255, 255, 255, 0.870588);
+    background-color: #3d454c;
+
+}
+
+.nav-sidebar > li {
+    border-left: 3px solid rgba(54, 60, 67, 0.4);;
+}
+
+.nav-sidebar > li.active {
+    border-left: 3px solid #02b875;
+}
+
+.nav-sidebar > li.selected a {
+    background-color: #02b875;
+}
+
+.nav-sidebar > li > a > i {
+    margin: 0 10px 0 8px;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.4s ease-out;
+}
+
+.nav-sidebar > li:hover > a > i {
+    font-size: 35px;
+}
+
+.nav-sidebar > li > a > span {
+    align-self: center;
+}

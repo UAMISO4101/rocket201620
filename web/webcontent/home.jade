@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+doctype html
+html
+    head
+        title Freeven
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+        meta(name="description",content="freeven project")
+        meta(name="keywords", content="freeven, freeven")
+        <link rel="icon" href="{% static "web/favicon.ico" %}" type="image/x-icon">
+        <link href="{% static "web/css/main.css" %}" rel="stylesheet">
+    body
+
+        div(ng-view="")
+    script( src="[[ freeven.app.*.js ]]" )

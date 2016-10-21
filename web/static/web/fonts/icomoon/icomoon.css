@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.eot?vk3s22');
+    src: url('icomoon.eot?#iefixvk3s22') format('embedded-opentype'), url('icomoon.woff?vk3s22') format('woff'), url('icomoon.ttf?vk3s22') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------------------------------------------------------------
+1) SVG Icons
+-------------------------------------------------------------------*/
+[class^="music-"],
+[class*=" music-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.music-feather:before {
+    content: "\e601";
+}
+
+.music-eye:before {
+    content: "\e602";
+}
+
+.music-featured:before {
+    content: "\e603";
+}
+
+.music-logo:before {
+    content: "\e604";
+}
+
+.music-microphone:before {
+    content: "\e605";
+}
+
+.music-microphone-cut:before {
+    content: "\e606";
+}
+
+.music-music-note:before {
+    content: "\e607";
+}
+
+.music-newest:before {
+    content: "\e608";
+}
+
+.music-player-pause:before {
+    content: "\e609";
+}
+
+.music-player-play-full:before {
+    content: "\e610";
+}
+
+.music-player-play-outline:before {
+    content: "\e600";
+}
+
+.music-player-play-bold:before {
+    content: "\e60b";
+}
+
+.music-player-random:before {
+    content: "\e60c";
+}
+
+.music-player-replay:before {
+    content: "\e60d";
+}
+
+.music-player-volume:before {
+    content: "\e60e";
+}
+
+.music-plus-button:before {
+    content: "\e60f";
+}
+
+.music-search:before {
+    content: "\e610";
+}
+
+.music-share:before {
+    content: "\e611";
+}
+
+.music-side-menu-albums:before {
+    content: "\e612";
+}
+
+.music-side-menu-discover:before {
+    content: "\e613";
+}
+
+.music-star:before {
+    content: "\e614";
+}

@@ -1,0 +1,17 @@
+{
+  "general_copyright": "freeven  2016",
+  "general_unauthorized": "No autorizado",
+  "general_first_component": "Este es mi primer componente",
+  "general_component": "Componente",
+  "usermenu_option_english": "Inglés",
+  "usermenu_option_spanish": "Español",
+  "general_alert": "Esta es una función del controlador",
+  "general_register": "Registrarse",
+  "general_cancel": "Cancelar",
+  "general_sign_in": "Iniciar sesion",
+  "general_search": "Buscar",
+  "general_sign_in": "Iniciar sesión",
+  "general_create_account": "Crear cuenta",
+  "loading_tracks": "Cargando pistas",
+  "general_login": "Entrar"
+}

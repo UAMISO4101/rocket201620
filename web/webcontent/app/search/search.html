@@ -1,0 +1,12 @@
+<div class="search">
+    <input class="search-field"
+           ng-model="ctrl.parameter"
+           ng-change="ctrl.changeParameter()"
+           type="text"
+           placeholder="{{ 'general_search' | translate }}"/>
+    <span class="search-cancel"
+          ng-click="ctrl.cancel()"
+          ng-show="ctrl.show()">
+        x
+    </span>
+</div>
