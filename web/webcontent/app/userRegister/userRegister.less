@@ -1,78 +1,76 @@
 .register {
   background: #c1bdba;
   font-family: 'Titillium Web', sans-serif;
-}
+  form {
+    background: #363c43;
+    padding: 40px;
+    max-width: 600px;
+    //margin: 5px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px #1c1f23;
+    a {
+      text-decoration: none;
+      color: #1ab188;
+      transition: .5s ease;
+      &:hover {
+        color: darken(#1ab188, 5%);
+      }
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      margin: 0 0 40px;
+    }
+    label {
+      color: white;
+      transition: all 0.25s ease;
+      -webkit-backface-visibility: hidden;
+      .req {
+        margin: 2px;
+        color: #1ab188;
+      }
+    }
 
-form a {
-  text-decoration: none;
-  color: #1ab188;
-  transition: .5s ease;
-  &:hover {
-    color: darken(#1ab188, 5%);
+    label.active {
+      transform: translateY(50px);
+      left: 2px;
+      font-size: 14px;
+      .req {
+        opacity: 0;
+      }
+    }
+
+    label.highlight {
+      color: white;
+    }
+    input.ng-invalid.ng-touched {
+      border-color: #FA787E;
+    }
   }
-}
 
-form h1 {
-  text-align: center;
-  color: white;
-  margin: 0 0 40px;
-}
-
-form {
-  background: #363c43;
-  padding: 40px;
-  max-width: 600px;
-  //margin: 5px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px #1c1f23;
-}
-
-form label {
-  color: white;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  .req {
-    margin: 2px;
-    color: #1ab188;
+  form.ng-submitted {
+    input.ng-invalid {
+      border-color: #FA787E;
+    }
   }
-}
 
-form label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-  .req {
-    opacity: 0;
+  .messages {
+    color: #FA787E;
   }
-}
 
-form label.highlight {
-  color: white;
-}
 
-.messages {
-  color: #FA787E;
-}
 
-form.ng-submitted input.ng-invalid {
-  border-color: #FA787E;
-}
 
-form input.ng-invalid.ng-touched {
-  border-color: #FA787E;
-}
+  .colorMensajes {
+    color: red;
+  }
 
-.colorMensajes {
-  color: red;
-}
+  input.ng-valid {
+    border: 1px solid green;
+  }
 
-input.ng-valid {
-  border: 1px solid green;
-}
-
-input:required:valid {
-
-  border: 1px solid green;
+  input:required:valid {
+    border: 1px solid green;
+  }
 
 }
-
