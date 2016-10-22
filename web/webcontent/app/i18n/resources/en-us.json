@@ -13,6 +13,9 @@
   "general_sign_in": "Sign in",
   "general_search": "Search",
   "loading_tracks":"Loading tracks",
-  "general_login": "Login"
+  "general_login": "Login",
+  "user_creation_success":"User created success",
+  "user_creation_success_detail":"Now you can login in Freeven",
+  "user_creation_error":"Error creating user"
 }
 

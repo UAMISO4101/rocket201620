@@ -18,6 +18,12 @@ require('../app/i18n/i18nModule.js');
 require('../app/i18n/i18nDirective.js');
 require('../app/i18n/i18nService.js');
 
+require('./notifications/notifierModule.js');
+require('./notifications/notifierInterceptorFactory.js');
+require('./notifications/notifierService.js');
+require('./notifications/growl.less');
+require('./notifications/notifier.less');
+
 /**
  * common Directives
  **/

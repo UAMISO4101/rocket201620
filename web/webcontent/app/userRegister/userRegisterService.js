@@ -3,8 +3,8 @@
  */
 
 var userRegisterModule = angular.module('userRegisterModule');
-userRegisterModule.factory('userRegisterService', ['UserApiService', '$i18n', '$freevenModal',
-    function (UserApiService, $i18n, $freevenModal) {
+userRegisterModule.factory('userRegisterService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+    function (UserApiService, $i18n, $freevenModal, notifierService) {
         var UserRegisterService = function () {
 
             var self = this;
@@ -38,20 +38,13 @@ userRegisterModule.factory('userRegisterService', ['UserApiService', '$i18n', '$
                             }
                         } else {
                             $freevenModal.closePopup();
-
-                            $freevenModal.showPopup({}, {
-                                template: '<span style="color:black"> Registro exitoso </span>'
-                            });
-
+                            notifierService.success($i18n.translate.user_creation_success, $i18n.translate.user_creation_success_detail);
                         }
 
                     },
                     function (error) {
                         $freevenModal.closePopup();
-
-                        $freevenModal.showPopup({}, {
-                            template: '<span style="color:red"> Error contacte al administrador </span>'
-                        });
+                        notifierService.success($i18n.translate.user_creation_error, '');
                     });
             };
 

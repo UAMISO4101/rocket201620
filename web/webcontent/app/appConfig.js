@@ -14,6 +14,7 @@
           template: '<main title ="Main"> </main>'
         });
         $routeProvider.otherwise({redirectTo: '/'});
+        $httpProvider.interceptors.push('notifierInterceptor');
       }]
   });
 })(window, document);

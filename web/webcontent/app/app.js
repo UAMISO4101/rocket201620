@@ -7,6 +7,7 @@ var appModules = [
     'ngRoute',
     'restAPIModule',
     'i18nModule',
+    'notifierModule',
     'commonDirectivesModule',
     'mainModule',
     'trackListModule',
