@@ -2,7 +2,7 @@
 ###Clonar el repositorio y configurar los credenciales
 
 ```
-git clone "https://github.com/Rocket-Team/Freeven-srv.git"
+git clone "https://github.com/UAMISO4101/rocket201620.git"
 cd freeven
 git config user.name "{{your user}}"
 git config user.email "{{your email}}"
