@@ -10,11 +10,13 @@ var UserMenuController = ['$i18n', 'userMenuService', function ($i18n, userMenuS
     self.showAlert = function () {
         self.userMenu.loadUsers();
     };
-    self.saveUser = function () {
-        self.userMenu.saveUser();
-    };
+
     self.showLoginPopup = function () {
         self.userMenu.showLoginPopup();
+    };
+
+    self.showRegisterPopup = function () {
+        self.userMenu.showRegisterPopup();
     };
 
 }];

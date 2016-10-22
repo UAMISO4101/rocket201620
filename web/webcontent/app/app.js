@@ -14,7 +14,8 @@ var appModules = [
     'userMenuModule',
     'searchModule',
     'playerModule',
-    'loginModule'
+    'loginModule',
+    'userRegisterModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

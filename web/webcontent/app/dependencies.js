@@ -74,3 +74,8 @@ require('../app/player/player.less');
 require('../app/login/loginModule.js');
 require('../app/login/loginComponent.js');
 require('../app/login/login.less');
+
+require('../app/userRegister/userRegisterModule.js');
+require('../app/userRegister/userRegisterComponent.js');
+require('../app/userRegister/userRegister.less');
+require('../app/userRegister/userRegisterService.js');
