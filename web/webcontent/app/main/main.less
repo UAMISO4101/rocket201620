@@ -1,3 +1,123 @@
-main {
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900|Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+/*Icons*/
+@import url(./fonts/icomoon/icomoon.css);
+@import url(./fonts/basicicons/basicicons.css);
+
+html, body {
+  color: white;
+  *:focus {
+    outline: none;
+  }
+}
+
+.main {
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .wrap {
+    height: 100vh;
+    .topbar {
+      height: 60px;
+      background-color: #363c43;
+      border-bottom: 1px solid #000;
+    }
+    .sidebar {
+      min-width: 200px;
+      width: 12%;
+      background-color: #363c43;
+      .app-title {
+        text-align: center;
+        font-family: 'Amatic SC';
+        color: white;
+        margin-top: 38px;
+      }
+      h4 {
+        font-size: 12px;
+        margin-top: 25px;
+        padding-left: 15px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .content-section {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      height: ~"calc(100vh - 70px)";
+      background-color: white;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .freeven-aside {
+        height: ~"calc(100vh - 70px)";
+        border-left: 1px solid rgba(218, 218, 218, 0.4);
+      }
+    }
+    .footer {
+      height: 70px;
+      background-color: #363c43;
+      border-top: 1px solid #000;
+      width: 100%;
+    }
+
+  }
+
+  .nav-sidebar > li > a {
+    margin: 1px 0;
+    padding: 0;
+    width: 96%;
+    display: inline-block;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(54, 60, 67, 0.4);
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+  }
+
+  .nav-sidebar > li > a:hover {
+    color: rgba(255, 255, 255, 0.870588);
+    background-color: #3d454c;
+
+  }
+
+  .nav-sidebar > li {
+    border-left: 3px solid rgba(54, 60, 67, 0.4);;
+  }
+
+  .nav-sidebar > li.active {
+    border-left: 3px solid #02b875;
+  }
+
+  .nav-sidebar > li.selected a {
+    background-color: #02b875;
+  }
+
+  .nav-sidebar > li > a > i {
+    margin: 0 10px 0 8px;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.4s ease-out;
+  }
+
+  .nav-sidebar > li:hover > a > i {
+    font-size: 35px;
+  }
+
+  .nav-sidebar > li > a > span {
+    align-self: center;
+  }
 
 }

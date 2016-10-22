@@ -7,8 +7,8 @@ require('../app/appConfig.js');
  * Global styles
  * styles of controls should be in each module
  **/
-/*require('../app/styles/css/bootstrap.less');
- require('../app/styles/css/bootstrap-theme.less');*/
+require('../app/styles/css/bootstrap.less');
+require('../app/styles/css/bootstrap-theme.less');
 require('../app/styles/css/app.less');
 
 /**
