@@ -1,4 +1,7 @@
 <div class="main">
+    <div class="header" ng-if="ctrl.mainService.isAuthenticated()">
+        Header
+    </div>
     <splash ng-if="!ctrl.mainService.isAuthenticated()" title="Splash"></splash>
     <div class="wrap flex">
         <!--<div class="topbar"></div>-->
@@ -17,11 +20,11 @@
                         <track-list class="freeven-track-list" title="TrackList"></track-list>
 
                     </div>
-                   <!-- <div class="col-lg-3 w-xxl w-auto-md freeven-aside">
+                    <!-- <div class="col-lg-3 w-xxl w-auto-md freeven-aside">
 
-                        <r-i18n></r-i18n>
-                        <user-menu title="UserMenu"></user-menu>
-                    </div>-->
+                         <r-i18n></r-i18n>
+
+                     </div>-->
                 </div>
             </div>
         </div>

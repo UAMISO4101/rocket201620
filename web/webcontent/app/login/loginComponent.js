@@ -13,20 +13,11 @@ var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuServic
 
 
         self.login = function () {
+             self.userLogin.login();
+        };
 
-            console.log("Entrando a Login");
-            //console.log(self.userLogin);
-
-            self.userLogin.getUser();
-
-            /*return $http.post('http://192.168.0.3:8000/rest-auth/login/', {
-             'username':username,
-             'password':password,
-             }).success(function(data) {
-             $http.defaults.headers.common.Authorization = 'Token '
-             + data.key; Account.authenticated = true;
-             console.log("login success", data)
-             })*/
+        self.logout = function(){
+            self.userLogin.logout();
         };
 
         self.closeLoginPopup = function () {

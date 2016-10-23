@@ -12,26 +12,26 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
 
             self.user = {};
 
-            self.getUser = function () {
+            self.login = function () {
                 var self = this;
-                console.log("Llegue al servicio");
-                console.log(self.user);
                 UserApiService.loginUser(
                     //Param
                     self.user,
                     function (response) {
                         //self.usuario = response;
                         if (response.token) {
-                            mainService.user.token = response.token;
+                            mainService.setUserToken(response.token);
                             notifierService.success("Iniciando sesión", "Bienvenido: " + response.first_name);
                         } else {
                             notifierService.error("Error de autenticación", response.status);
                         }
-
                     },
                     function (error) {
                         console.log('Error get user auth');
                     });
+            };
+            self.logout = function(){
+                mainService.deleteUserToken();
             };
 
             this.showRegisterPopup = function () {
