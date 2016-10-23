@@ -1,0 +1,209 @@
+.user-menu {
+  // put here styles for  the module
+  .menu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .menu:before {
+    content: "[";
+  }
+
+  .menu:after {
+    content: "]";
+  }
+
+  .menu > li {
+    display: inline;
+  }
+
+  .menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+  }
+
+  .menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+  }
+
+  .fr-cd-member {
+    vertical-align: bottom;
+    margin-bottom: 17px;
+  }
+
+  .fr-cd-avatar {
+    background-image: url(../styles/images/user.png);
+    border-color: grey;
+    //background-color: @avatar-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+  }
+
+  .fr-wp-avatar-label {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 41px;
+    color: #004C3F;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fr-cd-member-dropdown-avatar .fr-wp-avatar-label {
+    left: 14px;
+  }
+
+  .fr-cd-member-dropdown-avatar .fr-cd-avatar {
+    margin: 7px 0 16px 18px;
+    vertical-align: middle;
+  }
+
+  .fr-wp-avatar-adm {
+    position: absolute;
+    bottom: -4px;
+    right: -3px;
+    padding: 0.1em;
+    border-radius: 50%;
+    background-color: white;
+    color: #384656;
+    font-size: 15px;
+  }
+}
+
+.fr-cd-bar-menu-btn {
+  display: inline-block;
+  line-height: 64px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+
+.fr-cd-dropdown {
+  position: relative;
+  top: 3px;
+}
+
+.fr-cd-member-menu {
+  display: inline-block;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+.fr-cd-member-menu:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.fr-cd-member-menu .fr-cd-member-user {
+  display: inline-block;
+  line-height: 1.2;
+  text-align: right;
+  position: relative;
+  top: 0px;
+  left: 31px;
+}
+
+.fr-cd-member-menu .fr-cd-member-user span {
+  display: block;
+  font-weight: 200;
+  color: #fff;
+}
+
+.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-name {
+  font-size: 0.9em;
+}
+
+.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-email {
+  font-size: 0.9em;
+  display: none;
+}
+
+.fr-cd-member,
+.fr-cd-member-avatar {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.fr-cd-member-avatar {
+  border-radius: 4px;
+}
+
+.fr-cd-member-dropdown {
+  clear: both;
+  padding: .5em 0 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+  list-style: none;
+}
+
+.fr-cd-member-dropdown.clear-line {
+  clear: none;
+  padding-top: 0;
+  border-top: none;
+  margin-top: 0;
+}
+
+.fr-member-avatar {
+  padding: 13px 13px 13px 13px;
+  width: 67px;
+  display: inline-block;
+  float: left;
+}
+
+.fr-member-information {
+  height: 68px;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  float: left;
+  line-height: 18px;
+  margin-top: 0px;
+  padding: 5px 0px 0px 0px;
+  clear: none;
+  list-style: none;
+}
+
+.fr-member-information > li:nth-child(1) {
+  font-family: 'Open Sans';
+  font-weight: 600;
+}
+
+.fr-member-information > li > span {
+  line-height: 0em;
+  font-size: 12px;
+}
+
+.fr-member-information > li > a {
+  line-height: 0.5;
+  font-size: 12px;
+  color: #007166;
+  margin-top: 6px;
+}
+
+.fr-cd-member-dropdown > li > a {
+  display: block;
+  padding: 8px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #444;
+  cursor: pointer;
+}
+
+.fr-cd-member-dropdown > li > a > i {
+  margin-right: 0.25em;
+}
+
+.fr-cursor-initial {
+  cursor: initial;
+}
