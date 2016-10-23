@@ -30,6 +30,8 @@ require('./notifications/notifier.less');
 require('../app/commons/directives/commonDirectivesModule.js');
 require('../app/commons/directives/ripple/rippleDirective.js');
 require('../app/commons/directives/ripple/ripple.less');
+require('../app/commons/directives/masonry/masonry.js');
+require('../app/commons/directives/infiniteScroll/infiniteScrollDirective.js');
 
 
 /**
@@ -95,3 +97,7 @@ require('../app/splash/splash.less');
 require('../app/playerPicture/playerPictureModule.js');
 require('../app/playerPicture/playerPictureComponent.js');
 require('../app/playerPicture/playerPicture.less');
+
+require('../app/track/trackModule.js');
+require('../app/track/trackComponent.js');
+require('../app/track/track.less');

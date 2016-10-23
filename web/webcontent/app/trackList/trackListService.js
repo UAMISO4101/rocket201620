@@ -26,6 +26,29 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                         console.log('Error loading tracks');
                     });
             };
+            self.nextPage = function () {
+                var params = {};
+                params.format = "json";
+                self.loading = true;
+                self.busy = true;
+                TrackApiService.searchTracks(
+                    params,
+                    function (response) {
+                        self.loading = false;
+                        self.busy = false;
+                        if (response.results.length > 0) {
+                            self.tracks.push(response.results);
+                        }
+                        else {
+                            self.empty = self.tracks.length <= 0;
+                        }
+
+                    },
+                    function (error) {
+                        self.busy = false;
+                        console.log('Error loading tracks');
+                    });
+            };
             self.playSelected = function (track) {
                 self.selectedTrack = track;
                 playerService.playTrack(track);
@@ -39,7 +62,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
 
             self.prev = function () {
                 //todo: obtain prev in the list
-                 var prevTrack = {};
+                var prevTrack = {};
                 self.playSelected();
             };
         };

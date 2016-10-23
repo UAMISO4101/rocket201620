@@ -7,6 +7,7 @@ var appModules = [
     'ngRoute',
     'restAPIModule',
     'i18nModule',
+    'masonry',
     'notifierModule',
     'splashModule',
     'commonDirectivesModule',
@@ -18,7 +19,8 @@ var appModules = [
     'searchModule',
     'playerModule',
     'loginModule',
-    'userRegisterModule'
+    'userRegisterModule',
+    'trackModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
