@@ -6,19 +6,36 @@
   @second-color: #555555;
   @third-color: #999999;
 
+  .btn-download,
+  .btn-volume,
+  .btn-time {
+    i {
+      margin-top: 20px;
+      font-size: 23px;
+      position: absolute;
+      color: #999999;
+      cursor: pointer;
+    }
+    &:hover {
+      i {
+        color: #fafafa;
+      }
+    }
+  }
+
   .playpause {
     border-radius: 50%;
     border: 1px solid @third-color;
     background-color: transparent;
     color: @third-color;
     font-size: 25px;
-    padding: 13px 14px 10px 21px;
+    padding: 11px 15px 9px 16px;
     margin: 3px 0 0 0;
     &:hover {
       color: #fafafa;
       border: 1px solid #fafafa;
-      font-size: 27px;
-      padding: 11px 14px 8px 19px;
+      /*font-size: 27px;
+      padding: 12px 14px 8px 19px;*/
     }
   }
 
@@ -52,6 +69,7 @@
   }
 
   .player-time {
+    margin-left: -100px;
     input {
       width: 500px;
       margin-top: 30px;
@@ -59,6 +77,7 @@
   }
 
   .player-volume {
+    margin-left: -100px;
     input {
       margin-top: 30px;
     }
