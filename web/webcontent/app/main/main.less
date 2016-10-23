@@ -36,6 +36,12 @@ html, body {
       min-width: 200px;
       width: 12%;
       background-color: #363c43;
+      position: relative;
+      .freeven-player-picture {
+        position: absolute;
+        bottom: 0px;
+      }
+
       .app-title {
         text-align: center;
         font-family: 'Amatic SC';
@@ -57,18 +63,28 @@ html, body {
       flex: 1;
       height: ~"calc(100vh - 70px)";
       background-color: white;
-      overflow-y: scroll;
-      overflow-x: hidden;
       .freeven-aside {
         height: ~"calc(100vh - 70px)";
         border-left: 1px solid rgba(218, 218, 218, 0.4);
       }
+      .freeven-track-list {
+        height: ~"calc(100vh - 70px)";
+        background-color: white;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: block;
+        padding: 0 15px;
+      }
+      .col-lg-9 {
+        padding: 0px
+      }
     }
     .footer {
       height: 70px;
-      background-color: #363c43;
+      background-color: #202225;
       border-top: 1px solid #000;
       width: 100%;
+      z-index: 4;
     }
 
   }
@@ -120,4 +136,28 @@ html, body {
     align-self: center;
   }
 
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999999;
+  border: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-track {
+  background: yellow;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #dadada;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: none;
 }
