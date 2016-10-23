@@ -16,7 +16,7 @@ deploy:
      # https://freeven-srv-dev.herokuapp.com
     development: freeven-srv-dev
   on:
-    repo: Rocket-Team/Freeven-srv
+    repo: UAMISO4101/rocket201620
   run:
   - python manage.py collectstatic --no-input --settings=freeven.settings.prod
 notifications:
