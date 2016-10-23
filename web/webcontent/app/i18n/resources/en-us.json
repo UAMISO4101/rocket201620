@@ -16,6 +16,7 @@
   "general_login": "Login",
   "user_creation_success":"User created success",
   "user_creation_success_detail":"Now you can login in Freeven",
-  "user_creation_error":"Error creating user"
+  "user_creation_error":"Error creating user",
+  "top_tracks": "Pistas más escuchadas"
 }
 

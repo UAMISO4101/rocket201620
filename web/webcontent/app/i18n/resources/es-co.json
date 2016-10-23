@@ -17,5 +17,6 @@
   "user_creation_success": "El usuario se ha creado exitosamente",
   "user_creation_success_detail": "Ahora usted puede iniciar sesión en Freeven",
   "user_creation_error": "Error creando el usuario, contacte al administrador",
-  "usermenu_edit_profile": "Editar perfil"
+  "usermenu_edit_profile": "Editar perfil",
+  "top_tracks": "Pistas más escuchadas"
 }
