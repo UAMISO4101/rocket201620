@@ -3,15 +3,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
     function (TrackApiService, playerService) {
         var TrackListService = function () {
             var self = this;
-            self.selectedTrack = {
-                "id": "20380a36-8777-43f7-a79e-65bdb53f4625",
-                "name": "My_Chemical_Romance",
-                "description": "My_Chemical_Romance",
-                "gender": "gendername2",
-                "image": "imageurl",
-                "url": "https://freeven.s3.amazonaws.com/media/tracks/My_Chemical_Romance_-_I_am_not_OK.mp3",
-                "score": 3
-            };
+            self.selectedTrack = {};
             self.loading = false;
             self.loadTracks = function (params) {
                 params.format = "json";
@@ -37,12 +29,11 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                         self.loading = false;
                         self.busy = false;
                         if (response.results.length > 0) {
-                            self.tracks.push(response.results);
+                            self.tracks = self.tracks.concat(response.results);
                         }
                         else {
                             self.empty = self.tracks.length <= 0;
                         }
-
                     },
                     function (error) {
                         self.busy = false;
