@@ -1,4 +1,5 @@
 <div class="main">
+    <splash ng-if="false" title="Splash"></splash>
     <div class="wrap flex">
         <!--<div class="topbar"></div>-->
 
@@ -6,13 +7,14 @@
             <div class="sidebar">
                 <h3 class="app-title">Freeven</h3>
                 <user-panel title="UserPanel"></user-panel>
+                <player-picture  class="freeven-player-picture" title ="PlayerPicture"> </player-picture>
             </div>
             <div class="content-section">
                 <div class="row-col">
                     <div class="col-lg-9 b-r no-border-md">
                         <h2 class="h4 m-b">New tracks</h2>
                         <!-- Track list component -->
-                        <track-list title="TrackList"></track-list>
+                        <track-list class="freeven-track-list" title="TrackList"></track-list>
 
                     </div>
                     <div class="col-lg-3 w-xxl w-auto-md freeven-aside">

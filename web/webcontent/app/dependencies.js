@@ -86,3 +86,11 @@ require('../app/userRegister/userRegisterModule.js');
 require('../app/userRegister/userRegisterComponent.js');
 require('../app/userRegister/userRegister.less');
 require('../app/userRegister/userRegisterService.js');
+
+require('../app/splash/splashModule.js');
+require('../app/splash/splashComponent.js');
+require('../app/splash/splash.less');
+
+require('../app/playerPicture/playerPictureModule.js');
+require('../app/playerPicture/playerPictureComponent.js');
+require('../app/playerPicture/playerPicture.less');
