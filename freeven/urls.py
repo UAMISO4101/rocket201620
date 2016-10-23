@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^track/', include('tracks.urls')),
     url(r'^api/track/', include('tracks.urls')),
     url(r'^user/', include('users.urls')),
+    url(r'^api/user/', include('users.urls')),
     url(r'^api/user', include('users.urls')),
     url(r'^auth/', include('rest_framework_social_oauth2.urls')),
     #  # BaseView is a static html

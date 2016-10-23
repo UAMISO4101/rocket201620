@@ -121,3 +121,4 @@ LOGIN_URL = '/manager/login/'
 STATICFILES_DIRS = [
     ('production', BASE_DIR + '/../web/webcontent/dist/production'),
 ]
+

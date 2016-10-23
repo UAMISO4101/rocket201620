@@ -39,6 +39,7 @@ require('../app/commons/directives/ripple/ripple.less');
 require('../app/main/mainModule.js');
 require('../app/main/mainComponent.js');
 require('../app/main/main.less');
+require('../app/main/mainService.js');
 
 /**
  * REST API

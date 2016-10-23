@@ -6,7 +6,7 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
     return $resource('api/track/:guidTrack', {guid: '@guid'}, {
         /*custom urls*/
         searchTracks: {
-            url: 'api/track',
+            url: 'api/track/',
             method: 'GET',
             params: {},
             isArray: false,

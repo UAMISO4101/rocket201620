@@ -1,12 +1,10 @@
-var  mainModule = angular.module('mainModule');
-var MainController = ['$i18n', function ($i18n) {
+var mainModule = angular.module('mainModule');
+var MainController = ['$i18n', 'mainService', function ($i18n, mainService) {
     /**
      * Tip: add here only visual logic
      */
     var self = this;
-    self.showAlert = function () {
-        alert($i18n.translate.general_alert);
-    };
+    self.mainService = mainService;
 }];
 
 mainModule.component('main', {

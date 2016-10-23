@@ -1,13 +1,12 @@
 <div class="main">
-    <splash ng-if="false" title="Splash"></splash>
+    <splash ng-if="!ctrl.mainService.isAuthenticated()" title="Splash"></splash>
     <div class="wrap flex">
         <!--<div class="topbar"></div>-->
-
         <div class="flex">
             <div class="sidebar">
                 <h3 class="app-title">Freeven</h3>
                 <user-panel title="UserPanel"></user-panel>
-                <player-picture  class="freeven-player-picture" title ="PlayerPicture"> </player-picture>
+                <player-picture class="freeven-player-picture" title="PlayerPicture"></player-picture>
             </div>
             <div class="content-section">
                 <div class="row-col">

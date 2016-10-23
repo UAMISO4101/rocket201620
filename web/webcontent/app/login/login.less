@@ -1,13 +1,19 @@
 .login {
-  background: #c1bdba;
+  text-align: center;
+  font-size: 15px;
   font-family: 'Titillium Web', sans-serif;
+
   form {
-    background: #363c43;
+    background: #F5F5DC;
     padding: 40px;
-    max-width: 600px;
-    //margin: 5px auto;
+    max-width: 320px;
+    margin: 5px auto;
     border-radius: 4px;
-    box-shadow: 0 4px 10px 4px #1c1f23;
+
+    input {
+      padding: 6px 112px 1px 17px;
+    }
+
     a {
       text-decoration: none;
       color: #1ab188;
@@ -18,16 +24,16 @@
     }
     h1 {
       text-align: center;
-      color: white;
+      color: black;
       margin: 0 0 40px;
     }
     label {
-      color: white;
+      color: black;
       transition: all 0.25s ease;
       -webkit-backface-visibility: hidden;
       .req {
         margin: 2px;
-        color: #1ab188;
+        color: rgba(111, 136, 243, 0.23);
       }
     }
 
@@ -41,26 +47,35 @@
     }
 
     label.highlight {
-      color: white;
+      color: black;
     }
     input.ng-invalid.ng-touched {
       border-color: #FA787E;
     }
 
-    fieldset {
-      .btn-google {
-        background-color: white;
-        padding: 6px 112px 1px 17px;
-        display: block;
-        text-align: left;
-        font-size: 15px;
-        color: #555;
+    .btn-google {
+      background-color: white;
+      padding: 6px 112px 1px 17px;
+      display: block;
+      text-align: left;
+      font-size: 15px;
+      color: #555;
 
-      }
-      i {
-        font-size: 30px;
-      }
+    }
+    i {
+      font-size: 30px;
+    }
 
+    .login-section {
+      color: #000;
+      position: relative;
+      margin-bottom: 1em;
+    }
+    .login-or {
+      color: #000;
+      z-index: 10;
+      margin: 0;
+      font-size: 1.2em;
     }
 
   }

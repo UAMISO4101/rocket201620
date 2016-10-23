@@ -4,58 +4,41 @@
 
 var loginModule = angular.module('loginModule');
 loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-    function (UserApiService, $i18n, $freevenModal, notifierService) {
+    'mainService',
+    function (UserApiService, $i18n, $freevenModal, notifierService, mainService) {
         var loginService = function () {
 
             var self = this;
 
-            self.newUser = {};
+            self.user = {};
 
-            self.existUser = true;
-
-            self.loadUsers = function () {
-                UserApiService.query(
+            self.getUser = function () {
+                var self = this;
+                console.log("Llegue al servicio");
+                console.log(self.user);
+                UserApiService.loginUser(
                     //Param
-                    {},
+                    self.user,
                     function (response) {
-                        self.users = response;
-                    },
-                    function (error) {
-                        console.log('Error loading all users');
-                    });
-            };
-
-            self.saveUser = function () {
-                UserApiService.save(
-                    JSON.stringify(self.newUser),
-                    function (response) {
-                        var respuest = response.status;
-                        if (respuest !== 'OK') {
-                            if (respuest == 'Usuario ya existe.') {
-                                self.existUser = false;
-                            } else {
-                                self.existUser = true;
-                            }
+                        //self.usuario = response;
+                        if (response.token) {
+                            mainService.user.token = response.token;
+                            notifierService.success("Iniciando sesión", "Bienvenido: " + response.first_name);
                         } else {
-                            $freevenModal.closePopup();
-                            notifierService.success($i18n.translate.user_creation_success, $i18n.translate.user_creation_success_detail);
+                            notifierService.error("Error de autenticación", response.status);
                         }
 
                     },
                     function (error) {
-                        $freevenModal.closePopup();
-                        notifierService.success($i18n.translate.user_creation_error, '');
+                        console.log('Error get user auth');
                     });
             };
 
-            this.checkForm = function (form) {
-                if (!form.terms.checked) {
-                    alert("Please indicate that you accept the Terms and Conditions");
-                    form.terms.focus();
-                    return false;
-                }
-                return true;
-            }
+            this.showRegisterPopup = function () {
+                $freevenModal.showPopup({}, {
+                    template: '<user-register title ="Register"> </user-register>'
+                });
+            };
         };
         return new loginService();
     }]);
