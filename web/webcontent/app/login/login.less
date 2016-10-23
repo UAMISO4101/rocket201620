@@ -4,7 +4,7 @@
   font-family: 'Titillium Web', sans-serif;
 
   form {
-    background: #F5F5DC;
+    background:white;
     padding: 40px;
     max-width: 320px;
     margin: 5px auto;
@@ -58,13 +58,25 @@
       display: block;
       text-align: left;
       font-size: 15px;
-      color: #555;
+      color: #f9f9f9;
       i {
-        font-size: 30px;
+        font-size: 17px;
+        top: 8px;
+        width: 15px;
+        position: absolute;
       }
       span{
-        margin: 0;
+        margin: 0 0 0 26px
       }
+      &:hover {
+       color: #ffffff;
+      }
+    }
+    .google{
+      background-color: #D2352C;
+    }
+    .facebook{
+      background-color: #4A63A4;
     }
 
     .login-section {
@@ -77,6 +89,14 @@
       z-index: 10;
       margin: 0;
       font-size: 1.2em;
+    }
+    .freeven-login-btn,
+    .freeven-sing-up-btn{
+      background-color: #02b875;
+      border: 1px solid #02b875;
+      border-radius: 3px;
+      padding: 10px 50px;
+      color: white;
     }
 
   }

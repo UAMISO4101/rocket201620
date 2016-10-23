@@ -105,17 +105,18 @@
             <div class="row" ng-hide="ctrl.userRegister.newUser.is_artist == 'True'">
                 <div class="col-md-12">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="Ok" id="terms" ng-model="ctrl.userRegister.newUser.accept"
+                        <input type="checkbox" value="Ok" id="terms1" ng-model="ctrl.userRegister.newUser.accept"
                                required>
                         <span>Al hacer clic en registrarse, usted acepta nuestros <a href="#">Términos y
                             Condiciones</a>.</span>
                     </label>
-                    <button class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                    <br/><br/>
+                    <button class="freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
                             ng-click="ctrl.validateForm()">
                         {{ 'general_register'  | translate }}
                     </button>
                     <button id="idBtnCancelar" type="button"
-                            class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                            class="freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
                             ng-click="ctrl.closeRegisterPopup()">
                         {{ 'general_cancel'  | translate }}
                     </button>
@@ -473,12 +474,12 @@
                         <span>Al hacer clic en registrarse, usted acepta nuestros <a href="#">Términos y
                             Condiciones</a>.</span>
                     </label>
-                    <button class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                    <button class="freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
                             ng-click="ctrl.validateForm()" ng-disabled="userForm.$invalid">
                         {{ 'general_register'  | translate }}
                     </button>
-                    <button id="idBtnCancelar" type="button"
-                            class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                    <button id="idBtnCancelar2" type="button"
+                            class="freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
                             ng-click="ctrl.closeRegisterPopup()">
                         {{ 'general_cancel'  | translate }}
                     </button>
