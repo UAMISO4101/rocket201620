@@ -1,9 +1,93 @@
 .login {
-  display: block;
-  background-color: #fdffff;
-  padding: 5px;
-  margin: 8px;
-  border-radius:  3px;
-  border: 1px solid #dadada;
-  box-shadow: 0 4px 6px -3px hsla(0,0%,76%,.15);
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+  form {
+    background: #363c43;
+    padding: 40px;
+    max-width: 600px;
+    //margin: 5px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px #1c1f23;
+    a {
+      text-decoration: none;
+      color: #1ab188;
+      transition: .5s ease;
+      &:hover {
+        color: darken(#1ab188, 5%);
+      }
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      margin: 0 0 40px;
+    }
+    label {
+      color: white;
+      transition: all 0.25s ease;
+      -webkit-backface-visibility: hidden;
+      .req {
+        margin: 2px;
+        color: #1ab188;
+      }
+    }
+
+    label.active {
+      transform: translateY(50px);
+      left: 2px;
+      font-size: 14px;
+      .req {
+        opacity: 0;
+      }
+    }
+
+    label.highlight {
+      color: white;
+    }
+    input.ng-invalid.ng-touched {
+      border-color: #FA787E;
+    }
+
+    fieldset {
+      .btn-google {
+        background-color: white;
+        padding: 6px 112px 1px 17px;
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        color: #555;
+
+      }
+      i {
+        font-size: 30px;
+      }
+
+    }
+
+  }
+
+  form.ng-submitted {
+    input.ng-invalid {
+      border-color: #FA787E;
+    }
+
+  }
+
+  .messages {
+    color: #FA787E;
+  }
+
+  .colorMensajes {
+    color: red;
+  }
+
+  input.ng-valid {
+    border: 1px solid green;
+  }
+
+  input:required:valid {
+    border: 1px solid green;
+  }
+
 }
+
+

@@ -80,6 +80,7 @@ require('../app/player/player.less');
 require('../app/login/loginModule.js');
 require('../app/login/loginComponent.js');
 require('../app/login/login.less');
+require('../app/login/loginService.js');
 
 require('../app/userRegister/userRegisterModule.js');
 require('../app/userRegister/userRegisterComponent.js');
