@@ -1,57 +1,46 @@
-<div class="fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right">
-    <div class="fr-cd-bar-menu-btn">
-        <div class="pull-right features-btn">
-            <features></features>
-        </div>
-    </div>
-    <div class="fr-cd-bar-menu-btn">
-        <div class="fr-cd-dropdown user-menu" uib-dropdown="" on-toggle="toggled(open)">
-            <a class="fr-cd-member-menu" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+<div class="user-menu">
+    <div class="fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right">
+        <div class="fr-cd-bar-menu-btn">
+            <div class="fr-cd-dropdown user-menu" uib-dropdown="" on-toggle="toggled(open)">
+                <a class="fr-cd-member-menu" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
             <span class="fr-cd-member">
                  <span class="fr-cd-avatar">
-                      <span class="fr-wp-avatar-label">{{ctrl.user}}</span>
-                     <!--<img class="fr-cd-member-avatar" width="48" height="48"-->
-                     <!--src="" alt="user@gmail.com" title="user@gmail.com">-->
-                      <i class="fr-wp-avatar-adm fr-icon fr-cd-icon-16 fr-icon-cog-outline"></i>
+                     <span class="fr-wp-avatar-label"></span>
                  </span>
             </span>
-            </a>
-
-            <div class="dropdown-menu fr-cursor-initial" role="menu" ng-click="$event.stopPropagation()">
-                <div class="fr-member-avatar">
+                </a>
+                <a class="dropdown-submenu pull-left"></a>
+                <a class="dropdown-submenu pull-left"></a>
+                <a class="dropdown-submenu pull-left"></a>
+                <div class="dropdown-menu fr-cursor-initial" role="menu" ng-click="$event.stopPropagation()">
+                    <div class="fr-member-avatar">
                  <span class="fr-cd-avatar hidden-xs">
-                     <span class="fr-wp-avatar-label ng-binding">{{ctrl.user}}</span>
                  </span>
+                    </div>
+                    <ul class="fr-member-information">
+                        <li>
+                            <span class="fr-cd-member-name">{{ ctrl.user.user.first_name }}</span>
+                        </li>
+                        <li>
+                            <a ng-click="ctrl.login.logout()">
+                                <span class="">{{ 'my_account' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="fr-cd-member-dropdown">
+                        <li>
+                            <i18n></i18n>
+                        </li>
+                        <li>
+                            <a ng-click="ctrl.login.logout()">
+                                <i class="fr-icon fr-icon-log-out"></i>
+                                <span class="">{{ 'usermenu_logout' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="fr-member-information">
-                    <li>
-                        <span class="fr-cd-member-name">{{ctrl.user}}</span>
-                    </li>
-                    <li><span class="fr-cd-member-emai">{{ctrl.user}}</span>
-                    </li>
-                    <li>
-                        <a target="_blank"
-                           href="https://account-stg.bizagi.com/">
-                            <i class="fr-icon fr-cd-icon-16 fr-icon-cog-outline"></i>
-                        <span translate="">
-                            <span>{{'usermenu_edit_profile' | translate}}</span>
-                        </span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="fr-cd-member-dropdown">
-                    <li>
-                        <i18n></i18n>
-                    </li>
-                    <li>
-                        <a ng-click="ctrl.logout()">
-                            <i class="fr-icon fr-icon-log-out"></i>
-                            <span class="">{{'usermenu_logout' | translate}}</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
-</div>
 
+</div>

@@ -18,10 +18,10 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                     //Param
                     self.user,
                     function (response) {
-                        //self.usuario = response;
                         if (response.token) {
                             mainService.setUserToken(response.token);
-                            notifierService.success("Iniciando sesión", "Bienvenido: " + response.first_name);
+                            mainService.setUserFirstName(response.first_name);
+                            notifierService.success("Bienvenido", response.first_name);
                         } else {
                             notifierService.error("Error de autenticación", response.status);
                         }
@@ -30,7 +30,7 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                         console.log('Error get user auth');
                     });
             };
-            self.logout = function(){
+            self.logout = function () {
                 mainService.deleteUserToken();
             };
 

@@ -1,5 +1,5 @@
 var userMenuModule = angular.module('userMenuModule');
-var UserMenuController = ['$i18n', 'userMenuService', function ($i18n, userMenuService) {
+var UserMenuController = ['$i18n', 'userMenuService', 'loginService','mainService', function ($i18n, userMenuService, loginService,mainService) {
     /**
      * Tip: add here only visual logic
      */
@@ -7,9 +7,9 @@ var UserMenuController = ['$i18n', 'userMenuService', function ($i18n, userMenuS
 
     self.userMenu = userMenuService;
 
-    self.showAlert = function () {
-        self.userMenu.loadUsers();
-    };
+    self.login = loginService;
+
+    self.user = mainService;
 
     self.showLoginPopup = function () {
         self.userMenu.showLoginPopup();
@@ -18,6 +18,8 @@ var UserMenuController = ['$i18n', 'userMenuService', function ($i18n, userMenuS
     self.showRegisterPopup = function () {
         self.userMenu.showRegisterPopup();
     };
+
+
 
 }];
 

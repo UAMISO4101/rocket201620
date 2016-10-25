@@ -18,5 +18,7 @@
   "user_creation_success_detail": "Ahora usted puede iniciar sesión en Freeven",
   "user_creation_error": "Error creando el usuario, contacte al administrador",
   "usermenu_edit_profile": "Editar perfil",
-  "top_tracks": "Pistas más escuchadas"
+  "top_tracks": "Pistas más escuchadas",
+  "usermenu_logout": "Salir",
+  "my_account": "Mi perfil"
 }
