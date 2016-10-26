@@ -9,9 +9,7 @@
                  </span>
             </span>
                 </a>
-                <a class="dropdown-submenu pull-left"></a>
-                <a class="dropdown-submenu pull-left"></a>
-                <a class="dropdown-submenu pull-left"></a>
+
                 <div class="dropdown-menu fr-cursor-initial" role="menu" ng-click="$event.stopPropagation()">
                     <div class="fr-member-avatar">
                  <span class="fr-cd-avatar hidden-xs">
@@ -21,9 +19,10 @@
                         <li>
                             <span class="fr-cd-member-name">{{ ctrl.user.user.first_name }}</span>
                         </li>
+
                         <li>
-                            <a ng-click="ctrl.login.logout()">
-                                <span class="">{{ 'my_account' | translate }}</span>
+                            <a ng-click="ctrl.showEditPopup()">
+                                <span class="">{{ 'usermenu_edit_profile' | translate }}</span>
                             </a>
                         </li>
                     </ul>

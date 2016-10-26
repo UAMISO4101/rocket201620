@@ -20,7 +20,8 @@ var appModules = [
     'playerModule',
     'loginModule',
     'userRegisterModule',
-    'trackModule'
+    'trackModule',
+    'userEditModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

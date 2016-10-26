@@ -19,6 +19,9 @@
   "user_creation_error":"Error creating user",
   "top_tracks": "Pistas más escuchadas",
   "usermenu_logout": "Logout",
-  "my_account": "My profile"
+  "my_account": "My profile",
+    "general_edit_user": "Save",
+  "usermenu_edit_profile": "Edit profile"
+
 }
 
