@@ -101,3 +101,8 @@ require('../app/playerPicture/playerPicture.less');
 require('../app/track/trackModule.js');
 require('../app/track/trackComponent.js');
 require('../app/track/track.less');
+
+ require('../app/userEdit/userEditModule.js');
+ require('../app/userEdit/userEditComponent.js');
+ require('../app/userEdit/userEdit.less');
+require('../app/userEdit/userEditService.js');

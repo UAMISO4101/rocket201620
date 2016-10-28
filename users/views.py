@@ -31,7 +31,6 @@ def user(request):
 
 @csrf_exempt
 def login_user(request):
-    print("Llegando a autenticarse")
     if request.method == 'GET':
         response = login_service(request)
         return JsonResponse(response)

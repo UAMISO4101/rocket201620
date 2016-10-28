@@ -14,6 +14,7 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
             self.isAuthenticated = function () {
                 self.user.token = $cookieStore.get('user_token');
                 if (self.user.token) {
+                    self.user.first_name = $cookieStore.get('first_name');
                     return true;
                 } else {
                     return false;
@@ -21,6 +22,11 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
             };
             self.setUserToken = function (token) {
                 $cookieStore.put('user_token', token);
+
+            };
+            self.setUserFirstName = function (first_name) {
+
+                $cookieStore.put('first_name',first_name);
             };
 
             self.deleteUserToken = function (){
