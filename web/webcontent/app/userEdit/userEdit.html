@@ -8,20 +8,31 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <img src="../styles/images/user.png" class="avatar img-circle" alt="avatar" width="75px"
-                                 height="75px">
-                            <h6>Cambiar avatar..</h6>
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
-                    <br><br>
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <label class="control-label" for="username"></i>{{ ctrl.userEdit.user.username }}</label>
+                            <div class="card-body card-padding">
+                                    <div class="thumbnail">
+                                        <img ng-src="{{ ctrl.photoProfile[0].img }}"/>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type='file' ng-model-instant
+                                           onchange="angular.element(this).scope().imageUpload(event)"/>
+                                </div>
                             </div>
                         </div>
-                    </fieldset>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <label class="control-label"
+                                               for="username"></i>{{ ctrl.userEdit.user.username }}</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <fieldset class="form-group">
@@ -33,7 +44,7 @@
                                        placeholder="Email..."
                                        class="form-control"
                                        required
-                                       />
+                                />
                                 <span class="messages" ng-show="userForm.$submitted || userForm.email.$touched">
                                 <span ng-show="userForm.email.$invalid">El campo es obligatorio.</span>
                                 <span ng-show="userForm.email.$error.email">Email incorrecto.</span>

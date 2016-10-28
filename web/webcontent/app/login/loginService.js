@@ -27,7 +27,7 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                         }
                     },
                     function (error) {
-                        console.log('Error get user auth');
+                        notifierService.error("Error de autenticación", error.status);
                     });
             };
             self.logout = function () {

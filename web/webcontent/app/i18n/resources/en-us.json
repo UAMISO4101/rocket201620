@@ -21,6 +21,8 @@
   "usermenu_logout": "Logout",
   "my_account": "My profile",
     "general_edit_user": "Save",
+  "user_edit_success": "Update",
+  "user_edit_success_detail": "Success update",
   "usermenu_edit_profile": "Edit profile"
 
 }
