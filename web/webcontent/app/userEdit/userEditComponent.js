@@ -106,6 +106,7 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
         }
 
         self.putPhotoProfile = function () {
+            self.userEdit.user.avatar = self.photoProfile[0].img;
         }
 
     }];
