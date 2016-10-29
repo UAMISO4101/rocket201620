@@ -14,10 +14,13 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
             self.user = {};
 
             this.showEditPopup = function () {
-
                 $freevenModal.showPopup({}, {
                     template: '<user-edit title ="UserEdit"> </user-edit>'
                 });
+            };
+
+            this.closeModal = function () {
+                $freevenModal.closePopup();
             };
 
             this.getUser = function () {

@@ -13,6 +13,10 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
 
         self.passwordOk = true;
 
+        self.close = function () {
+            userEditService.closeModal();
+        };
+
         self.validateForm = function () {
             if (self.userEdit.user === undefined) {
             } else {
@@ -81,10 +85,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
 
         self.saveUser = function () {
             self.userEdit.saveUser();
-        };
-
-        self.closeEditPopup = function () {
-            $freevenModal.closePopup();
         };
 
         $scope.imageUpload = function (event) {

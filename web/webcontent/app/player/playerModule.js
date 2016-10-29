@@ -1,4 +1,4 @@
-angular.module('playerModule', []);
+angular.module('playerModule', ['ngAudio']);
 
 /* Include this part into your dependencies file
  require('../app/player/playerModule.js');

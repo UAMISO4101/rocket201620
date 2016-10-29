@@ -1,9 +1,9 @@
 <div class="main">
-    <div class="header" ng-if="ctrl.mainService.isAuthenticated()">
-       <user-menu></user-menu>
+    <div class="header">
+       <user-menu ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
     </div>
     <splash class="freeven-splash" ng-if="!ctrl.mainService.isAuthenticated()" title="Splash"></splash>
-    <div class="header-fake">
+    <div ng-if="!ctrl.mainService.isAuthenticated()" class="header-fake">
         Header 2
     </div>
     <div class="wrap flex">

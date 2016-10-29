@@ -1,5 +1,6 @@
-<div class="player">
-    <a class="btn-download">
+<div class="player" ng-if="ctrl.playerService.showPlayer()">
+    <a class="btn-download" href="{{ ctrl.playerService.track.url }}"
+       download="{{ ctrl.playerService.track.name }}.mp3">
         <i class="icon icon-download"></i>
     </a>
     <div class="player-buttons">

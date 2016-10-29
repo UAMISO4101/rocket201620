@@ -11,3 +11,4 @@ require('angular-loading-bar');
 require('angular-growl-v2');
 require('angular-translate');
 require('angular-base64');
+require('angular-audio');
