@@ -1,12 +1,10 @@
-var  splashModule = angular.module('splashModule');
-var SplashController = ['$i18n', function ($i18n) {
+var splashModule = angular.module('splashModule');
+var SplashController = ['trackListService', function (trackListService) {
     /**
      * Tip: add here only visual logic
      */
     var self = this;
-    self.showAlert = function () {
-        alert($i18n.translate.general_alert);
-    };
+    self.trackListService = trackListService;
 }];
 
 splashModule.component('splash', {
