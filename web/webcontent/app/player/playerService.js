@@ -1,6 +1,6 @@
 var playerModule = angular.module('playerModule');
-playerModule.factory('playerService', [
-    function () {
+playerModule.factory('playerService', ['$rootScope', '$interval',
+    function ($rootScope, $interval) {
         var PlayerService = function () {
             var self = this;
             self.audio = new Audio();
@@ -18,6 +18,10 @@ playerModule.factory('playerService', [
                 self.audio.play();
                 self.track = track;
             };
+
+            /*$interval(function () {
+                //$rootScope.$digest();
+            }, 500);*/
 
         };
         return new PlayerService();

@@ -11,9 +11,6 @@ var PlayerController = ['playerService', '$scope', 'trackListService',
         self.prev = function () {
             trackListService.prev();
         };
-        setInterval(function () {
-            $scope.$apply();
-        }, 500);
     }];
 
 playerModule.component('player', {

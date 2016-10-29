@@ -1,8 +1,13 @@
-<div class="register">
+<div class="user-edit">
+     <div class="fr-modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ctrl.close()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">{{'general_close' | translate}}</span>
+        </button>
+        <h4 class="fr-modal-title ng-binding">Editar cuenta en Freeven</h4><br/>
+        <div class="fr-modal-header-separator"></div>
+    </div>
     <form name="userForm">
-        <div style="text-align: center">
-            <h4>Editar cuenta en Freeven</h4>
-        </div>
         <fieldset class="form-group">
             <div class="row">
                 <div class="col-md-6">
@@ -135,7 +140,7 @@
                     </button>
                     <button id="idBtnCancelar" type="button"
                             class="freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
-                            ng-click="ctrl.closeEditPopup()">
+                            ng-click="ctrl.close()">
                         {{ 'general_cancel'  | translate }}
                     </button>
                 </div>
@@ -483,7 +488,7 @@
                     </button>
                     <button id="idBtnCancelar2" type="button"
                             class="freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
-                            ng-click="ctrl.closeEditPopup()">
+                            ng-click="ctrl.close()">
                         {{ 'general_cancel'  | translate }}
                     </button>
                 </div>
