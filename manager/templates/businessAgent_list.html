@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block css %}
+    <link href="{% static "manager/css/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="active">
+        <a href="{% url 'agent-list' %}">Géneros</a>
+    </li>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Gestión de agentes comerciales</h5>
+                <div class="ibox-tools">
+                    <a href="{% url 'agent-create' %}" class="btn btn-primary">Añadir Agente</a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Ciudad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for agent in agents %}
+                            <tr class="gradeX">
+                                <td>{{ agent.user.username }}</td>
+                                <td>{{ agent.user.first_name }} {{ agent.user.last_name }}</td>
+                                <td>{{ agent.user.email }}</td>
+                                <td>{{ agent.telephone_number }}</td>
+                                <td>{{ agent.city }}</td>
+                                <td class="center">
+                                    <a href="{% url 'agent-update' agent.id %}" title="Editar" class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                              <th>Usuario</th>
+                              <th>Nombre</th>
+                              <th>Correo</th>
+                              <th>Teléfono</th>
+                              <th>Ciudad</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static "manager/js/plugins/dataTables/datatables.min.js" %}"></script>
+<script>
+  $('.dataTables-example').DataTable({
+      dom: '<"html5buttons"B>lTfgitp',
+      buttons: [
+          { extend: 'copy'},
+          {extend: 'csv'},
+          {extend: 'excel', title: 'Géneros'},
+          {extend: 'pdf', title: 'Géneros'},
+
+          {extend: 'print',
+           customize: function (win){
+                  $(win.document.body).addClass('white-bg');
+                  $(win.document.body).css('font-size', '10px');
+
+                  $(win.document.body).find('table')
+                          .addClass('compact')
+                          .css('font-size', 'inherit');
+          }
+          }
+      ]
+
+  });
+</script>
+{% endblock %}
