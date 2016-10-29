@@ -29,8 +29,8 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
                 self.user.email = "yego23@gmail.com";
                 self.user.last_name = "Ruiz";
                 self.user.username = "yego";
-                self.user.password1 = "diego123";
-                self.user.password2 = "diego123";
+                self.user.password1 = "";
+                self.user.password2 = "";
                 self.user.is_artist = "True";
                 self.user.artistic_name = "El artista";
                 self.user.bank_account_number = 1234567890
@@ -56,5 +56,3 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
         };
         return new userEditService();
     }]);
-
-

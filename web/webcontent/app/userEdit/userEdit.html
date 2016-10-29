@@ -4,8 +4,7 @@
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">{{'general_close' | translate}}</span>
         </button>
-        <h4 class="fr-modal-title ng-binding">Editar cuenta en Freeven</h4><br/>
-        <div class="fr-modal-header-separator"></div>
+        <h4>Editar cuenta en Freeven</h4>
     </div>
     <form name="userForm">
         <fieldset class="form-group">
@@ -20,8 +19,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <input type='file' ng-model-instant
-                                           onchange="angular.element(this).scope().imageUpload(event)"/>
+                                  <label for="imageUpload" class="freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta">Subir foto perfil</label>
+                                    <input type='file' id="imageUpload" ng-model-instant
+                                           onchange="angular.element(this).scope().imageUpload(event)"
+                                           accept="image/*" style="display: none"/>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +49,7 @@
                                        ng-model="ctrl.userEdit.user.email"
                                        placeholder="Email..."
                                        class="form-control"
-                                       required
-                                />
+                                       required/>
                                 <span class="messages" ng-show="userForm.$submitted || userForm.email.$touched">
                                 <span ng-show="userForm.email.$invalid">El campo es obligatorio.</span>
                                 <span ng-show="userForm.email.$error.email">Email incorrecto.</span>
@@ -87,10 +87,24 @@
                 </div>
             </div>
         </fieldset>
+        <fieldset  class="form-group">
+          <div class="row">
+              <div class="col-md-6">
+                  <label class="control-label" for="password">Contraseña actual</label>
+                  <input type="password" name="password" id="password"
+                         ng-model="ctrl.userEdit.user.password"
+                         placeholder="Contraseña actual..."
+                         class="form-control"
+                         required
+                         ng-minlength="6"/>
+                  <span class="messages" ng-show="userForm.password.$error.minlength">Contraseña muy corta</span>
+              </div>
+            </div>
+        </fieldset>
         <fieldset class="form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <label class="control-label" for="password1">Contraseña</label>
+                    <label class="control-label" for="password1">Nueva Contraseña</label>
                     <input type="password" name="password1" id="password1"
                            ng-model="ctrl.userEdit.user.password1"
                            placeholder="Contraseña..."
@@ -100,7 +114,7 @@
                     <span class="messages" ng-show="userForm.password1.$error.minlength">Contraseña muy corta</span>
                 </div>
                 <div class="col-md-6">
-                    <label class="control-label" for="password2">Repita Contraseña</label>
+                    <label class="control-label" for="password2">Nueva Repita Contraseña</label>
                     <input type="password" name="password2" id="password2"
                            ng-model="ctrl.userEdit.user.password2"
                            placeholder="Repita contraseña...."
