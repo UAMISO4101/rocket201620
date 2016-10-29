@@ -102,7 +102,14 @@ require('../app/track/trackModule.js');
 require('../app/track/trackComponent.js');
 require('../app/track/track.less');
 
- require('../app/userEdit/userEditModule.js');
- require('../app/userEdit/userEditComponent.js');
- require('../app/userEdit/userEdit.less');
+require('../app/userEdit/userEditModule.js');
+require('../app/userEdit/userEditComponent.js');
+require('../app/userEdit/userEdit.less');
 require('../app/userEdit/userEditService.js');
+
+require('../app/help/helpModule.js');
+require('../app/help/helpComponent.js');
+require('../app/help/helpService.js');
+require('../app/help/help.less');
+require('../app/help/helpItem/helpItemComponent.js');
+require('../app/help/helpItem/helpItem.less');
