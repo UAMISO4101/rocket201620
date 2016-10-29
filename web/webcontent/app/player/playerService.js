@@ -1,9 +1,9 @@
 var playerModule = angular.module('playerModule');
-playerModule.factory('playerService', ['$rootScope', '$interval',
-    function ($rootScope, $interval) {
+playerModule.factory('playerService', ['ngAudio',
+    function (ngAudio) {
         var PlayerService = function () {
             var self = this;
-            self.audio = new Audio();
+            self.audio = null;
             self.currentNum = 0;
 
             // tell audio element to play/pause, you can also use $scope.audio.play() or $scope.audio.pause();
@@ -13,16 +13,16 @@ playerModule.factory('playerService', ['$rootScope', '$interval',
             };
 
             self.playTrack = function (track) {
-                //self.audio.src = 'https://freeven.s3.amazonaws.com' + track.url;
-                self.audio.src = track.url;
+                if (self.audio) {
+                    self.audio.pause();
+                }
+                self.audio = ngAudio.load(track.url);
                 self.audio.play();
                 self.track = track;
             };
-
-            /*$interval(function () {
-                //$rootScope.$digest();
-            }, 500);*/
-
+            self.showPlayer = function () {
+                return self.audio != null
+            };
         };
         return new PlayerService();
     }]);

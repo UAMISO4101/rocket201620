@@ -61,7 +61,8 @@
     "webpack": "^1.12.2",
     "webpack-configuration": "0.0.6",
     "webpack-dev-server": "1.12.1",
-    "webpack-path-rewriter": "^1.1.2"
+    "webpack-path-rewriter": "^1.1.2",
+    "angular-audio": "^1.7.3"
   },
   "dependencies": {
     "angular": "^1.5.5",
