@@ -1,5 +1,6 @@
 <div class="player" ng-if="ctrl.playerService.showPlayer()">
-    <a class="btn-download" href="{{ ctrl.playerService.track.url }}"
+    <a class="btn-download"
+       href="{{ ctrl.playerService.track.url }}"
        download="{{ ctrl.playerService.track.name }}.mp3">
         <i class="icon icon-download"></i>
     </a>
@@ -30,7 +31,6 @@
                ng-model="ctrl.playerService.audio.currentTime"/>
 
     </div>
-
     <a class="btn-volume">
         <i class="icon icon-volume-medium"></i>
     </a>
