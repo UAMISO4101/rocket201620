@@ -1,11 +1,21 @@
 <div class="main">
     <div class="header">
-        <a ng-click="ctrl.enableHelp()">Ver ayuda</a>
-        <user-menu ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
+        <div class="header-section">
+            <h3 class="brand-section">Freeven</h3>
+        </div>
+        <div class="header-section">
+            <a class="header-item" ng-click="ctrl.enableHelp()">Ver ayuda</a>
+            <a class="header-item">Subir obras musicales</a>
+            <user-menu class="fr-user-menu" ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
+        </div>
     </div>
     <splash class="freeven-splash" ng-if="!ctrl.mainService.isAuthenticated()" title="Splash"></splash>
     <div ng-if="!ctrl.mainService.isAuthenticated()" class="header-fake">
-        Header 2
+        <div class="header-section">
+            <h3 class="brand-section">Freeven</h3>
+        </div>
+        <div class="header-section">
+        </div>
     </div>
     <div class="wrap flex">
         <!--<div class="topbar"></div>-->
@@ -38,6 +48,18 @@
     </div>
     <div growl></div>
     <help title="Help"></help>
+    <div class="fr-track-help-1">
+        <help-item text="Aquí puedes controlar tus pistas"></help-item>
+    </div>
+    <div class="fr-track-help-2">
+        <help-item text="Aquí puedes ver el top "></help-item>
+    </div>
+    <div class="fr-track-help-3">
+        <help-item text="Sube mas piezas musicales"></help-item>
+    </div>
+    <div class="fr-track-help-4">
+        <help-item text="Configura tu perfil"></help-item>
+    </div>
 </div>
 
 

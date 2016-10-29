@@ -61,6 +61,12 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                 playerService.playTrack(track);
             };
 
+            self.playFirstTrack = function () {
+                if (self.tracks.length > 0) {
+                    playerService.playTrack(self.tracks[0]);
+                }
+            };
+
             self.next = function () {
                 //todo: obtain next in the list
                 var nexTrack = {};

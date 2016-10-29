@@ -17,26 +17,78 @@ html, body {
   a {
     cursor: pointer;
   }
-  .header {
-    background-color: #02b875;
-    position: fixed;
-    top: 0px;
-    height: 50px;
-    z-index: 4;
-    width: 100%;
-    display: block;
-    padding: 0 10px;
-  }
 
   .header-fake {
-    background-color: #02b875;
+    margin-top: ~"calc(100vh)";
+    margin-bottom: 200px;
+  }
+
+  .header {
+    position: fixed;
+    z-index: 4;
+    top: 0px;
+  }
+
+  .header, .header-fake {
+    background-color: #41434b;
     height: 50px;
     width: 100%;
     display: block;
-    margin-top: ~"calc(100vh)";
-    margin-bottom: 200px;
     padding: 0 10px;
+    .header-section {
+      float: left;
+      width: 50%;
+      display: inline-block;
+      display: flex;
+      .brand-section {
+        font-family: Amatic SC;
+        margin: 10px 0px 0 23px;
+        font-size: 27px;
+      }
+      .header-item {
+        margin-left: auto;
+        padding: 8px 27px;
+        text-decoration: none;
+        color: rgba(250, 250, 250, 0.93);
+        border-radius: 3px;
+        margin: 6px 0px 11px 0px;
+        &:hover {
+          color: rgba(250, 250, 250, 1);
+          background-color: rgba(250, 250, 250, 0.21);
+        }
+      }
+      .fr-user-menu {
+        margin-left: auto;
+      }
+    }
   }
+
+  .fr-track-help-1 {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+  }
+
+  .fr-track-help-2 {
+    display: block;
+    position: absolute;
+    top: 112px;
+  }
+
+  .fr-track-help-3 {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 43%;
+  }
+
+  .fr-track-help-4 {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 200px;
+  }
+
   .freeven-splash {
     position: absolute;
     z-index: 10;
@@ -105,8 +157,6 @@ html, body {
     }
     .footer {
       height: 70px;
-      background-color: #202225;
-      border-top: 1px solid #000;
       width: 100%;
       z-index: 4;
       position: fixed;

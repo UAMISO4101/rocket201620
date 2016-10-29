@@ -8,6 +8,7 @@ var MainController = ['$i18n', 'mainService', 'helpService',
         self.mainService = mainService;
         self.enableHelp = function () {
             helpService.setEnable(true);
+            helpService.enablePlayer();
         }
     }];
 

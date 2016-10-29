@@ -1,6 +1,6 @@
 var playerModule = angular.module('helpModule');
-playerModule.factory('helpService', [
-    function () {
+playerModule.factory('helpService', ['trackListService',
+    function (trackListService) {
         var HelpService = function () {
             var self = this;
             self.enabled = false;
@@ -12,6 +12,10 @@ playerModule.factory('helpService', [
             self.setEnable = function (newValue) {
                 var self = this;
                 self.enabled = newValue;
+            };
+
+            self.enablePlayer = function () {
+                trackListService.playFirstTrack();
             };
         };
         return new HelpService();
