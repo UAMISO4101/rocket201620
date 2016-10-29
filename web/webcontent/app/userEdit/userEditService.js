@@ -48,8 +48,11 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
 
             this.saveUser = function () {
                 //TODO CONSUME SERVICE SAVE
+
                 //window.location.reload(true);
+
                 $freevenModal.closePopup();
+
                 notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
             };
 

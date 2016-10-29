@@ -23,6 +23,11 @@
   "my_account": "Mi perfil",
   "general_edit_user": "Guardar"   ,
   "user_edit_success": "Actualización",
-  "user_edit_success_detail": "Actualización exitosa"
+  "user_edit_success_detail": "Actualización exitosa",
+  "general_psw_user":"Actualizar",
+  "usermenu_password_profile":"Cambiar contraseña",
+  "user_password_success_detail": "Contraseña actualizada"
+
+
 
 }

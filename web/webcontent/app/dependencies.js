@@ -106,3 +106,8 @@ require('../app/track/track.less');
  require('../app/userEdit/userEditComponent.js');
  require('../app/userEdit/userEdit.less');
 require('../app/userEdit/userEditService.js');
+
+require('../app/userPassword/userPasswordModule.js');
+require('../app/userPassword/userPasswordComponent.js');
+require('../app/userPassword/userPassword.less');
+require('../app/userPassword/userPasswordService.js');
