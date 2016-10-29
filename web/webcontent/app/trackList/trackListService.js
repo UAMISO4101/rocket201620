@@ -18,6 +18,22 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                         console.log('Error loading tracks');
                     });
             };
+
+            self.loadTopTracks = function () {
+                var params = {
+                    format: "json"
+                };
+                self.loading = true;
+                TrackApiService.loadTopTracks(
+                    params,
+                    function (response) {
+                        self.loading = false;
+                        self.tracks = response.results;
+                    },
+                    function (error) {
+                        console.log('Error loading tracks');
+                    });
+            };
             self.nextPage = function () {
                 var params = {};
                 params.format = "json";
