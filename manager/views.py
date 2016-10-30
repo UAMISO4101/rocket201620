@@ -72,14 +72,15 @@ def businessAgentCreate(request):
         return redirect(reverse('manager'))
 
 
-@method_decorator(login_required, name='dispatch')
-def businessAgentUpdate(request):
+def businessAgentUpdate(request, pk):
     if request.user.is_authenticated():
-        return redirect(reverse('agent-list'))
-
-    mensaje = ''
-    if request.method == 'POST':
-        mensaje = update_business_agent(request)
-        if mensaje == '':
-            return redirect(reverse('manager'))
-    return render(request, 'businessAgent_update.html', {'mensaje': mensaje})
+        mensaje = ''
+        if request.method == 'POST':
+            mensaje = update_business_agent(request, pk)
+            if mensaje == '':
+                return redirect(reverse('agent-list'))
+        elif request.method == 'GET':
+            agent = BusinessAgent.objects.get(user__id=pk)
+            return render(request, 'businessAgent_update.html', {'mensaje': mensaje, 'agent': agent})
+    else:
+        return redirect(reverse('manager'))

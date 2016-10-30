@@ -4,7 +4,7 @@
 
 {% block breadcrumb %}
   <li>
-    <a href="{% url 'gender-list' %}">Géneros</a>
+    <a href="{% url 'agent-list' %}">Agentes comerciales</a>
   </li>
   <li class="active">
     <a href="#">Editar</a>
@@ -15,35 +15,59 @@
 	<div class="col-lg-12">
 	    <div class="ibox float-e-margins">
 	        <div class="ibox-title">
-	            <h5>Actualizar Género</h5>
+	            <h5>Actualizar agente comercial</h5>
 	        </div>
 	        <div class="ibox-content">
-	            <form class="form-horizontal" method="post" action="{% url 'gender-update' gender.id %}">
+              {% if mensaje %}
+                  <div class="alert alert-danger">
+                      {{ mensaje }}
+                  </div>
+              {% endif %}
+	            <form class="form-horizontal" method="post" action="{% url 'agent-update' agent.user.id %}">
 	            	{% csrf_token %}
-	                <div class="form-group"><label class="col-lg-2 control-label">Nombre:</label>
-	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Nombre" name="name" class="form-control" value="{{ gender.name }}">
-                    		<span class="help-block m-b-none">
-                    			Ingresa el nombre de género.
-                    		</span>
-	                    </div>
-	                </div>
-	                <div class="form-group"><label class="col-lg-2 control-label">Descripción:</label>
-	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Descripcion" name="description" class="form-control" value="{{ gender.description }}">
-                    		<span class="help-block m-b-none">
-                    			Ingresa la descripción del género musical.
-                    		</span>
-	                    </div>
-	                </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Nombres:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="Nombres" name="first_name" class="form-control" value="{{ agent.user.first_name }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Apellidos:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="Apellidos" name="last_name" class="form-control" value="{{ agent.user.last_name }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Correo:</label>
+                        <div class="col-lg-10">
+                        	<input type="email" placeholder="Correo" name="email" class="form-control" value="{{ agent.user.email }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Teléfono:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="Telefono" name="telephone_number" class="form-control" value="{{ agent.telephone_number }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Avatar:</label>
+                        <div class="col-lg-10">
+                        	<input type="file" placeholder="Avatar" name="avatar" class="form-control"  value="{{ agent.avatar }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Dirección:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="Dirección" name="address" class="form-control" value="{{ agent.address }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Ciudad:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="Ciudad" name="city" class="form-control" value="{{ agent.city }}">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">País:</label>
+                        <div class="col-lg-10">
+                        	<input type="text" placeholder="País" name="country" class="form-control" value="{{ agent.country }}">
+                        </div>
+                    </div>
 	                <div class="form-group">
 	                    <div class="col-lg-offset-2 col-lg-10">
-	                        <div class="i-checks"><label><input type="checkbox" name="state" {% if gender.state %}checked{% endif %}><i></i> Activo </label></div>
-	                    </div>
-	                </div>
-	                <div class="form-group">
-	                    <div class="col-lg-offset-2 col-lg-10">
-	                        <button class="btn btn-sm btn-white" type="submit">Crear</button>
+	                        <button class="btn btn-sm btn-white" type="submit">Actualizar</button>
 	                    </div>
 	                </div>
 	            </form>

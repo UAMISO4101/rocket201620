@@ -241,24 +241,26 @@ def create_business_agent(user, request):
     return True
 
 
-def update_business_agent(request):
+def update_business_agent(request, id_user):
 
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     email = request.POST.get('email')
 
+    print(id_user)
+
     if(email is not "" and first_name is not "" and last_name is not ""):
 
-        user = User.objects.filter(username=username)
-        if exist_user.count() == 0:
+        user = User.objects.get(id=id_user)
+        if user is None:
             status = 'Usuario no existe.'
         else:
             user.email = email
             user.first_name = first_name
             user.last_name = last_name
-            user_model.save()
+            user.save()
 
-            if update_business_agent(user, request):
+            if update_business_agent_process(user, request):
                 status = ''
             else:
                 status = 'Error guardando el agente comercial.'
@@ -267,8 +269,8 @@ def update_business_agent(request):
     return status
 
 
-def update_business_agent(user, request):
-    agent = BusinessAgent.objects.filter(user__id=user.id)
+def update_business_agent_process(user, request):
+    agent = BusinessAgent.objects.get(user__id=user.id)
 
     agent.telephone_number = request.POST.get('telephone_number')
     agent.avatar = request.POST.get('avatar')
