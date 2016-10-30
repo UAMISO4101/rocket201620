@@ -1,5 +1,6 @@
+# -*- coding: UTF-8 -*-
 from django.contrib.auth.models import User
-from users.models import Artist
+from users.models import Artist, BusinessAgent
 from django.contrib.auth import authenticate, login
 from rest_framework.authtoken.models import Token
 
@@ -193,3 +194,97 @@ def login_user_to_json(user):
         'is_artist': is_artist,
     }
     return json_data
+
+
+def register_business_agent(request):
+
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    username = request.POST.get('username')
+    email = request.POST.get('email')
+    password1 = request.POST.get('password1')
+    password2 = request.POST.get('password2')
+
+    if(username is not "" and password1 is not "" and password2 is not ""
+       and email is not "" and first_name is not "" and
+       last_name is not ""):
+
+        exist_user = User.objects.filter(username=username)
+        if exist_user.count() > 0:
+            status = 'Usuario ya existe.'
+        else:
+            if password1 != password2:
+                status = 'Las contraseñas no coinciden.'
+            else:
+                user = User.objects.create_user(
+                    username=username,
+                    password=password1,
+                    email=email,
+                    first_name=first_name,
+                    last_name=last_name)
+                user.save()
+
+                if create_business_agent(user, request):
+                    status = ''
+                else:
+                    status = 'Error guardando el agente comercial.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return status
+
+
+def create_business_agent(user, request):
+    agent = BusinessAgent()
+
+    agent.telephone_number = request.POST.get('telephone_number')
+    agent.avatar = request.POST.get('avatar')
+    agent.address = request.POST.get('address')
+    agent.city = request.POST.get('city')
+    agent.country = request.POST.get('country')
+    agent.user = user
+
+    agent.save()
+    return True
+
+
+def update_business_agent(request, id_user):
+
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+
+    print(id_user)
+
+    if(email is not "" and first_name is not "" and last_name is not ""):
+
+        user = User.objects.get(id=id_user)
+        if user is None:
+            status = 'Usuario no existe.'
+        else:
+            user.email = email
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+
+            if update_business_agent_process(user, request):
+                status = ''
+            else:
+                status = 'Error guardando el agente comercial.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return status
+
+
+def update_business_agent_process(user, request):
+    agent = BusinessAgent.objects.get(user__id=user.id)
+
+    agent.telephone_number = request.POST.get('telephone_number')
+    agent.avatar = request.POST.get('avatar')
+    agent.address = request.POST.get('address')
+    agent.city = request.POST.get('city')
+    agent.country = request.POST.get('country')
+    agent.birth_date = request.POST.get('birth_date')
+    agent.user = user
+
+    agent.save()
+    return True
