@@ -364,14 +364,13 @@ def change_password_action(request):
 
 def change_password_op_action(request):
     username = request.GET.get('username')
-    password = request.GET.get('password')
-    old_password = request.GET.get('old_password')
+    password = request.GET.get('password1')
+    old_password = request.GET.get('password')
 
     if (username is not None and password is not None and
             old_password is not None):
         user = authenticate(username=username, password=old_password)
         if user is not None:
-            print(user)
             user.set_password(password)
             user.save()
             status = 'La clave fue actualizada.'
