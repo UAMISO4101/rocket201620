@@ -63670,7 +63670,7 @@
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">Subir obras musicales</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <div ng-view=\"\"></div>\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                         <r-i18n></r-i18n>\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n            <search class=\"fr-search\" title =\"Search\"> </search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">Subir obras musicales</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <div ng-view=\"\"></div>\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                         <r-i18n></r-i18n>\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 61 */
@@ -63712,7 +63712,7 @@
 	exports.i(__webpack_require__(67), "");
 
 	// module
-	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main a {\n  cursor: pointer;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 200px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  min-width: 200px;\n  width: 12%;\n  background-color: rgba(54, 60, 67, 0);\n  position: relative;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  position: absolute;\n  bottom: 0px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  height: calc(100vh - 70px);\n  background-color: white;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  height: 70px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
+	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main a {\n  cursor: pointer;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 200px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n}\n.main .header .header-section .fr-search,\n.main .header-fake .header-section .fr-search {\n  margin-left: 19%;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  min-width: 200px;\n  width: 12%;\n  background-color: rgba(54, 60, 67, 0);\n  position: relative;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  position: absolute;\n  bottom: 0px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  height: calc(100vh - 70px);\n  background-color: white;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  height: 70px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
 
 	// exports
 
@@ -63774,46 +63774,55 @@
 /***/ function(module, exports) {
 
 	/**
-	* Created by diego on 8/10/2016.
-	*/
+	 * Created by diego on 8/10/2016.
+	 */
 
 	var mainModule = angular.module('mainModule');
 	mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', '$cookieStore',
-	function ($i18n, $freevenModal, notifierService, $cookieStore) {
-	  var mainService = function () {
+	    function ($i18n, $freevenModal, notifierService, $cookieStore) {
+	        var mainService = function () {
 
-	    var self = this;
+	            var self = this;
 
-	    self.user = {};
+	            self.user = {};
 
-	    self.isAuthenticated = function () {
-	      self.user.token = $cookieStore.get('user_token');
-	      if (self.user.token) {
-	        self.user.first_name = $cookieStore.get('first_name');
-	        return true;
-	      } else {
-	        return false;
-	      }
-	    };
-	    self.isArtist = function (){
-	      return self.user.isArtist;
-	    };
-	    self.setUserToken = function (token) {
-	      $cookieStore.put('user_token', token);
+	            self.isAuthenticated = function () {
+	                if (self.user.token) {
+	                    return true;
+	                }
+	                return false;
+	            };
 
-	    };
-	    self.setUserFirstName = function (first_name) {
+	            self.logout = function () {
+	                self.user = {};
+	                self.deleteUserCookies();
+	            };
 
-	      $cookieStore.put('first_name',first_name);
-	    };
+	            self.isArtist = function () {
+	                return self.user.is_artist;
+	            };
 
-	    self.deleteUserToken = function (){
-	      $cookieStore.remove('user_token');
-	    }
+	            self.setUserData = function (userData) {
+	                self.user = userData;
+	                self.saveUserCookies(userData);
+	            };
+	            self.loadUserDataFromCookies = function () {
+	                self.user = $cookieStore.get('user_data') || {};
+	            };
 
-	  };
-	  return new mainService();
-	}]);
+	            self.saveUserCookies = function (userData) {
+	                $cookieStore.put('user_data', userData);
+	            };
+
+	            self.deleteUserCookies = function () {
+	                $cookieStore.remove('user_data');
+	            }
+
+	        };
+	        var main = new mainService();
+	        main.loadUserDataFromCookies();
+	        return main;
+	    }]);
 
 
 /***/ },
@@ -64714,8 +64723,7 @@
 	                    self.user,
 	                    function (response) {
 	                        if (response.token) {
-	                            mainService.setUserToken(response.token);
-	                            mainService.setUserFirstName(response.first_name);
+	                            mainService.setUserData(response);
 	                            notifierService.success("Bienvenido", response.first_name);
 	                        } else {
 	                            notifierService.error("Error de autenticación", response.status);
@@ -64726,8 +64734,8 @@
 	                    });
 	            };
 	            self.logout = function () {
-	                self.user={};
-	                mainService.deleteUserToken();
+	                self.user = {};
+	                mainService.logout();
 	            };
 
 	            this.showRegisterPopup = function () {

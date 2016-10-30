@@ -180,14 +180,15 @@ def login_service(request):
 
 
 def login_user_to_json(user):
-    is_artist = False
     try:
         artist = Artist.objects.get(user__id=user.id)
-        if artist is not None:
-            is_artist = True
+        is_artist = True
+    except:
+        is_artist = False
+    try:
         token = Token.objects.create(user=user)
     except:
-        token = Token.objects.get(user=user)
+        token = Token.objects.get(user__id=user.id)
 
     json_data = {
         'first_name': user.first_name,
