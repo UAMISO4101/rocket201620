@@ -1,4 +1,4 @@
-from .models import Track
+from .models import Track, Top
 from rest_framework import serializers
 
 
@@ -43,3 +43,15 @@ class TrackSerializer(serializers.ModelSerializer):
             return obj.artist.user.username
         except:
             return None
+
+
+class TopSerializer(serializers.ModelSerializer):
+    track = TrackSerializer(read_only=True)
+
+    class Meta:
+        model = Top
+        fields = (
+            'track',
+            'quantity',
+            'top_type',
+        )
