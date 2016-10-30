@@ -9,6 +9,8 @@ from rest_framework.generics import CreateAPIView
 from .models import Donation
 from .serializers import DonationSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import filters
+from rest_framework.generics import ListAPIView
 
 
 '''
@@ -45,3 +47,13 @@ class Donate(CreateAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
     permission_classes = (IsAuthenticated,)
+
+
+class DonationList(ListAPIView):
+    queryset = Donation.objects.all()
+    serializer_class = DonationSerializer
+    permission_classes = (IsAuthenticated,)
+    filter_backends = (filters.DjangoFilterBackend, )
+    filter_fields = (
+        'artist__id',
+    )

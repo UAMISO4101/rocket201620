@@ -9,4 +9,5 @@ urlpatterns = [
         ),
     url(r'^login/$', views.login_user, name='login'),
     url(r'^donate/$', views.Donate.as_view(), name='donate'),
+    url(r'^donation-list/$', views.DonationList.as_view(), name='donate'),
 ]
