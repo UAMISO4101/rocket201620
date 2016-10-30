@@ -18,7 +18,7 @@ class Track(models.Model):
     gender = models.ForeignKey(Gender)
     image = models.ImageField(upload_to='track_images')
     file = models.FileField(upload_to='tracks')
-    score = models.IntegerField(default=0)
+    score = models.DecimalField(max_digits=4, decimal_places=2)
     count_votes = models.IntegerField(default=0)
     artist = models.ForeignKey(Artist)
 

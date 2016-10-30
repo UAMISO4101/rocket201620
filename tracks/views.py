@@ -5,6 +5,7 @@ from rest_framework import filters
 from rest_framework.permissions import IsAuthenticated
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import IsAuthenticated
+from django.http import JsonResponse
 from tracks.business_logic import (
     register_rate_track_action
 )

@@ -9,7 +9,7 @@ def register_rate_track_action(request):
     track_id = request.GET.get('track_id')
     rate = request.GET.get('rate')
 
-    if (username is not None and password is not None and rate is not None):
+    if (username is not None and track_id is not None and rate is not None):
         try:
             if(int(rate) < 1 or int(rate) > 5):
                 status = 'Calificacion no valida.'
@@ -19,22 +19,31 @@ def register_rate_track_action(request):
                     try:
                         track = Track.objects.get(id=track_id)
 
-                        r_track = RateTrack()
-                        r_track.user = user
-                        r_track.track = track
+                        try:
+                            r_track = RateTrack.objects.get(user__id=user.id,
+                                                            track__id=track.id)
+                        except:
+                            r_track = RateTrack()
+                            r_track.user = user
+                            r_track.track = track
+
                         r_track.rate = rate
                         r_track.save()
 
-                        count_votes = RateTrack.objects.count(
-                            track__id=track.id)
-                        score = RateTrack.objects.filters(
-                            track__id=track.id).aggregate(Avg('rate'))
+                        count_votes = RateTrack.objects.filter(
+                            track__id=track.id).count()
+
+                        score = RateTrack.objects.filter(
+                            track__id=track.id
+                        ).aggregate(Avg('rate'))['rate__avg']
 
                         track.score = score
                         track.count_votes = count_votes
+                        track.save()
 
                         status = 'La calificacion fue registrada.'
-                    except:
+                    except ValueError:
+                        print(ValueError)
                         status = 'La obra musical no existe.'
                 except:
                     status = 'Usuario no existe.'
