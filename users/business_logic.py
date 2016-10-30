@@ -292,13 +292,13 @@ def update_business_agent_process(user, request):
     return True
 
 
-def password_restore_main(request):
+def request_password_restore_action(request):
     username = request.GET.get('username')
 
     if (username is not None):
         user = User.objects.get(username=username)
         if user is not None:
-            if password_restore_action(user, request):
+            if request_password_restore_subaction(user, request):
                 status = 'Correo enviado.'
             else:
                 status = 'Error en el envio del correo.'
@@ -309,10 +309,11 @@ def password_restore_main(request):
     return {'status': status}
 
 
-def password_restore_action(user, request):
+def request_password_restore_subaction(user, request):
 
-    dto = TokenUser.objects.get(user__id=user.id)
-    if dto is None:
+    try:
+        dto = TokenUser.objects.get(user__id=user.id)
+    except:
         dto = TokenUser()
         dto.user = user
         dto.save()
@@ -323,7 +324,7 @@ def password_restore_action(user, request):
         body_text = body_text + 'Para recuperar su clave haga clic en el '
         body_text = body_text + 'siguiente enlace: \n\n'
         body_text = body_text + 'http://' + request.META['HTTP_HOST']
-        body_text = body_text + '/user/pass_restore/?id=' + str(user.id)
+        body_text = body_text + '/user/pass_restore/?usr=' + str(user.username)
         body_text = body_text + '&token=' + dto.token
         body_text = body_text + '\n\n Cordial saludo,'
 
@@ -332,3 +333,27 @@ def password_restore_action(user, request):
         return True
     except:
         return False
+
+
+def change_password_action(request):
+    username = request.GET.get('username')
+    password = request.GET.get('password')
+
+    if (username is not None and password is not None):
+        try:
+            user = User.objects.get(username=username)
+            try:
+                token_user = TokenUser.objects.get(user__id=user.id)
+                print(token_user)
+                user.set_password(password)
+                user.save()
+                token_user.delete()
+                status = 'La clave fue actualizada.'
+            except:
+                status = 'El token no existe, debe solicitar el cambio de '
+                status = status + 'clave.'
+        except:
+            status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}

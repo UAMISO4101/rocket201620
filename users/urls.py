@@ -8,7 +8,7 @@ urlpatterns = [
         name='user'
         ),
     url(r'^login/$', views.login_user, name='login'),
-    url(r'^request_pass_restore/$', views.password_restore,
-        name='request_pass_restore'),
-    url(r'^pass_restore/$', views.login_user, name='pass_restore'),
+    url(r'^request_password_restore/$', views.request_password_restore,
+        name='request_password_restore'),
+    url(r'^change_password/$', views.change_password, name='change_password'),
 ]
