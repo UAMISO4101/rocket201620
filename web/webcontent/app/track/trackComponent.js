@@ -1,9 +1,13 @@
 var trackModule = angular.module('trackModule');
-var TrackController = ['$i18n', 'trackListService', function ($i18n, trackListService) {
+var TrackController = ['$i18n', 'trackListService', 'mainService',function ($i18n, trackListService,mainService) {
     var self = this;
+
+
+
     self.play = function (track) {
         trackListService.playSelected(track);
     }
+
 }];
 
 trackModule.component('track', {

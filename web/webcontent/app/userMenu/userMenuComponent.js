@@ -1,6 +1,7 @@
 var userMenuModule = angular.module('userMenuModule');
 var UserMenuController = ['$i18n', 'userMenuService', 'loginService', 'mainService',
-    'userEditService', function ($i18n, userMenuService, loginService, mainService, userEditService) {
+    'userEditService','userPasswordService',
+    function ($i18n, userMenuService, loginService, mainService, userEditService,userPasswordService) {
         /**
          * Tip: add here only visual logic
          */

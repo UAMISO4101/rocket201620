@@ -1,5 +1,9 @@
-.growl-container {
-  .growl-item {
+.fr-notifier-container {
+  .growl-container {
+    &.growl-fixed.top-right {
+      top: 53px;
+    }
+    top: 53px;
     .alert {
       padding: 15px;
       margin-bottom: 20px;
@@ -39,8 +43,8 @@
     }
 
     .alert-success {
-      color: #badddd;
-      background-color: #525252;
+      color: #eee;
+      background-color: rgba(82, 82, 82, 0.33);
       border-color: #4d4f57;
     }
 
@@ -131,12 +135,14 @@
     .growl-message {
       span {
         margin-left: 9px;
+        clear: both;
+        display: block;
       }
     }
+
   }
+
 }
-
-
 
 
 

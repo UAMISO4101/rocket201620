@@ -23,7 +23,10 @@
     "general_edit_user": "Save",
   "user_edit_success": "Update",
   "user_edit_success_detail": "Success update",
-  "usermenu_edit_profile": "Edit profile"
+  "usermenu_edit_profile": "Edit profile",
+  "general_psw_user":"Update password",
+  "usermenu_password_profile":"Change password",
+  "user_password_success_detail": "Success update password"
+
 
 }
-

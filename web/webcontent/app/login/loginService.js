@@ -27,7 +27,7 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                         }
                     },
                     function (error) {
-                        notifierService.error("Error de autenticación", error.status);
+                        //notifierService.error("Error de autenticación", error.status);//esta notificacion es automatica
                     });
             };
             self.logout = function () {
