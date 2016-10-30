@@ -20,6 +20,9 @@ function ($i18n, $freevenModal, notifierService, $cookieStore) {
         return false;
       }
     };
+    self.isArtist = function (){
+      return self.user.isArtist;
+    };
     self.setUserToken = function (token) {
       $cookieStore.put('user_token', token);
 
