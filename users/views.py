@@ -4,7 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from users.business_logic import (
     register_user_in_model, get_info_users, login_service,
-    request_password_restore_action, change_password_action
+    request_password_restore_action, change_password_action,
+    update_profile_action
 )
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -52,4 +53,12 @@ def request_password_restore(request):
 def change_password(request):
     if request.method == 'GET':
         response = change_password_action(request)
+        return JsonResponse(response)
+
+
+@csrf_exempt
+def update_profile(request):
+    if request.method == 'POST':
+        json_data = json.loads(request.body.decode('utf-8'))
+        response = update_profile_action(json_data)
         return JsonResponse(response)

@@ -61,8 +61,8 @@ def register_user_in_model(json_data):
 
     is_artist = str_to_bool(is_artist)
 
-    if (username != "" and password1 != "" and password2 != ""
-        and email != "" and first_name != "" and last_name != ""):
+    if (username != "" and password1 != "" and password2 != "" and
+            email != "" and first_name != "" and last_name != ""):
 
         exist_user = User.objects.filter(username=username)
 
@@ -73,8 +73,10 @@ def register_user_in_model(json_data):
                 status = 'Las contrasenias no coinciden.'
             else:
                 user_model = User.objects.create_user(username=username,
-                    password=password1, email=email, first_name=first_name,
-                    last_name=last_name)
+                                                      password=password1,
+                                                      email=email,
+                                                      first_name=first_name,
+                                                      last_name=last_name)
                 user_model.save()
 
                 if is_artist is False:
@@ -84,7 +86,8 @@ def register_user_in_model(json_data):
                         if relation_user_to_artist(user_model, json_data):
                             status = 'OK'
                         else:
-                            status = 'Error guardando el perfil del usuario como artista'''
+                            status = 'Error guardando el perfil del usuario'
+                            status = status + ' como artista'''
     else:
         status = 'Todos los campos son obligatorios.'
 
@@ -104,8 +107,7 @@ def str_to_bool(s):
     elif s == 'False':
         return False
     else:
-        raise ValueError  # evil ValueError that doesn't tell you what the
-                          # wrong value was
+        raise ValueError
 
 
 '''
@@ -207,9 +209,9 @@ def register_business_agent(request):
     password1 = request.POST.get('password1')
     password2 = request.POST.get('password2')
 
-    if(username is not "" and password1 is not "" and password2 is not ""
-       and email is not "" and first_name is not "" and
-       last_name is not ""):
+    if(username is not "" and password1 is not "" and password2 is not "" and
+        email is not "" and first_name is not "" and
+            last_name is not ""):
 
         exist_user = User.objects.filter(username=username)
         if exist_user.count() > 0:
@@ -355,4 +357,82 @@ def change_password_action(request):
             status = 'Usuario no existe.'
     else:
         status = 'Todos los campos son obligatorios.'
+    return {'status': status}
+
+
+def update_profile_action(json_data):
+    first_name = json_data['first_name']
+    last_name = json_data['last_name']
+    username = json_data['username']
+    password1 = json_data['password1']
+    password2 = json_data['password2']
+    email = json_data['email']
+
+    if (username != "" and email != "" and first_name != "" and
+            last_name != ""):
+
+        user = User.objects.filter(username=username)
+
+        if exist_user.count() != 0:
+            if password1 != "" and password1 != password2:
+                status = 'Las contrasenias no coinciden.'
+            else:
+                user.first_name = first_name
+                user.last_name = last_name
+                user.email = email
+                if password1 != "":
+                    user.set_password(password1)
+                user.save()
+
+                is_artist = json_data['is_artist']
+                if(str_to_bool(is_artist)):
+                    status = update_profile_artist_action(user, json_data)
+
+                if(status != ""):
+                    is_agent = json_data['is_agent']
+                    if(str_to_bool(is_agent)):
+                        status = update_profile_agent_action(user,
+                                                             json_data[
+                                                                'status'
+                                                             ])
+        else:
+            status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+
+    return {'status': status}
+
+
+def update_profile_agent_action(user, json_data):
+    try:
+        agent = BusinessAgent.objets.get(user__id=user.id)
+
+        agent.address = json_data['address']
+        agent.city = json_data['city']
+        agent.country = json_data['country']
+        agent.telephone_number = json_data['telephone_number']
+        agent.save()
+        status = 'Datos del perfil del agente comercial fueron actualizados.'
+    except:
+        status = 'Error guardando el perfil del agente comercial'
+    return {'status': status}
+
+
+def update_profile_artist_action(user, json_data):
+    try:
+        artist = Artist.objets.get(user__id=user.id)
+
+        artist.artistic_name = json_data['artistic_name']
+        artist.bank_account_number = json_data['bank_account_number']
+        artist.bank_account_type = json_data['bank_account_type']
+        artist.bank = json_data['bank']
+        artist.address = json_data['address']
+        artist.city = json_data['city']
+        artist.country = json_data['country']
+        artist.telephone_number = json_data['telephone_number']
+        artist.birth_date = json_data['birth_date']
+        artist.save()
+        status = 'Datos del perfil del artista fueron actualizados.'
+    except:
+        status = 'Error guardando el perfil del artista'
     return {'status': status}
