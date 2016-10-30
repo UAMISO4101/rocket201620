@@ -207,7 +207,8 @@
 
 	__webpack_require__(152);
 	__webpack_require__(153);
-	__webpack_require__(155);
+	__webpack_require__(157);
+	__webpack_require__(159);
 
 
 /***/ },
@@ -63045,7 +63046,7 @@
 
 
 	// module
-	exports.push([module.id, ".growl-container .growl-item .alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.growl-container .growl-item .alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.growl-container .growl-item .alert .alert-link {\n  font-weight: bold;\n}\n.growl-container .growl-item .alert > p,\n.growl-container .growl-item .alert > ul {\n  margin-bottom: 0;\n}\n.growl-container .growl-item .alert > p + p {\n  margin-top: 5px;\n}\n.growl-container .growl-item .alert-dismissable,\n.growl-container .growl-item .alert-dismissible {\n  padding-right: 35px;\n}\n.growl-container .growl-item .alert-dismissable .close,\n.growl-container .growl-item .alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.growl-container .growl-item .alert-success {\n  color: #badddd;\n  background-color: #525252;\n  border-color: #4d4f57;\n}\n.growl-container .growl-item .alert-success hr {\n  border-top-color: #c9e2b3;\n}\n.growl-container .growl-item .alert-success .alert-link {\n  color: #2b542c;\n}\n.growl-container .growl-item .alert-info {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.growl-container .growl-item .alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.growl-container .growl-item .alert-info .alert-link {\n  color: #245269;\n}\n.growl-container .growl-item .alert-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.growl-container .growl-item .alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.growl-container .growl-item .alert-warning .alert-link {\n  color: #66512c;\n}\n.growl-container .growl-item .alert-danger {\n  color: #9D5D5D;\n  background-color: #fff;\n  border-color: #ebccd1;\n}\n.growl-container .growl-item .alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.growl-container .growl-item .alert-danger .alert-link {\n  color: #843534;\n}\n.growl-container .growl-item .alert_content_success {\n  position: relative;\n  display: block;\n  height: 26px;\n}\n.growl-container .growl-item .alert_content_success b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.growl-container .growl-item .alert_content_success i {\n  color: #007166;\n}\n.growl-container .growl-item .alert_content_error {\n  position: relative;\n}\n.growl-container .growl-item .alert_content_error b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.growl-container .growl-item .alert_content_error i {\n  color: #df6e6e;\n}\n.growl-container .growl-item .alert_content_error i {\n  color: #df6e6e;\n}\n.growl-container .growl-item .growl-message span {\n  margin-left: 9px;\n}\n", ""]);
+	exports.push([module.id, ".fr-notifier-container .growl-container {\n  top: 53px;\n}\n.fr-notifier-container .growl-container.growl-fixed.top-right {\n  top: 53px;\n}\n.fr-notifier-container .growl-container .alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.fr-notifier-container .growl-container .alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.fr-notifier-container .growl-container .alert .alert-link {\n  font-weight: bold;\n}\n.fr-notifier-container .growl-container .alert > p,\n.fr-notifier-container .growl-container .alert > ul {\n  margin-bottom: 0;\n}\n.fr-notifier-container .growl-container .alert > p + p {\n  margin-top: 5px;\n}\n.fr-notifier-container .growl-container .alert-dismissable,\n.fr-notifier-container .growl-container .alert-dismissible {\n  padding-right: 35px;\n}\n.fr-notifier-container .growl-container .alert-dismissable .close,\n.fr-notifier-container .growl-container .alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.fr-notifier-container .growl-container .alert-success {\n  color: #eee;\n  background-color: rgba(82, 82, 82, 0.33);\n  border-color: #4d4f57;\n}\n.fr-notifier-container .growl-container .alert-success hr {\n  border-top-color: #c9e2b3;\n}\n.fr-notifier-container .growl-container .alert-success .alert-link {\n  color: #2b542c;\n}\n.fr-notifier-container .growl-container .alert-info {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.fr-notifier-container .growl-container .alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.fr-notifier-container .growl-container .alert-info .alert-link {\n  color: #245269;\n}\n.fr-notifier-container .growl-container .alert-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.fr-notifier-container .growl-container .alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.fr-notifier-container .growl-container .alert-warning .alert-link {\n  color: #66512c;\n}\n.fr-notifier-container .growl-container .alert-danger {\n  color: #9D5D5D;\n  background-color: #fff;\n  border-color: #ebccd1;\n}\n.fr-notifier-container .growl-container .alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.fr-notifier-container .growl-container .alert-danger .alert-link {\n  color: #843534;\n}\n.fr-notifier-container .growl-container .alert_content_success {\n  position: relative;\n  display: block;\n  height: 26px;\n}\n.fr-notifier-container .growl-container .alert_content_success b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.fr-notifier-container .growl-container .alert_content_success i {\n  color: #007166;\n}\n.fr-notifier-container .growl-container .alert_content_error {\n  position: relative;\n}\n.fr-notifier-container .growl-container .alert_content_error b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.fr-notifier-container .growl-container .alert_content_error i {\n  color: #df6e6e;\n}\n.fr-notifier-container .growl-container .alert_content_error i {\n  color: #df6e6e;\n}\n.fr-notifier-container .growl-container .growl-message span {\n  margin-left: 9px;\n  clear: both;\n  display: block;\n}\n", ""]);
 
 	// exports
 
@@ -63669,7 +63670,7 @@
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a class=\"header-item\">Subir obras musicales</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <!-- Track list component -->\r\n                        <div ng-view=\"\"></div>\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                         <r-i18n></r-i18n>\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">Subir obras musicales</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <div ng-view=\"\"></div>\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                         <r-i18n></r-i18n>\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 61 */
@@ -63793,6 +63794,9 @@
 	      } else {
 	        return false;
 	      }
+	    };
+	    self.isArtist = function (){
+	      return self.user.isArtist;
 	    };
 	    self.setUserToken = function (token) {
 	      $cookieStore.put('user_token', token);
@@ -64718,10 +64722,11 @@
 	                        }
 	                    },
 	                    function (error) {
-	                        notifierService.error("Error de autenticación", error.status);
+	                        //notifierService.error("Error de autenticación", error.status);//esta notificacion es automatica
 	                    });
 	            };
 	            self.logout = function () {
+	                self.user={};
 	                mainService.deleteUserToken();
 	            };
 
@@ -64733,8 +64738,6 @@
 	        };
 	        return new loginService();
 	    }]);
-
-
 
 
 /***/ },
@@ -65179,13 +65182,17 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
-	var TrackController = ['$i18n', 'trackListService', 'mainService',function ($i18n, trackListService,mainService) {
+	var TrackController = ['$i18n', 'trackListService', 'mainService','artistService',
+	  function ($i18n, trackListService,mainService,artistService) {
+
 	    var self = this;
-
-
 
 	    self.play = function (track) {
 	        trackListService.playSelected(track);
+	    }
+
+	    self.loadArtist = function() {
+	        artistService.loadArtist();
 	    }
 
 	}];
@@ -65206,7 +65213,7 @@
 /* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <a>{{ ctrl.frModel.name }}</a>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n       <help-item text =\"Aquí puedes descargar la pista musical\"> </help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n       <help-item text =\"Comienza a escuchando esta pieza musical\"> </help-item>\r\n    </div>\r\n     <div class=\"fr-track-help-3\">\r\n       <help-item text =\"Califica las piezas musicales\"> </help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <a>{{ ctrl.frModel.name }}</a>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/\" ng-click=\"ctrl.loadArtist()\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n       <help-item text =\"Aquí puedes descargar la pista musical\"> </help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n       <help-item text =\"Comienza a escuchando esta pieza musical\"> </help-item>\r\n    </div>\r\n     <div class=\"fr-track-help-3\">\r\n       <help-item text =\"Califica las piezas musicales\"> </help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 128 */
@@ -65885,9 +65892,7 @@
 	     * Tip: add here only visual logic
 	     */
 	    var self = this;
-	    self.showAlert = function () {
-	        alert($i18n.translate.general_alert);
-	    };
+	    
 	}];
 
 	artistModule.component('artist', {
@@ -65905,16 +65910,28 @@
 /* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"artist\">\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-4\">\r\n    <img src=\"" + __webpack_require__(119) + "\"/>\r\n  </div>\r\n  <div class=\"col-md-8\">\r\n    <div class=\"container\">\r\n      <p>Hola</p>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div>\r\n";
+	module.exports = "<div class=\"artist\">\r\n  <div class=\"container\">\r\n      <div class=\"fr-profile\">\r\n          <img align=\"left\" class=\"fr-image-lg\" src=\"" + __webpack_require__(155) + "\" alt=\"Profile image example\"/>\r\n          <img align=\"left\" class=\"fr-image-profile thumbnail\" src=\"" + __webpack_require__(156) + "\" alt=\"Profile image example\"/>\r\n          <div class=\"fr-profile-text\">\r\n              <h1>Nombre del artista</h1>\r\n              <p>Datos del artista.</p>\r\n          </div>\r\n      </div>\r\n  </div>\r\n<div>\r\n";
 
 /***/ },
 /* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "d9c331ef95b969f527a0278beb96e44f.jpg";
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(156);
+	var content = __webpack_require__(158);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65934,7 +65951,7 @@
 	}
 
 /***/ },
-/* 156 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65942,9 +65959,45 @@
 
 
 	// module
-	exports.push([module.id, "artist {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\nartist h {\n  color: #3a4585;\n  font-size: 16px;\n}\nartist span {\n  color: #002300;\n}\n", ""]);
+	exports.push([module.id, ".artist {\n  padding-left: 181px;\n}\n.artist h1 {\n  color: black;\n}\n.artist p {\n  color: black;\n}\n.artist .fr-profile img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.artist .fr-image-profile {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n}\n@media (max-width: 100%) {\n  .artist .fr-profile-text > h1 {\n    font-weight: 700;\n    font-size: 16px;\n  }\n  .artist .fr-image-profile {\n    margin: -45px 10px 0px 25px;\n    z-index: 9;\n    width: 20%;\n  }\n}\n", ""]);
 
 	// exports
+
+
+/***/ },
+/* 159 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var artistModule = angular.module('artistModule');
+	artistModule.factory('artistService', ['UserApiService', '$i18n', '$freevenModal',
+	    function (UserApiService, $i18n, $freevenModal) {
+
+	        var artistService = function () {
+
+	            var self = this;
+
+	            self.artist = {};
+
+	            self.loadArtist = function () {
+	                console.log("Consultando artista..");
+	                /*UserApiService.query(
+	                    //Param
+	                    {},
+	                    function (response) {
+	                        self.artist = response;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading all users');
+	                    });*/
+	            };
+
+	        };
+	        return new artistService();
+	    }]);
 
 
 /***/ }
