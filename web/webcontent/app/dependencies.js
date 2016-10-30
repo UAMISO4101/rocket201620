@@ -118,3 +118,7 @@ require('../app/help/helpService.js');
 require('../app/help/help.less');
 require('../app/help/helpItem/helpItemComponent.js');
 require('../app/help/helpItem/helpItem.less');
+
+require('../app/artist/artistModule.js');
+require('../app/artist/artistComponent.js');
+require('../app/artist/artist.less');

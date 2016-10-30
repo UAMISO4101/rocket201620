@@ -23,7 +23,8 @@ var appModules = [
     'trackModule',
     'userEditModule',
     'userPasswordModule',
-    'helpModule'
+    'helpModule',
+    'artistModule'
 
 ];
 
