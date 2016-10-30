@@ -31,6 +31,7 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                     });
             };
             self.logout = function () {
+                self.user={};
                 mainService.deleteUserToken();
             };
 
@@ -42,5 +43,3 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
         };
         return new loginService();
     }]);
-
-
