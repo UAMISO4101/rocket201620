@@ -7,6 +7,7 @@ class TrackSerializer(serializers.ModelSerializer):
     url = serializers.SerializerMethodField()
     gender = serializers.SerializerMethodField()
     artist = serializers.SerializerMethodField()
+    artist_id = serializers.SerializerMethodField()
 
     class Meta:
         model = Track
@@ -18,6 +19,7 @@ class TrackSerializer(serializers.ModelSerializer):
             'url',
             'score',
             'artist',
+            'artist_id'
         )
 
     def get_image(self, obj):
@@ -41,5 +43,11 @@ class TrackSerializer(serializers.ModelSerializer):
     def get_artist(self, obj):
         try:
             return obj.artist.user.username
+        except:
+            return None
+
+    def get_artist_id(self, obj):
+        try:
+            return obj.artist.id
         except:
             return None

@@ -197,6 +197,7 @@ def login_user_to_json(user):
         'email': user.email,
         'token': token.key,
         'is_artist': is_artist,
+        'id_user': user.id
     }
     return json_data
 
