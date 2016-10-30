@@ -123,3 +123,7 @@ require('../app/artist/artistModule.js');
 require('../app/artist/artistComponent.js');
 require('../app/artist/artist.less');
 require('../app/artist/artistService.js');
+
+ require('../app/topTrackList/topTrackListModule.js');
+ require('../app/topTrackList/topTrackListComponent.js');
+ require('../app/topTrackList/topTrackList.less');

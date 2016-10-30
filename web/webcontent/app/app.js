@@ -24,7 +24,8 @@ var appModules = [
     'userEditModule',
     'userPasswordModule',
     'helpModule',
-    'artistModule'
+    'artistModule',
+    'topTrackListModule'
 
 ];
 

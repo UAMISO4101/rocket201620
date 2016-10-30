@@ -24,11 +24,16 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     format: "json"
                 };
                 self.loading = true;
+                self.topTracks = [];
                 TrackApiService.loadTopTracks(
                     params,
                     function (response) {
                         self.loading = false;
-                        self.tracks = response.results;
+                        for (var i = 0; i < response.results.length; i++) {
+                            var track = response.results[i];
+                            track.position = i + 1;
+                            self.topTracks.push(track)
+                        }
                     },
                     function (error) {
                         console.log('Error loading tracks');

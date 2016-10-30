@@ -16,6 +16,9 @@
         $routeProvider.when('/artist', {
           template: '<artist></artist>'
         });
+        $routeProvider.when('/top', {
+          template: '<top-track-list></top-track-list>'
+        });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');
       }]
