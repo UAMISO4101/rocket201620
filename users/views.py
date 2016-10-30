@@ -5,6 +5,11 @@ from django.shortcuts import render, redirect
 from users.business_logic import register_user_in_model, get_info_users, login_service
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from rest_framework.generics import CreateAPIView
+from .models import Donation
+from .serializers import DonationSerializer
+from rest_framework.permissions import IsAuthenticated
+
 
 '''
     user
@@ -34,3 +39,9 @@ def login_user(request):
     if request.method == 'GET':
         response = login_service(request)
         return JsonResponse(response)
+
+
+class Donate(CreateAPIView):
+    queryset = Donation.objects.all()
+    serializer_class = DonationSerializer
+    permission_classes = (IsAuthenticated,)

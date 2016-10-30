@@ -8,5 +8,5 @@ urlpatterns = [
         name='user'
         ),
     url(r'^login/$', views.login_user, name='login'),
-
+    url(r'^donate/$', views.Donate.as_view(), name='donate'),
 ]
