@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from .views import (IndexView, GenderListView, GenderUpdateView,
                     GenderCreateView, BusinessAgentListView,
-                    BusinessAgentCreateView, BusinessAgentUpdateView)
+                    businessAgentCreate, businessAgentUpdate)
 
 
 urlpatterns = [
@@ -26,8 +26,7 @@ urlpatterns = [
     url(r'^gender/update/(?P<pk>\d+)/$', GenderUpdateView.as_view(),
         name='gender-update'),
     url(r'^agent/$', BusinessAgentListView.as_view(), name='agent-list'),
-    url(r'^agent/create/$', BusinessAgentCreateView.as_view(),
-        name='agent-create'),
-    url(r'^agent/update/(?P<pk>\d+)/$', BusinessAgentUpdateView.as_view(),
+    url(r'^agent/create/$', businessAgentCreate, name='agent-create'),
+    url(r'^agent/update/(?P<pk>\d+)/$', businessAgentUpdate,
         name='agent-update'),
 ]

@@ -2,9 +2,13 @@
 
 {% load staticfiles %}
 
+{% block css %}
+    <link href="{% static "manager/css/plugins/datapicker/datepicker3.css" %}" rel="stylesheet">
+{% endblock %}
+
 {% block breadcrumb %}
   <li>
-    <a href="{% url 'gender-list' %}">Agentes comerciales</a>
+    <a href="{% url 'agent-list' %}">Agentes comerciales</a>
   </li>
   <li class="active">
     <a href="#">Crear</a>
@@ -18,44 +22,66 @@
 	            <h5>Crear agentes comerciales</h5>
 	        </div>
 	        <div class="ibox-content">
-	            <form class="form-horizontal" method="post" action="{% url 'gender-create' %}">
+              {% if mensaje %}
+                    <div class="alert alert-danger">
+                        {{ mensaje }}
+                    </div>
+              {% endif %}
+	            <form class="form-horizontal" method="post" action="{% url 'agent-create' %}">
 	            	{% csrf_token %}
-	                <div class="form-group"><label class="col-lg-2 control-label">Usuario:</label>
+                <div class="form-group"><label class="col-lg-2 control-label">Usuario:</label>
+                    <div class="col-lg-10">
+                      <input type="text" placeholder="Usuario" name="username" class="form-control">
+                    </div>
+                </div>
+                  <div class="form-group"><label class="col-lg-2 control-label">Nombres:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Nombre" name="name" class="form-control" value="{{ agent.user }}">
-                    		<span class="help-block m-b-none">
-                    			Ingresa el nombre del género.
-                    		</span>
+	                    	<input type="text" placeholder="Nombres" name="first_name" class="form-control">
+	                    </div>
+	                </div>
+                  <div class="form-group"><label class="col-lg-2 control-label">Apellidos:</label>
+	                    <div class="col-lg-10">
+	                    	<input type="text" placeholder="Apellidos" name="last_name" class="form-control">
+	                    </div>
+	                </div>
+                  <div class="form-group"><label class="col-lg-2 control-label">Correo:</label>
+	                    <div class="col-lg-10">
+	                    	<input type="email" placeholder="Correo" name="email" class="form-control">
+	                    </div>
+	                </div>
+                  <div class="form-group"><label class="col-lg-2 control-label">Contraseña:</label>
+	                    <div class="col-lg-10">
+	                    	<input type="password" placeholder="Contraseña" name="password1" class="form-control">
+	                    </div>
+	                </div>
+                  <div class="form-group"><label class="col-lg-2 control-label">Confirmación de contraseña:</label>
+	                    <div class="col-lg-10">
+	                    	<input type="password" placeholder="Confirmación de contraseña" name="password2" class="form-control">
 	                    </div>
 	                </div>
 	                <div class="form-group"><label class="col-lg-2 control-label">Teléfono:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Telefono" name="telephone_number" class="form-control" value="{{ agent.telephone_number }}">
+	                    	<input type="text" placeholder="Telefono" name="telephone_number" class="form-control">
 	                    </div>
 	                </div>
                   <div class="form-group"><label class="col-lg-2 control-label">Avatar:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="file" placeholder="Avatar" name="avatar" class="form-control" value="{{ agent.avatar }}">
+	                    	<input type="file" placeholder="Avatar" name="avatar" class="form-control">
 	                    </div>
 	                </div>
                   <div class="form-group"><label class="col-lg-2 control-label">Dirección:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Dirección" name="address" class="form-control" value="{{ agent.address }}">
+	                    	<input type="text" placeholder="Dirección" name="address" class="form-control">
 	                    </div>
 	                </div>
                   <div class="form-group"><label class="col-lg-2 control-label">Ciudad:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Ciudad" name="city" class="form-control" value="{{ agent.city }}">
+	                    	<input type="text" placeholder="Ciudad" name="city" class="form-control">
 	                    </div>
 	                </div>
                   <div class="form-group"><label class="col-lg-2 control-label">País:</label>
 	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="País" name="country" class="form-control" value="{{ agent.country }}">
-	                    </div>
-	                </div>
-                  <div class="form-group"><label class="col-lg-2 control-label">Fecha de nacimiento:</label>
-	                    <div class="col-lg-10">
-	                    	<input type="text" placeholder="Fecha de nacimiento" name="birth_date" class="form-control" value="{{ agent.birth_date }}">
+	                    	<input type="text" placeholder="País" name="country" class="form-control">
 	                    </div>
 	                </div>
 	                <div class="form-group">
@@ -67,4 +93,17 @@
 	        </div>
 	    </div>
 	</div>
+
+  <!-- Data picker -->
+  <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+  <script>
+    $('#data_1 .input-group.date').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+    });
+  </script>
 {% endblock %}

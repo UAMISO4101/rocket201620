@@ -1,10 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.shortcuts import render, redirect
 from tracks.models import Gender
 from users.models import BusinessAgent
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
-
 from django.core.urlresolvers import reverse
+from users.business_logic import (
+    register_business_agent, update_business_agent
+)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -56,42 +59,27 @@ class BusinessAgentListView(ListView):
     context_object_name = 'agents'
 
 
-@method_decorator(login_required, name='dispatch')
-class BusinessAgentCreateView(CreateView):
-    model = BusinessAgent
-    template_name = 'businessAgent_create.html'
-    context_object_name = 'agent'
-    fields = [
-        'user',
-        'telephone_number',
-        'avatar',
-        'address',
-        'city',
-        'country',
-        'birth_date',
-    ]
-
-    def get_success_url(self):
-        return reverse('agent-list')
+def businessAgentCreate(request):
+    if request.user.is_authenticated():
+        mensaje = ''
+        if request.method == 'POST':
+            mensaje = register_business_agent(request)
+            if mensaje == '':
+                return redirect(reverse('agent-list'))
+        return render(request,
+                      'businessAgent_create.html', {'mensaje': mensaje})
+    else:
+        return redirect(reverse('manager'))
 
 
 @method_decorator(login_required, name='dispatch')
-class BusinessAgentUpdateView(UpdateView):
-    model = BusinessAgent
-    template_name = 'businessAgent_update.html'
-    context_object_name = 'agent'
-    fields = [
-        'username',
-        'first_name',
-        'last_name',
-        'email',
-        'telephone_number',
-        'avatar',
-        'address',
-        'city',
-        'country',
-        'birth_date',
-    ]
+def businessAgentUpdate(request):
+    if request.user.is_authenticated():
+        return redirect(reverse('agent-list'))
 
-    def get_success_url(self):
-        return reverse('agent-list')
+    mensaje = ''
+    if request.method == 'POST':
+        mensaje = update_business_agent(request)
+        if mensaje == '':
+            return redirect(reverse('manager'))
+    return render(request, 'businessAgent_update.html', {'mensaje': mensaje})
