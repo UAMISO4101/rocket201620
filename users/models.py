@@ -33,3 +33,10 @@ class Artist(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Donation(models.Model):
+    artist = models.ForeignKey(Artist)
+    user = models.ForeignKey(User)
+    date = models.DateTimeField(auto_now_add=True)
+    value = models.IntegerField()
