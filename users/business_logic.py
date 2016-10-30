@@ -1,8 +1,10 @@
 # -*- coding: UTF-8 -*-
 from django.contrib.auth.models import User
-from users.models import Artist, BusinessAgent
+from users.models import Artist, BusinessAgent, TokenUser
 from django.contrib.auth import authenticate, login
 from rest_framework.authtoken.models import Token
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 '''
@@ -70,9 +72,9 @@ def register_user_in_model(json_data):
             if password1 != password2:
                 status = 'Las contrasenias no coinciden.'
             else:
-
-                user_model = User.objects.create_user(username=username, password=password1, email=email,
-                                                      first_name=first_name, last_name=last_name)
+                user_model = User.objects.create_user(username=username,
+                    password=password1, email=email, first_name=first_name,
+                    last_name=last_name)
                 user_model.save()
 
                 if is_artist is False:
@@ -102,7 +104,8 @@ def str_to_bool(s):
     elif s == 'False':
         return False
     else:
-        raise ValueError  # evil ValueError that doesn't tell you what the wrong value was
+        raise ValueError  # evil ValueError that doesn't tell you what the
+                          # wrong value was
 
 
 '''
@@ -152,19 +155,19 @@ def relation_user_to_artist(user_model, json_data):
 
 
 def login_service(request):
-     username = request.GET.get('username')
-     password = request.GET.get('password')
+    username = request.GET.get('username')
+    password = request.GET.get('password')
 
-     if (username is not None and password is not None):
-         user = authenticate(username=username, password=password)
-         if user is not None:
-             login(request, user)
-             return login_user_to_json(user)
-         else:
-             status = 'Usuario o clave incorrecta.'
-     else:
-         status = 'Todos los campos son obligatorios.'
-     return {'status': status}
+    if (username is not None and password is not None):
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return login_user_to_json(user)
+        else:
+            status = 'Usuario o clave incorrecta.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
 
 
 '''
@@ -287,3 +290,45 @@ def update_business_agent_process(user, request):
 
     agent.save()
     return True
+
+
+def password_restore_main(request):
+    username = request.GET.get('username')
+
+    if (username is not None):
+        user = User.objects.get(username=username)
+        if user is not None:
+            if password_restore_action(user, request):
+                status = 'Correo enviado.'
+            else:
+                status = 'Error en el envio del correo.'
+        else:
+            status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
+
+
+def password_restore_action(user, request):
+
+    dto = TokenUser.objects.get(user__id=user.id)
+    if dto is None:
+        dto = TokenUser()
+        dto.user = user
+        dto.save()
+
+    try:
+        subject = 'Freeven :: Servicio de recuperación de contraseña'
+        body_text = 'Estimado ' + user.first_name + ', \n\n'
+        body_text = body_text + 'Para recuperar su clave haga clic en el '
+        body_text = body_text + 'siguiente enlace: \n\n'
+        body_text = body_text + 'http://' + request.META['HTTP_HOST']
+        body_text = body_text + '/user/pass_restore/?id=' + str(user.id)
+        body_text = body_text + '&token=' + dto.token
+        body_text = body_text + '\n\n Cordial saludo,'
+
+        send_mail(subject, body_text, settings.EMAIL_HOST_USER,
+                  ['administrator@freeven.herokuapp.com'], fail_silently=True)
+        return True
+    except:
+        return False
