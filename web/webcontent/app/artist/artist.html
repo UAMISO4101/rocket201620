@@ -2,10 +2,15 @@
   <div class="container">
       <div class="fr-profile">
           <img align="left" class="fr-image-lg" src="../styles/images/portada.jpg" alt="Profile image example"/>
-          <img align="left" class="fr-image-profile thumbnail" src="../styles/images/adele.jpg" alt="Profile image example"/>
+          <img align="left" class="fr-image-profile thumbnail" src="{{ctrl.artist.infoArtist.avatar}}" alt="Profile image example"/>
           <div class="fr-profile-text">
-              <h1>Nombre del artista</h1>
-              <p>Datos del artista.</p>
+              <h1>{{ctrl.artist.artist.username}}</h1>
+              <p>{{ctrl.artist.artist.first_name}} {{ctrl.artist.artist.last_name}}</p>
+               <p>{{ctrl.artist.infoArtist.city}}</p> <p>{{ctrl.artist.infoArtist.country}}
+                 <a href="#">
+                   <span class="glyphicon glyphicon-map-marker"></span>
+                 </a>
+               </p>
           </div>
       </div>
   </div>

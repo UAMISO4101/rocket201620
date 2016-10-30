@@ -49,6 +49,7 @@ require('../app/main/mainService.js');
 require('../app/restAPI/restAPIModule.js');
 require('../app/restAPI/tracksAPIService.js');
 require('../app/restAPI/userAPIService.js');
+require('../app/restAPI/artistAPIService.js');
 
 /**
  * Registro de componentes nuevos

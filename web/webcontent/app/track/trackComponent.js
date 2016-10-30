@@ -8,9 +8,6 @@ var TrackController = ['$i18n', 'trackListService', 'mainService','artistService
         trackListService.playSelected(track);
     }
 
-    self.loadArtist = function() {
-        artistService.loadArtist();
-    }
 
 }];
 

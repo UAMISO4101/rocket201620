@@ -13,7 +13,7 @@
         $routeProvider.when('/', {
           template: '<track-list> </track-list>'
         });
-        $routeProvider.when('/artist', {
+        $routeProvider.when('/artist/:idArtist', {
           template: '<artist></artist>'
         });
         $routeProvider.otherwise({redirectTo: '/'});

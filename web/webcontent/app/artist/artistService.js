@@ -3,27 +3,31 @@
  */
 
 var artistModule = angular.module('artistModule');
-artistModule.factory('artistService', ['UserApiService', '$i18n', '$freevenModal',
-    function (UserApiService, $i18n, $freevenModal) {
+artistModule.factory('artistService', ['ArtistApiService', '$i18n', '$freevenModal','$resource',
+    function (ArtistApiService, $i18n, $freevenModal,$resource) {
 
         var artistService = function () {
 
             var self = this;
 
             self.artist = {};
+            self.infoArtist = {};
 
-            self.loadArtist = function () {
-                console.log("Consultando artista..");
-                /*UserApiService.query(
-                    //Param
-                    {},
-                    function (response) {
-                        self.artist = response;
+            self.loadArtist = function (id) {
+                var self = this;
+                    ArtistApiService.get({userId:id}, function(response) {
+                        self.artist = response.user;
+                        self.infoArtist.avatar  = response.avatar;
+                        self.infoArtist.city =  response.city;
+                        self.infoArtist.country = response.country;
+
                     },
                     function (error) {
-                        console.log('Error loading all users');
-                    });*/
+                    });
+
             };
+
+
 
         };
         return new artistService();
