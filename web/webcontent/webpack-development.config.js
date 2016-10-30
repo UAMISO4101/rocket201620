@@ -78,7 +78,7 @@ module.exports = {
         },
         proxy: {
             "/api*": {
-                target: 'https://freeven.herokuapp.com',
+                target: 'https://freeven-srv-dev.herokuapp.com',
                 secure: false
             }
         }
