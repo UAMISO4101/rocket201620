@@ -1,4 +1,6 @@
 import os
+from datetime import timedelta
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,6 +17,7 @@ INSTALLED_APPS = [
     'rest_framework_social_oauth2',
     'oauth2_provider',
     'social.apps.django_app.default',
+    'djcelery',
     'users',
     'manager',
     'tracks',
@@ -57,16 +60,20 @@ WSGI_APPLICATION = 'freeven.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -74,15 +81,16 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
         'rest_framework_social_oauth2.authentication.SocialAuthentication',
-        #'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10
 }
 
 AUTHENTICATION_BACKENDS = (
-    #Django Auth
+    # Django Auth
     'django.contrib.auth.backends.ModelBackend',
     # Facebook OAuth2
     'social.backends.facebook.FacebookAppOAuth2',
@@ -101,8 +109,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['GOOGLE_OAUTH2_KEY']
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['GOOGLE_OAUTH2_SECRET']
 
-# Define SOCIAL_AUTH_FACEBOOK_SCOPE to get extra permissions from facebook.
-#Email is not sent by default, to get it, you must request the email permission:
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 LANGUAGE_CODE = 'es-co'
@@ -122,3 +128,19 @@ STATICFILES_DIRS = [
     ('production', BASE_DIR + '/../web/webcontent/dist/production'),
 ]
 
+GEOIP_PATH = BASE_DIR + '/geoip/'
+
+BROKER_URL = 'redis://' + os.environ['REDIS_HOST'] + ':' + \
+    os.environ['REDIS_PORT'] + '/0'
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/Bogota'
+
+CELERYBEAT_SCHEDULE = {
+    'top10-every-hour': {
+        'task': 'tracks.tasks.top10',
+        'schedule': timedelta(seconds=5),
+    },
+}

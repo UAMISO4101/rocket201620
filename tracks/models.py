@@ -22,3 +22,10 @@ class Track(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Top(models.Model):
+    track = models.ForeignKey(Track, related_name='track')
+    quantity = models.IntegerField()
+    action = models.CharField(max_length=50)
+    top_type = models.CharField(max_length=50)
