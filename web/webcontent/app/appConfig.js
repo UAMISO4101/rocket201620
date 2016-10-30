@@ -11,7 +11,10 @@
         $translateProvider.preferredLanguage('en-us');
         $translateProvider.useSanitizeValueStrategy(null);
         $routeProvider.when('/', {
-          template: '<main title ="Main"> </main>'
+          template: '<track-list> </track-list>'
+        });
+        $routeProvider.when('/artist', {
+          template: '<artist></artist>'
         });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');

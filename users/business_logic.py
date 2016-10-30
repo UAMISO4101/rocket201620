@@ -180,12 +180,18 @@ def login_user_to_json(user):
     except:
         token = Token.objects.get(user=user)
 
+    artist = Artist.objects.get(user__id=user.id)
+    is_artist = false
+    if artist is not None:
+        is_artist = true
+
     json_data = {
         'first_name': user.first_name,
         'last_name': user.last_name,
         'username': user.username,
         'email': user.email,
-        'token': token.key
+        'token': token.key,
+        'is_artist': is_artist,
     }
     return json_data
 

@@ -1,6 +1,6 @@
 var userEditModule = angular.module('userEditModule');
-var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
-    function ($i18n, $freevenModal, userEditService, $scope) {
+var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope','userPasswordService',
+    function ($i18n, $freevenModal, userEditService, $scope,userPasswordService) {
         /**
          * Tip: add here only visual logic
          */
@@ -11,7 +11,17 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
 
         self.photoProfile = [];
 
+        var img = {"img":self.userEdit.user.avatar}
+
+        self.photoProfile.push(img);
+
         self.passwordOk = true;
+
+        self.userEditPassword = userPasswordService;
+
+        self.showEditPasswordPopup = function () {
+            self.userEditPassword.showEditPopup();
+        };
 
         self.close = function () {
             userEditService.closeModal();
@@ -21,11 +31,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             if (self.userEdit.user === undefined) {
             } else {
                 var typeUser = self.userEdit.user.is_artist;
-                if (self.userEdit.user.password1 != self.userEdit.user.password2) {
-                    self.passwordOk = false;
-                } else {
-                    self.passwordOk = true;
-                }
                 if ((typeUser == 'True') && self.passwordOk == true) {
                     var saveArtist = self.validateFieldsArtist();
                     if (saveArtist) {
@@ -45,8 +50,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             if (self.userEdit.user.first_name == undefined
                 || self.userEdit.user.last_name == undefined
                 || self.userEdit.user.username == undefined
-                || self.userEdit.user.password1 == undefined
-                || self.userEdit.user.password2 == undefined
                 || self.userEdit.user.email == undefined
                 || self.userEdit.user.is_artist == undefined
                 || self.userEdit.user.artistic_name == undefined
@@ -70,8 +73,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             if (self.userEdit.user.first_name == undefined
                 || self.userEdit.user.last_name == undefined
                 || self.userEdit.user.username == undefined
-                || self.userEdit.user.password1 == undefined
-                || self.userEdit.user.password2 == undefined
                 || self.userEdit.user.email == undefined
                 || self.userEdit.user.is_artist == undefined
             ) {
@@ -99,8 +100,9 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
         }
 
         $scope.imageIsLoaded = function (e) {
+              img = {}
             $scope.$apply(function () {
-                var img = {"img": e.target.result};
+                img = {"img": e.target.result};
                 self.photoProfile.push(img);
             });
         }
