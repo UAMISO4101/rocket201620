@@ -1,16 +1,41 @@
-artist {
-  display: block;
-  background-color: #fdffff;
-  padding: 5px;
-  margin: 8px;
-  border-radius:  3px;
-  border: 1px solid #dadada;
-  box-shadow: 0 4px 6px -3px hsla(0,0%,76%,.15);
-  h{
-    color: #3a4585;
-    font-size: 16px;
+.artist {
+
+  padding-left: 181px;
+
+  h1 {
+    color: black;
   }
-  span{
-    color: #002300;
+
+  p {
+    color: black;
+  }
+
+  .fr-profile img.fr-image-lg{
+      z-index: 0;
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .fr-image-profile
+  {
+      margin: -90px 10px 0px 50px;
+      z-index: 9;
+      width: 20%;
+  }
+
+  @media (max-width:100%)
+  {
+
+  .fr-profile-text>h1{
+      font-weight: 700;
+      font-size:16px;
+  }
+
+  .fr-image-profile
+  {
+      margin: -45px 10px 0px 25px;
+      z-index: 9;
+      width: 20%;
+  }
   }
 }

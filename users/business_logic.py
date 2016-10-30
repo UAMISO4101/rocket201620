@@ -180,14 +180,15 @@ def login_service(request):
 
 
 def login_user_to_json(user):
-    is_artist = False
     try:
         artist = Artist.objects.get(user__id=user.id)
-        if artist is not None:
-            is_artist = True
+        is_artist = True
+    except:
+        is_artist = False
+    try:
         token = Token.objects.create(user=user)
     except:
-        token = Token.objects.get(user=user)
+        token = Token.objects.get(user__id=user.id)
 
     json_data = {
         'first_name': user.first_name,
@@ -196,6 +197,7 @@ def login_user_to_json(user):
         'email': user.email,
         'token': token.key,
         'is_artist': is_artist,
+        'id_user': user.id
     }
     return json_data
 
@@ -355,6 +357,26 @@ def change_password_action(request):
                 status = status + 'clave.'
         except:
             status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
+
+
+def change_password_op_action(request):
+    username = request.GET.get('username')
+    password = request.GET.get('password')
+    old_password = request.GET.get('old_password')
+
+    if (username is not None and password is not None and
+            old_password is not None):
+        user = authenticate(username=username, password=old_password)
+        if user is not None:
+            print(user)
+            user.set_password(password)
+            user.save()
+            status = 'La clave fue actualizada.'
+        else:
+            status = 'Usuario o clave  incorrecta.'
     else:
         status = 'Todos los campos son obligatorios.'
     return {'status': status}

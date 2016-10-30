@@ -2,6 +2,7 @@
     <div class="header">
         <div class="header-section">
             <h3 class="brand-section">Freeven</h3>
+            <search class="fr-search" title ="Search"> </search>
         </div>
         <div class="header-section">
             <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">Ver ayuda</a>
@@ -28,7 +29,6 @@
             <div class="content-section">
                 <div class="row-col">
                     <div class="col-lg-12 b-r no-border-md">
-                        <!-- Track list component -->
                         <div ng-view=""></div>
                     </div>
                     <!-- <div class="col-lg-3 w-xxl w-auto-md freeven-aside">
