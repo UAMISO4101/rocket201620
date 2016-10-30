@@ -19,6 +19,9 @@
         $routeProvider.when('/top', {
           template: '<top-track-list></top-track-list>'
         });
+         $routeProvider.when('/upload', {
+          template: '<track-creator></track-creator>'
+        });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');
       }]

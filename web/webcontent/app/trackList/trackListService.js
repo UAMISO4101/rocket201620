@@ -67,7 +67,8 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
 
             self.playFirstTrack = function () {
-                if (self.tracks.length > 0) {
+                 var self = this;
+                if (self.tracks && self.tracks.length > 0) {
                     playerService.playTrack(self.tracks[0]);
                 }
             };

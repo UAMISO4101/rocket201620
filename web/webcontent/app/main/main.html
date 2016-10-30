@@ -2,11 +2,11 @@
     <div class="header">
         <div class="header-section">
             <h3 class="brand-section">Freeven</h3>
-            <search class="fr-search" title ="Search"> </search>
+            <search class="fr-search" title="Search"></search>
         </div>
         <div class="header-section">
             <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">Ver ayuda</a>
-            <a class="header-item" ng-if="ctrl.mainService.isArtist()">Subir obras musicales</a>
+            <a href="#/upload" class="header-item" ng-if="ctrl.mainService.isArtist()">Subir obras musicales</a>
             <user-menu class="fr-user-menu" ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
         </div>
     </div>

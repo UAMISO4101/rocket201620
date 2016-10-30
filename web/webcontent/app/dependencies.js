@@ -127,3 +127,7 @@ require('../app/artist/artistService.js');
  require('../app/topTrackList/topTrackListModule.js');
  require('../app/topTrackList/topTrackListComponent.js');
  require('../app/topTrackList/topTrackList.less');
+
+ require('../app/trackCreator/trackCreatorModule.js');
+ require('../app/trackCreator/trackCreatorComponent.js');
+ require('../app/trackCreator/trackCreator.less');

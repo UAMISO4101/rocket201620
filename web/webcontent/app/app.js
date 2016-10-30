@@ -8,6 +8,7 @@ var appModules = [
     'restAPIModule',
     'i18nModule',
     'masonry',
+    'ngFileUpload',
     'notifierModule',
     'splashModule',
     'commonDirectivesModule',
@@ -25,8 +26,8 @@ var appModules = [
     'userPasswordModule',
     'helpModule',
     'artistModule',
-    'topTrackListModule'
-
+    'topTrackListModule',
+    'trackCreatorModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
