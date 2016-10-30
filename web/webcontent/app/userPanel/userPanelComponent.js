@@ -1,8 +1,12 @@
-var  userPanelModule = angular.module('userPanelModule');
-var UserPanelController = ['$i18n', function ($i18n) {
+var userPanelModule = angular.module('userPanelModule');
+var UserPanelController = ['trackListService', function (trackListService) {
     /**
      * Tip: add here only visual logic
      */
+    var self = this;
+    self.loadTopTracks = function () {
+        trackListService.loadTopTracks();
+    };
 }];
 
 userPanelModule.component('userPanel', {

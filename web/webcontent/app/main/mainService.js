@@ -12,29 +12,39 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
             self.user = {};
 
             self.isAuthenticated = function () {
-                self.user.token = $cookieStore.get('user_token');
                 if (self.user.token) {
-                    self.user.first_name = $cookieStore.get('first_name');
                     return true;
-                } else {
-                    return false;
                 }
-            };
-            self.setUserToken = function (token) {
-                $cookieStore.put('user_token', token);
-
-            };
-            self.setUserFirstName = function (first_name) {
-
-                $cookieStore.put('first_name',first_name);
+                return false;
             };
 
-            self.deleteUserToken = function (){
-                $cookieStore.remove('user_token');
+            self.logout = function () {
+                self.user = {};
+                self.deleteUserCookies();
+            };
+
+            self.isArtist = function () {
+                return self.user.is_artist;
+            };
+
+            self.setUserData = function (userData) {
+                self.user = userData;
+                self.saveUserCookies(userData);
+            };
+            self.loadUserDataFromCookies = function () {
+                self.user = $cookieStore.get('user_data') || {};
+            };
+
+            self.saveUserCookies = function (userData) {
+                $cookieStore.put('user_data', userData);
+            };
+
+            self.deleteUserCookies = function () {
+                $cookieStore.remove('user_data');
             }
 
         };
-        return new mainService();
+        var main = new mainService();
+        main.loadUserDataFromCookies();
+        return main;
     }]);
-
-
