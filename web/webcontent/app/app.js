@@ -22,7 +22,10 @@ var appModules = [
     'userRegisterModule',
     'trackModule',
     'userEditModule',
-    'helpModule'
+    'userPasswordModule',
+    'helpModule',
+    'artistModule'
+
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
