@@ -6,11 +6,11 @@ from users.business_logic import register_user_in_model, get_info_users, login_s
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from rest_framework.generics import CreateAPIView
-from .models import Donation
-from .serializers import DonationSerializer
+from .models import Donation, Artist
+from .serializers import DonationSerializer, ArtistSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import filters
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 
 '''
@@ -57,3 +57,11 @@ class DonationList(ListAPIView):
     filter_fields = (
         'artist__id',
     )
+
+
+class ArtistRetrieveView(RetrieveAPIView):
+    serializer_class = ArtistSerializer
+
+    def get_queryset(self):
+        artist = Artist.objects.filter(pk=self.kwargs['pk'])
+        return artist
