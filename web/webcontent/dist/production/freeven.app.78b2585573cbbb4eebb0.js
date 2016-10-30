@@ -67,7 +67,11 @@
 	    'loginModule',
 	    'userRegisterModule',
 	    'trackModule',
-	    'userEditModule'
+	    'userEditModule',
+	    'userPasswordModule',
+	    'helpModule',
+	    'artistModule'
+
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -184,10 +188,27 @@
 	__webpack_require__(126);
 	__webpack_require__(128);
 
-	 __webpack_require__(130);
-	 __webpack_require__(131);
-	 __webpack_require__(133);
+	__webpack_require__(130);
+	__webpack_require__(131);
+	__webpack_require__(133);
 	__webpack_require__(135);
+
+	__webpack_require__(136);
+	__webpack_require__(137);
+	__webpack_require__(139);
+	__webpack_require__(141);
+
+	__webpack_require__(142);
+	__webpack_require__(143);
+	__webpack_require__(145);
+	__webpack_require__(146);
+	__webpack_require__(148);
+	__webpack_require__(150);
+
+	__webpack_require__(152);
+	__webpack_require__(153);
+	__webpack_require__(155);
+
 
 /***/ },
 /* 2 */
@@ -62254,7 +62275,10 @@
 	        $translateProvider.preferredLanguage('en-us');
 	        $translateProvider.useSanitizeValueStrategy(null);
 	        $routeProvider.when('/', {
-	          template: '<main title ="Main"> </main>'
+	          template: '<track-list> </track-list>'
+	        });
+	        $routeProvider.when('/artist', {
+	          template: '<artist></artist>'
 	        });
 	        $routeProvider.otherwise({redirectTo: '/'});
 	        $httpProvider.interceptors.push('notifierInterceptor');
@@ -62291,7 +62315,10 @@
 		"my_account": "Mi perfil",
 		"general_edit_user": "Guardar",
 		"user_edit_success": "Actualización",
-		"user_edit_success_detail": "Actualización exitosa"
+		"user_edit_success_detail": "Actualización exitosa",
+		"general_psw_user": "Actualizar",
+		"usermenu_password_profile": "Cambiar contraseña",
+		"user_password_success_detail": "Contraseña actualizada"
 	};
 
 /***/ },
@@ -62322,7 +62349,10 @@
 		"general_edit_user": "Save",
 		"user_edit_success": "Update",
 		"user_edit_success_detail": "Success update",
-		"usermenu_edit_profile": "Edit profile"
+		"usermenu_edit_profile": "Edit profile",
+		"general_psw_user": "Update password",
+		"usermenu_password_profile": "Change password",
+		"user_password_success_detail": "Success update password"
 	};
 
 /***/ },
@@ -62854,7 +62884,7 @@
 	var notifierModule = angular.module('notifierModule', ['angular-growl']);
 
 	notifierModule.config(['growlProvider', function (growlProvider) {
-	    growlProvider.globalTimeToLive(50000);
+	    growlProvider.globalTimeToLive(5000);
 	    growlProvider.globalDisableIcons(true);
 	    growlProvider.globalDisableCountDown(true);
 	}]);
@@ -63608,13 +63638,21 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var mainModule = angular.module('mainModule');
-	var MainController = ['$i18n', 'mainService', function ($i18n, mainService) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    var self = this;
-	    self.mainService = mainService;
-	}];
+	var MainController = ['$i18n', 'mainService', 'helpService',
+	    function ($i18n, mainService, helpService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.mainService = mainService;
+
+	        self.enableHelp = function () {
+	            helpService.setEnable(true);
+	            helpService.enablePlayer();
+	        }
+
+	    }];
 
 	mainModule.component('main', {
 	    transclude: true,
@@ -63631,7 +63669,7 @@
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n       <user-menu ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        Header 2\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture  class=\"freeven-player-picture\" title =\"PlayerPicture\"> </player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <!-- Track list component -->\r\n                        <track-list class=\"freeven-track-list\" title=\"TrackList\"></track-list>\r\n\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n\r\n                         <r-i18n></r-i18n>\r\n\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl></div>\r\n</div>\r\n\r\n\r\n";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a class=\"header-item\">Subir obras musicales</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"wrap flex\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n        <div class=\"flex\">\r\n            <div class=\"sidebar\">\r\n                <h3 class=\"app-title\">Freeven</h3>\r\n                <user-panel title=\"UserPanel\"></user-panel>\r\n                <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n            </div>\r\n            <div class=\"content-section\">\r\n                <div class=\"row-col\">\r\n                    <div class=\"col-lg-12 b-r no-border-md\">\r\n                        <!-- Track list component -->\r\n                        <div ng-view=\"\"></div>\r\n                    </div>\r\n                    <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                         <r-i18n></r-i18n>\r\n                     </div>-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 61 */
@@ -63673,7 +63711,7 @@
 	exports.i(__webpack_require__(67), "");
 
 	// module
-	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main .header {\n  background-color: #02b875;\n  position: fixed;\n  top: 0px;\n  height: 50px;\n  z-index: 4;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header-fake {\n  background-color: #02b875;\n  height: 50px;\n  width: 100%;\n  display: block;\n  margin-top: calc(100vh);\n  margin-bottom: 200px;\n  padding: 0 10px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  min-width: 200px;\n  width: 12%;\n  background-color: rgba(54, 60, 67, 0);\n  position: relative;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  position: absolute;\n  bottom: 0px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  height: calc(100vh - 70px);\n  background-color: white;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  height: 70px;\n  background-color: #202225;\n  border-top: 1px solid #000;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
+	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main a {\n  cursor: pointer;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 200px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  min-width: 200px;\n  width: 12%;\n  background-color: rgba(54, 60, 67, 0);\n  position: relative;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  position: absolute;\n  bottom: 0px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  height: calc(100vh - 70px);\n  background-color: white;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  height: 70px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
 
 	// exports
 
@@ -63735,45 +63773,43 @@
 /***/ function(module, exports) {
 
 	/**
-	 * Created by diego on 8/10/2016.
-	 */
+	* Created by diego on 8/10/2016.
+	*/
 
 	var mainModule = angular.module('mainModule');
 	mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', '$cookieStore',
-	    function ($i18n, $freevenModal, notifierService, $cookieStore) {
-	        var mainService = function () {
+	function ($i18n, $freevenModal, notifierService, $cookieStore) {
+	  var mainService = function () {
 
-	            var self = this;
+	    var self = this;
 
-	            self.user = {};
+	    self.user = {};
 
-	            self.isAuthenticated = function () {
-	                self.user.token = $cookieStore.get('user_token');
-	                if (self.user.token) {
-	                    self.user.first_name = $cookieStore.get('first_name');
-	                    return true;
-	                } else {
-	                    return false;
-	                }
-	            };
-	            self.setUserToken = function (token) {
-	                $cookieStore.put('user_token', token);
+	    self.isAuthenticated = function () {
+	      self.user.token = $cookieStore.get('user_token');
+	      if (self.user.token) {
+	        self.user.first_name = $cookieStore.get('first_name');
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    };
+	    self.setUserToken = function (token) {
+	      $cookieStore.put('user_token', token);
 
-	            };
-	            self.setUserFirstName = function (first_name) {
+	    };
+	    self.setUserFirstName = function (first_name) {
 
-	                $cookieStore.put('first_name',first_name);
-	            };
+	      $cookieStore.put('first_name',first_name);
+	    };
 
-	            self.deleteUserToken = function (){
-	                $cookieStore.remove('user_token');
-	            }
+	    self.deleteUserToken = function (){
+	      $cookieStore.remove('user_token');
+	    }
 
-	        };
-	        return new mainService();
-	    }]);
-
-
+	  };
+	  return new mainService();
+	}]);
 
 
 /***/ },
@@ -63802,6 +63838,12 @@
 	            params: {},
 	            isArray: false,
 
+	        },
+	        loadTopTracks: {
+	            url: 'api/track/top',
+	            method: 'GET',
+	            params: {},
+	            isArray: false
 	        }
 	    });
 	}]);
@@ -63950,6 +63992,22 @@
 	                        console.log('Error loading tracks');
 	                    });
 	            };
+
+	            self.loadTopTracks = function () {
+	                var params = {
+	                    format: "json"
+	                };
+	                self.loading = true;
+	                TrackApiService.loadTopTracks(
+	                    params,
+	                    function (response) {
+	                        self.loading = false;
+	                        self.tracks = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
+	            };
 	            self.nextPage = function () {
 	                var params = {};
 	                params.format = "json";
@@ -63975,6 +64033,12 @@
 	            self.playSelected = function (track) {
 	                self.selectedTrack = track;
 	                playerService.playTrack(track);
+	            };
+
+	            self.playFirstTrack = function () {
+	                if (self.tracks.length > 0) {
+	                    playerService.playTrack(self.tracks[0]);
+	                }
 	            };
 
 	            self.next = function () {
@@ -64055,11 +64119,15 @@
 /* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  userPanelModule = angular.module('userPanelModule');
-	var UserPanelController = ['$i18n', function ($i18n) {
+	var userPanelModule = angular.module('userPanelModule');
+	var UserPanelController = ['trackListService', function (trackListService) {
 	    /**
 	     * Tip: add here only visual logic
 	     */
+	    var self = this;
+	    self.loadTopTracks = function () {
+	        trackListService.loadTopTracks();
+	    };
 	}];
 
 	userPanelModule.component('userPanel', {
@@ -64077,7 +64145,7 @@
 /* 82 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a>\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>{{'top_tracks' | translate}}</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a ng-click=\"ctrl.loadTopTracks()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>{{'top_tracks' | translate}}</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 83 */
@@ -64114,7 +64182,7 @@
 
 
 	// module
-	exports.push([module.id, ".user-panel {\n  position: fixed;\n  top: 100px;\n  display: block;\n  width: 16%;\n}\n.user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  padding: 5px 6px;\n  cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, ".user-panel {\n  position: fixed;\n  top: 100px;\n  display: block;\n}\n.user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  padding: 5px 6px;\n  cursor: pointer;\n}\n", ""]);
 
 	// exports
 
@@ -64137,7 +64205,8 @@
 
 	var userMenuModule = angular.module('userMenuModule');
 	var UserMenuController = ['$i18n', 'userMenuService', 'loginService', 'mainService',
-	    'userEditService', function ($i18n, userMenuService, loginService, mainService, userEditService) {
+	    'userEditService','userPasswordService',
+	    function ($i18n, userMenuService, loginService, mainService, userEditService,userPasswordService) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -64180,7 +64249,7 @@
 /* 87 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>";
+	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
 
 /***/ },
 /* 88 */
@@ -64217,7 +64286,7 @@
 
 
 	// module
-	exports.push([module.id, ".user-menu .menu {\n  list-style: none;\n  margin: 0px;\n  padding: 0px;\n}\n.user-menu .menu:before {\n  content: \"[\";\n}\n.user-menu .menu:after {\n  content: \"]\";\n}\n.user-menu .menu > li {\n  display: inline;\n}\n.user-menu .menu > li:before {\n  content: \"|\";\n  padding-right: 0.3em;\n}\n.user-menu .menu > li:nth-child(1):before {\n  content: \"\";\n  padding: 0;\n}\n.user-menu .fr-cd-member {\n  vertical-align: bottom;\n}\n.user-menu .fr-cd-avatar {\n  border-color: red;\n  background-size: 40px 40px;\n  background-repeat: no-repeat;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  display: block;\n  position: relative;\n  margin: 5px 0 10px 0;\n}\n.user-menu .fr-wp-avatar-label {\n  text-align: center;\n  vertical-align: middle;\n  line-height: 41px;\n  color: #004C3F;\n  font-size: 16px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-wp-avatar-label {\n  left: 14px;\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-cd-avatar {\n  margin: 7px 0 16px 18px;\n  vertical-align: middle;\n}\n.user-menu .fr-wp-avatar-adm {\n  position: absolute;\n  bottom: -4px;\n  right: -3px;\n  padding: 0.1em;\n  border-radius: 50%;\n  background-color: white;\n  color: #384656;\n  font-size: 15px;\n}\n.user-menu .dropdown-menu:before {\n  border-bottom: 8px solid #e0e0e0;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu:after {\n  border-bottom: 8px solid #fff;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu {\n  top: 85%;\n  right: 0;\n  left: auto;\n}\n.fr-cd-bar-menu-btn {\n  display: inline-block;\n  line-height: 48px;\n  margin-left: 18px;\n  cursor: pointer;\n}\n.fr-cd-dropdown {\n  position: relative;\n}\n.fr-cd-member-menu {\n  display: inline-block;\n  cursor: pointer;\n}\n.fr-cd-member-menu:hover {\n  opacity: 0.8;\n  text-decoration: none;\n}\n.fr-cd-member-menu .fr-cd-member-user {\n  display: inline-block;\n  line-height: 1.2;\n  text-align: right;\n  position: relative;\n  top: 0px;\n  left: 31px;\n}\n.fr-cd-member-menu .fr-cd-member-user span {\n  display: block;\n  font-weight: 200;\n  color: #fff;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-name {\n  font-size: 0.9em;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-email {\n  font-size: 0.9em;\n  display: none;\n}\n.fr-cd-member,\n.fr-cd-member-avatar {\n  display: inline-block;\n}\n.fr-cd-member-avatar {\n  border-radius: 4px;\n}\n.fr-cd-member-dropdown {\n  clear: both;\n  padding: .5em 0 0;\n  border-top: 1px solid #ddd;\n  margin: 0;\n  list-style: none;\n}\n.fr-cd-member-dropdown.clear-line {\n  clear: none;\n  padding-top: 0;\n  border-top: none;\n  margin-top: 0;\n}\n.fr-member-avatar {\n  padding: 13px 13px 13px 13px;\n  width: 67px;\n  display: inline-block;\n  float: left;\n}\n.fr-member-information {\n  height: 68px;\n  display: inline-block;\n  margin: 0px 0px 0px 0px;\n  float: left;\n  line-height: 18px;\n  margin-top: 0px;\n  padding: 5px 0px 0px 0px;\n  clear: none;\n  list-style: none;\n}\n.fr-member-information > li:nth-child(1) {\n  font-family: 'Open Sans';\n  font-weight: 600;\n}\n.fr-member-information > li > span {\n  line-height: 0em;\n  font-size: 12px;\n}\n.fr-member-information > li > a {\n  line-height: 0.5;\n  font-size: 12px;\n  color: #007166;\n  margin-top: 6px;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a {\n  display: block;\n  padding: 8px 15px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.5;\n  text-decoration: none;\n  white-space: nowrap;\n  color: #444;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a > i {\n  margin-right: 0.25em;\n}\n.fr-cursor-initial {\n  cursor: initial;\n}\n", ""]);
+	exports.push([module.id, ".user-menu .menu {\n  list-style: none;\n  margin: 0px;\n  padding: 0px;\n}\n.user-menu .menu:before {\n  content: \"[\";\n}\n.user-menu .menu:after {\n  content: \"]\";\n}\n.user-menu .menu > li {\n  display: inline;\n}\n.user-menu .menu > li:before {\n  content: \"|\";\n  padding-right: 0.3em;\n}\n.user-menu .menu > li:nth-child(1):before {\n  content: \"\";\n  padding: 0;\n}\n.user-menu .fr-cd-member {\n  vertical-align: bottom;\n}\n.user-menu .fr-cd-avatar {\n  border-color: red;\n  background-size: 40px 40px;\n  background-repeat: no-repeat;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  display: block;\n  position: relative;\n  margin: 5px 0 10px 0;\n}\n.user-menu .fr-wp-avatar-label {\n  text-align: center;\n  vertical-align: middle;\n  line-height: 41px;\n  color: #004C3F;\n  font-size: 16px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-wp-avatar-label {\n  left: 14px;\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-cd-avatar {\n  margin: 7px 0 16px 18px;\n  vertical-align: middle;\n}\n.user-menu .fr-wp-avatar-adm {\n  position: absolute;\n  bottom: -4px;\n  right: -3px;\n  padding: 0.1em;\n  border-radius: 50%;\n  background-color: white;\n  color: #384656;\n  font-size: 15px;\n}\n.user-menu .dropdown-menu:before {\n  border-bottom: 8px solid #e0e0e0;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu:after {\n  border-bottom: 8px solid #fff;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu {\n  top: 85%;\n  right: 0;\n  left: auto;\n}\n.fr-cd-bar-menu-btn {\n  display: inline-block;\n  line-height: 48px;\n  margin-left: 18px;\n  cursor: pointer;\n}\n.fr-cd-dropdown {\n  position: relative;\n}\n.fr-cd-member-menu {\n  display: inline-block;\n  cursor: pointer;\n}\n.fr-cd-member-menu:hover {\n  opacity: 0.8;\n  text-decoration: none;\n}\n.fr-cd-member-menu .fr-cd-member-user {\n  display: inline-block;\n  line-height: 1.2;\n  text-align: right;\n  position: relative;\n  top: 0px;\n  left: 31px;\n}\n.fr-cd-member-menu .fr-cd-member-user span {\n  display: block;\n  font-weight: 200;\n  color: #fff;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-name {\n  font-size: 0.9em;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-email {\n  font-size: 0.9em;\n  display: none;\n}\n.fr-cd-member,\n.fr-cd-member-avatar {\n  display: inline-block;\n}\n.fr-cd-member-avatar {\n  border-radius: 4px;\n}\n.fr-cd-member-dropdown {\n  clear: both;\n  padding: .5em 0 0;\n  border-top: 1px solid #ddd;\n  margin: 0;\n  list-style: none;\n}\n.fr-cd-member-dropdown.clear-line {\n  clear: none;\n  padding-top: 0;\n  border-top: none;\n  margin-top: 0;\n}\n.fr-member-avatar {\n  padding: 13px 13px 13px 13px;\n  width: 67px;\n  display: inline-block;\n  float: left;\n}\n.fr-member-information {\n  height: 68px;\n  display: inline-block;\n  margin: 0px 0px 0px 0px;\n  float: left;\n  line-height: 18px;\n  margin-top: 0px;\n  padding: 5px 0px 0px 0px;\n  clear: none;\n  list-style: none;\n  color: black;\n}\n.fr-member-information > li:nth-child(1) {\n  font-family: 'Open Sans';\n  font-weight: 600;\n}\n.fr-member-information > li > span {\n  line-height: 0em;\n  font-size: 12px;\n}\n.fr-member-information > li > a {\n  line-height: 0.5;\n  font-size: 12px;\n  color: #007166;\n  margin-top: 6px;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a {\n  display: block;\n  padding: 8px 15px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.5;\n  text-decoration: none;\n  white-space: nowrap;\n  color: #444;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a > i {\n  margin-right: 0.25em;\n}\n.fr-cursor-initial {\n  cursor: initial;\n}\n", ""]);
 
 	// exports
 
@@ -64430,7 +64499,7 @@
 /* 98 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 99 */
@@ -64501,7 +64570,7 @@
 
 
 	// module
-	exports.push([module.id, ".player {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .btn-download i,\n.player .btn-volume i,\n.player .btn-time i {\n  margin-top: 20px;\n  font-size: 23px;\n  position: absolute;\n  color: #999999;\n  cursor: pointer;\n}\n.player .btn-download:hover i,\n.player .btn-volume:hover i,\n.player .btn-time:hover i {\n  color: #fafafa;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #999999;\n  background-color: transparent;\n  color: #999999;\n  font-size: 25px;\n  padding: 11px 15px 9px 16px;\n  margin: 3px 0 0 0;\n}\n.player .playpause:hover {\n  color: #fafafa;\n  border: 1px solid #fafafa;\n  /*font-size: 27px;\n      padding: 12px 14px 8px 19px;*/\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  color: #999999;\n}\n.player .next:hover,\n.player .prev:hover {\n  background-color: rgba(100, 100, 100, 0.1);\n  color: #fafafa;\n}\n.player .player-range input[type='range'] {\n  -webkit-appearance: none !important;\n  background: #555555;\n  height: 5px;\n  border-radius: 2px;\n}\n.player .player-range input[type='range']::-webkit-slider-thumb {\n  -webkit-appearance: none !important;\n  background: #02b875;\n  height: 10px;\n  width: 10px;\n  border-radius: 5px;\n}\n.player .player-time {\n  margin-left: -2%;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 30px;\n}\n.player .player-volume {\n  margin-left: -2%;\n}\n.player .player-volume input {\n  margin-top: 30px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n", ""]);
+	exports.push([module.id, ".player {\n  background-color: #202225;\n  border-top: 1px solid #000;\n  height: 70px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .btn-download i,\n.player .btn-volume i,\n.player .btn-time i {\n  margin-top: 20px;\n  font-size: 23px;\n  position: absolute;\n  color: #999999;\n  cursor: pointer;\n}\n.player .btn-download:hover i,\n.player .btn-volume:hover i,\n.player .btn-time:hover i {\n  color: #fafafa;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #999999;\n  background-color: transparent;\n  color: #999999;\n  font-size: 25px;\n  padding: 11px 15px 9px 16px;\n  margin: 3px 0 0 0;\n}\n.player .playpause:hover {\n  color: #fafafa;\n  border: 1px solid #fafafa;\n  /*font-size: 27px;\n      padding: 12px 14px 8px 19px;*/\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  color: #999999;\n}\n.player .next:hover,\n.player .prev:hover {\n  background-color: rgba(100, 100, 100, 0.1);\n  color: #fafafa;\n}\n.player .player-range input[type='range'] {\n  -webkit-appearance: none !important;\n  background: #555555;\n  height: 5px;\n  border-radius: 2px;\n}\n.player .player-range input[type='range']::-webkit-slider-thumb {\n  -webkit-appearance: none !important;\n  background: #02b875;\n  height: 10px;\n  width: 10px;\n  border-radius: 5px;\n}\n.player .player-time {\n  margin-left: -2%;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 30px;\n}\n.player .player-volume {\n  margin-left: -2%;\n}\n.player .player-volume input {\n  margin-top: 30px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n", ""]);
 
 	// exports
 
@@ -65110,11 +65179,15 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
-	var TrackController = ['$i18n', 'trackListService', function ($i18n, trackListService) {
+	var TrackController = ['$i18n', 'trackListService', 'mainService',function ($i18n, trackListService,mainService) {
 	    var self = this;
+
+
+
 	    self.play = function (track) {
 	        trackListService.playSelected(track);
 	    }
+
 	}];
 
 	trackModule.component('track', {
@@ -65133,7 +65206,7 @@
 /* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <a>{{ ctrl.frModel.name }}</a>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\">{{ ctrl.frModel.description }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <a>{{ ctrl.frModel.name }}</a>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n       <help-item text =\"Aquí puedes descargar la pista musical\"> </help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n       <help-item text =\"Comienza a escuchando esta pieza musical\"> </help-item>\r\n    </div>\r\n     <div class=\"fr-track-help-3\">\r\n       <help-item text =\"Califica las piezas musicales\"> </help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 128 */
@@ -65170,7 +65243,7 @@
 
 
 	// module
-	exports.push([module.id, ".track .item {\n  position: relative;\n  margin: 0 auto;\n  border-radius: 3px;\n}\n.track .item .bottom {\n  bottom: 0;\n  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));\n  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));\n  border-radius: inherit;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  position: absolute;\n  left: 0;\n  background-repeat: repeat-x;\n  right: 0;\n}\n.track .item .center {\n  padding: 0 !important;\n  top: 50%;\n  left: 50%;\n  margin-top: -20px;\n  margin-left: -20px;\n  position: absolute;\n}\n.track .item .item-media {\n  position: relative;\n  display: block;\n  padding: 0;\n  border-radius: inherit;\n  overflow: hidden;\n}\n.track .item .item-media .btn-playpause {\n  color: #fff;\n  font-size: 0;\n  border-radius: 100%;\n  background: 0 0;\n  border-width: 0;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n  vertical-align: middle;\n}\n.track .item .item-media .btn-playpause:before {\n  -webkit-transition: color .1s linear .1s;\n  transition: color .1s linear .1s;\n  position: absolute !important;\n  z-index: 2;\n  top: 50%;\n  left: 50%;\n  margin-top: -7px;\n  margin-left: -7px;\n}\n.track .item .item-media .btn-playpause.active:before,\n.track .item .item-media .btn-playpause:hover:before {\n  color: #000;\n}\n.track .item .item-media .btn-playpause:after {\n  content: '';\n  border-radius: 100%;\n  box-shadow: inset 0 0 0 2px;\n  position: absolute;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  -webkit-transform: scale3d(0.9, 0.9, 1);\n  transform: scale3d(0.9, 0.9, 1);\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.track .item .item-media .btn-playpause.active:after,\n.track .item .item-media .btn-playpause:hover:after {\n  -webkit-transform: scale3d(1, 1, 1);\n  transform: scale3d(1, 1, 1);\n  box-shadow: inset 0 0 0 30px;\n}\n.track .item .item-media .item .btn-playpause:after {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.track .item .item-media .btn-playpause:before {\n  content: \"\\EA1C\";\n  position: relative;\n  padding-left: 2px;\n}\n.track .item .item-media .btn-playpause:before {\n  background-color: transparent;\n  display: inline-block;\n  font-family: 'BasicIcon';\n  font-size: 20px;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: 400;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-transform: none;\n  vertical-align: middle;\n  min-width: 14px;\n  text-align: center;\n  margin-top: -10px;\n  margin-left: -10px;\n}\n.track .item .item-media:after {\n  content: '';\n  display: block;\n  padding-top: 100%;\n}\n.track .item .item-media-content {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  border: 0;\n  border-radius: inherit;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-color: rgba(120, 120, 120, 0.2);\n}\n.track .item .item-overlay {\n  line-height: 1;\n  color: #fff;\n  padding: 8px;\n  opacity: 0;\n  -webkit-transition: all .2s;\n  transition: all .2s;\n  border-radius: inherit;\n  display: block;\n}\n.track .item .item-info {\n  position: relative;\n  padding: 10px 0 20px;\n  border-radius: inherit;\n}\n.track .item .item-info i {\n  color: #fff;\n}\n.track .item .item-info .bottom {\n  bottom: 100%;\n}\n.track .item .item-info .item-author,\n.track .item .item-info .item-meta-stats {\n  color: #818a91;\n}\n.track .item .item-info .item-title {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.track .item .item-info .btn-download {\n  float: left;\n  font-size: 22px;\n}\n.track .item .text-ellipsis {\n  display: block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: rgba(0, 0, 0, 0.870588);\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item:hover .item-overlay {\n  opacity: 1;\n  display: block;\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item::after {\n  content: \"\";\n}\n", ""]);
+	exports.push([module.id, ".track .item {\n  position: relative;\n  margin: 0 auto;\n  border-radius: 3px;\n}\n.track .item .bottom {\n  bottom: 0;\n  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));\n  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));\n  border-radius: inherit;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  position: absolute;\n  left: 0;\n  background-repeat: repeat-x;\n  right: 0;\n}\n.track .item .center {\n  padding: 0 !important;\n  top: 50%;\n  left: 50%;\n  margin-top: -20px;\n  margin-left: -20px;\n  position: absolute;\n}\n.track .item .item-media {\n  position: relative;\n  display: block;\n  padding: 0;\n  border-radius: inherit;\n  overflow: hidden;\n}\n.track .item .item-media .btn-playpause {\n  color: #fff;\n  font-size: 0;\n  border-radius: 100%;\n  background: 0 0;\n  border-width: 0;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n  vertical-align: middle;\n}\n.track .item .item-media .btn-playpause:before {\n  -webkit-transition: color .1s linear .1s;\n  transition: color .1s linear .1s;\n  position: absolute !important;\n  z-index: 2;\n  top: 50%;\n  left: 50%;\n  margin-top: -7px;\n  margin-left: -7px;\n}\n.track .item .item-media .btn-playpause.active:before,\n.track .item .item-media .btn-playpause:hover:before {\n  color: #000;\n}\n.track .item .item-media .btn-playpause:after {\n  content: '';\n  border-radius: 100%;\n  box-shadow: inset 0 0 0 2px;\n  position: absolute;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  -webkit-transform: scale3d(0.9, 0.9, 1);\n  transform: scale3d(0.9, 0.9, 1);\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.track .item .item-media .btn-playpause.active:after,\n.track .item .item-media .btn-playpause:hover:after {\n  -webkit-transform: scale3d(1, 1, 1);\n  transform: scale3d(1, 1, 1);\n  box-shadow: inset 0 0 0 30px;\n}\n.track .item .item-media .item .btn-playpause:after {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.track .item .item-media .btn-playpause:before {\n  content: \"\\EA1C\";\n  position: relative;\n  padding-left: 2px;\n}\n.track .item .item-media .btn-playpause:before {\n  background-color: transparent;\n  display: inline-block;\n  font-family: 'BasicIcon';\n  font-size: 20px;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: 400;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-transform: none;\n  vertical-align: middle;\n  min-width: 14px;\n  text-align: center;\n  margin-top: -10px;\n  margin-left: -10px;\n}\n.track .item .item-media:after {\n  content: '';\n  display: block;\n  padding-top: 100%;\n}\n.track .item .item-media-content {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  border: 0;\n  border-radius: inherit;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-color: rgba(120, 120, 120, 0.2);\n}\n.track .item .item-overlay {\n  line-height: 1;\n  color: #fff;\n  padding: 8px;\n  opacity: 0;\n  -webkit-transition: all .2s;\n  transition: all .2s;\n  border-radius: inherit;\n  display: block;\n}\n.track .item .item-info {\n  position: relative;\n  padding: 10px 0 20px;\n  border-radius: inherit;\n}\n.track .item .item-info i {\n  color: #fff;\n}\n.track .item .item-info .bottom {\n  bottom: 100%;\n}\n.track .item .item-info .item-author,\n.track .item .item-info .item-meta-stats {\n  color: #818a91;\n}\n.track .item .item-info .item-title {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.track .item .item-info .btn-download {\n  float: left;\n  font-size: 22px;\n}\n.track .item .text-ellipsis {\n  display: block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: rgba(0, 0, 0, 0.870588);\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item:hover .item-overlay {\n  opacity: 1;\n  display: block;\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item::after {\n  content: \"\";\n}\n.track .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  top: 71%;\n}\n.track .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 32%;\n  left: 46%;\n}\n.track .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 71%;\n  left: 64%;\n}\n", ""]);
 
 	// exports
 
@@ -65198,8 +65271,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var userEditModule = angular.module('userEditModule');
-	var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
-	    function ($i18n, $freevenModal, userEditService, $scope) {
+	var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope','userPasswordService',
+	    function ($i18n, $freevenModal, userEditService, $scope,userPasswordService) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -65210,7 +65283,17 @@
 
 	        self.photoProfile = [];
 
+	        var img = {"img":self.userEdit.user.avatar}
+
+	        self.photoProfile.push(img);
+
 	        self.passwordOk = true;
+
+	        self.userEditPassword = userPasswordService;
+
+	        self.showEditPasswordPopup = function () {
+	            self.userEditPassword.showEditPopup();
+	        };
 
 	        self.close = function () {
 	            userEditService.closeModal();
@@ -65220,11 +65303,6 @@
 	            if (self.userEdit.user === undefined) {
 	            } else {
 	                var typeUser = self.userEdit.user.is_artist;
-	                if (self.userEdit.user.password1 != self.userEdit.user.password2) {
-	                    self.passwordOk = false;
-	                } else {
-	                    self.passwordOk = true;
-	                }
 	                if ((typeUser == 'True') && self.passwordOk == true) {
 	                    var saveArtist = self.validateFieldsArtist();
 	                    if (saveArtist) {
@@ -65244,8 +65322,6 @@
 	            if (self.userEdit.user.first_name == undefined
 	                || self.userEdit.user.last_name == undefined
 	                || self.userEdit.user.username == undefined
-	                || self.userEdit.user.password1 == undefined
-	                || self.userEdit.user.password2 == undefined
 	                || self.userEdit.user.email == undefined
 	                || self.userEdit.user.is_artist == undefined
 	                || self.userEdit.user.artistic_name == undefined
@@ -65269,8 +65345,6 @@
 	            if (self.userEdit.user.first_name == undefined
 	                || self.userEdit.user.last_name == undefined
 	                || self.userEdit.user.username == undefined
-	                || self.userEdit.user.password1 == undefined
-	                || self.userEdit.user.password2 == undefined
 	                || self.userEdit.user.email == undefined
 	                || self.userEdit.user.is_artist == undefined
 	            ) {
@@ -65298,8 +65372,9 @@
 	        }
 
 	        $scope.imageIsLoaded = function (e) {
+	              img = {}
 	            $scope.$apply(function () {
-	                var img = {"img": e.target.result};
+	                img = {"img": e.target.result};
 	                self.photoProfile.push(img);
 	            });
 	        }
@@ -65325,7 +65400,7 @@
 /* 132 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-edit\">\r\n     <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n        </button>\r\n        <h4 class=\"fr-modal-title ng-binding\">Editar cuenta en Freeven</h4><br/>\r\n        <div class=\"fr-modal-header-separator\"></div>\r\n    </div>\r\n    <form name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <div class=\"card-body card-padding\">\r\n                                    <div class=\"thumbnail\">\r\n                                        <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                                    </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-xs-12\">\r\n                                    <input type='file' ng-model-instant\r\n                                           onchange=\"angular.element(this).scope().imageUpload(event)\"/>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <fieldset class=\"form-group\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-md-12\">\r\n                                <label class=\"control-label\" for=\"email\">Email</label>\r\n                                <input type=\"email\" name=\"email\" id=\"email\"\r\n                                       ng-model=\"ctrl.userEdit.user.email\"\r\n                                       placeholder=\"Email...\"\r\n                                       class=\"form-control\"\r\n                                       required\r\n                                />\r\n                                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                            </div>\r\n                        </div>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-md-12\">\r\n                                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                       placeholder=\"Nombres...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                            </div>\r\n                        </div>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-md-12\">\r\n                                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                       placeholder=\"Apellidos...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                            </div>\r\n                        </div>\r\n                    </fieldset>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userEdit.user.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userEdit.user.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_edit_user'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userEdit.user.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userEdit.user.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userEdit.user.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_edit_user'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"user-edit\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar cuenta en Freeven</h4>\r\n  </div>\r\n  <form name=\"userForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <div class=\"card-body card-padding\">\r\n                <div class=\"thumbnail\">\r\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-xs-12\">\r\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\r\n                  <input type='file' id=\"imageUpload\" ng-model-instant\r\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                  accept=\"image/*\" style=\"display: none\"/>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12 text-center\">\r\n                    <label class=\"control-label\"\r\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                  </div>\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"email\">Email</label>\r\n                <input type=\"email\" name=\"email\" id=\"email\"\r\n                ng-model=\"ctrl.userEdit.user.email\"\r\n                placeholder=\"Email...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                ng-model=\"ctrl.userEdit.user.first_name\"\r\n                placeholder=\"Nombres...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                ng-model=\"ctrl.userEdit.user.last_name\"\r\n                placeholder=\"Apellidos...\"\r\n                class=\"form-control\"\r\n                required/>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n          <br/>\r\n          <label class=\"radio-inline\">\r\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n            ng-model=\"ctrl.userEdit.user.is_artist\"\r\n            required\r\n            checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n              ng-model=\"ctrl.userEdit.user.is_artist\"\r\n              required/>Artista</label>\r\n            </div>\r\n            <div class=\"col-md-6\">\r\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\r\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n            </div>\r\n          </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n            <div class=\"col-md-12\">\r\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n              ng-click=\"ctrl.validateForm()\">\r\n              {{ 'general_edit_user'  | translate }}\r\n            </button>\r\n            <button id=\"idBtnCancelar\" type=\"button\"\r\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.close()\">\r\n            {{ 'general_cancel'  | translate }}\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n  </form>\r\n\r\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n          placeholder=\"Nombre artístico...\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n          ng-model=\"ctrl.userEdit.user.birth_date\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"country\">País</label>\r\n          <select class=\"form-control\" id=\"country\"\r\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n          <option value=\"\">Pais...</option>\r\n          <option value=\"AF\">Afganistán</option>\r\n          <option value=\"AL\">Albania</option>\r\n          <option value=\"DE\">Alemania</option>\r\n          <option value=\"AD\">Andorra</option>\r\n          <option value=\"AO\">Angola</option>\r\n          <option value=\"AI\">Anguilla</option>\r\n          <option value=\"AQ\">Antártida</option>\r\n          <option value=\"AG\">Antigua y Barbuda</option>\r\n          <option value=\"AN\">Antillas Holandesas</option>\r\n          <option value=\"SA\">Arabia Saudí</option>\r\n          <option value=\"DZ\">Argelia</option>\r\n          <option value=\"AR\">Argentina</option>\r\n          <option value=\"AM\">Armenia</option>\r\n          <option value=\"AW\">Aruba</option>\r\n          <option value=\"AU\">Australia</option>\r\n          <option value=\"AT\">Austria</option>\r\n          <option value=\"AZ\">Azerbaiyán</option>\r\n          <option value=\"BS\">Bahamas</option>\r\n          <option value=\"BH\">Bahrein</option>\r\n          <option value=\"BD\">Bangladesh</option>\r\n          <option value=\"BB\">Barbados</option>\r\n          <option value=\"BE\">Bélgica</option>\r\n          <option value=\"BZ\">Belice</option>\r\n          <option value=\"BJ\">Benin</option>\r\n          <option value=\"BM\">Bermudas</option>\r\n          <option value=\"BY\">Bielorrusia</option>\r\n          <option value=\"MM\">Birmania</option>\r\n          <option value=\"BO\">Bolivia</option>\r\n          <option value=\"BA\">Bosnia y Herzegovina</option>\r\n          <option value=\"BW\">Botswana</option>\r\n          <option value=\"BR\">Brasil</option>\r\n          <option value=\"BN\">Brunei</option>\r\n          <option value=\"BG\">Bulgaria</option>\r\n          <option value=\"BF\">Burkina Faso</option>\r\n          <option value=\"BI\">Burundi</option>\r\n          <option value=\"BT\">Bután</option>\r\n          <option value=\"CV\">Cabo Verde</option>\r\n          <option value=\"KH\">Camboya</option>\r\n          <option value=\"CM\">Camerún</option>\r\n          <option value=\"CA\">Canadá</option>\r\n          <option value=\"TD\">Chad</option>\r\n          <option value=\"CL\">Chile</option>\r\n          <option value=\"CN\">China</option>\r\n          <option value=\"CY\">Chipre</option>\r\n          <option value=\"VA\">Ciudad del Vaticano</option>\r\n          <option value=\"CO\">Colombia</option>\r\n          <option value=\"KM\">Comores</option>\r\n          <option value=\"CG\">Congo</option>\r\n          <option value=\"KR\">Corea</option>\r\n          <option value=\"KP\">Corea del Norte</option>\r\n          <option value=\"CI\">Costa de Marfíl</option>\r\n          <option value=\"CR\">Costa Rica</option>\r\n          <option value=\"HR\">Croacia (Hrvatska)</option>\r\n          <option value=\"CU\">Cuba</option>\r\n          <option value=\"DK\">Dinamarca</option>\r\n          <option value=\"DJ\">Djibouti</option>\r\n          <option value=\"DM\">Dominica</option>\r\n          <option value=\"EC\">Ecuador</option>\r\n          <option value=\"EG\">Egipto</option>\r\n          <option value=\"SV\">El Salvador</option>\r\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n          <option value=\"ER\">Eritrea</option>\r\n          <option value=\"SI\">Eslovenia</option>\r\n          <option value=\"ES\" selected>España</option>\r\n          <option value=\"US\">Estados Unidos</option>\r\n          <option value=\"EE\">Estonia</option>\r\n          <option value=\"ET\">Etiopía</option>\r\n          <option value=\"FJ\">Fiji</option>\r\n          <option value=\"PH\">Filipinas</option>\r\n          <option value=\"FI\">Finlandia</option>\r\n          <option value=\"FR\">Francia</option>\r\n          <option value=\"GA\">Gabón</option>\r\n          <option value=\"GM\">Gambia</option>\r\n          <option value=\"GE\">Georgia</option>\r\n          <option value=\"GH\">Ghana</option>\r\n          <option value=\"GI\">Gibraltar</option>\r\n          <option value=\"GD\">Granada</option>\r\n          <option value=\"GR\">Grecia</option>\r\n          <option value=\"GL\">Groenlandia</option>\r\n          <option value=\"GP\">Guadalupe</option>\r\n          <option value=\"GU\">Guam</option>\r\n          <option value=\"GT\">Guatemala</option>\r\n          <option value=\"GY\">Guayana</option>\r\n          <option value=\"GF\">Guayana Francesa</option>\r\n          <option value=\"GN\">Guinea</option>\r\n          <option value=\"GQ\">Guinea Ecuatorial</option>\r\n          <option value=\"GW\">Guinea-Bissau</option>\r\n          <option value=\"HT\">Haití</option>\r\n          <option value=\"HN\">Honduras</option>\r\n          <option value=\"HU\">Hungría</option>\r\n          <option value=\"IN\">India</option>\r\n          <option value=\"ID\">Indonesia</option>\r\n          <option value=\"IQ\">Irak</option>\r\n          <option value=\"IR\">Irán</option>\r\n          <option value=\"IE\">Irlanda</option>\r\n          <option value=\"BV\">Isla Bouvet</option>\r\n          <option value=\"CX\">Isla de Christmas</option>\r\n          <option value=\"IS\">Islandia</option>\r\n          <option value=\"KY\">Islas Caimán</option>\r\n          <option value=\"CK\">Islas Cook</option>\r\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n          <option value=\"FO\">Islas Faroe</option>\r\n          <option value=\"HM\">Islas Heard y McDonald</option>\r\n          <option value=\"FK\">Islas Malvinas</option>\r\n          <option value=\"MP\">Islas Marianas del Norte</option>\r\n          <option value=\"MH\">Islas Marshall</option>\r\n          <option value=\"PW\">Islas Palau</option>\r\n          <option value=\"SB\">Islas Salomón</option>\r\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n          <option value=\"TK\">Islas Tokelau</option>\r\n          <option value=\"TC\">Islas Turks y Caicos</option>\r\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n          <option value=\"WF\">Islas Wallis y Futuna</option>\r\n          <option value=\"IL\">Israel</option>\r\n          <option value=\"IT\">Italia</option>\r\n          <option value=\"JM\">Jamaica</option>\r\n          <option value=\"JP\">Japón</option>\r\n          <option value=\"JO\">Jordania</option>\r\n          <option value=\"KZ\">Kazajistán</option>\r\n          <option value=\"KE\">Kenia</option>\r\n          <option value=\"KG\">Kirguizistán</option>\r\n          <option value=\"KI\">Kiribati</option>\r\n          <option value=\"KW\">Kuwait</option>\r\n          <option value=\"LA\">Laos</option>\r\n          <option value=\"LS\">Lesotho</option>\r\n          <option value=\"LV\">Letonia</option>\r\n          <option value=\"LB\">Líbano</option>\r\n          <option value=\"LR\">Liberia</option>\r\n          <option value=\"LY\">Libia</option>\r\n          <option value=\"LI\">Liechtenstein</option>\r\n          <option value=\"LT\">Lituania</option>\r\n          <option value=\"LU\">Luxemburgo</option>\r\n          <option value=\"MK\">Macedonia</option>\r\n          <option value=\"MG\">Madagascar</option>\r\n          <option value=\"MY\">Malasia</option>\r\n          <option value=\"MW\">Malawi</option>\r\n          <option value=\"MV\">Maldivas</option>\r\n          <option value=\"ML\">Malí</option>\r\n          <option value=\"MT\">Malta</option>\r\n          <option value=\"MA\">Marruecos</option>\r\n          <option value=\"MQ\">Martinica</option>\r\n          <option value=\"MU\">Mauricio</option>\r\n          <option value=\"MR\">Mauritania</option>\r\n          <option value=\"YT\">Mayotte</option>\r\n          <option value=\"MX\">México</option>\r\n          <option value=\"FM\">Micronesia</option>\r\n          <option value=\"MD\">Moldavia</option>\r\n          <option value=\"MC\">Mónaco</option>\r\n          <option value=\"MN\">Mongolia</option>\r\n          <option value=\"MS\">Montserrat</option>\r\n          <option value=\"MZ\">Mozambique</option>\r\n          <option value=\"NA\">Namibia</option>\r\n          <option value=\"NR\">Nauru</option>\r\n          <option value=\"NP\">Nepal</option>\r\n          <option value=\"NI\">Nicaragua</option>\r\n          <option value=\"NE\">Níger</option>\r\n          <option value=\"NG\">Nigeria</option>\r\n          <option value=\"NU\">Niue</option>\r\n          <option value=\"NF\">Norfolk</option>\r\n          <option value=\"NO\">Noruega</option>\r\n          <option value=\"NC\">Nueva Caledonia</option>\r\n          <option value=\"NZ\">Nueva Zelanda</option>\r\n          <option value=\"OM\">Omán</option>\r\n          <option value=\"NL\">Países Bajos</option>\r\n          <option value=\"PA\">Panamá</option>\r\n          <option value=\"PG\">Papúa Nueva Guinea</option>\r\n          <option value=\"PK\">Paquistán</option>\r\n          <option value=\"PY\">Paraguay</option>\r\n          <option value=\"PE\">Perú</option>\r\n          <option value=\"PN\">Pitcairn</option>\r\n          <option value=\"PF\">Polinesia Francesa</option>\r\n          <option value=\"PL\">Polonia</option>\r\n          <option value=\"PT\">Portugal</option>\r\n          <option value=\"PR\">Puerto Rico</option>\r\n          <option value=\"QA\">Qatar</option>\r\n          <option value=\"UK\">Reino Unido</option>\r\n          <option value=\"CF\">República Centroafricana</option>\r\n          <option value=\"CZ\">República Checa</option>\r\n          <option value=\"ZA\">República de Sudáfrica</option>\r\n          <option value=\"DO\">República Dominicana</option>\r\n          <option value=\"SK\">República Eslovaca</option>\r\n          <option value=\"RE\">Reunión</option>\r\n          <option value=\"RW\">Ruanda</option>\r\n          <option value=\"RO\">Rumania</option>\r\n          <option value=\"RU\">Rusia</option>\r\n          <option value=\"EH\">Sahara Occidental</option>\r\n          <option value=\"KN\">Saint Kitts y Nevis</option>\r\n          <option value=\"WS\">Samoa</option>\r\n          <option value=\"AS\">Samoa Americana</option>\r\n          <option value=\"SM\">San Marino</option>\r\n          <option value=\"VC\">San Vicente y Granadinas</option>\r\n          <option value=\"SH\">Santa Helena</option>\r\n          <option value=\"LC\">Santa Lucía</option>\r\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n          <option value=\"SN\">Senegal</option>\r\n          <option value=\"SC\">Seychelles</option>\r\n          <option value=\"SL\">Sierra Leona</option>\r\n          <option value=\"SG\">Singapur</option>\r\n          <option value=\"SY\">Siria</option>\r\n          <option value=\"SO\">Somalia</option>\r\n          <option value=\"LK\">Sri Lanka</option>\r\n          <option value=\"PM\">St Pierre y Miquelon</option>\r\n          <option value=\"SZ\">Suazilandia</option>\r\n          <option value=\"SD\">Sudán</option>\r\n          <option value=\"SE\">Suecia</option>\r\n          <option value=\"CH\">Suiza</option>\r\n          <option value=\"SR\">Surinam</option>\r\n          <option value=\"TH\">Tailandia</option>\r\n          <option value=\"TW\">Taiwán</option>\r\n          <option value=\"TZ\">Tanzania</option>\r\n          <option value=\"TJ\">Tayikistán</option>\r\n          <option value=\"TF\">Territorios franceses del Sur</option>\r\n          <option value=\"TP\">Timor Oriental</option>\r\n          <option value=\"TG\">Togo</option>\r\n          <option value=\"TO\">Tonga</option>\r\n          <option value=\"TT\">Trinidad y Tobago</option>\r\n          <option value=\"TN\">Túnez</option>\r\n          <option value=\"TM\">Turkmenistán</option>\r\n          <option value=\"TR\">Turquía</option>\r\n          <option value=\"TV\">Tuvalu</option>\r\n          <option value=\"UA\">Ucrania</option>\r\n          <option value=\"UG\">Uganda</option>\r\n          <option value=\"UY\">Uruguay</option>\r\n          <option value=\"UZ\">Uzbekistán</option>\r\n          <option value=\"VU\">Vanuatu</option>\r\n          <option value=\"VE\">Venezuela</option>\r\n          <option value=\"VN\">Vietnam</option>\r\n          <option value=\"YE\">Yemen</option>\r\n          <option value=\"YU\">Yugoslavia</option>\r\n          <option value=\"ZM\">Zambia</option>\r\n          <option value=\"ZW\">Zimbabue</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n        <input type=\"text\" name=\"city\" id=\"city\"\r\n        ng-model=\"ctrl.userEdit.user.city\"\r\n        placeholder=\"Ciudad....\"\r\n        class=\"form-control\"\r\n        required/>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n  <fieldset class=\"form-group\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n          celular</label>\r\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n          placeholder=\"Número de teléfono o celular...\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"7\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n            <input type=\"text\" name=\"address\" id=\"address\"\r\n            ng-model=\"ctrl.userEdit.user.address\"\r\n            placeholder=\"Dirección de residencia....\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n            ng-model=\"ctrl.userEdit.user.bank\"\r\n            placeholder=\"Nombre Banco...\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n            <option value=\"\">Tipo de cuenta</option>\r\n            <option value=\"AH\">Ahorros</option>\r\n            <option value=\"CR\">Corriente</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n          placeholder=\"Número de cuenta....\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"9\"\r\n          ng-maxlength=\"25\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n            {{ 'general_edit_user'  | translate }}\r\n          </button>\r\n          <button id=\"idBtnCancelar2\" type=\"button\"\r\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.close()\">\r\n          {{ 'general_cancel'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
 /* 133 */
@@ -65362,7 +65437,7 @@
 
 
 	// module
-	exports.push([module.id, ".user-edit {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-edit .fr-modal-header,\n.user-edit .fr-modal-content,\n.user-edit .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n}\n.user-edit form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-edit form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-edit form a:hover {\n  color: #179b77;\n}\n.user-edit form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-edit form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-edit form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-edit form label.active .req {\n  opacity: 0;\n}\n.user-edit form label.highlight {\n  color: black;\n}\n.user-edit form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-edit form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-edit .messages {\n  color: #FA787E;\n}\n.user-edit .colorMensajes {\n  color: red;\n}\n.user-edit input.ng-valid {\n  border: 1px solid green;\n}\n.user-edit input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+	exports.push([module.id, ".user-edit {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-edit .fr-modal-header,\n.user-edit .fr-modal-content,\n.user-edit .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.user-edit form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-edit form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-edit form a:hover {\n  color: #179b77;\n}\n.user-edit form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-edit form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-edit form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-edit form label.active .req {\n  opacity: 0;\n}\n.user-edit form label.highlight {\n  color: black;\n}\n.user-edit form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-edit form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-edit .messages {\n  color: #FA787E;\n}\n.user-edit .colorMensajes {\n  color: red;\n}\n.user-edit input.ng-valid {\n  border: 1px solid green;\n}\n.user-edit input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
 
 	// exports
 
@@ -65402,8 +65477,8 @@
 	                self.user.email = "yego23@gmail.com";
 	                self.user.last_name = "Ruiz";
 	                self.user.username = "yego";
-	                self.user.password1 = "diego123";
-	                self.user.password2 = "diego123";
+	                self.user.password1 = "";
+	                self.user.password2 = "";
 	                self.user.is_artist = "True";
 	                self.user.artistic_name = "El artista";
 	                self.user.bank_account_number = 1234567890
@@ -65421,8 +65496,11 @@
 
 	            this.saveUser = function () {
 	                //TODO CONSUME SERVICE SAVE
+
 	                //window.location.reload(true);
+
 	                $freevenModal.closePopup();
+
 	                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
 	            };
 
@@ -65431,6 +65509,442 @@
 	    }]);
 
 
+/***/ },
+/* 136 */
+/***/ function(module, exports) {
+
+	angular.module('userPasswordModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/userPassword/userPasswordModule.js');
+	 require('../app/userPassword/userPasswordComponent.js');
+	 require('../app/userPassword/userPassword.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <user-password title ="UserPassword"> </user-password>
+	*/
+
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var  userPasswordModule = angular.module('userPasswordModule');
+	var UserPasswordController = ['$i18n','userPasswordService','$freevenModal',
+	  function ($i18n,userPasswordService,$freevenModal) {
+	  /**
+	  * Tip: add here only visual logic
+	  */
+	  var self = this;
+
+	  self.userPassword = userPasswordService;
+
+	  self.passwordOk = true;
+
+	  self.close = function () {
+	    self.userPassword.closeModal();
+	  };
+
+	  self.validatePassword = function (){
+	    if(self.userPassword.user.password1 == undefined
+	      || self.userPassword.user.password2 == undefined || self.userPassword.user.password == undefined)
+	      {
+	        return false;
+	      }else{
+	        if (self.userPassword.user.password1 != self.userPassword.user.password2) {
+	          self.passwordOk = false;
+	        } else {
+	          self.passwordOk = true;
+	          self.userPassword.savePassword();
+	        }
+	      }
+	    };
+
+	  }];
+
+	  userPasswordModule.component('userPassword', {
+	    transclude: true,
+	    bindings: {
+	      title: '@'
+	    },
+	    controller: UserPasswordController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(138)
+	  });
+
+
+/***/ },
+/* 138 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(140);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userPassword.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userPassword.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".user-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-password .fr-modal-header,\n.user-password .fr-modal-content,\n.user-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.user-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-password form a:hover {\n  color: #179b77;\n}\n.user-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-password form label.active .req {\n  opacity: 0;\n}\n.user-password form label.highlight {\n  color: black;\n}\n.user-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-password .messages {\n  color: #FA787E;\n}\n.user-password .colorMensajes {\n  color: red;\n}\n.user-password input.ng-valid {\n  border: 1px solid green;\n}\n.user-password input:required:valid {\n  border: 1px solid green;\n}\n.user-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 141 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var userPasswordModule = angular.module('userPasswordModule');
+	userPasswordModule.factory('userPasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter','userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter,userEditService) {
+
+	        var userPasswordService = function () {
+
+	            var self = this;
+
+	            self.user = {};
+
+	            self.userEdit = userEditService;
+
+	            this.showEditPopup = function () {
+
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<user-password title ="UserPassword"> </user-password>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	                self.userEdit.showEditPopup();
+	            };
+
+	            this.savePassword = function () {
+	                //TODO CONSUME SERVICE SAVE
+	                //window.location.reload(true);
+	                $freevenModal.closePopup();
+	                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_password_success_detail);
+	                self.userEdit.showEditPopup();
+	            };
+
+	        };
+	        return new userPasswordService();
+	    }]);
+
+
+/***/ },
+/* 142 */
+/***/ function(module, exports) {
+
+	angular.module('helpModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/help/helpModule.js');
+	 require('../app/help/helpComponent.js');
+	 require('../app/help/help.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <help title ="Help"> </help>
+	*/
+
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var helpModule = angular.module('helpModule');
+	var HelpController = ['helpService',
+	    function (helpService) {
+	        var self = this;
+	        self.isEnabled = function () {
+	            return helpService.isEnabled();
+	        };
+	        self.closeHelp = function (){
+	            helpService.setEnable(false);
+	        }
+	    }];
+
+	helpModule.component('help', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: HelpController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(144)
+	});
+
+
+/***/ },
+/* 144 */
+/***/ function(module, exports) {
+
+	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
+
+/***/ },
+/* 145 */
+/***/ function(module, exports) {
+
+	var playerModule = angular.module('helpModule');
+	playerModule.factory('helpService', ['trackListService',
+	    function (trackListService) {
+	        var HelpService = function () {
+	            var self = this;
+	            self.enabled = false;
+	            self.isEnabled = function () {
+	                var self = this;
+	                return self.enabled;
+	            };
+
+	            self.setEnable = function (newValue) {
+	                var self = this;
+	                self.enabled = newValue;
+	            };
+
+	            self.enablePlayer = function () {
+	                trackListService.playFirstTrack();
+	            };
+	        };
+	        return new HelpService();
+	    }]);
+
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(147);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./help.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./help.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".help {\n  background: rgba(0, 0, 0, 0.75);\n  width: 100%;\n  display: block;\n  height: 1800px;\n  z-index: 800;\n  position: fixed;\n  top: 0;\n}\n.help .freeven-accept-btn {\n  bottom: 67px;\n  right: 61px;\n  color: #dff0d8;\n  border: 2px solid white;\n  padding: 19px 35px;\n  display: block;\n  background-color: rgba(51, 51, 51, 0.73);\n  border-radius: 4px;\n  font-size: 16px;\n  font-style: italic;\n  float: right;\n  margin: calc(100vh - 144px) 15px;\n}\n.help .freeven-accept-btn i {\n  margin-right: 17px;\n}\n.help .freeven-accept-btn:hover {\n  background-color: rgba(218, 218, 218, 0.13);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var helpModule = angular.module('helpModule');
+	var HelpItemController = ['helpService', function (helpService) {
+	    var self = this;
+	    self.isEnabled= function(){
+	       return  helpService.isEnabled();
+	    }
+
+	}];
+
+	helpModule.component('helpItem', {
+	    transclude: true,
+	    bindings: {
+	        text: '@'
+	    },
+	    controller: HelpItemController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(149)
+	});
+
+
+/***/ },
+/* 149 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(151);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./helpItem.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./helpItem.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".help-item {\n  position: absolute;\n  top: -4px;\n  left: 4px;\n  display: block;\n  opacity: 1;\n  z-index: 801;\n}\n.help-item .help-content {\n  width: 50px;\n  height: 50px;\n  position: relative;\n  opacity: 1;\n}\n.help-item .help-content .pulse {\n  width: 10px;\n  height: 10px;\n  border: 4px solid #02b875;\n  border-radius: 30px;\n  background-color: #716f42;\n  z-index: 10;\n  position: absolute;\n  left: 10px;\n  top: 10px;\n  opacity: 1;\n}\n.help-item .help-content .dot {\n  border: 10px solid #02b875;\n  background: transparent;\n  border-radius: 60px;\n  height: 50px;\n  width: 50px;\n  -webkit-animation: pulse 3s ease-out;\n          animation: pulse 3s ease-out;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  position: absolute;\n  top: -10px;\n  left: -10px;\n  z-index: 1;\n  opacity: 0;\n  opacity: 1;\n}\n.help-item .help-content .help-text {\n  margin-left: 40px;\n  font-size: 13px;\n  width: 150px;\n  display: block;\n  color: #fffed9;\n  text-align: left;\n  opacity: 1;\n  font-style: italic;\n}\n@-webkit-keyframes pulse {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.0;\n  }\n  25% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.1;\n  }\n  50% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.3;\n  }\n  75% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.0;\n  }\n}\n@keyframes pulse {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.0;\n  }\n  25% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.1;\n  }\n  50% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.3;\n  }\n  75% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.0;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 152 */
+/***/ function(module, exports) {
+
+	angular.module('artistModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/artist/artistModule.js');
+	 require('../app/artist/artistComponent.js');
+	 require('../app/artist/artist.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <artist title ="Artist"> </artist>
+	*/
+
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var  artistModule = angular.module('artistModule');
+	var ArtistController = ['$i18n', function ($i18n) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+	    self.showAlert = function () {
+	        alert($i18n.translate.general_alert);
+	    };
+	}];
+
+	artistModule.component('artist', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: ArtistController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(154)
+	});
+
+
+/***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"artist\">\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-4\">\r\n    <img src=\"" + __webpack_require__(119) + "\"/>\r\n  </div>\r\n  <div class=\"col-md-8\">\r\n    <div class=\"container\">\r\n      <p>Hola</p>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div>\r\n";
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(156);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./artist.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./artist.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "artist {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\nartist h {\n  color: #3a4585;\n  font-size: 16px;\n}\nartist span {\n  color: #002300;\n}\n", ""]);
+
+	// exports
 
 
 /***/ }
