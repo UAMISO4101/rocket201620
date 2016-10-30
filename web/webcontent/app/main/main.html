@@ -4,8 +4,8 @@
             <h3 class="brand-section">Freeven</h3>
         </div>
         <div class="header-section">
-            <a class="header-item" ng-click="ctrl.enableHelp()">Ver ayuda</a>
-            <a class="header-item">Subir obras musicales</a>
+            <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">Ver ayuda</a>
+            <a class="header-item" ng-if="ctrl.mainService.isArtist()">Subir obras musicales</a>
             <user-menu class="fr-user-menu" ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
         </div>
     </div>
@@ -42,7 +42,7 @@
             <player title="Player"></player>
         </div>
     </div>
-    <div growl></div>
+    <div growl class="fr-notifier-container"></div>
     <help title="Help"></help>
     <div class="fr-track-help-1">
         <help-item text="Aquí puedes controlar tus pistas"></help-item>

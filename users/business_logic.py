@@ -1,7 +1,10 @@
+# -*- coding: UTF-8 -*-
 from django.contrib.auth.models import User
-from users.models import Artist
+from users.models import Artist, BusinessAgent, TokenUser
 from django.contrib.auth import authenticate, login
 from rest_framework.authtoken.models import Token
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 '''
@@ -69,9 +72,9 @@ def register_user_in_model(json_data):
             if password1 != password2:
                 status = 'Las contrasenias no coinciden.'
             else:
-
-                user_model = User.objects.create_user(username=username, password=password1, email=email,
-                                                      first_name=first_name, last_name=last_name)
+                user_model = User.objects.create_user(username=username,
+                    password=password1, email=email, first_name=first_name,
+                    last_name=last_name)
                 user_model.save()
 
                 if is_artist is False:
@@ -101,7 +104,8 @@ def str_to_bool(s):
     elif s == 'False':
         return False
     else:
-        raise ValueError  # evil ValueError that doesn't tell you what the wrong value was
+        raise ValueError  # evil ValueError that doesn't tell you what the
+                          # wrong value was
 
 
 '''
@@ -151,20 +155,19 @@ def relation_user_to_artist(user_model, json_data):
 
 
 def login_service(request):
-     username = request.GET.get('username')
-     password = request.GET.get('password')
-     print(request.GET.get('username'))
+    username = request.GET.get('username')
+    password = request.GET.get('password')
 
-     if (username is not None and password is not None):
-         user = authenticate(username=username, password=password)
-         if user is not None:
-             login(request, user)
-             return login_user_to_json(user)
-         else:
-             status = 'Usuario o clave incorrecta.'
-     else:
-         status = 'Todos los campos son obligatorios.'
-     return {'status': status}
+    if (username is not None and password is not None):
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return login_user_to_json(user)
+        else:
+            status = 'Usuario o clave incorrecta.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
 
 
 '''
@@ -175,7 +178,11 @@ def login_service(request):
 
 
 def login_user_to_json(user):
+    is_artist = False
     try:
+        artist = Artist.objects.get(user__id=user.id)
+        if artist is not None:
+            is_artist = True
         token = Token.objects.create(user=user)
     except:
         token = Token.objects.get(user=user)
@@ -185,6 +192,167 @@ def login_user_to_json(user):
         'last_name': user.last_name,
         'username': user.username,
         'email': user.email,
-        'token': token.key
+        'token': token.key,
+        'is_artist': is_artist,
     }
     return json_data
+
+
+def register_business_agent(request):
+
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    username = request.POST.get('username')
+    email = request.POST.get('email')
+    password1 = request.POST.get('password1')
+    password2 = request.POST.get('password2')
+
+    if(username is not "" and password1 is not "" and password2 is not ""
+       and email is not "" and first_name is not "" and
+       last_name is not ""):
+
+        exist_user = User.objects.filter(username=username)
+        if exist_user.count() > 0:
+            status = 'Usuario ya existe.'
+        else:
+            if password1 != password2:
+                status = 'Las contraseñas no coinciden.'
+            else:
+                user = User.objects.create_user(
+                    username=username,
+                    password=password1,
+                    email=email,
+                    first_name=first_name,
+                    last_name=last_name)
+                user.save()
+
+                if create_business_agent(user, request):
+                    status = ''
+                else:
+                    status = 'Error guardando el agente comercial.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return status
+
+
+def create_business_agent(user, request):
+    agent = BusinessAgent()
+
+    agent.telephone_number = request.POST.get('telephone_number')
+    agent.avatar = request.POST.get('avatar')
+    agent.address = request.POST.get('address')
+    agent.city = request.POST.get('city')
+    agent.country = request.POST.get('country')
+    agent.user = user
+
+    agent.save()
+    return True
+
+
+def update_business_agent(request, id_user):
+
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+
+    print(id_user)
+
+    if(email is not "" and first_name is not "" and last_name is not ""):
+
+        user = User.objects.get(id=id_user)
+        if user is None:
+            status = 'Usuario no existe.'
+        else:
+            user.email = email
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+
+            if update_business_agent_process(user, request):
+                status = ''
+            else:
+                status = 'Error guardando el agente comercial.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return status
+
+
+def update_business_agent_process(user, request):
+    agent = BusinessAgent.objects.get(user__id=user.id)
+
+    agent.telephone_number = request.POST.get('telephone_number')
+    agent.avatar = request.POST.get('avatar')
+    agent.address = request.POST.get('address')
+    agent.city = request.POST.get('city')
+    agent.country = request.POST.get('country')
+    agent.birth_date = request.POST.get('birth_date')
+    agent.user = user
+
+    agent.save()
+    return True
+
+
+def request_password_restore_action(request):
+    username = request.GET.get('username')
+
+    if (username is not None):
+        user = User.objects.get(username=username)
+        if user is not None:
+            if request_password_restore_subaction(user, request):
+                status = 'Correo enviado.'
+            else:
+                status = 'Error en el envio del correo.'
+        else:
+            status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
+
+
+def request_password_restore_subaction(user, request):
+
+    try:
+        dto = TokenUser.objects.get(user__id=user.id)
+    except:
+        dto = TokenUser()
+        dto.user = user
+        dto.save()
+
+    try:
+        subject = 'Freeven :: Servicio de recuperación de contraseña'
+        body_text = 'Estimado ' + user.first_name + ', \n\n'
+        body_text = body_text + 'Para recuperar su clave haga clic en el '
+        body_text = body_text + 'siguiente enlace: \n\n'
+        body_text = body_text + 'http://' + request.META['HTTP_HOST']
+        body_text = body_text + '/user/pass_restore/?usr=' + str(user.username)
+        body_text = body_text + '&token=' + dto.token
+        body_text = body_text + '\n\n Cordial saludo,'
+
+        send_mail(subject, body_text, settings.EMAIL_HOST_USER,
+                  ['administrator@freeven.herokuapp.com'], fail_silently=True)
+        return True
+    except:
+        return False
+
+
+def change_password_action(request):
+    username = request.GET.get('username')
+    password = request.GET.get('password')
+
+    if (username is not None and password is not None):
+        try:
+            user = User.objects.get(username=username)
+            try:
+                token_user = TokenUser.objects.get(user__id=user.id)
+                user.set_password(password)
+                user.save()
+                token_user.delete()
+                status = 'La clave fue actualizada.'
+            except:
+                status = 'El token no existe, debe solicitar el cambio de '
+                status = status + 'clave.'
+        except:
+            status = 'Usuario no existe.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
