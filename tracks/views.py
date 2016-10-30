@@ -35,6 +35,7 @@ def trace(request):
     trace.insert(
         request.data['user'],
         request.data['track'],
+        request.data['artist'],
         request.data['action'],
         get_client_ip(request),
     )

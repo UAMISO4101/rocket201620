@@ -9,7 +9,11 @@ class GenderAdmin(admin.ModelAdmin):
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "name",
+        "artist",
+    )
+    list_editable = ("artist",)
 
 
 @admin.register(Top)

@@ -33,7 +33,7 @@ class TraceManager:
         ])
         return list(top)
 
-    def insert(self, user, track, action, ip):
+    def insert(self, user, track, artist, action, ip):
         g = GeoIP2()
 
         if ip == '127.0.0.1':
@@ -43,8 +43,28 @@ class TraceManager:
         self.db.events.insert_one({
             "user": user,
             "track": track,
+            "artist": artist,
             "action": action,
             "date": time.strftime("%Y-%m-%d %H:%M"),
             "ip": ip,
             "geolocation": geolocation
         })
+
+    def top_artist_played(self):
+        top = self.db.events.aggregate([
+            {"$match": {"action": "play"}},
+            {
+                "$group": {
+                    "_id": {
+                        "artist": "$artist"
+                    },
+                    "count": {"$sum": 1}
+                }
+            },
+            {
+                "$sort": {
+                    "count": -1
+                }
+            }
+        ])
+        return list(top)
