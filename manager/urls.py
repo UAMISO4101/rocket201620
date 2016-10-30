@@ -12,7 +12,7 @@ urlpatterns = [
         {
             'template_name': 'login.html'
         },
-        name='login',
+        name='login_manager',
     ),
     url(
         '^logout/',

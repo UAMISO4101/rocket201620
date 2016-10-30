@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^request_password_restore/$', views.request_password_restore,
         name='request_password_restore'),
     url(r'^change_password/$', views.change_password, name='change_password'),
+    url(r'^change_password_op/$', views.change_password_op,
+        name='change_password_op'),
 ]

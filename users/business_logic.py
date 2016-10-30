@@ -361,6 +361,26 @@ def change_password_action(request):
     return {'status': status}
 
 
+def change_password_op_action(request):
+    username = request.GET.get('username')
+    password = request.GET.get('password')
+    old_password = request.GET.get('old_password')
+
+    if (username is not None and password is not None and
+            old_password is not None):
+        user = authenticate(username=username, password=old_password)
+        if user is not None:
+            print(user)
+            user.set_password(password)
+            user.save()
+            status = 'La clave fue actualizada.'
+        else:
+            status = 'Usuario o clave  incorrecta.'
+    else:
+        status = 'Todos los campos son obligatorios.'
+    return {'status': status}
+
+
 def update_profile_action(json_data):
     first_name = json_data['first_name']
     last_name = json_data['last_name']

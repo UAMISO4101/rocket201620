@@ -24,8 +24,9 @@ class TrackListView(ListAPIView):
 
 @csrf_exempt
 def register_rate_track(request):
-    permission_classes = (IsAuthenticated,)
-
-    if request.method == 'GET':
-        response = register_rate_track_action(request)
-        return JsonResponse(response)
+    if request.user.is_authenticated():
+        if request.method == 'GET':
+            response = register_rate_track_action(request)
+            return JsonResponse(response)
+    else:
+        return redirect(reverse('track'))

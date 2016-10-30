@@ -2,13 +2,16 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from users.business_logic import (
     register_user_in_model, get_info_users, login_service,
     request_password_restore_action, change_password_action,
-    update_profile_action
+    update_profile_action, change_password_op_action
 )
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 '''
     user
@@ -27,12 +30,6 @@ def user(request):
     if request.method == 'GET':
         response = get_info_users(request)
         return JsonResponse(response, safe=False)
-
-'''
-    login_user
-    Servicio REST para la autenticacion de usuarios Django.
-    Param: GET, POST, PUT, DELETE
-'''
 
 
 @csrf_exempt
@@ -57,8 +54,21 @@ def change_password(request):
 
 
 @csrf_exempt
+def change_password_op(request):
+    if request.user.is_authenticated():
+        if request.method == 'GET':
+            response = change_password_op_action(request)
+            return JsonResponse(response)
+    else:
+        return redirect(reverse('user'))
+
+
+@csrf_exempt
 def update_profile(request):
-    if request.method == 'POST':
-        json_data = json.loads(request.body.decode('utf-8'))
-        response = update_profile_action(json_data)
-        return JsonResponse(response)
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            json_data = json.loads(request.body.decode('utf-8'))
+            response = update_profile_action(json_data)
+            return JsonResponse(response)
+    else:
+        return redirect(reverse('user'))
