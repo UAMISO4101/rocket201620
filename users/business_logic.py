@@ -344,7 +344,6 @@ def change_password_action(request):
             user = User.objects.get(username=username)
             try:
                 token_user = TokenUser.objects.get(user__id=user.id)
-                print(token_user)
                 user.set_password(password)
                 user.save()
                 token_user.delete()

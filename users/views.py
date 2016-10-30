@@ -48,6 +48,7 @@ def request_password_restore(request):
         return JsonResponse(response)
 
 
+@csrf_exempt
 def change_password(request):
     if request.method == 'GET':
         response = change_password_action(request)
