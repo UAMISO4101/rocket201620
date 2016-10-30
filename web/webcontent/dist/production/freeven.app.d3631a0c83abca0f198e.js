@@ -214,7 +214,7 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	
+
 	module.exports = "https://freeven.s3.amazonaws.com/static/production/home.html"
 
 /***/ },
@@ -57557,7 +57557,7 @@
 /* 19 */
 /***/ function(module, exports) {
 
-	/*! 
+	/*!
 	 * angular-loading-bar v0.8.0
 	 * https://chieffancypants.github.io/angular-loading-bar
 	 * Copyright (c) 2015 Wes Cruver
@@ -57905,7 +57905,7 @@
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * angular-translate - v2.12.1 - 2016-09-15
-	 * 
+	 *
 	 * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
 	 */
 	(function (root, factory) {
@@ -60731,9 +60731,9 @@
 	/**
 	 * @ngdoc directive
 	 * @name pascalprecht.translate.directive:translate
-	 * @requires $interpolate, 
-	 * @requires $compile, 
-	 * @requires $parse, 
+	 * @requires $interpolate,
+	 * @requires $compile,
+	 * @requires $parse,
 	 * @requires $rootScope
 	 * @restrict AE
 	 *

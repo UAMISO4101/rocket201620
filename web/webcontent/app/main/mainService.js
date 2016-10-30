@@ -1,41 +1,50 @@
 /**
-* Created by diego on 8/10/2016.
-*/
+ * Created by diego on 8/10/2016.
+ */
 
 var mainModule = angular.module('mainModule');
 mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', '$cookieStore',
-function ($i18n, $freevenModal, notifierService, $cookieStore) {
-  var mainService = function () {
+    function ($i18n, $freevenModal, notifierService, $cookieStore) {
+        var mainService = function () {
 
-    var self = this;
+            var self = this;
 
-    self.user = {};
+            self.user = {};
 
-    self.isAuthenticated = function () {
-      self.user.token = $cookieStore.get('user_token');
-      if (self.user.token) {
-        self.user.first_name = $cookieStore.get('first_name');
-        return true;
-      } else {
-        return false;
-      }
-    };
-    self.isArtist = function (){
-      return self.user.isArtist;
-    };
-    self.setUserToken = function (token) {
-      $cookieStore.put('user_token', token);
+            self.isAuthenticated = function () {
+                if (self.user.token) {
+                    return true;
+                }
+                return false;
+            };
 
-    };
-    self.setUserFirstName = function (first_name) {
+            self.logout = function () {
+                self.user = {};
+                self.deleteUserCookies();
+            };
 
-      $cookieStore.put('first_name',first_name);
-    };
+            self.isArtist = function () {
+                return self.user.is_artist;
+            };
 
-    self.deleteUserToken = function (){
-      $cookieStore.remove('user_token');
-    }
+            self.setUserData = function (userData) {
+                self.user = userData;
+                self.saveUserCookies(userData);
+            };
+            self.loadUserDataFromCookies = function () {
+                self.user = $cookieStore.get('user_data') || {};
+            };
 
-  };
-  return new mainService();
-}]);
+            self.saveUserCookies = function (userData) {
+                $cookieStore.put('user_data', userData);
+            };
+
+            self.deleteUserCookies = function () {
+                $cookieStore.remove('user_data');
+            }
+
+        };
+        var main = new mainService();
+        main.loadUserDataFromCookies();
+        return main;
+    }]);
