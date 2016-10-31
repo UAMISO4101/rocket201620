@@ -230,6 +230,7 @@
 	 __webpack_require__(171);
 	 __webpack_require__(172);
 	 __webpack_require__(174);
+	__webpack_require__(176);
 
 
 
@@ -66323,15 +66324,18 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  donationModule = angular.module('donationModule');
-	var DonationController = ['$i18n', function ($i18n) {
+	var donationModule = angular.module('donationModule');
+	var DonationController = ['$i18n', 'donationService', function ($i18n, donationService) {
 	    /**
 	     * Tip: add here only visual logic
 	     */
 	    var self = this;
-	    self.showAlert = function () {
-	        alert($i18n.translate.general_alert);
-	    };
+
+	    self.donation = donationService;
+
+	    self.donation.getDonation();
+
+
 	}];
 
 	donationModule.component('donation', {
@@ -66349,7 +66353,7 @@
 /* 173 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Email</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td>John</td>\r\n                        <td>Doe</td>\r\n                        <td>john@example.com</td>\r\n                        <td>30-10-2016</td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td>Mary</td>\r\n                        <td>Moe</td>\r\n                        <td>mary@example.com</td>\r\n                        <td>30-10-2016</td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td>July</td>\r\n                        <td>Dooley</td>\r\n                        <td>july@example.com</td>\r\n                        <td>30-10-2016</td>\r\n                    </tr>\r\n\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
+	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Email</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donation.donations\">\r\n                        <td>{{ donation.first_name }}</td>\r\n                        <td>{{ donation.last_name }}</td>\r\n                        <td>{{ donation.email }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
 
 /***/ },
 /* 174 */
@@ -66389,6 +66393,54 @@
 	exports.push([module.id, ".donation {\n  padding-top: 65px;\n  display: block;\n  background-color: #fdffff;\n  margin: 8px;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n  color: black;\n  text-align: center;\n}\n.donation span {\n  color: #002300;\n}\n.donation .table {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  align: center;\n  text-align: center;\n  border: 1px solid #000000;\n}\n", ""]);
 
 	// exports
+
+
+/***/ },
+/* 176 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var donationModule = angular.module('donationModule');
+	donationModule.factory('donationService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter) {
+
+	        var donationService = function () {
+
+	            var self = this;
+
+	            self.donation = {};
+	            self.donation2 = {};
+
+	            self.donations = [];
+
+	            this.getDonation = function () {
+	                //TODO CONSUME GET Donations
+	                self.donation.first_name = "Diego";
+	                self.donation.email = "yego23@gmail.com";
+	                self.donation.last_name = "Ruiz";
+	                self.donation.date = new Date("2016-10-30");
+	                self.donation.value = 12000;
+
+	                self.donation2.first_name = "Pedro";
+	                self.donation2.email = "yego23@gmail.com";
+	                self.donation2.last_name = "Sanchez";
+	                self.donation2.date = new Date("2016-10-31");
+	                self.donation2.value = 15000;
+
+	                self.donations.push(self.donation);
+	                self.donations.push(self.donation2);
+
+	                console.log(self.donations);
+
+	            };
+
+	        };
+	        return new donationService();
+	    }]);
 
 
 /***/ }

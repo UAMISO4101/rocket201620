@@ -1,12 +1,15 @@
-var  donationModule = angular.module('donationModule');
-var DonationController = ['$i18n', function ($i18n) {
+var donationModule = angular.module('donationModule');
+var DonationController = ['$i18n', 'donationService', function ($i18n, donationService) {
     /**
      * Tip: add here only visual logic
      */
     var self = this;
-    self.showAlert = function () {
-        alert($i18n.translate.general_alert);
-    };
+
+    self.donation = donationService;
+
+    self.donation.getDonation();
+
+
 }];
 
 donationModule.component('donation', {

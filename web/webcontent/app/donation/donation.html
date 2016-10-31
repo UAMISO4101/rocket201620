@@ -13,27 +13,16 @@
                         <td><h3>Nombres</h3></td>
                         <td><h3>Apellidos</h3></td>
                         <td><h3>Email</h3></td>
+                        <td><h3>Valor</h3></td>
                         <td><h3>Fecha</h3></td>
                     </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                        <td>30-10-2016</td>
+                    <tr ng-repeat="donation in ctrl.donation.donations">
+                        <td>{{ donation.first_name }}</td>
+                        <td>{{ donation.last_name }}</td>
+                        <td>{{ donation.email }}</td>
+                        <td>$ {{ donation.value | number }}</td>
+                        <td>{{ donation.date | date:'medium' }}</td>
                     </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td>mary@example.com</td>
-                        <td>30-10-2016</td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td>Dooley</td>
-                        <td>july@example.com</td>
-                        <td>30-10-2016</td>
-                    </tr>
-
                     </tbody>
                 </table>
 

@@ -141,5 +141,6 @@ require('../app/artist/artistService.js');
  require('../app/donation/donationModule.js');
  require('../app/donation/donationComponent.js');
  require('../app/donation/donation.less');
+require('../app/donation/donationService.js');
 
 
