@@ -19,19 +19,19 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
                     self.user,
                     function (response) {
                         if (response.token) {
-                            mainService.setUserToken(response.token);
-                            mainService.setUserFirstName(response.first_name);
+                            mainService.setUserData(response);
                             notifierService.success("Bienvenido", response.first_name);
                         } else {
                             notifierService.error("Error de autenticación", response.status);
                         }
                     },
                     function (error) {
-                        notifierService.error("Error de autenticación", error.status);
+                        //notifierService.error("Error de autenticación", error.status);//esta notificacion es automatica
                     });
             };
             self.logout = function () {
-                mainService.deleteUserToken();
+                self.user = {};
+                mainService.logout();
             };
 
             this.showRegisterPopup = function () {
@@ -42,5 +42,3 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
         };
         return new loginService();
     }]);
-
-
