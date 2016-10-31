@@ -33,8 +33,6 @@ donationModule.factory('donationService', ['UserApiService', '$i18n', '$freevenM
                 self.donations.push(self.donation);
                 self.donations.push(self.donation2);
 
-                console.log(self.donations);
-
             };
 
         };

@@ -7,6 +7,7 @@ var DonationController = ['$i18n', 'donationService', function ($i18n, donationS
 
     self.donation = donationService;
 
+    self.donation.donations = [];
     self.donation.getDonation();
 
 

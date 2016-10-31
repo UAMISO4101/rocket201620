@@ -66333,6 +66333,7 @@
 
 	    self.donation = donationService;
 
+	    self.donation.donations = [];
 	    self.donation.getDonation();
 
 
@@ -66433,8 +66434,6 @@
 
 	                self.donations.push(self.donation);
 	                self.donations.push(self.donation2);
-
-	                console.log(self.donations);
 
 	            };
 
