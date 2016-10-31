@@ -64307,8 +64307,8 @@
 
 	var userMenuModule = angular.module('userMenuModule');
 	var UserMenuController = ['$i18n', 'userMenuService', 'loginService', 'mainService',
-	    'userEditService','userPasswordService',
-	    function ($i18n, userMenuService, loginService, mainService, userEditService,userPasswordService) {
+	    'userEditService', '$cookieStore',
+	    function ($i18n, userMenuService, loginService, mainService, userEditService, $cookieStore) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -64322,14 +64322,17 @@
 
 	        self.userEdit = userEditService;
 
-	        self.userEdit.getUser();
+	        self.idUserAuth = $cookieStore.get('user_data').id_user;
+
+	        self.userEdit.getUser(self.idUserAuth);
 
 	        self.showLoginPopup = function () {
 	            self.userMenu.showLoginPopup();
 	        };
 
 	        self.showEditPopup = function () {
-	            self.userEdit.getUser();
+
+	            self.userEdit.getUser(self.idUserAuth);
 	            self.userEdit.showEditPopup();
 	        };
 
@@ -65576,7 +65579,7 @@
 	                $freevenModal.closePopup();
 	            };
 
-	            this.getUser = function () {
+	            this.getUser = function (id) {
 	                //TODO CONSUME GET USER
 	                self.user.first_name = "Diego";
 	                self.user.email = "yego23@gmail.com";
