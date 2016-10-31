@@ -8,7 +8,7 @@
                 <button ng-click="ctrl.play(ctrl.frModel)" class="btn-playpause">Play</button>
             </div>
         </div>
-        <div class="item-info">
+        <div ng-if="!ctrl.hideItemInfo" class="item-info">
             <div class="item-overlay bottom text-right">
                 <a class="btn-download"
                    href="{{ctrl.frModel.url}}"

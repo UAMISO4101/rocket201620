@@ -24,11 +24,16 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     format: "json"
                 };
                 self.loading = true;
+                self.topTracks = [];
                 TrackApiService.loadTopTracks(
                     params,
                     function (response) {
                         self.loading = false;
-                        self.tracks = response.results;
+                        for (var i = 0; i < response.results.length; i++) {
+                            var track = response.results[i];
+                            track.position = i + 1;
+                            self.topTracks.push(track)
+                        }
                     },
                     function (error) {
                         console.log('Error loading tracks');
@@ -62,7 +67,8 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
 
             self.playFirstTrack = function () {
-                if (self.tracks.length > 0) {
+                 var self = this;
+                if (self.tracks && self.tracks.length > 0) {
                     playerService.playTrack(self.tracks[0]);
                 }
             };

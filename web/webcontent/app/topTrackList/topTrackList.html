@@ -1,0 +1,20 @@
+<div class="row top-track-list">
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="track in ctrl.trackList.topTracks">
+        <div class="row">
+            <track class="top-item-track col-xs-3"
+                   hide-item-info="true"
+                   fr-model="track">
+            </track>
+            <div class="top-item-description col-xs-8 col-sm-8 col-md-8">
+                <h3 class="track-name"><a>{{ track.name }}</a></h3>
+                <h3 class="track-artist"><a class="text-muted" href="#/artist/{{track.artist_id}}" >{{ track.artist }}</a></h3>
+            </div>
+            <div class="top-item-position col-xs-1 col-sm-1 col-md-1">
+                <h1> {{ track.position }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
+</div>
