@@ -8,7 +8,7 @@
         var languageEn = require('../app/i18n/resources/en-us.json');
         $translateProvider.translations('es-co', languageEs);
         $translateProvider.translations('en-us', languageEn);
-        $translateProvider.preferredLanguage('en-us');
+        $translateProvider.preferredLanguage('en-co');
         $translateProvider.useSanitizeValueStrategy(null);
         $routeProvider.when('/', {
           template: '<track-list> </track-list>'

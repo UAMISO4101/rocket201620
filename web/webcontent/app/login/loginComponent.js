@@ -1,7 +1,7 @@
 var loginModule = angular.module('loginModule');
 var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService',
-
-    function ($i18n, loginService, $freevenModal, userMenuService, loginService) {
+    'forgotPasswordService',
+    function ($i18n, loginService, $freevenModal, userMenuService, loginService,forgotPasswordService) {
         /**
          * Tip: add here only visual logic
          */
@@ -10,6 +10,8 @@ var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuServic
         self.userLogin = loginService;
 
         self.userMenu = userMenuService;
+
+        self.forgotPassword = forgotPasswordService;
 
 
         self.login = function () {
@@ -26,6 +28,10 @@ var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuServic
 
         self.showRegisterPopup = function () {
             self.userMenu.showRegisterPopup();
+        };
+
+        self.showForgotPasswordPopup = function () {
+            self.forgotPassword.showPopup();
         };
     }];
 
