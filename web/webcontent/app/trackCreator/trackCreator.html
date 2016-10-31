@@ -14,6 +14,7 @@
                ngf-multiple="false"
                accept=".jpg"
                filters=".jpg"
+               ngf-change="ctrl.attachFile($files,'image')"
                class="form-control track-picture-selector">
                 <i class="icon icon-images"></i>
                 <span>Seleccione la carátula</span>
@@ -28,6 +29,7 @@
                     <div class="col-md-6">
                         <label class="control-label" for="artistic_name">Nombre de la pista</label>
                         <input type="text"
+                               ng-model="ctrl.trackName"
                                placeholder="Nombre de la pista..."
                                class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
                     </div>
@@ -47,6 +49,7 @@
                            ngf-multiple="false"
                            accept=".mp3"
                            filters=".mp3"
+                           ngf-change="ctrl.attachFile($files,'audio')"
                            class="form-control">
                             <i class="icon icon-upload">
                                 <span>Seleccione el archivo .mp3</span>
@@ -58,7 +61,7 @@
             <fieldset class="form-group">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData($files)">
+                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData()">
                             <span>Crear pista</span>
                         </button>
                     </div>
