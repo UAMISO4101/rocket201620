@@ -1,6 +1,7 @@
 var userEditModule = angular.module('userEditModule');
-var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope','userPasswordService',
-    function ($i18n, $freevenModal, userEditService, $scope,userPasswordService) {
+var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope', 'userPasswordService',
+    'Upload',
+    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload) {
         /**
          * Tip: add here only visual logic
          */
@@ -11,7 +12,9 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
 
         self.photoProfile = [];
 
-        var img = {"img":self.userEdit.user.avatar}
+        self.profileFiles = {};
+
+        var img = {"img": self.userEdit.user.avatar}
 
         self.photoProfile.push(img);
 
@@ -34,12 +37,14 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
                 if ((typeUser == 'True') && self.passwordOk == true) {
                     var saveArtist = self.validateFieldsArtist();
                     if (saveArtist) {
+                        self.uploadFilesAndData();
                         self.saveUser();
                     }
                 }
                 if ((typeUser == 'False') && self.passwordOk == true) {
                     var saveUser = self.validateFieldsUser();
                     if (saveUser) {
+                        self.uploadFilesAndData();
                         self.saveUser();
                     }
                 }
@@ -93,6 +98,7 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             var files = event.target.files;
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
+
                 var reader = new FileReader();
                 reader.onload = $scope.imageIsLoaded;
                 reader.readAsDataURL(file);
@@ -100,16 +106,40 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
         }
 
         $scope.imageIsLoaded = function (e) {
-              img = {}
+            img = {}
             $scope.$apply(function () {
+                //img = {"img": e.target.result};
                 img = {"img": e.target.result};
                 self.photoProfile.push(img);
             });
         }
 
         self.putPhotoProfile = function () {
-            self.userEdit.user.avatar = self.photoProfile[0].img;
+            //self.userEdit.user.avatar = self.photoProfile[0].img;
         }
+
+        self.attachFile = function (files, fieldName) {
+            if (files && files.length > 0) {
+                var file = files[0];
+                self.profileFiles[fieldName] = file;
+            }
+        };
+        self.uploadFilesAndData = function () {
+            console.log('subido correctamente');
+            var self = this;
+            if (self.profileFiles) {
+                Upload.upload({
+                    url: 'api/track/upload',
+                    fields: {
+                        foto: "Enviar campo de prueba"
+                    },
+                    files: self.profileFiles
+                }).progress(function (evt) {
+                }).success(function (data, status, headers, config) {
+                    console.log('subido correctamente');
+                });
+            }
+        };
 
     }];
 
