@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from tracks.models import Gender
 from users.models import BusinessAgent
+from django.contrib.auth.models import User
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
 from django.core.urlresolvers import reverse
 from users.business_logic import (
@@ -88,3 +89,26 @@ def businessAgentUpdate(request, pk):
                           {'mensaje': mensaje, 'agent': agent})
     else:
         return redirect(reverse('manager'))
+
+
+@method_decorator(login_required, name='dispatch')
+class UserListView(ListView):
+    model = User
+    template_name = 'user_list.html'
+    context_object_name = 'users'
+
+
+@method_decorator(login_required, name='dispatch')
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'user_update.html'
+    context_object_name = 'user'
+    fields = [
+        'first_name',
+        'last_name',
+        'email',
+        'is_active',
+    ]
+
+    def get_success_url(self):
+        return reverse('user-list')
