@@ -5,11 +5,17 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             var self = this;
             self.selectedTrack = {};
             self.loading = false;
-            self.loadTracks = function (params) {
-                params.format = "json";
+            self.currentOffset = 0;
+            self.params = {
+                format: "json",
+                offset: 0
+            };
+            self.tracks = [];
+            self.loadTracks = function () {
+                var self = this;
                 self.loading = true;
                 TrackApiService.searchTracks(
-                    params,
+                    self.params,
                     function (response) {
                         self.loading = false;
                         self.tracks = response.results;
@@ -40,17 +46,16 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     });
             };
             self.nextPage = function () {
-                var params = {};
-                params.format = "json";
                 self.loading = true;
                 self.busy = true;
                 TrackApiService.searchTracks(
-                    params,
+                    self.params,
                     function (response) {
                         self.loading = false;
                         self.busy = false;
                         if (response.results.length > 0) {
                             self.tracks = self.tracks.concat(response.results);
+                            self.params.offset += 10;
                         }
                         else {
                             self.empty = self.tracks.length <= 0;
@@ -67,7 +72,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
 
             self.playFirstTrack = function () {
-                 var self = this;
+                var self = this;
                 if (self.tracks && self.tracks.length > 0) {
                     playerService.playTrack(self.tracks[0]);
                 }
