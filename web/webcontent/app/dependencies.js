@@ -138,4 +138,8 @@ require('../app/artist/artistComponent.js');
 require('../app/artist/artist.less');
 require('../app/artist/artistService.js');
 
+ require('../app/donation/donationModule.js');
+ require('../app/donation/donationComponent.js');
+ require('../app/donation/donation.less');
+
 

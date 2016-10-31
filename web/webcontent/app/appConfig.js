@@ -22,6 +22,9 @@
          $routeProvider.when('/upload', {
           template: '<track-creator></track-creator>'
         });
+          $routeProvider.when('/donation', {
+          template: '<donation></donation>'
+        });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');
       }]

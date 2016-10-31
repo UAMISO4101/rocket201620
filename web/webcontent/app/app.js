@@ -27,7 +27,8 @@ var appModules = [
     'helpModule',
     'artistModule',
     'topTrackListModule',
-    'trackCreatorModule'
+    'trackCreatorModule',
+    'donationModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
