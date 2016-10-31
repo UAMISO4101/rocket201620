@@ -24,9 +24,21 @@ html, body {
     cursor: pointer;
   }
 
+  .brand-description {
+    color: black;
+    float: right;
+    width: 76%;
+    padding-right: 5%;
+    h3 {
+      font-weight: 500;
+      line-height: 1.1;
+      color: black;
+      font-size: 36px;
+    }
+  }
   .header-fake {
     margin-top: ~"calc(100vh)";
-    margin-bottom: 200px;
+    margin-bottom: 30px;
   }
 
   .header {
@@ -166,11 +178,13 @@ html, body {
       }
     }
     .footer {
-      height: 70px;
+      min-height: 30px;
       width: 100%;
       z-index: 4;
       position: fixed;
       bottom: 0px;
+      background-color: #dadada;
+      z-index: 45;
     }
 
   }

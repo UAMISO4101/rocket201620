@@ -11,10 +11,9 @@
                  src="../styles/images/sol.jpg"
                  alt="Profile image example"/>
             <a ngf-select
-               ngf-change="ctrl.uploadFile($files)"
                ngf-multiple="false"
-               accept=".mp3"
-               filters=".mp3"
+               accept=".jpg"
+               filters=".jpg"
                class="form-control track-picture-selector">
                 <i class="icon icon-images"></i>
                 <span>Seleccione la carátula</span>
@@ -45,7 +44,6 @@
                     <div class="col-md-6">
                         <label class="control-label">Archivo de audio</label>
                         <a ngf-select
-                           ngf-change="ctrl.uploadFile($files)"
                            ngf-multiple="false"
                            accept=".mp3"
                            filters=".mp3"
@@ -60,7 +58,7 @@
             <fieldset class="form-group">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="freeven-accept-btn">
+                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData($files)">
                             <span>Crear pista</span>
                         </button>
                     </div>

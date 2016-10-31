@@ -5,7 +5,8 @@ var TrackCreatorController = ['Upload',
      * Tip: add here only visual logic
      */
     var self = this;
-    self.uploadFile = function (files) {
+    self.uploadFilesAndData = function (files) {
+        console.log("subiendo");
         //todo: filter  only .bex  files
         if (files && files.length > 0) {
             var file = files[0];
