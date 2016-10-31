@@ -11,6 +11,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                 offset: 0
             };
             self.tracks = [];
+            self.indexTrack = 0;
             self.loadTracks = function () {
                 var self = this;
                 self.loading = true;
@@ -79,15 +80,19 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
 
             self.next = function () {
-                //todo: obtain next in the list
-                var nexTrack = {};
-                self.playSelected();
+                if (self.indexTrack <= self.tracks.length - 2) {
+                    self.indexTrack += 1;
+                    var nexTrack = self.tracks[self.indexTrack];
+                    self.playSelected(nexTrack);
+                }
             };
 
             self.prev = function () {
-                //todo: obtain prev in the list
-                var prevTrack = {};
-                self.playSelected();
+                if (self.indexTrack >= 1) {
+                    self.indexTrack -= 1;
+                    var prevTrack = self.tracks[self.indexTrack];
+                    self.playSelected(prevTrack);
+                }
             };
         };
         return new TrackListService();
