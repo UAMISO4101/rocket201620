@@ -24,6 +24,7 @@ class TrackSerializer(serializers.ModelSerializer):
     gender = serializers.SerializerMethodField()
     artist = serializers.SerializerMethodField()
     artist_id = serializers.SerializerMethodField()
+    artistic_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Track
@@ -35,7 +36,8 @@ class TrackSerializer(serializers.ModelSerializer):
             'url',
             'score',
             'artist',
-            'artist_id'
+            'artist_id',
+            'artistic_name',
         )
 
     @classmethod
@@ -72,6 +74,14 @@ class TrackSerializer(serializers.ModelSerializer):
             return obj.artist.id
         except:
             return None
+
+    @classmethod
+    def get_artistic_name(self, obj):
+        try:
+            return obj.artist.artistic_name
+        except:
+            return None
+
 
 class TopSerializer(serializers.ModelSerializer):
     track = TrackSerializer(read_only=True)
