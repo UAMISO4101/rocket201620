@@ -75,7 +75,9 @@
 	    'topTrackListModule',
 	    'trackCreatorModule',
 	    'donationModule',
-	    'forgotPasswordModule'
+	    'forgotPasswordModule',
+	    'scoreEditorModule',
+	    'restorePasswordModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -239,6 +241,14 @@
 	__webpack_require__(181);
 
 
+	__webpack_require__(183);
+	__webpack_require__(184);
+	__webpack_require__(186);
+	__webpack_require__(187);
+
+	__webpack_require__(189);
+	__webpack_require__(190);
+	__webpack_require__(192);
 
 
 /***/ },
@@ -62355,6 +62365,9 @@
 	          $routeProvider.when('/donation', {
 	          template: '<donation></donation>'
 	        });
+	        $routeProvider.when('/user/pass/restore/:idUser', {
+	          template: '<restore-password></restore-password>'
+	        });
 	        $routeProvider.otherwise({redirectTo: '/'});
 	        $httpProvider.interceptors.push('notifierInterceptor');
 	      }]
@@ -63744,7 +63757,7 @@
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <a href=\"#/\" class=\"header-item\">Freeven</a>\r\n            <search class=\"fr-search\" title=\"Search\"></search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">Ver ayuda</a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">Subir obras musicales</a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">Mis donaciones</a>\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\r\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna\r\n            restricción.</h3>\r\n        <h3>Descárgalos, escuchalos y usalos en lo que tu quieras</h3>\r\n    </div>\r\n    <div class=\"wrap\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"sidebar\">\r\n            <h3 class=\"app-title\">Freeven</h3>\r\n            <user-panel title=\"UserPanel\"></user-panel>\r\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n        </div>\r\n        <div class=\"content-section\">\r\n            <div class=\"row-col\">\r\n                <div class=\"col-lg-12 b-r no-border-md\">\r\n                    <div ng-view=\"\"></div>\r\n                </div>\r\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                     <r-i18n></r-i18n>\r\n                 </div>-->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <a href=\"#/\">\r\n                <h3 class=\"brand-section\">Freeven</h3>\r\n            </a>\r\n            <search class=\"fr-search\" title=\"Search\"></search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\r\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna\r\n            restricción.</h3>\r\n        <h3>Descárgalos, escuchalos y usalos en lo que tu quieras</h3>\r\n    </div>\r\n    <div class=\"wrap\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"sidebar\">\r\n            <h3 class=\"app-title\">Freeven</h3>\r\n            <user-panel title=\"UserPanel\"></user-panel>\r\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n        </div>\r\n        <div class=\"content-section\">\r\n            <div class=\"row-col\">\r\n                <div class=\"col-lg-12 b-r no-border-md\">\r\n                    <div ng-view=\"\"></div>\r\n                </div>\r\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                     <r-i18n></r-i18n>\r\n                 </div>-->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 61 */
@@ -63786,7 +63799,7 @@
 	exports.i(__webpack_require__(67), "");
 
 	// module
-	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main a {\n  cursor: pointer;\n}\n.main .brand-description {\n  color: black;\n  float: right;\n  width: 76%;\n  padding-right: 5%;\n}\n.main .brand-description h3 {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 30px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n}\n.main .header .header-section .fr-search,\n.main .header-fake .header-section .fr-search {\n  margin-left: 19%;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  width: 200px;\n  display: block;\n  position: fixed;\n  height: 1112px;\n  top: 130px;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  margin-top: 15px;\n  display: block;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  width: calc(100% - 200px);\n  background-color: white;\n  float: right;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  min-height: 30px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n  background-color: #dadada;\n  z-index: 45;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
+	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n  /* para el score editor*/\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml .score-editor-modal .modal-dialog .modal-content,\nbody .score-editor-modal .modal-dialog .modal-content {\n  position: relative;\n  background-color: rgba(255, 0, 0, 0.45);\n  background-clip: padding-box;\n  border: none;\n  border-radius: 6px;\n  outline: 0;\n  box-shadow: none;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main a {\n  cursor: pointer;\n}\n.main .brand-description {\n  color: black;\n  float: right;\n  width: 76%;\n  padding-right: 5%;\n}\n.main .brand-description h3 {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 30px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n  color: #ffffff;\n}\n.main .header .header-section .fr-search,\n.main .header-fake .header-section .fr-search {\n  margin-left: 19%;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  width: 200px;\n  display: block;\n  position: fixed;\n  height: 1112px;\n  top: 130px;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  margin-top: 15px;\n  display: block;\n  margin-right: 8px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  width: calc(100% - 200px);\n  background-color: white;\n  float: right;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  min-height: 30px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n  background-color: #dadada;\n  z-index: 45;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
 
 	// exports
 
@@ -63880,6 +63893,10 @@
 	                self.user = userData;
 	                self.saveUserCookies(userData);
 	            };
+
+	            self.getUserData = function () {
+	                return self.user;
+	            };
 	            self.loadUserDataFromCookies = function () {
 	                self.user = $cookieStore.get('user_data') || {};
 	            };
@@ -63927,10 +63944,29 @@
 
 	        },
 	        loadTopTracks: {
-	            url: 'api/track',
-	           /* url: 'api/track/top',*/
+	            url: 'api/track/top10',
+	            /* url: 'api/track/top',*/
 	            method: 'GET',
 	            params: {},
+	            isArray: false
+	        },
+	        setScoreTrack: {
+	            url: 'api/track/:idTrack/score',
+	            method: 'POST',
+	            params: {
+	                value: '@string'
+	            },
+	            isArray: false
+	        },
+	        traceTrack: {
+	            url: 'api/track/trace',
+	            method: 'POST',
+	            params: {
+	                user: '@string',
+	                track: '@string',
+	                artist: '@string',
+	                action: '@string'
+	            },
 	            isArray: false
 	        }
 	    });
@@ -64238,15 +64274,21 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPanelModule = angular.module('userPanelModule');
-	var UserPanelController = ['trackListService', function (trackListService) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    var self = this;
-	    self.loadTopTracks = function () {
-	        trackListService.loadTopTracks();
-	    };
-	}];
+	var UserPanelController = ['trackListService', 'mainService', 'helpService',
+	    function (trackListService, mainService, helpService ) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.mainService = mainService;
+	        self.loadTopTracks = function () {
+	            trackListService.loadTopTracks();
+	        };
+	        self.enableHelp = function () {
+	            helpService.setEnable(true);
+	            helpService.enablePlayer();
+	        };
+	    }];
 
 	userPanelModule.component('userPanel', {
 	    transclude: true,
@@ -64263,7 +64305,7 @@
 /* 83 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n             <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span> Subir obras musicales</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 84 */
@@ -64300,7 +64342,7 @@
 
 
 	// module
-	exports.push([module.id, "/*@media (min-width: 1100px) {\n  .user-panel {\n    width: 15% !important;\n  }\n}*/\n.user-panel {\n  display: block;\n}\n.user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  padding: 5px 6px;\n  cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "/*@media (min-width: 1100px) {\n  .user-panel {\n    width: 15% !important;\n  }\n}*/\n.user-panel {\n  display: block;\n}\n.user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.89);\n  background-color: rgba(54, 60, 67, 0.82);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: #ffffff;\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 2px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  padding: 5px 6px;\n  cursor: pointer;\n}\n", ""]);
 
 	// exports
 
@@ -64563,7 +64605,7 @@
 
 
 	// module
-	exports.push([module.id, ".search {\n  width: 400px;\n  display: block;\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 8px;\n  border: 1px solid #111111;\n}\n.search .search-field,\n.search .search-field:focus {\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border: none;\n  outline-width: 0;\n  margin: 0 0 0 10px;\n}\n.search .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: hidden;\n  cursor: pointer;\n}\n.search:hover .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: visible;\n}\n", ""]);
+	exports.push([module.id, ".search {\n  width: 400px;\n  display: block;\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border-radius: 8px;\n  border: 1px solid #111111;\n  padding: 0 5px;\n  margin: 8px;\n}\n.search .search-field,\n.search .search-field:focus {\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border: none;\n  outline-width: 0;\n  margin: 0 0 0 10px;\n  width: 93%;\n  height: 33px;\n}\n.search .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: hidden;\n  cursor: pointer;\n}\n.search:hover .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: visible;\n}\n", ""]);
 
 	// exports
 
@@ -64627,8 +64669,8 @@
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('playerModule');
-	playerModule.factory('playerService', ['ngAudio',
-	    function (ngAudio) {
+	playerModule.factory('playerService', ['ngAudio', 'TracksApiService', 'mainService',
+	    function (ngAudio, TracksApiService, mainService) {
 	        var PlayerService = function () {
 	            var self = this;
 	            self.audio = null;
@@ -64647,9 +64689,27 @@
 	                self.audio = ngAudio.load(track.url);
 	                self.audio.play();
 	                self.track = track;
+	                self.traceTrack(track);
 	            };
 	            self.showPlayer = function () {
 	                return self.audio != null
+	            };
+
+	            self.traceTrack = function (track) {
+	                var user = mainService.getUserData();
+	                TracksApiService.traceTrack(
+	                    {
+	                        user: user.username,
+	                        track: track.name,
+	                        artist: track.artist_id,
+	                        action: 'play'
+	                    },
+	                    function (response) {
+
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
 	            };
 	        };
 	        return new PlayerService();
@@ -64691,7 +64751,7 @@
 
 
 	// module
-	exports.push([module.id, ".player {\n  background-color: #202225;\n  border-top: 1px solid #000;\n  height: 70px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .btn-download i,\n.player .btn-volume i,\n.player .btn-time i {\n  margin-top: 20px;\n  font-size: 23px;\n  position: absolute;\n  color: #999999;\n  cursor: pointer;\n}\n.player .btn-download:hover i,\n.player .btn-volume:hover i,\n.player .btn-time:hover i {\n  color: #fafafa;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #999999;\n  background-color: transparent;\n  color: #999999;\n  font-size: 25px;\n  padding: 11px 15px 9px 16px;\n  margin: 3px 0 0 0;\n}\n.player .playpause:hover {\n  color: #fafafa;\n  border: 1px solid #fafafa;\n  /*font-size: 27px;\n      padding: 12px 14px 8px 19px;*/\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  color: #999999;\n}\n.player .next:hover,\n.player .prev:hover {\n  background-color: rgba(100, 100, 100, 0.1);\n  color: #fafafa;\n}\n.player .player-range input[type='range'] {\n  -webkit-appearance: none !important;\n  background: #555555;\n  height: 5px;\n  border-radius: 2px;\n}\n.player .player-range input[type='range']::-webkit-slider-thumb {\n  -webkit-appearance: none !important;\n  background: #02b875;\n  height: 10px;\n  width: 10px;\n  border-radius: 5px;\n}\n.player .player-time {\n  margin-left: -2%;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 30px;\n}\n.player .player-volume {\n  margin-left: -2%;\n}\n.player .player-volume input {\n  margin-top: 30px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.freeven-info,\n.track-info {\n  color: black;\n  margin-left: 30px;\n}\n", ""]);
+	exports.push([module.id, ".player {\n  background-color: #202225;\n  border-top: 1px solid #000;\n  height: 70px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .btn-download i,\n.player .btn-volume i,\n.player .btn-time i {\n  margin-top: 20px;\n  font-size: 23px;\n  position: absolute;\n  color: #999999;\n  cursor: pointer;\n}\n.player .btn-download:hover i,\n.player .btn-volume:hover i,\n.player .btn-time:hover i {\n  color: #fafafa;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #999999;\n  background-color: transparent;\n  color: #999999;\n  font-size: 25px;\n  padding: 11px 15px 9px 16px;\n  margin: 3px 0 0 0;\n}\n.player .playpause:hover {\n  color: #fafafa;\n  border: 1px solid #fafafa;\n  /*font-size: 27px;\n      padding: 12px 14px 8px 19px;*/\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  color: #999999;\n}\n.player .next:hover,\n.player .prev:hover {\n  background-color: rgba(100, 100, 100, 0.1);\n  color: #fafafa;\n}\n.player .player-range input[type='range'] {\n  -webkit-appearance: none !important;\n  background: #555555;\n  height: 5px;\n  border-radius: 2px;\n}\n.player .player-range input[type='range']::-webkit-slider-thumb {\n  -webkit-appearance: none !important;\n  background: #02b875;\n  height: 10px;\n  width: 10px;\n  border-radius: 5px;\n}\n.player .player-time {\n  margin-left: -1%;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 30px;\n}\n.player .player-volume {\n  margin-left: -1%;\n}\n.player .player-volume input {\n  margin-top: 30px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.freeven-info,\n.track-info {\n  color: black;\n  margin-left: 30px;\n}\n", ""]);
 
 	// exports
 
@@ -65304,8 +65364,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
-	var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistService',
-	    function ($i18n, trackListService, mainService, artistService) {
+	var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistService', 'scoreEditorService',
+	    function ($i18n, trackListService, mainService, artistService, scoreEditorService) {
 
 	        var self = this;
 
@@ -65315,6 +65375,10 @@
 
 	        self.loadArtist = function () {
 	            artistService.loadArtist();
+	        };
+
+	        self.showScoreEditorPopup = function () {
+	            scoreEditorService.showScoreEditorPopup();
 	        };
 
 	    }];
@@ -65336,7 +65400,7 @@
 /* 128 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ctrl.frModel.artist_id}}\" >{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n       <help-item text =\"Aquí puedes descargar la pista musical\"> </help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n       <help-item text =\"Comienza a escuchando esta pieza musical\"> </help-item>\r\n    </div>\r\n     <div class=\"fr-track-help-3\">\r\n       <help-item text =\"Califica las piezas musicales\"> </help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ctrl.frModel.url}}\"\r\n                   download=\"{{ctrl.frModel.name}}.mp3\">\r\n                    <i class=\"icon icon-download\" ></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup()\" class=\"btn-favorite\">\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-full\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                    <i class=\"icon icon-star-empty\"></i>\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ctrl.frModel.artist_id}}\" >{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n       <help-item text =\"Aquí puedes descargar la pista musical\"> </help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n       <help-item text =\"Comienza a escuchando esta pieza musical\"> </help-item>\r\n    </div>\r\n     <div class=\"fr-track-help-3\">\r\n       <help-item text =\"Califica las piezas musicales\"> </help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 129 */
@@ -66206,7 +66270,7 @@
 /* 162 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-8 col-sm-8 col-md-8\">\r\n                <h3 class=\"track-name\"><a>{{ track.name }}</a></h3>\r\n                <h3 class=\"track-artist\"><a class=\"text-muted\" href=\"#/artist/{{track.artist_id}}\" >{{ track.artist }}</a></h3>\r\n            </div>\r\n            <div class=\"top-item-position col-xs-1 col-sm-1 col-md-1\">\r\n                <h1> {{ track.position }}</h1>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
+	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
 
 /***/ },
 /* 163 */
@@ -66243,7 +66307,7 @@
 
 
 	// module
-	exports.push([module.id, ".top-track-list {\n  padding: 68px 10%;\n  display: block;\n}\n.top-track-list .top-track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.top-track-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\n.top-track-list .top-item-description {\n  color: #555555;\n}\n.top-track-list .top-item-description .track-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\n.top-track-list .top-item-position {\n  background-color: #dadada;\n  padding-left: 33px;\n  color: rgba(68, 68, 68, 0.83);\n}\n.top-track-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.top-track-list .top-item-position:hover {\n  background-color: #afafaf;\n  padding-left: 33px;\n  color: rgba(68, 68, 68, 0.88);\n}\n.top-track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.top-track-list .text {\n  font-size: 1rem;\n}\n.top-track-list .text-xs,\n.top-track-list .text-xxs {\n  font-size: 12px;\n}\n.top-track-list .text-sm {\n  font-size: 13px;\n}\n.top-track-list .text-md {\n  font-size: 1.125rem;\n}\n.top-track-list .text-lg {\n  font-size: 1.5rem;\n}\n.top-track-list .text-2x {\n  font-size: 2em;\n}\n.top-track-list .text-3x {\n  font-size: 3em;\n}\n.top-track-list .text-4x {\n  font-size: 4em;\n}\n.top-track-list .list-loading {\n  text-align: center;\n}\n.top-track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.top-track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.top-track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
+	exports.push([module.id, ".top-track-list {\n  padding: 68px 10%;\n  display: block;\n}\n.top-track-list .top-track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.top-track-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\n.top-track-list .top-item-description {\n  color: #555555;\n}\n.top-track-list .top-item-description .track-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\n.top-track-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\n.top-track-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.top-track-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\n.top-track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.top-track-list .text {\n  font-size: 1rem;\n}\n.top-track-list .text-xs,\n.top-track-list .text-xxs {\n  font-size: 12px;\n}\n.top-track-list .text-sm {\n  font-size: 13px;\n}\n.top-track-list .text-md {\n  font-size: 1.125rem;\n}\n.top-track-list .text-lg {\n  font-size: 1.5rem;\n}\n.top-track-list .text-2x {\n  font-size: 2em;\n}\n.top-track-list .text-3x {\n  font-size: 3em;\n}\n.top-track-list .text-4x {\n  font-size: 4em;\n}\n.top-track-list .list-loading {\n  text-align: center;\n}\n.top-track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.top-track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.top-track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
 
 	// exports
 
@@ -66641,6 +66705,233 @@
 
 	// module
 	exports.push([module.id, "forgot-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\nforgot-password .fr-modal-header,\nforgot-password .fr-modal-content,\nforgot-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\nforgot-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\nforgot-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\nforgot-password form a:hover {\n  color: #179b77;\n}\nforgot-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\nforgot-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\nforgot-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\nforgot-password form label.active .req {\n  opacity: 0;\n}\nforgot-password form label.highlight {\n  color: black;\n}\nforgot-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\nforgot-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\nforgot-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\nforgot-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\nforgot-password .messages {\n  color: #FA787E;\n}\nforgot-password .colorMensajes {\n  color: red;\n}\nforgot-password input.ng-valid {\n  border: 1px solid green;\n}\nforgot-password input:required:valid {\n  border: 1px solid green;\n}\nforgot-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 183 */
+/***/ function(module, exports) {
+
+	angular.module('scoreEditorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/scoreEditor/scoreEditorModule.js');
+	 require('../app/scoreEditor/scoreEditorComponent.js');
+	 require('../app/scoreEditor/scoreEditor.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <score-editor title ="ScoreEditor"> </score-editor>
+	*/
+
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var scoreEditorModule = angular.module('scoreEditorModule');
+	var ScoreEditorController = ['scoreEditorService',
+	    function (scoreEditorService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.setValue = function (value) {
+	            scoreEditorService.setScoreValue(value);
+	        };
+
+	    }];
+
+	scoreEditorModule.component('scoreEditor', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: ScoreEditorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(185)
+	});
+
+
+/***/ },
+/* 185 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"score-editor\">\r\n    <!--<a ng-click=\"ctrl.setValue(1)\" class=\"btn-favorite\">\r\n        <i class=\"icon icon-star-full\"></i>\r\n    </a>\r\n    <a ng-click=\"ctrl.setValue(2)\" class=\"btn-favorite\">\r\n        <i class=\"icon icon-star-full\"></i>\r\n    </a>\r\n    <a ng-click=\"ctrl.setValue(3)\" class=\"btn-favorite\">\r\n        <i class=\"icon icon-star-full\"></i>\r\n    </a>\r\n    <a ng-click=\"ctrl.setValue(4)\" class=\"btn-favorite\">\r\n        <i class=\"icon icon-star-empty\"></i>\r\n    </a>\r\n    <a ng-click=\"ctrl.setValue(5)\" class=\"btn-favorite\">\r\n        <i class=\"icon icon-star-empty\"></i>\r\n    </a>-->\r\n\r\n    <div class=\"rating\">\r\n\t\t\t<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>\r\n\t\t</div>\r\n</div>\r\n";
+
+/***/ },
+/* 186 */
+/***/ function(module, exports) {
+
+	var scoreEditorModule = angular.module('scoreEditorModule');
+	scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiService',
+	    function ($freevenModal, TracksApiService) {
+	        var scoreEditorService = function () {
+	            var self = this;
+	            self.user = {};
+	            this.showScoreEditorPopup = function (idTrack) {
+	                self.idTrack = idTrack;
+	                $freevenModal.showPopup({}, {
+	                    template: '<score-editor title ="scoreEditor"> </score-editor>',
+	                    windowClass: 'score-editor-modal'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.setScoreValue = function (value) {
+	                var self = this;
+	                self.loading = true;
+	                TracksApiService.setScoreTrack(
+	                    {
+	                        value: value,
+	                        idTrack: self.idTrack
+	                    },
+	                    function (response) {
+	                        self.loading = false;
+	                        console.log('Pista calificada');
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
+	                self.closeModal();
+	            };
+
+	        };
+	        return new scoreEditorService();
+	    }]);
+
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(188);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./scoreEditor.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./scoreEditor.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".score-editor {\n  margin: 60% 0;\n  text-align: center;\n  font-size: 32px;\n  color: #dadada;\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n  /*a {\n    cursor: pointer;\n    text-decoration: none;\n    i {\n      color: #02ab69;\n    }\n    &:hover {\n      i {\n        color: #02b875;\n      }\n    }\n  }*/\n}\n.score-editor .rating {\n  unicode-bidi: bidi-override;\n  direction: rtl;\n  text-align: center;\n}\n.score-editor .rating > span {\n  display: inline-block;\n  position: relative;\n  width: 1.1em;\n}\n.score-editor .rating > span:hover,\n.score-editor .rating > span:hover ~ span {\n  color: transparent;\n}\n.score-editor .rating > span:hover:before,\n.score-editor .rating > span:hover ~ span:before {\n  content: \"\\2605\";\n  position: absolute;\n  left: 0;\n  color: #02b875;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports) {
+
+	angular.module('restorePasswordModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/restorePassword/restorePasswordModule.js');
+	 require('../app/restorePassword/restorePasswordComponent.js');
+	 require('../app/restorePassword/restorePassword.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <restore-password title ="RestorePassword"> </restore-password>
+	*/
+
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var restorePasswordModule = angular.module('restorePasswordModule');
+	var RestorePasswordController = ['$i18n', '$freevenModal','$routeParams', function ($i18n, $freevenModal,$routeParams) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+
+	    console.log($routeParams.idUser);
+
+	}];
+
+	restorePasswordModule.component('restorePassword', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: RestorePasswordController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(191)
+	});
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"passwordForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userPassword.user.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userPassword.user.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_edit_user'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(193);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./restorePassword.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./restorePassword.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".restore-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.restore-password .fr-modal-header,\n.restore-password .fr-modal-content,\n.restore-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.restore-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.restore-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.restore-password form a:hover {\n  color: #179b77;\n}\n.restore-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.restore-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.restore-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.restore-password form label.active .req {\n  opacity: 0;\n}\n.restore-password form label.highlight {\n  color: black;\n}\n.restore-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.restore-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.restore-password .messages {\n  color: #FA787E;\n}\n.restore-password .colorMensajes {\n  color: red;\n}\n.restore-password input.ng-valid {\n  border: 1px solid green;\n}\n.restore-password input:required:valid {\n  border: 1px solid green;\n}\n.restore-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
 
 	// exports
 

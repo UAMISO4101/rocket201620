@@ -22,4 +22,9 @@ urlpatterns = [
     url(r'^change_password/$', views.change_password, name='change_password'),
     url(r'^change_password_op/$', views.change_password_op,
         name='change_password_op'),
+    url(
+        r'^user-detail/(?P<pk>\d+)/$',
+        views.UserRetrieveView.as_view(),
+        name='user-detail'
+    ),
 ]
