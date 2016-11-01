@@ -6,13 +6,18 @@
                    hide-item-info="true"
                    fr-model="track">
             </track>
-            <div class="top-item-description col-xs-8 col-sm-8 col-md-8">
-                <h3 class="track-name"><a>{{ track.name }}</a></h3>
-                <h3 class="track-artist"><a class="text-muted" href="#/artist/{{track.artist_id}}" >{{ track.artist }}</a></h3>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h3 class="track-name">
+                    <a>{{ track.name }}</a>
+                </h3>
+                <h3 class="track-artist">
+                    <a href="#/artist/{{ track.artist_id }}">{{ track.artist }}</a>
+                </h3>
+                <div class="top-item-position">
+                    <h1> {{ track.position }}</h1>
+                </div>
             </div>
-            <div class="top-item-position col-xs-1 col-sm-1 col-md-1">
-                <h1> {{ track.position }}</h1>
-            </div>
+
         </div>
     </div>
 

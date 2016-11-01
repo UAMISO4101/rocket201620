@@ -1,13 +1,12 @@
 <div class="main">
     <div class="header">
         <div class="header-section">
-            <a href="#/" class="header-item">Freeven</a>
+            <a href="#/">
+                <h3 class="brand-section">Freeven</h3>
+            </a>
             <search class="fr-search" title="Search"></search>
         </div>
         <div class="header-section">
-            <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">Ver ayuda</a>
-            <a href="#/upload" class="header-item" ng-if="ctrl.mainService.isArtist()">Subir obras musicales</a>
-            <a href="#/donation" class="header-item" ng-if="ctrl.mainService.isArtist()">Mis donaciones</a>
             <user-menu class="fr-user-menu" ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
         </div>
     </div>
