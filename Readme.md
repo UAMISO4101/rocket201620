@@ -21,7 +21,7 @@ python manage.py runserver --settings=freeven.settings.dev
 
 ### Para correr celery
 ```
-celery -A freeven worker --loglevel=info --beat
+celery -A freeven worker --loglevel=info
 ```
 
 development-integration
