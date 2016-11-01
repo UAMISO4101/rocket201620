@@ -149,7 +149,11 @@ require('../app/forgotPassword/forgotPasswordService.js');
 require('../app/forgotPassword/forgotPassword.less');
 
 
- require('../app/scoreEditor/scoreEditorModule.js');
- require('../app/scoreEditor/scoreEditorComponent.js');
- require('../app/scoreEditor/scoreEditorService.js');
- require('../app/scoreEditor/scoreEditor.less');
+require('../app/scoreEditor/scoreEditorModule.js');
+require('../app/scoreEditor/scoreEditorComponent.js');
+require('../app/scoreEditor/scoreEditorService.js');
+require('../app/scoreEditor/scoreEditor.less');
+
+require('../app/restorePassword/restorePasswordModule.js');
+require('../app/restorePassword/restorePasswordComponent.js');
+require('../app/restorePassword/restorePassword.less');

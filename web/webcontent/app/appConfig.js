@@ -25,6 +25,9 @@
           $routeProvider.when('/donation', {
           template: '<donation></donation>'
         });
+        $routeProvider.when('/user/pass/restore/:username', {
+          template: '<restore-password></restore-password>'
+        });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');
       }]
