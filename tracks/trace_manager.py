@@ -2,7 +2,6 @@ from pymongo import MongoClient
 from django.contrib.gis.geoip2 import GeoIP2
 import time
 import os
-import json
 
 
 class TraceManager:

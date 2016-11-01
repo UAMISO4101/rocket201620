@@ -70,6 +70,7 @@ class TokenUser(models.Model):
 
     token = models.CharField(max_length=10, blank=True, null=True)
 
+    @classmethod
     def get_token(self):
         chars = string.ascii_letters + string.digits
         token = ''.join(choice(chars) for i in range(10))

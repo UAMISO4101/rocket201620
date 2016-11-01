@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView, CreateAPIView
-from rest_framework.viewsets import ModelViewSet
 from .models import Track, Top
 from .serializers import TrackSerializer,  TopSerializer, TrackUploadSerializer
 from rest_framework import filters

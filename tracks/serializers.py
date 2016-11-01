@@ -38,30 +38,35 @@ class TrackSerializer(serializers.ModelSerializer):
             'artist_id'
         )
 
+    @classmethod
     def get_image(self, obj):
         try:
             return obj.image.url
         except:
             return None
 
+    @classmethod
     def get_url(self, obj):
         try:
             return obj.file.url
         except:
             return None
 
+    @classmethod
     def get_gender(self, obj):
         try:
             return obj.gender.name
         except:
             return None
 
+    @classmethod
     def get_artist(self, obj):
         try:
             return obj.artist.user.username
         except:
             return None
 
+    @classmethod
     def get_artist_id(self, obj):
         try:
             return obj.artist.id

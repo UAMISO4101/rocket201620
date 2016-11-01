@@ -7,11 +7,9 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 
-'''
-    get_info_users
-    Este médodo permite retornar todos los usuarios
-    Param: GET.
-'''
+#     get_info_users
+#     Este médodo permite retornar todos los usuarios
+#     Param: GET.
 
 
 def get_info_users(request):
@@ -26,11 +24,9 @@ def get_info_users(request):
         return users
 
 
-'''
-    user_to_json
-    Este médodo permite transformar un usuario en json
-    Param: usuario.
-'''
+#     user_to_json
+#     Este médodo permite transformar un usuario en json
+#     Param: usuario.
 
 
 def user_to_json(user):
@@ -43,11 +39,9 @@ def user_to_json(user):
     return json_data
 
 
-'''
-    register_user_in_model
-    Este médodo permite registrar un usuario
-    Param: datos del usuario.
-'''
+#     register_user_in_model
+#     Este médodo permite registrar un usuario
+#     Param: datos del usuario.
 
 
 def register_user_in_model(json_data):
@@ -94,11 +88,9 @@ def register_user_in_model(json_data):
     return {'status': status}
 
 
-'''
-    str_to_bool
-    Este médodo permite transformar un str a bool
-    Param: str
-'''
+#     str_to_bool
+#     Este médodo permite transformar un str a bool
+#     Param: str
 
 
 def str_to_bool(s):
@@ -110,11 +102,9 @@ def str_to_bool(s):
         raise ValueError
 
 
-'''
-    relation_user_to_artist
-    Este médodo permite asociar al modelo de usuario, el perfil de un artista.
-    Param: usuario, datos del perfil
-'''
+#     relation_user_to_artist
+#     Este médodo permite asociar al modelo de usuario, el perfil delartista.
+#     Param: usuario, datos del perfil
 
 
 def relation_user_to_artist(user_model, json_data):
@@ -149,11 +139,9 @@ def relation_user_to_artist(user_model, json_data):
     return True
 
 
-'''
-    login_service
-    Este médodo permite registrar un usuario
-    Param: datos del usuario.
-'''
+#     login_service
+#     Este médodo permite registrar un usuario
+#     Param: datos del usuario.
 
 
 def login_service(request):
@@ -172,16 +160,14 @@ def login_service(request):
     return {'status': status}
 
 
-'''
-    login_user_to_json
-    Este médodo permite transformar un usuario autenticado en json
-    Param: usuario.
-'''
+#     login_user_to_json
+#     Este médodo permite transformar un usuario autenticado en json
+#     Param: usuario.
 
 
 def login_user_to_json(user):
     try:
-        artist = Artist.objects.get(user__id=user.id)
+        Artist.objects.get(user__id=user.id)
         is_artist = True
     except:
         is_artist = False

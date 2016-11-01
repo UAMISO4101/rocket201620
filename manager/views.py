@@ -6,8 +6,6 @@ from tracks.models import Gender
 from users.models import BusinessAgent, Artist
 from django.contrib.auth.models import User
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
-from bson import json_util
-from bson.json_util import dumps
 from django.core.urlresolvers import reverse
 from users.business_logic import (
     register_business_agent, update_business_agent
