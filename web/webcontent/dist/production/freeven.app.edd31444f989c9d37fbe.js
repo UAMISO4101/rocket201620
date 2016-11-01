@@ -65486,6 +65486,8 @@
 
 	        self.passwordOk = true;
 
+	        var photoOk;
+
 	        self.userEditPassword = userPasswordService;
 
 	        self.showEditPasswordPopup = function () {
@@ -65568,6 +65570,9 @@
 	                var reader = new FileReader();
 	                reader.onload = $scope.imageIsLoaded;
 	                reader.readAsDataURL(file);
+	                console.log("File");
+	                photoOk = file;
+	                console.log(photoOk);
 	            }
 	        }
 
@@ -65591,14 +65596,14 @@
 	            }
 	        };
 	        self.uploadFilesAndData = function () {
-	            console.log('subido correctamente');
 	            var self = this;
+	            console.log(self.userEdit.user);
+	            console.log(self.profileFiles);
 	            if (self.profileFiles) {
 	                Upload.upload({
-	                    url: 'api/track/upload',
-	                    fields: {
-	                        foto: "Enviar campo de prueba"
-	                    },
+	                    url: 'api/user/update_profile/',
+	                    //fields: self.userEdit.user,
+	                    fields: {camp: "diego"},
 	                    files: self.profileFiles
 	                }).progress(function (evt) {
 	                }).success(function (data, status, headers, config) {
@@ -65606,6 +65611,7 @@
 	                });
 	            }
 	        };
+
 
 	    }];
 

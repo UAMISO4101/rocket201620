@@ -24,7 +24,7 @@ def get_info_users(request):
         return users
 
 
-#     user_to_json
+# user_to_json
 #     Este médodo permite transformar un usuario en json
 #     Param: usuario.
 
@@ -56,7 +56,7 @@ def register_user_in_model(json_data):
     is_artist = str_to_bool(is_artist)
 
     if (username != "" and password1 != "" and password2 != "" and
-            email != "" and first_name != "" and last_name != ""):
+                email != "" and first_name != "" and last_name != ""):
 
         exist_user = User.objects.filter(username=username)
 
@@ -102,7 +102,7 @@ def str_to_bool(s):
         raise ValueError
 
 
-#     relation_user_to_artist
+# relation_user_to_artist
 #     Este médodo permite asociar al modelo de usuario, el perfil delartista.
 #     Param: usuario, datos del perfil
 
@@ -189,7 +189,6 @@ def login_user_to_json(user):
 
 
 def register_business_agent(request):
-
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     username = request.POST.get('username')
@@ -197,9 +196,9 @@ def register_business_agent(request):
     password1 = request.POST.get('password1')
     password2 = request.POST.get('password2')
 
-    if(username is not "" and password1 is not "" and password2 is not "" and
-        email is not "" and first_name is not "" and
-            last_name is not ""):
+    if (username is not "" and password1 is not "" and password2 is not "" and
+                email is not "" and first_name is not "" and
+                last_name is not ""):
 
         exist_user = User.objects.filter(username=username)
         if exist_user.count() > 0:
@@ -240,14 +239,13 @@ def create_business_agent(user, request):
 
 
 def update_business_agent(request, id_user):
-
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     email = request.POST.get('email')
 
     print(id_user)
 
-    if(email is not "" and first_name is not "" and last_name is not ""):
+    if (email is not "" and first_name is not "" and last_name is not ""):
 
         user = User.objects.get(id=id_user)
         if user is None:
@@ -300,7 +298,6 @@ def request_password_restore_action(request):
 
 
 def request_password_restore_subaction(user, request):
-
     try:
         dto = TokenUser.objects.get(user__id=user.id)
     except:
@@ -354,7 +351,7 @@ def change_password_op_action(request):
     old_password = request.GET.get('password')
 
     if (username is not None and password is not None and
-            old_password is not None):
+                old_password is not None):
         user = authenticate(username=username, password=old_password)
         if user is not None:
             user.set_password(password)
@@ -371,37 +368,30 @@ def update_profile_action(json_data):
     first_name = json_data['first_name']
     last_name = json_data['last_name']
     username = json_data['username']
-    password1 = json_data['password1']
-    password2 = json_data['password2']
     email = json_data['email']
 
     if (username != "" and email != "" and first_name != "" and
-            last_name != ""):
+                last_name != ""):
 
         user = User.objects.filter(username=username)
 
-        if exist_user.count() != 0:
-            if password1 != "" and password1 != password2:
-                status = 'Las contrasenias no coinciden.'
-            else:
-                user.first_name = first_name
-                user.last_name = last_name
-                user.email = email
-                if password1 != "":
-                    user.set_password(password1)
-                user.save()
+        if user.count() != 0:
 
-                is_artist = json_data['is_artist']
-                if(str_to_bool(is_artist)):
-                    status = update_profile_artist_action(user, json_data)
+            user.first_name = first_name
+            user.last_name = last_name
+            user.email = email
+            is_artist = json_data['is_artist']
+            user.save()
+            if (str_to_bool(is_artist)):
+                status = update_profile_artist_action(user, json_data)
 
-                if(status != ""):
-                    is_agent = json_data['is_agent']
-                    if(str_to_bool(is_agent)):
-                        status = update_profile_agent_action(user,
-                                                             json_data[
-                                                                'status'
-                                                             ])
+            if (status != ""):
+                is_agent = json_data['is_agent']
+                if (str_to_bool(is_agent)):
+                    status = update_profile_agent_action(user,
+                                                         json_data[
+                                                             'status'
+                                                         ])
         else:
             status = 'Usuario no existe.'
     else:

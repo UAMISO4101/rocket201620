@@ -94,9 +94,13 @@ def change_password_op(request):
 def update_profile(request):
     if request.user.is_authenticated():
         if request.method == 'POST':
-            json_data = json.loads(request.body.decode('utf-8'))
-            response = update_profile_action(json_data)
-            return JsonResponse(response)
+            print(request.POST)
+            print(request.FILES)
+            #json_data = json.loads(request.body.decode('utf-8'))
+            #response = update_profile_action(json_data)
+            #return JsonResponse(response)
+            return JsonResponse({})
+
     else:
         return redirect(reverse('user'))
 
