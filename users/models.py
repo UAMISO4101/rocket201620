@@ -6,7 +6,11 @@ from random import choice
 
 class Artist(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name='user'
+    )
 
     SAVINGS = 'AH'
     CURRENT = 'CR'
@@ -38,6 +42,13 @@ class Artist(models.Model):
         return self.user.username
 
 
+class Donation(models.Model):
+    artist = models.ForeignKey(Artist)
+    user = models.ForeignKey(User)
+    date = models.DateTimeField(auto_now_add=True)
+    value = models.IntegerField()
+
+
 class BusinessAgent(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -59,6 +70,7 @@ class TokenUser(models.Model):
 
     token = models.CharField(max_length=10, blank=True, null=True)
 
+    @classmethod
     def get_token(self):
         chars = string.ascii_letters + string.digits
         token = ''.join(choice(chars) for i in range(10))

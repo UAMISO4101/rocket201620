@@ -1,0 +1,34 @@
+<div class="donation">
+
+    <fieldset class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h2>Mis donaciones</h2>
+                <p>Lista de donaciones recibidas:</p>
+
+                <table class="table" border="1px">
+                    <tbody>
+                    <tr>
+                        <td><h3>Nombres</h3></td>
+                        <td><h3>Apellidos</h3></td>
+                        <td><h3>Email</h3></td>
+                        <td><h3>Valor</h3></td>
+                        <td><h3>Fecha</h3></td>
+                    </tr>
+                    <tr ng-repeat="donation in ctrl.donation.donations">
+                        <td>{{ donation.first_name }}</td>
+                        <td>{{ donation.last_name }}</td>
+                        <td>{{ donation.email }}</td>
+                        <td>$ {{ donation.value | number }}</td>
+                        <td>{{ donation.date | date:'medium' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+
