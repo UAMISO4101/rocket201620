@@ -10,10 +10,12 @@ from users.business_logic import (
 )
 from rest_framework.generics import CreateAPIView
 from .models import Donation, Artist
-from .serializers import DonationSerializer, ArtistSerializer
+from .serializers import (DonationSerializer, ArtistSerializer,
+    UserRetriveSerializer)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, RetrieveAPIView
+from django.contrib.auth.models import User
 
 
 #     user
@@ -97,3 +99,11 @@ def update_profile(request):
             return JsonResponse(response)
     else:
         return redirect(reverse('user'))
+
+
+class UserRetrieveView(RetrieveAPIView):
+    serializer_class = UserRetriveSerializer
+
+    def get_queryset(self):
+        user = User.objects.filter(pk=self.kwargs['pk'])
+        return user
