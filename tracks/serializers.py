@@ -2,6 +2,22 @@ from .models import Track
 from rest_framework import serializers
 
 
+class TrackUploadSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(max_length=None, use_url=True)
+    file = serializers.FileField(max_length=None, use_url=True)
+
+    class Meta:
+        model = Track
+        fields = (
+            'name',
+            'description',
+            'gender',
+            'image',
+            'file',
+            'artist',
+        )
+
+
 class TrackSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
     url = serializers.SerializerMethodField()

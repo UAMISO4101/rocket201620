@@ -14,9 +14,9 @@ class Gender(models.Model):
 
 class Track(models.Model):
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, null=True, blank=True)
     gender = models.ForeignKey(Gender)
-    image = models.ImageField(upload_to='track_images')
+    image = models.ImageField(upload_to='track_images', null=True, blank=True)
     file = models.FileField(upload_to='tracks')
     score = models.DecimalField(max_digits=4, decimal_places=2)
     count_votes = models.IntegerField(default=0)
