@@ -1,6 +1,6 @@
 var trackModule = angular.module('trackModule');
-var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistService',
-    function ($i18n, trackListService, mainService, artistService) {
+var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistService', 'scoreEditorService',
+    function ($i18n, trackListService, mainService, artistService, scoreEditorService) {
 
         var self = this;
 
@@ -10,6 +10,10 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
 
         self.loadArtist = function () {
             artistService.loadArtist();
+        };
+
+        self.showScoreEditorPopup = function () {
+            scoreEditorService.showScoreEditorPopup();
         };
 
     }];

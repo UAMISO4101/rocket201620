@@ -29,7 +29,8 @@ var appModules = [
     'topTrackListModule',
     'trackCreatorModule',
     'donationModule',
-    'forgotPasswordModule'
+    'forgotPasswordModule',
+    'scoreEditorModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
