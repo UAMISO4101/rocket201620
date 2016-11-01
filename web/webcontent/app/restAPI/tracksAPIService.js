@@ -13,7 +13,7 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
 
         },
         loadTopTracks: {
-            url: 'api/track',
+            url: 'api/track/top10',
             /* url: 'api/track/top',*/
             method: 'GET',
             params: {},
@@ -24,6 +24,17 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
             method: 'POST',
             params: {
                 value: '@string'
+            },
+            isArray: false
+        },
+        traceTrack: {
+            url: 'api/track/trace',
+            method: 'POST',
+            params: {
+                user: '@string',
+                track: '@string',
+                artist: '@string',
+                action: '@string'
             },
             isArray: false
         }
