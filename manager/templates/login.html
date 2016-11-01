@@ -36,7 +36,7 @@
                     {% endfor %}
                 {% endfor %}
             {% endif %}
-            <form class="m-t" role="form" action="{% url 'login' %}" method="post">
+            <form class="m-t" role="form" action="{% url 'login_manager' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Usuario" required="true" name="username">

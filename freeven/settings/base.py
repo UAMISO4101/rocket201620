@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,6 +16,7 @@ INSTALLED_APPS = [
     'rest_framework_social_oauth2',
     'oauth2_provider',
     'social.apps.django_app.default',
+    'djcelery',
     'users',
     'manager',
     'tracks',
@@ -122,3 +124,24 @@ STATICFILES_DIRS = [
     ('production', BASE_DIR + '/../web/webcontent/dist/production'),
 ]
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = 587
+
+GEOIP_PATH = BASE_DIR + '/geoip/'
+
+BROKER_URL = "redis://:" + os.environ['REDIS_PASSWORD'] + '@' + os.environ['REDIS_HOST'] + ':' + os.environ['REDIS_PORT'] + '/0'
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/Bogota'
+
+CELERYBEAT_SCHEDULE = {
+    'top10-every-hour': {
+        'task': 'tracks.tasks.top10',
+        'schedule': timedelta(seconds=5),
+    },
+}

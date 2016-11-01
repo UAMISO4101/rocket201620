@@ -23,7 +23,7 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
                 $freevenModal.closePopup();
             };
 
-            this.getUser = function () {
+            this.getUser = function (id) {
                 //TODO CONSUME GET USER
                 self.user.first_name = "Diego";
                 self.user.email = "yego23@gmail.com";

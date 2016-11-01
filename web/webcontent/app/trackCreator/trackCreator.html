@@ -1,0 +1,72 @@
+<div class="track-creator" xmlns="http://www.w3.org/1999/html">
+    <div class="fr-track-creator">
+        <img align="left"
+             class="fr-image-lg"
+             src="../styles/images/portada.jpg"
+             alt="Profile image example"/>
+
+        <div class="fr-image-track-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="../styles/images/sol.jpg"
+                 alt="Profile image example"/>
+            <a ngf-select
+               ngf-multiple="false"
+               accept=".jpg"
+               filters=".jpg"
+               ngf-change="ctrl.attachFile($files,'image')"
+               class="form-control track-picture-selector">
+                <i class="icon icon-images"></i>
+                <span>Seleccione la carátula</span>
+            </a>
+        </div>
+
+
+        <div></div>
+        <div class="fr-track-creator-text">
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label" for="artistic_name">Nombre de la pista</label>
+                        <input type="text"
+                               ng-model="ctrl.trackName"
+                               placeholder="Nombre de la pista..."
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Descripción</label>
+                        <input type="date"
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Género</label>
+                        <input type="date"
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Archivo de audio</label>
+                        <a ngf-select
+                           ngf-multiple="false"
+                           accept=".mp3"
+                           filters=".mp3"
+                           ngf-change="ctrl.attachFile($files,'audio')"
+                           class="form-control">
+                            <i class="icon icon-upload">
+                                <span>Seleccione el archivo .mp3</span>
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData()">
+                            <span>Crear pista</span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

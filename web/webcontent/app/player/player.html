@@ -1,3 +1,5 @@
+ <span class="track-info" ng-if="ctrl.playerService.showPlayer()">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>
+ <span class="freeven-info" ng-if="!ctrl.playerService.showPlayer()">Freeven ® 2016</span>
 <div class="player" ng-if="ctrl.playerService.showPlayer()">
     <a class="btn-download"
        href="{{ ctrl.playerService.track.url }}"

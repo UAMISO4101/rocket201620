@@ -8,13 +8,22 @@
         var languageEn = require('../app/i18n/resources/en-us.json');
         $translateProvider.translations('es-co', languageEs);
         $translateProvider.translations('en-us', languageEn);
-        $translateProvider.preferredLanguage('en-us');
+        $translateProvider.preferredLanguage('en-co');
         $translateProvider.useSanitizeValueStrategy(null);
         $routeProvider.when('/', {
           template: '<track-list> </track-list>'
         });
-        $routeProvider.when('/artist', {
+        $routeProvider.when('/artist/:idArtist', {
           template: '<artist></artist>'
+        });
+        $routeProvider.when('/top', {
+          template: '<top-track-list></top-track-list>'
+        });
+         $routeProvider.when('/upload', {
+          template: '<track-creator></track-creator>'
+        });
+          $routeProvider.when('/donation', {
+          template: '<donation></donation>'
         });
         $routeProvider.otherwise({redirectTo: '/'});
         $httpProvider.interceptors.push('notifierInterceptor');

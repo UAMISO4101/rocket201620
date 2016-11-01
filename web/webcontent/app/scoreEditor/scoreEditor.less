@@ -1,0 +1,47 @@
+.score-editor {
+  margin: 60% 0;
+  text-align: center;
+  font-size: 32px;
+  color: #dadada;
+  display: block;
+  background-color: #fdffff;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #dadada;
+  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);
+
+  .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+  }
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  .rating > span:hover,
+  .rating > span:hover ~ span {
+    color: transparent;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #02b875;
+  }
+
+  /*a {
+    cursor: pointer;
+    text-decoration: none;
+    i {
+      color: #02ab69;
+    }
+    &:hover {
+      i {
+        color: #02b875;
+      }
+    }
+  }*/
+}

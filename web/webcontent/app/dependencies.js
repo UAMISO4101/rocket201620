@@ -49,6 +49,7 @@ require('../app/main/mainService.js');
 require('../app/restAPI/restAPIModule.js');
 require('../app/restAPI/tracksAPIService.js');
 require('../app/restAPI/userAPIService.js');
+require('../app/restAPI/artistAPIService.js');
 
 /**
  * Registro de componentes nuevos
@@ -122,3 +123,33 @@ require('../app/help/helpItem/helpItem.less');
 require('../app/artist/artistModule.js');
 require('../app/artist/artistComponent.js');
 require('../app/artist/artist.less');
+require('../app/artist/artistService.js');
+
+require('../app/topTrackList/topTrackListModule.js');
+require('../app/topTrackList/topTrackListComponent.js');
+require('../app/topTrackList/topTrackList.less');
+
+require('../app/trackCreator/trackCreatorModule.js');
+require('../app/trackCreator/trackCreatorComponent.js');
+require('../app/trackCreator/trackCreator.less');
+
+require('../app/artist/artistModule.js');
+require('../app/artist/artistComponent.js');
+require('../app/artist/artist.less');
+require('../app/artist/artistService.js');
+
+require('../app/donation/donationModule.js');
+require('../app/donation/donationComponent.js');
+require('../app/donation/donation.less');
+require('../app/donation/donationService.js');
+
+require('../app/forgotPassword/forgotPasswordModule.js');
+require('../app/forgotPassword/forgotPasswordComponent.js');
+require('../app/forgotPassword/forgotPasswordService.js');
+require('../app/forgotPassword/forgotPassword.less');
+
+
+ require('../app/scoreEditor/scoreEditorModule.js');
+ require('../app/scoreEditor/scoreEditorComponent.js');
+ require('../app/scoreEditor/scoreEditorService.js');
+ require('../app/scoreEditor/scoreEditor.less');
