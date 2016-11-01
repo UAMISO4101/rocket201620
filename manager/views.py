@@ -3,18 +3,36 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from tracks.models import Gender
-from users.models import BusinessAgent
+from users.models import BusinessAgent, Artist
 from django.contrib.auth.models import User
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
+from bson import json_util
+from bson.json_util import dumps
 from django.core.urlresolvers import reverse
 from users.business_logic import (
     register_business_agent, update_business_agent
 )
 
+from tracks.trace_manager import TraceManager
+
 
 @method_decorator(login_required, name='dispatch')
 class IndexView(TemplateView):
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        trace_manager = TraceManager()
+        top_artists = trace_manager.top_artist_played()
+        artists = []
+        for artist in top_artists:
+            artists.append({
+                "name": Artist.objects.only('user__username').get(id=artist['_id']['artist']),
+                "quantity": artist['count']
+            })
+
+        context['artists'] = artists
+        return context
 
 
 @method_decorator(login_required, name='dispatch')

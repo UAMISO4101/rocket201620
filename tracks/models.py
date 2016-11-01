@@ -31,3 +31,10 @@ class RateTrack(models.Model):
     user = models.ForeignKey(User, blank=False, null=False)
     rate = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+
+class Top(models.Model):
+    track = models.ForeignKey(Track, related_name='track')
+    quantity = models.IntegerField()
+    action = models.CharField(max_length=50)
+    top_type = models.CharField(max_length=50)

@@ -1,11 +1,14 @@
 from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework.viewsets import ModelViewSet
-from .models import Track
-from .serializers import TrackSerializer, TrackUploadSerializer
+from .models import Track, Top
+from .serializers import TrackSerializer,  TopSerializer, TrackUploadSerializer
 from rest_framework import filters
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .trace_manager import TraceManager
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.permissions import IsAuthenticated
 from django.http import JsonResponse
 from tracks.business_logic import (
     register_rate_track_action
@@ -37,3 +40,31 @@ def register_rate_track(request):
             return JsonResponse(response)
     else:
         return redirect(reverse('track'))
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
+@api_view(['POST'])
+def trace(request):
+    trace = TraceManager()
+    trace.insert(
+        request.data['user'],
+        request.data['track'],
+        request.data['artist'],
+        request.data['action'],
+        get_client_ip(request),
+    )
+    return Response(status=status.HTTP_201_CREATED)
+
+
+class Top10(ListAPIView):
+    queryset = Top.objects.filter(
+        top_type='daily', action='play').order_by('-quantity')[:10]
+    serializer_class = TopSerializer

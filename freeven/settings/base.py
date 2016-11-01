@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'rest_framework_social_oauth2',
     'oauth2_provider',
     'social.apps.django_app.default',
+    'djcelery',
     'users',
     'manager',
     'tracks',
@@ -102,7 +103,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['GOOGLE_OAUTH2_KEY']
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['GOOGLE_OAUTH2_SECRET']
 
 # Define SOCIAL_AUTH_FACEBOOK_SCOPE to get extra permissions from facebook.
-# Email is not sent by default, to get it, you must request the email permission:
+#Email is not sent by default, to get it, you must request the email permission:
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 LANGUAGE_CODE = 'es-co'
@@ -127,3 +128,20 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_PORT = 587
+
+GEOIP_PATH = BASE_DIR + '/geoip/'
+
+BROKER_URL = 'redis://' + os.environ['REDIS_HOST'] + ':' + \
+    os.environ['REDIS_PORT'] + '/0'
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/Bogota'
+
+CELERYBEAT_SCHEDULE = {
+    'top10-every-hour': {
+        'task': 'tracks.tasks.top10',
+        'schedule': timedelta(seconds=5),
+    },
+}
