@@ -319,7 +319,7 @@ def request_password_restore_subaction(user, request):
         body_text = body_text + '\n\n Cordial saludo,'
 
         send_mail(subject, body_text, settings.EMAIL_HOST_USER,
-                  ['administrator@freeven.herokuapp.com'], fail_silently=True)
+                  [user.email], fail_silently=True)
         return True
     except:
         return False
