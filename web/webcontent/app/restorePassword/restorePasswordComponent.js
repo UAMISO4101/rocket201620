@@ -5,7 +5,7 @@ var RestorePasswordController = ['$i18n', '$freevenModal','$routeParams', functi
      */
     var self = this;
 
-    console.log($routeParams.username);
+    console.log($routeParams.idUser);
 
 }];
 
