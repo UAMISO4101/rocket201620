@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -131,8 +132,7 @@ EMAIL_PORT = 587
 
 GEOIP_PATH = BASE_DIR + '/geoip/'
 
-BROKER_URL = 'redis://' + os.environ['REDIS_HOST'] + ':' + \
-    os.environ['REDIS_PORT'] + '/0'
+BROKER_URL = "redis://:" + os.environ['REDIS_PASSWORD'] + '@' + os.environ['REDIS_HOST'] + ':' + os.environ['REDIS_PORT'] + '/0'
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

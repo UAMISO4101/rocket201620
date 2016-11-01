@@ -6,10 +6,8 @@ import json
 
 
 class TraceManager:
-    mongo_host = os.environ['MONGO_HOST']
-    mongo_port = int(os.environ['MONGO_PORT'])
-    client = MongoClient(mongo_host, mongo_port)
-    db = client['freeven']
+    client = MongoClient(os.environ['MONGO_CONFIG'])
+    db = client[os.environ['MONGO_DATABASE']]
 
     def top10(self):
         top = self.db.events.aggregate([

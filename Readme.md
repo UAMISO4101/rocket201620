@@ -1,4 +1,4 @@
-###Freeven 
+###Freeven
 ###Clonar el repositorio y configurar los credenciales
 
 ```
@@ -17,7 +17,11 @@ https://freeven-srv-dev.herokuapp.com
 ### Para ejecutar en local
 ```
 python manage.py runserver --settings=freeven.settings.dev
-
 ```
 
-development-integration 
+### Para correr celery
+```
+celery -A freeven worker --loglevel=info --beat
+```
+
+development-integration
