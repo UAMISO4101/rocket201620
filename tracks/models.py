@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import Decimal
 from users.models import Artist
 from django.contrib.auth.models import User
 
@@ -18,7 +19,8 @@ class Track(models.Model):
     gender = models.ForeignKey(Gender)
     image = models.ImageField(upload_to='track_images', null=True, blank=True)
     file = models.FileField(upload_to='tracks')
-    score = models.DecimalField(max_digits=4, decimal_places=2)
+    score = models.DecimalField(max_digits=4, decimal_places=2,
+                                default=Decimal('0.00'))
     count_votes = models.IntegerField(default=0)
     artist = models.ForeignKey(Artist)
 

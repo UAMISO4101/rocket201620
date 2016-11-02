@@ -26,7 +26,8 @@ class IndexView(TemplateView):
         if len(top_artists) > 0:
             for artist in top_artists:
                 artists.append({
-                    "name": Artist.objects.only('user__first_name').get(id=artist['_id']['artist']),
+                    "name": Artist.objects.only('user__first_name').get(
+                                                id=artist['_id']['artist']),
                     "quantity": artist['count']
                 })
 
@@ -165,7 +166,8 @@ class ArtistDonationListView(ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-        context = super(ArtistDonationListView, self).get_context_data(**kwargs)
+        context = super(ArtistDonationListView,
+                        self).get_context_data(**kwargs)
         context['genders'] = Gender.objects.all()
         context['start_date'] = self.request.GET.get('start_date')
         context['end_date'] = self.request.GET.get('end_date')
