@@ -7,10 +7,11 @@ var SearchController = ['$i18n', 'trackListService', function ($i18n, trackListS
     self.parameter = null;
     self.changeParameter = function () {
         self = this;
-        if (self.parameter.length > 3) {
+        if (self.parameter.length > 3 || self.parameter.length == 0) {
             var params = {
                 search: self.parameter,
-                page: 1
+                page: 1,
+                format:'json'
             };
             trackListService.loadTracks(params);
         }

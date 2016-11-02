@@ -12,11 +12,11 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
             self.tracks = [];
             self.indexTrack = 0;
-            self.loadTracks = function () {
+            self.loadTracks = function (params) {
                 var self = this;
                 self.loading = true;
                 TrackApiService.searchTracks(
-                    self.params,
+                   params,
                     function (response) {
                         self.loading = false;
                         self.tracks = response.results;

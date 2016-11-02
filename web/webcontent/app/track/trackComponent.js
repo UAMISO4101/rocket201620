@@ -13,7 +13,9 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
         };
 
         self.showScoreEditorPopup = function (track) {
-            scoreEditorService.showScoreEditorPopup(track);
+            if(mainService.isAuthenticated()){
+                 scoreEditorService.showScoreEditorPopup(track);
+            }
         };
 
         self.greaterThanOrEqual = function (value) {
