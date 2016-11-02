@@ -1,5 +1,15 @@
-from .models import Track, Top
+from .models import Track, Top, Gender
 from rest_framework import serializers
+
+
+class GenderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gender
+        fields = (
+            'id',
+            'name',
+            'description',
+        )
 
 
 class TrackUploadSerializer(serializers.ModelSerializer):

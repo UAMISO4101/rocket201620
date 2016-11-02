@@ -1,6 +1,8 @@
 from rest_framework.generics import ListAPIView, CreateAPIView
-from .models import Track, Top
-from .serializers import TrackSerializer,  TopSerializer, TrackUploadSerializer
+from .models import Track, Top, Gender
+from .serializers import (
+    TrackSerializer,  TopSerializer, TrackUploadSerializer, GenderSerializer
+)
 from rest_framework import filters
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -12,6 +14,16 @@ from tracks.business_logic import (
     register_rate_track_action
 )
 
+
+class GenderListView(ListAPIView):
+    queryset = Gender.objects.filter(state=True)
+    serializer_class = GenderSerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = (
+        'id',
+        'name',
+        'description',
+    )
 
 class TrackListView(ListAPIView):
     queryset = Track.objects.all()
