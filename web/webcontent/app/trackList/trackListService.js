@@ -5,11 +5,18 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             var self = this;
             self.selectedTrack = {};
             self.loading = false;
-            self.loadTracks = function (params) {
-                params.format = "json";
+            self.currentOffset = 0;
+            self.params = {
+                format: "json",
+                offset: 0
+            };
+            self.tracks = [];
+            self.indexTrack = 0;
+            self.loadTracks = function () {
+                var self = this;
                 self.loading = true;
                 TrackApiService.searchTracks(
-                    params,
+                    self.params,
                     function (response) {
                         self.loading = false;
                         self.tracks = response.results;
@@ -24,28 +31,32 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     format: "json"
                 };
                 self.loading = true;
+                self.topTracks = [];
                 TrackApiService.loadTopTracks(
                     params,
                     function (response) {
                         self.loading = false;
-                        self.tracks = response.results;
+                        for (var i = 0; i < response.results.length; i++) {
+                            var track = response.results[i];
+                            track.position = i + 1;
+                            self.topTracks.push(track)
+                        }
                     },
                     function (error) {
                         console.log('Error loading tracks');
                     });
             };
             self.nextPage = function () {
-                var params = {};
-                params.format = "json";
                 self.loading = true;
                 self.busy = true;
                 TrackApiService.searchTracks(
-                    params,
+                    self.params,
                     function (response) {
                         self.loading = false;
                         self.busy = false;
                         if (response.results.length > 0) {
                             self.tracks = self.tracks.concat(response.results);
+                            self.params.offset += 10;
                         }
                         else {
                             self.empty = self.tracks.length <= 0;
@@ -62,21 +73,26 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
 
             self.playFirstTrack = function () {
-                if (self.tracks.length > 0) {
+                var self = this;
+                if (self.tracks && self.tracks.length > 0) {
                     playerService.playTrack(self.tracks[0]);
                 }
             };
 
             self.next = function () {
-                //todo: obtain next in the list
-                var nexTrack = {};
-                self.playSelected();
+                if (self.indexTrack <= self.tracks.length - 2) {
+                    self.indexTrack += 1;
+                    var nexTrack = self.tracks[self.indexTrack];
+                    self.playSelected(nexTrack);
+                }
             };
 
             self.prev = function () {
-                //todo: obtain prev in the list
-                var prevTrack = {};
-                self.playSelected();
+                if (self.indexTrack >= 1) {
+                    self.indexTrack -= 1;
+                    var prevTrack = self.tracks[self.indexTrack];
+                    self.playSelected(prevTrack);
+                }
             };
         };
         return new TrackListService();

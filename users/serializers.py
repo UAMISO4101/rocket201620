@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Donation, Artist
+from .models import Donation, Artist, BusinessAgent
 
 
 class LoginSerializer(serializers.ModelSerializer):
@@ -64,4 +64,57 @@ class ArtistSerializer(serializers.ModelSerializer):
             'country',
             'telephone_number',
             'birth_date',
+        )
+
+
+class ArtistRetrieveSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Artist
+        fields = (
+            'avatar',
+            'artistic_name',
+            'bank_account_number',
+            'bank_account_type',
+            'bank',
+            'address',
+            'city',
+            'country',
+            'telephone_number',
+            'birth_date',
+        )
+
+
+class BussinessAgentSerializer(serializers.ModelSerializer):
+    avatar = serializers.SerializerMethodField()
+
+    class Meta:
+        model = BusinessAgent
+        fields = (
+            'avatar',
+            'address',
+            'city',
+            'country',
+            'telephone_number',
+        )
+        @classmethod
+        def get_avatar(self, obj):
+            try:
+                return obj.avatar.url
+            except:
+                return None
+
+
+class UserRetriveSerializer(serializers.ModelSerializer):
+    artist = ArtistRetrieveSerializer()
+    agent = BussinessAgentSerializer()
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'artist',
+            'agent',
         )

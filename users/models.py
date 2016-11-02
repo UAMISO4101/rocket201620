@@ -9,7 +9,7 @@ class Artist(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        related_name='user'
+        related_name='artist'
     )
 
     SAVINGS = 'AH'
@@ -51,7 +51,11 @@ class Donation(models.Model):
 
 class BusinessAgent(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name='agent'
+    )
 
     avatar = models.ImageField(upload_to='static/avatars/', null=True,
                                blank=True)
@@ -70,6 +74,7 @@ class TokenUser(models.Model):
 
     token = models.CharField(max_length=10, blank=True, null=True)
 
+    @classmethod
     def get_token(self):
         chars = string.ascii_letters + string.digits
         token = ''.join(choice(chars) for i in range(10))

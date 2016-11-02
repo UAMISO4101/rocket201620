@@ -26,33 +26,15 @@ userPasswordModule.factory('userPasswordService', ['UserApiService', '$i18n', '$
             this.closeModal = function () {
                 $freevenModal.closePopup();
                 self.userEdit.showEditPopup();
-                self.user={};
             };
 
             this.savePassword = function () {
                 //TODO CONSUME SERVICE SAVE
-                var self = this;
-                self.user.username = self.userEdit.user.username;
-            
-              //  self.user.username = self.userAuth.username;
-                UserApiService.userChangePassword (
-                    //Param
-                    self.user,
-                    function (response) {
-
-                      $freevenModal.closePopup();
-                      notifierService.success($i18n.translate.user_edit_success, response.status);
-                      self.userEdit.showEditPopup();
-
-                    },
-
-                    function (error) {
-                        //notifierService.error("Error de autenticación", error.status);//esta notificacion es automatica
-                    });
                 //window.location.reload(true);
-
+                $freevenModal.closePopup();
+                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_password_success_detail);
+                self.userEdit.showEditPopup();
             };
-
 
         };
         return new userPasswordService();

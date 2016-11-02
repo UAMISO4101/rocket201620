@@ -10,25 +10,33 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
             method: 'GET',
             params: {username: '@string', password: '@string'},
             isArray: false,
+        }
+        ,
 
-        },
-
-        userChangePassword: {
-            url: 'user/change_password_op',
+        getUser: {
+            url: 'api/user/user-detail/:userId',
             method: 'GET',
-            params: {username: '@string', password: '@string', old_password: '@string'},
-            isArray:false,
+            params: {userId:'@id'},
+            isArray: false,
+        }
 
-        },
-
-        getArtist: {
-            url: 'user/artist/',
+        ,
+        forgotPasswordUser: {
+            url: '/user/request_password_restore',
             method: 'GET',
-            params: {pk: '@string'},
-            isArray:false,
-
+            params: {username: '@string'},
+            isArray: false,
+        }
+        ,
+        restorePasswordUser: {
+            url: '/user/change_password',
+            method: 'GET',
+            params: {username: '@string',password: '@string'},
+            isArray: false,
         }
     });
 
 
 }]);
+
+

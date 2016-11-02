@@ -1,11 +1,14 @@
-<div class="row track-list"
-     infinite-scroll='ctrl.trackList.nextPage()'
-     infinite-scroll-disabled='ctrl.trackList.busy'
-     infinite-scroll-distance='50'>
+<div class="track-list">
+    <h3 class="track-list-title">Esto es lo mas reciente</h3>
+    <div class="row "
+         infinite-scroll='ctrl.trackList.nextPage()'
+         infinite-scroll-disabled='ctrl.trackList.busy'
+         infinite-scroll-distance='50'>
         <track class="col-xs-4 col-sm-4 col-md-3"
                fr-model="track"
                ng-repeat="track in ctrl.trackList.tracks">
         </track>
-    <br/>
-    <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
+        <br/>
+        <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
+    </div>
 </div>

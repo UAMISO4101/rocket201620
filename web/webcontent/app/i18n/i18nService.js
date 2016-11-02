@@ -2,7 +2,7 @@ var i18nModule = angular.module('i18nModule');
 
 i18nModule.factory('$i18n', ['$http', '$cookieStore', '$translate', function ($http, $cookieStore, $translate) {
     var i18nService = function () {
-        this.currentLanguageCulture = $cookieStore.get('currentLanguageCulture') || 'en-us';
+        this.currentLanguageCulture = $cookieStore.get('currentLanguageCulture') || 'es-co';
         this.translate = {};
         var languages = {
             'es-co': require('./resources/es-co.json'),

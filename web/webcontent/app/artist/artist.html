@@ -1,17 +1,46 @@
-<div class="artist">
-  <div class="container">
-      <div class="fr-profile">
-          <img align="left" class="fr-image-lg" src="../styles/images/portada.jpg" alt="Profile image example"/>
-          <img align="left" class="fr-image-profile thumbnail" src="{{ctrl.artist.infoArtist.avatar}}" alt="Profile image example"/>
-          <div class="fr-profile-text">
-              <h1>{{ctrl.artist.artist.username}}</h1>
-              <p>{{ctrl.artist.artist.first_name}} {{ctrl.artist.artist.last_name}}</p>
-               <p>{{ctrl.artist.infoArtist.city}}</p> <p>{{ctrl.artist.infoArtist.country}}
-                 <a href="#">
-                   <span class="glyphicon glyphicon-map-marker"></span>
-                 </a>
-               </p>
-          </div>
-      </div>
-  </div>
-<div>
+<div class="artist" xmlns="http://www.w3.org/1999/html">
+    <div class="fr-profile-creator">
+        <img align="left"
+             class="fr-image-lg"
+             src="../styles/images/portada.jpg"
+             alt="Profile image example"/>
+
+        <div class="fr-image-profile-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="{{ ctrl.artist.infoArtist.avatar }}"
+                 alt="Profile image example"/>
+            </a>
+        </div>
+
+        <div></div>
+        <div class="fr-profile-creator-text">
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>{{ ctrl.artist.artist.username }}</h1>
+                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>
+                        <p>{{ ctrl.artist.infoArtist.city }}</p>
+                        <p>{{ ctrl.artist.infoArtist.country }}
+                            <a href="#">
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <fieldset class="align-right form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="freeven-accept-btn" ng-click="ctrl.showDonationCreatorPopup(ctrl.artist.artist)">
+                        Hacer una donación
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+</div>

@@ -1,12 +1,12 @@
 <div class="main">
     <div class="header">
         <div class="header-section">
-            <h3 class="brand-section">Freeven</h3>
-            <search class="fr-search" title ="Search"> </search>
+            <a href="#/">
+                <h3 class="brand-section">Freeven</h3>
+            </a>
+            <search class="fr-search" title="Search"></search>
         </div>
         <div class="header-section">
-            <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">Ver ayuda</a>
-            <a class="header-item" ng-if="ctrl.mainService.isArtist()">Subir obras musicales</a>
             <user-menu class="fr-user-menu" ng-if="ctrl.mainService.isAuthenticated()"></user-menu>
         </div>
     </div>
@@ -18,23 +18,26 @@
         <div class="header-section">
         </div>
     </div>
-    <div class="wrap flex">
+    <div class="brand-description" ng-if="!ctrl.mainService.isAuthenticated()">
+        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna restricción.</h3>
+        <h3>Descárgalos, escúchalos y úsalos en lo que tú quieras</h3>
+    </div>
+    <div class="wrap">
         <!--<div class="topbar"></div>-->
-        <div class="flex">
-            <div class="sidebar">
-                <h3 class="app-title">Freeven</h3>
-                <user-panel title="UserPanel"></user-panel>
-                <player-picture class="freeven-player-picture" title="PlayerPicture"></player-picture>
-            </div>
-            <div class="content-section">
-                <div class="row-col">
-                    <div class="col-lg-12 b-r no-border-md">
-                        <div ng-view=""></div>
-                    </div>
-                    <!-- <div class="col-lg-3 w-xxl w-auto-md freeven-aside">
-                         <r-i18n></r-i18n>
-                     </div>-->
+
+        <div class="sidebar">
+            <h3 class="app-title">Freeven</h3>
+            <user-panel title="UserPanel"></user-panel>
+            <player-picture class="freeven-player-picture" title="PlayerPicture"></player-picture>
+        </div>
+        <div class="content-section">
+            <div class="row-col">
+                <div class="col-lg-12 b-r no-border-md">
+                    <div ng-view=""></div>
                 </div>
+                <!-- <div class="col-lg-3 w-xxl w-auto-md freeven-aside">
+                     <r-i18n></r-i18n>
+                 </div>-->
             </div>
         </div>
 

@@ -31,6 +31,13 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
                 self.user = userData;
                 self.saveUserCookies(userData);
             };
+
+            self.getUserData = function () {
+                if (!self.user) {
+                    self.loadUserDataFromCookies();
+                }
+                return self.user;
+            };
             self.loadUserDataFromCookies = function () {
                 self.user = $cookieStore.get('user_data') || {};
             };

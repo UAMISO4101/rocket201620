@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Artist, BusinessAgent, TokenUser
+from .models import Artist, BusinessAgent, TokenUser, Donation
 
 
 @admin.register(Artist)
@@ -15,3 +15,13 @@ class BusinessAgentAdmin(admin.ModelAdmin):
 @admin.register(TokenUser)
 class TokenUserAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Donation)
+class DonationAdmin(admin.ModelAdmin):
+    list_display = (
+        'artist',
+        'user',
+        'date',
+        'value',
+    )

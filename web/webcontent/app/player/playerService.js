@@ -1,6 +1,6 @@
 var playerModule = angular.module('playerModule');
-playerModule.factory('playerService', ['ngAudio',
-    function (ngAudio) {
+playerModule.factory('playerService', ['ngAudio', 'TracksApiService', 'mainService',
+    function (ngAudio, TracksApiService, mainService) {
         var PlayerService = function () {
             var self = this;
             self.audio = null;
@@ -19,9 +19,30 @@ playerModule.factory('playerService', ['ngAudio',
                 self.audio = ngAudio.load(track.url);
                 self.audio.play();
                 self.track = track;
+                self.traceTrack(track);
             };
             self.showPlayer = function () {
                 return self.audio != null
+            };
+
+            self.traceTrack = function (track) {
+                var user = mainService.getUserData();
+                if (user) {//only if the user is authenticated
+                    TracksApiService.traceTrack(
+                        {
+                            user: user.username,
+                            track: track.id,
+                            artist: track.artist_id,
+                            action: 'play'
+                        },
+                        function (response) {
+
+                        },
+                        function (error) {
+                            console.log('Error loading tracks');
+                        });
+                }
+
             };
         };
         return new PlayerService();
