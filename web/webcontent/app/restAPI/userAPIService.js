@@ -3,7 +3,7 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
     /**
      * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
      * */
-    return $resource('api/user/user-detail/:userId', {userId:'@id'}, {
+    return $resource('api/user/:guidUser', {guid: '@guid'}, {
 
         loginUser: {
             url: 'api/user/login',
@@ -13,6 +13,14 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
         }
         ,
 
+        getUser: {
+            url: 'api/user/user-detail/:userId',
+            method: 'GET',
+            params: {userId:'@id'},
+            isArray: false,
+        }
+
+        ,
         forgotPasswordUser: {
             url: '/user/request_password_restore',
             method: 'GET',
@@ -26,7 +34,6 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
             params: {username: '@string',password: '@string'},
             isArray: false,
         }
-
     });
 
 

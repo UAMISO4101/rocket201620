@@ -136,8 +136,8 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             if (self.profileFiles) {
                 Upload.upload({
                     url: 'api/user/update_profile/',
-                    //fields: self.userEdit.user,
-                    fields: {camp: "diego"},
+                    fields: self.userEdit.user,
+                    //fields: {camp: "diego"},
                     files: self.profileFiles
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {

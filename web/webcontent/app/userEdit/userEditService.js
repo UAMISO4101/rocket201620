@@ -28,16 +28,13 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
                 //TODO CONSUME GET USER
 
                 var self = this;
-                UserApiService.get({userId: id}, function (response) {
+                UserApiService.getUser({userId: id}, function (response) {
                         if (response.username != undefined) {
                             self.loadUser(response);
                         }
-
                     },
                     function (error) {
                     });
-
-
             };
 
             this.saveUser = function () {
