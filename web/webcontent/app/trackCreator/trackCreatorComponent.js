@@ -44,7 +44,7 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
                         name: self.name,
                         description: self.description,
                         gender: self.gender,
-                        artist: user.id_user,
+                        artist: user.id_artist,
                         image: self.trackFiles.image,
                         file: self.trackFiles.audio,
                         score: 0
