@@ -29,7 +29,6 @@ scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiServ
                     },
                     function (response) {
                         self.loading = false;
-                        console.log('Pista calificada');
                     },
                     function (error) {
                         console.log('Error loading tracks');

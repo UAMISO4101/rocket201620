@@ -10,7 +10,7 @@ var ArtistController = ['$i18n', 'artistService', '$routeParams', 'donationCreat
 
         artistService.loadArtist($routeParams.idArtist);
         self.showDonationCreatorPopup = function (artist) {
-            artist.id = $routeParams.idArtist;
+            artist.id = parseInt($routeParams.idArtist);
             donationCreatorService.showDonationCreatorPopup(artist);
         };
     }];

@@ -28,7 +28,7 @@ class TrackListView(ListAPIView):
 class TrackCreateView(CreateAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackUploadSerializer
-    permission_classes = (IsAuthenticated,)
+  #  permission_classes = (IsAuthenticated,)
 
 
 @csrf_exempt

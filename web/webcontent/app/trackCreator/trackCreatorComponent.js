@@ -16,11 +16,13 @@ var TrackCreatorController = ['Upload',
             var self = this;
             if (self.trackFiles) {
                 Upload.upload({
-                    url: 'api/track/upload',
-                    fields: {
-                        trackName: self.trackName
-                    },
-                    files: self.trackFiles
+                    url: 'api/track/create/',
+                    name: 'name',
+                    description: 'description',
+                    gender: '3',
+                    artist: 'artist1',
+                    image: self.trackFiles.image,
+                    file: self.trackFiles.audio
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
                     console.log('subido correctamente');
