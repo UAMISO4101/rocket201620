@@ -13,17 +13,19 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
 
         },
         loadTopTracks: {
-            url: 'api/track/top10',
-            /* url: 'api/track/top',*/
+            /*url: 'api/track/top10',*/
+            url: 'api/track',
             method: 'GET',
             params: {},
             isArray: false
         },
         setScoreTrack: {
-            url: 'api/track/:idTrack/score',
-            method: 'POST',
+            url: 'api/track/rate_track',
+            method: 'GET',
             params: {
-                value: '@string'
+                username: '@string',
+                track_id: '@string',
+                rate: '@string'
             },
             isArray: false
         },

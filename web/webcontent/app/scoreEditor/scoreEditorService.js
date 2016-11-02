@@ -1,14 +1,14 @@
 var scoreEditorModule = angular.module('scoreEditorModule');
-scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiService',
-    function ($freevenModal, TracksApiService) {
+scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiService', 'mainService',
+    function ($freevenModal, TracksApiService, mainService) {
         var scoreEditorService = function () {
             var self = this;
             self.user = {};
-            this.showScoreEditorPopup = function (idTrack) {
-                self.idTrack = idTrack;
+            this.showScoreEditorPopup = function (track) {
+                self.track = track;
                 $freevenModal.showPopup({}, {
-                    template: '<score-editor title ="scoreEditor"> </score-editor>',
-                    windowClass: 'score-editor-modal'
+                    template: '<score-editor title ="scoreEditor"> </score-editor>'
+                    //windowClass: 'score-editor-modal'
                 });
             };
 
@@ -19,10 +19,13 @@ scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiServ
             this.setScoreValue = function (value) {
                 var self = this;
                 self.loading = true;
+                var user = mainService.getUserData();
+                //self.track.score = value;
                 TracksApiService.setScoreTrack(
                     {
-                        value: value,
-                        idTrack: self.idTrack
+                        username: user.username,
+                        track_id: self.track.id,
+                        rate: value
                     },
                     function (response) {
                         self.loading = false;
@@ -31,7 +34,6 @@ scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiServ
                     function (error) {
                         console.log('Error loading tracks');
                     });
-                self.closeModal();
             };
 
         };

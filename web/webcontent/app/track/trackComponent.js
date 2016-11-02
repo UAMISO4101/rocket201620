@@ -12,8 +12,16 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
             artistService.loadArtist();
         };
 
-        self.showScoreEditorPopup = function () {
-            scoreEditorService.showScoreEditorPopup();
+        self.showScoreEditorPopup = function (track) {
+            scoreEditorService.showScoreEditorPopup(track);
+        };
+
+        self.greaterThanOrEqual = function (value) {
+            var self = this;
+            if (self.frModel && self.frModel.score) {
+                return self.frModel.score >= value;
+            }
+            return false;
         };
 
     }];

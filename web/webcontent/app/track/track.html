@@ -11,16 +11,22 @@
         <div ng-if="!ctrl.hideItemInfo" class="item-info">
             <div class="item-overlay bottom text-right">
                 <a class="btn-download"
-                   href="{{ctrl.frModel.url}}"
-                   download="{{ctrl.frModel.name}}.mp3">
-                    <i class="icon icon-download" ></i>
+                   href="{{ ctrl.frModel.url }}"
+                   download="{{ ctrl.frModel.name }}.mp3">
+                    <i class="icon icon-download"></i>
                 </a>
-                <a ng-click="ctrl.showScoreEditorPopup()" class="btn-favorite">
-                    <i class="icon icon-star-full"></i>
-                    <i class="icon icon-star-full"></i>
-                    <i class="icon icon-star-full"></i>
-                    <i class="icon icon-star-empty"></i>
-                    <i class="icon icon-star-empty"></i>
+                <a ng-click="ctrl.showScoreEditorPopup(ctrl.frModel)" class="btn-favorite">
+                    <i class="icon"
+                       ng-class="{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}"></i>
+                    <i class="icon"
+                       ng-class="{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}"></i>
+                    <i class="icon"
+                       ng-class="{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}"></i>
+                    <i class="icon"
+                       ng-class="{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}"></i>
+                    <i class="icon"
+                       ng-class="{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}"></i>
+
                 </a>
                 <a href="#" class="btn-more" data-toggle="dropdown">
                     <i class="fa fa-ellipsis-h"></i>
@@ -31,7 +37,7 @@
                 <p>{{ ctrl.frModel.name }}</p>
             </div>
             <div class="item-author text-sm text-ellipsis">
-                <a class="text-muted" href="#/artist/{{ctrl.frModel.artist_id}}" >{{ ctrl.frModel.artist }}</a>
+                <a class="text-muted" href="#/artist/{{ ctrl.frModel.artist_id }}">{{ ctrl.frModel.artist }}</a>
             </div>
             <span class="item-meta-stats text-xs">
                  <i class="icon icon-star-full text-muted"></i> 4/5
@@ -39,12 +45,12 @@
         </div>
     </div>
     <div class="fr-track-help-1">
-       <help-item text ="Aquí puedes descargar la pista musical"> </help-item>
+        <help-item text="Aquí puedes descargar la pista musical"></help-item>
     </div>
     <div class="fr-track-help-2">
-       <help-item text ="Comienza a escuchando esta pieza musical"> </help-item>
+        <help-item text="Comienza a escuchando esta pieza musical"></help-item>
     </div>
-     <div class="fr-track-help-3">
-       <help-item text ="Califica las piezas musicales"> </help-item>
+    <div class="fr-track-help-3">
+        <help-item text="Califica las piezas musicales"></help-item>
     </div>
 </div>
