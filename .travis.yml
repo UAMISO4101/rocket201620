@@ -3,7 +3,7 @@ python:
 - 3.5.2
 install:
 - pip install -r requirements.txt
-script: nosetests --settings=freeven.settings.prod
+script: nosetests
 deploy:
   provider: heroku
   api_key:
