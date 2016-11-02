@@ -45,7 +45,7 @@ def login_user(request):
 class Donate(CreateAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
 
 
 class DonationList(ListAPIView):

@@ -9,30 +9,17 @@
     <form ng-if="ctrl.step==0" name="userForm">
         <fieldset class="form-group">
             <div class="row">
-              <!--  <div class="col-md-6">
-                    <label class="control-label" >Número de cuenta bancaria</label>
-                    <input type="number"
-                           ng-model="ctrl.donation.bankAccountNumber"
-                           placeholder="Número de cuenta bancaria"
-                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
-                </div>
-                <div class="col-md-6">
-                    <label class="control-label" >Código de seguridad</label>
-                    <input type="number"
-                           ng-model="ctrl.donation.securityCode"
-                           placeholder="Código de seguridad"
-                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
-                </div>-->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label class="control-label">Monto a donar</label>
                     <input type="number"
-                           ng-model="ctrl.donation.donationValue"
+                           ng-model="ctrl.donation.value"
+                           value="ctrl.donation.value | currency"
                            placeholder="$ 000 000"
-                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                           class="donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
                 </div>
             </div>
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset class="align-right form-group">
             <div class="row">
                 <div class="col-md-12">
                     <button class="freeven-accept-btn" ng-click="ctrl.createDonation()">
@@ -50,7 +37,7 @@
                 <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>
             </div>
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset class="align-right form-group">
             <div class="row">
                 <div class="col-md-12">
                     <button class="freeven-accept-btn" ng-click="ctrl.close()">

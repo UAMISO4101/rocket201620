@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^update_profile/$', views.update_profile,
         name='update_profile'),
     url(r'^login/$', views.login_user, name='login'),
-    url(r'^donate/$', views.Donate.as_view(), name='donate'),
+    url(r'^donate', views.Donate.as_view(), name='donate'),
     url(r'^donation-list/$', views.DonationList.as_view(), name='donate'),
     url(r'^request_password_restore/$', views.request_password_restore,
         name='request_password_restore'),

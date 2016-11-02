@@ -6,13 +6,12 @@ restApiModule.factory('DonationApiService', ['$resource', function ($resource) {
     return $resource('api/donation/:guidTrack', {guid: '@guid'}, {
         /*custom urls*/
         createDonation: {
-            url: 'api/donation',
+            url: 'api/user/donate',
             method: 'POST',
             params: {
-                artistId: '@string',
-                bankAccountNumber: '@string',
-                securityCode: '@string',
-                donationValue: '@string'
+                artist: '@string',
+                user: '@string',
+                value: '@string'
             },
             isArray: false
         },
@@ -23,7 +22,15 @@ restApiModule.factory('DonationApiService', ['$resource', function ($resource) {
             params: {
             },
             isArray: false
+        },
+         donationList: {
+            url: 'user/donation-list',
+            method: 'GET',
+            params: {
+            },
+            isArray: false
         }
+
 
     });
 }]);

@@ -8,11 +8,11 @@ var DonationCreatorController = ['donationCreatorService', function (donationCre
     self.donation = {
         bankAccountNumber: null,
         securityCode: null,
-        donationValue: null
+        value: null
     };
     self.createDonation = function () {
         var self = this;
-        donationCreatorService.createDonationPayU(self.donation);
+        donationCreatorService.createDonation(self.donation);
         self.next();
     };
 

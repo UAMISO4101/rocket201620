@@ -1,10 +1,12 @@
 var donationCreatorModule = angular.module('donationCreatorModule');
-donationCreatorModule.factory('donationCreatorService', ['$freevenModal', 'DonationApiService',
-    function ($freevenModal, DonationApiService) {
+donationCreatorModule.factory('donationCreatorService', ['$freevenModal', 'DonationApiService', 'mainService', 'notifierService',
+    function ($freevenModal, DonationApiService, mainService, notifierService) {
         var DonationCreatorService = function () {
             var self = this;
             self.user = {};
-            this.showDonationCreatorPopup = function () {
+            this.showDonationCreatorPopup = function (artist) {
+                var self = this;
+                self.artist = artist;
                 $freevenModal.showPopup({}, {
                     template: '<donation-creator> </donation-creator>'
                 });
@@ -13,44 +15,24 @@ donationCreatorModule.factory('donationCreatorService', ['$freevenModal', 'Donat
                 $freevenModal.closePopup();
             };
 
-            this.createDonation = function () {
-                DonationApiService.createDonation(
-                    self.username,
-                    function (response) {
-                        notifierService.success("Transacción correcta", response.status);
-                    },
-                    function (error) {
-
-                    });
-            };
-
-
-            this.createDonationPayU = function () {
-                var donationParams = {
-                    merchantId: 508029,
-                    ApiKey: '4Vj8eK4rloUd272L48hsrarnUA',
-                    referenceCode: 'TestPayU',
-                    accountId: 512326,
-                    description: 'Test PAYU',
-                    amount: 3,
-                    tax: 0,
-                    taxReturnBase: 0,
-                    currency: 'USD',
-                    signature: 'ba9ffa71559580175585e45ce70b6c37',
-                    test: 1,
-                    buyerEmail: 'test@test.com'
+            this.createDonation = function (donation) {
+                var self = this;
+                var user = mainService.getUserData();
+                var params = {
+                    user: user.id_user,
+                    artist: self.artist.id,
+                    value: donation.value
                 };
-                DonationApiService.payuDonation(
-                    donationParams,
+                DonationApiService.createDonation(
+                    params
+                    ,
                     function (response) {
-                        notifierService.success("Transacción correcta", response.status);
+                        //notifierService.success("Transacción correcta", response.status);
                     },
                     function (error) {
 
                     });
             };
-
-
         };
         return new DonationCreatorService();
     }]);
