@@ -27,19 +27,22 @@ playerModule.factory('playerService', ['ngAudio', 'TracksApiService', 'mainServi
 
             self.traceTrack = function (track) {
                 var user = mainService.getUserData();
-                TracksApiService.traceTrack(
-                    {
-                        user: user.username,
-                        track: track.name,
-                        artist: track.artist_id,
-                        action: 'play'
-                    },
-                    function (response) {
+                if (user) {//only if the user is authenticated
+                    TracksApiService.traceTrack(
+                        {
+                            user: user.username,
+                            track: track.id,
+                            artist: track.artist_id,
+                            action: 'play'
+                        },
+                        function (response) {
 
-                    },
-                    function (error) {
-                        console.log('Error loading tracks');
-                    });
+                        },
+                        function (error) {
+                            console.log('Error loading tracks');
+                        });
+                }
+
             };
         };
         return new PlayerService();
