@@ -11,8 +11,7 @@ from users.business_logic import (
 from rest_framework.generics import CreateAPIView
 from .models import Donation, Artist
 from .serializers import (DonationSerializer, ArtistSerializer,
-    UserRetriveSerializer)
-from rest_framework.permissions import IsAuthenticated
+                          UserRetriveSerializer)
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from django.contrib.auth.models import User
@@ -28,7 +27,6 @@ def user(request):
     if request.method == 'POST':
         json_data = json.loads(request.body.decode('utf-8'))
         response = register_user_in_model(json_data)
-        # response = register_user_in_model_post(request)
         return JsonResponse(response)
     if request.method == 'GET':
         response = get_info_users(request)
@@ -45,13 +43,11 @@ def login_user(request):
 class Donate(CreateAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    #permission_classes = (IsAuthenticated,)
 
 
 class DonationList(ListAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    #permission_classes = (IsAuthenticated,)
     filter_backends = (filters.DjangoFilterBackend, )
     filter_fields = (
         'artist__id',
@@ -94,10 +90,7 @@ def change_password_op(request):
 def update_profile(request):
     if request.user.is_authenticated():
         if request.method == 'POST':
-
-            #json_data = json.loads(request.body.decode('utf-8'))
             response = update_profile_action(request)
-            #return JsonResponse(response)
             return JsonResponse({})
 
     else:

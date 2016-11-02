@@ -56,7 +56,7 @@ def register_user_in_model(json_data):
     is_artist = str_to_bool(is_artist)
 
     if (username != "" and password1 != "" and password2 != "" and
-                email != "" and first_name != "" and last_name != ""):
+       email != "" and first_name != "" and last_name != ""):
 
         exist_user = User.objects.filter(username=username)
 
@@ -197,8 +197,8 @@ def register_business_agent(request):
     password2 = request.POST.get('password2')
 
     if (username is not "" and password1 is not "" and password2 is not "" and
-                email is not "" and first_name is not "" and
-                last_name is not ""):
+       email is not "" and first_name is not "" and
+       last_name is not ""):
 
         exist_user = User.objects.filter(username=username)
         if exist_user.count() > 0:
@@ -354,7 +354,7 @@ def change_password_op_action(request):
     old_password = request.GET.get('password')
 
     if (username is not None and password is not None and
-                old_password is not None):
+       old_password is not None):
         user = authenticate(username=username, password=old_password)
         if user is not None:
             user.set_password(password)
@@ -374,7 +374,7 @@ def update_profile_action(json_data):
     email = json_data.POST['email']
 
     if (username != "" and email != "" and first_name != "" and
-                last_name != ""):
+       last_name != ""):
 
         user = User.objects.get(username=username)
 
@@ -423,7 +423,8 @@ def update_profile_artist_action(user, json_data):
     try:
         artist = Artist.objects.filter(user__id=user.id)
         artist.update(artistic_name=json_data.POST['artistic_name'])
-        artist.update(bank_account_number=json_data.POST['bank_account_number'])
+        artist.update(
+            bank_account_number=json_data.POST['bank_account_number'])
         artist.update(bank_account_type=json_data.POST['bank_account_type'])
         artist.update(bank=json_data.POST['bank'])
         artist.update(address=json_data.POST['address'])

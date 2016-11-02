@@ -2,7 +2,6 @@ from rest_framework.generics import ListAPIView, CreateAPIView
 from .models import Track, Top
 from .serializers import TrackSerializer,  TopSerializer, TrackUploadSerializer
 from rest_framework import filters
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -28,7 +27,6 @@ class TrackListView(ListAPIView):
 class TrackCreateView(CreateAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackUploadSerializer
-  #  permission_classes = (IsAuthenticated,)
 
 
 @csrf_exempt
