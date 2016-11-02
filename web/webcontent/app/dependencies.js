@@ -157,3 +157,4 @@ require('../app/scoreEditor/scoreEditor.less');
 require('../app/restorePassword/restorePasswordModule.js');
 require('../app/restorePassword/restorePasswordComponent.js');
 require('../app/restorePassword/restorePassword.less');
+require('../app/restorePassword/restorePasswordService.js');

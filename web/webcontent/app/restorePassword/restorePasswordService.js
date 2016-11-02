@@ -2,12 +2,12 @@
  * Created by diego on 8/10/2016.
  */
 
-var forgotPasswordModule = angular.module('forgotPasswordModule');
-forgotPasswordModule.factory('forgotPasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+var restorePasswordModule = angular.module('restorePasswordModule');
+restorePasswordModule.factory('restorePasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
     'mainService', '$filter', 'userEditService',
     function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, userEditService) {
 
-        var forgotPasswordService = function () {
+        var restorePasswordService = function () {
 
             var self = this;
 
@@ -25,20 +25,24 @@ forgotPasswordModule.factory('forgotPasswordService', ['UserApiService', '$i18n'
                 $freevenModal.closePopup();
             };
 
-            this.sendUsername = function () {
+            this.sendChangePassword = function () {
 
                 var self = this;
-                UserApiService.forgotPasswordUser(
+                UserApiService.restorePasswordUser(
                     self.username,
                     function (response) {
-                        notifierService.success("Solicitud enviada", response.status);
+                        notifierService.success("Cambio de contraseña", response.status);
+                        setTimeout(function () {
+                            window.location.assign('#/');
+                            window.location.reload(true);
+                        }, 5000);
                     },
                     function (error) {
-
                     });
-                $freevenModal.closePopup();
+
+
             };
 
         };
-        return new forgotPasswordService();
+        return new restorePasswordService();
     }]);

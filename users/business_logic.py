@@ -283,17 +283,21 @@ def update_business_agent_process(user, request):
 def request_password_restore_action(request):
     username = request.GET.get('username')
 
-    if (username is not None):
-        user = User.objects.get(username=username)
-        if user is not None:
-            if request_password_restore_subaction(user, request):
-                status = 'Correo enviado.'
+    if username is not None:
+        try:
+            user = User.objects.get(username=username)
+            if user is not None:
+                if request_password_restore_subaction(user, request):
+                    status = 'Correo enviado.'
+                else:
+                    status = 'Error en el envio del correo.'
             else:
-                status = 'Error en el envio del correo.'
-        else:
-            status = 'Usuario no existe.'
+                status = 'Usuario no existe.'
+        except:
+            status = 'Parece que el usuario no existe.'
     else:
-        status = 'Todos los campos son obligatorios.'
+        status = 'No se envío un username.'
+
     return {'status': status}
 
 
@@ -311,8 +315,7 @@ def request_password_restore_subaction(user, request):
         body_text = body_text + 'Para recuperar su clave haga clic en el '
         body_text = body_text + 'siguiente enlace: \n\n'
         body_text = body_text + 'http://' + request.META['HTTP_HOST']
-        body_text = body_text + '/user/pass_restore/?usr=' + str(user.username)
-        body_text = body_text + '&token=' + dto.token
+        body_text = body_text + '#/user/pass/restore/yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw/' + str(user.id)
         body_text = body_text + '\n\n Cordial saludo,'
 
         send_mail(subject, body_text, settings.EMAIL_HOST_USER,

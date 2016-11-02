@@ -249,6 +249,7 @@
 	__webpack_require__(189);
 	__webpack_require__(190);
 	__webpack_require__(192);
+	__webpack_require__(194);
 
 
 /***/ },
@@ -62365,7 +62366,7 @@
 	          $routeProvider.when('/donation', {
 	          template: '<donation></donation>'
 	        });
-	        $routeProvider.when('/user/pass/restore/:idUser', {
+	        $routeProvider.when('/user/pass/restore/yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw/:idUser', {
 	          template: '<restore-password></restore-password>'
 	        });
 	        $routeProvider.otherwise({redirectTo: '/'});
@@ -63991,8 +63992,23 @@
 	            method: 'GET',
 	            params: {username: '@string', password: '@string'},
 	            isArray: false,
-
 	        }
+	        ,
+
+	        forgotPasswordUser: {
+	            url: '/user/request_password_restore',
+	            method: 'GET',
+	            params: {username: '@string'},
+	            isArray: false,
+	        }
+	        ,
+	        restorePasswordUser: {
+	            url: '/user/change_password',
+	            method: 'GET',
+	            params: {username: '@string',password: '@string'},
+	            isArray: false,
+	        }
+
 	    });
 
 
@@ -66674,8 +66690,8 @@
 
 	var forgotPasswordModule = angular.module('forgotPasswordModule');
 	forgotPasswordModule.factory('forgotPasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$filter','userEditService',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter,userEditService) {
+	    'mainService', '$filter', 'userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, userEditService) {
 
 	        var forgotPasswordService = function () {
 
@@ -66696,10 +66712,17 @@
 	            };
 
 	            this.sendUsername = function () {
-	                //TODO CONSUME SERVICE SAVE
-	                console.log("Ok" +self.username.username);
+
+	                var self = this;
+	                UserApiService.forgotPasswordUser(
+	                    self.username,
+	                    function (response) {
+	                        notifierService.success("Solicitud enviada", response.status);
+	                    },
+	                    function (error) {
+
+	                    });
 	                $freevenModal.closePopup();
-	                notifierService.success($i18n.translate.user_edit_success, "Enviado");
 	            };
 
 	        };
@@ -66907,15 +66930,36 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var restorePasswordModule = angular.module('restorePasswordModule');
-	var RestorePasswordController = ['$i18n', '$freevenModal','$routeParams', function ($i18n, $freevenModal,$routeParams) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    var self = this;
+	var RestorePasswordController = ['$i18n', '$freevenModal', '$routeParams', 'restorePasswordService',
+	    function ($i18n, $freevenModal, $routeParams, restorePasswordService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
 
-	    console.log($routeParams.idUser);
+	        self.passwordOk = true;
 
-	}];
+	        console.log($routeParams.idUser);
+
+	        self.restorePassword = restorePasswordService;
+
+	        self.validateRestorePassword = function () {
+	            if (self.restorePassword.username.username == undefined ||
+	                self.restorePassword.username.password == undefined ||
+	                self.restorePassword.username.password2 == undefined) {
+	            } else {
+	                if (self.restorePassword.username.password !=
+	                    self.restorePassword.username.password2) {
+	                    self.passwordOk = false;
+	                } else {
+	                    self.passwordOk = true;
+	                    self.restorePassword.sendChangePassword();
+	                }
+	            }
+	        };
+
+
+	    }];
 
 	restorePasswordModule.component('restorePassword', {
 	    transclude: true,
@@ -66932,7 +66976,7 @@
 /* 191 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"passwordForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userPassword.user.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userPassword.user.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_edit_user'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
 /* 192 */
@@ -66969,9 +67013,63 @@
 
 
 	// module
-	exports.push([module.id, ".restore-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.restore-password .fr-modal-header,\n.restore-password .fr-modal-content,\n.restore-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.restore-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.restore-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.restore-password form a:hover {\n  color: #179b77;\n}\n.restore-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.restore-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.restore-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.restore-password form label.active .req {\n  opacity: 0;\n}\n.restore-password form label.highlight {\n  color: black;\n}\n.restore-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.restore-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.restore-password .messages {\n  color: #FA787E;\n}\n.restore-password .colorMensajes {\n  color: red;\n}\n.restore-password input.ng-valid {\n  border: 1px solid green;\n}\n.restore-password input:required:valid {\n  border: 1px solid green;\n}\n.restore-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, ".restore-password {\n  padding: 0px 0px 67px 252px;\n  background-color: white;\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.restore-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.restore-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.restore-password form a:hover {\n  color: #179b77;\n}\n.restore-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.restore-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.restore-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.restore-password form label.active .req {\n  opacity: 0;\n}\n.restore-password form label.highlight {\n  color: black;\n}\n.restore-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.restore-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.restore-password .messages {\n  color: #FA787E;\n}\n.restore-password .colorMensajes {\n  color: red;\n}\n.restore-password input.ng-valid {\n  border: 1px solid green;\n}\n.restore-password input:required:valid {\n  border: 1px solid green;\n}\n.restore-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
 
 	// exports
+
+
+/***/ },
+/* 194 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var restorePasswordModule = angular.module('restorePasswordModule');
+	restorePasswordModule.factory('restorePasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter', 'userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, userEditService) {
+
+	        var restorePasswordService = function () {
+
+	            var self = this;
+
+	            self.username = {};
+
+	            this.showPopup = function () {
+
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<forgot-password></forgot-password>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.sendChangePassword = function () {
+
+	                var self = this;
+	                UserApiService.restorePasswordUser(
+	                    self.username,
+	                    function (response) {
+	                        notifierService.success("Cambio de contraseña", response.status);
+	                        setTimeout(function () {
+	                            window.location.assign('#/');
+	                            window.location.reload(true);
+	                        }, 5000);
+	                    },
+	                    function (error) {
+	                    });
+
+
+	            };
+
+	        };
+	        return new restorePasswordService();
+	    }]);
 
 
 /***/ }
