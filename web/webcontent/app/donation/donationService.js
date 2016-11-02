@@ -12,7 +12,7 @@ donationModule.factory('donationService', ['DonationApiService', 'mainService',
                 var user = mainService.getUserData();
                 DonationApiService.donationList(
                     {
-                        artist__id: user.id_user
+                        artist__id: user.id_artist
                     },
                     function (response) {
                         self.donations = response.results;
