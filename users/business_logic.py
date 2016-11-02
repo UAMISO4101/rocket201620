@@ -167,10 +167,12 @@ def login_service(request):
 
 def login_user_to_json(user):
     try:
-        Artist.objects.get(user__id=user.id)
+        artist = Artist.objects.get(user__id=user.id)
         is_artist = True
+        id_artist = artist.id
     except:
         is_artist = False
+        id_artist = -1
     try:
         token = Token.objects.create(user=user)
     except:
@@ -183,7 +185,8 @@ def login_user_to_json(user):
         'email': user.email,
         'token': token.key,
         'is_artist': is_artist,
-        'id_user': user.id
+        'id_user': user.id,
+        'id_artist': id_artist
     }
     return json_data
 
