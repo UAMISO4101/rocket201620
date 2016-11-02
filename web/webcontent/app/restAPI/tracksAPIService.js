@@ -13,8 +13,8 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
 
         },
         loadTopTracks: {
-            /*url: 'api/track/top10',*/
-            url: 'api/track',
+            url: 'api/track/top10',
+            /*url: 'api/track',*/
             method: 'GET',
             params: {},
             isArray: false
@@ -42,5 +42,3 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
         }
     });
 }]);
-
-
