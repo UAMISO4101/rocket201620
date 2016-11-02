@@ -33,6 +33,9 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
             };
 
             self.getUserData = function () {
+                if (!self.user) {
+                    self.loadUserDataFromCookies();
+                }
                 return self.user;
             };
             self.loadUserDataFromCookies = function () {
