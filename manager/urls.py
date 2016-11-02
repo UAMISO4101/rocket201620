@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from .views import (IndexView, GenderListView, GenderUpdateView,
                     GenderCreateView, BusinessAgentListView,
                     businessAgentCreate, businessAgentUpdate, UserListView,
-                    UserUpdateView)
+                    UserUpdateView, ArtistDonationListView)
 
 
 urlpatterns = [
@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^user/$', UserListView.as_view(), name='user-list'),
     url(r'^user/update/(?P<pk>\d+)/$', UserUpdateView.as_view(),
         name='user-update'),
+    url(r'^artist-donation-list/$', ArtistDonationListView.as_view(), name='artist-donation-list'),
 ]

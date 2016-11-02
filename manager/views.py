@@ -3,7 +3,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from tracks.models import Gender
-from users.models import BusinessAgent, Artist
+from users.models import BusinessAgent, Artist, Donation
 from django.contrib.auth.models import User
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
 from django.core.urlresolvers import reverse
@@ -23,11 +23,12 @@ class IndexView(TemplateView):
         trace_manager = TraceManager()
         top_artists = trace_manager.top_artist_played()
         artists = []
-        for artist in top_artists:
-            artists.append({
-                "name": Artist.objects.only('user__username').get(id=artist['_id']['artist']),
-                "quantity": artist['count']
-            })
+        if len(top_artists) > 0:
+            for artist in top_artists:
+                artists.append({
+                    "name": Artist.objects.only('user__first_name').get(id=artist['_id']['artist']),
+                    "quantity": artist['count']
+                })
 
         context['artists'] = artists
         return context
@@ -128,3 +129,45 @@ class UserUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('user-list')
+
+
+@method_decorator(login_required, name='dispatch')
+class ArtistDonationListView(ListView):
+    template_name = 'artist-donation-list.html'
+    context_object_name = 'donations'
+
+    def get_queryset(self):
+        start_date = self.request.GET.get('start_date')
+        end_date = self.request.GET.get('end_date')
+        gender = self.request.GET.get('gender')
+
+        queryset = Donation.objects.all()
+        if start_date and end_date:
+            if self.request.GET.get('gender'):
+                queryset = Donation.objects.filter(
+                    artist__in=Artist.objects.filter(
+                        track__gender=self.request.GET.get('gender')
+                    )
+                ).filter(
+                    date__range=(start_date, end_date)
+                )
+            else:
+                queryset = Donation.objects.filter(
+                    date__range=(start_date, end_date)
+                )
+        else:
+            if gender:
+                queryset = Donation.objects.filter(
+                    artist__in=Artist.objects.filter(
+                        track__gender=self.request.GET.get('gender')
+                    )
+                )
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtistDonationListView, self).get_context_data(**kwargs)
+        context['genders'] = Gender.objects.all()
+        context['start_date'] = self.request.GET.get('start_date')
+        context['end_date'] = self.request.GET.get('end_date')
+        context['gender'] = self.request.GET.get('gender')
+        return context
