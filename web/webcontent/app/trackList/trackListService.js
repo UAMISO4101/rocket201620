@@ -26,6 +26,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     });
             };
 
+
             self.loadTopTracks = function () {
                 var params = {
                     format: "json"
