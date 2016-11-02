@@ -368,33 +368,34 @@ def change_password_op_action(request):
 
 
 def update_profile_action(json_data):
-    first_name = json_data['first_name']
-    last_name = json_data['last_name']
-    username = json_data['username']
-    email = json_data['email']
+    first_name = json_data.POST['first_name']
+    last_name = json_data.POST['last_name']
+    username = json_data.POST['username']
+    email = json_data.POST['email']
 
     if (username != "" and email != "" and first_name != "" and
                 last_name != ""):
 
-        user = User.objects.filter(username=username)
+        user = User.objects.get(username=username)
 
-        if user.count() != 0:
+        if user is not None:
 
             user.first_name = first_name
             user.last_name = last_name
             user.email = email
-            is_artist = json_data['is_artist']
+            is_artist = json_data.POST['is_artist']
             user.save()
             if (str_to_bool(is_artist)):
                 status = update_profile_artist_action(user, json_data)
 
-            if (status != ""):
-                is_agent = json_data['is_agent']
+            '''if (status != ""):
+                is_agent = json_data.POST['is_agent']
                 if (str_to_bool(is_agent)):
                     status = update_profile_agent_action(user,
                                                          json_data[
                                                              'status'
                                                          ])
+                                                         '''
         else:
             status = 'Usuario no existe.'
     else:
@@ -420,17 +421,16 @@ def update_profile_agent_action(user, json_data):
 
 def update_profile_artist_action(user, json_data):
     try:
-        artist = Artist.objets.get(user__id=user.id)
-
-        artist.artistic_name = json_data['artistic_name']
-        artist.bank_account_number = json_data['bank_account_number']
-        artist.bank_account_type = json_data['bank_account_type']
-        artist.bank = json_data['bank']
-        artist.address = json_data['address']
-        artist.city = json_data['city']
-        artist.country = json_data['country']
-        artist.telephone_number = json_data['telephone_number']
-        artist.birth_date = json_data['birth_date']
+        artist = Artist.objects.filter(user__id=user.id)
+        artist.update(artistic_name=json_data.POST['artistic_name'])
+        artist.update(bank_account_number=json_data.POST['bank_account_number'])
+        artist.update(bank_account_type=json_data.POST['bank_account_type'])
+        artist.update(bank=json_data.POST['bank'])
+        artist.update(address=json_data.POST['address'])
+        artist.update(city=json_data.POST['city'])
+        artist.update(country=json_data.POST['country'])
+        artist.update(telephone_number=json_data.POST['telephone_number'])
+        artist.update(birth_date=json_data.POST['birth_date'])
         artist.save()
         status = 'Datos del perfil del artista fueron actualizados.'
     except:

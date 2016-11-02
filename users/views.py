@@ -51,7 +51,7 @@ class Donate(CreateAPIView):
 class DonationList(ListAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     filter_backends = (filters.DjangoFilterBackend, )
     filter_fields = (
         'artist__id',
@@ -94,10 +94,9 @@ def change_password_op(request):
 def update_profile(request):
     if request.user.is_authenticated():
         if request.method == 'POST':
-            print(request.POST)
-            print(request.FILES)
+
             #json_data = json.loads(request.body.decode('utf-8'))
-            #response = update_profile_action(json_data)
+            response = update_profile_action(request)
             #return JsonResponse(response)
             return JsonResponse({})
 
