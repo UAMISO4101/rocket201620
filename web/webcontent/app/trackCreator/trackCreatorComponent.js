@@ -34,6 +34,7 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
             });
         };
 
+
         self.uploadFilesAndData = function () {
             var self = this;
             var user = mainService.getUserData();
