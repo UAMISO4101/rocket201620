@@ -25,6 +25,7 @@ class GenderListView(ListAPIView):
         'description',
     )
 
+
 class TrackListView(ListAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
