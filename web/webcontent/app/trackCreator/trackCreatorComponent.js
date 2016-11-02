@@ -29,8 +29,7 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
         self.imageIsLoaded = function (e) {
             var img = {};
             $scope.$apply(function () {
-                //img = {"img": e.target.result};
-                 img = {"img": e.target.result};
+                img = {"img": e.target.result};
                 self.picture.push(img);
             });
         };
