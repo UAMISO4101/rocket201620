@@ -1,6 +1,5 @@
 var loginModule = angular.module('loginModule');
-var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', '$location',
-    'forgotPasswordService',
+var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', 'forgotPasswordService', '$location',
     function ($i18n, loginService, $freevenModal, userMenuService, loginService, forgotPasswordService, $location) {
         /**
          * Tip: add here only visual logic
@@ -32,6 +31,7 @@ var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuServic
         };
 
         self.showForgotPasswordPopup = function () {
+            var self = this;
             self.forgotPassword.showPopup();
         };
     }];
