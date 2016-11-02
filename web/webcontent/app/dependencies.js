@@ -165,3 +165,7 @@ require('../app/donationCreator/donationCreatorModule.js');
 require('../app/donationCreator/donationCreatorComponent.js');
 require('../app/donationCreator/donationCreatorService.js');
 require('../app/donationCreator/donationCreator.less');
+
+require('../app/bounce/bounceModule.js');
+require('../app/bounce/bounceComponent.js');
+require('../app/bounce/bounce.less');

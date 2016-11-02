@@ -22,7 +22,9 @@
         </div>
 
 
-        <div></div>
+        <div>
+
+        </div>
         <div class="fr-track-creator-text">
             <fieldset class="form-group">
                 <h4>Llena estos campos para subir una pieza musical</h4>
@@ -61,7 +63,7 @@
                            class="form-control">
                             <i class="icon icon-upload">
                                 <span ng-if="!ctrl.trackFiles.audio">Seleccione el archivo .mp3</span>
-                                <span ng-if="ctrl.trackFiles.audio">{{ ctrl.trackFiles.audio.name}}</span>
+                                <span ng-if="ctrl.trackFiles.audio">{{ ctrl.trackFiles.audio.name }}</span>
                             </i>
                         </a>
                     </div>
@@ -69,10 +71,13 @@
             </fieldset>
             <fieldset class="form-group">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData()">
                             <span>Crear pista</span>
                         </button>
+                    </div>
+                    <div class="col-md-2" ng-if="ctrl.loading">
+                        <bounce title="Bounce"></bounce>
                     </div>
                 </div>
             </fieldset>

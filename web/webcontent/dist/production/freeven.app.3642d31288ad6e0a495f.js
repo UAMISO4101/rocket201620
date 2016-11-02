@@ -78,7 +78,8 @@
 	    'forgotPasswordModule',
 	    'scoreEditorModule',
 	    'restorePasswordModule',
-	    'donationCreatorModule'
+	    'donationCreatorModule',
+	    'bounceModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -144,119 +145,124 @@
 	__webpack_require__(72);
 	__webpack_require__(73);
 	__webpack_require__(74);
+	__webpack_require__(75);
 
 	/**
 	 * Registro de componentes nuevos
 	 */
 
-	__webpack_require__(75);
-
 	__webpack_require__(76);
+
 	__webpack_require__(77);
-	__webpack_require__(79);
+	__webpack_require__(78);
 	__webpack_require__(80);
+	__webpack_require__(81);
 
-	__webpack_require__(82);
 	__webpack_require__(83);
-	__webpack_require__(85);
+	__webpack_require__(84);
+	__webpack_require__(86);
 
-	__webpack_require__(87);
 	__webpack_require__(88);
-	__webpack_require__(90);
-	__webpack_require__(92);
-
-
+	__webpack_require__(89);
+	__webpack_require__(91);
 	__webpack_require__(93);
+
+
 	__webpack_require__(94);
-	__webpack_require__(96);
+	__webpack_require__(95);
+	__webpack_require__(97);
 
-	__webpack_require__(98);
 	__webpack_require__(99);
-	__webpack_require__(101);
+	__webpack_require__(100);
 	__webpack_require__(102);
+	__webpack_require__(103);
 
-	__webpack_require__(104);
 	__webpack_require__(105);
-	__webpack_require__(107);
-	__webpack_require__(109);
-
+	__webpack_require__(106);
+	__webpack_require__(108);
 	__webpack_require__(110);
+
 	__webpack_require__(111);
-	__webpack_require__(113);
-	__webpack_require__(115);
-
+	__webpack_require__(112);
+	__webpack_require__(114);
 	__webpack_require__(116);
+
 	__webpack_require__(117);
-	__webpack_require__(119);
+	__webpack_require__(118);
+	__webpack_require__(120);
 
-	__webpack_require__(122);
 	__webpack_require__(123);
-	__webpack_require__(125);
+	__webpack_require__(124);
+	__webpack_require__(126);
 
-	__webpack_require__(127);
 	__webpack_require__(128);
-	__webpack_require__(130);
+	__webpack_require__(129);
+	__webpack_require__(131);
 
-	__webpack_require__(132);
 	__webpack_require__(133);
-	__webpack_require__(135);
-	__webpack_require__(137);
-
+	__webpack_require__(134);
+	__webpack_require__(136);
 	__webpack_require__(138);
+
 	__webpack_require__(139);
-	__webpack_require__(141);
-	__webpack_require__(143);
-
+	__webpack_require__(140);
+	__webpack_require__(142);
 	__webpack_require__(144);
+
 	__webpack_require__(145);
-	__webpack_require__(147);
+	__webpack_require__(146);
 	__webpack_require__(148);
-	__webpack_require__(150);
-	__webpack_require__(152);
+	__webpack_require__(149);
+	__webpack_require__(151);
+	__webpack_require__(153);
 
-	__webpack_require__(154);
 	__webpack_require__(155);
-	__webpack_require__(158);
-	__webpack_require__(160);
-
+	__webpack_require__(156);
+	__webpack_require__(159);
 	__webpack_require__(161);
+
 	__webpack_require__(162);
-	__webpack_require__(164);
+	__webpack_require__(163);
+	__webpack_require__(165);
 
-	__webpack_require__(166);
 	__webpack_require__(167);
-	__webpack_require__(170);
+	__webpack_require__(168);
+	__webpack_require__(171);
 
-	__webpack_require__(154);
 	__webpack_require__(155);
-	__webpack_require__(158);
-	__webpack_require__(160);
+	__webpack_require__(156);
+	__webpack_require__(159);
+	__webpack_require__(161);
 
-	__webpack_require__(172);
 	__webpack_require__(173);
-	__webpack_require__(175);
-	__webpack_require__(177);
-
+	__webpack_require__(174);
+	__webpack_require__(176);
 	__webpack_require__(178);
+
 	__webpack_require__(179);
-	__webpack_require__(181);
+	__webpack_require__(180);
 	__webpack_require__(182);
+	__webpack_require__(183);
 
 
-	__webpack_require__(184);
 	__webpack_require__(185);
-	__webpack_require__(187);
+	__webpack_require__(186);
 	__webpack_require__(188);
+	__webpack_require__(189);
 
-	__webpack_require__(190);
 	__webpack_require__(191);
-	__webpack_require__(193);
-	__webpack_require__(195);
-
+	__webpack_require__(192);
+	__webpack_require__(194);
 	__webpack_require__(196);
+
 	__webpack_require__(197);
-	__webpack_require__(199);
+	__webpack_require__(198);
 	__webpack_require__(200);
+	__webpack_require__(201);
+
+	__webpack_require__(203);
+	__webpack_require__(204);
+	__webpack_require__(206);
 
 /***/ },
 /* 2 */
@@ -57952,7 +57958,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * angular-translate - v2.12.1 - 2016-09-15
+	 * angular-translate - v2.13.0 - 2016-10-30
 	 * 
 	 * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
 	 */
@@ -58342,64 +58348,64 @@
 	 *
 	 */
 	angular.module('pascalprecht.translate')
-	.constant('pascalprechtTranslateOverrider', {})
-	.provider('$translate', $translate);
+	  .constant('pascalprechtTranslateOverrider', {})
+	  .provider('$translate', $translate);
 
 	function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvider, pascalprechtTranslateOverrider) {
 
 	  'use strict';
 
 	  var $translationTable = {},
-	      $preferredLanguage,
-	      $availableLanguageKeys = [],
-	      $languageKeyAliases,
-	      $fallbackLanguage,
-	      $fallbackWasString,
-	      $uses,
-	      $nextLang,
-	      $storageFactory,
-	      $storageKey = $STORAGE_KEY,
-	      $storagePrefix,
-	      $missingTranslationHandlerFactory,
-	      $interpolationFactory,
-	      $interpolatorFactories = [],
-	      $loaderFactory,
-	      $cloakClassName = 'translate-cloak',
-	      $loaderOptions,
-	      $notFoundIndicatorLeft,
-	      $notFoundIndicatorRight,
-	      $postCompilingEnabled = false,
-	      $forceAsyncReloadEnabled = false,
-	      $nestedObjectDelimeter = '.',
-	      $isReady = false,
-	      $keepContent = false,
-	      loaderCache,
-	      directivePriority = 0,
-	      statefulFilter = true,
-	      postProcessFn,
-	      uniformLanguageTagResolver = 'default',
-	      languageTagResolver = {
-	        'default': function (tag) {
-	          return (tag || '').split('-').join('_');
-	        },
-	        java: function (tag) {
-	          var temp = (tag || '').split('-').join('_');
-	          var parts = temp.split('_');
-	          return parts.length > 1 ? (parts[0].toLowerCase() + '_' + parts[1].toUpperCase()) : temp;
-	        },
-	        bcp47: function (tag) {
-	          var temp = (tag || '').split('_').join('-');
-	          var parts = temp.split('-');
-	          return parts.length > 1 ? (parts[0].toLowerCase() + '-' + parts[1].toUpperCase()) : temp;
-	        },
-	        'iso639-1': function (tag) {
-	          var temp = (tag || '').split('_').join('-');
-	          var parts = temp.split('-');
-	          return parts[0].toLowerCase();
-	        }
-	      };
+	    $preferredLanguage,
+	    $availableLanguageKeys = [],
+	    $languageKeyAliases,
+	    $fallbackLanguage,
+	    $fallbackWasString,
+	    $uses,
+	    $nextLang,
+	    $storageFactory,
+	    $storageKey = $STORAGE_KEY,
+	    $storagePrefix,
+	    $missingTranslationHandlerFactory,
+	    $interpolationFactory,
+	    $interpolatorFactories = [],
+	    $loaderFactory,
+	    $cloakClassName = 'translate-cloak',
+	    $loaderOptions,
+	    $notFoundIndicatorLeft,
+	    $notFoundIndicatorRight,
+	    $postCompilingEnabled = false,
+	    $forceAsyncReloadEnabled = false,
+	    $nestedObjectDelimeter = '.',
+	    $isReady = false,
+	    $keepContent = false,
+	    loaderCache,
+	    directivePriority = 0,
+	    statefulFilter = true,
+	    postProcessFn,
+	    uniformLanguageTagResolver = 'default',
+	    languageTagResolver = {
+	      'default' : function (tag) {
+	        return (tag || '').split('-').join('_');
+	      },
+	      java : function (tag) {
+	        var temp = (tag || '').split('-').join('_');
+	        var parts = temp.split('_');
+	        return parts.length > 1 ? (parts[0].toLowerCase() + '_' + parts[1].toUpperCase()) : temp;
+	      },
+	      bcp47 : function (tag) {
+	        var temp = (tag || '').split('_').join('-');
+	        var parts = temp.split('-');
+	        return parts.length > 1 ? (parts[0].toLowerCase() + '-' + parts[1].toUpperCase()) : temp;
+	      },
+	      'iso639-1' : function (tag) {
+	        var temp = (tag || '').split('_').join('-');
+	        var parts = temp.split('-');
+	        return parts[0].toLowerCase();
+	      }
+	    };
 
-	  var version = '2.12.1';
+	  var version = '2.13.0';
 
 	  // tries to determine the browsers language
 	  var getFirstBrowserLanguage = function () {
@@ -58410,9 +58416,9 @@
 	    }
 
 	    var nav = $windowProvider.$get().navigator,
-	        browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
-	        i,
-	        language;
+	      browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+	      i,
+	      language;
 
 	    // support for HTML 5.1 "navigator.languages"
 	    if (angular.isArray(nav.languages)) {
@@ -58458,7 +58464,7 @@
 	   *
 	   * @returns {int} Index of search element.
 	   */
-	  var indexOf = function(array, searchElement) {
+	  var indexOf = function (array, searchElement) {
 	    for (var i = 0, len = array.length; i < len; i++) {
 	      if (array[i] === searchElement) {
 	        return i;
@@ -58476,19 +58482,19 @@
 	   *
 	   * @returns {string} The string stripped of whitespace from both ends
 	   */
-	  var trim = function() {
+	  var trim = function () {
 	    return this.toString().replace(/^\s+|\s+$/g, '');
 	  };
 
 	  var negotiateLocale = function (preferred) {
-	    if(!preferred) {
+	    if (!preferred) {
 	      return;
 	    }
 
 	    var avail = [],
-	        locale = angular.lowercase(preferred),
-	        i = 0,
-	        n = $availableLanguageKeys.length;
+	      locale = angular.lowercase(preferred),
+	      i = 0,
+	      n = $availableLanguageKeys.length;
 
 	    for (; i < n; i++) {
 	      avail.push(angular.lowercase($availableLanguageKeys[i]));
@@ -58654,7 +58660,7 @@
 	        flatObject(val, path.concat(key), result, key);
 	      } else {
 	        keyWithPath = path.length ? ('' + path.join($nestedObjectDelimeter) + $nestedObjectDelimeter + key) : key;
-	        if(path.length && key === prevKey){
+	        if (path.length && key === prevKey) {
 	          // Create shortcut path (foo.bar == foo.bar.bar)
 	          keyWithShortPath = '' + path.join($nestedObjectDelimeter);
 	          // Link it to original path
@@ -58727,7 +58733,7 @@
 	    return this;
 	  };
 
-	 /**
+	  /**
 	   * @ngdoc function
 	   * @name pascalprecht.translate.$translateProvider#preferredLanguage
 	   * @methodOf pascalprecht.translate.$translateProvider
@@ -58739,7 +58745,7 @@
 	   *
 	   * @param {string} langKey A language key.
 	   */
-	  this.preferredLanguage = function(langKey) {
+	  this.preferredLanguage = function (langKey) {
 	    if (langKey) {
 	      setupPreferredLanguage(langKey);
 	      return this;
@@ -58837,12 +58843,12 @@
 	    if (langKey) {
 	      if (angular.isString(langKey)) {
 	        $fallbackWasString = true;
-	        $fallbackLanguage = [ langKey ];
+	        $fallbackLanguage = [langKey];
 	      } else if (angular.isArray(langKey)) {
 	        $fallbackWasString = false;
 	        $fallbackLanguage = langKey;
 	      }
-	      if (angular.isString($preferredLanguage)  && indexOf($fallbackLanguage, $preferredLanguage) < 0) {
+	      if (angular.isString($preferredLanguage) && indexOf($fallbackLanguage, $preferredLanguage) < 0) {
 	        $fallbackLanguage.push($preferredLanguage);
 	      }
 
@@ -58896,7 +58902,7 @@
 	    return getLocale();
 	  };
 
-	 /**
+	  /**
 	   * @ngdoc function
 	   * @name pascalprecht.translate.$translateProvider#storageKey
 	   * @methodOf pascalprecht.translate.$translateProvider
@@ -58906,7 +58912,7 @@
 	   *
 	   * @param {string} key A key for the storage.
 	   */
-	  var storageKey = function(key) {
+	  var storageKey = function (key) {
 	    if (!key) {
 	      if ($storagePrefix) {
 	        return $storagePrefix + $storageKey;
@@ -58931,7 +58937,7 @@
 	   * @param {Object=} options Optional configuration object
 	   */
 	  this.useUrlLoader = function (url, options) {
-	    return this.useLoader('$translateUrlLoader', angular.extend({ url: url }, options));
+	    return this.useLoader('$translateUrlLoader', angular.extend({url : url}, options));
 	  };
 
 	  /**
@@ -59162,7 +59168,7 @@
 	      options = {};
 	    } else if (angular.isString(options)) {
 	      options = {
-	        standard: options
+	        standard : options
 	      };
 	    }
 
@@ -59379,1296 +59385,1331 @@
 	   * @param {string} forceLanguage A language to be used instead of the current language
 	   * @returns {object} promise
 	   */
-	  this.$get = [
-	    '$log',
-	    '$injector',
-	    '$rootScope',
-	    '$q',
-	    function ($log, $injector, $rootScope, $q) {
+	  this.$get = ['$log', '$injector', '$rootScope', '$q', function ($log, $injector, $rootScope, $q) {
 
-	      var Storage,
-	          defaultInterpolator = $injector.get($interpolationFactory || '$translateDefaultInterpolation'),
-	          pendingLoader = false,
-	          interpolatorHashMap = {},
-	          langPromises = {},
-	          fallbackIndex,
-	          startFallbackIteration;
+	    var Storage,
+	      defaultInterpolator = $injector.get($interpolationFactory || '$translateDefaultInterpolation'),
+	      pendingLoader = false,
+	      interpolatorHashMap = {},
+	      langPromises = {},
+	      fallbackIndex,
+	      startFallbackIteration;
 
-	      var $translate = function (translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage) {
-	        if (!$uses && $preferredLanguage) {
-	          $uses = $preferredLanguage;
-	        }
-	        var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
-	              (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
+	    var $translate = function (translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage) {
+	      if (!$uses && $preferredLanguage) {
+	        $uses = $preferredLanguage;
+	      }
+	      var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
+	        (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
 
-	        // Check forceLanguage is present
-	        if (forceLanguage) {
-	          loadTranslationsIfMissing(forceLanguage);
-	        }
+	      // Check forceLanguage is present
+	      if (forceLanguage) {
+	        loadTranslationsIfMissing(forceLanguage);
+	      }
 
-	        // Duck detection: If the first argument is an array, a bunch of translations was requested.
-	        // The result is an object.
-	        if (angular.isArray(translationId)) {
-	          // Inspired by Q.allSettled by Kris Kowal
-	          // https://github.com/kriskowal/q/blob/b0fa72980717dc202ffc3cbf03b936e10ebbb9d7/q.js#L1553-1563
-	          // This transforms all promises regardless resolved or rejected
-	          var translateAll = function (translationIds) {
-	            var results = {}; // storing the actual results
-	            var promises = []; // promises to wait for
-	            // Wraps the promise a) being always resolved and b) storing the link id->value
-	            var translate = function (translationId) {
-	              var deferred = $q.defer();
-	              var regardless = function (value) {
-	                results[translationId] = value;
-	                deferred.resolve([translationId, value]);
-	              };
-	              // we don't care whether the promise was resolved or rejected; just store the values
-	              $translate(translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage).then(regardless, regardless);
-	              return deferred.promise;
+	      // Duck detection: If the first argument is an array, a bunch of translations was requested.
+	      // The result is an object.
+	      if (angular.isArray(translationId)) {
+	        // Inspired by Q.allSettled by Kris Kowal
+	        // https://github.com/kriskowal/q/blob/b0fa72980717dc202ffc3cbf03b936e10ebbb9d7/q.js#L1553-1563
+	        // This transforms all promises regardless resolved or rejected
+	        var translateAll = function (translationIds) {
+	          var results = {}; // storing the actual results
+	          var promises = []; // promises to wait for
+	          // Wraps the promise a) being always resolved and b) storing the link id->value
+	          var translate = function (translationId) {
+	            var deferred = $q.defer();
+	            var regardless = function (value) {
+	              results[translationId] = value;
+	              deferred.resolve([translationId, value]);
 	            };
-	            for (var i = 0, c = translationIds.length; i < c; i++) {
-	              promises.push(translate(translationIds[i]));
-	            }
-	            // wait for all (including storing to results)
-	            return $q.all(promises).then(function () {
-	              // return the results
-	              return results;
-	            });
+	            // we don't care whether the promise was resolved or rejected; just store the values
+	            $translate(translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage).then(regardless, regardless);
+	            return deferred.promise;
 	          };
-	          return translateAll(translationId);
-	        }
-
-	        var deferred = $q.defer();
-
-	        // trim off any whitespace
-	        if (translationId) {
-	          translationId = trim.apply(translationId);
-	        }
-
-	        var promiseToWaitFor = (function () {
-	          var promise = $preferredLanguage ?
-	            langPromises[$preferredLanguage] :
-	            langPromises[uses];
-
-	          fallbackIndex = 0;
-
-	          if ($storageFactory && !promise) {
-	            // looks like there's no pending promise for $preferredLanguage or
-	            // $uses. Maybe there's one pending for a language that comes from
-	            // storage.
-	            var langKey = Storage.get($storageKey);
-	            promise = langPromises[langKey];
-
-	            if ($fallbackLanguage && $fallbackLanguage.length) {
-	                var index = indexOf($fallbackLanguage, langKey);
-	                // maybe the language from storage is also defined as fallback language
-	                // we increase the fallback language index to not search in that language
-	                // as fallback, since it's probably the first used language
-	                // in that case the index starts after the first element
-	                fallbackIndex = (index === 0) ? 1 : 0;
-
-	                // but we can make sure to ALWAYS fallback to preferred language at least
-	                if (indexOf($fallbackLanguage, $preferredLanguage) < 0) {
-	                  $fallbackLanguage.push($preferredLanguage);
-	                }
-	            }
+	          for (var i = 0, c = translationIds.length; i < c; i++) {
+	            promises.push(translate(translationIds[i]));
 	          }
-	          return promise;
-	        }());
-
-	        if (!promiseToWaitFor) {
-	          // no promise to wait for? okay. Then there's no loader registered
-	          // nor is a one pending for language that comes from storage.
-	          // We can just translate.
-	          determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
-	        } else {
-	          var promiseResolved = function () {
-	            // $uses may have changed while waiting
-	            if (!forceLanguage) {
-	              uses = $uses;
-	            }
-	            determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
-	          };
-	          promiseResolved.displayName = 'promiseResolved';
-
-	          promiseToWaitFor['finally'](promiseResolved);
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @name applyNotFoundIndicators
-	       * @private
-	       *
-	       * @description
-	       * Applies not fount indicators to given translation id, if needed.
-	       * This function gets only executed, if a translation id doesn't exist,
-	       * which is why a translation id is expected as argument.
-	       *
-	       * @param {string} translationId Translation id.
-	       * @returns {string} Same as given translation id but applied with not found
-	       * indicators.
-	       */
-	      var applyNotFoundIndicators = function (translationId) {
-	        // applying notFoundIndicators
-	        if ($notFoundIndicatorLeft) {
-	          translationId = [$notFoundIndicatorLeft, translationId].join(' ');
-	        }
-	        if ($notFoundIndicatorRight) {
-	          translationId = [translationId, $notFoundIndicatorRight].join(' ');
-	        }
-	        return translationId;
-	      };
-
-	      /**
-	       * @name useLanguage
-	       * @private
-	       *
-	       * @description
-	       * Makes actual use of a language by setting a given language key as used
-	       * language and informs registered interpolators to also use the given
-	       * key as locale.
-	       *
-	       * @param {string} key Locale key.
-	       */
-	      var useLanguage = function (key) {
-	        $uses = key;
-
-	        // make sure to store new language key before triggering success event
-	        if ($storageFactory) {
-	          Storage.put($translate.storageKey(), $uses);
-	        }
-
-	        $rootScope.$emit('$translateChangeSuccess', {language: key});
-
-	        // inform default interpolator
-	        defaultInterpolator.setLocale($uses);
-
-	        var eachInterpolator = function (interpolator, id) {
-	          interpolatorHashMap[id].setLocale($uses);
-	        };
-	        eachInterpolator.displayName = 'eachInterpolatorLocaleSetter';
-
-	        // inform all others too!
-	        angular.forEach(interpolatorHashMap, eachInterpolator);
-	        $rootScope.$emit('$translateChangeEnd', {language: key});
-	      };
-
-	      /**
-	       * @name loadAsync
-	       * @private
-	       *
-	       * @description
-	       * Kicks of registered async loader using `$injector` and applies existing
-	       * loader options. When resolved, it updates translation tables accordingly
-	       * or rejects with given language key.
-	       *
-	       * @param {string} key Language key.
-	       * @return {Promise} A promise.
-	       */
-	      var loadAsync = function (key) {
-	        if (!key) {
-	          throw 'No language key specified for loading.';
-	        }
-
-	        var deferred = $q.defer();
-
-	        $rootScope.$emit('$translateLoadingStart', {language: key});
-	        pendingLoader = true;
-
-	        var cache = loaderCache;
-	        if (typeof(cache) === 'string') {
-	          // getting on-demand instance of loader
-	          cache = $injector.get(cache);
-	        }
-
-	        var loaderOptions = angular.extend({}, $loaderOptions, {
-	          key: key,
-	          $http: angular.extend({}, {
-	            cache: cache
-	          }, $loaderOptions.$http)
-	        });
-
-	        var onLoaderSuccess = function (data) {
-	          var translationTable = {};
-	          $rootScope.$emit('$translateLoadingSuccess', {language: key});
-
-	          if (angular.isArray(data)) {
-	            angular.forEach(data, function (table) {
-	              angular.extend(translationTable, flatObject(table));
-	            });
-	          } else {
-	            angular.extend(translationTable, flatObject(data));
-	          }
-	          pendingLoader = false;
-	          deferred.resolve({
-	            key: key,
-	            table: translationTable
+	          // wait for all (including storing to results)
+	          return $q.all(promises).then(function () {
+	            // return the results
+	            return results;
 	          });
-	          $rootScope.$emit('$translateLoadingEnd', {language: key});
 	        };
-	        onLoaderSuccess.displayName = 'onLoaderSuccess';
+	        return translateAll(translationId);
+	      }
 
-	        var onLoaderError = function (key) {
-	          $rootScope.$emit('$translateLoadingError', {language: key});
-	          deferred.reject(key);
-	          $rootScope.$emit('$translateLoadingEnd', {language: key});
-	        };
-	        onLoaderError.displayName = 'onLoaderError';
+	      var deferred = $q.defer();
 
-	        $injector.get($loaderFactory)(loaderOptions)
-	          .then(onLoaderSuccess, onLoaderError);
+	      // trim off any whitespace
+	      if (translationId) {
+	        translationId = trim.apply(translationId);
+	      }
 
-	        return deferred.promise;
-	      };
+	      var promiseToWaitFor = (function () {
+	        var promise = $preferredLanguage ?
+	          langPromises[$preferredLanguage] :
+	          langPromises[uses];
 
-	      if ($storageFactory) {
-	        Storage = $injector.get($storageFactory);
+	        fallbackIndex = 0;
 
-	        if (!Storage.get || !Storage.put) {
-	          throw new Error('Couldn\'t use storage \'' + $storageFactory + '\', missing get() or put() method!');
+	        if ($storageFactory && !promise) {
+	          // looks like there's no pending promise for $preferredLanguage or
+	          // $uses. Maybe there's one pending for a language that comes from
+	          // storage.
+	          var langKey = Storage.get($storageKey);
+	          promise = langPromises[langKey];
+
+	          if ($fallbackLanguage && $fallbackLanguage.length) {
+	            var index = indexOf($fallbackLanguage, langKey);
+	            // maybe the language from storage is also defined as fallback language
+	            // we increase the fallback language index to not search in that language
+	            // as fallback, since it's probably the first used language
+	            // in that case the index starts after the first element
+	            fallbackIndex = (index === 0) ? 1 : 0;
+
+	            // but we can make sure to ALWAYS fallback to preferred language at least
+	            if (indexOf($fallbackLanguage, $preferredLanguage) < 0) {
+	              $fallbackLanguage.push($preferredLanguage);
+	            }
+	          }
 	        }
-	      }
+	        return promise;
+	      }());
 
-	      // if we have additional interpolations that were added via
-	      // $translateProvider.addInterpolation(), we have to map'em
-	      if ($interpolatorFactories.length) {
-	        var eachInterpolationFactory = function (interpolatorFactory) {
-	          var interpolator = $injector.get(interpolatorFactory);
-	          // setting initial locale for each interpolation service
-	          interpolator.setLocale($preferredLanguage || $uses);
-	          // make'em recognizable through id
-	          interpolatorHashMap[interpolator.getInterpolationIdentifier()] = interpolator;
+	      if (!promiseToWaitFor) {
+	        // no promise to wait for? okay. Then there's no loader registered
+	        // nor is a one pending for language that comes from storage.
+	        // We can just translate.
+	        determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
+	      } else {
+	        var promiseResolved = function () {
+	          // $uses may have changed while waiting
+	          if (!forceLanguage) {
+	            uses = $uses;
+	          }
+	          determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
 	        };
-	        eachInterpolationFactory.displayName = 'interpolationFactoryAdder';
+	        promiseResolved.displayName = 'promiseResolved';
 
-	        angular.forEach($interpolatorFactories, eachInterpolationFactory);
+	        promiseToWaitFor['finally'](promiseResolved);
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @name applyNotFoundIndicators
+	     * @private
+	     *
+	     * @description
+	     * Applies not fount indicators to given translation id, if needed.
+	     * This function gets only executed, if a translation id doesn't exist,
+	     * which is why a translation id is expected as argument.
+	     *
+	     * @param {string} translationId Translation id.
+	     * @returns {string} Same as given translation id but applied with not found
+	     * indicators.
+	     */
+	    var applyNotFoundIndicators = function (translationId) {
+	      // applying notFoundIndicators
+	      if ($notFoundIndicatorLeft) {
+	        translationId = [$notFoundIndicatorLeft, translationId].join(' ');
+	      }
+	      if ($notFoundIndicatorRight) {
+	        translationId = [translationId, $notFoundIndicatorRight].join(' ');
+	      }
+	      return translationId;
+	    };
+
+	    /**
+	     * @name useLanguage
+	     * @private
+	     *
+	     * @description
+	     * Makes actual use of a language by setting a given language key as used
+	     * language and informs registered interpolators to also use the given
+	     * key as locale.
+	     *
+	     * @param {string} key Locale key.
+	     */
+	    var useLanguage = function (key) {
+	      $uses = key;
+
+	      // make sure to store new language key before triggering success event
+	      if ($storageFactory) {
+	        Storage.put($translate.storageKey(), $uses);
 	      }
 
-	      /**
-	       * @name getTranslationTable
-	       * @private
-	       *
-	       * @description
-	       * Returns a promise that resolves to the translation table
-	       * or is rejected if an error occurred.
-	       *
-	       * @param langKey
-	       * @returns {Q.promise}
-	       */
-	      var getTranslationTable = function (langKey) {
-	        var deferred = $q.defer();
-	        if (Object.prototype.hasOwnProperty.call($translationTable, langKey)) {
-	          deferred.resolve($translationTable[langKey]);
-	        } else if (langPromises[langKey]) {
-	          var onResolve = function (data) {
-	            translations(data.key, data.table);
-	            deferred.resolve(data.table);
-	          };
-	          onResolve.displayName = 'translationTableResolver';
-	          langPromises[langKey].then(onResolve, deferred.reject);
+	      $rootScope.$emit('$translateChangeSuccess', {language : key});
+
+	      // inform default interpolator
+	      defaultInterpolator.setLocale($uses);
+
+	      var eachInterpolator = function (interpolator, id) {
+	        interpolatorHashMap[id].setLocale($uses);
+	      };
+	      eachInterpolator.displayName = 'eachInterpolatorLocaleSetter';
+
+	      // inform all others too!
+	      angular.forEach(interpolatorHashMap, eachInterpolator);
+	      $rootScope.$emit('$translateChangeEnd', {language : key});
+	    };
+
+	    /**
+	     * @name loadAsync
+	     * @private
+	     *
+	     * @description
+	     * Kicks of registered async loader using `$injector` and applies existing
+	     * loader options. When resolved, it updates translation tables accordingly
+	     * or rejects with given language key.
+	     *
+	     * @param {string} key Language key.
+	     * @return {Promise} A promise.
+	     */
+	    var loadAsync = function (key) {
+	      if (!key) {
+	        throw 'No language key specified for loading.';
+	      }
+
+	      var deferred = $q.defer();
+
+	      $rootScope.$emit('$translateLoadingStart', {language : key});
+	      pendingLoader = true;
+
+	      var cache = loaderCache;
+	      if (typeof(cache) === 'string') {
+	        // getting on-demand instance of loader
+	        cache = $injector.get(cache);
+	      }
+
+	      var loaderOptions = angular.extend({}, $loaderOptions, {
+	        key : key,
+	        $http : angular.extend({}, {
+	          cache : cache
+	        }, $loaderOptions.$http)
+	      });
+
+	      var onLoaderSuccess = function (data) {
+	        var translationTable = {};
+	        $rootScope.$emit('$translateLoadingSuccess', {language : key});
+
+	        if (angular.isArray(data)) {
+	          angular.forEach(data, function (table) {
+	            angular.extend(translationTable, flatObject(table));
+	          });
+	        } else {
+	          angular.extend(translationTable, flatObject(data));
+	        }
+	        pendingLoader = false;
+	        deferred.resolve({
+	          key : key,
+	          table : translationTable
+	        });
+	        $rootScope.$emit('$translateLoadingEnd', {language : key});
+	      };
+	      onLoaderSuccess.displayName = 'onLoaderSuccess';
+
+	      var onLoaderError = function (key) {
+	        $rootScope.$emit('$translateLoadingError', {language : key});
+	        deferred.reject(key);
+	        $rootScope.$emit('$translateLoadingEnd', {language : key});
+	      };
+	      onLoaderError.displayName = 'onLoaderError';
+
+	      $injector.get($loaderFactory)(loaderOptions)
+	        .then(onLoaderSuccess, onLoaderError);
+
+	      return deferred.promise;
+	    };
+
+	    if ($storageFactory) {
+	      Storage = $injector.get($storageFactory);
+
+	      if (!Storage.get || !Storage.put) {
+	        throw new Error('Couldn\'t use storage \'' + $storageFactory + '\', missing get() or put() method!');
+	      }
+	    }
+
+	    // if we have additional interpolations that were added via
+	    // $translateProvider.addInterpolation(), we have to map'em
+	    if ($interpolatorFactories.length) {
+	      var eachInterpolationFactory = function (interpolatorFactory) {
+	        var interpolator = $injector.get(interpolatorFactory);
+	        // setting initial locale for each interpolation service
+	        interpolator.setLocale($preferredLanguage || $uses);
+	        // make'em recognizable through id
+	        interpolatorHashMap[interpolator.getInterpolationIdentifier()] = interpolator;
+	      };
+	      eachInterpolationFactory.displayName = 'interpolationFactoryAdder';
+
+	      angular.forEach($interpolatorFactories, eachInterpolationFactory);
+	    }
+
+	    /**
+	     * @name getTranslationTable
+	     * @private
+	     *
+	     * @description
+	     * Returns a promise that resolves to the translation table
+	     * or is rejected if an error occurred.
+	     *
+	     * @param langKey
+	     * @returns {Q.promise}
+	     */
+	    var getTranslationTable = function (langKey) {
+	      var deferred = $q.defer();
+	      if (Object.prototype.hasOwnProperty.call($translationTable, langKey)) {
+	        deferred.resolve($translationTable[langKey]);
+	      } else if (langPromises[langKey]) {
+	        var onResolve = function (data) {
+	          translations(data.key, data.table);
+	          deferred.resolve(data.table);
+	        };
+	        onResolve.displayName = 'translationTableResolver';
+	        langPromises[langKey].then(onResolve, deferred.reject);
+	      } else {
+	        deferred.reject();
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @name getFallbackTranslation
+	     * @private
+	     *
+	     * @description
+	     * Returns a promise that will resolve to the translation
+	     * or be rejected if no translation was found for the language.
+	     * This function is currently only used for fallback language translation.
+	     *
+	     * @param langKey The language to translate to.
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise}
+	     */
+	    var getFallbackTranslation = function (langKey, translationId, interpolateParams, Interpolator) {
+	      var deferred = $q.defer();
+
+	      var onResolve = function (translationTable) {
+	        if (Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
+	          Interpolator.setLocale(langKey);
+	          var translation = translationTable[translationId];
+	          if (translation.substr(0, 2) === '@:') {
+	            getFallbackTranslation(langKey, translation.substr(2), interpolateParams, Interpolator)
+	              .then(deferred.resolve, deferred.reject);
+	          } else {
+	            var interpolatedValue = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'service');
+	            interpolatedValue = applyPostProcessing(translationId, translationTable[translationId], interpolatedValue, interpolateParams, langKey);
+
+	            deferred.resolve(interpolatedValue);
+
+	          }
+	          Interpolator.setLocale($uses);
 	        } else {
 	          deferred.reject();
 	        }
-	        return deferred.promise;
 	      };
+	      onResolve.displayName = 'fallbackTranslationResolver';
 
-	      /**
-	       * @name getFallbackTranslation
-	       * @private
-	       *
-	       * @description
-	       * Returns a promise that will resolve to the translation
-	       * or be rejected if no translation was found for the language.
-	       * This function is currently only used for fallback language translation.
-	       *
-	       * @param langKey The language to translate to.
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise}
-	       */
-	      var getFallbackTranslation = function (langKey, translationId, interpolateParams, Interpolator) {
-	        var deferred = $q.defer();
+	      getTranslationTable(langKey).then(onResolve, deferred.reject);
 
-	        var onResolve = function (translationTable) {
-	          if (Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
-	            Interpolator.setLocale(langKey);
-	            var translation = translationTable[translationId];
-	            if (translation.substr(0, 2) === '@:') {
-	              getFallbackTranslation(langKey, translation.substr(2), interpolateParams, Interpolator)
-	                .then(deferred.resolve, deferred.reject);
-	            } else {
-	              var interpolatedValue = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'service');
-	              interpolatedValue = applyPostProcessing(translationId, translationTable[translationId], interpolatedValue, interpolateParams, langKey);
+	      return deferred.promise;
+	    };
 
-	              deferred.resolve(interpolatedValue);
+	    /**
+	     * @name getFallbackTranslationInstant
+	     * @private
+	     *
+	     * @description
+	     * Returns a translation
+	     * This function is currently only used for fallback language translation.
+	     *
+	     * @param langKey The language to translate to.
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @param sanitizeStrategy sanitize strategy override
+	     *
+	     * @returns {string} translation
+	     */
+	    var getFallbackTranslationInstant = function (langKey, translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      var result, translationTable = $translationTable[langKey];
 
-	            }
-	            Interpolator.setLocale($uses);
+	      if (translationTable && Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
+	        Interpolator.setLocale(langKey);
+	        result = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'filter', sanitizeStrategy);
+	        result = applyPostProcessing(translationId, translationTable[translationId], result, interpolateParams, langKey, sanitizeStrategy);
+	        // workaround for TrustedValueHolderType
+	        if (!angular.isString(result) && angular.isFunction(result.$$unwrapTrustedValue)) {
+	          var result2 = result.$$unwrapTrustedValue();
+	          if (result2.substr(0, 2) === '@:') {
+	            return getFallbackTranslationInstant(langKey, result2.substr(2), interpolateParams, Interpolator, sanitizeStrategy);
+	          }
+	        } else if (result.substr(0, 2) === '@:') {
+	          return getFallbackTranslationInstant(langKey, result.substr(2), interpolateParams, Interpolator, sanitizeStrategy);
+	        }
+	        Interpolator.setLocale($uses);
+	      }
+
+	      return result;
+	    };
+
+
+	    /**
+	     * @name translateByHandler
+	     * @private
+	     *
+	     * Translate by missing translation handler.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param defaultTranslationText
+	     * @param sanitizeStrategy sanitize strategy override
+	     *
+	     * @returns translation created by $missingTranslationHandler or translationId is $missingTranslationHandler is
+	     * absent
+	     */
+	    var translateByHandler = function (translationId, interpolateParams, defaultTranslationText, sanitizeStrategy) {
+	      // If we have a handler factory - we might also call it here to determine if it provides
+	      // a default text for a translationid that can't be found anywhere in our tables
+	      if ($missingTranslationHandlerFactory) {
+	        return $injector.get($missingTranslationHandlerFactory)(translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy);
+	      } else {
+	        return translationId;
+	      }
+	    };
+
+	    /**
+	     * @name resolveForFallbackLanguage
+	     * @private
+	     *
+	     * Recursive helper function for fallbackTranslation that will sequentially look
+	     * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
+	     *
+	     * @param fallbackLanguageIndex
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise} Promise that will resolve to the translation.
+	     */
+	    var resolveForFallbackLanguage = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, defaultTranslationText) {
+	      var deferred = $q.defer();
+
+	      if (fallbackLanguageIndex < $fallbackLanguage.length) {
+	        var langKey = $fallbackLanguage[fallbackLanguageIndex];
+	        getFallbackTranslation(langKey, translationId, interpolateParams, Interpolator).then(
+	          function (data) {
+	            deferred.resolve(data);
+	          },
+	          function () {
+	            // Look in the next fallback language for a translation.
+	            // It delays the resolving by passing another promise to resolve.
+	            return resolveForFallbackLanguage(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator, defaultTranslationText).then(deferred.resolve, deferred.reject);
+	          }
+	        );
+	      } else {
+	        // No translation found in any fallback language
+	        // if a default translation text is set in the directive, then return this as a result
+	        if (defaultTranslationText) {
+	          deferred.resolve(defaultTranslationText);
+	        } else {
+	          var missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
+
+	          // if no default translation is set and an error handler is defined, send it to the handler
+	          // and then return the result if it isn't undefined
+	          if ($missingTranslationHandlerFactory && missingTranslationHandlerTranslation) {
+	            deferred.resolve(missingTranslationHandlerTranslation);
 	          } else {
-	            deferred.reject();
+	            deferred.reject(applyNotFoundIndicators(translationId));
 	          }
-	        };
-	        onResolve.displayName = 'fallbackTranslationResolver';
+	        }
+	      }
+	      return deferred.promise;
+	    };
 
-	        getTranslationTable(langKey).then(onResolve, deferred.reject);
+	    /**
+	     * @name resolveForFallbackLanguageInstant
+	     * @private
+	     *
+	     * Recursive helper function for fallbackTranslation that will sequentially look
+	     * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
+	     *
+	     * @param fallbackLanguageIndex
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @param sanitizeStrategy
+	     * @returns {string} translation
+	     */
+	    var resolveForFallbackLanguageInstant = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      var result;
 
-	        return deferred.promise;
-	      };
+	      if (fallbackLanguageIndex < $fallbackLanguage.length) {
+	        var langKey = $fallbackLanguage[fallbackLanguageIndex];
+	        result = getFallbackTranslationInstant(langKey, translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	        if (!result && result !== '') {
+	          result = resolveForFallbackLanguageInstant(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator);
+	        }
+	      }
+	      return result;
+	    };
 
-	      /**
-	       * @name getFallbackTranslationInstant
-	       * @private
-	       *
-	       * @description
-	       * Returns a translation
-	       * This function is currently only used for fallback language translation.
-	       *
-	       * @param langKey The language to translate to.
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {string} translation
-	       */
-	      var getFallbackTranslationInstant = function (langKey, translationId, interpolateParams, Interpolator) {
-	        var result, translationTable = $translationTable[langKey];
+	    /**
+	     * Translates with the usage of the fallback languages.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise} Promise, that resolves to the translation.
+	     */
+	    var fallbackTranslation = function (translationId, interpolateParams, Interpolator, defaultTranslationText) {
+	      // Start with the fallbackLanguage with index 0
+	      return resolveForFallbackLanguage((startFallbackIteration > 0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, defaultTranslationText);
+	    };
 
-	        if (translationTable && Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
-	          Interpolator.setLocale(langKey);
-	          result = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'filter');
-	          result = applyPostProcessing(translationId, translationTable[translationId], result, interpolateParams, langKey);
-	          if (result.substr(0, 2) === '@:') {
-	            return getFallbackTranslationInstant(langKey, result.substr(2), interpolateParams, Interpolator);
-	          }
-	          Interpolator.setLocale($uses);
+	    /**
+	     * Translates with the usage of the fallback languages.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {String} translation
+	     */
+	    var fallbackTranslationInstant = function (translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      // Start with the fallbackLanguage with index 0
+	      return resolveForFallbackLanguageInstant((startFallbackIteration > 0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	    };
+
+	    var determineTranslation = function (translationId, interpolateParams, interpolationId, defaultTranslationText, uses) {
+
+	      var deferred = $q.defer();
+
+	      var table = uses ? $translationTable[uses] : $translationTable,
+	        Interpolator = (interpolationId) ? interpolatorHashMap[interpolationId] : defaultInterpolator;
+
+	      // if the translation id exists, we can just interpolate it
+	      if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
+	        var translation = table[translationId];
+
+	        // If using link, rerun $translate with linked translationId and return it
+	        if (translation.substr(0, 2) === '@:') {
+
+	          $translate(translation.substr(2), interpolateParams, interpolationId, defaultTranslationText, uses)
+	            .then(deferred.resolve, deferred.reject);
+	        } else {
+	          //
+	          var resolvedTranslation = Interpolator.interpolate(translation, interpolateParams, 'service');
+	          resolvedTranslation = applyPostProcessing(translationId, translation, resolvedTranslation, interpolateParams, uses);
+	          deferred.resolve(resolvedTranslation);
+	        }
+	      } else {
+	        var missingTranslationHandlerTranslation;
+	        // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
+	        if ($missingTranslationHandlerFactory && !pendingLoader) {
+	          missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
 	        }
 
-	        return result;
-	      };
-
-
-	      /**
-	       * @name translateByHandler
-	       * @private
-	       *
-	       * Translate by missing translation handler.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param defaultTranslationText
-	       * @returns translation created by $missingTranslationHandler or translationId is $missingTranslationHandler is
-	       * absent
-	       */
-	      var translateByHandler = function (translationId, interpolateParams, defaultTranslationText) {
-	        // If we have a handler factory - we might also call it here to determine if it provides
-	        // a default text for a translationid that can't be found anywhere in our tables
-	        if ($missingTranslationHandlerFactory) {
-	          var resultString = $injector.get($missingTranslationHandlerFactory)(translationId, $uses, interpolateParams, defaultTranslationText);
-	          if (resultString !== undefined) {
-	            return resultString;
-	          } else {
-	            return translationId;
-	          }
-	        } else {
-	          return translationId;
-	        }
-	      };
-
-	      /**
-	       * @name resolveForFallbackLanguage
-	       * @private
-	       *
-	       * Recursive helper function for fallbackTranslation that will sequentially look
-	       * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
-	       *
-	       * @param fallbackLanguageIndex
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise} Promise that will resolve to the translation.
-	       */
-	      var resolveForFallbackLanguage = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, defaultTranslationText) {
-	        var deferred = $q.defer();
-
-	        if (fallbackLanguageIndex < $fallbackLanguage.length) {
-	          var langKey = $fallbackLanguage[fallbackLanguageIndex];
-	          getFallbackTranslation(langKey, translationId, interpolateParams, Interpolator).then(
-	            function (data) {
-	                deferred.resolve(data);
-	            },
-	            function () {
-	              // Look in the next fallback language for a translation.
-	              // It delays the resolving by passing another promise to resolve.
-	              return resolveForFallbackLanguage(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator, defaultTranslationText).then(deferred.resolve, deferred.reject);
-	            }
-	          );
-	        } else {
-	          // No translation found in any fallback language
-	          // if a default translation text is set in the directive, then return this as a result
+	        // since we couldn't translate the inital requested translation id,
+	        // we try it now with one or more fallback languages, if fallback language(s) is
+	        // configured.
+	        if (uses && $fallbackLanguage && $fallbackLanguage.length) {
+	          fallbackTranslation(translationId, interpolateParams, Interpolator, defaultTranslationText)
+	            .then(function (translation) {
+	              deferred.resolve(translation);
+	            }, function (_translationId) {
+	              deferred.reject(applyNotFoundIndicators(_translationId));
+	            });
+	        } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
 	          if (defaultTranslationText) {
 	            deferred.resolve(defaultTranslationText);
 	          } else {
-	            // if no default translation is set and an error handler is defined, send it to the handler
-	            // and then return the result
-	            if ($missingTranslationHandlerFactory) {
-	              deferred.resolve(translateByHandler(translationId, interpolateParams));
-	            } else {
-	              deferred.reject(translateByHandler(translationId, interpolateParams));
-	            }
-
-	          }
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @name resolveForFallbackLanguageInstant
-	       * @private
-	       *
-	       * Recursive helper function for fallbackTranslation that will sequentially look
-	       * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
-	       *
-	       * @param fallbackLanguageIndex
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {string} translation
-	       */
-	      var resolveForFallbackLanguageInstant = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator) {
-	        var result;
-
-	        if (fallbackLanguageIndex < $fallbackLanguage.length) {
-	          var langKey = $fallbackLanguage[fallbackLanguageIndex];
-	          result = getFallbackTranslationInstant(langKey, translationId, interpolateParams, Interpolator);
-	          if (!result) {
-	            result = resolveForFallbackLanguageInstant(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator);
-	          }
-	        }
-	        return result;
-	      };
-
-	      /**
-	       * Translates with the usage of the fallback languages.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise} Promise, that resolves to the translation.
-	       */
-	      var fallbackTranslation = function (translationId, interpolateParams, Interpolator, defaultTranslationText) {
-	        // Start with the fallbackLanguage with index 0
-	        return resolveForFallbackLanguage((startFallbackIteration>0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, defaultTranslationText);
-	      };
-
-	      /**
-	       * Translates with the usage of the fallback languages.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {String} translation
-	       */
-	      var fallbackTranslationInstant = function (translationId, interpolateParams, Interpolator) {
-	        // Start with the fallbackLanguage with index 0
-	        return resolveForFallbackLanguageInstant((startFallbackIteration>0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator);
-	      };
-
-	      var determineTranslation = function (translationId, interpolateParams, interpolationId, defaultTranslationText, uses) {
-
-	        var deferred = $q.defer();
-
-	        var table = uses ? $translationTable[uses] : $translationTable,
-	            Interpolator = (interpolationId) ? interpolatorHashMap[interpolationId] : defaultInterpolator;
-
-	        // if the translation id exists, we can just interpolate it
-	        if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
-	          var translation = table[translationId];
-
-	          // If using link, rerun $translate with linked translationId and return it
-	          if (translation.substr(0, 2) === '@:') {
-
-	            $translate(translation.substr(2), interpolateParams, interpolationId, defaultTranslationText, uses)
-	              .then(deferred.resolve, deferred.reject);
-	          } else {
-	            //
-	            var resolvedTranslation = Interpolator.interpolate(translation, interpolateParams, 'service');
-	            resolvedTranslation = applyPostProcessing(translationId, translation, resolvedTranslation, interpolateParams, uses);
-	            deferred.resolve(resolvedTranslation);
+	            deferred.resolve(missingTranslationHandlerTranslation);
 	          }
 	        } else {
-	          var missingTranslationHandlerTranslation;
-	          // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
-	          if ($missingTranslationHandlerFactory && !pendingLoader) {
-	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
-	          }
-
-	          // since we couldn't translate the inital requested translation id,
-	          // we try it now with one or more fallback languages, if fallback language(s) is
-	          // configured.
-	          if (uses && $fallbackLanguage && $fallbackLanguage.length) {
-	            fallbackTranslation(translationId, interpolateParams, Interpolator, defaultTranslationText)
-	                .then(function (translation) {
-	                  deferred.resolve(translation);
-	                }, function (_translationId) {
-	                  deferred.reject(applyNotFoundIndicators(_translationId));
-	                });
-	          } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
-	            // looks like the requested translation id doesn't exists.
-	            // Now, if there is a registered handler for missing translations and no
-	            // asyncLoader is pending, we execute the handler
-	            if (defaultTranslationText) {
-	              deferred.resolve(defaultTranslationText);
-	              } else {
-	                deferred.resolve(missingTranslationHandlerTranslation);
-	              }
+	          if (defaultTranslationText) {
+	            deferred.resolve(defaultTranslationText);
 	          } else {
-	            if (defaultTranslationText) {
-	              deferred.resolve(defaultTranslationText);
-	            } else {
-	              deferred.reject(applyNotFoundIndicators(translationId));
-	            }
+	            deferred.reject(applyNotFoundIndicators(translationId));
 	          }
 	        }
-	        return deferred.promise;
-	      };
+	      }
+	      return deferred.promise;
+	    };
 
-	      var determineTranslationInstant = function (translationId, interpolateParams, interpolationId, uses) {
+	    var determineTranslationInstant = function (translationId, interpolateParams, interpolationId, uses, sanitizeStrategy) {
 
-	        var result, table = uses ? $translationTable[uses] : $translationTable,
-	            Interpolator = defaultInterpolator;
+	      var result, table = uses ? $translationTable[uses] : $translationTable,
+	        Interpolator = defaultInterpolator;
 
-	        // if the interpolation id exists use custom interpolator
-	        if (interpolatorHashMap && Object.prototype.hasOwnProperty.call(interpolatorHashMap, interpolationId)) {
-	          Interpolator = interpolatorHashMap[interpolationId];
-	        }
-
-	        // if the translation id exists, we can just interpolate it
-	        if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
-	          var translation = table[translationId];
-
-	          // If using link, rerun $translate with linked translationId and return it
-	          if (translation.substr(0, 2) === '@:') {
-	            result = determineTranslationInstant(translation.substr(2), interpolateParams, interpolationId, uses);
-	          } else {
-	            result = Interpolator.interpolate(translation, interpolateParams, 'filter');
-	            result = applyPostProcessing(translationId, translation, result, interpolateParams, uses);
-	          }
-	        } else {
-	          var missingTranslationHandlerTranslation;
-	          // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
-	          if ($missingTranslationHandlerFactory && !pendingLoader) {
-	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams);
-	          }
-
-	          // since we couldn't translate the inital requested translation id,
-	          // we try it now with one or more fallback languages, if fallback language(s) is
-	          // configured.
-	          if (uses && $fallbackLanguage && $fallbackLanguage.length) {
-	            fallbackIndex = 0;
-	            result = fallbackTranslationInstant(translationId, interpolateParams, Interpolator);
-	          } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
-	            // looks like the requested translation id doesn't exists.
-	            // Now, if there is a registered handler for missing translations and no
-	            // asyncLoader is pending, we execute the handler
-	            result = missingTranslationHandlerTranslation;
-	          } else {
-	            result = applyNotFoundIndicators(translationId);
-	          }
-	        }
-
-	        return result;
-	      };
-
-	      var clearNextLangAndPromise = function(key) {
-	        if ($nextLang === key) {
-	          $nextLang = undefined;
-	        }
-	        langPromises[key] = undefined;
-	      };
-
-	      var applyPostProcessing = function (translationId, translation, resolvedTranslation, interpolateParams, uses) {
-	        var fn = postProcessFn;
-
-	        if (fn) {
-
-	          if (typeof(fn) === 'string') {
-	            // getting on-demand instance
-	            fn = $injector.get(fn);
-	          }
-	          if (fn) {
-	            return fn(translationId, translation, resolvedTranslation, interpolateParams, uses);
-	          }
-	        }
-
-	        return resolvedTranslation;
-	      };
-
-	      var loadTranslationsIfMissing = function (key) {
-	        if (!$translationTable[key] && $loaderFactory && !langPromises[key]) {
-	          langPromises[key] = loadAsync(key).then(function (translation) {
-	            translations(translation.key, translation.table);
-	            return translation;
-	          });
-	        }
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#preferredLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key for the preferred language.
-	       *
-	       * @param {string} langKey language String or Array to be used as preferredLanguage (changing at runtime)
-	       *
-	       * @return {string} preferred language key
-	       */
-	      $translate.preferredLanguage = function (langKey) {
-	        if(langKey) {
-	          setupPreferredLanguage(langKey);
-	        }
-	        return $preferredLanguage;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#cloakClassName
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the configured class name for `translate-cloak` directive.
-	       *
-	       * @return {string} cloakClassName
-	       */
-	      $translate.cloakClassName = function () {
-	        return $cloakClassName;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#nestedObjectDelimeter
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the configured delimiter for nested namespaces.
-	       *
-	       * @return {string} nestedObjectDelimeter
-	       */
-	      $translate.nestedObjectDelimeter = function () {
-	        return $nestedObjectDelimeter;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#fallbackLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key for the fallback languages or sets a new fallback stack.
-	       *
-	       * @param {string=} langKey language String or Array of fallback languages to be used (to change stack at runtime)
-	       *
-	       * @return {string||array} fallback language key
-	       */
-	      $translate.fallbackLanguage = function (langKey) {
-	        if (langKey !== undefined && langKey !== null) {
-	          fallbackStack(langKey);
-
-	          // as we might have an async loader initiated and a new translation language might have been defined
-	          // we need to add the promise to the stack also. So - iterate.
-	          if ($loaderFactory) {
-	            if ($fallbackLanguage && $fallbackLanguage.length) {
-	              for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	                if (!langPromises[$fallbackLanguage[i]]) {
-	                  langPromises[$fallbackLanguage[i]] = loadAsync($fallbackLanguage[i]);
-	                }
-	              }
-	            }
-	          }
-	          $translate.use($translate.use());
-	        }
-	        if ($fallbackWasString) {
-	          return $fallbackLanguage[0];
-	        } else {
-	          return $fallbackLanguage;
-	        }
-
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#useFallbackLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Sets the first key of the fallback language stack to be used for translation.
-	       * Therefore all languages in the fallback array BEFORE this key will be skipped!
-	       *
-	       * @param {string=} langKey Contains the langKey the iteration shall start with. Set to false if you want to
-	       * get back to the whole stack
-	       */
-	      $translate.useFallbackLanguage = function (langKey) {
-	        if (langKey !== undefined && langKey !== null) {
-	          if (!langKey) {
-	            startFallbackIteration = 0;
-	          } else {
-	            var langKeyPosition = indexOf($fallbackLanguage, langKey);
-	            if (langKeyPosition > -1) {
-	              startFallbackIteration = langKeyPosition;
-	            }
-	          }
-
-	        }
-
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#proposedLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key of language that is currently loaded asynchronously.
-	       *
-	       * @return {string} language key
-	       */
-	      $translate.proposedLanguage = function () {
-	        return $nextLang;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#storage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns registered storage.
-	       *
-	       * @return {object} Storage
-	       */
-	      $translate.storage = function () {
-	        return Storage;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#negotiateLocale
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns a language key based on available languages and language aliases. If a
-	       * language key cannot be resolved, returns undefined.
-	       *
-	       * If no or a falsy key is given, returns undefined.
-	       *
-	       * @param {string} [key] Language key
-	       * @return {string|undefined} Language key or undefined if no language key is found.
-	       */
-	      $translate.negotiateLocale = negotiateLocale;
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#use
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Tells angular-translate which language to use by given language key. This method is
-	       * used to change language at runtime. It also takes care of storing the language
-	       * key in a configured store to let your app remember the choosed language.
-	       *
-	       * When trying to 'use' a language which isn't available it tries to load it
-	       * asynchronously with registered loaders.
-	       *
-	       * Returns promise object with loaded language file data or string of the currently used language.
-	       *
-	       * If no or a falsy key is given it returns the currently used language key.
-	       * The returned string will be ```undefined``` if setting up $translate hasn't finished.
-	       * @example
-	       * $translate.use("en_US").then(function(data){
-	       *   $scope.text = $translate("HELLO");
-	       * });
-	       *
-	       * @param {string} [key] Language key
-	       * @return {object|string} Promise with loaded language data or the language key if a falsy param was given.
-	       */
-	      $translate.use = function (key) {
-	        if (!key) {
-	          return $uses;
-	        }
-
-	        var deferred = $q.defer();
-
-	        $rootScope.$emit('$translateChangeStart', {language: key});
-
-	        // Try to get the aliased language key
-	        var aliasedKey = negotiateLocale(key);
-	        // Ensure only registered language keys will be loaded
-	        if ($availableLanguageKeys.length > 0 && !aliasedKey) {
-	          return $q.reject(key);
-	        }
-
-	        if (aliasedKey) {
-	          key = aliasedKey;
-	        }
-
-	        // if there isn't a translation table for the language we've requested,
-	        // we load it asynchronously
-	        $nextLang = key;
-	        if (($forceAsyncReloadEnabled || !$translationTable[key]) && $loaderFactory && !langPromises[key]) {
-	          langPromises[key] = loadAsync(key).then(function (translation) {
-	            translations(translation.key, translation.table);
-	            deferred.resolve(translation.key);
-	            if ($nextLang === key) {
-	              useLanguage(translation.key);
-	            }
-	            return translation;
-	          }, function (key) {
-	            $rootScope.$emit('$translateChangeError', {language: key});
-	            deferred.reject(key);
-	            $rootScope.$emit('$translateChangeEnd', {language: key});
-	            return $q.reject(key);
-	          });
-	          langPromises[key]['finally'](function () {
-	            clearNextLangAndPromise(key);
-	          });
-	        } else if (langPromises[key]) {
-	          // we are already loading this asynchronously
-	          // resolve our new deferred when the old langPromise is resolved
-	          langPromises[key].then(function (translation) {
-	            if ($nextLang === translation.key) {
-	              useLanguage(translation.key);
-	            }
-	            deferred.resolve(translation.key);
-	            return translation;
-	          }, function (key) {
-	            // find first available fallback language if that request has failed
-	            if (!$uses && $fallbackLanguage && $fallbackLanguage.length > 0 && $fallbackLanguage[0] !== key) {
-	              return $translate.use($fallbackLanguage[0]).then(deferred.resolve, deferred.reject);
-	            } else {
-	              return deferred.reject(key);
-	            }
-	          });
-	        } else {
-	          deferred.resolve(key);
-	          useLanguage(key);
-	        }
-
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#resolveClientLocale
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
-	       *
-	       * @returns {string} the current client/browser language key
-	       */
-	      $translate.resolveClientLocale = function () {
-	        return getLocale();
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#storageKey
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the key for the storage.
-	       *
-	       * @return {string} storage key
-	       */
-	      $translate.storageKey = function () {
-	        return storageKey();
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isPostCompilingEnabled
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether post compiling is enabled or not
-	       *
-	       * @return {bool} storage key
-	       */
-	      $translate.isPostCompilingEnabled = function () {
-	        return $postCompilingEnabled;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isForceAsyncReloadEnabled
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether force async reload is enabled or not
-	       *
-	       * @return {boolean} forceAsyncReload value
-	       */
-	      $translate.isForceAsyncReloadEnabled = function () {
-	        return $forceAsyncReloadEnabled;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isKeepContent
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether keepContent or not
-	       *
-	       * @return {boolean} keepContent value
-	       */
-	      $translate.isKeepContent = function () {
-	        return $keepContent;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#refresh
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Refreshes a translation table pointed by the given langKey. If langKey is not specified,
-	       * the module will drop all existent translation tables and load new version of those which
-	       * are currently in use.
-	       *
-	       * Refresh means that the module will drop target translation table and try to load it again.
-	       *
-	       * In case there are no loaders registered the refresh() method will throw an Error.
-	       *
-	       * If the module is able to refresh translation tables refresh() method will broadcast
-	       * $translateRefreshStart and $translateRefreshEnd events.
-	       *
-	       * @example
-	       * // this will drop all currently existent translation tables and reload those which are
-	       * // currently in use
-	       * $translate.refresh();
-	       * // this will refresh a translation table for the en_US language
-	       * $translate.refresh('en_US');
-	       *
-	       * @param {string} langKey A language key of the table, which has to be refreshed
-	       *
-	       * @return {promise} Promise, which will be resolved in case a translation tables refreshing
-	       * process is finished successfully, and reject if not.
-	       */
-	      $translate.refresh = function (langKey) {
-	        if (!$loaderFactory) {
-	          throw new Error('Couldn\'t refresh translation table, no loader registered!');
-	        }
-
-	        var deferred = $q.defer();
-
-	        function resolve() {
-	          deferred.resolve();
-	          $rootScope.$emit('$translateRefreshEnd', {language: langKey});
-	        }
-
-	        function reject() {
-	          deferred.reject();
-	          $rootScope.$emit('$translateRefreshEnd', {language: langKey});
-	        }
-
-	        $rootScope.$emit('$translateRefreshStart', {language: langKey});
-
-	        if (!langKey) {
-	          // if there's no language key specified we refresh ALL THE THINGS!
-	          var tables = [], loadingKeys = {};
-
-	          // reload registered fallback languages
-	          if ($fallbackLanguage && $fallbackLanguage.length) {
-	            for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	              tables.push(loadAsync($fallbackLanguage[i]));
-	              loadingKeys[$fallbackLanguage[i]] = true;
-	            }
-	          }
-
-	          // reload currently used language
-	          if ($uses && !loadingKeys[$uses]) {
-	            tables.push(loadAsync($uses));
-	          }
-
-	          var allTranslationsLoaded = function (tableData) {
-	            $translationTable = {};
-	            angular.forEach(tableData, function (data) {
-	              translations(data.key, data.table);
-	            });
-	            if ($uses) {
-	              useLanguage($uses);
-	            }
-	            resolve();
-	          };
-	          allTranslationsLoaded.displayName = 'refreshPostProcessor';
-
-	          $q.all(tables).then(allTranslationsLoaded, reject);
-
-	        } else if ($translationTable[langKey]) {
-
-	          var oneTranslationsLoaded = function (data) {
-	            translations(data.key, data.table);
-	            if (langKey === $uses) {
-	              useLanguage($uses);
-	            }
-	            resolve();
-	            return data;
-	          };
-	          oneTranslationsLoaded.displayName = 'refreshPostProcessor';
-
-	          loadAsync(langKey).then(oneTranslationsLoaded, reject);
-
-	        } else {
-	          reject();
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#instant
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns a translation instantly from the internal state of loaded translation. All rules
-	       * regarding the current language, the preferred language of even fallback languages will be
-	       * used except any promise handling. If a language was not found, an asynchronous loading
-	       * will be invoked in the background.
-	       *
-	       * @param {string|array} translationId A token which represents a translation id
-	       *                                     This can be optionally an array of translation ids which
-	       *                                     results that the function's promise returns an object where
-	       *                                     each key is the translation id and the value the translation.
-	       * @param {object} interpolateParams Params
-	       * @param {string} interpolationId The id of the interpolation to use
-	       * @param {string} forceLanguage A language to be used instead of the current language
-	       *
-	       * @return {string|object} translation
-	       */
-	      $translate.instant = function (translationId, interpolateParams, interpolationId, forceLanguage) {
-
-	        // we don't want to re-negotiate $uses
-	        var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
-	              (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
-
-	        // Detect undefined and null values to shorten the execution and prevent exceptions
-	        if (translationId === null || angular.isUndefined(translationId)) {
-	          return translationId;
-	        }
-
-	        // Check forceLanguage is present
-	        if (forceLanguage) {
-	          loadTranslationsIfMissing(forceLanguage);
-	        }
-
-	        // Duck detection: If the first argument is an array, a bunch of translations was requested.
-	        // The result is an object.
-	        if (angular.isArray(translationId)) {
-	          var results = {};
-	          for (var i = 0, c = translationId.length; i < c; i++) {
-	            results[translationId[i]] = $translate.instant(translationId[i], interpolateParams, interpolationId, forceLanguage);
-	          }
-	          return results;
-	        }
-
-	        // We discarded unacceptable values. So we just need to verify if translationId is empty String
-	        if (angular.isString(translationId) && translationId.length < 1) {
-	          return translationId;
-	        }
-
-	        // trim off any whitespace
-	        if (translationId) {
-	          translationId = trim.apply(translationId);
-	        }
-
-	        var result, possibleLangKeys = [];
-	        if ($preferredLanguage) {
-	          possibleLangKeys.push($preferredLanguage);
-	        }
-	        if (uses) {
-	          possibleLangKeys.push(uses);
-	        }
-	        if ($fallbackLanguage && $fallbackLanguage.length) {
-	          possibleLangKeys = possibleLangKeys.concat($fallbackLanguage);
-	        }
-	        for (var j = 0, d = possibleLangKeys.length; j < d; j++) {
-	          var possibleLangKey = possibleLangKeys[j];
-	          if ($translationTable[possibleLangKey]) {
-	            if (typeof $translationTable[possibleLangKey][translationId] !== 'undefined') {
-	              result = determineTranslationInstant(translationId, interpolateParams, interpolationId, uses);
-	            }
-	          }
-	          if (typeof result !== 'undefined') {
-	            break;
-	          }
-	        }
-
-	        if (!result && result !== '') {
-	          if ($notFoundIndicatorLeft || $notFoundIndicatorRight) {
-	            result = applyNotFoundIndicators(translationId);
-	          } else {
-	            // Return translation of default interpolator if not found anything.
-	            result = defaultInterpolator.interpolate(translationId, interpolateParams, 'filter');
-	            if ($missingTranslationHandlerFactory && !pendingLoader) {
-	              result = translateByHandler(translationId, interpolateParams);
-	            }
-	          }
-	        }
-
-	        return result;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#versionInfo
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the current version information for the angular-translate library
-	       *
-	       * @return {string} angular-translate version
-	       */
-	      $translate.versionInfo = function () {
-	        return version;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#loaderCache
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the defined loaderCache.
-	       *
-	       * @return {boolean|string|object} current value of loaderCache
-	       */
-	      $translate.loaderCache = function () {
-	        return loaderCache;
-	      };
-
-	      // internal purpose only
-	      $translate.directivePriority = function () {
-	        return directivePriority;
-	      };
-
-	      // internal purpose only
-	      $translate.statefulFilter = function () {
-	        return statefulFilter;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isReady
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether the service is "ready" to translate (i.e. loading 1st language).
-	       *
-	       * See also {@link pascalprecht.translate.$translate#methods_onReady onReady()}.
-	       *
-	       * @return {boolean} current value of ready
-	       */
-	      $translate.isReady = function () {
-	        return $isReady;
-	      };
-
-	      var $onReadyDeferred = $q.defer();
-	      $onReadyDeferred.promise.then(function () {
-	        $isReady = true;
-	      });
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#onReady
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether the service is "ready" to translate (i.e. loading 1st language).
-	       *
-	       * See also {@link pascalprecht.translate.$translate#methods_isReady isReady()}.
-	       *
-	       * @param {Function=} fn Function to invoke when service is ready
-	       * @return {object} Promise resolved when service is ready
-	       */
-	      $translate.onReady = function (fn) {
-	        var deferred = $q.defer();
-	        if (angular.isFunction(fn)) {
-	          deferred.promise.then(fn);
-	        }
-	        if ($isReady) {
-	          deferred.resolve();
-	        } else {
-	          $onReadyDeferred.promise.then(deferred.resolve);
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#getAvailableLanguageKeys
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * This function simply returns the registered language keys being defined before in the config phase
-	       * With this, an application can use the array to provide a language selection dropdown or similar
-	       * without any additional effort
-	       *
-	       * @returns {object} returns the list of possibly registered language keys and mapping or null if not defined
-	       */
-	      $translate.getAvailableLanguageKeys = function () {
-	        if ($availableLanguageKeys.length > 0) {
-	          return $availableLanguageKeys;
-	        }
-	        return null;
-	      };
-
-	      // Whenever $translateReady is being fired, this will ensure the state of $isReady
-	      var globalOnReadyListener = $rootScope.$on('$translateReady', function () {
-	        $onReadyDeferred.resolve();
-	        globalOnReadyListener(); // one time only
-	        globalOnReadyListener = null;
-	      });
-	      var globalOnChangeListener = $rootScope.$on('$translateChangeEnd', function () {
-	        $onReadyDeferred.resolve();
-	        globalOnChangeListener(); // one time only
-	        globalOnChangeListener = null;
-	      });
-
-	      if ($loaderFactory) {
-
-	        // If at least one async loader is defined and there are no
-	        // (default) translations available we should try to load them.
-	        if (angular.equals($translationTable, {})) {
-	          if ($translate.use()) {
-	            $translate.use($translate.use());
-	          }
-	        }
-
-	        // Also, if there are any fallback language registered, we start
-	        // loading them asynchronously as soon as we can.
-	        if ($fallbackLanguage && $fallbackLanguage.length) {
-	          var processAsyncResult = function (translation) {
-	            translations(translation.key, translation.table);
-	            $rootScope.$emit('$translateChangeEnd', { language: translation.key });
-	            return translation;
-	          };
-	          for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	            var fallbackLanguageId = $fallbackLanguage[i];
-	            if ($forceAsyncReloadEnabled || !$translationTable[fallbackLanguageId]) {
-	              langPromises[fallbackLanguageId] = loadAsync(fallbackLanguageId).then(processAsyncResult);
-	            }
-	          }
-	        }
-	      } else {
-	        $rootScope.$emit('$translateReady', { language: $translate.use() });
+	      // if the interpolation id exists use custom interpolator
+	      if (interpolatorHashMap && Object.prototype.hasOwnProperty.call(interpolatorHashMap, interpolationId)) {
+	        Interpolator = interpolatorHashMap[interpolationId];
 	      }
 
-	      return $translate;
+	      // if the translation id exists, we can just interpolate it
+	      if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
+	        var translation = table[translationId];
+
+	        // If using link, rerun $translate with linked translationId and return it
+	        if (translation.substr(0, 2) === '@:') {
+	          result = determineTranslationInstant(translation.substr(2), interpolateParams, interpolationId, uses, sanitizeStrategy);
+	        } else {
+	          result = Interpolator.interpolate(translation, interpolateParams, 'filter', sanitizeStrategy);
+	          result = applyPostProcessing(translationId, translation, result, interpolateParams, uses, sanitizeStrategy);
+	        }
+	      } else {
+	        var missingTranslationHandlerTranslation;
+	        // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
+	        if ($missingTranslationHandlerFactory && !pendingLoader) {
+	          missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, sanitizeStrategy);
+	        }
+
+	        // since we couldn't translate the inital requested translation id,
+	        // we try it now with one or more fallback languages, if fallback language(s) is
+	        // configured.
+	        if (uses && $fallbackLanguage && $fallbackLanguage.length) {
+	          fallbackIndex = 0;
+	          result = fallbackTranslationInstant(translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	        } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
+	          result = missingTranslationHandlerTranslation;
+	        } else {
+	          result = applyNotFoundIndicators(translationId);
+	        }
+	      }
+
+	      return result;
+	    };
+
+	    var clearNextLangAndPromise = function (key) {
+	      if ($nextLang === key) {
+	        $nextLang = undefined;
+	      }
+	      langPromises[key] = undefined;
+	    };
+
+	    var applyPostProcessing = function (translationId, translation, resolvedTranslation, interpolateParams, uses, sanitizeStrategy) {
+	      var fn = postProcessFn;
+
+	      if (fn) {
+
+	        if (typeof(fn) === 'string') {
+	          // getting on-demand instance
+	          fn = $injector.get(fn);
+	        }
+	        if (fn) {
+	          return fn(translationId, translation, resolvedTranslation, interpolateParams, uses, sanitizeStrategy);
+	        }
+	      }
+
+	      return resolvedTranslation;
+	    };
+
+	    var loadTranslationsIfMissing = function (key) {
+	      if (!$translationTable[key] && $loaderFactory && !langPromises[key]) {
+	        langPromises[key] = loadAsync(key).then(function (translation) {
+	          translations(translation.key, translation.table);
+	          return translation;
+	        });
+	      }
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#preferredLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key for the preferred language.
+	     *
+	     * @param {string} langKey language String or Array to be used as preferredLanguage (changing at runtime)
+	     *
+	     * @return {string} preferred language key
+	     */
+	    $translate.preferredLanguage = function (langKey) {
+	      if (langKey) {
+	        setupPreferredLanguage(langKey);
+	      }
+	      return $preferredLanguage;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#cloakClassName
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the configured class name for `translate-cloak` directive.
+	     *
+	     * @return {string} cloakClassName
+	     */
+	    $translate.cloakClassName = function () {
+	      return $cloakClassName;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#nestedObjectDelimeter
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the configured delimiter for nested namespaces.
+	     *
+	     * @return {string} nestedObjectDelimeter
+	     */
+	    $translate.nestedObjectDelimeter = function () {
+	      return $nestedObjectDelimeter;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#fallbackLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key for the fallback languages or sets a new fallback stack.
+	     *
+	     * @param {string=} langKey language String or Array of fallback languages to be used (to change stack at runtime)
+	     *
+	     * @return {string||array} fallback language key
+	     */
+	    $translate.fallbackLanguage = function (langKey) {
+	      if (langKey !== undefined && langKey !== null) {
+	        fallbackStack(langKey);
+
+	        // as we might have an async loader initiated and a new translation language might have been defined
+	        // we need to add the promise to the stack also. So - iterate.
+	        if ($loaderFactory) {
+	          if ($fallbackLanguage && $fallbackLanguage.length) {
+	            for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	              if (!langPromises[$fallbackLanguage[i]]) {
+	                langPromises[$fallbackLanguage[i]] = loadAsync($fallbackLanguage[i]);
+	              }
+	            }
+	          }
+	        }
+	        $translate.use($translate.use());
+	      }
+	      if ($fallbackWasString) {
+	        return $fallbackLanguage[0];
+	      } else {
+	        return $fallbackLanguage;
+	      }
+
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#useFallbackLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Sets the first key of the fallback language stack to be used for translation.
+	     * Therefore all languages in the fallback array BEFORE this key will be skipped!
+	     *
+	     * @param {string=} langKey Contains the langKey the iteration shall start with. Set to false if you want to
+	     * get back to the whole stack
+	     */
+	    $translate.useFallbackLanguage = function (langKey) {
+	      if (langKey !== undefined && langKey !== null) {
+	        if (!langKey) {
+	          startFallbackIteration = 0;
+	        } else {
+	          var langKeyPosition = indexOf($fallbackLanguage, langKey);
+	          if (langKeyPosition > -1) {
+	            startFallbackIteration = langKeyPosition;
+	          }
+	        }
+
+	      }
+
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#proposedLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key of language that is currently loaded asynchronously.
+	     *
+	     * @return {string} language key
+	     */
+	    $translate.proposedLanguage = function () {
+	      return $nextLang;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#storage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns registered storage.
+	     *
+	     * @return {object} Storage
+	     */
+	    $translate.storage = function () {
+	      return Storage;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#negotiateLocale
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns a language key based on available languages and language aliases. If a
+	     * language key cannot be resolved, returns undefined.
+	     *
+	     * If no or a falsy key is given, returns undefined.
+	     *
+	     * @param {string} [key] Language key
+	     * @return {string|undefined} Language key or undefined if no language key is found.
+	     */
+	    $translate.negotiateLocale = negotiateLocale;
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#use
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Tells angular-translate which language to use by given language key. This method is
+	     * used to change language at runtime. It also takes care of storing the language
+	     * key in a configured store to let your app remember the choosed language.
+	     *
+	     * When trying to 'use' a language which isn't available it tries to load it
+	     * asynchronously with registered loaders.
+	     *
+	     * Returns promise object with loaded language file data or string of the currently used language.
+	     *
+	     * If no or a falsy key is given it returns the currently used language key.
+	     * The returned string will be ```undefined``` if setting up $translate hasn't finished.
+	     * @example
+	     * $translate.use("en_US").then(function(data){
+	       *   $scope.text = $translate("HELLO");
+	       * });
+	     *
+	     * @param {string} [key] Language key
+	     * @return {object|string} Promise with loaded language data or the language key if a falsy param was given.
+	     */
+	    $translate.use = function (key) {
+	      if (!key) {
+	        return $uses;
+	      }
+
+	      var deferred = $q.defer();
+
+	      $rootScope.$emit('$translateChangeStart', {language : key});
+
+	      // Try to get the aliased language key
+	      var aliasedKey = negotiateLocale(key);
+	      // Ensure only registered language keys will be loaded
+	      if ($availableLanguageKeys.length > 0 && !aliasedKey) {
+	        return $q.reject(key);
+	      }
+
+	      if (aliasedKey) {
+	        key = aliasedKey;
+	      }
+
+	      // if there isn't a translation table for the language we've requested,
+	      // we load it asynchronously
+	      $nextLang = key;
+	      if (($forceAsyncReloadEnabled || !$translationTable[key]) && $loaderFactory && !langPromises[key]) {
+	        langPromises[key] = loadAsync(key).then(function (translation) {
+	          translations(translation.key, translation.table);
+	          deferred.resolve(translation.key);
+	          if ($nextLang === key) {
+	            useLanguage(translation.key);
+	          }
+	          return translation;
+	        }, function (key) {
+	          $rootScope.$emit('$translateChangeError', {language : key});
+	          deferred.reject(key);
+	          $rootScope.$emit('$translateChangeEnd', {language : key});
+	          return $q.reject(key);
+	        });
+	        langPromises[key]['finally'](function () {
+	          clearNextLangAndPromise(key);
+	        });
+	      } else if (langPromises[key]) {
+	        // we are already loading this asynchronously
+	        // resolve our new deferred when the old langPromise is resolved
+	        langPromises[key].then(function (translation) {
+	          if ($nextLang === translation.key) {
+	            useLanguage(translation.key);
+	          }
+	          deferred.resolve(translation.key);
+	          return translation;
+	        }, function (key) {
+	          // find first available fallback language if that request has failed
+	          if (!$uses && $fallbackLanguage && $fallbackLanguage.length > 0 && $fallbackLanguage[0] !== key) {
+	            return $translate.use($fallbackLanguage[0]).then(deferred.resolve, deferred.reject);
+	          } else {
+	            return deferred.reject(key);
+	          }
+	        });
+	      } else {
+	        deferred.resolve(key);
+	        useLanguage(key);
+	      }
+
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#resolveClientLocale
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
+	     *
+	     * @returns {string} the current client/browser language key
+	     */
+	    $translate.resolveClientLocale = function () {
+	      return getLocale();
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#storageKey
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the key for the storage.
+	     *
+	     * @return {string} storage key
+	     */
+	    $translate.storageKey = function () {
+	      return storageKey();
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isPostCompilingEnabled
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether post compiling is enabled or not
+	     *
+	     * @return {bool} storage key
+	     */
+	    $translate.isPostCompilingEnabled = function () {
+	      return $postCompilingEnabled;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isForceAsyncReloadEnabled
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether force async reload is enabled or not
+	     *
+	     * @return {boolean} forceAsyncReload value
+	     */
+	    $translate.isForceAsyncReloadEnabled = function () {
+	      return $forceAsyncReloadEnabled;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isKeepContent
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether keepContent or not
+	     *
+	     * @return {boolean} keepContent value
+	     */
+	    $translate.isKeepContent = function () {
+	      return $keepContent;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#refresh
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Refreshes a translation table pointed by the given langKey. If langKey is not specified,
+	     * the module will drop all existent translation tables and load new version of those which
+	     * are currently in use.
+	     *
+	     * Refresh means that the module will drop target translation table and try to load it again.
+	     *
+	     * In case there are no loaders registered the refresh() method will throw an Error.
+	     *
+	     * If the module is able to refresh translation tables refresh() method will broadcast
+	     * $translateRefreshStart and $translateRefreshEnd events.
+	     *
+	     * @example
+	     * // this will drop all currently existent translation tables and reload those which are
+	     * // currently in use
+	     * $translate.refresh();
+	     * // this will refresh a translation table for the en_US language
+	     * $translate.refresh('en_US');
+	     *
+	     * @param {string} langKey A language key of the table, which has to be refreshed
+	     *
+	     * @return {promise} Promise, which will be resolved in case a translation tables refreshing
+	     * process is finished successfully, and reject if not.
+	     */
+	    $translate.refresh = function (langKey) {
+	      if (!$loaderFactory) {
+	        throw new Error('Couldn\'t refresh translation table, no loader registered!');
+	      }
+
+	      var deferred = $q.defer();
+
+	      function resolve() {
+	        deferred.resolve();
+	        $rootScope.$emit('$translateRefreshEnd', {language : langKey});
+	      }
+
+	      function reject() {
+	        deferred.reject();
+	        $rootScope.$emit('$translateRefreshEnd', {language : langKey});
+	      }
+
+	      $rootScope.$emit('$translateRefreshStart', {language : langKey});
+
+	      if (!langKey) {
+	        // if there's no language key specified we refresh ALL THE THINGS!
+	        var tables = [], loadingKeys = {};
+
+	        // reload registered fallback languages
+	        if ($fallbackLanguage && $fallbackLanguage.length) {
+	          for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	            tables.push(loadAsync($fallbackLanguage[i]));
+	            loadingKeys[$fallbackLanguage[i]] = true;
+	          }
+	        }
+
+	        // reload currently used language
+	        if ($uses && !loadingKeys[$uses]) {
+	          tables.push(loadAsync($uses));
+	        }
+
+	        var allTranslationsLoaded = function (tableData) {
+	          $translationTable = {};
+	          angular.forEach(tableData, function (data) {
+	            translations(data.key, data.table);
+	          });
+	          if ($uses) {
+	            useLanguage($uses);
+	          }
+	          resolve();
+	        };
+	        allTranslationsLoaded.displayName = 'refreshPostProcessor';
+
+	        $q.all(tables).then(allTranslationsLoaded, reject);
+
+	      } else if ($translationTable[langKey]) {
+
+	        var oneTranslationsLoaded = function (data) {
+	          translations(data.key, data.table);
+	          if (langKey === $uses) {
+	            useLanguage($uses);
+	          }
+	          resolve();
+	          return data;
+	        };
+	        oneTranslationsLoaded.displayName = 'refreshPostProcessor';
+
+	        loadAsync(langKey).then(oneTranslationsLoaded, reject);
+
+	      } else {
+	        reject();
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#instant
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns a translation instantly from the internal state of loaded translation. All rules
+	     * regarding the current language, the preferred language of even fallback languages will be
+	     * used except any promise handling. If a language was not found, an asynchronous loading
+	     * will be invoked in the background.
+	     *
+	     * @param {string|array} translationId A token which represents a translation id
+	     *                                     This can be optionally an array of translation ids which
+	     *                                     results that the function's promise returns an object where
+	     *                                     each key is the translation id and the value the translation.
+	     * @param {object} interpolateParams Params
+	     * @param {string} interpolationId The id of the interpolation to use
+	     * @param {string} forceLanguage A language to be used instead of the current language
+	     * @param {string} sanitizeStrategy force sanitize strategy for this call instead of using the configured one
+	     *
+	     * @return {string|object} translation
+	     */
+	    $translate.instant = function (translationId, interpolateParams, interpolationId, forceLanguage, sanitizeStrategy) {
+
+	      // we don't want to re-negotiate $uses
+	      var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
+	        (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
+
+	      // Detect undefined and null values to shorten the execution and prevent exceptions
+	      if (translationId === null || angular.isUndefined(translationId)) {
+	        return translationId;
+	      }
+
+	      // Check forceLanguage is present
+	      if (forceLanguage) {
+	        loadTranslationsIfMissing(forceLanguage);
+	      }
+
+	      // Duck detection: If the first argument is an array, a bunch of translations was requested.
+	      // The result is an object.
+	      if (angular.isArray(translationId)) {
+	        var results = {};
+	        for (var i = 0, c = translationId.length; i < c; i++) {
+	          results[translationId[i]] = $translate.instant(translationId[i], interpolateParams, interpolationId, forceLanguage, sanitizeStrategy);
+	        }
+	        return results;
+	      }
+
+	      // We discarded unacceptable values. So we just need to verify if translationId is empty String
+	      if (angular.isString(translationId) && translationId.length < 1) {
+	        return translationId;
+	      }
+
+	      // trim off any whitespace
+	      if (translationId) {
+	        translationId = trim.apply(translationId);
+	      }
+
+	      var result, possibleLangKeys = [];
+	      if ($preferredLanguage) {
+	        possibleLangKeys.push($preferredLanguage);
+	      }
+	      if (uses) {
+	        possibleLangKeys.push(uses);
+	      }
+	      if ($fallbackLanguage && $fallbackLanguage.length) {
+	        possibleLangKeys = possibleLangKeys.concat($fallbackLanguage);
+	      }
+	      for (var j = 0, d = possibleLangKeys.length; j < d; j++) {
+	        var possibleLangKey = possibleLangKeys[j];
+	        if ($translationTable[possibleLangKey]) {
+	          if (typeof $translationTable[possibleLangKey][translationId] !== 'undefined') {
+	            result = determineTranslationInstant(translationId, interpolateParams, interpolationId, uses, sanitizeStrategy);
+	          }
+	        }
+	        if (typeof result !== 'undefined') {
+	          break;
+	        }
+	      }
+
+	      if (!result && result !== '') {
+	        if ($notFoundIndicatorLeft || $notFoundIndicatorRight) {
+	          result = applyNotFoundIndicators(translationId);
+	        } else {
+	          // Return translation of default interpolator if not found anything.
+	          result = defaultInterpolator.interpolate(translationId, interpolateParams, 'filter', sanitizeStrategy);
+
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
+	          var missingTranslationHandlerTranslation;
+	          if ($missingTranslationHandlerFactory && !pendingLoader) {
+	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, sanitizeStrategy);
+	          }
+
+	          if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	            result = missingTranslationHandlerTranslation;
+	          }
+	        }
+	      }
+
+	      return result;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#versionInfo
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the current version information for the angular-translate library
+	     *
+	     * @return {string} angular-translate version
+	     */
+	    $translate.versionInfo = function () {
+	      return version;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#loaderCache
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the defined loaderCache.
+	     *
+	     * @return {boolean|string|object} current value of loaderCache
+	     */
+	    $translate.loaderCache = function () {
+	      return loaderCache;
+	    };
+
+	    // internal purpose only
+	    $translate.directivePriority = function () {
+	      return directivePriority;
+	    };
+
+	    // internal purpose only
+	    $translate.statefulFilter = function () {
+	      return statefulFilter;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isReady
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether the service is "ready" to translate (i.e. loading 1st language).
+	     *
+	     * See also {@link pascalprecht.translate.$translate#methods_onReady onReady()}.
+	     *
+	     * @return {boolean} current value of ready
+	     */
+	    $translate.isReady = function () {
+	      return $isReady;
+	    };
+
+	    var $onReadyDeferred = $q.defer();
+	    $onReadyDeferred.promise.then(function () {
+	      $isReady = true;
+	    });
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#onReady
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether the service is "ready" to translate (i.e. loading 1st language).
+	     *
+	     * See also {@link pascalprecht.translate.$translate#methods_isReady isReady()}.
+	     *
+	     * @param {Function=} fn Function to invoke when service is ready
+	     * @return {object} Promise resolved when service is ready
+	     */
+	    $translate.onReady = function (fn) {
+	      var deferred = $q.defer();
+	      if (angular.isFunction(fn)) {
+	        deferred.promise.then(fn);
+	      }
+	      if ($isReady) {
+	        deferred.resolve();
+	      } else {
+	        $onReadyDeferred.promise.then(deferred.resolve);
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#getAvailableLanguageKeys
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * This function simply returns the registered language keys being defined before in the config phase
+	     * With this, an application can use the array to provide a language selection dropdown or similar
+	     * without any additional effort
+	     *
+	     * @returns {object} returns the list of possibly registered language keys and mapping or null if not defined
+	     */
+	    $translate.getAvailableLanguageKeys = function () {
+	      if ($availableLanguageKeys.length > 0) {
+	        return $availableLanguageKeys;
+	      }
+	      return null;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#getTranslationTable
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns translation table by the given language key.
+	     *
+	     * Unless a language is provided it returns a translation table of the current one.
+	     * Note: If translation dictionary is currently downloading or in progress
+	     * it will return null.
+	     *
+	     * @param {string} langKey A token which represents a translation id
+	     *
+	     * @return {object} a copy of angular-translate $translationTable
+	     */
+	    $translate.getTranslationTable = function (langKey) {
+	      langKey = langKey || $translate.use();
+	      if (langKey && $translationTable[langKey]) {
+	        return angular.copy($translationTable[langKey]);
+	      }
+	      return null;
+	    };
+
+	    // Whenever $translateReady is being fired, this will ensure the state of $isReady
+	    var globalOnReadyListener = $rootScope.$on('$translateReady', function () {
+	      $onReadyDeferred.resolve();
+	      globalOnReadyListener(); // one time only
+	      globalOnReadyListener = null;
+	    });
+	    var globalOnChangeListener = $rootScope.$on('$translateChangeEnd', function () {
+	      $onReadyDeferred.resolve();
+	      globalOnChangeListener(); // one time only
+	      globalOnChangeListener = null;
+	    });
+
+	    if ($loaderFactory) {
+
+	      // If at least one async loader is defined and there are no
+	      // (default) translations available we should try to load them.
+	      if (angular.equals($translationTable, {})) {
+	        if ($translate.use()) {
+	          $translate.use($translate.use());
+	        }
+	      }
+
+	      // Also, if there are any fallback language registered, we start
+	      // loading them asynchronously as soon as we can.
+	      if ($fallbackLanguage && $fallbackLanguage.length) {
+	        var processAsyncResult = function (translation) {
+	          translations(translation.key, translation.table);
+	          $rootScope.$emit('$translateChangeEnd', {language : translation.key});
+	          return translation;
+	        };
+	        for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	          var fallbackLanguageId = $fallbackLanguage[i];
+	          if ($forceAsyncReloadEnabled || !$translationTable[fallbackLanguageId]) {
+	            langPromises[fallbackLanguageId] = loadAsync(fallbackLanguageId).then(processAsyncResult);
+	          }
+	        }
+	      }
+	    } else {
+	      $rootScope.$emit('$translateReady', {language : $translate.use()});
 	    }
-	  ];
+
+	    return $translate;
+	  }];
 	}
 
 	$translate.displayName = 'displayName';
@@ -60748,9 +60789,9 @@
 	   *
 	   * @returns {string} interpolated string.
 	   */
-	  $translateInterpolator.interpolate = function (value, interpolationParams, context) {
+	  $translateInterpolator.interpolate = function (value, interpolationParams, context, sanitizeStrategy) {
 	    interpolationParams = interpolationParams || {};
-	    interpolationParams = $translateSanitization.sanitize(interpolationParams, 'params', undefined, context);
+	    interpolationParams = $translateSanitization.sanitize(interpolationParams, 'params', sanitizeStrategy, context);
 
 	    var interpolatedText;
 	    if (angular.isNumber(value)) {
@@ -60759,7 +60800,7 @@
 	    } else if (angular.isString(value)) {
 	      // strings must be interpolated (that's the job here)
 	      interpolatedText = $interpolate(value)(interpolationParams);
-	      interpolatedText = $translateSanitization.sanitize(interpolatedText, 'text', undefined, context);
+	      interpolatedText = $translateSanitization.sanitize(interpolatedText, 'text', sanitizeStrategy, context);
 	    } else {
 	      // neither a number or a string, cant interpolate => empty string
 	      interpolatedText = '';
@@ -64062,6 +64103,31 @@
 /* 75 */
 /***/ function(module, exports) {
 
+	var restApiModule = angular.module('restAPIModule');
+	restApiModule.factory('GenderApiService', ['$resource', function ($resource) {
+	    /**
+	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
+	     * */
+	    return $resource('api/track/gender/:guidGender', {guid: '@guid'}, {
+	        /*custom urls*/
+	        getGenders: {
+	            url: 'api/track/gender',
+	            method: 'GET',
+	            params: {
+	            },
+	            isArray: false
+	        }
+
+	    });
+	}]);
+
+
+
+
+/***/ },
+/* 76 */
+/***/ function(module, exports) {
+
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
 	commonDirectivesModule.factory('$freevenModal', ['$uibModal', function ($uibModal) {
 	    var ModalAreaService = function () {
@@ -64101,7 +64167,7 @@
 
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports) {
 
 	angular.module('trackListModule', []);
@@ -64119,7 +64185,7 @@
 
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64139,18 +64205,18 @@
 	    },
 	    controller: TrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(78)
+	    template: __webpack_require__(79)
 	});
 
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n        <h3 class=\"view-more\"><i class=\"icon icon-arrow-down\"></i></h3>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64255,13 +64321,13 @@
 
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(81);
+	var content = __webpack_require__(82);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64281,7 +64347,7 @@
 	}
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64289,13 +64355,13 @@
 
 
 	// module
-	exports.push([module.id, ".track-list {\n  padding: 60px 30px;\n  /*height: ~\"calc(100vh - 80px)\";\n  background-color: white;\n  overflow-y: scroll;\n  overflow-x: hidden;*/\n  display: block;\n}\n.track-list .track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.track-list .text {\n  font-size: 1rem;\n}\n.track-list .text-xs,\n.track-list .text-xxs {\n  font-size: 12px;\n}\n.track-list .text-sm {\n  font-size: 13px;\n}\n.track-list .text-md {\n  font-size: 1.125rem;\n}\n.track-list .text-lg {\n  font-size: 1.5rem;\n}\n.track-list .text-2x {\n  font-size: 2em;\n}\n.track-list .text-3x {\n  font-size: 3em;\n}\n.track-list .text-4x {\n  font-size: 4em;\n}\n.track-list .list-loading {\n  text-align: center;\n}\n.track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
+	exports.push([module.id, ".track-list {\n  padding: 60px 30px;\n  /*height: ~\"calc(100vh - 80px)\";\n  background-color: white;\n  overflow-y: scroll;\n  overflow-x: hidden;*/\n  display: block;\n}\n.track-list .track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.track-list .text {\n  font-size: 1rem;\n}\n.track-list .text-xs,\n.track-list .text-xxs {\n  font-size: 12px;\n}\n.track-list .text-sm {\n  font-size: 13px;\n}\n.track-list .text-md {\n  font-size: 1.125rem;\n}\n.track-list .text-lg {\n  font-size: 1.5rem;\n}\n.track-list .text-2x {\n  font-size: 2em;\n}\n.track-list .text-3x {\n  font-size: 3em;\n}\n.track-list .text-4x {\n  font-size: 4em;\n}\n.track-list .list-loading {\n  text-align: center;\n}\n.track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n.track-list .view-more {\n  color: #030404;\n  -webkit-animation: bounce 2.5s ease infinite;\n          animation: bounce 2.5s ease infinite;\n  clear: both;\n  text-align: center;\n}\n@-webkit-keyframes bounce {\n  0%,\n  20%,\n  50%,\n  80%,\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n  40% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n  }\n  60% {\n    -webkit-transform: translateY(-15px);\n            transform: translateY(-15px);\n  }\n}\n@keyframes bounce {\n  0%,\n  20%,\n  50%,\n  80%,\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n  40% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n  }\n  60% {\n    -webkit-transform: translateY(-15px);\n            transform: translateY(-15px);\n  }\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports) {
 
 	angular.module('userPanelModule', []);
@@ -64313,7 +64379,7 @@
 
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPanelModule = angular.module('userPanelModule');
@@ -64340,24 +64406,24 @@
 	    },
 	    controller: UserPanelController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(84)
+	    template: __webpack_require__(85)
 	});
 
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span> Subir obras musicales</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(86);
+	var content = __webpack_require__(87);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64377,7 +64443,7 @@
 	}
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64391,7 +64457,7 @@
 
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports) {
 
 	angular.module('userMenuModule', []);
@@ -64403,7 +64469,7 @@
 
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userMenuModule = angular.module('userMenuModule');
@@ -64447,24 +64513,24 @@
 	    },
 	    controller: UserMenuController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(89)
+	    template: __webpack_require__(90)
 	});
 
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(91);
+	var content = __webpack_require__(92);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64484,7 +64550,7 @@
 	}
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64498,7 +64564,7 @@
 
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports) {
 
 	/**
@@ -64547,7 +64613,7 @@
 
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports) {
 
 	angular.module('searchModule', []);
@@ -64565,7 +64631,7 @@
 
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var searchModule = angular.module('searchModule');
@@ -64603,24 +64669,24 @@
 	    },
 	    controller: SearchController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(95)
+	    template: __webpack_require__(96)
 	});
 
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"search\">\r\n    <input class=\"search-field\"\r\n           ng-model=\"ctrl.parameter\"\r\n           ng-change=\"ctrl.changeParameter()\"\r\n           type=\"text\"\r\n           placeholder=\"{{ 'general_search' | translate }}\"/>\r\n    <span class=\"search-cancel\"\r\n          ng-click=\"ctrl.cancel()\"\r\n          ng-show=\"ctrl.show()\">\r\n        x\r\n    </span>\r\n</div>\r\n";
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(97);
+	var content = __webpack_require__(98);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64640,7 +64706,7 @@
 	}
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64654,7 +64720,7 @@
 
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports) {
 
 	angular.module('playerModule', ['ngAudio']);
@@ -64672,7 +64738,7 @@
 
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerModule = angular.module('playerModule');
@@ -64697,18 +64763,18 @@
 	    },
 	    controller: PlayerController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(100)
+	    template: __webpack_require__(101)
 	});
 
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports) {
 
 	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\r\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\r\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('playerModule');
@@ -64763,13 +64829,13 @@
 
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(103);
+	var content = __webpack_require__(104);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64789,7 +64855,7 @@
 	}
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64803,7 +64869,7 @@
 
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports) {
 
 	angular.module('loginModule', []);
@@ -64821,12 +64887,11 @@
 
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var loginModule = angular.module('loginModule');
-	var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', '$location',
-	    'forgotPasswordService',
+	var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', 'forgotPasswordService', '$location',
 	    function ($i18n, loginService, $freevenModal, userMenuService, loginService, forgotPasswordService, $location) {
 	        /**
 	         * Tip: add here only visual logic
@@ -64858,6 +64923,7 @@
 	        };
 
 	        self.showForgotPasswordPopup = function () {
+	            var self = this;
 	            self.forgotPassword.showPopup();
 	        };
 	    }];
@@ -64869,24 +64935,24 @@
 	    },
 	    controller: LoginController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(106)
+	    template: __webpack_require__(107)
 	});
 
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(108);
+	var content = __webpack_require__(109);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64906,7 +64972,7 @@
 	}
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64920,7 +64986,7 @@
 
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports) {
 
 	/**
@@ -64970,7 +65036,7 @@
 
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports) {
 
 	angular.module('userRegisterModule', []);
@@ -64988,7 +65054,7 @@
 
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userRegisterModule = angular.module('userRegisterModule');
@@ -65087,24 +65153,24 @@
 	    },
 	    controller: UserRegisterController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(112)
+	    template: __webpack_require__(113)
 	});
 
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"register\">\r\n    <form name=\"userForm\">\r\n        <div style=\"text-align: center\">\r\n            <h4>Crear cuenta en Freeven</h4>\r\n        </div>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"email\">Email</label>\r\n                    <input type=\"email\" name=\"email\" id=\"email\"\r\n                           ng-model=\"ctrl.userRegister.newUser.email\"\r\n                           placeholder=\"Email...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.userRegister.newUser.username\"\r\n                           placeholder=\"Nombre de usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\r\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                    <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\r\n                           placeholder=\"Nombres...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\r\n                           placeholder=\"Apellidos...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <br/><br/>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\r\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\r\n                    </p>\r\n\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userRegister.newUser.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userRegister.newUser.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>";
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(114);
+	var content = __webpack_require__(115);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65124,7 +65190,7 @@
 	}
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65138,7 +65204,7 @@
 
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports) {
 
 	/**
@@ -65207,7 +65273,7 @@
 
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports) {
 
 	angular.module('splashModule', []);
@@ -65225,7 +65291,7 @@
 
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var splashModule = angular.module('splashModule');
@@ -65244,24 +65310,24 @@
 	    },
 	    controller: SplashController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(118)
+	    template: __webpack_require__(119)
 	});
 
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"splash\">\r\n    <div class=\"splash-content\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                . . .\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-7\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3 class=\"app-title\">Freeven</h3>\r\n                        <h5 class=\"app-sub-title\"></h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n                <login></login>\r\n            </div>\r\n            <div class=\"col-md-1\"> </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(120);
+	var content = __webpack_require__(121);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65281,7 +65347,7 @@
 	}
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65289,19 +65355,19 @@
 
 
 	// module
-	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(121) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
+	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(122) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "93db96e4fea7c96f7ea2244cc8e2b189.jpg";
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports) {
 
 	angular.module('playerPictureModule', []);
@@ -65319,7 +65385,7 @@
 
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerPictureModule = angular.module('playerPictureModule');
@@ -65338,24 +65404,24 @@
 	    },
 	    controller: PlayerPictureController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(124)
+	    template: __webpack_require__(125)
 	});
 
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"player-picture\">\r\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\r\n</div>";
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(126);
+	var content = __webpack_require__(127);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65375,7 +65441,7 @@
 	}
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65389,7 +65455,7 @@
 
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports) {
 
 	angular.module('trackModule', []);
@@ -65407,7 +65473,7 @@
 
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
@@ -65447,24 +65513,24 @@
 	    },
 	    controller: TrackController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(129)
+	    template: __webpack_require__(130)
 	});
 
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ ctrl.frModel.url }}\"\r\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\r\n                    <i class=\"icon icon-download\"></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\r\n\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Califica las piezas musicales\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(131);
+	var content = __webpack_require__(132);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65484,7 +65550,7 @@
 	}
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65498,7 +65564,7 @@
 
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports) {
 
 	angular.module('userEditModule', []);
@@ -65516,7 +65582,7 @@
 
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userEditModule = angular.module('userEditModule');
@@ -65625,9 +65691,9 @@
 	                var reader = new FileReader();
 	                reader.onload = $scope.imageIsLoaded;
 	                reader.readAsDataURL(file);
-	                console.log("File");
+
 	                photoOk = file;
-	                console.log(photoOk);
+
 	            }
 	        }
 
@@ -65652,17 +65718,14 @@
 	        };
 	        self.uploadFilesAndData = function () {
 	            var self = this;
-	            console.log(self.userEdit.user);
-	            console.log(self.profileFiles);
+
 	            if (self.profileFiles) {
 	                Upload.upload({
 	                    url: 'api/user/update_profile/',
 	                    fields: self.userEdit.user,
-	                    //fields: {camp: "diego"},
 	                    files: self.profileFiles
 	                }).progress(function (evt) {
 	                }).success(function (data, status, headers, config) {
-	                    console.log('subido correctamente');
 	                });
 	            }
 	        };
@@ -65677,24 +65740,24 @@
 	    },
 	    controller: UserEditController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(134)
+	    template: __webpack_require__(135)
 	});
 
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-edit\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar cuenta en Freeven</h4>\r\n  </div>\r\n  <form name=\"userForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <div class=\"card-body card-padding\">\r\n                <div class=\"thumbnail\">\r\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-xs-12\">\r\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\r\n                  <input type='file' id=\"imageUpload\" ng-model-instant\r\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                  accept=\"image/*\" style=\"display: none\"\r\n                  ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                  />\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12 text-center\">\r\n                    <label class=\"control-label\"\r\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                  </div>\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"email\">Email</label>\r\n                <input type=\"email\" name=\"email\" id=\"email\"\r\n                ng-model=\"ctrl.userEdit.user.email\"\r\n                placeholder=\"Email...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                ng-model=\"ctrl.userEdit.user.first_name\"\r\n                placeholder=\"Nombres...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                ng-model=\"ctrl.userEdit.user.last_name\"\r\n                placeholder=\"Apellidos...\"\r\n                class=\"form-control\"\r\n                required/>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n          <br/>\r\n          <label class=\"radio-inline\">\r\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n            ng-model=\"ctrl.userEdit.user.is_artist\"\r\n            required\r\n            checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n              ng-model=\"ctrl.userEdit.user.is_artist\"\r\n              required/>Artista</label>\r\n            </div>\r\n            <div class=\"col-md-6\">\r\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\r\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n            </div>\r\n          </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n            <div class=\"col-md-12\">\r\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n              ng-click=\"ctrl.validateForm()\">\r\n              {{ 'general_edit_user'  | translate }}\r\n            </button>\r\n            <button id=\"idBtnCancelar\" type=\"button\"\r\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.close()\">\r\n            {{ 'general_cancel'  | translate }}\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n  </form>\r\n\r\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n          placeholder=\"Nombre artístico...\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n          ng-model=\"ctrl.userEdit.user.birth_date\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"country\">País</label>\r\n          <select class=\"form-control\" id=\"country\"\r\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n          <option value=\"\">Pais...</option>\r\n          <option value=\"AF\">Afganistán</option>\r\n          <option value=\"AL\">Albania</option>\r\n          <option value=\"DE\">Alemania</option>\r\n          <option value=\"AD\">Andorra</option>\r\n          <option value=\"AO\">Angola</option>\r\n          <option value=\"AI\">Anguilla</option>\r\n          <option value=\"AQ\">Antártida</option>\r\n          <option value=\"AG\">Antigua y Barbuda</option>\r\n          <option value=\"AN\">Antillas Holandesas</option>\r\n          <option value=\"SA\">Arabia Saudí</option>\r\n          <option value=\"DZ\">Argelia</option>\r\n          <option value=\"AR\">Argentina</option>\r\n          <option value=\"AM\">Armenia</option>\r\n          <option value=\"AW\">Aruba</option>\r\n          <option value=\"AU\">Australia</option>\r\n          <option value=\"AT\">Austria</option>\r\n          <option value=\"AZ\">Azerbaiyán</option>\r\n          <option value=\"BS\">Bahamas</option>\r\n          <option value=\"BH\">Bahrein</option>\r\n          <option value=\"BD\">Bangladesh</option>\r\n          <option value=\"BB\">Barbados</option>\r\n          <option value=\"BE\">Bélgica</option>\r\n          <option value=\"BZ\">Belice</option>\r\n          <option value=\"BJ\">Benin</option>\r\n          <option value=\"BM\">Bermudas</option>\r\n          <option value=\"BY\">Bielorrusia</option>\r\n          <option value=\"MM\">Birmania</option>\r\n          <option value=\"BO\">Bolivia</option>\r\n          <option value=\"BA\">Bosnia y Herzegovina</option>\r\n          <option value=\"BW\">Botswana</option>\r\n          <option value=\"BR\">Brasil</option>\r\n          <option value=\"BN\">Brunei</option>\r\n          <option value=\"BG\">Bulgaria</option>\r\n          <option value=\"BF\">Burkina Faso</option>\r\n          <option value=\"BI\">Burundi</option>\r\n          <option value=\"BT\">Bután</option>\r\n          <option value=\"CV\">Cabo Verde</option>\r\n          <option value=\"KH\">Camboya</option>\r\n          <option value=\"CM\">Camerún</option>\r\n          <option value=\"CA\">Canadá</option>\r\n          <option value=\"TD\">Chad</option>\r\n          <option value=\"CL\">Chile</option>\r\n          <option value=\"CN\">China</option>\r\n          <option value=\"CY\">Chipre</option>\r\n          <option value=\"VA\">Ciudad del Vaticano</option>\r\n          <option value=\"CO\">Colombia</option>\r\n          <option value=\"KM\">Comores</option>\r\n          <option value=\"CG\">Congo</option>\r\n          <option value=\"KR\">Corea</option>\r\n          <option value=\"KP\">Corea del Norte</option>\r\n          <option value=\"CI\">Costa de Marfíl</option>\r\n          <option value=\"CR\">Costa Rica</option>\r\n          <option value=\"HR\">Croacia (Hrvatska)</option>\r\n          <option value=\"CU\">Cuba</option>\r\n          <option value=\"DK\">Dinamarca</option>\r\n          <option value=\"DJ\">Djibouti</option>\r\n          <option value=\"DM\">Dominica</option>\r\n          <option value=\"EC\">Ecuador</option>\r\n          <option value=\"EG\">Egipto</option>\r\n          <option value=\"SV\">El Salvador</option>\r\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n          <option value=\"ER\">Eritrea</option>\r\n          <option value=\"SI\">Eslovenia</option>\r\n          <option value=\"ES\" selected>España</option>\r\n          <option value=\"US\">Estados Unidos</option>\r\n          <option value=\"EE\">Estonia</option>\r\n          <option value=\"ET\">Etiopía</option>\r\n          <option value=\"FJ\">Fiji</option>\r\n          <option value=\"PH\">Filipinas</option>\r\n          <option value=\"FI\">Finlandia</option>\r\n          <option value=\"FR\">Francia</option>\r\n          <option value=\"GA\">Gabón</option>\r\n          <option value=\"GM\">Gambia</option>\r\n          <option value=\"GE\">Georgia</option>\r\n          <option value=\"GH\">Ghana</option>\r\n          <option value=\"GI\">Gibraltar</option>\r\n          <option value=\"GD\">Granada</option>\r\n          <option value=\"GR\">Grecia</option>\r\n          <option value=\"GL\">Groenlandia</option>\r\n          <option value=\"GP\">Guadalupe</option>\r\n          <option value=\"GU\">Guam</option>\r\n          <option value=\"GT\">Guatemala</option>\r\n          <option value=\"GY\">Guayana</option>\r\n          <option value=\"GF\">Guayana Francesa</option>\r\n          <option value=\"GN\">Guinea</option>\r\n          <option value=\"GQ\">Guinea Ecuatorial</option>\r\n          <option value=\"GW\">Guinea-Bissau</option>\r\n          <option value=\"HT\">Haití</option>\r\n          <option value=\"HN\">Honduras</option>\r\n          <option value=\"HU\">Hungría</option>\r\n          <option value=\"IN\">India</option>\r\n          <option value=\"ID\">Indonesia</option>\r\n          <option value=\"IQ\">Irak</option>\r\n          <option value=\"IR\">Irán</option>\r\n          <option value=\"IE\">Irlanda</option>\r\n          <option value=\"BV\">Isla Bouvet</option>\r\n          <option value=\"CX\">Isla de Christmas</option>\r\n          <option value=\"IS\">Islandia</option>\r\n          <option value=\"KY\">Islas Caimán</option>\r\n          <option value=\"CK\">Islas Cook</option>\r\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n          <option value=\"FO\">Islas Faroe</option>\r\n          <option value=\"HM\">Islas Heard y McDonald</option>\r\n          <option value=\"FK\">Islas Malvinas</option>\r\n          <option value=\"MP\">Islas Marianas del Norte</option>\r\n          <option value=\"MH\">Islas Marshall</option>\r\n          <option value=\"PW\">Islas Palau</option>\r\n          <option value=\"SB\">Islas Salomón</option>\r\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n          <option value=\"TK\">Islas Tokelau</option>\r\n          <option value=\"TC\">Islas Turks y Caicos</option>\r\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n          <option value=\"WF\">Islas Wallis y Futuna</option>\r\n          <option value=\"IL\">Israel</option>\r\n          <option value=\"IT\">Italia</option>\r\n          <option value=\"JM\">Jamaica</option>\r\n          <option value=\"JP\">Japón</option>\r\n          <option value=\"JO\">Jordania</option>\r\n          <option value=\"KZ\">Kazajistán</option>\r\n          <option value=\"KE\">Kenia</option>\r\n          <option value=\"KG\">Kirguizistán</option>\r\n          <option value=\"KI\">Kiribati</option>\r\n          <option value=\"KW\">Kuwait</option>\r\n          <option value=\"LA\">Laos</option>\r\n          <option value=\"LS\">Lesotho</option>\r\n          <option value=\"LV\">Letonia</option>\r\n          <option value=\"LB\">Líbano</option>\r\n          <option value=\"LR\">Liberia</option>\r\n          <option value=\"LY\">Libia</option>\r\n          <option value=\"LI\">Liechtenstein</option>\r\n          <option value=\"LT\">Lituania</option>\r\n          <option value=\"LU\">Luxemburgo</option>\r\n          <option value=\"MK\">Macedonia</option>\r\n          <option value=\"MG\">Madagascar</option>\r\n          <option value=\"MY\">Malasia</option>\r\n          <option value=\"MW\">Malawi</option>\r\n          <option value=\"MV\">Maldivas</option>\r\n          <option value=\"ML\">Malí</option>\r\n          <option value=\"MT\">Malta</option>\r\n          <option value=\"MA\">Marruecos</option>\r\n          <option value=\"MQ\">Martinica</option>\r\n          <option value=\"MU\">Mauricio</option>\r\n          <option value=\"MR\">Mauritania</option>\r\n          <option value=\"YT\">Mayotte</option>\r\n          <option value=\"MX\">México</option>\r\n          <option value=\"FM\">Micronesia</option>\r\n          <option value=\"MD\">Moldavia</option>\r\n          <option value=\"MC\">Mónaco</option>\r\n          <option value=\"MN\">Mongolia</option>\r\n          <option value=\"MS\">Montserrat</option>\r\n          <option value=\"MZ\">Mozambique</option>\r\n          <option value=\"NA\">Namibia</option>\r\n          <option value=\"NR\">Nauru</option>\r\n          <option value=\"NP\">Nepal</option>\r\n          <option value=\"NI\">Nicaragua</option>\r\n          <option value=\"NE\">Níger</option>\r\n          <option value=\"NG\">Nigeria</option>\r\n          <option value=\"NU\">Niue</option>\r\n          <option value=\"NF\">Norfolk</option>\r\n          <option value=\"NO\">Noruega</option>\r\n          <option value=\"NC\">Nueva Caledonia</option>\r\n          <option value=\"NZ\">Nueva Zelanda</option>\r\n          <option value=\"OM\">Omán</option>\r\n          <option value=\"NL\">Países Bajos</option>\r\n          <option value=\"PA\">Panamá</option>\r\n          <option value=\"PG\">Papúa Nueva Guinea</option>\r\n          <option value=\"PK\">Paquistán</option>\r\n          <option value=\"PY\">Paraguay</option>\r\n          <option value=\"PE\">Perú</option>\r\n          <option value=\"PN\">Pitcairn</option>\r\n          <option value=\"PF\">Polinesia Francesa</option>\r\n          <option value=\"PL\">Polonia</option>\r\n          <option value=\"PT\">Portugal</option>\r\n          <option value=\"PR\">Puerto Rico</option>\r\n          <option value=\"QA\">Qatar</option>\r\n          <option value=\"UK\">Reino Unido</option>\r\n          <option value=\"CF\">República Centroafricana</option>\r\n          <option value=\"CZ\">República Checa</option>\r\n          <option value=\"ZA\">República de Sudáfrica</option>\r\n          <option value=\"DO\">República Dominicana</option>\r\n          <option value=\"SK\">República Eslovaca</option>\r\n          <option value=\"RE\">Reunión</option>\r\n          <option value=\"RW\">Ruanda</option>\r\n          <option value=\"RO\">Rumania</option>\r\n          <option value=\"RU\">Rusia</option>\r\n          <option value=\"EH\">Sahara Occidental</option>\r\n          <option value=\"KN\">Saint Kitts y Nevis</option>\r\n          <option value=\"WS\">Samoa</option>\r\n          <option value=\"AS\">Samoa Americana</option>\r\n          <option value=\"SM\">San Marino</option>\r\n          <option value=\"VC\">San Vicente y Granadinas</option>\r\n          <option value=\"SH\">Santa Helena</option>\r\n          <option value=\"LC\">Santa Lucía</option>\r\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n          <option value=\"SN\">Senegal</option>\r\n          <option value=\"SC\">Seychelles</option>\r\n          <option value=\"SL\">Sierra Leona</option>\r\n          <option value=\"SG\">Singapur</option>\r\n          <option value=\"SY\">Siria</option>\r\n          <option value=\"SO\">Somalia</option>\r\n          <option value=\"LK\">Sri Lanka</option>\r\n          <option value=\"PM\">St Pierre y Miquelon</option>\r\n          <option value=\"SZ\">Suazilandia</option>\r\n          <option value=\"SD\">Sudán</option>\r\n          <option value=\"SE\">Suecia</option>\r\n          <option value=\"CH\">Suiza</option>\r\n          <option value=\"SR\">Surinam</option>\r\n          <option value=\"TH\">Tailandia</option>\r\n          <option value=\"TW\">Taiwán</option>\r\n          <option value=\"TZ\">Tanzania</option>\r\n          <option value=\"TJ\">Tayikistán</option>\r\n          <option value=\"TF\">Territorios franceses del Sur</option>\r\n          <option value=\"TP\">Timor Oriental</option>\r\n          <option value=\"TG\">Togo</option>\r\n          <option value=\"TO\">Tonga</option>\r\n          <option value=\"TT\">Trinidad y Tobago</option>\r\n          <option value=\"TN\">Túnez</option>\r\n          <option value=\"TM\">Turkmenistán</option>\r\n          <option value=\"TR\">Turquía</option>\r\n          <option value=\"TV\">Tuvalu</option>\r\n          <option value=\"UA\">Ucrania</option>\r\n          <option value=\"UG\">Uganda</option>\r\n          <option value=\"UY\">Uruguay</option>\r\n          <option value=\"UZ\">Uzbekistán</option>\r\n          <option value=\"VU\">Vanuatu</option>\r\n          <option value=\"VE\">Venezuela</option>\r\n          <option value=\"VN\">Vietnam</option>\r\n          <option value=\"YE\">Yemen</option>\r\n          <option value=\"YU\">Yugoslavia</option>\r\n          <option value=\"ZM\">Zambia</option>\r\n          <option value=\"ZW\">Zimbabue</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n        <input type=\"text\" name=\"city\" id=\"city\"\r\n        ng-model=\"ctrl.userEdit.user.city\"\r\n        placeholder=\"Ciudad....\"\r\n        class=\"form-control\"\r\n        required/>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n  <fieldset class=\"form-group\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n          celular</label>\r\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n          placeholder=\"Número de teléfono o celular...\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"7\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n            <input type=\"text\" name=\"address\" id=\"address\"\r\n            ng-model=\"ctrl.userEdit.user.address\"\r\n            placeholder=\"Dirección de residencia....\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n            ng-model=\"ctrl.userEdit.user.bank\"\r\n            placeholder=\"Nombre Banco...\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n            <option value=\"\">Tipo de cuenta</option>\r\n            <option value=\"AH\">Ahorros</option>\r\n            <option value=\"CR\">Corriente</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n          placeholder=\"Número de cuenta....\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"9\"\r\n          ng-maxlength=\"25\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n            {{ 'general_edit_user'  | translate }}\r\n          </button>\r\n          <button id=\"idBtnCancelar2\" type=\"button\"\r\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.close()\">\r\n          {{ 'general_cancel'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(136);
+	var content = __webpack_require__(137);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65714,7 +65777,7 @@
 	}
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65728,7 +65791,7 @@
 
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports) {
 
 	/**
@@ -65824,7 +65887,7 @@
 
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports) {
 
 	angular.module('userPasswordModule', []);
@@ -65842,7 +65905,7 @@
 
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var  userPasswordModule = angular.module('userPasswordModule');
@@ -65885,24 +65948,24 @@
 	    },
 	    controller: UserPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(140)
+	    template: __webpack_require__(141)
 	  });
 
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(142);
+	var content = __webpack_require__(143);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65922,7 +65985,7 @@
 	}
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65936,7 +65999,7 @@
 
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports) {
 
 	/**
@@ -65983,7 +66046,7 @@
 
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports) {
 
 	angular.module('helpModule', []);
@@ -66001,7 +66064,7 @@
 
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66023,18 +66086,18 @@
 	    },
 	    controller: HelpController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(146)
+	    template: __webpack_require__(147)
 	});
 
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('helpModule');
@@ -66062,13 +66125,13 @@
 
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(149);
+	var content = __webpack_require__(150);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66088,7 +66151,7 @@
 	}
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66102,7 +66165,7 @@
 
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66121,24 +66184,24 @@
 	    },
 	    controller: HelpItemController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(151)
+	    template: __webpack_require__(152)
 	});
 
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(153);
+	var content = __webpack_require__(154);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66158,7 +66221,7 @@
 	}
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66172,7 +66235,7 @@
 
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports) {
 
 	angular.module('artistModule', []);
@@ -66190,7 +66253,7 @@
 
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var artistModule = angular.module('artistModule');
@@ -66217,30 +66280,30 @@
 	    },
 	    controller: ArtistController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(156)
+	    template: __webpack_require__(157)
 	});
 
-
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(157) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(159);
+	var content = __webpack_require__(160);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66260,7 +66323,7 @@
 	}
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66274,7 +66337,7 @@
 
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports) {
 
 	/**
@@ -66314,7 +66377,7 @@
 
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports) {
 
 	angular.module('topTrackListModule', []);
@@ -66332,7 +66395,7 @@
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var topTrackListModule = angular.module('topTrackListModule');
@@ -66356,24 +66419,24 @@
 	    },
 	    controller: TopTrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(163)
+	    template: __webpack_require__(164)
 	});
 
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(165);
+	var content = __webpack_require__(166);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66393,7 +66456,7 @@
 	}
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66407,7 +66470,7 @@
 
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports) {
 
 	angular.module('trackCreatorModule', []);
@@ -66425,44 +66488,74 @@
 
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackCreatorModule = angular.module('trackCreatorModule');
-	var TrackCreatorController = ['Upload',
-	    function (Upload) {
+	var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'notifierService', '$scope',
+	    function (Upload, mainService, GenderApiService, notifierService, $scope) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
 	        var self = this;
 	        self.trackFiles = {};
+	        self.loading = false;
 	        self.attachFile = function (files, fieldName) {
 	            if (files && files.length > 0) {
 	                var file = files[0];
 	                self.trackFiles[fieldName] = file;
 	            }
 	        };
+	        self.loadGenders = function () {
+	            var self = this;
+	            GenderApiService.getGenders(
+	                {}
+	                ,
+	                function (response) {
+	                    console.log(response);
+	                    self.genderOptions = response.results;
+	                },
+	                function (error) {
+
+	                });
+	        };
+
+	        self.imageIsLoaded = function (e) {
+	            var img = {};
+	            $scope.$apply(function () {
+	                img = {"img": e.target.result};
+	                self.picture.push(img);
+	            });
+	        };
+
+
 	        self.uploadFilesAndData = function () {
 	            var self = this;
+	            var user = mainService.getUserData();
+	            self.loading = true;
 	            if (self.trackFiles) {
 	                Upload.upload({
 	                    url: 'api/track/create/',
 	                    data: {
-	                        name: 'name',
-	                        description: 'description',
-	                        gender: '1',
-	                        artist: '1',
+	                        name: self.name,
+	                        description: self.description,
+	                        gender: self.gender,
+	                        artist: user.id_artist,
 	                        image: self.trackFiles.image,
 	                        file: self.trackFiles.audio,
 	                        score: 0
 	                    }
-
 	                }).progress(function (evt) {
 	                }).success(function (data, status, headers, config) {
+	                    self.loading = false;
 	                    console.log('subido correctamente');
+	                    notifierService.success("La pieza musical se ha creado correctamente", ".");
 	                });
 	            }
 	        };
+	        self.loadGenders();
+
+
 	    }];
 
 	trackCreatorModule.component('trackCreator', {
@@ -66472,30 +66565,30 @@
 	    },
 	    controller: TrackCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(168)
+	    template: __webpack_require__(169)
 	});
 
-
-/***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(157) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(169) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div></div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.trackName\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Género</label>\r\n                        <input type=\"text\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span>Seleccione el archivo .mp3</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(170) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(171);
+	var content = __webpack_require__(172);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66515,7 +66608,7 @@
 	}
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66523,13 +66616,13 @@
 
 
 	// module
-	exports.push([module.id, ".track-creator {\n  padding: 0 6% 100px 6%;\n}\n.track-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.track-creator .form-group .control-label {\n  color: black;\n}\n.track-creator h1 {\n  color: black;\n}\n.track-creator p {\n  color: black;\n}\n.track-creator .fr-track-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.track-creator .fr-image-track-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.track-creator .fr-image-track-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.track-creator .fr-image-track-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector span {\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.track-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n/*\n  padding: 5px;\n  margin: 70px 8px 8px 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px hsla(0, 0%, 76%, .15);\n  padding-left: 181px;\n*/\n", ""]);
+	exports.push([module.id, ".track-creator {\n  padding: 0 6% 100px 6%;\n}\n.track-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.track-creator .form-group .control-label {\n  color: black;\n}\n.track-creator h1,\n.track-creator h3,\n.track-creator h4,\n.track-creator p {\n  color: black;\n}\n.track-creator .fr-track-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.track-creator .fr-image-track-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.track-creator .fr-image-track-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.track-creator .fr-image-track-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector span {\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.track-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n/*\n  padding: 5px;\n  margin: 70px 8px 8px 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px hsla(0, 0%, 76%, .15);\n  padding-left: 181px;\n*/\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports) {
 
 	angular.module('donationModule', []);
@@ -66547,7 +66640,7 @@
 
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationModule = angular.module('donationModule');
@@ -66568,24 +66661,24 @@
 	    },
 	    controller: DonationController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(174)
+	    template: __webpack_require__(175)
 	});
 
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                        <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\r\n                        <td>{{ donation.user_first_name  }}</td>\r\n                        <td>{{ donation.user_last_name }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\r\n                <h4>Aún no has recibido donaciones </h4>\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(176);
+	var content = __webpack_require__(177);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66605,7 +66698,7 @@
 	}
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66619,7 +66712,7 @@
 
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports) {
 
 	/**
@@ -66636,7 +66729,7 @@
 	                var user = mainService.getUserData();
 	                DonationApiService.donationList(
 	                    {
-	                        artist__id: user.id_user
+	                        artist__id: user.id_artist
 	                    },
 	                    function (response) {
 	                        self.donations = response.results;
@@ -66655,7 +66748,7 @@
 
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports) {
 
 	angular.module('forgotPasswordModule', []);
@@ -66673,7 +66766,7 @@
 
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var forgotPasswordModule = angular.module('forgotPasswordModule');
@@ -66702,18 +66795,18 @@
 	    },
 	    controller: ForgotPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(180)
+	    template: __webpack_require__(181)
 	});
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"forgot-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>¿Has olvidado tu contraseña?</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\r\n          <input type=\"text\" name=\"username\" id=\"username\"\r\n          ng-model=\"ctrl.forgotPassword.username.username\"\r\n          placeholder=\"Usuario...\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\r\n         Enviar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports) {
 
 	/**
@@ -66763,13 +66856,13 @@
 
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(183);
+	var content = __webpack_require__(184);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66789,7 +66882,7 @@
 	}
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66803,7 +66896,7 @@
 
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports) {
 
 	angular.module('scoreEditorModule', []);
@@ -66821,7 +66914,7 @@
 
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -66860,18 +66953,18 @@
 	    },
 	    controller: ScoreEditorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(186)
+	    template: __webpack_require__(187)
 	});
 
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"score-editor\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\r\n    </div>\r\n    <div class=\"score-editor-container\">\r\n        <track hide-item-info=\"true\"\r\n               fr-model=\"ctrl.scoreEditorService.track\">\r\n        </track>\r\n\r\n        <div class=\"rating\">\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\r\n                    <span>Guardar</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -66917,13 +67010,13 @@
 
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(189);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66943,7 +67036,7 @@
 	}
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66957,7 +67050,7 @@
 
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports) {
 
 	angular.module('restorePasswordModule', []);
@@ -66975,7 +67068,7 @@
 
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var restorePasswordModule = angular.module('restorePasswordModule');
@@ -67017,24 +67110,24 @@
 	    },
 	    controller: RestorePasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(192)
+	    template: __webpack_require__(193)
 	});
 
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(194);
+	var content = __webpack_require__(195);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67054,7 +67147,7 @@
 	}
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67068,7 +67161,7 @@
 
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports) {
 
 	/**
@@ -67122,7 +67215,7 @@
 
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports) {
 
 	angular.module('donationCreatorModule', []);
@@ -67140,7 +67233,7 @@
 
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67177,18 +67270,18 @@
 	    },
 	    controller: DonationCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(198)
+	    template: __webpack_require__(199)
 	});
 
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Donación</h4>\r\n    </div>\r\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\">Monto a donar</label>\r\n                    <input type=\"number\"\r\n                           ng-model=\"ctrl.donation.value\"\r\n                           value=\"ctrl.donation.value | currency\"\r\n                           placeholder=\"$ 000 000\"\r\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\r\n                        <span>Hacer donación</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n\r\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\r\n                        <span>Finalizar</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67232,13 +67325,13 @@
 
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(201);
+	var content = __webpack_require__(202);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67258,7 +67351,7 @@
 	}
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67267,6 +67360,94 @@
 
 	// module
 	exports.push([module.id, ".donation-creator {\n  font-family: 'Titillium Web', sans-serif;\n}\n.donation-creator .fr-modal-header,\n.donation-creator .fr-modal-content,\n.donation-creator .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.donation-creator .align-right {\n  text-align: right;\n}\n.donation-creator .donation-value {\n  text-align: right;\n}\n.donation-creator form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.donation-creator form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.donation-creator form a:hover {\n  color: #179b77;\n}\n.donation-creator form h4,\n.donation-creator form h5 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.donation-creator form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.donation-creator form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.donation-creator form label.active .req {\n  opacity: 0;\n}\n.donation-creator form label.highlight {\n  color: black;\n}\n.donation-creator form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.donation-creator form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.donation-creator form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.donation-creator form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.donation-creator .messages {\n  color: #FA787E;\n}\n.donation-creator .colorMensajes {\n  color: red;\n}\n.donation-creator input.ng-valid {\n  border: 1px solid green;\n}\n.donation-creator input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 203 */
+/***/ function(module, exports) {
+
+	angular.module('bounceModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/bounce/bounceModule.js');
+	 require('../app/bounce/bounceComponent.js');
+	 require('../app/bounce/bounce.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <bounce title ="Bounce"> </bounce>
+	*/
+
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var  bounceModule = angular.module('bounceModule');
+	var BounceController = ['$i18n', function ($i18n) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+
+	}];
+
+	bounceModule.component('bounce', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: BounceController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(205)
+	});
+
+
+/***/ },
+/* 205 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"bounce1\"></div>\r\n<div class=\"bounce2\"></div>\r\n<div class=\"bounce3\"></div>\r\n";
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(207);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./bounce.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./bounce.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "bounce {\n  margin: 100px auto 0;\n  width: 70px;\n  text-align: center;\n}\nbounce div {\n  width: 12px;\n  height: 12px;\n  background-color: rgba(26, 171, 161, 0.4);\n  border-radius: 30%;\n  display: inline-block;\n  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;\n  animation: sk-bouncedelay 1.4s infinite ease-in-out both;\n}\nbounce .bounce1 {\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s;\n}\nbounce .bounce2 {\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s;\n}\n@-webkit-keyframes sk-bouncedelay {\n  10%,\n  20%,\n  30% {\n    -webkit-transform: scale(0);\n  }\n  40% {\n    -webkit-transform: scale(1);\n  }\n}\n@keyframes sk-bouncedelay {\n  10%,\n  20%,\n  30% {\n    -webkit-transform: scale(0);\n    transform: scale(0);\n  }\n  40% {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n  }\n}\n", ""]);
 
 	// exports
 

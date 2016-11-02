@@ -6,6 +6,7 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
          */
         var self = this;
         self.trackFiles = {};
+        self.loading = false;
         self.attachFile = function (files, fieldName) {
             if (files && files.length > 0) {
                 var file = files[0];
@@ -38,6 +39,7 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
         self.uploadFilesAndData = function () {
             var self = this;
             var user = mainService.getUserData();
+            self.loading = true;
             if (self.trackFiles) {
                 Upload.upload({
                     url: 'api/track/create/',
@@ -52,12 +54,15 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
                     }
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
+                    self.loading = false;
                     console.log('subido correctamente');
                     notifierService.success("La pieza musical se ha creado correctamente", ".");
                 });
             }
         };
         self.loadGenders();
+
+
     }];
 
 trackCreatorModule.component('trackCreator', {
