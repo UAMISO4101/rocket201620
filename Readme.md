@@ -25,3 +25,6 @@ celery -A freeven worker --loglevel=info
 ```
 
 development-integration
+
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/585e1194afa94447a4b665fa7a11f890)](https://www.codacy.com/app/f-arruza/rocket201620?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UAMISO4101/rocket201620&amp;utm_campaign=Badge_Grade)
