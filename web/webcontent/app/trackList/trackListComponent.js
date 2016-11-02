@@ -5,10 +5,7 @@ var TrackListController = ['$i18n', 'trackListService', function ($i18n, trackLi
      */
     var self = this;
     self.trackList = trackListService;
-    self.trackList.loadTracks({});
-    self.play = function(track){
-        self.trackList.playSelected(track);
-    }
+    //self.trackList.loadTracks();
 }];
 
 trackListModule.component('trackList', {

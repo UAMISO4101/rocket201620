@@ -1,5 +1,89 @@
 <div class="login">
-    <input type="text"/>
-    <input type="password"/>
-    <button ng-click="ctrl.login()"> {{ 'general_login'  | translate }}</button>
+    <form name="userLogin">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-social google">
+                    <i class="icon icon-google-plus"></i>
+                    <span>Iniciar sesión con Google+</span>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-social facebook">
+                    <i class="icon icon-facebook"></i>
+                    <span>Iniciar sesión con Facebook</span>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login-section">
+                    <h3 class="login-or">o</h3>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <!--<div class="loading regular" style="padding: 43px 0px 0px;"></div>-->
+                <input type="text" name="username" id="username"
+                       ng-model="ctrl.userLogin.user.username"
+                       placeholder="Usuario"
+                       class="form-control"
+                       required/>
+                <span class="messages" ng-show="userLogin.$submitted || userLogin.username.$touched">
+                    <span ng-show="userLogin.username.$error.required">El campo es obligatorio.</span>
+                    </span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-md-12">
+                <input type="password" name="password" id="password"
+                       ng-model="ctrl.userLogin.user.password"
+                       placeholder="Contraseña..."
+                       class="form-control"
+                       required/>
+                <!--<span class="messages" ng-show="userLogin.password.$error.minlength">Contraseña muy corta</span>-->
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                        ng-click="ctrl.login()">
+                    {{ 'general_login'  | translate }}
+                </button>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <a href="" ng-click="ctrl.showForgotPasswordPopup()">
+                ¿Has olvidado tu contraseña?
+            </a>
+        </div>
+
+    </form>
+    <form>
+        <div class="row">
+            <div class="col-md-12">
+                <label>¿Aún no tienes una cuenta de Freeven?</label>
+                <br>
+                <button class="freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
+                        tabindex="0"
+                        title="Crear cuenta en Freeve"
+                        ng-click="ctrl.showRegisterPopup()"
+                        data-toggle="modal" data-target="">
+                    {{ 'general_create_account' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+
 </div>

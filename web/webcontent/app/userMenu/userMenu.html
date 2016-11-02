@@ -1,247 +1,45 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
-      type='text/css'>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 <div class="user-menu">
-    <button class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta" tabindex="0"
-            ng-click="ctrl.showLoginPopup()"
-            title="Iniciar sesión en SonidosLibres"
-            data-toggle="modal" data-target="">
-        <i class="icon-user"></i>
-        {{ 'general_sign_in' | translate }}
-    </button>
-    <button class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta" tabindex="0"
-            title="Crear cuenta en SonidosLibres"
-            data-toggle="modal" data-target="#modalRegister">
-        {{ 'general_create_account' | translate }}
-    </button>
-</div>
-<div class="modal fade user-menu" tabindex="-1" role="dialog" id="modalRegister">
-    <div class="container">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button id="id_button_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Crear cuenta en Sonidos Libres</h4>
-                </div>
-                <div class="modal-body">
-                    <form novalidate id="registerForm" enctype="multipart/form-data" name="registerForm"
-                          role="form"
-                          ng-submit="ctrl.saveUser()">
-                        <h4 class="control-label">Información de usuario</h4>
-                        <fieldset class="form-group">
-                            <div class="row">
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.email.$valid && registerForm.email.$dirty, 'has-error': registerForm.email.$invalid && (registerForm.email.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="email"></i>Email</label>
-                                    <input type="text" name="email" id="email"
-                                           ng-model="ctrl.userMenu.newUser.email"
-                                           placeholder="Email..."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.nickname.$valid && registerForm.nickname.$dirty, 'has-error': registerForm.nickname.$invalid && (registerForm.nickname.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="nickname"></i>Nickname</label>
-                                    <input type="text" name="nickname" id="nickname"
-                                           ng-model="ctrl.userMenu.newUser.username"
-                                           placeholder="Nickname..."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                            </div>
-
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <div class="row">
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.first_name.$valid && registerForm.first_name.$dirty, 'has-error': registerForm.first_name.$invalid && (registerForm.first_name.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="first_name"></i>Nombres</label>
-                                    <input type="text" name="first_name" id="first_name"
-                                           ng-model="ctrl.userMenu.newUser.first_name"
-                                           placeholder="Nombres..."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.last_name.$valid && registerForm.last_name.$dirty, 'has-error': registerForm.last_name.$invalid && (registerForm.last_name.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="last_name"></i>Apellidos</label>
-                                    <input type="text" name="last_name" id="last_name"
-                                           ng-model="ctrl.userMenu.newUser.last_name"
-                                           placeholder="Apellidos..."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                            </div>
-
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <div class="row">
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.password1.$valid && registerForm.password1.$dirty, 'has-error': registerForm.password1.$invalid && (registerForm.password1.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="password1">Contraseña</label>
-                                    <input type="password" name="password1" id="password1"
-                                           ng-model="ctrl.userMenu.newUser.password1"
-                                           placeholder="Contraseña..."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                                <div class="col-md-6"
-                                     ng-class="{'has-success': registerForm.password2.$valid && registerForm.password2.$dirty, 'has-error': registerForm.password2.$invalid && (registerForm.password2.$dirty || registerForm.$submitted)}">
-                                    <label class="control-label" for="password2">Repita Contraseña</label>
-                                    <input type="password" name="password2" id="password2"
-                                           ng-model="ctrl.userMenu.newUser.password2"
-                                           placeholder="Repita contraseña...."
-                                           class="form-control"
-                                           ng-required="true"/>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label class="control-label" for="radioOne">Seleccione el tipo de cuenta</label>
-                            <br/>
-                            <label class="radio-inline">
-                                <input type="radio" value="False" id="radioOne" name="account"
-                                       ng-model="ctrl.userMenu.newUser.is_artist"
-                                       ng-required="true"
-                                       checked/>
-                                Personal
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" value="True" id="radioTwo" name="account"
-                                       ng-model="ctrl.userMenu.newUser.is_artist"
-                                       ng-required="true"/>
-                                Artista
-                            </label>
-                        </fieldset>
-                        <div ng-show="ctrl.userMenu.newUser.is_artist == 'True'">
-
-                            <p>
-                                Al registrarte como artísta aceptas que se promoverá el respeto por la propiedad
-                                intelectual
-                                de acuerdo a, nuestro <a href="#">Reglamento de Propiedad Intelectual</a>.</p>
-                            <fieldset class="form-group" ng-show="ctrl.userMenu.newUser.is_artist == 'True'">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="artistic_name">Nombre artístico</label>
-                                        <input type="text" name="artistic_name" id="artistic_name"
-                                               ng-model="ctrl.userMenu.newUser.artistic_name"
-                                               placeholder="Nombre artístico..."
-                                               class="form-control"
-                                               ng-required="true"/>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="birth_date">Fecha de nacimiento</label>
-                                        <input type="date" id="birth_date" name="birth_date" class="form-control"
-                                               ng-model="ctrl.userMenu.newUser.birth_date"
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group" >
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="country">País</label>
-                                        <input type="text" name="country" id="country"
-                                               ng-model="ctrl.userMenu.newUser.country"
-                                               placeholder="País..."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="city">Ciudad</label>
-                                        <input type="text" name="city" id="city"
-                                               ng-model="ctrl.userMenu.newUser.city"
-                                               placeholder="Ciudad...."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group" >
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="telephone_number">Número de teléfono o
-                                            celular</label>
-                                        <input type="text" name="telephone_number" id="telephone_number"
-                                               ng-model="ctrl.userMenu.newUser.telephone_number"
-                                               placeholder="Número de teléfono o celular..."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label" for="address">Dirección de residencia</label>
-                                        <input type="text" name="address" id="address"
-                                               ng-model="ctrl.userMenu.newUser.address"
-                                               placeholder="Dirección de residencia...."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label class="control-label" for="bank">Nombre Banco</label>
-                                        <input type="text" name="bank" id="bank"
-                                               ng-model="ctrl.userMenu.newUser.bank"
-                                               placeholder="Nombre Banco..."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="control-label" for="bank_account_type">Tipo de cuenta</label>
-                                        <select class="form-control user-menu" id="bank_account_type"
-                                                ng-model="ctrl.userMenu.newUser.bank_account_type" style="width:auto;">
-                                            <option value="">Tipo de cuenta</option>
-                                            <option value="AH">Ahorros</option>
-                                            <option value="CR">Corriente</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="control-label" for="bank_account_number">Número de cuenta</label>
-                                        <input type="text" name="bank_account_number" id="bank_account_number"
-                                               ng-model="ctrl.userMenu.newUser.bank_account_number"
-                                               placeholder="Número de cuenta...."
-                                               class="form-control"
-                                               ng-required="true"/>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                        </div>
-
-                        <fieldset class="form-group">
-
-                            <label class="checkbox-inline">
-                                <input
-                                        onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');"
-                                        type="checkbox" value="" id="terms" ng-required="true">
-                                <p>Al hacer clic en registrarse, usted acepta nuestros <a href="#">Términos y
-                                    Condiciones</a>.</p>
-                            </label>
-
-
-                            <button class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
-                                    type="submit">
-                                {{ 'general_register'  | translate }}
-                            </button>
-                            <button id="idBtnCancelar" type="button"
-                                    class="g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta"
-                                    data-dismiss="modal">
-                                {{ 'general_cancel'  | translate }}
-                            </button>
-                        </fieldset>
-
-
-                    </form>
+    <div class="fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right">
+        <div class="fr-cd-bar-menu-btn">
+            <div class="fr-cd-dropdown user-menu" uib-dropdown="" on-toggle="toggled(open)">
+                <a class="fr-cd-member-menu" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+            <span class="fr-cd-member">
+               <div>
+                 <span class="fr-cd-avatar" style="background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;">
+                     <span class="fr-wp-avatar-label"></span>
+                 </span>
+                 </div>
+            </span>
+                </a>
+                <div class="dropdown-menu fr-cursor-initial" role="menu" ng-click="$event.stopPropagation()">
+                    <div class="fr-member-avatar">
+                            <span class="fr-cd-avatar" style="background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;">
+                            </span>
+                    </div>
+                    <ul class="fr-member-information">
+                        <li>
+                            <span class="fr-cd-member-name">{{ ctrl.user.user.first_name }}</span>
+                        </li>
+                        <li>
+                            <a ng-click="ctrl.showEditPopup()">
+                                <span class="">{{ 'usermenu_edit_profile' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="fr-cd-member-dropdown">
+                        <li>
+                            <i18n></i18n>
+                        </li>
+                        <li>
+                            <a ng-click="ctrl.login.logout()">
+                                <i class="fr-icon fr-icon-log-out"></i>
+                                <span class="">{{ 'usermenu_logout' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+
+</div>

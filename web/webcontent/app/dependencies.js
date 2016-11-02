@@ -7,8 +7,8 @@ require('../app/appConfig.js');
  * Global styles
  * styles of controls should be in each module
  **/
-/*require('../app/styles/css/bootstrap.less');
- require('../app/styles/css/bootstrap-theme.less');*/
+require('../app/styles/css/bootstrap.less');
+require('../app/styles/css/bootstrap-theme.less');
 require('../app/styles/css/app.less');
 
 /**
@@ -18,12 +18,20 @@ require('../app/i18n/i18nModule.js');
 require('../app/i18n/i18nDirective.js');
 require('../app/i18n/i18nService.js');
 
+require('./notifications/notifierModule.js');
+require('./notifications/notifierInterceptorFactory.js');
+require('./notifications/notifierService.js');
+require('./notifications/growl.less');
+require('./notifications/notifier.less');
+
 /**
  * common Directives
  **/
 require('../app/commons/directives/commonDirectivesModule.js');
 require('../app/commons/directives/ripple/rippleDirective.js');
 require('../app/commons/directives/ripple/ripple.less');
+require('../app/commons/directives/masonry/masonry.js');
+require('../app/commons/directives/infiniteScroll/infiniteScrollDirective.js');
 
 
 /**
@@ -33,6 +41,7 @@ require('../app/commons/directives/ripple/ripple.less');
 require('../app/main/mainModule.js');
 require('../app/main/mainComponent.js');
 require('../app/main/main.less');
+require('../app/main/mainService.js');
 
 /**
  * REST API
@@ -40,6 +49,8 @@ require('../app/main/main.less');
 require('../app/restAPI/restAPIModule.js');
 require('../app/restAPI/tracksAPIService.js');
 require('../app/restAPI/userAPIService.js');
+require('../app/restAPI/artistAPIService.js');
+require('../app/restAPI/donationAPIService.js');
 
 /**
  * Registro de componentes nuevos
@@ -74,3 +85,82 @@ require('../app/player/player.less');
 require('../app/login/loginModule.js');
 require('../app/login/loginComponent.js');
 require('../app/login/login.less');
+require('../app/login/loginService.js');
+
+require('../app/userRegister/userRegisterModule.js');
+require('../app/userRegister/userRegisterComponent.js');
+require('../app/userRegister/userRegister.less');
+require('../app/userRegister/userRegisterService.js');
+
+require('../app/splash/splashModule.js');
+require('../app/splash/splashComponent.js');
+require('../app/splash/splash.less');
+
+require('../app/playerPicture/playerPictureModule.js');
+require('../app/playerPicture/playerPictureComponent.js');
+require('../app/playerPicture/playerPicture.less');
+
+require('../app/track/trackModule.js');
+require('../app/track/trackComponent.js');
+require('../app/track/track.less');
+
+require('../app/userEdit/userEditModule.js');
+require('../app/userEdit/userEditComponent.js');
+require('../app/userEdit/userEdit.less');
+require('../app/userEdit/userEditService.js');
+
+require('../app/userPassword/userPasswordModule.js');
+require('../app/userPassword/userPasswordComponent.js');
+require('../app/userPassword/userPassword.less');
+require('../app/userPassword/userPasswordService.js');
+
+require('../app/help/helpModule.js');
+require('../app/help/helpComponent.js');
+require('../app/help/helpService.js');
+require('../app/help/help.less');
+require('../app/help/helpItem/helpItemComponent.js');
+require('../app/help/helpItem/helpItem.less');
+
+require('../app/artist/artistModule.js');
+require('../app/artist/artistComponent.js');
+require('../app/artist/artist.less');
+require('../app/artist/artistService.js');
+
+require('../app/topTrackList/topTrackListModule.js');
+require('../app/topTrackList/topTrackListComponent.js');
+require('../app/topTrackList/topTrackList.less');
+
+require('../app/trackCreator/trackCreatorModule.js');
+require('../app/trackCreator/trackCreatorComponent.js');
+require('../app/trackCreator/trackCreator.less');
+
+require('../app/artist/artistModule.js');
+require('../app/artist/artistComponent.js');
+require('../app/artist/artist.less');
+require('../app/artist/artistService.js');
+
+require('../app/donation/donationModule.js');
+require('../app/donation/donationComponent.js');
+require('../app/donation/donation.less');
+require('../app/donation/donationService.js');
+
+require('../app/forgotPassword/forgotPasswordModule.js');
+require('../app/forgotPassword/forgotPasswordComponent.js');
+require('../app/forgotPassword/forgotPasswordService.js');
+require('../app/forgotPassword/forgotPassword.less');
+
+
+require('../app/scoreEditor/scoreEditorModule.js');
+require('../app/scoreEditor/scoreEditorComponent.js');
+require('../app/scoreEditor/scoreEditorService.js');
+require('../app/scoreEditor/scoreEditor.less');
+
+require('../app/restorePassword/restorePasswordModule.js');
+require('../app/restorePassword/restorePasswordComponent.js');
+require('../app/restorePassword/restorePassword.less');
+require('../app/restorePassword/restorePasswordService.js');
+
+require('../app/donationCreator/donationCreatorModule.js');
+require('../app/donationCreator/donationCreatorComponent.js');
+require('../app/donationCreator/donationCreatorService.js');
+require('../app/donationCreator/donationCreator.less');

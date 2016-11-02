@@ -7,14 +7,32 @@ var appModules = [
     'ngRoute',
     'restAPIModule',
     'i18nModule',
+    'masonry',
+    'ngFileUpload',
+    'notifierModule',
+    'splashModule',
     'commonDirectivesModule',
     'mainModule',
     'trackListModule',
+    'playerPictureModule',
     'userPanelModule',
     'userMenuModule',
     'searchModule',
     'playerModule',
-    'loginModule'
+    'loginModule',
+    'userRegisterModule',
+    'trackModule',
+    'userEditModule',
+    'userPasswordModule',
+    'helpModule',
+    'artistModule',
+    'topTrackListModule',
+    'trackCreatorModule',
+    'donationModule',
+    'forgotPasswordModule',
+    'scoreEditorModule',
+    'restorePasswordModule',
+    'donationCreatorModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

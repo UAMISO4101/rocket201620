@@ -9,9 +9,25 @@
   "general_register": "Registrarse",
   "general_cancel": "Cancelar",
   "general_sign_in": "Iniciar sesion",
-  "general_search": "Buscar",
+  "general_search": "Buscar por artista, obra musical ",
   "general_sign_in": "Iniciar sesión",
   "general_create_account": "Crear cuenta",
   "loading_tracks": "Cargando pistas",
-  "general_login": "Entrar"
+  "general_login": "Iniciar sesión",
+  "user_creation_success": "El usuario se ha creado exitosamente",
+  "user_creation_success_detail": "Ahora usted puede iniciar sesión en Freeven",
+  "user_creation_error": "Error creando el usuario, contacte al administrador",
+  "usermenu_edit_profile": "Editar perfil",
+  "top_tracks": "Pistas más escuchadas",
+  "usermenu_logout": "Salir",
+  "my_account": "Mi perfil",
+  "general_edit_user": "Guardar"   ,
+  "user_edit_success": "Actualización",
+  "user_edit_success_detail": "Actualización exitosa",
+  "general_psw_user":"Actualizar",
+  "usermenu_password_profile":"Cambiar contraseña",
+  "user_password_success_detail": "Contraseña actualizada"
+
+
+
 }

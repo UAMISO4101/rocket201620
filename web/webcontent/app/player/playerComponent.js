@@ -1,6 +1,6 @@
 var playerModule = angular.module('playerModule');
-var PlayerController = ['playerService', '$scope', 'trackListService',
-    function (playerService, $scope, trackListService) {
+var PlayerController = ['playerService', 'trackListService',
+    function (playerService,  trackListService) {
         var self = this;
         self.playerService = playerService;
 
@@ -11,9 +11,6 @@ var PlayerController = ['playerService', '$scope', 'trackListService',
         self.prev = function () {
             trackListService.prev();
         };
-        setInterval(function () {
-            $scope.$apply();
-        }, 500);
     }];
 
 playerModule.component('player', {

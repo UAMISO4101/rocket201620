@@ -1,41 +1,14 @@
-<div class="row track-list">
-    <div class="col-xs-4 col-sm-4 col-md-3"
-         ng-repeat="track in ctrl.trackList.tracks">
-        <div class="item">
-            <div class="item-media">
-                <a class="item-media-content img-responsive"
-                   style="background-image: url({{ track.image }})">
-                </a>
-                <div class="item-overlay center">
-                    <button ng-click="ctrl.play(track)" class="btn-playpause">Play</button>
-                </div>
-            </div>
-            <div class="item-info">
-                <div class="item-overlay bottom text-right">
-                    <a href="#" class="btn-favorite">
-                        <i class="icon icon-star-full"></i>
-                        <i class="icon icon-star-full"></i>
-                        <i class="icon icon-star-full"></i>
-                        <i class="icon icon-star-empty"></i>
-                        <i class="icon icon-star-empty"></i>
-                    </a>
-                    <a href="#" class="btn-more" data-toggle="dropdown">
-                        <i class="fa fa-ellipsis-h"></i>
-                    </a>
-                    <div class="dropdown-menu pull-right black lt"></div>
-                </div>
-                <div class="item-title text-ellipsis">
-                    <a>{{ track.name }}</a>
-                </div>
-                <div class="item-author text-sm text-ellipsis">
-                    <a class="text-muted">{{ track.description }}</a>
-                </div>
-                <span class="item-meta-stats text-xs">
-                 <i class="icon icon-star-full text-muted"></i> 4/5
-            </span>
-            </div>
-        </div>
+<div class="track-list">
+    <h3 class="track-list-title">Esto es lo mas reciente</h3>
+    <div class="row "
+         infinite-scroll='ctrl.trackList.nextPage()'
+         infinite-scroll-disabled='ctrl.trackList.busy'
+         infinite-scroll-distance='50'>
+        <track class="col-xs-4 col-sm-4 col-md-3"
+               fr-model="track"
+               ng-repeat="track in ctrl.trackList.tracks">
+        </track>
+        <br/>
+        <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
     </div>
-    <br/>
-    <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
 </div>

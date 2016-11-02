@@ -1,24 +1,40 @@
 var loginModule = angular.module('loginModule');
-var LoginController = ['$i18n', function ($i18n) {
-    /**
-     * Tip: add here only visual logic
-     */
-    //var self = this;
-    //self.login = function () {
-    //    console.log("entrando...");
-    //};
+var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', '$location',
+    'forgotPasswordService',
+    function ($i18n, loginService, $freevenModal, userMenuService, loginService, forgotPasswordService, $location) {
+        /**
+         * Tip: add here only visual logic
+         */
+        var self = this;
 
-    self.login = function(username, password) {
-      return $http.post('http://192.168.0.3:8000/rest-auth/login/', {
-          'username':username,
-          'password':password,
-      }).success(function(data) {
-          $http.defaults.headers.common.Authorization = 'Token '
-          + data.key; Account.authenticated = true;
-          console.log("login success", data)
-      })
-    };
-}];
+        self.userLogin = loginService;
+
+        self.userMenu = userMenuService;
+
+        self.forgotPassword = forgotPasswordService;
+
+
+        self.login = function () {
+            self.userLogin.login();
+        };
+
+        self.logout = function () {
+            self.userLogin.logout();
+            $location.path('/');
+        };
+
+        self.closeLoginPopup = function () {
+            $freevenModal.closePopup();
+        };
+
+        self.showRegisterPopup = function () {
+            self.userMenu.showRegisterPopup();
+        };
+
+        self.showForgotPasswordPopup = function () {
+            self.forgotPassword.showPopup();
+        };
+    }];
 
 loginModule.component('login', {
     transclude: true,

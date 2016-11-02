@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
@@ -7,5 +7,24 @@ urlpatterns = [
         views.user,
         name='user'
         ),
-    url(r'^login_user/$', views.login_user, name='login_user'),
+    url(
+        r'^artist/(?P<pk>\d+)',
+        views.ArtistRetrieveView.as_view(),
+        name='artist-detail'
+    ),
+    url(r'^update_profile/$', views.update_profile,
+        name='update_profile'),
+    url(r'^login/$', views.login_user, name='login'),
+    url(r'^donate', views.Donate.as_view(), name='donate'),
+    url(r'^donation-list/$', views.DonationList.as_view(), name='donate'),
+    url(r'^request_password_restore/$', views.request_password_restore,
+        name='request_password_restore'),
+    url(r'^change_password/$', views.change_password, name='change_password'),
+    url(r'^change_password_op/$', views.change_password_op,
+        name='change_password_op'),
+    url(
+        r'^user-detail/(?P<pk>\d+)/$',
+        views.UserRetrieveView.as_view(),
+        name='user-detail'
+    ),
 ]

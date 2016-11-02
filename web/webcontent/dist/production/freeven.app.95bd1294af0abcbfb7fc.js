@@ -53,14 +53,32 @@
 	    'ngRoute',
 	    'restAPIModule',
 	    'i18nModule',
+	    'masonry',
+	    'ngFileUpload',
+	    'notifierModule',
+	    'splashModule',
 	    'commonDirectivesModule',
 	    'mainModule',
 	    'trackListModule',
+	    'playerPictureModule',
 	    'userPanelModule',
 	    'userMenuModule',
 	    'searchModule',
 	    'playerModule',
-	    'loginModule'
+	    'loginModule',
+	    'userRegisterModule',
+	    'trackModule',
+	    'userEditModule',
+	    'userPasswordModule',
+	    'helpModule',
+	    'artistModule',
+	    'topTrackListModule',
+	    'trackCreatorModule',
+	    'donationModule',
+	    'forgotPasswordModule',
+	    'scoreEditorModule',
+	    'restorePasswordModule',
+	    'donationCreatorModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -76,80 +94,169 @@
 	__webpack_require__(2);
 	__webpack_require__(3);
 
-	__webpack_require__(23);
+	__webpack_require__(25);
 
 	/**
 	 * Global styles
 	 * styles of controls should be in each module
 	 **/
-	/*require('../app/styles/css/bootstrap.less');
-	 require('../app/styles/css/bootstrap-theme.less');*/
-	__webpack_require__(26);
+	__webpack_require__(28);
+	__webpack_require__(37);
+	__webpack_require__(39);
 
 	/**
 	 * Internationalization = i18n
 	 **/
-	__webpack_require__(30);
-	__webpack_require__(31);
-	__webpack_require__(33);
+	__webpack_require__(41);
+	__webpack_require__(42);
+	__webpack_require__(44);
+
+	__webpack_require__(45);
+	__webpack_require__(46);
+	__webpack_require__(47);
+	__webpack_require__(48);
+	__webpack_require__(50);
 
 	/**
 	 * common Directives
 	 **/
-	__webpack_require__(34);
-	__webpack_require__(35);
-	__webpack_require__(36);
+	__webpack_require__(52);
+	__webpack_require__(53);
+	__webpack_require__(54);
+	__webpack_require__(56);
+	__webpack_require__(57);
 
 
 	/**
 	 * mainComponent Module
 	 **/
 
-	__webpack_require__(38);
-	__webpack_require__(39);
-	__webpack_require__(41);
+	__webpack_require__(58);
+	__webpack_require__(59);
+	__webpack_require__(61);
+	__webpack_require__(69);
 
 	/**
 	 * REST API
 	 */
-	__webpack_require__(43);
-	__webpack_require__(44);
-	__webpack_require__(45);
+	__webpack_require__(70);
+	__webpack_require__(71);
+	__webpack_require__(72);
+	__webpack_require__(73);
+	__webpack_require__(74);
 
 	/**
 	 * Registro de componentes nuevos
 	 */
 
-	__webpack_require__(46);
-
-	__webpack_require__(47);
-	__webpack_require__(48);
-	__webpack_require__(50);
-	__webpack_require__(51);
-
-	__webpack_require__(53);
-	__webpack_require__(54);
-	__webpack_require__(56);
-
-	__webpack_require__(58);
-	__webpack_require__(59);
-	__webpack_require__(61);
-	__webpack_require__(63);
-
-
-	__webpack_require__(64);
-	__webpack_require__(65);
-	__webpack_require__(67);
-
-	__webpack_require__(69);
-	__webpack_require__(70);
-	__webpack_require__(72);
-	__webpack_require__(73);
-
 	__webpack_require__(75);
-	__webpack_require__(76);
-	__webpack_require__(78);
 
+	__webpack_require__(76);
+	__webpack_require__(77);
+	__webpack_require__(79);
+	__webpack_require__(80);
+
+	__webpack_require__(82);
+	__webpack_require__(83);
+	__webpack_require__(85);
+
+	__webpack_require__(87);
+	__webpack_require__(88);
+	__webpack_require__(90);
+	__webpack_require__(92);
+
+
+	__webpack_require__(93);
+	__webpack_require__(94);
+	__webpack_require__(96);
+
+	__webpack_require__(98);
+	__webpack_require__(99);
+	__webpack_require__(101);
+	__webpack_require__(102);
+
+	__webpack_require__(104);
+	__webpack_require__(105);
+	__webpack_require__(107);
+	__webpack_require__(109);
+
+	__webpack_require__(110);
+	__webpack_require__(111);
+	__webpack_require__(113);
+	__webpack_require__(115);
+
+	__webpack_require__(116);
+	__webpack_require__(117);
+	__webpack_require__(119);
+
+	__webpack_require__(122);
+	__webpack_require__(123);
+	__webpack_require__(125);
+
+	__webpack_require__(127);
+	__webpack_require__(128);
+	__webpack_require__(130);
+
+	__webpack_require__(132);
+	__webpack_require__(133);
+	__webpack_require__(135);
+	__webpack_require__(137);
+
+	__webpack_require__(138);
+	__webpack_require__(139);
+	__webpack_require__(141);
+	__webpack_require__(143);
+
+	__webpack_require__(144);
+	__webpack_require__(145);
+	__webpack_require__(147);
+	__webpack_require__(148);
+	__webpack_require__(150);
+	__webpack_require__(152);
+
+	__webpack_require__(154);
+	__webpack_require__(155);
+	__webpack_require__(158);
+	__webpack_require__(160);
+
+	__webpack_require__(161);
+	__webpack_require__(162);
+	__webpack_require__(164);
+
+	__webpack_require__(166);
+	__webpack_require__(167);
+	__webpack_require__(170);
+
+	__webpack_require__(154);
+	__webpack_require__(155);
+	__webpack_require__(158);
+	__webpack_require__(160);
+
+	__webpack_require__(172);
+	__webpack_require__(173);
+	__webpack_require__(175);
+	__webpack_require__(177);
+
+	__webpack_require__(178);
+	__webpack_require__(179);
+	__webpack_require__(181);
+	__webpack_require__(182);
+
+
+	__webpack_require__(184);
+	__webpack_require__(185);
+	__webpack_require__(187);
+	__webpack_require__(188);
+
+	__webpack_require__(190);
+	__webpack_require__(191);
+	__webpack_require__(193);
+	__webpack_require__(195);
+
+	__webpack_require__(196);
+	__webpack_require__(197);
+	__webpack_require__(199);
+	__webpack_require__(200);
 
 /***/ },
 /* 2 */
@@ -175,6 +282,7 @@
 	__webpack_require__(20);
 	__webpack_require__(21);
 	__webpack_require__(22);
+	__webpack_require__(23);
 
 /***/ },
 /* 4 */
@@ -61677,29 +61785,570 @@
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(24);
+
+	module.exports = 'ngAudio';
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	'use strict';
+	angular.module('ngAudio', [])
+	.directive('ngAudio', ['$compile', '$q', 'ngAudio', function($compile, $q, ngAudio) {
+	    return {
+	        restrict: 'AEC',
+	        scope: {
+	            volume: '=',
+	            start: '=',
+	            currentTime: '=',
+	            loop: '=',
+	            clickPlay: '=',
+	            disablePreload:'='
+	            //ngAudio:'='
+	        },
+	        controller: ['$scope', '$attrs', '$element', '$timeout', function($scope, $attrs, $element, $timeout) {
+
+	            /* Loads the sound from destination */
+	            var audio;
+	            function initSound(){
+	                audio = ngAudio.load($attrs.ngAudio, $scope);
+	                /* Add audio to local scope for modification with nested inputs */
+	                $scope.$audio = audio;
+
+	                /* Remove watching features for improved performance */
+	                audio.unbind();
+	            }
+
+	            if (!$scope.disablePreload){
+	                initSound();
+	            }
+
+
+	            $element.on('click', function() {
+	                if ($scope.clickPlay === false) {
+	                    return;
+	                }
+
+	                if ($scope.disablePreload){
+	                    initSound();
+	                }
+
+	                /* iOS workaround: Call the play method directly in listener function */
+	                audio.audio.play();
+
+	                /* Set volume to $scope volume if it exists, or default to audio's current value */
+	                audio.volume = $scope.volume || audio.volume;
+	                audio.loop = $scope.loop;
+	                audio.currentTime = $scope.start || 0;
+
+	                /* Fixes a bug with Firefox (???) */
+	                $timeout(function() {
+	                    audio.play();
+	                }, 5);
+	            });
+
+	            $element.on('$destroy', function() {
+	                audio.destroy();
+	            });
+	        }]
+	    };
+	}])
+
+	.directive('ngAudioHover', ['$compile', '$q', 'ngAudio', function($compile, $q, ngAudio) {
+	    return {
+	        restrict: 'AEC',
+	        controller: ['$scope', '$attrs', '$element', '$timeout', function($scope, $attrs, $element, $timeout) {
+
+	            var audio = ngAudio.load($attrs.ngAudioHover, $scope);
+
+	            $element.on('mouseover rollover hover', function() {
+
+	                /* iOS workaround: Call the play method directly in listener function */
+	                audio.audio.play();
+
+	                audio.volume = $attrs.volumeHover || audio.volume;
+	                audio.loop = $attrs.loop;
+	                audio.currentTime = $attrs.startHover || 0;
+
+	            });
+
+	            $element.on('$destroy', function() {
+	                audio.destroy();
+	            });
+	        }]
+	    };
+	}])
+
+	.service('localAudioFindingService', ['$q', function($q) {
+
+	    this.find = function(id) {
+	        var deferred = $q.defer();
+	        var $sound = document.getElementById(id);
+	        if ($sound) {
+	            deferred.resolve($sound);
+	        } else {
+	            deferred.reject(id);
+	        }
+
+	        return deferred.promise;
+	    };
+	}])
+
+	.service('remoteAudioFindingService', ['$q', function($q) {
+
+	    this.find = function(url) {
+	        var deferred = $q.defer();
+	        var audio = new Audio();
+
+	        audio.addEventListener('error', function() {
+	            deferred.reject();
+	        });
+
+	        audio.addEventListener('loadstart', function() {
+	            deferred.resolve(audio);
+	        });
+
+	        // bugfix for chrome...
+	        setTimeout(function() {
+	            audio.src = url;
+	        }, 1);
+
+	        return deferred.promise;
+
+	    };
+	}])
+
+	.service('cleverAudioFindingService', ['$q', 'localAudioFindingService', 'remoteAudioFindingService', function($q, localAudioFindingService, remoteAudioFindingService) {
+	    this.find = function(id) {
+	        var deferred = $q.defer();
+
+	        id = id.replace('|', '/');
+
+	        localAudioFindingService.find(id)
+	            .then(deferred.resolve, function() {
+	                return remoteAudioFindingService.find(id);
+	            })
+	            .then(deferred.resolve, deferred.reject);
+
+	        return deferred.promise;
+	    };
+	}])
+
+	.value('ngAudioGlobals', {
+	    muting: false,
+	    performance: 25,
+	    unlock: true,
+	    volume:1
+	})
+
+	.factory('NgAudioObject', ['cleverAudioFindingService', '$rootScope', '$interval', '$timeout', 'ngAudioGlobals', function(cleverAudioFindingService, $rootScope, $interval, $timeout, ngAudioGlobals) {
+	    return function(id, scope) {
+
+	        function twiddle(){
+	            audio.play();
+	            audio.pause();
+	            window.removeEventListener("click",twiddle);
+	        }
+
+	        var $audioWatch,
+	            $intervalWatch,
+	            $willPlay = false,
+	            $willPause = false,
+	            $willRestart = false,
+	            $willChangePlaybackRate = false,
+	            $newPlaybackRate = false,
+	            $volumeToSet,
+	            $looping,
+	            $isMuting = false,
+	            $observeProperties = true,
+	            $destroyed = false,
+	            $scope = scope || $rootScope,
+	            audio,
+	            audioObject = this;
+
+	        this.id = id;
+	        this.safeId = id.replace('/', '|');
+	        this.loop = 0;
+
+	        this.unbind = function() {
+	            $observeProperties = false;
+	        };
+
+	        this.play = function() {
+	            $willPlay = true;
+	            return this;
+	        };
+
+	        var completeListeners = [];
+	        this.complete = function(callback){
+	            completeListeners.push(callback);
+	        }
+
+	        this.pause = function() {
+	            $willPause = true;
+	        };
+
+	        this.restart = function() {
+	            $willRestart = true;
+	        };
+
+	        this.stop = function() {
+	            this.restart();
+	        };
+
+	        this.setVolume = function(volume) {
+	            $volumeToSet = volume;
+	        };
+
+	        this.setPlaybackRate = function(rate) {
+	            $newPlaybackRate = rate;
+	            $willChangePlaybackRate = true;
+	        };
+
+	        this.setMuting = function(muting) {
+	            $isMuting = muting;
+	        };
+
+	        this.setProgress = function(progress) {
+	            if (audio && audio.duration && isFinite(progress)) {
+	                audio.currentTime = audio.duration * progress;
+	            }
+	        };
+
+	        this.setCurrentTime = function(currentTime) {
+	            if (audio && audio.duration) {
+	                audio.currentTime = currentTime;
+	            }
+	        };
+
+	        this.destroy = $destroy;
+
+	        $scope.$on('$destroy', function() {
+	            $destroy();
+	        });
+
+	        function $destroy() {
+	            if (!$destroyed) {
+	                if (interval) {
+	                    $interval.cancel(interval);
+	                }
+	                if ($intervalWatch) {
+	                    $intervalWatch();
+	                }
+	                if ($audioWatch) {
+	                    $audioWatch();
+	                }
+	                $destroyed = true;
+	            }
+	        }
+
+	        function $setWatch() {
+	            if ($destroyed) {
+	                return;
+	            }
+	            $audioWatch = $scope.$watch(function() {
+	                return {
+	                    volume: audioObject.volume,
+	                    currentTime: audioObject.currentTime,
+	                    progress: audioObject.progress,
+	                    muting: audioObject.muting,
+	                    loop: audioObject.loop,
+	                    playbackRate: audioObject.playbackRate,
+	                    globalVolume: ngAudioGlobals.volume
+	                };
+	            }, function(newValue, oldValue) {
+	                //console.log("ngaudio watch callback for: " + audioObject.id);
+	                if (newValue.currentTime !== oldValue.currentTime) {
+	                    audioObject.setCurrentTime(newValue.currentTime);
+	                }
+
+	                if (newValue.progress !== oldValue.progress) {
+	                    audioObject.setProgress(newValue.progress);
+	                }
+	                if (newValue.volume !== oldValue.volume) {
+	                    audioObject.setVolume(newValue.volume);
+	                }
+
+	                if (newValue.playbackRate !== oldValue.playbackRate) {
+	                    audioObject.setPlaybackRate(newValue.playbackRate);
+	                }
+
+	                if (newValue.globalVolume !== oldValue.globalVolume) {
+	                    if (newValue.globalVolume === 0) {
+	                        audioObject.setMuting(true);
+	                    } else {
+	                        audioObject.setMuting(false);
+	                        audioObject.setVolume(newValue.globalVolume);
+	                    }
+	                }
+
+
+
+	                $looping = newValue.loop;
+
+	                if (newValue.muting !== oldValue.muting) {
+	                    audioObject.setMuting(newValue.muting);
+	                }
+	            }, true);
+	        }
+
+	        cleverAudioFindingService.find(id)
+	            .then(function(nativeAudio) {
+	                audio = nativeAudio;
+	                if (ngAudioGlobals.unlock) {
+
+	                    window.addEventListener("click", twiddle);
+
+	                    audio.addEventListener('playing', function() {
+	                        window.removeEventListener("click",twiddle);
+	                    });
+
+	                }
+
+	                audio.addEventListener('canplay', function() {
+	                    audioObject.canPlay = true;
+	                });
+
+	            }, function(error) {
+	                audioObject.error = true;
+	                console.warn(error);
+	            });
+
+
+	        var interval = $interval(checkWatchers, ngAudioGlobals.performance);
+	        $intervalWatch = $scope.$watch(function(){
+	            return ngAudioGlobals.performance;
+	        },function(){
+	            $interval.cancel(interval);
+	            interval = $interval(checkWatchers, ngAudioGlobals.performance);
+	        })
+
+	        function checkWatchers() {
+	            if ($audioWatch) {
+	                $audioWatch();
+	            }
+	            if (audio) {
+
+	                if ($isMuting || ngAudioGlobals.muting) {
+	                    audio.volume = 0;
+	                } else {
+	                    audio.volume = audioObject.volume !== undefined ? audioObject.volume : 1;
+	                }
+
+	                if ($willPlay) {
+	                    audio.play();
+	                    $willPlay = false;
+	                }
+
+	                if ($willRestart) {
+	                    audio.pause();
+	                    audio.currentTime = 0;
+	                    $willRestart = false;
+	                }
+
+	                if ($willPause) {
+	                    audio.pause();
+	                    $willPause = false;
+	                }
+
+	                if ($willChangePlaybackRate) {
+	                    audio.playbackRate = $newPlaybackRate;
+	                    $willChangePlaybackRate = false;
+	                }
+
+	                if ($volumeToSet) {
+	                    audio.volume = $volumeToSet;
+	                    $volumeToSet = undefined;
+	                }
+
+	                if ($observeProperties) {
+	                    audioObject.currentTime = audio.currentTime;
+	                    audioObject.duration = audio.duration;
+	                    audioObject.remaining = audio.duration - audio.currentTime;
+						audioObject.progress = 0; //We set initial value to 0
+	                    audioObject.paused = audio.paused;
+	                    audioObject.src = audio.src;
+
+						//After we check if progress is bigger than 0, and we set
+	                    var tempProgress = (audio.currentTime / audio.duration);
+	                    if(tempProgress  > 0 ){
+	                      audioObject.progress = tempProgress;
+	                    }
+
+	                    if (audioObject.currentTime >= audioObject.duration) {
+	                        completeListeners.forEach(function(listener){
+	                            listener(audioObject);
+	                        })
+	                    }
+
+	                    if ($looping && audioObject.currentTime >= audioObject.duration) {
+	                        if ($looping !== true) {
+	                            $looping--;
+	                            audioObject.loop--;
+	                            // if (!$looping) return;
+	                        }
+	                        audioObject.setCurrentTime(0);
+	                        audioObject.play();
+
+	                    }
+	                }
+
+	                if (!$isMuting && !ngAudioGlobals.muting) {
+	                    audioObject.volume = audio.volume;
+	                }
+
+	                audioObject.audio = audio;
+	            }
+
+	            $setWatch();
+	        }
+	    };
+	}])
+	.service('ngAudio', ['NgAudioObject', 'ngAudioGlobals', function(NgAudioObject, ngAudioGlobals) {
+	    this.play = function(id, scope) {
+
+	        var audio = new NgAudioObject(id, scope);
+	        audio.play();
+	        return audio;
+	    };
+
+	    this.load = function(id, scope) {
+	        return new NgAudioObject(id, scope);
+	    };
+
+	    this.mute = function() {
+	        ngAudioGlobals.muting = true;
+	    };
+
+	    this.unmute = function() {
+	        ngAudioGlobals.muting = false;
+	    };
+
+	    this.toggleMute = function() {
+	        ngAudioGlobals.muting = !ngAudioGlobals.muting;
+	    };
+
+	    this.setUnlock = function(unlock) {
+	      ngAudioGlobals.unlock = unlock;
+	    };
+
+	    this.setGlobalVolume = function(globalVolume) {
+	      ngAudioGlobals.volume = globalVolume;
+	    };
+	}])
+	.filter("trackTime", function(){
+	    /* Conveniently takes a number and returns the track time */
+
+	    return function(input){
+
+	        var totalSec = Math.floor(input | 0);
+
+	        var output = "";
+	        var hours = 0;
+	        var minutes = 0;
+	        var seconds = 0;
+
+	        if (totalSec > 3599) {
+
+	            hours = Math.floor(totalSec / 3600);
+	            minutes = Math.floor((totalSec - (hours * 3600)) / 60);
+	            seconds = (totalSec - ((minutes * 60) + (hours * 3600)));
+
+	            if (hours.toString().length == 1) {
+	                hours = "0" + (Math.floor(totalSec / 3600)).toString();
+	            }
+
+	            if (minutes.toString().length == 1) {
+	                minutes = "0" + (Math.floor((totalSec - (hours * 3600)) / 60)).toString();
+	            }
+
+	            if (seconds.toString().length == 1) {
+	                seconds = "0" + (totalSec - ((minutes * 60) + (hours * 3600))).toString();
+	            }
+
+	            output = hours + ":" + minutes + ":" + seconds;
+
+	        } else if (totalSec > 59) {
+
+	            minutes = Math.floor(totalSec / 60);
+	            seconds = totalSec - (minutes * 60);
+
+	            if (minutes.toString().length == 1) {
+	                 minutes = "0" + (Math.floor(totalSec / 60)).toString();
+	            }
+
+	            if (seconds.toString().length == 1) {
+	                 seconds = "0" + (totalSec - (minutes * 60)).toString();
+	            }
+
+	            output = minutes + ":" + seconds;
+
+	        } else {
+
+	            seconds = totalSec;
+
+	            if (seconds.toString().length == 1) {
+	                seconds = "0" + (totalSec).toString();
+	            }
+
+	            output = totalSec + "s";
+
+	        }
+
+	        if (typeof Number.isNaN === "function" && Number.isNaN(output)){
+	            debugger;
+	        }
+
+	        return output;
+	    }
+	});
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
 	(function (window, document) {
 	  'use strict';
 	  var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
 	  angular.extend(appConfigurations, {
 	    'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
 	      function configuration($routeProvider, $httpProvider, $translateProvider) {
-	        var languageEs = __webpack_require__(24);
-	        var languageEn = __webpack_require__(25);
+	        var languageEs = __webpack_require__(26);
+	        var languageEn = __webpack_require__(27);
 	        $translateProvider.translations('es-co', languageEs);
 	        $translateProvider.translations('en-us', languageEn);
-	        $translateProvider.preferredLanguage('en-us');
+	        $translateProvider.preferredLanguage('en-co');
 	        $translateProvider.useSanitizeValueStrategy(null);
 	        $routeProvider.when('/', {
-	          template: '<main title ="Main"> </main>'
+	          template: '<track-list> </track-list>'
+	        });
+	        $routeProvider.when('/artist/:idArtist', {
+	          template: '<artist></artist>'
+	        });
+	        $routeProvider.when('/top', {
+	          template: '<top-track-list></top-track-list>'
+	        });
+	         $routeProvider.when('/upload', {
+	          template: '<track-creator></track-creator>'
+	        });
+	          $routeProvider.when('/donation', {
+	          template: '<donation></donation>'
+	        });
+	        $routeProvider.when('/user/pass/restore/yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw/:idUser', {
+	          template: '<restore-password></restore-password>'
 	        });
 	        $routeProvider.otherwise({redirectTo: '/'});
+	        $httpProvider.interceptors.push('notifierInterceptor');
 	      }]
 	  });
 	})(window, document);
 
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -61713,14 +62362,27 @@
 		"general_register": "Registrarse",
 		"general_cancel": "Cancelar",
 		"general_sign_in": "Iniciar sesión",
-		"general_search": "Buscar",
+		"general_search": "Buscar por artista, obra musical ",
 		"general_create_account": "Crear cuenta",
 		"loading_tracks": "Cargando pistas",
-		"general_login": "Entrar"
+		"general_login": "Iniciar sesión",
+		"user_creation_success": "El usuario se ha creado exitosamente",
+		"user_creation_success_detail": "Ahora usted puede iniciar sesión en Freeven",
+		"user_creation_error": "Error creando el usuario, contacte al administrador",
+		"usermenu_edit_profile": "Editar perfil",
+		"top_tracks": "Pistas más escuchadas",
+		"usermenu_logout": "Salir",
+		"my_account": "Mi perfil",
+		"general_edit_user": "Guardar",
+		"user_edit_success": "Actualización",
+		"user_edit_success_detail": "Actualización exitosa",
+		"general_psw_user": "Actualizar",
+		"usermenu_password_profile": "Cambiar contraseña",
+		"user_password_success_detail": "Contraseña actualizada"
 	};
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -61737,27 +62399,40 @@
 		"general_create_account": "Create account",
 		"general_search": "Search",
 		"loading_tracks": "Loading tracks",
-		"general_login": "Login"
+		"general_login": "Login",
+		"user_creation_success": "User created success",
+		"user_creation_success_detail": "Now you can login in Freeven",
+		"user_creation_error": "Error creating user",
+		"top_tracks": "Pistas más escuchadas",
+		"usermenu_logout": "Logout",
+		"my_account": "My profile",
+		"general_edit_user": "Save",
+		"user_edit_success": "Update",
+		"user_edit_success_detail": "Success update",
+		"usermenu_edit_profile": "Edit profile",
+		"general_psw_user": "Update password",
+		"usermenu_password_profile": "Change password",
+		"user_password_success_detail": "Success update password"
 	};
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(27);
+	var content = __webpack_require__(29);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./app.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./app.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./bootstrap.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./bootstrap.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -61767,21 +62442,21 @@
 	}
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "/*add here the global styles*/\n", ""]);
+	exports.push([module.id, "/*!\n * Bootstrap v3.3.6 (http://getbootstrap.com)\n * Copyright 2011-2015 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\nhtml {\n  font-family: sans-serif;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n}\nbody {\n  margin: 0;\n}\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline;\n}\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n[hidden],\ntemplate {\n  display: none;\n}\na {\n  background-color: transparent;\n}\na:active,\na:hover {\n  outline: 0;\n}\nabbr[title] {\n  border-bottom: 1px dotted;\n}\nb,\nstrong {\n  font-weight: bold;\n}\ndfn {\n  font-style: italic;\n}\nh1 {\n  margin: .67em 0;\n  font-size: 2em;\n}\nmark {\n  color: #000;\n  background: #ff0;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\nimg {\n  border: 0;\n}\nsvg:not(:root) {\n  overflow: hidden;\n}\nfigure {\n  margin: 1em 40px;\n}\nhr {\n  height: 0;\n  box-sizing: content-box;\n}\npre {\n  overflow: auto;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  margin: 0;\n  font: inherit;\n  color: inherit;\n}\nbutton {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer;\n}\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default;\n}\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  padding: 0;\n  border: 0;\n}\ninput {\n  line-height: normal;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\ninput[type=\"search\"] {\n  box-sizing: content-box;\n  -webkit-appearance: textfield;\n}\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\nfieldset {\n  padding: .35em .625em .75em;\n  margin: 0 2px;\n  border: 1px solid #c0c0c0;\n}\nlegend {\n  padding: 0;\n  border: 0;\n}\ntextarea {\n  overflow: auto;\n}\noptgroup {\n  font-weight: bold;\n}\ntable {\n  border-spacing: 0;\n  border-collapse: collapse;\n}\ntd,\nth {\n  padding: 0;\n}\n/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */\n@media print {\n  *,\n  *:before,\n  *:after {\n    color: #000 !important;\n    text-shadow: none !important;\n    background: transparent !important;\n    box-shadow: none !important;\n  }\n  a,\n  a:visited {\n    text-decoration: underline;\n  }\n  a[href]:after {\n    content: \" (\" attr(href) \")\";\n  }\n  abbr[title]:after {\n    content: \" (\" attr(title) \")\";\n  }\n  a[href^=\"#\"]:after,\n  a[href^=\"javascript:\"]:after {\n    content: \"\";\n  }\n  pre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n  }\n  thead {\n    display: table-header-group;\n  }\n  tr,\n  img {\n    page-break-inside: avoid;\n  }\n  img {\n    max-width: 100% !important;\n  }\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n  }\n  h2,\n  h3 {\n    page-break-after: avoid;\n  }\n  .navbar {\n    display: none;\n  }\n  .btn > .caret,\n  .dropup > .btn > .caret {\n    border-top-color: #000 !important;\n  }\n  .label {\n    border: 1px solid #000;\n  }\n  .table {\n    border-collapse: collapse !important;\n  }\n  .table td,\n  .table th {\n    background-color: #fff !important;\n  }\n  .table-bordered th,\n  .table-bordered td {\n    border: 1px solid #ddd !important;\n  }\n}\n@font-face {\n  font-family: 'Glyphicons Halflings';\n  src: url(" + __webpack_require__(31) + ");\n  src: url(" + __webpack_require__(31) + "?#iefix) format('embedded-opentype'), url(" + __webpack_require__(32) + ") format('woff2'), url(" + __webpack_require__(33) + ") format('woff'), url(" + __webpack_require__(34) + ") format('truetype'), url(" + __webpack_require__(35) + "#glyphicons_halflingsregular) format('svg');\n}\n.glyphicon {\n  position: relative;\n  top: 1px;\n  display: inline-block;\n  font-family: 'Glyphicons Halflings';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.glyphicon-asterisk:before {\n  content: \"*\";\n}\n.glyphicon-plus:before {\n  content: \"+\";\n}\n.glyphicon-euro:before,\n.glyphicon-eur:before {\n  content: \"\\20AC\";\n}\n.glyphicon-minus:before {\n  content: \"\\2212\";\n}\n.glyphicon-cloud:before {\n  content: \"\\2601\";\n}\n.glyphicon-envelope:before {\n  content: \"\\2709\";\n}\n.glyphicon-pencil:before {\n  content: \"\\270F\";\n}\n.glyphicon-glass:before {\n  content: \"\\E001\";\n}\n.glyphicon-music:before {\n  content: \"\\E002\";\n}\n.glyphicon-search:before {\n  content: \"\\E003\";\n}\n.glyphicon-heart:before {\n  content: \"\\E005\";\n}\n.glyphicon-star:before {\n  content: \"\\E006\";\n}\n.glyphicon-star-empty:before {\n  content: \"\\E007\";\n}\n.glyphicon-user:before {\n  content: \"\\E008\";\n}\n.glyphicon-film:before {\n  content: \"\\E009\";\n}\n.glyphicon-th-large:before {\n  content: \"\\E010\";\n}\n.glyphicon-th:before {\n  content: \"\\E011\";\n}\n.glyphicon-th-list:before {\n  content: \"\\E012\";\n}\n.glyphicon-ok:before {\n  content: \"\\E013\";\n}\n.glyphicon-remove:before {\n  content: \"\\E014\";\n}\n.glyphicon-zoom-in:before {\n  content: \"\\E015\";\n}\n.glyphicon-zoom-out:before {\n  content: \"\\E016\";\n}\n.glyphicon-off:before {\n  content: \"\\E017\";\n}\n.glyphicon-signal:before {\n  content: \"\\E018\";\n}\n.glyphicon-cog:before {\n  content: \"\\E019\";\n}\n.glyphicon-trash:before {\n  content: \"\\E020\";\n}\n.glyphicon-home:before {\n  content: \"\\E021\";\n}\n.glyphicon-file:before {\n  content: \"\\E022\";\n}\n.glyphicon-time:before {\n  content: \"\\E023\";\n}\n.glyphicon-road:before {\n  content: \"\\E024\";\n}\n.glyphicon-download-alt:before {\n  content: \"\\E025\";\n}\n.glyphicon-download:before {\n  content: \"\\E026\";\n}\n.glyphicon-upload:before {\n  content: \"\\E027\";\n}\n.glyphicon-inbox:before {\n  content: \"\\E028\";\n}\n.glyphicon-play-circle:before {\n  content: \"\\E029\";\n}\n.glyphicon-repeat:before {\n  content: \"\\E030\";\n}\n.glyphicon-refresh:before {\n  content: \"\\E031\";\n}\n.glyphicon-list-alt:before {\n  content: \"\\E032\";\n}\n.glyphicon-lock:before {\n  content: \"\\E033\";\n}\n.glyphicon-flag:before {\n  content: \"\\E034\";\n}\n.glyphicon-headphones:before {\n  content: \"\\E035\";\n}\n.glyphicon-volume-off:before {\n  content: \"\\E036\";\n}\n.glyphicon-volume-down:before {\n  content: \"\\E037\";\n}\n.glyphicon-volume-up:before {\n  content: \"\\E038\";\n}\n.glyphicon-qrcode:before {\n  content: \"\\E039\";\n}\n.glyphicon-barcode:before {\n  content: \"\\E040\";\n}\n.glyphicon-tag:before {\n  content: \"\\E041\";\n}\n.glyphicon-tags:before {\n  content: \"\\E042\";\n}\n.glyphicon-book:before {\n  content: \"\\E043\";\n}\n.glyphicon-bookmark:before {\n  content: \"\\E044\";\n}\n.glyphicon-print:before {\n  content: \"\\E045\";\n}\n.glyphicon-camera:before {\n  content: \"\\E046\";\n}\n.glyphicon-font:before {\n  content: \"\\E047\";\n}\n.glyphicon-bold:before {\n  content: \"\\E048\";\n}\n.glyphicon-italic:before {\n  content: \"\\E049\";\n}\n.glyphicon-text-height:before {\n  content: \"\\E050\";\n}\n.glyphicon-text-width:before {\n  content: \"\\E051\";\n}\n.glyphicon-align-left:before {\n  content: \"\\E052\";\n}\n.glyphicon-align-center:before {\n  content: \"\\E053\";\n}\n.glyphicon-align-right:before {\n  content: \"\\E054\";\n}\n.glyphicon-align-justify:before {\n  content: \"\\E055\";\n}\n.glyphicon-list:before {\n  content: \"\\E056\";\n}\n.glyphicon-indent-left:before {\n  content: \"\\E057\";\n}\n.glyphicon-indent-right:before {\n  content: \"\\E058\";\n}\n.glyphicon-facetime-video:before {\n  content: \"\\E059\";\n}\n.glyphicon-picture:before {\n  content: \"\\E060\";\n}\n.glyphicon-map-marker:before {\n  content: \"\\E062\";\n}\n.glyphicon-adjust:before {\n  content: \"\\E063\";\n}\n.glyphicon-tint:before {\n  content: \"\\E064\";\n}\n.glyphicon-edit:before {\n  content: \"\\E065\";\n}\n.glyphicon-share:before {\n  content: \"\\E066\";\n}\n.glyphicon-check:before {\n  content: \"\\E067\";\n}\n.glyphicon-move:before {\n  content: \"\\E068\";\n}\n.glyphicon-step-backward:before {\n  content: \"\\E069\";\n}\n.glyphicon-fast-backward:before {\n  content: \"\\E070\";\n}\n.glyphicon-backward:before {\n  content: \"\\E071\";\n}\n.glyphicon-play:before {\n  content: \"\\E072\";\n}\n.glyphicon-pause:before {\n  content: \"\\E073\";\n}\n.glyphicon-stop:before {\n  content: \"\\E074\";\n}\n.glyphicon-forward:before {\n  content: \"\\E075\";\n}\n.glyphicon-fast-forward:before {\n  content: \"\\E076\";\n}\n.glyphicon-step-forward:before {\n  content: \"\\E077\";\n}\n.glyphicon-eject:before {\n  content: \"\\E078\";\n}\n.glyphicon-chevron-left:before {\n  content: \"\\E079\";\n}\n.glyphicon-chevron-right:before {\n  content: \"\\E080\";\n}\n.glyphicon-plus-sign:before {\n  content: \"\\E081\";\n}\n.glyphicon-minus-sign:before {\n  content: \"\\E082\";\n}\n.glyphicon-remove-sign:before {\n  content: \"\\E083\";\n}\n.glyphicon-ok-sign:before {\n  content: \"\\E084\";\n}\n.glyphicon-question-sign:before {\n  content: \"\\E085\";\n}\n.glyphicon-info-sign:before {\n  content: \"\\E086\";\n}\n.glyphicon-screenshot:before {\n  content: \"\\E087\";\n}\n.glyphicon-remove-circle:before {\n  content: \"\\E088\";\n}\n.glyphicon-ok-circle:before {\n  content: \"\\E089\";\n}\n.glyphicon-ban-circle:before {\n  content: \"\\E090\";\n}\n.glyphicon-arrow-left:before {\n  content: \"\\E091\";\n}\n.glyphicon-arrow-right:before {\n  content: \"\\E092\";\n}\n.glyphicon-arrow-up:before {\n  content: \"\\E093\";\n}\n.glyphicon-arrow-down:before {\n  content: \"\\E094\";\n}\n.glyphicon-share-alt:before {\n  content: \"\\E095\";\n}\n.glyphicon-resize-full:before {\n  content: \"\\E096\";\n}\n.glyphicon-resize-small:before {\n  content: \"\\E097\";\n}\n.glyphicon-exclamation-sign:before {\n  content: \"\\E101\";\n}\n.glyphicon-gift:before {\n  content: \"\\E102\";\n}\n.glyphicon-leaf:before {\n  content: \"\\E103\";\n}\n.glyphicon-fire:before {\n  content: \"\\E104\";\n}\n.glyphicon-eye-open:before {\n  content: \"\\E105\";\n}\n.glyphicon-eye-close:before {\n  content: \"\\E106\";\n}\n.glyphicon-warning-sign:before {\n  content: \"\\E107\";\n}\n.glyphicon-plane:before {\n  content: \"\\E108\";\n}\n.glyphicon-calendar:before {\n  content: \"\\E109\";\n}\n.glyphicon-random:before {\n  content: \"\\E110\";\n}\n.glyphicon-comment:before {\n  content: \"\\E111\";\n}\n.glyphicon-magnet:before {\n  content: \"\\E112\";\n}\n.glyphicon-chevron-up:before {\n  content: \"\\E113\";\n}\n.glyphicon-chevron-down:before {\n  content: \"\\E114\";\n}\n.glyphicon-retweet:before {\n  content: \"\\E115\";\n}\n.glyphicon-shopping-cart:before {\n  content: \"\\E116\";\n}\n.glyphicon-folder-close:before {\n  content: \"\\E117\";\n}\n.glyphicon-folder-open:before {\n  content: \"\\E118\";\n}\n.glyphicon-resize-vertical:before {\n  content: \"\\E119\";\n}\n.glyphicon-resize-horizontal:before {\n  content: \"\\E120\";\n}\n.glyphicon-hdd:before {\n  content: \"\\E121\";\n}\n.glyphicon-bullhorn:before {\n  content: \"\\E122\";\n}\n.glyphicon-bell:before {\n  content: \"\\E123\";\n}\n.glyphicon-certificate:before {\n  content: \"\\E124\";\n}\n.glyphicon-thumbs-up:before {\n  content: \"\\E125\";\n}\n.glyphicon-thumbs-down:before {\n  content: \"\\E126\";\n}\n.glyphicon-hand-right:before {\n  content: \"\\E127\";\n}\n.glyphicon-hand-left:before {\n  content: \"\\E128\";\n}\n.glyphicon-hand-up:before {\n  content: \"\\E129\";\n}\n.glyphicon-hand-down:before {\n  content: \"\\E130\";\n}\n.glyphicon-circle-arrow-right:before {\n  content: \"\\E131\";\n}\n.glyphicon-circle-arrow-left:before {\n  content: \"\\E132\";\n}\n.glyphicon-circle-arrow-up:before {\n  content: \"\\E133\";\n}\n.glyphicon-circle-arrow-down:before {\n  content: \"\\E134\";\n}\n.glyphicon-globe:before {\n  content: \"\\E135\";\n}\n.glyphicon-wrench:before {\n  content: \"\\E136\";\n}\n.glyphicon-tasks:before {\n  content: \"\\E137\";\n}\n.glyphicon-filter:before {\n  content: \"\\E138\";\n}\n.glyphicon-briefcase:before {\n  content: \"\\E139\";\n}\n.glyphicon-fullscreen:before {\n  content: \"\\E140\";\n}\n.glyphicon-dashboard:before {\n  content: \"\\E141\";\n}\n.glyphicon-paperclip:before {\n  content: \"\\E142\";\n}\n.glyphicon-heart-empty:before {\n  content: \"\\E143\";\n}\n.glyphicon-link:before {\n  content: \"\\E144\";\n}\n.glyphicon-phone:before {\n  content: \"\\E145\";\n}\n.glyphicon-pushpin:before {\n  content: \"\\E146\";\n}\n.glyphicon-usd:before {\n  content: \"\\E148\";\n}\n.glyphicon-gbp:before {\n  content: \"\\E149\";\n}\n.glyphicon-sort:before {\n  content: \"\\E150\";\n}\n.glyphicon-sort-by-alphabet:before {\n  content: \"\\E151\";\n}\n.glyphicon-sort-by-alphabet-alt:before {\n  content: \"\\E152\";\n}\n.glyphicon-sort-by-order:before {\n  content: \"\\E153\";\n}\n.glyphicon-sort-by-order-alt:before {\n  content: \"\\E154\";\n}\n.glyphicon-sort-by-attributes:before {\n  content: \"\\E155\";\n}\n.glyphicon-sort-by-attributes-alt:before {\n  content: \"\\E156\";\n}\n.glyphicon-unchecked:before {\n  content: \"\\E157\";\n}\n.glyphicon-expand:before {\n  content: \"\\E158\";\n}\n.glyphicon-collapse-down:before {\n  content: \"\\E159\";\n}\n.glyphicon-collapse-up:before {\n  content: \"\\E160\";\n}\n.glyphicon-log-in:before {\n  content: \"\\E161\";\n}\n.glyphicon-flash:before {\n  content: \"\\E162\";\n}\n.glyphicon-log-out:before {\n  content: \"\\E163\";\n}\n.glyphicon-new-window:before {\n  content: \"\\E164\";\n}\n.glyphicon-record:before {\n  content: \"\\E165\";\n}\n.glyphicon-save:before {\n  content: \"\\E166\";\n}\n.glyphicon-open:before {\n  content: \"\\E167\";\n}\n.glyphicon-saved:before {\n  content: \"\\E168\";\n}\n.glyphicon-import:before {\n  content: \"\\E169\";\n}\n.glyphicon-export:before {\n  content: \"\\E170\";\n}\n.glyphicon-send:before {\n  content: \"\\E171\";\n}\n.glyphicon-floppy-disk:before {\n  content: \"\\E172\";\n}\n.glyphicon-floppy-saved:before {\n  content: \"\\E173\";\n}\n.glyphicon-floppy-remove:before {\n  content: \"\\E174\";\n}\n.glyphicon-floppy-save:before {\n  content: \"\\E175\";\n}\n.glyphicon-floppy-open:before {\n  content: \"\\E176\";\n}\n.glyphicon-credit-card:before {\n  content: \"\\E177\";\n}\n.glyphicon-transfer:before {\n  content: \"\\E178\";\n}\n.glyphicon-cutlery:before {\n  content: \"\\E179\";\n}\n.glyphicon-header:before {\n  content: \"\\E180\";\n}\n.glyphicon-compressed:before {\n  content: \"\\E181\";\n}\n.glyphicon-earphone:before {\n  content: \"\\E182\";\n}\n.glyphicon-phone-alt:before {\n  content: \"\\E183\";\n}\n.glyphicon-tower:before {\n  content: \"\\E184\";\n}\n.glyphicon-stats:before {\n  content: \"\\E185\";\n}\n.glyphicon-sd-video:before {\n  content: \"\\E186\";\n}\n.glyphicon-hd-video:before {\n  content: \"\\E187\";\n}\n.glyphicon-subtitles:before {\n  content: \"\\E188\";\n}\n.glyphicon-sound-stereo:before {\n  content: \"\\E189\";\n}\n.glyphicon-sound-dolby:before {\n  content: \"\\E190\";\n}\n.glyphicon-sound-5-1:before {\n  content: \"\\E191\";\n}\n.glyphicon-sound-6-1:before {\n  content: \"\\E192\";\n}\n.glyphicon-sound-7-1:before {\n  content: \"\\E193\";\n}\n.glyphicon-copyright-mark:before {\n  content: \"\\E194\";\n}\n.glyphicon-registration-mark:before {\n  content: \"\\E195\";\n}\n.glyphicon-cloud-download:before {\n  content: \"\\E197\";\n}\n.glyphicon-cloud-upload:before {\n  content: \"\\E198\";\n}\n.glyphicon-tree-conifer:before {\n  content: \"\\E199\";\n}\n.glyphicon-tree-deciduous:before {\n  content: \"\\E200\";\n}\n.glyphicon-cd:before {\n  content: \"\\E201\";\n}\n.glyphicon-save-file:before {\n  content: \"\\E202\";\n}\n.glyphicon-open-file:before {\n  content: \"\\E203\";\n}\n.glyphicon-level-up:before {\n  content: \"\\E204\";\n}\n.glyphicon-copy:before {\n  content: \"\\E205\";\n}\n.glyphicon-paste:before {\n  content: \"\\E206\";\n}\n.glyphicon-alert:before {\n  content: \"\\E209\";\n}\n.glyphicon-equalizer:before {\n  content: \"\\E210\";\n}\n.glyphicon-king:before {\n  content: \"\\E211\";\n}\n.glyphicon-queen:before {\n  content: \"\\E212\";\n}\n.glyphicon-pawn:before {\n  content: \"\\E213\";\n}\n.glyphicon-bishop:before {\n  content: \"\\E214\";\n}\n.glyphicon-knight:before {\n  content: \"\\E215\";\n}\n.glyphicon-baby-formula:before {\n  content: \"\\E216\";\n}\n.glyphicon-tent:before {\n  content: \"\\26FA\";\n}\n.glyphicon-blackboard:before {\n  content: \"\\E218\";\n}\n.glyphicon-bed:before {\n  content: \"\\E219\";\n}\n.glyphicon-apple:before {\n  content: \"\\F8FF\";\n}\n.glyphicon-erase:before {\n  content: \"\\E221\";\n}\n.glyphicon-hourglass:before {\n  content: \"\\231B\";\n}\n.glyphicon-lamp:before {\n  content: \"\\E223\";\n}\n.glyphicon-duplicate:before {\n  content: \"\\E224\";\n}\n.glyphicon-piggy-bank:before {\n  content: \"\\E225\";\n}\n.glyphicon-scissors:before {\n  content: \"\\E226\";\n}\n.glyphicon-bitcoin:before {\n  content: \"\\E227\";\n}\n.glyphicon-btc:before {\n  content: \"\\E227\";\n}\n.glyphicon-xbt:before {\n  content: \"\\E227\";\n}\n.glyphicon-yen:before {\n  content: \"\\A5\";\n}\n.glyphicon-jpy:before {\n  content: \"\\A5\";\n}\n.glyphicon-ruble:before {\n  content: \"\\20BD\";\n}\n.glyphicon-rub:before {\n  content: \"\\20BD\";\n}\n.glyphicon-scale:before {\n  content: \"\\E230\";\n}\n.glyphicon-ice-lolly:before {\n  content: \"\\E231\";\n}\n.glyphicon-ice-lolly-tasted:before {\n  content: \"\\E232\";\n}\n.glyphicon-education:before {\n  content: \"\\E233\";\n}\n.glyphicon-option-horizontal:before {\n  content: \"\\E234\";\n}\n.glyphicon-option-vertical:before {\n  content: \"\\E235\";\n}\n.glyphicon-menu-hamburger:before {\n  content: \"\\E236\";\n}\n.glyphicon-modal-window:before {\n  content: \"\\E237\";\n}\n.glyphicon-oil:before {\n  content: \"\\E238\";\n}\n.glyphicon-grain:before {\n  content: \"\\E239\";\n}\n.glyphicon-sunglasses:before {\n  content: \"\\E240\";\n}\n.glyphicon-text-size:before {\n  content: \"\\E241\";\n}\n.glyphicon-text-color:before {\n  content: \"\\E242\";\n}\n.glyphicon-text-background:before {\n  content: \"\\E243\";\n}\n.glyphicon-object-align-top:before {\n  content: \"\\E244\";\n}\n.glyphicon-object-align-bottom:before {\n  content: \"\\E245\";\n}\n.glyphicon-object-align-horizontal:before {\n  content: \"\\E246\";\n}\n.glyphicon-object-align-left:before {\n  content: \"\\E247\";\n}\n.glyphicon-object-align-vertical:before {\n  content: \"\\E248\";\n}\n.glyphicon-object-align-right:before {\n  content: \"\\E249\";\n}\n.glyphicon-triangle-right:before {\n  content: \"\\E250\";\n}\n.glyphicon-triangle-left:before {\n  content: \"\\E251\";\n}\n.glyphicon-triangle-bottom:before {\n  content: \"\\E252\";\n}\n.glyphicon-triangle-top:before {\n  content: \"\\E253\";\n}\n.glyphicon-console:before {\n  content: \"\\E254\";\n}\n.glyphicon-superscript:before {\n  content: \"\\E255\";\n}\n.glyphicon-subscript:before {\n  content: \"\\E256\";\n}\n.glyphicon-menu-left:before {\n  content: \"\\E257\";\n}\n.glyphicon-menu-right:before {\n  content: \"\\E258\";\n}\n.glyphicon-menu-down:before {\n  content: \"\\E259\";\n}\n.glyphicon-menu-up:before {\n  content: \"\\E260\";\n}\n* {\n  box-sizing: border-box;\n}\n*:before,\n*:after {\n  box-sizing: border-box;\n}\nhtml {\n  font-size: 10px;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #333;\n  background-color: #fff;\n}\ninput,\nbutton,\nselect,\ntextarea {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\na {\n  color: #337ab7;\n  text-decoration: none;\n}\na:hover,\na:focus {\n  color: #23527c;\n  text-decoration: underline;\n}\na:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\nfigure {\n  margin: 0;\n}\nimg {\n  vertical-align: middle;\n}\n.img-responsive,\n.thumbnail > img,\n.thumbnail a > img,\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.img-rounded {\n  border-radius: 6px;\n}\n.img-thumbnail {\n  display: inline-block;\n  max-width: 100%;\n  height: auto;\n  padding: 4px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.img-circle {\n  border-radius: 50%;\n}\nhr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eee;\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n.sr-only-focusable:active,\n.sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n[role=\"button\"] {\n  cursor: pointer;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: inherit;\n  font-weight: 500;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #777;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 20px;\n  margin-bottom: 10px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 36px;\n}\nh2,\n.h2 {\n  font-size: 30px;\n}\nh3,\n.h3 {\n  font-size: 24px;\n}\nh4,\n.h4 {\n  font-size: 18px;\n}\nh5,\n.h5 {\n  font-size: 14px;\n}\nh6,\n.h6 {\n  font-size: 12px;\n}\np {\n  margin: 0 0 10px;\n}\n.lead {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 300;\n  line-height: 1.4;\n}\n@media (min-width: 768px) {\n  .lead {\n    font-size: 21px;\n  }\n}\nsmall,\n.small {\n  font-size: 85%;\n}\nmark,\n.mark {\n  padding: .2em;\n  background-color: #fcf8e3;\n}\n.text-left {\n  text-align: left;\n}\n.text-right {\n  text-align: right;\n}\n.text-center {\n  text-align: center;\n}\n.text-justify {\n  text-align: justify;\n}\n.text-nowrap {\n  white-space: nowrap;\n}\n.text-lowercase {\n  text-transform: lowercase;\n}\n.text-uppercase {\n  text-transform: uppercase;\n}\n.text-capitalize {\n  text-transform: capitalize;\n}\n.text-muted {\n  color: #777;\n}\n.text-primary {\n  color: #337ab7;\n}\na.text-primary:hover,\na.text-primary:focus {\n  color: #286090;\n}\n.text-success {\n  color: #3c763d;\n}\na.text-success:hover,\na.text-success:focus {\n  color: #2b542c;\n}\n.text-info {\n  color: #31708f;\n}\na.text-info:hover,\na.text-info:focus {\n  color: #245269;\n}\n.text-warning {\n  color: #8a6d3b;\n}\na.text-warning:hover,\na.text-warning:focus {\n  color: #66512c;\n}\n.text-danger {\n  color: #a94442;\n}\na.text-danger:hover,\na.text-danger:focus {\n  color: #843534;\n}\n.bg-primary {\n  color: #fff;\n  background-color: #337ab7;\n}\na.bg-primary:hover,\na.bg-primary:focus {\n  background-color: #286090;\n}\n.bg-success {\n  background-color: #dff0d8;\n}\na.bg-success:hover,\na.bg-success:focus {\n  background-color: #c1e2b3;\n}\n.bg-info {\n  background-color: #d9edf7;\n}\na.bg-info:hover,\na.bg-info:focus {\n  background-color: #afd9ee;\n}\n.bg-warning {\n  background-color: #fcf8e3;\n}\na.bg-warning:hover,\na.bg-warning:focus {\n  background-color: #f7ecb5;\n}\n.bg-danger {\n  background-color: #f2dede;\n}\na.bg-danger:hover,\na.bg-danger:focus {\n  background-color: #e4b9b9;\n}\n.page-header {\n  padding-bottom: 9px;\n  margin: 40px 0 20px;\n  border-bottom: 1px solid #eee;\n}\nul,\nol {\n  margin-top: 0;\n  margin-bottom: 10px;\n}\nul ul,\nol ul,\nul ol,\nol ol {\n  margin-bottom: 0;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  margin-left: -5px;\n  list-style: none;\n}\n.list-inline > li {\n  display: inline-block;\n  padding-right: 5px;\n  padding-left: 5px;\n}\ndl {\n  margin-top: 0;\n  margin-bottom: 20px;\n}\ndt,\ndd {\n  line-height: 1.42857143;\n}\ndt {\n  font-weight: bold;\n}\ndd {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n  .dl-horizontal dt {\n    float: left;\n    width: 160px;\n    overflow: hidden;\n    clear: left;\n    text-align: right;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  .dl-horizontal dd {\n    margin-left: 180px;\n  }\n}\nabbr[title],\nabbr[data-original-title] {\n  cursor: help;\n  border-bottom: 1px dotted #777;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\nblockquote {\n  padding: 10px 20px;\n  margin: 0 0 20px;\n  font-size: 17.5px;\n  border-left: 5px solid #eee;\n}\nblockquote p:last-child,\nblockquote ul:last-child,\nblockquote ol:last-child {\n  margin-bottom: 0;\n}\nblockquote footer,\nblockquote small,\nblockquote .small {\n  display: block;\n  font-size: 80%;\n  line-height: 1.42857143;\n  color: #777;\n}\nblockquote footer:before,\nblockquote small:before,\nblockquote .small:before {\n  content: '\\2014   \\A0';\n}\n.blockquote-reverse,\nblockquote.pull-right {\n  padding-right: 15px;\n  padding-left: 0;\n  text-align: right;\n  border-right: 5px solid #eee;\n  border-left: 0;\n}\n.blockquote-reverse footer:before,\nblockquote.pull-right footer:before,\n.blockquote-reverse small:before,\nblockquote.pull-right small:before,\n.blockquote-reverse .small:before,\nblockquote.pull-right .small:before {\n  content: '';\n}\n.blockquote-reverse footer:after,\nblockquote.pull-right footer:after,\n.blockquote-reverse small:after,\nblockquote.pull-right small:after,\n.blockquote-reverse .small:after,\nblockquote.pull-right .small:after {\n  content: '\\A0   \\2014';\n}\naddress {\n  margin-bottom: 20px;\n  font-style: normal;\n  line-height: 1.42857143;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n}\ncode {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #c7254e;\n  background-color: #f9f2f4;\n  border-radius: 4px;\n}\nkbd {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #fff;\n  background-color: #333;\n  border-radius: 3px;\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);\n}\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: bold;\n  box-shadow: none;\n}\npre {\n  display: block;\n  padding: 9.5px;\n  margin: 0 0 10px;\n  font-size: 13px;\n  line-height: 1.42857143;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\npre code {\n  padding: 0;\n  font-size: inherit;\n  color: inherit;\n  white-space: pre-wrap;\n  background-color: transparent;\n  border-radius: 0;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container {\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n}\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n@media (min-width: 992px) {\n  .container {\n    width: 970px;\n  }\n}\n@media (min-width: 1200px) {\n  .container {\n    width: 1170px;\n  }\n}\n.container-fluid {\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n}\n.row {\n  margin-right: -15px;\n  margin-left: -15px;\n}\n.col-xs-1,\n.col-sm-1,\n.col-md-1,\n.col-lg-1,\n.col-xs-2,\n.col-sm-2,\n.col-md-2,\n.col-lg-2,\n.col-xs-3,\n.col-sm-3,\n.col-md-3,\n.col-lg-3,\n.col-xs-4,\n.col-sm-4,\n.col-md-4,\n.col-lg-4,\n.col-xs-5,\n.col-sm-5,\n.col-md-5,\n.col-lg-5,\n.col-xs-6,\n.col-sm-6,\n.col-md-6,\n.col-lg-6,\n.col-xs-7,\n.col-sm-7,\n.col-md-7,\n.col-lg-7,\n.col-xs-8,\n.col-sm-8,\n.col-md-8,\n.col-lg-8,\n.col-xs-9,\n.col-sm-9,\n.col-md-9,\n.col-lg-9,\n.col-xs-10,\n.col-sm-10,\n.col-md-10,\n.col-lg-10,\n.col-xs-11,\n.col-sm-11,\n.col-md-11,\n.col-lg-11,\n.col-xs-12,\n.col-sm-12,\n.col-md-12,\n.col-lg-12 {\n  position: relative;\n  min-height: 1px;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n.col-xs-1,\n.col-xs-2,\n.col-xs-3,\n.col-xs-4,\n.col-xs-5,\n.col-xs-6,\n.col-xs-7,\n.col-xs-8,\n.col-xs-9,\n.col-xs-10,\n.col-xs-11,\n.col-xs-12 {\n  float: left;\n}\n.col-xs-12 {\n  width: 100%;\n}\n.col-xs-11 {\n  width: 91.66666667%;\n}\n.col-xs-10 {\n  width: 83.33333333%;\n}\n.col-xs-9 {\n  width: 75%;\n}\n.col-xs-8 {\n  width: 66.66666667%;\n}\n.col-xs-7 {\n  width: 58.33333333%;\n}\n.col-xs-6 {\n  width: 50%;\n}\n.col-xs-5 {\n  width: 41.66666667%;\n}\n.col-xs-4 {\n  width: 33.33333333%;\n}\n.col-xs-3 {\n  width: 25%;\n}\n.col-xs-2 {\n  width: 16.66666667%;\n}\n.col-xs-1 {\n  width: 8.33333333%;\n}\n.col-xs-pull-12 {\n  right: 100%;\n}\n.col-xs-pull-11 {\n  right: 91.66666667%;\n}\n.col-xs-pull-10 {\n  right: 83.33333333%;\n}\n.col-xs-pull-9 {\n  right: 75%;\n}\n.col-xs-pull-8 {\n  right: 66.66666667%;\n}\n.col-xs-pull-7 {\n  right: 58.33333333%;\n}\n.col-xs-pull-6 {\n  right: 50%;\n}\n.col-xs-pull-5 {\n  right: 41.66666667%;\n}\n.col-xs-pull-4 {\n  right: 33.33333333%;\n}\n.col-xs-pull-3 {\n  right: 25%;\n}\n.col-xs-pull-2 {\n  right: 16.66666667%;\n}\n.col-xs-pull-1 {\n  right: 8.33333333%;\n}\n.col-xs-pull-0 {\n  right: auto;\n}\n.col-xs-push-12 {\n  left: 100%;\n}\n.col-xs-push-11 {\n  left: 91.66666667%;\n}\n.col-xs-push-10 {\n  left: 83.33333333%;\n}\n.col-xs-push-9 {\n  left: 75%;\n}\n.col-xs-push-8 {\n  left: 66.66666667%;\n}\n.col-xs-push-7 {\n  left: 58.33333333%;\n}\n.col-xs-push-6 {\n  left: 50%;\n}\n.col-xs-push-5 {\n  left: 41.66666667%;\n}\n.col-xs-push-4 {\n  left: 33.33333333%;\n}\n.col-xs-push-3 {\n  left: 25%;\n}\n.col-xs-push-2 {\n  left: 16.66666667%;\n}\n.col-xs-push-1 {\n  left: 8.33333333%;\n}\n.col-xs-push-0 {\n  left: auto;\n}\n.col-xs-offset-12 {\n  margin-left: 100%;\n}\n.col-xs-offset-11 {\n  margin-left: 91.66666667%;\n}\n.col-xs-offset-10 {\n  margin-left: 83.33333333%;\n}\n.col-xs-offset-9 {\n  margin-left: 75%;\n}\n.col-xs-offset-8 {\n  margin-left: 66.66666667%;\n}\n.col-xs-offset-7 {\n  margin-left: 58.33333333%;\n}\n.col-xs-offset-6 {\n  margin-left: 50%;\n}\n.col-xs-offset-5 {\n  margin-left: 41.66666667%;\n}\n.col-xs-offset-4 {\n  margin-left: 33.33333333%;\n}\n.col-xs-offset-3 {\n  margin-left: 25%;\n}\n.col-xs-offset-2 {\n  margin-left: 16.66666667%;\n}\n.col-xs-offset-1 {\n  margin-left: 8.33333333%;\n}\n.col-xs-offset-0 {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n  .col-sm-1,\n  .col-sm-2,\n  .col-sm-3,\n  .col-sm-4,\n  .col-sm-5,\n  .col-sm-6,\n  .col-sm-7,\n  .col-sm-8,\n  .col-sm-9,\n  .col-sm-10,\n  .col-sm-11,\n  .col-sm-12 {\n    float: left;\n  }\n  .col-sm-12 {\n    width: 100%;\n  }\n  .col-sm-11 {\n    width: 91.66666667%;\n  }\n  .col-sm-10 {\n    width: 83.33333333%;\n  }\n  .col-sm-9 {\n    width: 75%;\n  }\n  .col-sm-8 {\n    width: 66.66666667%;\n  }\n  .col-sm-7 {\n    width: 58.33333333%;\n  }\n  .col-sm-6 {\n    width: 50%;\n  }\n  .col-sm-5 {\n    width: 41.66666667%;\n  }\n  .col-sm-4 {\n    width: 33.33333333%;\n  }\n  .col-sm-3 {\n    width: 25%;\n  }\n  .col-sm-2 {\n    width: 16.66666667%;\n  }\n  .col-sm-1 {\n    width: 8.33333333%;\n  }\n  .col-sm-pull-12 {\n    right: 100%;\n  }\n  .col-sm-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-sm-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-sm-pull-9 {\n    right: 75%;\n  }\n  .col-sm-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-sm-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-sm-pull-6 {\n    right: 50%;\n  }\n  .col-sm-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-sm-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-sm-pull-3 {\n    right: 25%;\n  }\n  .col-sm-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-sm-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-sm-pull-0 {\n    right: auto;\n  }\n  .col-sm-push-12 {\n    left: 100%;\n  }\n  .col-sm-push-11 {\n    left: 91.66666667%;\n  }\n  .col-sm-push-10 {\n    left: 83.33333333%;\n  }\n  .col-sm-push-9 {\n    left: 75%;\n  }\n  .col-sm-push-8 {\n    left: 66.66666667%;\n  }\n  .col-sm-push-7 {\n    left: 58.33333333%;\n  }\n  .col-sm-push-6 {\n    left: 50%;\n  }\n  .col-sm-push-5 {\n    left: 41.66666667%;\n  }\n  .col-sm-push-4 {\n    left: 33.33333333%;\n  }\n  .col-sm-push-3 {\n    left: 25%;\n  }\n  .col-sm-push-2 {\n    left: 16.66666667%;\n  }\n  .col-sm-push-1 {\n    left: 8.33333333%;\n  }\n  .col-sm-push-0 {\n    left: auto;\n  }\n  .col-sm-offset-12 {\n    margin-left: 100%;\n  }\n  .col-sm-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-sm-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-sm-offset-9 {\n    margin-left: 75%;\n  }\n  .col-sm-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-sm-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-sm-offset-6 {\n    margin-left: 50%;\n  }\n  .col-sm-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-sm-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-sm-offset-3 {\n    margin-left: 25%;\n  }\n  .col-sm-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-sm-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-sm-offset-0 {\n    margin-left: 0;\n  }\n}\n@media (min-width: 992px) {\n  .col-md-1,\n  .col-md-2,\n  .col-md-3,\n  .col-md-4,\n  .col-md-5,\n  .col-md-6,\n  .col-md-7,\n  .col-md-8,\n  .col-md-9,\n  .col-md-10,\n  .col-md-11,\n  .col-md-12 {\n    float: left;\n  }\n  .col-md-12 {\n    width: 100%;\n  }\n  .col-md-11 {\n    width: 91.66666667%;\n  }\n  .col-md-10 {\n    width: 83.33333333%;\n  }\n  .col-md-9 {\n    width: 75%;\n  }\n  .col-md-8 {\n    width: 66.66666667%;\n  }\n  .col-md-7 {\n    width: 58.33333333%;\n  }\n  .col-md-6 {\n    width: 50%;\n  }\n  .col-md-5 {\n    width: 41.66666667%;\n  }\n  .col-md-4 {\n    width: 33.33333333%;\n  }\n  .col-md-3 {\n    width: 25%;\n  }\n  .col-md-2 {\n    width: 16.66666667%;\n  }\n  .col-md-1 {\n    width: 8.33333333%;\n  }\n  .col-md-pull-12 {\n    right: 100%;\n  }\n  .col-md-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-md-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-md-pull-9 {\n    right: 75%;\n  }\n  .col-md-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-md-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-md-pull-6 {\n    right: 50%;\n  }\n  .col-md-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-md-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-md-pull-3 {\n    right: 25%;\n  }\n  .col-md-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-md-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-md-pull-0 {\n    right: auto;\n  }\n  .col-md-push-12 {\n    left: 100%;\n  }\n  .col-md-push-11 {\n    left: 91.66666667%;\n  }\n  .col-md-push-10 {\n    left: 83.33333333%;\n  }\n  .col-md-push-9 {\n    left: 75%;\n  }\n  .col-md-push-8 {\n    left: 66.66666667%;\n  }\n  .col-md-push-7 {\n    left: 58.33333333%;\n  }\n  .col-md-push-6 {\n    left: 50%;\n  }\n  .col-md-push-5 {\n    left: 41.66666667%;\n  }\n  .col-md-push-4 {\n    left: 33.33333333%;\n  }\n  .col-md-push-3 {\n    left: 25%;\n  }\n  .col-md-push-2 {\n    left: 16.66666667%;\n  }\n  .col-md-push-1 {\n    left: 8.33333333%;\n  }\n  .col-md-push-0 {\n    left: auto;\n  }\n  .col-md-offset-12 {\n    margin-left: 100%;\n  }\n  .col-md-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-md-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-md-offset-9 {\n    margin-left: 75%;\n  }\n  .col-md-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-md-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-md-offset-6 {\n    margin-left: 50%;\n  }\n  .col-md-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-md-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-md-offset-3 {\n    margin-left: 25%;\n  }\n  .col-md-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-md-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-md-offset-0 {\n    margin-left: 0;\n  }\n}\n@media (min-width: 1200px) {\n  .col-lg-1,\n  .col-lg-2,\n  .col-lg-3,\n  .col-lg-4,\n  .col-lg-5,\n  .col-lg-6,\n  .col-lg-7,\n  .col-lg-8,\n  .col-lg-9,\n  .col-lg-10,\n  .col-lg-11,\n  .col-lg-12 {\n    float: left;\n  }\n  .col-lg-12 {\n    width: 100%;\n  }\n  .col-lg-11 {\n    width: 91.66666667%;\n  }\n  .col-lg-10 {\n    width: 83.33333333%;\n  }\n  .col-lg-9 {\n    width: 75%;\n  }\n  .col-lg-8 {\n    width: 66.66666667%;\n  }\n  .col-lg-7 {\n    width: 58.33333333%;\n  }\n  .col-lg-6 {\n    width: 50%;\n  }\n  .col-lg-5 {\n    width: 41.66666667%;\n  }\n  .col-lg-4 {\n    width: 33.33333333%;\n  }\n  .col-lg-3 {\n    width: 25%;\n  }\n  .col-lg-2 {\n    width: 16.66666667%;\n  }\n  .col-lg-1 {\n    width: 8.33333333%;\n  }\n  .col-lg-pull-12 {\n    right: 100%;\n  }\n  .col-lg-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-lg-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-lg-pull-9 {\n    right: 75%;\n  }\n  .col-lg-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-lg-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-lg-pull-6 {\n    right: 50%;\n  }\n  .col-lg-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-lg-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-lg-pull-3 {\n    right: 25%;\n  }\n  .col-lg-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-lg-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-lg-pull-0 {\n    right: auto;\n  }\n  .col-lg-push-12 {\n    left: 100%;\n  }\n  .col-lg-push-11 {\n    left: 91.66666667%;\n  }\n  .col-lg-push-10 {\n    left: 83.33333333%;\n  }\n  .col-lg-push-9 {\n    left: 75%;\n  }\n  .col-lg-push-8 {\n    left: 66.66666667%;\n  }\n  .col-lg-push-7 {\n    left: 58.33333333%;\n  }\n  .col-lg-push-6 {\n    left: 50%;\n  }\n  .col-lg-push-5 {\n    left: 41.66666667%;\n  }\n  .col-lg-push-4 {\n    left: 33.33333333%;\n  }\n  .col-lg-push-3 {\n    left: 25%;\n  }\n  .col-lg-push-2 {\n    left: 16.66666667%;\n  }\n  .col-lg-push-1 {\n    left: 8.33333333%;\n  }\n  .col-lg-push-0 {\n    left: auto;\n  }\n  .col-lg-offset-12 {\n    margin-left: 100%;\n  }\n  .col-lg-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-lg-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-lg-offset-9 {\n    margin-left: 75%;\n  }\n  .col-lg-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-lg-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-lg-offset-6 {\n    margin-left: 50%;\n  }\n  .col-lg-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-lg-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-lg-offset-3 {\n    margin-left: 25%;\n  }\n  .col-lg-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-lg-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-lg-offset-0 {\n    margin-left: 0;\n  }\n}\ntable {\n  background-color: transparent;\n}\ncaption {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  color: #777;\n  text-align: left;\n}\nth {\n  text-align: left;\n}\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n.table > thead > tr > th,\n.table > tbody > tr > th,\n.table > tfoot > tr > th,\n.table > thead > tr > td,\n.table > tbody > tr > td,\n.table > tfoot > tr > td {\n  padding: 8px;\n  line-height: 1.42857143;\n  vertical-align: top;\n  border-top: 1px solid #ddd;\n}\n.table > thead > tr > th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #ddd;\n}\n.table > caption + thead > tr:first-child > th,\n.table > colgroup + thead > tr:first-child > th,\n.table > thead:first-child > tr:first-child > th,\n.table > caption + thead > tr:first-child > td,\n.table > colgroup + thead > tr:first-child > td,\n.table > thead:first-child > tr:first-child > td {\n  border-top: 0;\n}\n.table > tbody + tbody {\n  border-top: 2px solid #ddd;\n}\n.table .table {\n  background-color: #fff;\n}\n.table-condensed > thead > tr > th,\n.table-condensed > tbody > tr > th,\n.table-condensed > tfoot > tr > th,\n.table-condensed > thead > tr > td,\n.table-condensed > tbody > tr > td,\n.table-condensed > tfoot > tr > td {\n  padding: 5px;\n}\n.table-bordered {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > tbody > tr > th,\n.table-bordered > tfoot > tr > th,\n.table-bordered > thead > tr > td,\n.table-bordered > tbody > tr > td,\n.table-bordered > tfoot > tr > td {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > thead > tr > td {\n  border-bottom-width: 2px;\n}\n.table-striped > tbody > tr:nth-of-type(odd) {\n  background-color: #f9f9f9;\n}\n.table-hover > tbody > tr:hover {\n  background-color: #f5f5f5;\n}\ntable col[class*=\"col-\"] {\n  position: static;\n  display: table-column;\n  float: none;\n}\ntable td[class*=\"col-\"],\ntable th[class*=\"col-\"] {\n  position: static;\n  display: table-cell;\n  float: none;\n}\n.table > thead > tr > td.active,\n.table > tbody > tr > td.active,\n.table > tfoot > tr > td.active,\n.table > thead > tr > th.active,\n.table > tbody > tr > th.active,\n.table > tfoot > tr > th.active,\n.table > thead > tr.active > td,\n.table > tbody > tr.active > td,\n.table > tfoot > tr.active > td,\n.table > thead > tr.active > th,\n.table > tbody > tr.active > th,\n.table > tfoot > tr.active > th {\n  background-color: #f5f5f5;\n}\n.table-hover > tbody > tr > td.active:hover,\n.table-hover > tbody > tr > th.active:hover,\n.table-hover > tbody > tr.active:hover > td,\n.table-hover > tbody > tr:hover > .active,\n.table-hover > tbody > tr.active:hover > th {\n  background-color: #e8e8e8;\n}\n.table > thead > tr > td.success,\n.table > tbody > tr > td.success,\n.table > tfoot > tr > td.success,\n.table > thead > tr > th.success,\n.table > tbody > tr > th.success,\n.table > tfoot > tr > th.success,\n.table > thead > tr.success > td,\n.table > tbody > tr.success > td,\n.table > tfoot > tr.success > td,\n.table > thead > tr.success > th,\n.table > tbody > tr.success > th,\n.table > tfoot > tr.success > th {\n  background-color: #dff0d8;\n}\n.table-hover > tbody > tr > td.success:hover,\n.table-hover > tbody > tr > th.success:hover,\n.table-hover > tbody > tr.success:hover > td,\n.table-hover > tbody > tr:hover > .success,\n.table-hover > tbody > tr.success:hover > th {\n  background-color: #d0e9c6;\n}\n.table > thead > tr > td.info,\n.table > tbody > tr > td.info,\n.table > tfoot > tr > td.info,\n.table > thead > tr > th.info,\n.table > tbody > tr > th.info,\n.table > tfoot > tr > th.info,\n.table > thead > tr.info > td,\n.table > tbody > tr.info > td,\n.table > tfoot > tr.info > td,\n.table > thead > tr.info > th,\n.table > tbody > tr.info > th,\n.table > tfoot > tr.info > th {\n  background-color: #d9edf7;\n}\n.table-hover > tbody > tr > td.info:hover,\n.table-hover > tbody > tr > th.info:hover,\n.table-hover > tbody > tr.info:hover > td,\n.table-hover > tbody > tr:hover > .info,\n.table-hover > tbody > tr.info:hover > th {\n  background-color: #c4e3f3;\n}\n.table > thead > tr > td.warning,\n.table > tbody > tr > td.warning,\n.table > tfoot > tr > td.warning,\n.table > thead > tr > th.warning,\n.table > tbody > tr > th.warning,\n.table > tfoot > tr > th.warning,\n.table > thead > tr.warning > td,\n.table > tbody > tr.warning > td,\n.table > tfoot > tr.warning > td,\n.table > thead > tr.warning > th,\n.table > tbody > tr.warning > th,\n.table > tfoot > tr.warning > th {\n  background-color: #fcf8e3;\n}\n.table-hover > tbody > tr > td.warning:hover,\n.table-hover > tbody > tr > th.warning:hover,\n.table-hover > tbody > tr.warning:hover > td,\n.table-hover > tbody > tr:hover > .warning,\n.table-hover > tbody > tr.warning:hover > th {\n  background-color: #faf2cc;\n}\n.table > thead > tr > td.danger,\n.table > tbody > tr > td.danger,\n.table > tfoot > tr > td.danger,\n.table > thead > tr > th.danger,\n.table > tbody > tr > th.danger,\n.table > tfoot > tr > th.danger,\n.table > thead > tr.danger > td,\n.table > tbody > tr.danger > td,\n.table > tfoot > tr.danger > td,\n.table > thead > tr.danger > th,\n.table > tbody > tr.danger > th,\n.table > tfoot > tr.danger > th {\n  background-color: #f2dede;\n}\n.table-hover > tbody > tr > td.danger:hover,\n.table-hover > tbody > tr > th.danger:hover,\n.table-hover > tbody > tr.danger:hover > td,\n.table-hover > tbody > tr:hover > .danger,\n.table-hover > tbody > tr.danger:hover > th {\n  background-color: #ebcccc;\n}\n.table-responsive {\n  min-height: .01%;\n  overflow-x: auto;\n}\n@media screen and (max-width: 767px) {\n  .table-responsive {\n    width: 100%;\n    margin-bottom: 15px;\n    overflow-y: hidden;\n    -ms-overflow-style: -ms-autohiding-scrollbar;\n    border: 1px solid #ddd;\n  }\n  .table-responsive > .table {\n    margin-bottom: 0;\n  }\n  .table-responsive > .table > thead > tr > th,\n  .table-responsive > .table > tbody > tr > th,\n  .table-responsive > .table > tfoot > tr > th,\n  .table-responsive > .table > thead > tr > td,\n  .table-responsive > .table > tbody > tr > td,\n  .table-responsive > .table > tfoot > tr > td {\n    white-space: nowrap;\n  }\n  .table-responsive > .table-bordered {\n    border: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:first-child,\n  .table-responsive > .table-bordered > tbody > tr > th:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n  .table-responsive > .table-bordered > thead > tr > td:first-child,\n  .table-responsive > .table-bordered > tbody > tr > td:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n    border-left: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:last-child,\n  .table-responsive > .table-bordered > tbody > tr > th:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n  .table-responsive > .table-bordered > thead > tr > td:last-child,\n  .table-responsive > .table-bordered > tbody > tr > td:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n    border-right: 0;\n  }\n  .table-responsive > .table-bordered > tbody > tr:last-child > th,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > th,\n  .table-responsive > .table-bordered > tbody > tr:last-child > td,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > td {\n    border-bottom: 0;\n  }\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  padding: 0;\n  margin-bottom: 20px;\n  font-size: 21px;\n  line-height: inherit;\n  color: #333;\n  border: 0;\n  border-bottom: 1px solid #e5e5e5;\n}\nlabel {\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 5px;\n  font-weight: bold;\n}\ninput[type=\"search\"] {\n  box-sizing: border-box;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  margin: 4px 0 0;\n  margin-top: 1px \\9;\n  line-height: normal;\n}\ninput[type=\"file\"] {\n  display: block;\n}\ninput[type=\"range\"] {\n  display: block;\n  width: 100%;\n}\nselect[multiple],\nselect[size] {\n  height: auto;\n}\ninput[type=\"file\"]:focus,\ninput[type=\"radio\"]:focus,\ninput[type=\"checkbox\"]:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\noutput {\n  display: block;\n  padding-top: 7px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: 34px;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;\n  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n}\n.form-control:focus {\n  border-color: #66afe9;\n  outline: 0;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);\n}\n.form-control::-moz-placeholder {\n  color: #999;\n  opacity: 1;\n}\n.form-control:-ms-input-placeholder {\n  color: #999;\n}\n.form-control::-webkit-input-placeholder {\n  color: #999;\n}\n.form-control::-ms-expand {\n  background-color: transparent;\n  border: 0;\n}\n.form-control[disabled],\n.form-control[readonly],\nfieldset[disabled] .form-control {\n  background-color: #eee;\n  opacity: 1;\n}\n.form-control[disabled],\nfieldset[disabled] .form-control {\n  cursor: not-allowed;\n}\ntextarea.form-control {\n  height: auto;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: none;\n}\n@media screen and (-webkit-min-device-pixel-ratio: 0) {\n  input[type=\"date\"].form-control,\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].form-control {\n    line-height: 34px;\n  }\n  input[type=\"date\"].input-sm,\n  input[type=\"time\"].input-sm,\n  input[type=\"datetime-local\"].input-sm,\n  input[type=\"month\"].input-sm,\n  .input-group-sm input[type=\"date\"],\n  .input-group-sm input[type=\"time\"],\n  .input-group-sm input[type=\"datetime-local\"],\n  .input-group-sm input[type=\"month\"] {\n    line-height: 30px;\n  }\n  input[type=\"date\"].input-lg,\n  input[type=\"time\"].input-lg,\n  input[type=\"datetime-local\"].input-lg,\n  input[type=\"month\"].input-lg,\n  .input-group-lg input[type=\"date\"],\n  .input-group-lg input[type=\"time\"],\n  .input-group-lg input[type=\"datetime-local\"],\n  .input-group-lg input[type=\"month\"] {\n    line-height: 46px;\n  }\n}\n.form-group {\n  margin-bottom: 15px;\n}\n.radio,\n.checkbox {\n  position: relative;\n  display: block;\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.radio label,\n.checkbox label {\n  min-height: 20px;\n  padding-left: 20px;\n  margin-bottom: 0;\n  font-weight: normal;\n  cursor: pointer;\n}\n.radio input[type=\"radio\"],\n.radio-inline input[type=\"radio\"],\n.checkbox input[type=\"checkbox\"],\n.checkbox-inline input[type=\"checkbox\"] {\n  position: absolute;\n  margin-top: 4px \\9;\n  margin-left: -20px;\n}\n.radio + .radio,\n.checkbox + .checkbox {\n  margin-top: -5px;\n}\n.radio-inline,\n.checkbox-inline {\n  position: relative;\n  display: inline-block;\n  padding-left: 20px;\n  margin-bottom: 0;\n  font-weight: normal;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.radio-inline + .radio-inline,\n.checkbox-inline + .checkbox-inline {\n  margin-top: 0;\n  margin-left: 10px;\n}\ninput[type=\"radio\"][disabled],\ninput[type=\"checkbox\"][disabled],\ninput[type=\"radio\"].disabled,\ninput[type=\"checkbox\"].disabled,\nfieldset[disabled] input[type=\"radio\"],\nfieldset[disabled] input[type=\"checkbox\"] {\n  cursor: not-allowed;\n}\n.radio-inline.disabled,\n.checkbox-inline.disabled,\nfieldset[disabled] .radio-inline,\nfieldset[disabled] .checkbox-inline {\n  cursor: not-allowed;\n}\n.radio.disabled label,\n.checkbox.disabled label,\nfieldset[disabled] .radio label,\nfieldset[disabled] .checkbox label {\n  cursor: not-allowed;\n}\n.form-control-static {\n  min-height: 34px;\n  padding-top: 7px;\n  padding-bottom: 7px;\n  margin-bottom: 0;\n}\n.form-control-static.input-lg,\n.form-control-static.input-sm {\n  padding-right: 0;\n  padding-left: 0;\n}\n.input-sm {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-sm {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-sm,\nselect[multiple].input-sm {\n  height: auto;\n}\n.form-group-sm .form-control {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.form-group-sm select.form-control {\n  height: 30px;\n  line-height: 30px;\n}\n.form-group-sm textarea.form-control,\n.form-group-sm select[multiple].form-control {\n  height: auto;\n}\n.form-group-sm .form-control-static {\n  height: 30px;\n  min-height: 32px;\n  padding: 6px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.input-lg {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-lg {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-lg,\nselect[multiple].input-lg {\n  height: auto;\n}\n.form-group-lg .form-control {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.form-group-lg select.form-control {\n  height: 46px;\n  line-height: 46px;\n}\n.form-group-lg textarea.form-control,\n.form-group-lg select[multiple].form-control {\n  height: auto;\n}\n.form-group-lg .form-control-static {\n  height: 46px;\n  min-height: 38px;\n  padding: 11px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.has-feedback {\n  position: relative;\n}\n.has-feedback .form-control {\n  padding-right: 42.5px;\n}\n.form-control-feedback {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 34px;\n  height: 34px;\n  line-height: 34px;\n  text-align: center;\n  pointer-events: none;\n}\n.input-lg + .form-control-feedback,\n.input-group-lg + .form-control-feedback,\n.form-group-lg .form-control + .form-control-feedback {\n  width: 46px;\n  height: 46px;\n  line-height: 46px;\n}\n.input-sm + .form-control-feedback,\n.input-group-sm + .form-control-feedback,\n.form-group-sm .form-control + .form-control-feedback {\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n}\n.has-success .help-block,\n.has-success .control-label,\n.has-success .radio,\n.has-success .checkbox,\n.has-success .radio-inline,\n.has-success .checkbox-inline,\n.has-success.radio label,\n.has-success.checkbox label,\n.has-success.radio-inline label,\n.has-success.checkbox-inline label {\n  color: #3c763d;\n}\n.has-success .form-control {\n  border-color: #3c763d;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-success .form-control:focus {\n  border-color: #2b542c;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;\n}\n.has-success .input-group-addon {\n  color: #3c763d;\n  background-color: #dff0d8;\n  border-color: #3c763d;\n}\n.has-success .form-control-feedback {\n  color: #3c763d;\n}\n.has-warning .help-block,\n.has-warning .control-label,\n.has-warning .radio,\n.has-warning .checkbox,\n.has-warning .radio-inline,\n.has-warning .checkbox-inline,\n.has-warning.radio label,\n.has-warning.checkbox label,\n.has-warning.radio-inline label,\n.has-warning.checkbox-inline label {\n  color: #8a6d3b;\n}\n.has-warning .form-control {\n  border-color: #8a6d3b;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-warning .form-control:focus {\n  border-color: #66512c;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;\n}\n.has-warning .input-group-addon {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #8a6d3b;\n}\n.has-warning .form-control-feedback {\n  color: #8a6d3b;\n}\n.has-error .help-block,\n.has-error .control-label,\n.has-error .radio,\n.has-error .checkbox,\n.has-error .radio-inline,\n.has-error .checkbox-inline,\n.has-error.radio label,\n.has-error.checkbox label,\n.has-error.radio-inline label,\n.has-error.checkbox-inline label {\n  color: #a94442;\n}\n.has-error .form-control {\n  border-color: #a94442;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-error .form-control:focus {\n  border-color: #843534;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;\n}\n.has-error .input-group-addon {\n  color: #a94442;\n  background-color: #f2dede;\n  border-color: #a94442;\n}\n.has-error .form-control-feedback {\n  color: #a94442;\n}\n.has-feedback label ~ .form-control-feedback {\n  top: 25px;\n}\n.has-feedback label.sr-only ~ .form-control-feedback {\n  top: 0;\n}\n.help-block {\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 10px;\n  color: #737373;\n}\n@media (min-width: 768px) {\n  .form-inline .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .form-inline .form-control-static {\n    display: inline-block;\n  }\n  .form-inline .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .form-inline .input-group .input-group-addon,\n  .form-inline .input-group .input-group-btn,\n  .form-inline .input-group .form-control {\n    width: auto;\n  }\n  .form-inline .input-group > .form-control {\n    width: 100%;\n  }\n  .form-inline .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio,\n  .form-inline .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio label,\n  .form-inline .checkbox label {\n    padding-left: 0;\n  }\n  .form-inline .radio input[type=\"radio\"],\n  .form-inline .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .form-inline .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox,\n.form-horizontal .radio-inline,\n.form-horizontal .checkbox-inline {\n  padding-top: 7px;\n  margin-top: 0;\n  margin-bottom: 0;\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox {\n  min-height: 27px;\n}\n.form-horizontal .form-group {\n  margin-right: -15px;\n  margin-left: -15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .control-label {\n    padding-top: 7px;\n    margin-bottom: 0;\n    text-align: right;\n  }\n}\n.form-horizontal .has-feedback .form-control-feedback {\n  right: 15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-lg .control-label {\n    padding-top: 11px;\n    font-size: 18px;\n  }\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-sm .control-label {\n    padding-top: 6px;\n    font-size: 12px;\n  }\n}\n.btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: normal;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.btn:focus,\n.btn:active:focus,\n.btn.active:focus,\n.btn.focus,\n.btn:active.focus,\n.btn.active.focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\n.btn:hover,\n.btn:focus,\n.btn.focus {\n  color: #333;\n  text-decoration: none;\n}\n.btn:active,\n.btn.active {\n  background-image: none;\n  outline: 0;\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn.disabled,\n.btn[disabled],\nfieldset[disabled] .btn {\n  cursor: not-allowed;\n  filter: alpha(opacity=65);\n  box-shadow: none;\n  opacity: .65;\n}\na.btn.disabled,\nfieldset[disabled] a.btn {\n  pointer-events: none;\n}\n.btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default:focus,\n.btn-default.focus {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #8c8c8c;\n}\n.btn-default:hover {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active:hover,\n.btn-default.active:hover,\n.open > .dropdown-toggle.btn-default:hover,\n.btn-default:active:focus,\n.btn-default.active:focus,\n.open > .dropdown-toggle.btn-default:focus,\n.btn-default:active.focus,\n.btn-default.active.focus,\n.open > .dropdown-toggle.btn-default.focus {\n  color: #333;\n  background-color: #d4d4d4;\n  border-color: #8c8c8c;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  background-image: none;\n}\n.btn-default.disabled:hover,\n.btn-default[disabled]:hover,\nfieldset[disabled] .btn-default:hover,\n.btn-default.disabled:focus,\n.btn-default[disabled]:focus,\nfieldset[disabled] .btn-default:focus,\n.btn-default.disabled.focus,\n.btn-default[disabled].focus,\nfieldset[disabled] .btn-default.focus {\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default .badge {\n  color: #fff;\n  background-color: #333;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary:focus,\n.btn-primary.focus {\n  color: #fff;\n  background-color: #286090;\n  border-color: #122b40;\n}\n.btn-primary:hover {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active:hover,\n.btn-primary.active:hover,\n.open > .dropdown-toggle.btn-primary:hover,\n.btn-primary:active:focus,\n.btn-primary.active:focus,\n.open > .dropdown-toggle.btn-primary:focus,\n.btn-primary:active.focus,\n.btn-primary.active.focus,\n.open > .dropdown-toggle.btn-primary.focus {\n  color: #fff;\n  background-color: #204d74;\n  border-color: #122b40;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  background-image: none;\n}\n.btn-primary.disabled:hover,\n.btn-primary[disabled]:hover,\nfieldset[disabled] .btn-primary:hover,\n.btn-primary.disabled:focus,\n.btn-primary[disabled]:focus,\nfieldset[disabled] .btn-primary:focus,\n.btn-primary.disabled.focus,\n.btn-primary[disabled].focus,\nfieldset[disabled] .btn-primary.focus {\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.btn-success {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success:focus,\n.btn-success.focus {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #255625;\n}\n.btn-success:hover {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active:hover,\n.btn-success.active:hover,\n.open > .dropdown-toggle.btn-success:hover,\n.btn-success:active:focus,\n.btn-success.active:focus,\n.open > .dropdown-toggle.btn-success:focus,\n.btn-success:active.focus,\n.btn-success.active.focus,\n.open > .dropdown-toggle.btn-success.focus {\n  color: #fff;\n  background-color: #398439;\n  border-color: #255625;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  background-image: none;\n}\n.btn-success.disabled:hover,\n.btn-success[disabled]:hover,\nfieldset[disabled] .btn-success:hover,\n.btn-success.disabled:focus,\n.btn-success[disabled]:focus,\nfieldset[disabled] .btn-success:focus,\n.btn-success.disabled.focus,\n.btn-success[disabled].focus,\nfieldset[disabled] .btn-success.focus {\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success .badge {\n  color: #5cb85c;\n  background-color: #fff;\n}\n.btn-info {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info:focus,\n.btn-info.focus {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #1b6d85;\n}\n.btn-info:hover {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active:hover,\n.btn-info.active:hover,\n.open > .dropdown-toggle.btn-info:hover,\n.btn-info:active:focus,\n.btn-info.active:focus,\n.open > .dropdown-toggle.btn-info:focus,\n.btn-info:active.focus,\n.btn-info.active.focus,\n.open > .dropdown-toggle.btn-info.focus {\n  color: #fff;\n  background-color: #269abc;\n  border-color: #1b6d85;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  background-image: none;\n}\n.btn-info.disabled:hover,\n.btn-info[disabled]:hover,\nfieldset[disabled] .btn-info:hover,\n.btn-info.disabled:focus,\n.btn-info[disabled]:focus,\nfieldset[disabled] .btn-info:focus,\n.btn-info.disabled.focus,\n.btn-info[disabled].focus,\nfieldset[disabled] .btn-info.focus {\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info .badge {\n  color: #5bc0de;\n  background-color: #fff;\n}\n.btn-warning {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning:focus,\n.btn-warning.focus {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #985f0d;\n}\n.btn-warning:hover {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active:hover,\n.btn-warning.active:hover,\n.open > .dropdown-toggle.btn-warning:hover,\n.btn-warning:active:focus,\n.btn-warning.active:focus,\n.open > .dropdown-toggle.btn-warning:focus,\n.btn-warning:active.focus,\n.btn-warning.active.focus,\n.open > .dropdown-toggle.btn-warning.focus {\n  color: #fff;\n  background-color: #d58512;\n  border-color: #985f0d;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  background-image: none;\n}\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn-warning:hover,\n.btn-warning.disabled:focus,\n.btn-warning[disabled]:focus,\nfieldset[disabled] .btn-warning:focus,\n.btn-warning.disabled.focus,\n.btn-warning[disabled].focus,\nfieldset[disabled] .btn-warning.focus {\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning .badge {\n  color: #f0ad4e;\n  background-color: #fff;\n}\n.btn-danger {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger:focus,\n.btn-danger.focus {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #761c19;\n}\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active:hover,\n.btn-danger.active:hover,\n.open > .dropdown-toggle.btn-danger:hover,\n.btn-danger:active:focus,\n.btn-danger.active:focus,\n.open > .dropdown-toggle.btn-danger:focus,\n.btn-danger:active.focus,\n.btn-danger.active.focus,\n.open > .dropdown-toggle.btn-danger.focus {\n  color: #fff;\n  background-color: #ac2925;\n  border-color: #761c19;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  background-image: none;\n}\n.btn-danger.disabled:hover,\n.btn-danger[disabled]:hover,\nfieldset[disabled] .btn-danger:hover,\n.btn-danger.disabled:focus,\n.btn-danger[disabled]:focus,\nfieldset[disabled] .btn-danger:focus,\n.btn-danger.disabled.focus,\n.btn-danger[disabled].focus,\nfieldset[disabled] .btn-danger.focus {\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger .badge {\n  color: #d9534f;\n  background-color: #fff;\n}\n.btn-link {\n  font-weight: normal;\n  color: #337ab7;\n  border-radius: 0;\n}\n.btn-link,\n.btn-link:active,\n.btn-link.active,\n.btn-link[disabled],\nfieldset[disabled] .btn-link {\n  background-color: transparent;\n  box-shadow: none;\n}\n.btn-link,\n.btn-link:hover,\n.btn-link:focus,\n.btn-link:active {\n  border-color: transparent;\n}\n.btn-link:hover,\n.btn-link:focus {\n  color: #23527c;\n  text-decoration: underline;\n  background-color: transparent;\n}\n.btn-link[disabled]:hover,\nfieldset[disabled] .btn-link:hover,\n.btn-link[disabled]:focus,\nfieldset[disabled] .btn-link:focus {\n  color: #777;\n  text-decoration: none;\n}\n.btn-lg,\n.btn-group-lg > .btn {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.btn-sm,\n.btn-group-sm > .btn {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-xs,\n.btn-group-xs > .btn {\n  padding: 1px 5px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 5px;\n}\ninput[type=\"submit\"].btn-block,\ninput[type=\"reset\"].btn-block,\ninput[type=\"button\"].btn-block {\n  width: 100%;\n}\n.fade {\n  opacity: 0;\n  -webkit-transition: opacity .15s linear;\n  transition: opacity .15s linear;\n}\n.fade.in {\n  opacity: 1;\n}\n.collapse {\n  display: none;\n}\n.collapse.in {\n  display: block;\n}\ntr.collapse.in {\n  display: table-row;\n}\ntbody.collapse.in {\n  display: table-row-group;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  -webkit-transition-timing-function: ease;\n  transition-timing-function: ease;\n  -webkit-transition-duration: .35s;\n  transition-duration: .35s;\n  -webkit-transition-property: height, visibility;\n  transition-property: height, visibility;\n}\n.caret {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  vertical-align: middle;\n  border-top: 4px dashed;\n  border-top: 4px solid \\9;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n.dropup,\n.dropdown {\n  position: relative;\n}\n.dropdown-toggle:focus {\n  outline: 0;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 160px;\n  padding: 5px 0;\n  margin: 2px 0 0;\n  font-size: 14px;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 4px;\n  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);\n}\n.dropdown-menu.pull-right {\n  right: 0;\n  left: auto;\n}\n.dropdown-menu .divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.dropdown-menu > li > a {\n  display: block;\n  padding: 3px 20px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.42857143;\n  color: #333;\n  white-space: nowrap;\n}\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n  color: #262626;\n  text-decoration: none;\n  background-color: #f5f5f5;\n}\n.dropdown-menu > .active > a,\n.dropdown-menu > .active > a:hover,\n.dropdown-menu > .active > a:focus {\n  color: #fff;\n  text-decoration: none;\n  background-color: #337ab7;\n  outline: 0;\n}\n.dropdown-menu > .disabled > a,\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  color: #777;\n}\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  text-decoration: none;\n  cursor: not-allowed;\n  background-color: transparent;\n  background-image: none;\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n}\n.open > .dropdown-menu {\n  display: block;\n}\n.open > a {\n  outline: 0;\n}\n.dropdown-menu-right {\n  right: 0;\n  left: auto;\n}\n.dropdown-menu-left {\n  right: auto;\n  left: 0;\n}\n.dropdown-header {\n  display: block;\n  padding: 3px 20px;\n  font-size: 12px;\n  line-height: 1.42857143;\n  color: #777;\n  white-space: nowrap;\n}\n.dropdown-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 990;\n}\n.pull-right > .dropdown-menu {\n  right: 0;\n  left: auto;\n}\n.dropup .caret,\n.navbar-fixed-bottom .dropdown .caret {\n  content: \"\";\n  border-top: 0;\n  border-bottom: 4px dashed;\n  border-bottom: 4px solid \\9;\n}\n.dropup .dropdown-menu,\n.navbar-fixed-bottom .dropdown .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-bottom: 2px;\n}\n@media (min-width: 768px) {\n  .navbar-right .dropdown-menu {\n    right: 0;\n    left: auto;\n  }\n  .navbar-right .dropdown-menu-left {\n    right: auto;\n    left: 0;\n  }\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  float: left;\n}\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover,\n.btn-group > .btn:focus,\n.btn-group-vertical > .btn:focus,\n.btn-group > .btn:active,\n.btn-group-vertical > .btn:active,\n.btn-group > .btn.active,\n.btn-group-vertical > .btn.active {\n  z-index: 2;\n}\n.btn-group .btn + .btn,\n.btn-group .btn + .btn-group,\n.btn-group .btn-group + .btn,\n.btn-group .btn-group + .btn-group {\n  margin-left: -1px;\n}\n.btn-toolbar {\n  margin-left: -5px;\n}\n.btn-toolbar .btn,\n.btn-toolbar .btn-group,\n.btn-toolbar .input-group {\n  float: left;\n}\n.btn-toolbar > .btn,\n.btn-toolbar > .btn-group,\n.btn-toolbar > .input-group {\n  margin-left: 5px;\n}\n.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n}\n.btn-group > .btn:first-child {\n  margin-left: 0;\n}\n.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.btn-group > .btn:last-child:not(:first-child),\n.btn-group > .dropdown-toggle:not(:first-child) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group > .btn-group {\n  float: left;\n}\n.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group .dropdown-toggle:active,\n.btn-group.open .dropdown-toggle {\n  outline: 0;\n}\n.btn-group > .btn + .dropdown-toggle {\n  padding-right: 8px;\n  padding-left: 8px;\n}\n.btn-group > .btn-lg + .dropdown-toggle {\n  padding-right: 12px;\n  padding-left: 12px;\n}\n.btn-group.open .dropdown-toggle {\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn-group.open .dropdown-toggle.btn-link {\n  box-shadow: none;\n}\n.btn .caret {\n  margin-left: 0;\n}\n.btn-lg .caret {\n  border-width: 5px 5px 0;\n  border-bottom-width: 0;\n}\n.dropup .btn-lg .caret {\n  border-width: 0 5px 5px;\n}\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group,\n.btn-group-vertical > .btn-group > .btn {\n  display: block;\n  float: none;\n  width: 100%;\n  max-width: 100%;\n}\n.btn-group-vertical > .btn-group > .btn {\n  float: none;\n}\n.btn-group-vertical > .btn + .btn,\n.btn-group-vertical > .btn + .btn-group,\n.btn-group-vertical > .btn-group + .btn,\n.btn-group-vertical > .btn-group + .btn-group {\n  margin-top: -1px;\n  margin-left: 0;\n}\n.btn-group-vertical > .btn:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn:first-child:not(:last-child) {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:last-child:not(:first-child) {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group-justified {\n  display: table;\n  width: 100%;\n  table-layout: fixed;\n  border-collapse: separate;\n}\n.btn-group-justified > .btn,\n.btn-group-justified > .btn-group {\n  display: table-cell;\n  float: none;\n  width: 1%;\n}\n.btn-group-justified > .btn-group .btn {\n  width: 100%;\n}\n.btn-group-justified > .btn-group .dropdown-menu {\n  left: auto;\n}\n[data-toggle=\"buttons\"] > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn input[type=\"checkbox\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"checkbox\"] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate;\n}\n.input-group[class*=\"col-\"] {\n  float: none;\n  padding-right: 0;\n  padding-left: 0;\n}\n.input-group .form-control {\n  position: relative;\n  z-index: 2;\n  float: left;\n  width: 100%;\n  margin-bottom: 0;\n}\n.input-group .form-control:focus {\n  z-index: 3;\n}\n.input-group-lg > .form-control,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-group-lg > .form-control,\nselect.input-group-lg > .input-group-addon,\nselect.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-group-lg > .form-control,\ntextarea.input-group-lg > .input-group-addon,\ntextarea.input-group-lg > .input-group-btn > .btn,\nselect[multiple].input-group-lg > .form-control,\nselect[multiple].input-group-lg > .input-group-addon,\nselect[multiple].input-group-lg > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-sm > .form-control,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-group-sm > .form-control,\nselect.input-group-sm > .input-group-addon,\nselect.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-group-sm > .form-control,\ntextarea.input-group-sm > .input-group-addon,\ntextarea.input-group-sm > .input-group-btn > .btn,\nselect[multiple].input-group-sm > .form-control,\nselect[multiple].input-group-sm > .input-group-addon,\nselect[multiple].input-group-sm > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-addon,\n.input-group-btn,\n.input-group .form-control {\n  display: table-cell;\n}\n.input-group-addon:not(:first-child):not(:last-child),\n.input-group-btn:not(:first-child):not(:last-child),\n.input-group .form-control:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.input-group-addon,\n.input-group-btn {\n  width: 1%;\n  white-space: nowrap;\n  vertical-align: middle;\n}\n.input-group-addon {\n  padding: 6px 12px;\n  font-size: 14px;\n  font-weight: normal;\n  line-height: 1;\n  color: #555;\n  text-align: center;\n  background-color: #eee;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n.input-group-addon.input-sm {\n  padding: 5px 10px;\n  font-size: 12px;\n  border-radius: 3px;\n}\n.input-group-addon.input-lg {\n  padding: 10px 16px;\n  font-size: 18px;\n  border-radius: 6px;\n}\n.input-group-addon input[type=\"radio\"],\n.input-group-addon input[type=\"checkbox\"] {\n  margin-top: 0;\n}\n.input-group .form-control:first-child,\n.input-group-addon:first-child,\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group > .btn,\n.input-group-btn:first-child > .dropdown-toggle,\n.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group-addon:first-child {\n  border-right: 0;\n}\n.input-group .form-control:last-child,\n.input-group-addon:last-child,\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group > .btn,\n.input-group-btn:last-child > .dropdown-toggle,\n.input-group-btn:first-child > .btn:not(:first-child),\n.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.input-group-addon:last-child {\n  border-left: 0;\n}\n.input-group-btn {\n  position: relative;\n  font-size: 0;\n  white-space: nowrap;\n}\n.input-group-btn > .btn {\n  position: relative;\n}\n.input-group-btn > .btn + .btn {\n  margin-left: -1px;\n}\n.input-group-btn > .btn:hover,\n.input-group-btn > .btn:focus,\n.input-group-btn > .btn:active {\n  z-index: 2;\n}\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group {\n  margin-right: -1px;\n}\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group {\n  z-index: 2;\n  margin-left: -1px;\n}\n.nav {\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.nav > li {\n  position: relative;\n  display: block;\n}\n.nav > li > a {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n}\n.nav > li > a:hover,\n.nav > li > a:focus {\n  text-decoration: none;\n  background-color: #eee;\n}\n.nav > li.disabled > a {\n  color: #777;\n}\n.nav > li.disabled > a:hover,\n.nav > li.disabled > a:focus {\n  color: #777;\n  text-decoration: none;\n  cursor: not-allowed;\n  background-color: transparent;\n}\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus {\n  background-color: #eee;\n  border-color: #337ab7;\n}\n.nav .nav-divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.nav > li > a > img {\n  max-width: none;\n}\n.nav-tabs {\n  border-bottom: 1px solid #ddd;\n}\n.nav-tabs > li {\n  float: left;\n  margin-bottom: -1px;\n}\n.nav-tabs > li > a {\n  margin-right: 2px;\n  line-height: 1.42857143;\n  border: 1px solid transparent;\n  border-radius: 4px 4px 0 0;\n}\n.nav-tabs > li > a:hover {\n  border-color: #eee #eee #ddd;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  color: #555;\n  cursor: default;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-bottom-color: transparent;\n}\n.nav-tabs.nav-justified {\n  width: 100%;\n  border-bottom: 0;\n}\n.nav-tabs.nav-justified > li {\n  float: none;\n}\n.nav-tabs.nav-justified > li > a {\n  margin-bottom: 5px;\n  text-align: center;\n}\n.nav-tabs.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-tabs.nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs.nav-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs.nav-justified > .active > a,\n.nav-tabs.nav-justified > .active > a:hover,\n.nav-tabs.nav-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs.nav-justified > .active > a,\n  .nav-tabs.nav-justified > .active > a:hover,\n  .nav-tabs.nav-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.nav-pills > li {\n  float: left;\n}\n.nav-pills > li > a {\n  border-radius: 4px;\n}\n.nav-pills > li + li {\n  margin-left: 2px;\n}\n.nav-pills > li.active > a,\n.nav-pills > li.active > a:hover,\n.nav-pills > li.active > a:focus {\n  color: #fff;\n  background-color: #337ab7;\n}\n.nav-stacked > li {\n  float: none;\n}\n.nav-stacked > li + li {\n  margin-top: 2px;\n  margin-left: 0;\n}\n.nav-justified {\n  width: 100%;\n}\n.nav-justified > li {\n  float: none;\n}\n.nav-justified > li > a {\n  margin-bottom: 5px;\n  text-align: center;\n}\n.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs-justified {\n  border-bottom: 0;\n}\n.nav-tabs-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs-justified > .active > a,\n.nav-tabs-justified > .active > a:hover,\n.nav-tabs-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs-justified > .active > a,\n  .nav-tabs-justified > .active > a:hover,\n  .nav-tabs-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.navbar {\n  position: relative;\n  min-height: 50px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n}\n@media (min-width: 768px) {\n  .navbar {\n    border-radius: 4px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-header {\n    float: left;\n  }\n}\n.navbar-collapse {\n  padding-right: 15px;\n  padding-left: 15px;\n  overflow-x: visible;\n  -webkit-overflow-scrolling: touch;\n  border-top: 1px solid transparent;\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);\n}\n.navbar-collapse.in {\n  overflow-y: auto;\n}\n@media (min-width: 768px) {\n  .navbar-collapse {\n    width: auto;\n    border-top: 0;\n    box-shadow: none;\n  }\n  .navbar-collapse.collapse {\n    display: block !important;\n    height: auto !important;\n    padding-bottom: 0;\n    overflow: visible !important;\n  }\n  .navbar-collapse.in {\n    overflow-y: visible;\n  }\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-static-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    padding-right: 0;\n    padding-left: 0;\n  }\n}\n.navbar-fixed-top .navbar-collapse,\n.navbar-fixed-bottom .navbar-collapse {\n  max-height: 340px;\n}\n@media (max-device-width: 480px) and (orientation: landscape) {\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    max-height: 200px;\n  }\n}\n.container > .navbar-header,\n.container-fluid > .navbar-header,\n.container > .navbar-collapse,\n.container-fluid > .navbar-collapse {\n  margin-right: -15px;\n  margin-left: -15px;\n}\n@media (min-width: 768px) {\n  .container > .navbar-header,\n  .container-fluid > .navbar-header,\n  .container > .navbar-collapse,\n  .container-fluid > .navbar-collapse {\n    margin-right: 0;\n    margin-left: 0;\n  }\n}\n.navbar-static-top {\n  z-index: 1000;\n  border-width: 0 0 1px;\n}\n@media (min-width: 768px) {\n  .navbar-static-top {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top,\n.navbar-fixed-bottom {\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n@media (min-width: 768px) {\n  .navbar-fixed-top,\n  .navbar-fixed-bottom {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top {\n  top: 0;\n  border-width: 0 0 1px;\n}\n.navbar-fixed-bottom {\n  bottom: 0;\n  margin-bottom: 0;\n  border-width: 1px 0 0;\n}\n.navbar-brand {\n  float: left;\n  height: 50px;\n  padding: 15px 15px;\n  font-size: 18px;\n  line-height: 20px;\n}\n.navbar-brand:hover,\n.navbar-brand:focus {\n  text-decoration: none;\n}\n.navbar-brand > img {\n  display: block;\n}\n@media (min-width: 768px) {\n  .navbar > .container .navbar-brand,\n  .navbar > .container-fluid .navbar-brand {\n    margin-left: -15px;\n  }\n}\n.navbar-toggle {\n  position: relative;\n  float: right;\n  padding: 9px 10px;\n  margin-top: 8px;\n  margin-right: 15px;\n  margin-bottom: 8px;\n  background-color: transparent;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.navbar-toggle:focus {\n  outline: 0;\n}\n.navbar-toggle .icon-bar {\n  display: block;\n  width: 22px;\n  height: 2px;\n  border-radius: 1px;\n}\n.navbar-toggle .icon-bar + .icon-bar {\n  margin-top: 4px;\n}\n@media (min-width: 768px) {\n  .navbar-toggle {\n    display: none;\n  }\n}\n.navbar-nav {\n  margin: 7.5px -15px;\n}\n.navbar-nav > li > a {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  line-height: 20px;\n}\n@media (max-width: 767px) {\n  .navbar-nav .open .dropdown-menu {\n    position: static;\n    float: none;\n    width: auto;\n    margin-top: 0;\n    background-color: transparent;\n    border: 0;\n    box-shadow: none;\n  }\n  .navbar-nav .open .dropdown-menu > li > a,\n  .navbar-nav .open .dropdown-menu .dropdown-header {\n    padding: 5px 15px 5px 25px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a {\n    line-height: 20px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-nav .open .dropdown-menu > li > a:focus {\n    background-image: none;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-nav {\n    float: left;\n    margin: 0;\n  }\n  .navbar-nav > li {\n    float: left;\n  }\n  .navbar-nav > li > a {\n    padding-top: 15px;\n    padding-bottom: 15px;\n  }\n}\n.navbar-form {\n  padding: 10px 15px;\n  margin-top: 8px;\n  margin-right: -15px;\n  margin-bottom: 8px;\n  margin-left: -15px;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);\n}\n@media (min-width: 768px) {\n  .navbar-form .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control-static {\n    display: inline-block;\n  }\n  .navbar-form .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .navbar-form .input-group .input-group-addon,\n  .navbar-form .input-group .input-group-btn,\n  .navbar-form .input-group .form-control {\n    width: auto;\n  }\n  .navbar-form .input-group > .form-control {\n    width: 100%;\n  }\n  .navbar-form .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio,\n  .navbar-form .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio label,\n  .navbar-form .checkbox label {\n    padding-left: 0;\n  }\n  .navbar-form .radio input[type=\"radio\"],\n  .navbar-form .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .navbar-form .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n@media (max-width: 767px) {\n  .navbar-form .form-group {\n    margin-bottom: 5px;\n  }\n  .navbar-form .form-group:last-child {\n    margin-bottom: 0;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-form {\n    width: auto;\n    padding-top: 0;\n    padding-bottom: 0;\n    margin-right: 0;\n    margin-left: 0;\n    border: 0;\n    box-shadow: none;\n  }\n}\n.navbar-nav > li > .dropdown-menu {\n  margin-top: 0;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {\n  margin-bottom: 0;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.navbar-btn {\n  margin-top: 8px;\n  margin-bottom: 8px;\n}\n.navbar-btn.btn-sm {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.navbar-btn.btn-xs {\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n.navbar-text {\n  margin-top: 15px;\n  margin-bottom: 15px;\n}\n@media (min-width: 768px) {\n  .navbar-text {\n    float: left;\n    margin-right: 15px;\n    margin-left: 15px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-left {\n    float: left !important;\n  }\n  .navbar-right {\n    float: right !important;\n    margin-right: -15px;\n  }\n  .navbar-right ~ .navbar-right {\n    margin-right: 0;\n  }\n}\n.navbar-default {\n  background-color: #f8f8f8;\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-brand {\n  color: #777;\n}\n.navbar-default .navbar-brand:hover,\n.navbar-default .navbar-brand:focus {\n  color: #5e5e5e;\n  background-color: transparent;\n}\n.navbar-default .navbar-text {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a:hover,\n.navbar-default .navbar-nav > li > a:focus {\n  color: #333;\n  background-color: transparent;\n}\n.navbar-default .navbar-nav > .active > a,\n.navbar-default .navbar-nav > .active > a:hover,\n.navbar-default .navbar-nav > .active > a:focus {\n  color: #555;\n  background-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .disabled > a,\n.navbar-default .navbar-nav > .disabled > a:hover,\n.navbar-default .navbar-nav > .disabled > a:focus {\n  color: #ccc;\n  background-color: transparent;\n}\n.navbar-default .navbar-toggle {\n  border-color: #ddd;\n}\n.navbar-default .navbar-toggle:hover,\n.navbar-default .navbar-toggle:focus {\n  background-color: #ddd;\n}\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #888;\n}\n.navbar-default .navbar-collapse,\n.navbar-default .navbar-form {\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .open > a:hover,\n.navbar-default .navbar-nav > .open > a:focus {\n  color: #555;\n  background-color: #e7e7e7;\n}\n@media (max-width: 767px) {\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a {\n    color: #777;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #333;\n    background-color: transparent;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #555;\n    background-color: #e7e7e7;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #ccc;\n    background-color: transparent;\n  }\n}\n.navbar-default .navbar-link {\n  color: #777;\n}\n.navbar-default .navbar-link:hover {\n  color: #333;\n}\n.navbar-default .btn-link {\n  color: #777;\n}\n.navbar-default .btn-link:hover,\n.navbar-default .btn-link:focus {\n  color: #333;\n}\n.navbar-default .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-default .btn-link:hover,\n.navbar-default .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-default .btn-link:focus {\n  color: #ccc;\n}\n.navbar-inverse {\n  background-color: #222;\n  border-color: #080808;\n}\n.navbar-inverse .navbar-brand {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-brand:hover,\n.navbar-inverse .navbar-brand:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-text {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a:hover,\n.navbar-inverse .navbar-nav > li > a:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-nav > .active > a,\n.navbar-inverse .navbar-nav > .active > a:hover,\n.navbar-inverse .navbar-nav > .active > a:focus {\n  color: #fff;\n  background-color: #080808;\n}\n.navbar-inverse .navbar-nav > .disabled > a,\n.navbar-inverse .navbar-nav > .disabled > a:hover,\n.navbar-inverse .navbar-nav > .disabled > a:focus {\n  color: #444;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-toggle {\n  border-color: #333;\n}\n.navbar-inverse .navbar-toggle:hover,\n.navbar-inverse .navbar-toggle:focus {\n  background-color: #333;\n}\n.navbar-inverse .navbar-toggle .icon-bar {\n  background-color: #fff;\n}\n.navbar-inverse .navbar-collapse,\n.navbar-inverse .navbar-form {\n  border-color: #101010;\n}\n.navbar-inverse .navbar-nav > .open > a,\n.navbar-inverse .navbar-nav > .open > a:hover,\n.navbar-inverse .navbar-nav > .open > a:focus {\n  color: #fff;\n  background-color: #080808;\n}\n@media (max-width: 767px) {\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {\n    border-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {\n    color: #9d9d9d;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #fff;\n    background-color: transparent;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #fff;\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #444;\n    background-color: transparent;\n  }\n}\n.navbar-inverse .navbar-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-link:hover {\n  color: #fff;\n}\n.navbar-inverse .btn-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link:focus {\n  color: #fff;\n}\n.navbar-inverse .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-inverse .btn-link:focus {\n  color: #444;\n}\n.breadcrumb {\n  padding: 8px 15px;\n  margin-bottom: 20px;\n  list-style: none;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  display: inline-block;\n}\n.breadcrumb > li + li:before {\n  padding: 0 5px;\n  color: #ccc;\n  content: \"/\\A0\";\n}\n.breadcrumb > .active {\n  color: #777;\n}\n.pagination {\n  display: inline-block;\n  padding-left: 0;\n  margin: 20px 0;\n  border-radius: 4px;\n}\n.pagination > li {\n  display: inline;\n}\n.pagination > li > a,\n.pagination > li > span {\n  position: relative;\n  float: left;\n  padding: 6px 12px;\n  margin-left: -1px;\n  line-height: 1.42857143;\n  color: #337ab7;\n  text-decoration: none;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n.pagination > li:first-child > a,\n.pagination > li:first-child > span {\n  margin-left: 0;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.pagination > li:last-child > a,\n.pagination > li:last-child > span {\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n.pagination > li > a:hover,\n.pagination > li > span:hover,\n.pagination > li > a:focus,\n.pagination > li > span:focus {\n  z-index: 2;\n  color: #23527c;\n  background-color: #eee;\n  border-color: #ddd;\n}\n.pagination > .active > a,\n.pagination > .active > span,\n.pagination > .active > a:hover,\n.pagination > .active > span:hover,\n.pagination > .active > a:focus,\n.pagination > .active > span:focus {\n  z-index: 3;\n  color: #fff;\n  cursor: default;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.pagination > .disabled > span,\n.pagination > .disabled > span:hover,\n.pagination > .disabled > span:focus,\n.pagination > .disabled > a,\n.pagination > .disabled > a:hover,\n.pagination > .disabled > a:focus {\n  color: #777;\n  cursor: not-allowed;\n  background-color: #fff;\n  border-color: #ddd;\n}\n.pagination-lg > li > a,\n.pagination-lg > li > span {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.pagination-lg > li:first-child > a,\n.pagination-lg > li:first-child > span {\n  border-top-left-radius: 6px;\n  border-bottom-left-radius: 6px;\n}\n.pagination-lg > li:last-child > a,\n.pagination-lg > li:last-child > span {\n  border-top-right-radius: 6px;\n  border-bottom-right-radius: 6px;\n}\n.pagination-sm > li > a,\n.pagination-sm > li > span {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.pagination-sm > li:first-child > a,\n.pagination-sm > li:first-child > span {\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.pagination-sm > li:last-child > a,\n.pagination-sm > li:last-child > span {\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.pager {\n  padding-left: 0;\n  margin: 20px 0;\n  text-align: center;\n  list-style: none;\n}\n.pager li {\n  display: inline;\n}\n.pager li > a,\n.pager li > span {\n  display: inline-block;\n  padding: 5px 14px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 15px;\n}\n.pager li > a:hover,\n.pager li > a:focus {\n  text-decoration: none;\n  background-color: #eee;\n}\n.pager .next > a,\n.pager .next > span {\n  float: right;\n}\n.pager .previous > a,\n.pager .previous > span {\n  float: left;\n}\n.pager .disabled > a,\n.pager .disabled > a:hover,\n.pager .disabled > a:focus,\n.pager .disabled > span {\n  color: #777;\n  cursor: not-allowed;\n  background-color: #fff;\n}\n.label {\n  display: inline;\n  padding: .2em .6em .3em;\n  font-size: 75%;\n  font-weight: bold;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: .25em;\n}\na.label:hover,\na.label:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.label:empty {\n  display: none;\n}\n.btn .label {\n  position: relative;\n  top: -1px;\n}\n.label-default {\n  background-color: #777;\n}\n.label-default[href]:hover,\n.label-default[href]:focus {\n  background-color: #5e5e5e;\n}\n.label-primary {\n  background-color: #337ab7;\n}\n.label-primary[href]:hover,\n.label-primary[href]:focus {\n  background-color: #286090;\n}\n.label-success {\n  background-color: #5cb85c;\n}\n.label-success[href]:hover,\n.label-success[href]:focus {\n  background-color: #449d44;\n}\n.label-info {\n  background-color: #5bc0de;\n}\n.label-info[href]:hover,\n.label-info[href]:focus {\n  background-color: #31b0d5;\n}\n.label-warning {\n  background-color: #f0ad4e;\n}\n.label-warning[href]:hover,\n.label-warning[href]:focus {\n  background-color: #ec971f;\n}\n.label-danger {\n  background-color: #d9534f;\n}\n.label-danger[href]:hover,\n.label-danger[href]:focus {\n  background-color: #c9302c;\n}\n.badge {\n  display: inline-block;\n  min-width: 10px;\n  padding: 3px 7px;\n  font-size: 12px;\n  font-weight: bold;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  background-color: #777;\n  border-radius: 10px;\n}\n.badge:empty {\n  display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\n.btn-xs .badge,\n.btn-group-xs > .btn .badge {\n  top: 0;\n  padding: 1px 5px;\n}\na.badge:hover,\na.badge:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.list-group-item.active > .badge,\n.nav-pills > .active > a > .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.list-group-item > .badge {\n  float: right;\n}\n.list-group-item > .badge + .badge {\n  margin-right: 5px;\n}\n.nav-pills > li > a > .badge {\n  margin-left: 3px;\n}\n.jumbotron {\n  padding-top: 30px;\n  padding-bottom: 30px;\n  margin-bottom: 30px;\n  color: inherit;\n  background-color: #eee;\n}\n.jumbotron h1,\n.jumbotron .h1 {\n  color: inherit;\n}\n.jumbotron p {\n  margin-bottom: 15px;\n  font-size: 21px;\n  font-weight: 200;\n}\n.jumbotron > hr {\n  border-top-color: #d5d5d5;\n}\n.container .jumbotron,\n.container-fluid .jumbotron {\n  padding-right: 15px;\n  padding-left: 15px;\n  border-radius: 6px;\n}\n.jumbotron .container {\n  max-width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .jumbotron {\n    padding-top: 48px;\n    padding-bottom: 48px;\n  }\n  .container .jumbotron,\n  .container-fluid .jumbotron {\n    padding-right: 60px;\n    padding-left: 60px;\n  }\n  .jumbotron h1,\n  .jumbotron .h1 {\n    font-size: 63px;\n  }\n}\n.thumbnail {\n  display: block;\n  padding: 4px;\n  margin-bottom: 20px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: border 0.2s ease-in-out;\n  transition: border 0.2s ease-in-out;\n}\n.thumbnail > img,\n.thumbnail a > img {\n  margin-right: auto;\n  margin-left: auto;\n}\na.thumbnail:hover,\na.thumbnail:focus,\na.thumbnail.active {\n  border-color: #337ab7;\n}\n.thumbnail .caption {\n  padding: 9px;\n  color: #333;\n}\n.alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.alert .alert-link {\n  font-weight: bold;\n}\n.alert > p,\n.alert > ul {\n  margin-bottom: 0;\n}\n.alert > p + p {\n  margin-top: 5px;\n}\n.alert-dismissable,\n.alert-dismissible {\n  padding-right: 35px;\n}\n.alert-dismissable .close,\n.alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.alert-success {\n  color: #cfcfcf;\n  background-color: #41434b;\n  border-color: #41434b;\n}\n.alert-success hr {\n  border-top-color: #cfcfcf;\n}\n.alert-success .alert-link {\n  color: #cfcfcf;\n}\n.alert-info {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.alert-info .alert-link {\n  color: #245269;\n}\n.alert-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.alert-warning .alert-link {\n  color: #66512c;\n}\n.alert-danger {\n  color: #a94442;\n  background-color: #f2dede;\n  border-color: #ebccd1;\n}\n.alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.alert-danger .alert-link {\n  color: #843534;\n}\n@-webkit-keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n@keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n.progress {\n  height: 20px;\n  margin-bottom: 20px;\n  overflow: hidden;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);\n}\n.progress-bar {\n  float: left;\n  width: 0;\n  height: 100%;\n  font-size: 12px;\n  line-height: 20px;\n  color: #fff;\n  text-align: center;\n  background-color: #337ab7;\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);\n  -webkit-transition: width .6s ease;\n  transition: width .6s ease;\n}\n.progress-striped .progress-bar,\n.progress-bar-striped {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 40px 40px;\n}\n.progress.active .progress-bar,\n.progress-bar.active {\n  -webkit-animation: progress-bar-stripes 2s linear infinite;\n  animation: progress-bar-stripes 2s linear infinite;\n}\n.progress-bar-success {\n  background-color: #5cb85c;\n}\n.progress-striped .progress-bar-success {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-info {\n  background-color: #5bc0de;\n}\n.progress-striped .progress-bar-info {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-warning {\n  background-color: #f0ad4e;\n}\n.progress-striped .progress-bar-warning {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-danger {\n  background-color: #d9534f;\n}\n.progress-striped .progress-bar-danger {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.media {\n  margin-top: 15px;\n}\n.media:first-child {\n  margin-top: 0;\n}\n.media,\n.media-body {\n  overflow: hidden;\n  zoom: 1;\n}\n.media-body {\n  width: 10000px;\n}\n.media-object {\n  display: block;\n}\n.media-object.img-thumbnail {\n  max-width: none;\n}\n.media-right,\n.media > .pull-right {\n  padding-left: 10px;\n}\n.media-left,\n.media > .pull-left {\n  padding-right: 10px;\n}\n.media-left,\n.media-right,\n.media-body {\n  display: table-cell;\n  vertical-align: top;\n}\n.media-middle {\n  vertical-align: middle;\n}\n.media-bottom {\n  vertical-align: bottom;\n}\n.media-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.media-list {\n  padding-left: 0;\n  list-style: none;\n}\n.list-group {\n  padding-left: 0;\n  margin-bottom: 20px;\n}\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n.list-group-item:first-child {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.list-group-item:last-child {\n  margin-bottom: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\na.list-group-item,\nbutton.list-group-item {\n  color: #555;\n}\na.list-group-item .list-group-item-heading,\nbutton.list-group-item .list-group-item-heading {\n  color: #333;\n}\na.list-group-item:hover,\nbutton.list-group-item:hover,\na.list-group-item:focus,\nbutton.list-group-item:focus {\n  color: #555;\n  text-decoration: none;\n  background-color: #f5f5f5;\n}\nbutton.list-group-item {\n  width: 100%;\n  text-align: left;\n}\n.list-group-item.disabled,\n.list-group-item.disabled:hover,\n.list-group-item.disabled:focus {\n  color: #777;\n  cursor: not-allowed;\n  background-color: #eee;\n}\n.list-group-item.disabled .list-group-item-heading,\n.list-group-item.disabled:hover .list-group-item-heading,\n.list-group-item.disabled:focus .list-group-item-heading {\n  color: inherit;\n}\n.list-group-item.disabled .list-group-item-text,\n.list-group-item.disabled:hover .list-group-item-text,\n.list-group-item.disabled:focus .list-group-item-text {\n  color: #777;\n}\n.list-group-item.active,\n.list-group-item.active:hover,\n.list-group-item.active:focus {\n  z-index: 2;\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.list-group-item.active .list-group-item-heading,\n.list-group-item.active:hover .list-group-item-heading,\n.list-group-item.active:focus .list-group-item-heading,\n.list-group-item.active .list-group-item-heading > small,\n.list-group-item.active:hover .list-group-item-heading > small,\n.list-group-item.active:focus .list-group-item-heading > small,\n.list-group-item.active .list-group-item-heading > .small,\n.list-group-item.active:hover .list-group-item-heading > .small,\n.list-group-item.active:focus .list-group-item-heading > .small {\n  color: inherit;\n}\n.list-group-item.active .list-group-item-text,\n.list-group-item.active:hover .list-group-item-text,\n.list-group-item.active:focus .list-group-item-text {\n  color: #c7ddef;\n}\n.list-group-item-success {\n  color: #3c763d;\n  background-color: #dff0d8;\n}\na.list-group-item-success,\nbutton.list-group-item-success {\n  color: #3c763d;\n}\na.list-group-item-success .list-group-item-heading,\nbutton.list-group-item-success .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-success:hover,\nbutton.list-group-item-success:hover,\na.list-group-item-success:focus,\nbutton.list-group-item-success:focus {\n  color: #3c763d;\n  background-color: #d0e9c6;\n}\na.list-group-item-success.active,\nbutton.list-group-item-success.active,\na.list-group-item-success.active:hover,\nbutton.list-group-item-success.active:hover,\na.list-group-item-success.active:focus,\nbutton.list-group-item-success.active:focus {\n  color: #fff;\n  background-color: #3c763d;\n  border-color: #3c763d;\n}\n.list-group-item-info {\n  color: #31708f;\n  background-color: #d9edf7;\n}\na.list-group-item-info,\nbutton.list-group-item-info {\n  color: #31708f;\n}\na.list-group-item-info .list-group-item-heading,\nbutton.list-group-item-info .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-info:hover,\nbutton.list-group-item-info:hover,\na.list-group-item-info:focus,\nbutton.list-group-item-info:focus {\n  color: #31708f;\n  background-color: #c4e3f3;\n}\na.list-group-item-info.active,\nbutton.list-group-item-info.active,\na.list-group-item-info.active:hover,\nbutton.list-group-item-info.active:hover,\na.list-group-item-info.active:focus,\nbutton.list-group-item-info.active:focus {\n  color: #fff;\n  background-color: #31708f;\n  border-color: #31708f;\n}\n.list-group-item-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n}\na.list-group-item-warning,\nbutton.list-group-item-warning {\n  color: #8a6d3b;\n}\na.list-group-item-warning .list-group-item-heading,\nbutton.list-group-item-warning .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-warning:hover,\nbutton.list-group-item-warning:hover,\na.list-group-item-warning:focus,\nbutton.list-group-item-warning:focus {\n  color: #8a6d3b;\n  background-color: #faf2cc;\n}\na.list-group-item-warning.active,\nbutton.list-group-item-warning.active,\na.list-group-item-warning.active:hover,\nbutton.list-group-item-warning.active:hover,\na.list-group-item-warning.active:focus,\nbutton.list-group-item-warning.active:focus {\n  color: #fff;\n  background-color: #8a6d3b;\n  border-color: #8a6d3b;\n}\n.list-group-item-danger {\n  color: #a94442;\n  background-color: #f2dede;\n}\na.list-group-item-danger,\nbutton.list-group-item-danger {\n  color: #a94442;\n}\na.list-group-item-danger .list-group-item-heading,\nbutton.list-group-item-danger .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-danger:hover,\nbutton.list-group-item-danger:hover,\na.list-group-item-danger:focus,\nbutton.list-group-item-danger:focus {\n  color: #a94442;\n  background-color: #ebcccc;\n}\na.list-group-item-danger.active,\nbutton.list-group-item-danger.active,\na.list-group-item-danger.active:hover,\nbutton.list-group-item-danger.active:hover,\na.list-group-item-danger.active:focus,\nbutton.list-group-item-danger.active:focus {\n  color: #fff;\n  background-color: #a94442;\n  border-color: #a94442;\n}\n.list-group-item-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.list-group-item-text {\n  margin-bottom: 0;\n  line-height: 1.3;\n}\n.panel {\n  margin-bottom: 20px;\n  background-color: #fff;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.panel-body {\n  padding: 15px;\n}\n.panel-heading {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel-heading > .dropdown .dropdown-toggle {\n  color: inherit;\n}\n.panel-title {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-size: 16px;\n  color: inherit;\n}\n.panel-title > a,\n.panel-title > small,\n.panel-title > .small,\n.panel-title > small > a,\n.panel-title > .small > a {\n  color: inherit;\n}\n.panel-footer {\n  padding: 10px 15px;\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .list-group,\n.panel > .panel-collapse > .list-group {\n  margin-bottom: 0;\n}\n.panel > .list-group .list-group-item,\n.panel > .panel-collapse > .list-group .list-group-item {\n  border-width: 1px 0;\n  border-radius: 0;\n}\n.panel > .list-group:first-child .list-group-item:first-child,\n.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {\n  border-top: 0;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel > .list-group:last-child .list-group-item:last-child,\n.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {\n  border-bottom: 0;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.panel-heading + .list-group .list-group-item:first-child {\n  border-top-width: 0;\n}\n.list-group + .panel-footer {\n  border-top-width: 0;\n}\n.panel > .table,\n.panel > .table-responsive > .table,\n.panel > .panel-collapse > .table {\n  margin-bottom: 0;\n}\n.panel > .table caption,\n.panel > .table-responsive > .table caption,\n.panel > .panel-collapse > .table caption {\n  padding-right: 15px;\n  padding-left: 15px;\n}\n.panel > .table:first-child,\n.panel > .table-responsive:first-child > .table:first-child {\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {\n  border-top-left-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {\n  border-top-right-radius: 3px;\n}\n.panel > .table:last-child,\n.panel > .table-responsive:last-child > .table:last-child {\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {\n  border-bottom-right-radius: 3px;\n}\n.panel > .panel-body + .table,\n.panel > .panel-body + .table-responsive,\n.panel > .table + .panel-body,\n.panel > .table-responsive + .panel-body {\n  border-top: 1px solid #ddd;\n}\n.panel > .table > tbody:first-child > tr:first-child th,\n.panel > .table > tbody:first-child > tr:first-child td {\n  border-top: 0;\n}\n.panel > .table-bordered,\n.panel > .table-responsive > .table-bordered {\n  border: 0;\n}\n.panel > .table-bordered > thead > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,\n.panel > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-bordered > thead > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,\n.panel > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-bordered > tfoot > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n  border-left: 0;\n}\n.panel > .table-bordered > thead > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,\n.panel > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-bordered > thead > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,\n.panel > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-bordered > tfoot > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n  border-right: 0;\n}\n.panel > .table-bordered > thead > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,\n.panel > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-bordered > thead > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,\n.panel > .table-bordered > tbody > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {\n  border-bottom: 0;\n}\n.panel > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-bordered > tfoot > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {\n  border-bottom: 0;\n}\n.panel > .table-responsive {\n  margin-bottom: 0;\n  border: 0;\n}\n.panel-group {\n  margin-bottom: 20px;\n}\n.panel-group .panel {\n  margin-bottom: 0;\n  border-radius: 4px;\n}\n.panel-group .panel + .panel {\n  margin-top: 5px;\n}\n.panel-group .panel-heading {\n  border-bottom: 0;\n}\n.panel-group .panel-heading + .panel-collapse > .panel-body,\n.panel-group .panel-heading + .panel-collapse > .list-group {\n  border-top: 1px solid #ddd;\n}\n.panel-group .panel-footer {\n  border-top: 0;\n}\n.panel-group .panel-footer + .panel-collapse .panel-body {\n  border-bottom: 1px solid #ddd;\n}\n.panel-default {\n  border-color: #ddd;\n}\n.panel-default > .panel-heading {\n  color: #333;\n  background-color: #f5f5f5;\n  border-color: #ddd;\n}\n.panel-default > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ddd;\n}\n.panel-default > .panel-heading .badge {\n  color: #f5f5f5;\n  background-color: #333;\n}\n.panel-default > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ddd;\n}\n.panel-primary {\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #337ab7;\n}\n.panel-primary > .panel-heading .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.panel-primary > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #337ab7;\n}\n.panel-success {\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading {\n  color: #3c763d;\n  background-color: #dff0d8;\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #d6e9c6;\n}\n.panel-success > .panel-heading .badge {\n  color: #dff0d8;\n  background-color: #3c763d;\n}\n.panel-success > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #d6e9c6;\n}\n.panel-info {\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #bce8f1;\n}\n.panel-info > .panel-heading .badge {\n  color: #d9edf7;\n  background-color: #31708f;\n}\n.panel-info > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #bce8f1;\n}\n.panel-warning {\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #faebcc;\n}\n.panel-warning > .panel-heading .badge {\n  color: #fcf8e3;\n  background-color: #8a6d3b;\n}\n.panel-warning > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #faebcc;\n}\n.panel-danger {\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading {\n  color: #a94442;\n  background-color: #f2dede;\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ebccd1;\n}\n.panel-danger > .panel-heading .badge {\n  color: #f2dede;\n  background-color: #a94442;\n}\n.panel-danger > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ebccd1;\n}\n.embed-responsive {\n  position: relative;\n  display: block;\n  height: 0;\n  padding: 0;\n  overflow: hidden;\n}\n.embed-responsive .embed-responsive-item,\n.embed-responsive iframe,\n.embed-responsive embed,\n.embed-responsive object,\n.embed-responsive video {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n}\n.embed-responsive-16by9 {\n  padding-bottom: 56.25%;\n}\n.embed-responsive-4by3 {\n  padding-bottom: 75%;\n}\n.well {\n  min-height: 20px;\n  padding: 19px;\n  margin-bottom: 20px;\n  background-color: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.well blockquote {\n  border-color: #ddd;\n  border-color: rgba(0, 0, 0, 0.15);\n}\n.well-lg {\n  padding: 24px;\n  border-radius: 6px;\n}\n.well-sm {\n  padding: 9px;\n  border-radius: 3px;\n}\n.close {\n  float: right;\n  font-size: 21px;\n  font-weight: bold;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  filter: alpha(opacity=20);\n  opacity: .2;\n}\n.close:hover,\n.close:focus {\n  color: #000;\n  text-decoration: none;\n  cursor: pointer;\n  filter: alpha(opacity=50);\n  opacity: .5;\n}\nbutton.close {\n  -webkit-appearance: none;\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  display: none;\n  overflow: hidden;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.modal.fade .modal-dialog {\n  -webkit-transition: -webkit-transform 0.3s ease-out;\n  transition: -webkit-transform 0.3s ease-out;\n  transition: transform 0.3s ease-out;\n  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;\n  -webkit-transform: translate(0, -25%);\n  transform: translate(0, -25%);\n}\n.modal.in .modal-dialog {\n  -webkit-transform: translate(0, 0);\n  transform: translate(0, 0);\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n.modal-content {\n  position: relative;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #999;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  outline: 0;\n  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n  filter: alpha(opacity=0);\n  opacity: 0;\n}\n.modal-backdrop.in {\n  filter: alpha(opacity=50);\n  opacity: .5;\n}\n.modal-header {\n  padding: 15px;\n  border-bottom: 1px solid #e5e5e5;\n}\n.modal-header .close {\n  margin-top: -2px;\n}\n.modal-title {\n  margin: 0;\n  line-height: 1.42857143;\n}\n.modal-body {\n  position: relative;\n  padding: 15px;\n}\n.modal-footer {\n  padding: 15px;\n  text-align: right;\n  border-top: 1px solid #e5e5e5;\n}\n.modal-footer .btn + .btn {\n  margin-bottom: 0;\n  margin-left: 5px;\n}\n.modal-footer .btn-group .btn + .btn {\n  margin-left: -1px;\n}\n.modal-footer .btn-block + .btn-block {\n  margin-left: 0;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 768px) {\n  .modal-dialog {\n    width: 600px;\n    margin: 30px auto;\n  }\n  .modal-content {\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n  }\n  .modal-sm {\n    width: 300px;\n  }\n}\n@media (min-width: 992px) {\n  .modal-lg {\n    width: 900px;\n  }\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  white-space: normal;\n  filter: alpha(opacity=0);\n  opacity: 0;\n  line-break: auto;\n}\n.tooltip.in {\n  filter: alpha(opacity=90);\n  opacity: .9;\n}\n.tooltip.top {\n  padding: 5px 0;\n  margin-top: -3px;\n}\n.tooltip.right {\n  padding: 0 5px;\n  margin-left: 3px;\n}\n.tooltip.bottom {\n  padding: 5px 0;\n  margin-top: 3px;\n}\n.tooltip.left {\n  padding: 0 5px;\n  margin-left: -3px;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 4px;\n}\n.tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.tooltip.top .tooltip-arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-left .tooltip-arrow {\n  right: 5px;\n  bottom: 0;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-right .tooltip-arrow {\n  bottom: 0;\n  left: 5px;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.right .tooltip-arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #000;\n}\n.tooltip.left .tooltip-arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #000;\n}\n.tooltip.bottom .tooltip-arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-left .tooltip-arrow {\n  top: 0;\n  right: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-right .tooltip-arrow {\n  top: 0;\n  left: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: none;\n  max-width: 276px;\n  padding: 1px;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  white-space: normal;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n  line-break: auto;\n}\n.popover.top {\n  margin-top: -10px;\n}\n.popover.right {\n  margin-left: 10px;\n}\n.popover.bottom {\n  margin-top: 10px;\n}\n.popover.left {\n  margin-left: -10px;\n}\n.popover-title {\n  padding: 8px 14px;\n  margin: 0;\n  font-size: 14px;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-radius: 5px 5px 0 0;\n}\n.popover-content {\n  padding: 9px 14px;\n}\n.popover > .arrow,\n.popover > .arrow:after {\n  position: absolute;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.popover > .arrow {\n  border-width: 11px;\n}\n.popover > .arrow:after {\n  content: \"\";\n  border-width: 10px;\n}\n.popover.top > .arrow {\n  bottom: -11px;\n  left: 50%;\n  margin-left: -11px;\n  border-top-color: #999;\n  border-top-color: rgba(0, 0, 0, 0.25);\n  border-bottom-width: 0;\n}\n.popover.top > .arrow:after {\n  bottom: 1px;\n  margin-left: -10px;\n  content: \" \";\n  border-top-color: #fff;\n  border-bottom-width: 0;\n}\n.popover.right > .arrow {\n  top: 50%;\n  left: -11px;\n  margin-top: -11px;\n  border-right-color: #999;\n  border-right-color: rgba(0, 0, 0, 0.25);\n  border-left-width: 0;\n}\n.popover.right > .arrow:after {\n  bottom: -10px;\n  left: 1px;\n  content: \" \";\n  border-right-color: #fff;\n  border-left-width: 0;\n}\n.popover.bottom > .arrow {\n  top: -11px;\n  left: 50%;\n  margin-left: -11px;\n  border-top-width: 0;\n  border-bottom-color: #999;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n}\n.popover.bottom > .arrow:after {\n  top: 1px;\n  margin-left: -10px;\n  content: \" \";\n  border-top-width: 0;\n  border-bottom-color: #fff;\n}\n.popover.left > .arrow {\n  top: 50%;\n  right: -11px;\n  margin-top: -11px;\n  border-right-width: 0;\n  border-left-color: #999;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n.popover.left > .arrow:after {\n  right: 1px;\n  bottom: -10px;\n  content: \" \";\n  border-right-width: 0;\n  border-left-color: #fff;\n}\n.carousel {\n  position: relative;\n}\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.carousel-inner > .item {\n  position: relative;\n  display: none;\n  -webkit-transition: 0.6s ease-in-out left;\n  transition: 0.6s ease-in-out left;\n}\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  line-height: 1;\n}\n@media all and (transform-3d), (-webkit-transform-3d) {\n  .carousel-inner > .item {\n    -webkit-transition: -webkit-transform 0.6s ease-in-out;\n    transition: -webkit-transform 0.6s ease-in-out;\n    transition: transform 0.6s ease-in-out;\n    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-perspective: 1000px;\n    perspective: 1000px;\n  }\n  .carousel-inner > .item.next,\n  .carousel-inner > .item.active.right {\n    left: 0;\n    -webkit-transform: translate3d(100%, 0, 0);\n    transform: translate3d(100%, 0, 0);\n  }\n  .carousel-inner > .item.prev,\n  .carousel-inner > .item.active.left {\n    left: 0;\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0);\n  }\n  .carousel-inner > .item.next.left,\n  .carousel-inner > .item.prev.right,\n  .carousel-inner > .item.active {\n    left: 0;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\n.carousel-inner > .active,\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  display: block;\n}\n.carousel-inner > .active {\n  left: 0;\n}\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.carousel-inner > .next {\n  left: 100%;\n}\n.carousel-inner > .prev {\n  left: -100%;\n}\n.carousel-inner > .next.left,\n.carousel-inner > .prev.right {\n  left: 0;\n}\n.carousel-inner > .active.left {\n  left: -100%;\n}\n.carousel-inner > .active.right {\n  left: 100%;\n}\n.carousel-control {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 15%;\n  font-size: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n  background-color: rgba(0, 0, 0, 0);\n  filter: alpha(opacity=50);\n  opacity: .5;\n}\n.carousel-control.left {\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);\n  background-repeat: repeat-x;\n}\n.carousel-control.right {\n  right: 0;\n  left: auto;\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);\n  background-repeat: repeat-x;\n}\n.carousel-control:hover,\n.carousel-control:focus {\n  color: #fff;\n  text-decoration: none;\n  filter: alpha(opacity=90);\n  outline: 0;\n  opacity: .9;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-left,\n.carousel-control .glyphicon-chevron-right {\n  position: absolute;\n  top: 50%;\n  z-index: 5;\n  display: inline-block;\n  margin-top: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .glyphicon-chevron-left {\n  left: 50%;\n  margin-left: -10px;\n}\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-right {\n  right: 50%;\n  margin-right: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next {\n  width: 20px;\n  height: 20px;\n  font-family: serif;\n  line-height: 1;\n}\n.carousel-control .icon-prev:before {\n  content: '\\2039';\n}\n.carousel-control .icon-next:before {\n  content: '\\203A';\n}\n.carousel-indicators {\n  position: absolute;\n  bottom: 10px;\n  left: 50%;\n  z-index: 15;\n  width: 60%;\n  padding-left: 0;\n  margin-left: -30%;\n  text-align: center;\n  list-style: none;\n}\n.carousel-indicators li {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin: 1px;\n  text-indent: -999px;\n  cursor: pointer;\n  background-color: #000 \\9;\n  background-color: rgba(0, 0, 0, 0);\n  border: 1px solid #fff;\n  border-radius: 10px;\n}\n.carousel-indicators .active {\n  width: 12px;\n  height: 12px;\n  margin: 0;\n  background-color: #fff;\n}\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n}\n.carousel-caption .btn {\n  text-shadow: none;\n}\n@media screen and (min-width: 768px) {\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-prev,\n  .carousel-control .icon-next {\n    width: 30px;\n    height: 30px;\n    margin-top: -10px;\n    font-size: 30px;\n  }\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .icon-prev {\n    margin-left: -10px;\n  }\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-next {\n    margin-right: -10px;\n  }\n  .carousel-caption {\n    right: 20%;\n    left: 20%;\n    padding-bottom: 30px;\n  }\n  .carousel-indicators {\n    bottom: 20px;\n  }\n}\n.clearfix:before,\n.clearfix:after,\n.dl-horizontal dd:before,\n.dl-horizontal dd:after,\n.container:before,\n.container:after,\n.container-fluid:before,\n.container-fluid:after,\n.row:before,\n.row:after,\n.form-horizontal .form-group:before,\n.form-horizontal .form-group:after,\n.btn-toolbar:before,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:before,\n.btn-group-vertical > .btn-group:after,\n.nav:before,\n.nav:after,\n.navbar:before,\n.navbar:after,\n.navbar-header:before,\n.navbar-header:after,\n.navbar-collapse:before,\n.navbar-collapse:after,\n.pager:before,\n.pager:after,\n.panel-body:before,\n.panel-body:after,\n.modal-header:before,\n.modal-header:after,\n.modal-footer:before,\n.modal-footer:after {\n  display: table;\n  content: \" \";\n}\n.clearfix:after,\n.dl-horizontal dd:after,\n.container:after,\n.container-fluid:after,\n.row:after,\n.form-horizontal .form-group:after,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:after,\n.nav:after,\n.navbar:after,\n.navbar-header:after,\n.navbar-collapse:after,\n.pager:after,\n.panel-body:after,\n.modal-header:after,\n.modal-footer:after {\n  clear: both;\n}\n.center-block {\n  display: block;\n  margin-right: auto;\n  margin-left: auto;\n}\n.pull-right {\n  float: right !important;\n}\n.pull-left {\n  float: left !important;\n}\n.hide {\n  display: none !important;\n}\n.show {\n  display: block !important;\n}\n.invisible {\n  visibility: hidden;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.hidden {\n  display: none !important;\n}\n.affix {\n  position: fixed;\n}\n@-ms-viewport {\n  width: device-width;\n}\n.visible-xs,\n.visible-sm,\n.visible-md,\n.visible-lg {\n  display: none !important;\n}\n.visible-xs-block,\n.visible-xs-inline,\n.visible-xs-inline-block,\n.visible-sm-block,\n.visible-sm-inline,\n.visible-sm-inline-block,\n.visible-md-block,\n.visible-md-inline,\n.visible-md-inline-block,\n.visible-lg-block,\n.visible-lg-inline,\n.visible-lg-inline-block {\n  display: none !important;\n}\n@media (max-width: 767px) {\n  .visible-xs {\n    display: block !important;\n  }\n  table.visible-xs {\n    display: table !important;\n  }\n  tr.visible-xs {\n    display: table-row !important;\n  }\n  th.visible-xs,\n  td.visible-xs {\n    display: table-cell !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-block {\n    display: block !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline {\n    display: inline !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm {\n    display: block !important;\n  }\n  table.visible-sm {\n    display: table !important;\n  }\n  tr.visible-sm {\n    display: table-row !important;\n  }\n  th.visible-sm,\n  td.visible-sm {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-block {\n    display: block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md {\n    display: block !important;\n  }\n  table.visible-md {\n    display: table !important;\n  }\n  tr.visible-md {\n    display: table-row !important;\n  }\n  th.visible-md,\n  td.visible-md {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-block {\n    display: block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg {\n    display: block !important;\n  }\n  table.visible-lg {\n    display: table !important;\n  }\n  tr.visible-lg {\n    display: table-row !important;\n  }\n  th.visible-lg,\n  td.visible-lg {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-block {\n    display: block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (max-width: 767px) {\n  .hidden-xs {\n    display: none !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .hidden-sm {\n    display: none !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .hidden-md {\n    display: none !important;\n  }\n}\n@media (min-width: 1200px) {\n  .hidden-lg {\n    display: none !important;\n  }\n}\n.visible-print {\n  display: none !important;\n}\n@media print {\n  .visible-print {\n    display: block !important;\n  }\n  table.visible-print {\n    display: table !important;\n  }\n  tr.visible-print {\n    display: table-row !important;\n  }\n  th.visible-print,\n  td.visible-print {\n    display: table-cell !important;\n  }\n}\n.visible-print-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-block {\n    display: block !important;\n  }\n}\n.visible-print-inline {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline {\n    display: inline !important;\n  }\n}\n.visible-print-inline-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline-block {\n    display: inline-block !important;\n  }\n}\n@media print {\n  .hidden-print {\n    display: none !important;\n  }\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	/*
@@ -61837,7 +62512,37 @@
 
 
 /***/ },
-/* 29 */
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "f4769f9bdb7466be65088239c12046d1.eot";
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fa2772327f55d8198301fdb8bcfc8158.woff";
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "f721466883998665b87923b92dea655b.svg";
+
+/***/ },
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -62089,7 +62794,87 @@
 
 
 /***/ },
-/* 30 */
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(38);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./bootstrap-theme.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./bootstrap-theme.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*!\n * Bootstrap v3.3.6 (http://getbootstrap.com)\n * Copyright 2011-2015 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n.btn-default,\n.btn-primary,\n.btn-success,\n.btn-info,\n.btn-warning,\n.btn-danger {\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.btn-default:active,\n.btn-primary:active,\n.btn-success:active,\n.btn-info:active,\n.btn-warning:active,\n.btn-danger:active,\n.btn-default.active,\n.btn-primary.active,\n.btn-success.active,\n.btn-info.active,\n.btn-warning.active,\n.btn-danger.active {\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn-default.disabled,\n.btn-primary.disabled,\n.btn-success.disabled,\n.btn-info.disabled,\n.btn-warning.disabled,\n.btn-danger.disabled,\n.btn-default[disabled],\n.btn-primary[disabled],\n.btn-success[disabled],\n.btn-info[disabled],\n.btn-warning[disabled],\n.btn-danger[disabled],\nfieldset[disabled] .btn-default,\nfieldset[disabled] .btn-primary,\nfieldset[disabled] .btn-success,\nfieldset[disabled] .btn-info,\nfieldset[disabled] .btn-warning,\nfieldset[disabled] .btn-danger {\n  box-shadow: none;\n}\n.btn-default .badge,\n.btn-primary .badge,\n.btn-success .badge,\n.btn-info .badge,\n.btn-warning .badge,\n.btn-danger .badge {\n  text-shadow: none;\n}\n.btn:active,\n.btn.active {\n  background-image: none;\n}\n.btn-default {\n  text-shadow: 0 1px 0 #fff;\n  background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e0e0e0));\n  background-image: linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #dbdbdb;\n  border-color: #ccc;\n}\n.btn-default:hover,\n.btn-default:focus {\n  background-color: #e0e0e0;\n  background-position: 0 -15px;\n}\n.btn-default:active,\n.btn-default.active {\n  background-color: #e0e0e0;\n  border-color: #dbdbdb;\n}\n.btn-default.disabled,\n.btn-default[disabled],\nfieldset[disabled] .btn-default,\n.btn-default.disabled:hover,\n.btn-default[disabled]:hover,\nfieldset[disabled] .btn-default:hover,\n.btn-default.disabled:focus,\n.btn-default[disabled]:focus,\nfieldset[disabled] .btn-default:focus,\n.btn-default.disabled.focus,\n.btn-default[disabled].focus,\nfieldset[disabled] .btn-default.focus,\n.btn-default.disabled:active,\n.btn-default[disabled]:active,\nfieldset[disabled] .btn-default:active,\n.btn-default.disabled.active,\n.btn-default[disabled].active,\nfieldset[disabled] .btn-default.active {\n  background-color: #e0e0e0;\n  background-image: none;\n}\n.btn-primary {\n  background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#265a88));\n  background-image: linear-gradient(to bottom, #337ab7 0%, #265a88 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #245580;\n}\n.btn-primary:hover,\n.btn-primary:focus {\n  background-color: #265a88;\n  background-position: 0 -15px;\n}\n.btn-primary:active,\n.btn-primary.active {\n  background-color: #265a88;\n  border-color: #245580;\n}\n.btn-primary.disabled,\n.btn-primary[disabled],\nfieldset[disabled] .btn-primary,\n.btn-primary.disabled:hover,\n.btn-primary[disabled]:hover,\nfieldset[disabled] .btn-primary:hover,\n.btn-primary.disabled:focus,\n.btn-primary[disabled]:focus,\nfieldset[disabled] .btn-primary:focus,\n.btn-primary.disabled.focus,\n.btn-primary[disabled].focus,\nfieldset[disabled] .btn-primary.focus,\n.btn-primary.disabled:active,\n.btn-primary[disabled]:active,\nfieldset[disabled] .btn-primary:active,\n.btn-primary.disabled.active,\n.btn-primary[disabled].active,\nfieldset[disabled] .btn-primary.active {\n  background-color: #265a88;\n  background-image: none;\n}\n.btn-success {\n  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));\n  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #3e8f3e;\n}\n.btn-success:hover,\n.btn-success:focus {\n  background-color: #419641;\n  background-position: 0 -15px;\n}\n.btn-success:active,\n.btn-success.active {\n  background-color: #419641;\n  border-color: #3e8f3e;\n}\n.btn-success.disabled,\n.btn-success[disabled],\nfieldset[disabled] .btn-success,\n.btn-success.disabled:hover,\n.btn-success[disabled]:hover,\nfieldset[disabled] .btn-success:hover,\n.btn-success.disabled:focus,\n.btn-success[disabled]:focus,\nfieldset[disabled] .btn-success:focus,\n.btn-success.disabled.focus,\n.btn-success[disabled].focus,\nfieldset[disabled] .btn-success.focus,\n.btn-success.disabled:active,\n.btn-success[disabled]:active,\nfieldset[disabled] .btn-success:active,\n.btn-success.disabled.active,\n.btn-success[disabled].active,\nfieldset[disabled] .btn-success.active {\n  background-color: #419641;\n  background-image: none;\n}\n.btn-info {\n  background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#5bc0de), to(#2aabd2));\n  background-image: linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2aabd2', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #28a4c9;\n}\n.btn-info:hover,\n.btn-info:focus {\n  background-color: #2aabd2;\n  background-position: 0 -15px;\n}\n.btn-info:active,\n.btn-info.active {\n  background-color: #2aabd2;\n  border-color: #28a4c9;\n}\n.btn-info.disabled,\n.btn-info[disabled],\nfieldset[disabled] .btn-info,\n.btn-info.disabled:hover,\n.btn-info[disabled]:hover,\nfieldset[disabled] .btn-info:hover,\n.btn-info.disabled:focus,\n.btn-info[disabled]:focus,\nfieldset[disabled] .btn-info:focus,\n.btn-info.disabled.focus,\n.btn-info[disabled].focus,\nfieldset[disabled] .btn-info.focus,\n.btn-info.disabled:active,\n.btn-info[disabled]:active,\nfieldset[disabled] .btn-info:active,\n.btn-info.disabled.active,\n.btn-info[disabled].active,\nfieldset[disabled] .btn-info.active {\n  background-color: #2aabd2;\n  background-image: none;\n}\n.btn-warning {\n  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#eb9316));\n  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #e38d13;\n}\n.btn-warning:hover,\n.btn-warning:focus {\n  background-color: #eb9316;\n  background-position: 0 -15px;\n}\n.btn-warning:active,\n.btn-warning.active {\n  background-color: #eb9316;\n  border-color: #e38d13;\n}\n.btn-warning.disabled,\n.btn-warning[disabled],\nfieldset[disabled] .btn-warning,\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn-warning:hover,\n.btn-warning.disabled:focus,\n.btn-warning[disabled]:focus,\nfieldset[disabled] .btn-warning:focus,\n.btn-warning.disabled.focus,\n.btn-warning[disabled].focus,\nfieldset[disabled] .btn-warning.focus,\n.btn-warning.disabled:active,\n.btn-warning[disabled]:active,\nfieldset[disabled] .btn-warning:active,\n.btn-warning.disabled.active,\n.btn-warning[disabled].active,\nfieldset[disabled] .btn-warning.active {\n  background-color: #eb9316;\n  background-image: none;\n}\n.btn-danger {\n  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));\n  background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-color: #b92c28;\n}\n.btn-danger:hover,\n.btn-danger:focus {\n  background-color: #c12e2a;\n  background-position: 0 -15px;\n}\n.btn-danger:active,\n.btn-danger.active {\n  background-color: #c12e2a;\n  border-color: #b92c28;\n}\n.btn-danger.disabled,\n.btn-danger[disabled],\nfieldset[disabled] .btn-danger,\n.btn-danger.disabled:hover,\n.btn-danger[disabled]:hover,\nfieldset[disabled] .btn-danger:hover,\n.btn-danger.disabled:focus,\n.btn-danger[disabled]:focus,\nfieldset[disabled] .btn-danger:focus,\n.btn-danger.disabled.focus,\n.btn-danger[disabled].focus,\nfieldset[disabled] .btn-danger.focus,\n.btn-danger.disabled:active,\n.btn-danger[disabled]:active,\nfieldset[disabled] .btn-danger:active,\n.btn-danger.disabled.active,\n.btn-danger[disabled].active,\nfieldset[disabled] .btn-danger.active {\n  background-color: #c12e2a;\n  background-image: none;\n}\n.thumbnail,\n.img-thumbnail {\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);\n}\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n  background-color: #e8e8e8;\n  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));\n  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);\n  background-repeat: repeat-x;\n}\n.dropdown-menu > .active > a,\n.dropdown-menu > .active > a:hover,\n.dropdown-menu > .active > a:focus {\n  background-color: #2e6da4;\n  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));\n  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);\n  background-repeat: repeat-x;\n}\n.navbar-default {\n  background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f8f8));\n  background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);\n}\n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .active > a {\n  background-image: -webkit-linear-gradient(top, #dbdbdb 0%, #e2e2e2 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#e2e2e2));\n  background-image: linear-gradient(to bottom, #dbdbdb 0%, #e2e2e2 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdbdb', endColorstr='#ffe2e2e2', GradientType=0);\n  background-repeat: repeat-x;\n  box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);\n}\n.navbar-brand,\n.navbar-nav > li > a {\n  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);\n}\n.navbar-inverse {\n  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));\n  background-image: linear-gradient(to bottom, #3c3c3c 0%, #222 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);\n  background-repeat: repeat-x;\n  border-radius: 4px;\n}\n.navbar-inverse .navbar-nav > .open > a,\n.navbar-inverse .navbar-nav > .active > a {\n  background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#0f0f0f));\n  background-image: linear-gradient(to bottom, #080808 0%, #0f0f0f 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff0f0f0f', GradientType=0);\n  background-repeat: repeat-x;\n  box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);\n}\n.navbar-inverse .navbar-brand,\n.navbar-inverse .navbar-nav > li > a {\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);\n}\n.navbar-static-top,\n.navbar-fixed-top,\n.navbar-fixed-bottom {\n  border-radius: 0;\n}\n@media (max-width: 767px) {\n  .navbar .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #fff;\n    background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);\n    background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));\n    background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);\n    background-repeat: repeat-x;\n  }\n}\n/*\n.alert {\n  text-shadow: 0 1px 0 rgba(255, 255, 255, .2);\n  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);\n          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);\n}\n.alert-success {\n  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);\n  background-image:      -o-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#c8e5bc));\n  background-image:         linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #b2dba1;\n}\n.alert-info {\n  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);\n  background-image:      -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));\n  background-image:         linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #9acfea;\n}\n.alert-warning {\n  background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);\n  background-image:      -o-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcf8e3), to(#f8efc0));\n  background-image:         linear-gradient(to bottom, #fcf8e3 0%, #f8efc0 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #f5e79e;\n}\n.alert-danger {\n  background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);\n  background-image:      -o-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#e7c3c3));\n  background-image:         linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #dca7a7;\n}*/\n.progress {\n  background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));\n  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar {\n  background-image: -webkit-linear-gradient(top, #337ab7 0%, #286090 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));\n  background-image: linear-gradient(to bottom, #337ab7 0%, #286090 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar-success {\n  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #449d44 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#449d44));\n  background-image: linear-gradient(to bottom, #5cb85c 0%, #449d44 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar-info {\n  background-image: -webkit-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#5bc0de), to(#31b0d5));\n  background-image: linear-gradient(to bottom, #5bc0de 0%, #31b0d5 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff31b0d5', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar-warning {\n  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0ad4e), to(#ec971f));\n  background-image: linear-gradient(to bottom, #f0ad4e 0%, #ec971f 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffec971f', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar-danger {\n  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c9302c 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c9302c));\n  background-image: linear-gradient(to bottom, #d9534f 0%, #c9302c 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);\n  background-repeat: repeat-x;\n}\n.progress-bar-striped {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.list-group {\n  border-radius: 4px;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);\n}\n.list-group-item.active,\n.list-group-item.active:hover,\n.list-group-item.active:focus {\n  text-shadow: 0 -1px 0 #286090;\n  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2b669a 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2b669a));\n  background-image: linear-gradient(to bottom, #337ab7 0%, #2b669a 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2b669a', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #2b669a;\n}\n.list-group-item.active .badge,\n.list-group-item.active:hover .badge,\n.list-group-item.active:focus .badge {\n  text-shadow: none;\n}\n.panel {\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n}\n.panel-default > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));\n  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);\n  background-repeat: repeat-x;\n}\n.panel-primary > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));\n  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);\n  background-repeat: repeat-x;\n}\n.panel-success > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#d0e9c6));\n  background-image: linear-gradient(to bottom, #dff0d8 0%, #d0e9c6 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffd0e9c6', GradientType=0);\n  background-repeat: repeat-x;\n}\n.panel-info > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#c4e3f3));\n  background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);\n  background-repeat: repeat-x;\n}\n.panel-warning > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcf8e3), to(#faf2cc));\n  background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);\n  background-repeat: repeat-x;\n}\n.panel-danger > .panel-heading {\n  background-image: -webkit-linear-gradient(top, #f2dede 0%, #ebcccc 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2dede), to(#ebcccc));\n  background-image: linear-gradient(to bottom, #f2dede 0%, #ebcccc 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffebcccc', GradientType=0);\n  background-repeat: repeat-x;\n}\n.well {\n  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#f5f5f5));\n  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);\n  background-repeat: repeat-x;\n  border-color: #dcdcdc;\n  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(40);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./app.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./app.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*add here the global styles*/\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 41 */
 /***/ function(module, exports) {
 
 	angular.module('i18nModule', ['ngCookies' ]);
@@ -62097,7 +62882,7 @@
 
 
 /***/ },
-/* 31 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var i18nModule = angular.module('i18nModule');
@@ -62112,30 +62897,30 @@
 	        scope: {},
 	        controller: 'I18nController',
 	        controllerAs: 'ctrl',
-	        template: __webpack_require__(32)
+	        template: __webpack_require__(43)
 	    };
 	}]);
 
 
 /***/ },
-/* 32 */
+/* 43 */
 /***/ function(module, exports) {
 
-	module.exports = "<i class=\"r-icon r-icon-world\"></i>\n<select class=\"\" ng-model=\"ctrl.$i18n.currentLanguageCulture\" ng-change=\"ctrl.$i18n.changeResource()\">\n    <option value=\"en-us\">{{'usermenu_option_english' | translate}}</option>\n    <option value=\"es-co\">{{'usermenu_option_spanish' | translate}}</option>\n</select>\n";
+	module.exports = "<i class=\"r-icon r-icon-world\"></i>\r\n<select class=\"\" ng-model=\"ctrl.$i18n.currentLanguageCulture\" ng-change=\"ctrl.$i18n.changeResource()\">\r\n    <option value=\"en-us\">{{'usermenu_option_english' | translate}}</option>\r\n    <option value=\"es-co\">{{'usermenu_option_spanish' | translate}}</option>\r\n</select>\r\n";
 
 /***/ },
-/* 33 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var i18nModule = angular.module('i18nModule');
 
 	i18nModule.factory('$i18n', ['$http', '$cookieStore', '$translate', function ($http, $cookieStore, $translate) {
 	    var i18nService = function () {
-	        this.currentLanguageCulture = $cookieStore.get('currentLanguageCulture') || 'en-us';
+	        this.currentLanguageCulture = $cookieStore.get('currentLanguageCulture') || 'es-co';
 	        this.translate = {};
 	        var languages = {
-	            'es-co': __webpack_require__(24),
-	            'en-us': __webpack_require__(25)
+	            'es-co': __webpack_require__(26),
+	            'en-us': __webpack_require__(27)
 	        };
 
 	        this.changeResource = function () {
@@ -62153,7 +62938,180 @@
 
 
 /***/ },
-/* 34 */
+/* 45 */
+/***/ function(module, exports) {
+
+	var notifierModule = angular.module('notifierModule', ['angular-growl']);
+
+	notifierModule.config(['growlProvider', function (growlProvider) {
+	    growlProvider.globalTimeToLive(5000);
+	    growlProvider.globalDisableIcons(true);
+	    growlProvider.globalDisableCountDown(true);
+	}]);
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	// Protected resource interceptor for http
+	var notifierModule = angular.module('notifierModule');
+	notifierModule.factory('notifierInterceptor', ['notifierService', '$q', function (notifierService, $q) {
+	    var Interceptor = function () {
+	        var _self = {};
+	        // When a resource is request it will call this method
+	        this.request = function (config) {
+	            if (config) {
+	                if (_self.isStaticResource(config.url)) {
+	                    return config;
+	                }
+	                return config;
+	            }
+	            return null;
+	        };
+	        // When a resource returns error, it will call this method
+	        this.responseError = function (rejection) {
+	            if (rejection.config.skipResponseInterceptor) {
+	                return $q.reject(rejection);
+	            }
+	            if (rejection && rejection.status === 400) {
+	                notifierService.error('Bad request', rejection.statusText + ' ' + rejection.config.url);
+	            }
+	            if (rejection && rejection.status === 401) {
+	                notifierService.warning('Unauthorized', rejection.statusText + ' ' + rejection.config.url);
+	            }
+	            if (rejection && rejection.status === 404) {
+	                notifierService.warning('Not Found', rejection.statusText + ' ' + rejection.config.url);
+	            }
+	            if (rejection && rejection.status === 500) {
+	                notifierService.error('Internal error', rejection.statusText + ' ' + rejection.config.url);
+	            }
+	            return $q.reject(rejection);
+	        };
+	        // private: Determine if an extension is from a static content
+	        _self.isStaticResource = function (url) {
+	            var knownStaticExtensions = ['js', 'txt', 'html', 'json', 'js', 'css'];
+	            var extension = url.split('.').pop();
+	            return knownStaticExtensions.indexOf(extension) !== -1;
+	        };
+	    };
+	    return new Interceptor();
+	}]);
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	var notifierModule = angular.module('notifierModule');
+	notifierModule.factory('notifierService', ['growl', function (growl) {
+	    var Notifier = function () {
+	        var config = {};
+	        this.success = function (title, text) {
+	            growl.success('<div class="alert_content_success">' +
+	                '<i class="bz-icon bz-icon-check bz-cd-icon-23"></i>' +
+	                '<b>' + title + '</b> </div>' +
+	                '<span>' + text + '<span>', config);
+	        };
+	        this.info = function (title, text) {
+	            growl.info('<b>' + title + '</b> </br>' + text, config);
+	        };
+	        this.warning = function (title, text) {
+	            growl.warning('<b>' + title + '</b> </br>' + text, config);
+	        };
+	        this.error = function (title, text) {
+	            growl.error('<div class="alert_content_error">' +
+	                '<i class="bz-icon bz-icon-error bz-cd-icon-23"></i>' +
+	                '<b>' + title + '</b> </div>' +
+	                '<span>' + text + '<span>', config);
+	        };
+	    };
+	    return new Notifier();
+	}]);
+
+
+
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(49);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./growl.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./growl.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 49 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*\n *  growl-container styles\n */\n.growl-container.growl-fixed {\n  position: fixed;\n  float: right;\n  width: 90%;\n  max-width: 400px;\n  z-index: 9999;\n}\n.growl-container.growl-fixed.top-right {\n  top: 10px;\n  right: 15px;\n}\n.growl-container.growl-fixed.bottom-right {\n  bottom: 10px;\n  right: 15px;\n}\n.growl-container.growl-fixed.middle-right {\n  top: 49%;\n  right: 15px;\n}\n.growl-container.growl-fixed.top-left {\n  top: 10px;\n  left: 15px;\n}\n.growl-container.growl-fixed.bottom-left {\n  bottom: 10px;\n  left: 15px;\n}\n.growl-container.growl-fixed.middle-left {\n  top: 49%;\n  left: 15px;\n}\n.growl-container.growl-fixed.top-center {\n  top: 10px;\n  left: 50%;\n  margin-left: -200px;\n}\n.growl-container.growl-fixed.bottom-center {\n  bottom: 10px;\n  left: 50%;\n  margin-left: -200px;\n}\n.growl-container.growl-fixed.middle-center {\n  top: 49%;\n  left: 50%;\n  margin-left: -200px;\n}\n/*\n * growl-item styles\n */\n.growl-container > .growl-item {\n  padding: 10px;\n  padding-right: 35px;\n  margin-bottom: 10px;\n  cursor: pointer;\n}\n.growl-container > button {\n  border: none;\n  outline: none;\n}\n.growl-container > .growl-item.ng-enter,\n.growl-container > .growl-item.ng-leave {\n  -webkit-transition: 0.5s linear all;\n  transition: 0.5s linear all;\n}\n.growl-container > .growl-item.ng-enter,\n.growl-container > .growl-item.ng-leave.ng-leave-active {\n  opacity: 0;\n}\n.growl-container > .growl-item.ng-leave,\n.growl-container > .growl-item.ng-enter.ng-enter-active {\n  opacity: 1;\n}\n/*\n * growl-title styles\n */\n.growl-title {\n  font-size: 16px;\n}\n.growl-item.icon > .growl-title {\n  margin: 0 0 0 40px;\n}\n/*\n * growl-message styles\n */\n.growl-item.icon > .growl-message {\n  margin: 0 0 0 40px;\n}\n/*\n * growl background images\n */\n.growl-container > .alert-info.icon {\n  /* for the white images\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=\");\n  */\n  background-image: url(\"data:image/png;base64,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\");\n}\n.growl-container > .alert-error.icon {\n  /* for the white images\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=\");\n  */\n  background-image: url(\"data:image/png;base64,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\");\n}\n.growl-container > .alert-success.icon {\n  /* for the white images\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==\");\n  */\n  background-image: url(\"data:image/png;base64,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\");\n}\n.growl-container > .alert-warning.icon {\n  /* for the white images\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=\");\n  */\n  background-image: url(\"data:image/png;base64,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\");\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 50 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(51);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./notifier.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./notifier.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".fr-notifier-container .growl-container {\n  top: 53px;\n}\n.fr-notifier-container .growl-container.growl-fixed.top-right {\n  top: 53px;\n}\n.fr-notifier-container .growl-container .alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.fr-notifier-container .growl-container .alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.fr-notifier-container .growl-container .alert .alert-link {\n  font-weight: bold;\n}\n.fr-notifier-container .growl-container .alert > p,\n.fr-notifier-container .growl-container .alert > ul {\n  margin-bottom: 0;\n}\n.fr-notifier-container .growl-container .alert > p + p {\n  margin-top: 5px;\n}\n.fr-notifier-container .growl-container .alert-dismissable,\n.fr-notifier-container .growl-container .alert-dismissible {\n  padding-right: 35px;\n}\n.fr-notifier-container .growl-container .alert-dismissable .close,\n.fr-notifier-container .growl-container .alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.fr-notifier-container .growl-container .alert-success {\n  color: #eee;\n  background-color: rgba(82, 82, 82, 0.33);\n  border-color: #4d4f57;\n}\n.fr-notifier-container .growl-container .alert-success hr {\n  border-top-color: #c9e2b3;\n}\n.fr-notifier-container .growl-container .alert-success .alert-link {\n  color: #2b542c;\n}\n.fr-notifier-container .growl-container .alert-info {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.fr-notifier-container .growl-container .alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.fr-notifier-container .growl-container .alert-info .alert-link {\n  color: #245269;\n}\n.fr-notifier-container .growl-container .alert-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.fr-notifier-container .growl-container .alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.fr-notifier-container .growl-container .alert-warning .alert-link {\n  color: #66512c;\n}\n.fr-notifier-container .growl-container .alert-danger {\n  color: #9D5D5D;\n  background-color: #fff;\n  border-color: #ebccd1;\n}\n.fr-notifier-container .growl-container .alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.fr-notifier-container .growl-container .alert-danger .alert-link {\n  color: #843534;\n}\n.fr-notifier-container .growl-container .alert_content_success {\n  position: relative;\n  display: block;\n  height: 26px;\n}\n.fr-notifier-container .growl-container .alert_content_success b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.fr-notifier-container .growl-container .alert_content_success i {\n  color: #007166;\n}\n.fr-notifier-container .growl-container .alert_content_error {\n  position: relative;\n}\n.fr-notifier-container .growl-container .alert_content_error b {\n  top: 4px;\n  position: absolute;\n  margin-left: 10px;\n}\n.fr-notifier-container .growl-container .alert_content_error i {\n  color: #df6e6e;\n}\n.fr-notifier-container .growl-container .alert_content_error i {\n  color: #df6e6e;\n}\n.fr-notifier-container .growl-container .growl-message span {\n  margin-left: 9px;\n  clear: both;\n  display: block;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 52 */
 /***/ function(module, exports) {
 
 	angular.module('commonDirectivesModule', [])
@@ -62166,7 +63124,7 @@
 
 
 /***/ },
-/* 35 */
+/* 53 */
 /***/ function(module, exports) {
 
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
@@ -62271,16 +63229,16 @@
 
 
 /***/ },
-/* 36 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(37);
+	var content = __webpack_require__(55);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62297,10 +63255,10 @@
 	}
 
 /***/ },
-/* 37 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
@@ -62311,7 +63269,414 @@
 
 
 /***/ },
-/* 38 */
+/* 56 */
+/***/ function(module, exports) {
+
+	/* module to create pinterest like responsive masonry grid system for angular */
+	;(function (angular, window, undefined) {
+	    'use strict';
+	    //defaults for plugin
+	    var defaults = {
+	        gridWidth: 300, //minumum width of a grid, this may increase to take whole space of container
+	        gutterSize: 10, //spacing between two grid,
+	        gridNo: 'auto', // grid number, by default calculate auto matically
+	        direction: 'ltor', //direction of grid item
+	        refreshOnImgLoad: true, // to make a refresh on image load inside container
+	        cssGrid: false
+	    };
+	    var $ = angular.element;
+	    //css for the clones
+	    var cloneCss = {
+	        visibility: 'hidden',
+	        opacity: 0,
+	        top: 0,
+	        left: 0,
+	        width: ''
+	    };
+	    var single = (function () {
+	        var $elm = $(window);
+	        return function (elm) {
+	            $elm[0] = elm;
+	            return $elm;
+	        };
+	    }());
+	    //function to check if image is loaded
+	    function imageLoaded(img) {
+	        return img.complete && (typeof img.naturalWidth === 'undefined' || img.naturalWidth !== 0);
+	    }
+
+	    //function to covert domlist to array
+	    function domToAry(list) {
+	        return Array.prototype.slice.call(list);
+	    }
+
+	    //add required css
+	    $(document.head).append('<style>' +
+	        '.ag-no-transition{' +
+	        '-webkit-transition: none !important;' +
+	        'transition: none !important;' +
+	        '} ' +
+	        '.masonry-grid{position : relative;} ' +
+	        '.masonry-grid > *{opacity : 0} ' +
+	        '.masonry-grid > .masonry-grid-item{opacity : 1}' + '</style>');
+	    angular.module('masonry', []).directive('masonry', ['$timeout', '$window', '$q', 'masonryInstance',
+	            function ($timeout, $window, $q, masonryInstance) {
+	                return {
+	                    restrict: 'A',
+	                    scope: {
+	                        model: '=masonry',
+	                        gridWidth: '=',
+	                        gutterSize: '=',
+	                        refreshOnImgLoad: '=',
+	                        direction: '=',
+	                        cssGrid: '=',
+	                        options: '=masonryOptions'
+	                    },
+	                    link: function (scope, element, attrs) {
+	                        var domElm = element[0],
+	                            win = $($window),
+	                            agId = attrs.masonryId,
+	                            listElms,
+	                            timeoutPromise;
+	                        element.addClass('masonry-grid');
+	                        //get the user input options
+	                        var options;
+
+	                        function getOptions() {
+	                            options = {};
+	                            Object.keys(defaults).forEach(function (key) {
+	                                if (scope[key] != undefined) options[key] = scope[key];
+	                            });
+	                            options = angular.extend({}, defaults, options, scope.options);
+	                            if (options.cssGrid) options.gutterSize = 0;
+	                        }
+
+	                        getOptions();
+	                        //function to get column width and number of columns
+	                        function getColWidth() {
+	                            var contWidth = domElm.offsetWidth,
+	                                clone; // a clone to calculate width without transition
+	                            if (options.cssGrid) {
+	                                clone = $(listElms[0]).clone();
+	                                clone.css(cloneCss).addClass('ag-no-transition');
+	                                element.append(clone);
+	                                var width = clone[0].offsetWidth;
+	                                clone.remove();
+	                                return {
+	                                    no: Math.floor((contWidth + 12) / width),
+	                                    width: width
+	                                };
+	                            }
+	                            var colWidth = options.gridNo == 'auto' ? options.gridWidth : Math.floor(contWidth / options.gridNo) - options.gutterSize,
+	                                cols = options.gridNo == 'auto' ? Math.floor(contWidth / (colWidth + options.gutterSize)) : options.gridNo,
+	                                remainingSpace = (contWidth % (colWidth + options.gutterSize)) + options.gutterSize;
+	                            colWidth = colWidth + Math.floor(remainingSpace / cols);
+	                            return {
+	                                no: cols,
+	                                width: colWidth
+	                            };
+	                        }
+
+	                        //method check for image loaded inside a container and trigger callback
+	                        function afterImageLoad(container, options) {
+	                            var beforeLoad = options.beforeLoad || angular.noop,
+	                                onLoad = options.onLoad || angular.noop,
+	                                isLoaded = options.isLoaded || angular.noop,
+	                                onFullLoad = options.onFullLoad || angular.noop,
+	                                ignoreCheck = options.ignoreCheck || angular.noop,
+	                                allImg = container.find('img'),
+	                                loadedImgPromises = [];
+	                            domToAry(allImg).forEach(function (img) {
+	                                beforeLoad(img);
+	                                if (!imageLoaded(img) && !ignoreCheck(img)) {
+	                                    loadedImgPromises.push($q(function (resolve, reject) {
+	                                        img.onload = function () {
+	                                            onLoad(img);
+	                                            resolve();
+	                                        };
+	                                        img.onerror = reject;
+	                                    }));
+	                                } else {
+	                                    isLoaded(img);
+	                                }
+	                            });
+	                            if (loadedImgPromises.length) {
+	                                $q.all(loadedImgPromises).then(onFullLoad, onFullLoad);
+	                            } else {
+	                                setTimeout(function () {
+	                                    onFullLoad();
+	                                }, 0);
+	                            }
+	                        }
+
+	                        //function to reflow grids
+	                        function reflowGrids() {
+	                            //claclulate width of all element
+	                            var colInfo = getColWidth(),
+	                                colWidth = colInfo.width,
+	                                cols = colInfo.no,
+	                                i;
+	                            //initialize listRowBottom
+	                            var lastRowBottom = [];
+	                            for (i = 0; i < cols; i++) {
+	                                lastRowBottom.push(0);
+	                            }
+	                            //if image actual width and actual height is defined update image size so that it dosent cause reflow on image load
+	                            domToAry(listElms).forEach(function (item) {
+	                                var $item = single(item);
+	                                domToAry($item.find('img')).forEach(function (img) {
+	                                    var $img = $(img);
+	                                    //if image is already loaded don't do anything
+	                                    if ($img.hasClass('img-loaded')) {
+	                                        $img.css('height', '');
+	                                        return;
+	                                    }
+	                                    //set the item width and no transition state so image width can be calculated properly
+	                                    $item.addClass('ag-no-transition');
+	                                    $item.css('width', colWidth + 'px');
+	                                    var actualWidth = $img.attr('actual-width') || $img.attr('data-actual-width'),
+	                                        actualHeight = $img.attr('actual-height') || $img.attr('data-actual-height');
+	                                    if (actualWidth && actualHeight) {
+	                                        $img.css('height', (actualHeight * img.width / actualWidth) + 'px');
+	                                    }
+	                                });
+	                                $item.removeClass('ag-no-transition');
+	                            });
+	                            //get all list items new height
+	                            var clones = listElms.clone();
+	                            clones.addClass('ag-no-transition');
+	                            var clonesCssObj = angular.extend({}, cloneCss);
+	                            clonesCssObj.width = colWidth + 'px';
+	                            clones.css(clonesCssObj);
+	                            element.append(clones);
+	                            //For cloned element again we have to check if image loaded (IOS only)
+	                            afterImageLoad(clones, {
+	                                ignoreCheck: function (img) {
+	                                    return !single(img).hasClass('img-loaded');
+	                                },
+	                                onFullLoad: function () {
+	                                    var listElmHeights = [],
+	                                        item, i, ln;
+	                                    //find height with clones
+	                                    for (i = 0, ln = clones.length; i < ln; i++) {
+	                                        listElmHeights.push(clones[i].offsetHeight);
+	                                    }
+	                                    //set new positions
+	                                    for (i = 0, ln = listElms.length; i < ln; i++) {
+	                                        item = single(listElms[i]);
+	                                        var height = listElmHeights[i],
+	                                            top = Math.min.apply(Math, lastRowBottom),
+	                                            col = lastRowBottom.indexOf(top);
+	                                        //update lastRowBottom value
+	                                        lastRowBottom[col] = top + height + options.gutterSize;
+	                                        //set top and left of list items
+	                                        var posX = col * (colWidth + options.gutterSize);
+	                                        var cssObj = {
+	                                            position: 'absolute',
+	                                            top: top + 'px'
+	                                        };
+	                                        if (options.direction == 'rtol') {
+	                                            cssObj.right = posX + 'px';
+	                                        } else {
+	                                            cssObj.left = posX + 'px';
+	                                        }
+	                                        cssObj.width = colWidth + 'px';
+	                                        item.css(cssObj).addClass('masonry-grid-item');
+	                                    }
+	                                    //set the height of container
+	                                    element.css('height', Math.max.apply(Math, lastRowBottom) + 'px');
+	                                    clones.remove();
+	                                }
+	                            });
+	                        }
+
+	                        //function to handle asynchronous image loading
+	                        function handleImage() {
+	                            var reflowPending = false;
+	                            domToAry(listElms).forEach(function (listItem) {
+	                                var $listItem = $(listItem),
+	                                    allImg = $listItem.find('img');
+	                                if (!allImg.length) {
+	                                    return;
+	                                }
+	                                //add image loading class on list item
+	                                $listItem.addClass('img-loading');
+	                                afterImageLoad($listItem, {
+	                                    beforeLoad: function (img) {
+	                                        single(img).addClass('img-loading');
+	                                    },
+	                                    isLoaded: function (img) {
+	                                        single(img).removeClass('img-loading').addClass('img-loaded');
+	                                    },
+	                                    onLoad: function (img) {
+	                                        if (!reflowPending && options.refreshOnImgLoad) {
+	                                            reflowPending = true;
+	                                            $timeout(function () {
+	                                                reflowGrids();
+	                                                reflowPending = false;
+	                                            }, 100);
+	                                        }
+	                                        single(img).removeClass('img-loading').addClass('img-loaded');
+	                                    },
+	                                    onFullLoad: function () {
+	                                        $listItem.removeClass('img-loading').addClass('img-loaded');
+	                                    }
+	                                });
+	                            });
+	                        }
+
+	                        //function to check for ng animation
+	                        function ngCheckAnim() {
+	                            var leavingElm = domToAry(listElms).filter(function (elm) {
+	                                return single(elm).hasClass('ng-leave');
+	                            });
+	                            return $q(function (resolve) {
+	                                if (!leavingElm.length) {
+	                                    resolve();
+	                                } else {
+	                                    single(leavingElm[0]).one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function () {
+	                                        $timeout(function () {
+	                                            listElms = element.children();
+	                                            resolve();
+	                                        });
+	                                    });
+	                                }
+	                            });
+	                        }
+
+	                        //watch on modal key
+	                        function watch() {
+	                            $timeout(function () {
+	                                listElms = element.children();
+	                                ngCheckAnim().then(function () {
+	                                    //handle images
+	                                    handleImage();
+	                                    $timeout(function () {
+
+	                                        //to handle scroll appearance
+	                                        reflowGrids();
+	                                        scope
+	                                    });
+	                                });
+	                            });
+	                        }
+
+	                        scope.$watch('model', watch, true);
+	                        //watch option for changes
+	                        function watchOptions() {
+	                            getOptions();
+	                            if (listElms) reflowGrids();
+	                        };
+	                        scope.$watch('options', watchOptions, true);
+	                        Object.keys(defaults).forEach(function (key) {
+	                            if (scope[key] != undefined) scope.$watch(key, watchOptions);
+	                        });
+	                        //listen window resize event and reflow grids after a timeout
+	                        var lastDomWidth = domElm.offsetWidth;
+
+	                        function windowResizeCallback() {
+	                            var contWidth = domElm.offsetWidth;
+	                            if (lastDomWidth == contWidth) return;
+	                            lastDomWidth = contWidth;
+	                            if (timeoutPromise) {
+	                                $timeout.cancel(timeoutPromise);
+	                            }
+	                            timeoutPromise = $timeout(function () {
+	                                reflowGrids();
+	                            }, 100);
+	                        }
+
+	                        win.on('resize', windowResizeCallback);
+	                        //add instance to factory if id is assigned
+	                        if (agId) {
+	                            masonryInstance[agId] = {
+	                                refresh: function () {
+	                                    watch();
+	                                }
+	                            };
+	                        }
+	                        //destroy on refrences and events on scope destroy
+	                        scope.$on('$destroy', function () {
+	                            if (agId) delete masonryInstance[agId];
+	                            win.off('resize', windowResizeCallback);
+	                        });
+	                    }
+	                };
+	            }
+	        ])
+	        //a factory to store angulargrid instances which can be injected to controllers or directive
+	        .factory('masonryInstance', function () {
+	            var masonryInstance = {};
+	            return masonryInstance;
+	        });
+	}(angular, window));
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	var commonDirectivesModule = angular.module('commonDirectivesModule');
+
+	commonDirectivesModule.directive('infiniteScroll', [
+	    '$rootScope', '$window', '$timeout', function ($rootScope, $window, $timeout) {
+	        return {
+	            link: function (scope, elem, attrs) {
+	                var checkWhenEnabled, handler, scrollDistance, scrollEnabled;
+	                $window = angular.element($window);
+	                scrollDistance = 0;
+	                if (attrs.infiniteScrollDistance !== null) {
+	                    scope.$watch(attrs.infiniteScrollDistance, function (value) {
+	                        return scrollDistance = parseInt(value, 10);
+	                    });
+	                }
+	                scrollEnabled = true;
+	                checkWhenEnabled = false;
+	                if (attrs.infiniteScrollDisabled !== null) {
+	                    scope.$watch(attrs.infiniteScrollDisabled, function (value) {
+	                        scrollEnabled = !value;
+	                        if (scrollEnabled && checkWhenEnabled) {
+	                            checkWhenEnabled = false;
+	                            return handler();
+	                        }
+	                    });
+	                }
+	                handler = function () {
+	                    var elementBottom, remaining, shouldScroll, windowBottom;
+	                    windowBottom = $window.height() + $window.scrollTop();
+	                    elementBottom = elem.offset().top + elem.height();
+	                    remaining = elementBottom - windowBottom;
+	                    shouldScroll = remaining <= scrollDistance;
+	                    if (shouldScroll && scrollEnabled) {
+	                        if ($rootScope.$$phase) {
+	                            return scope.$eval(attrs.infiniteScroll);
+	                        } else {
+	                            return scope.$apply(attrs.infiniteScroll);
+	                        }
+	                    } else if (shouldScroll) {
+	                        return checkWhenEnabled = true;
+	                    }
+	                };
+	                $window.on('scroll', handler);
+	                scope.$on('$destroy', function () {
+	                    return $window.off('scroll', handler);
+	                });
+	                return $timeout((function () {
+	                    if (attrs.infiniteScrollImmediateCheck) {
+	                        if (scope.$eval(attrs.infiniteScrollImmediateCheck)) {
+	                            return handler();
+	                        }
+	                    } else {
+	                        return handler();
+	                    }
+	                }), 0);
+	            }
+	        };
+	    }
+	]);
+
+
+/***/ },
+/* 58 */
 /***/ function(module, exports) {
 
 	angular.module('mainModule', []);
@@ -62329,19 +63694,25 @@
 
 
 /***/ },
-/* 39 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  mainModule = angular.module('mainModule');
-	var MainController = ['$i18n', function ($i18n) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    var self = this;
-	    self.showAlert = function () {
-	        alert($i18n.translate.general_alert);
-	    };
-	}];
+	var mainModule = angular.module('mainModule');
+	var MainController = ['$i18n', 'mainService', 'helpService',
+	    function ($i18n, mainService, helpService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.mainService = mainService;
+
+	        self.enableHelp = function () {
+	            helpService.setEnable(true);
+	            helpService.enablePlayer();
+	        }
+
+	    }];
 
 	mainModule.component('main', {
 	    transclude: true,
@@ -62350,27 +63721,27 @@
 	    },
 	    controller: MainController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(40)
+	    template: __webpack_require__(60)
 	});
 
 
 /***/ },
-/* 40 */
+/* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"wrap flex\">\n    <!--<div class=\"topbar\"></div>-->\n\n    <div class=\"flex\">\n        <div class=\"sidebar\">\n            <h3 class=\"app-title\">Freeven</h3>\n            <user-panel title=\"UserPanel\"></user-panel>\n        </div>\n        <div class=\"main\">\n            <div class=\"row-col\">\n                <div class=\"col-lg-9 b-r no-border-md\">\n                    <h2 class=\"h4 m-b\">New tracks</h2>\n                    <!-- Track list component -->\n                    <track-list title=\"TrackList\"></track-list>\n\n                </div>\n                <div class=\"col-lg-3 w-xxl w-auto-md\">\n                    <!-- right section-->\n                    <!-- internationalization switch -->\n                    <r-i18n></r-i18n>\n                    <user-menu title=\"UserMenu\"></user-menu>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"footer\">\n         <player title =\"Player\"> </player>\n    </div>\n</div>\n\n\n";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <a href=\"#/\">\r\n                <h3 class=\"brand-section\">Freeven</h3>\r\n            </a>\r\n            <search class=\"fr-search\" title=\"Search\"></search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\r\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna restricción.</h3>\r\n        <h3>Descárgalos, escúchalos y úsalos en lo que tú quieras</h3>\r\n    </div>\r\n    <div class=\"wrap\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"sidebar\">\r\n            <h3 class=\"app-title\">Freeven</h3>\r\n            <user-panel title=\"UserPanel\"></user-panel>\r\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n        </div>\r\n        <div class=\"content-section\">\r\n            <div class=\"row-col\">\r\n                <div class=\"col-lg-12 b-r no-border-md\">\r\n                    <div ng-view=\"\"></div>\r\n                </div>\r\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                     <r-i18n></r-i18n>\r\n                 </div>-->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 41 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(42);
+	var content = __webpack_require__(62);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62387,21 +63758,141 @@
 	}
 
 /***/ },
-/* 42 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
-
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900|Montserrat:400,700);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Crimson+Text);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);", ""]);
+	exports.i(__webpack_require__(63), "");
+	exports.i(__webpack_require__(67), "");
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n  /* para el score editor*/\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml .score-editor-modal .modal-dialog .modal-content,\nbody .score-editor-modal .modal-dialog .modal-content {\n  position: relative;\n  background-color: rgba(255, 0, 0, 0.45);\n  background-clip: padding-box;\n  border: none;\n  border-radius: 6px;\n  outline: 0;\n  box-shadow: none;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main .align-right {\n  text-align: right;\n}\n.main .align-left {\n  text-align: left;\n}\n.main a {\n  cursor: pointer;\n}\n.main .brand-description {\n  color: black;\n  float: right;\n  width: 76%;\n  padding-right: 5%;\n}\n.main .brand-description h3 {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 30px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n  color: #ffffff;\n}\n.main .header .header-section .fr-search,\n.main .header-fake .header-section .fr-search {\n  margin-left: 19%;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  width: 200px;\n  display: block;\n  position: fixed;\n  height: 1112px;\n  top: 130px;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  margin-top: 15px;\n  display: block;\n  margin-right: 8px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  width: calc(100% - 200px);\n  background-color: white;\n  float: right;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  min-height: 30px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n  background-color: #dadada;\n  z-index: 45;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 43 */
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@font-face {\r\n    font-family: 'icomoon';\r\n    src: url(" + __webpack_require__(64) + ");\r\n    src: url(" + __webpack_require__(64) + ") format('embedded-opentype'), url(" + __webpack_require__(65) + ") format('woff'), url(" + __webpack_require__(66) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n/*------------------------------------------------------------------\r\n1) SVG Icons\r\n-------------------------------------------------------------------*/\r\n[class^=\"music-\"],\r\n[class*=\" music-\"] {\r\n    font-family: 'icomoon';\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.music-feather:before {\r\n    content: \"\\E601\";\r\n}\r\n\r\n.music-eye:before {\r\n    content: \"\\E602\";\r\n}\r\n\r\n.music-featured:before {\r\n    content: \"\\E603\";\r\n}\r\n\r\n.music-logo:before {\r\n    content: \"\\E604\";\r\n}\r\n\r\n.music-microphone:before {\r\n    content: \"\\E605\";\r\n}\r\n\r\n.music-microphone-cut:before {\r\n    content: \"\\E606\";\r\n}\r\n\r\n.music-music-note:before {\r\n    content: \"\\E607\";\r\n}\r\n\r\n.music-newest:before {\r\n    content: \"\\E608\";\r\n}\r\n\r\n.music-player-pause:before {\r\n    content: \"\\E609\";\r\n}\r\n\r\n.music-player-play-full:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-player-play-outline:before {\r\n    content: \"\\E600\";\r\n}\r\n\r\n.music-player-play-bold:before {\r\n    content: \"\\E60B\";\r\n}\r\n\r\n.music-player-random:before {\r\n    content: \"\\E60C\";\r\n}\r\n\r\n.music-player-replay:before {\r\n    content: \"\\E60D\";\r\n}\r\n\r\n.music-player-volume:before {\r\n    content: \"\\E60E\";\r\n}\r\n\r\n.music-plus-button:before {\r\n    content: \"\\E60F\";\r\n}\r\n\r\n.music-search:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-share:before {\r\n    content: \"\\E611\";\r\n}\r\n\r\n.music-side-menu-albums:before {\r\n    content: \"\\E612\";\r\n}\r\n\r\n.music-side-menu-discover:before {\r\n    content: \"\\E613\";\r\n}\r\n\r\n.music-star:before {\r\n    content: \"\\E614\";\r\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "a4c6473881ec9622d155a1087417d794.eot";
+
+/***/ },
+/* 65 */
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff;base64,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"
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "55d997fb91cb1f8b882b2b50c3ba70e2.ttf";
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\r\n\r\n@font-face {\r\n    font-family: 'BasicIcon';\r\n    src: url(" + __webpack_require__(68) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n.icon {\r\n    /* use !important to prevent issues with browser extensions that change fonts */\r\n    font-family: 'BasicIcon' !important;\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    \r\n    /* Enable Ligatures ================ */\r\n    letter-spacing: 0;\r\n    -webkit-font-feature-settings: \"liga\";\r\n    -moz-font-feature-settings: \"liga=1\";\r\n    -moz-font-feature-settings: \"liga\";\r\n    -ms-font-feature-settings: \"liga\" 1;\r\n    -o-font-feature-settings: \"liga\";\r\n    font-feature-settings: \"liga\";\r\n\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.icon-home:before {\r\n    content: \"\\E900\";\r\n}\r\n.icon-home2:before {\r\n    content: \"\\E901\";\r\n}\r\n.icon-home3:before {\r\n    content: \"\\E902\";\r\n}\r\n.icon-office:before {\r\n    content: \"\\E903\";\r\n}\r\n.icon-newspaper:before {\r\n    content: \"\\E904\";\r\n}\r\n.icon-pencil:before {\r\n    content: \"\\E905\";\r\n}\r\n.icon-pencil2:before {\r\n    content: \"\\E906\";\r\n}\r\n.icon-quill:before {\r\n    content: \"\\E907\";\r\n}\r\n.icon-pen:before {\r\n    content: \"\\E908\";\r\n}\r\n.icon-blog:before {\r\n    content: \"\\E909\";\r\n}\r\n.icon-eyedropper:before {\r\n    content: \"\\E90A\";\r\n}\r\n.icon-droplet:before {\r\n    content: \"\\E90B\";\r\n}\r\n.icon-paint-format:before {\r\n    content: \"\\E90C\";\r\n}\r\n.icon-image:before {\r\n    content: \"\\E90D\";\r\n}\r\n.icon-images:before {\r\n    content: \"\\E90E\";\r\n}\r\n.icon-camera:before {\r\n    content: \"\\E90F\";\r\n}\r\n.icon-headphones:before {\r\n    content: \"\\E910\";\r\n}\r\n.icon-music:before {\r\n    content: \"\\E911\";\r\n}\r\n.icon-play:before {\r\n    content: \"\\E912\";\r\n}\r\n.icon-film:before {\r\n    content: \"\\E913\";\r\n}\r\n.icon-video-camera:before {\r\n    content: \"\\E914\";\r\n}\r\n.icon-dice:before {\r\n    content: \"\\E915\";\r\n}\r\n.icon-pacman:before {\r\n    content: \"\\E916\";\r\n}\r\n.icon-spades:before {\r\n    content: \"\\E917\";\r\n}\r\n.icon-clubs:before {\r\n    content: \"\\E918\";\r\n}\r\n.icon-diamonds:before {\r\n    content: \"\\E919\";\r\n}\r\n.icon-bullhorn:before {\r\n    content: \"\\E91A\";\r\n}\r\n.icon-connection:before {\r\n    content: \"\\E91B\";\r\n}\r\n.icon-podcast:before {\r\n    content: \"\\E91C\";\r\n}\r\n.icon-feed:before {\r\n    content: \"\\E91D\";\r\n}\r\n.icon-mic:before {\r\n    content: \"\\E91E\";\r\n}\r\n.icon-book:before {\r\n    content: \"\\E91F\";\r\n}\r\n.icon-books:before {\r\n    content: \"\\E920\";\r\n}\r\n.icon-library:before {\r\n    content: \"\\E921\";\r\n}\r\n.icon-file-text:before {\r\n    content: \"\\E922\";\r\n}\r\n.icon-profile:before {\r\n    content: \"\\E923\";\r\n}\r\n.icon-file-empty:before {\r\n    content: \"\\E924\";\r\n}\r\n.icon-files-empty:before {\r\n    content: \"\\E925\";\r\n}\r\n.icon-file-text2:before {\r\n    content: \"\\E926\";\r\n}\r\n.icon-file-picture:before {\r\n    content: \"\\E927\";\r\n}\r\n.icon-file-music:before {\r\n    content: \"\\E928\";\r\n}\r\n.icon-file-play:before {\r\n    content: \"\\E929\";\r\n}\r\n.icon-file-video:before {\r\n    content: \"\\E92A\";\r\n}\r\n.icon-file-zip:before {\r\n    content: \"\\E92B\";\r\n}\r\n.icon-copy:before {\r\n    content: \"\\E92C\";\r\n}\r\n.icon-paste:before {\r\n    content: \"\\E92D\";\r\n}\r\n.icon-stack:before {\r\n    content: \"\\E92E\";\r\n}\r\n.icon-folder:before {\r\n    content: \"\\E92F\";\r\n}\r\n.icon-folder-open:before {\r\n    content: \"\\E930\";\r\n}\r\n.icon-folder-plus:before {\r\n    content: \"\\E931\";\r\n}\r\n.icon-folder-minus:before {\r\n    content: \"\\E932\";\r\n}\r\n.icon-folder-download:before {\r\n    content: \"\\E933\";\r\n}\r\n.icon-folder-upload:before {\r\n    content: \"\\E934\";\r\n}\r\n.icon-price-tag:before {\r\n    content: \"\\E935\";\r\n}\r\n.icon-price-tags:before {\r\n    content: \"\\E936\";\r\n}\r\n.icon-barcode:before {\r\n    content: \"\\E937\";\r\n}\r\n.icon-qrcode:before {\r\n    content: \"\\E938\";\r\n}\r\n.icon-ticket:before {\r\n    content: \"\\E939\";\r\n}\r\n.icon-cart:before {\r\n    content: \"\\E93A\";\r\n}\r\n.icon-coin-dollar:before {\r\n    content: \"\\E93B\";\r\n}\r\n.icon-coin-euro:before {\r\n    content: \"\\E93C\";\r\n}\r\n.icon-coin-pound:before {\r\n    content: \"\\E93D\";\r\n}\r\n.icon-coin-yen:before {\r\n    content: \"\\E93E\";\r\n}\r\n.icon-credit-card:before {\r\n    content: \"\\E93F\";\r\n}\r\n.icon-calculator:before {\r\n    content: \"\\E940\";\r\n}\r\n.icon-lifebuoy:before {\r\n    content: \"\\E941\";\r\n}\r\n.icon-phone:before {\r\n    content: \"\\E942\";\r\n}\r\n.icon-phone-hang-up:before {\r\n    content: \"\\E943\";\r\n}\r\n.icon-address-book:before {\r\n    content: \"\\E944\";\r\n}\r\n.icon-envelop:before {\r\n    content: \"\\E945\";\r\n}\r\n.icon-pushpin:before {\r\n    content: \"\\E946\";\r\n}\r\n.icon-location:before {\r\n    content: \"\\E947\";\r\n}\r\n.icon-location2:before {\r\n    content: \"\\E948\";\r\n}\r\n.icon-compass:before {\r\n    content: \"\\E949\";\r\n}\r\n.icon-compass2:before {\r\n    content: \"\\E94A\";\r\n}\r\n.icon-map:before {\r\n    content: \"\\E94B\";\r\n}\r\n.icon-map2:before {\r\n    content: \"\\E94C\";\r\n}\r\n.icon-history:before {\r\n    content: \"\\E94D\";\r\n}\r\n.icon-clock:before {\r\n    content: \"\\E94E\";\r\n}\r\n.icon-clock2:before {\r\n    content: \"\\E94F\";\r\n}\r\n.icon-alarm:before {\r\n    content: \"\\E950\";\r\n}\r\n.icon-bell:before {\r\n    content: \"\\E951\";\r\n}\r\n.icon-stopwatch:before {\r\n    content: \"\\E952\";\r\n}\r\n.icon-calendar:before {\r\n    content: \"\\E953\";\r\n}\r\n.icon-printer:before {\r\n    content: \"\\E954\";\r\n}\r\n.icon-keyboard:before {\r\n    content: \"\\E955\";\r\n}\r\n.icon-display:before {\r\n    content: \"\\E956\";\r\n}\r\n.icon-laptop:before {\r\n    content: \"\\E957\";\r\n}\r\n.icon-mobile:before {\r\n    content: \"\\E958\";\r\n}\r\n.icon-mobile2:before {\r\n    content: \"\\E959\";\r\n}\r\n.icon-tablet:before {\r\n    content: \"\\E95A\";\r\n}\r\n.icon-tv:before {\r\n    content: \"\\E95B\";\r\n}\r\n.icon-drawer:before {\r\n    content: \"\\E95C\";\r\n}\r\n.icon-drawer2:before {\r\n    content: \"\\E95D\";\r\n}\r\n.icon-box-add:before {\r\n    content: \"\\E95E\";\r\n}\r\n.icon-box-remove:before {\r\n    content: \"\\E95F\";\r\n}\r\n.icon-download:before {\r\n    content: \"\\E960\";\r\n}\r\n.icon-upload:before {\r\n    content: \"\\E961\";\r\n}\r\n.icon-floppy-disk:before {\r\n    content: \"\\E962\";\r\n}\r\n.icon-drive:before {\r\n    content: \"\\E963\";\r\n}\r\n.icon-database:before {\r\n    content: \"\\E964\";\r\n}\r\n.icon-undo:before {\r\n    content: \"\\E965\";\r\n}\r\n.icon-redo:before {\r\n    content: \"\\E966\";\r\n}\r\n.icon-undo2:before {\r\n    content: \"\\E967\";\r\n}\r\n.icon-redo2:before {\r\n    content: \"\\E968\";\r\n}\r\n.icon-forward:before {\r\n    content: \"\\E969\";\r\n}\r\n.icon-reply:before {\r\n    content: \"\\E96A\";\r\n}\r\n.icon-bubble:before {\r\n    content: \"\\E96B\";\r\n}\r\n.icon-bubbles:before {\r\n    content: \"\\E96C\";\r\n}\r\n.icon-bubbles2:before {\r\n    content: \"\\E96D\";\r\n}\r\n.icon-bubble2:before {\r\n    content: \"\\E96E\";\r\n}\r\n.icon-bubbles3:before {\r\n    content: \"\\E96F\";\r\n}\r\n.icon-bubbles4:before {\r\n    content: \"\\E970\";\r\n}\r\n.icon-user:before {\r\n    content: \"\\E971\";\r\n}\r\n.icon-users:before {\r\n    content: \"\\E972\";\r\n}\r\n.icon-user-plus:before {\r\n    content: \"\\E973\";\r\n}\r\n.icon-user-minus:before {\r\n    content: \"\\E974\";\r\n}\r\n.icon-user-check:before {\r\n    content: \"\\E975\";\r\n}\r\n.icon-user-tie:before {\r\n    content: \"\\E976\";\r\n}\r\n.icon-quotes-left:before {\r\n    content: \"\\E977\";\r\n}\r\n.icon-quotes-right:before {\r\n    content: \"\\E978\";\r\n}\r\n.icon-hour-glass:before {\r\n    content: \"\\E979\";\r\n}\r\n.icon-spinner:before {\r\n    content: \"\\E97A\";\r\n}\r\n.icon-spinner2:before {\r\n    content: \"\\E97B\";\r\n}\r\n.icon-spinner3:before {\r\n    content: \"\\E97C\";\r\n}\r\n.icon-spinner4:before {\r\n    content: \"\\E97D\";\r\n}\r\n.icon-spinner5:before {\r\n    content: \"\\E97E\";\r\n}\r\n.icon-spinner6:before {\r\n    content: \"\\E97F\";\r\n}\r\n.icon-spinner7:before {\r\n    content: \"\\E980\";\r\n}\r\n.icon-spinner8:before {\r\n    content: \"\\E981\";\r\n}\r\n.icon-spinner9:before {\r\n    content: \"\\E982\";\r\n}\r\n.icon-spinner10:before {\r\n    content: \"\\E983\";\r\n}\r\n.icon-spinner11:before {\r\n    content: \"\\E984\";\r\n}\r\n.icon-binoculars:before {\r\n    content: \"\\E985\";\r\n}\r\n.icon-search:before {\r\n    content: \"\\E986\";\r\n}\r\n.icon-zoom-in:before {\r\n    content: \"\\E987\";\r\n}\r\n.icon-zoom-out:before {\r\n    content: \"\\E988\";\r\n}\r\n.icon-enlarge:before {\r\n    content: \"\\E989\";\r\n}\r\n.icon-shrink:before {\r\n    content: \"\\E98A\";\r\n}\r\n.icon-enlarge2:before {\r\n    content: \"\\E98B\";\r\n}\r\n.icon-shrink2:before {\r\n    content: \"\\E98C\";\r\n}\r\n.icon-key:before {\r\n    content: \"\\E98D\";\r\n}\r\n.icon-key2:before {\r\n    content: \"\\E98E\";\r\n}\r\n.icon-lock:before {\r\n    content: \"\\E98F\";\r\n}\r\n.icon-unlocked:before {\r\n    content: \"\\E990\";\r\n}\r\n.icon-wrench:before {\r\n    content: \"\\E991\";\r\n}\r\n.icon-equalizer:before {\r\n    content: \"\\E992\";\r\n}\r\n.icon-equalizer2:before {\r\n    content: \"\\E993\";\r\n}\r\n.icon-cog:before {\r\n    content: \"\\E994\";\r\n}\r\n.icon-cogs:before {\r\n    content: \"\\E995\";\r\n}\r\n.icon-hammer:before {\r\n    content: \"\\E996\";\r\n}\r\n.icon-magic-wand:before {\r\n    content: \"\\E997\";\r\n}\r\n.icon-aid-kit:before {\r\n    content: \"\\E998\";\r\n}\r\n.icon-bug:before {\r\n    content: \"\\E999\";\r\n}\r\n.icon-pie-chart:before {\r\n    content: \"\\E99A\";\r\n}\r\n.icon-stats-dots:before {\r\n    content: \"\\E99B\";\r\n}\r\n.icon-stats-bars:before {\r\n    content: \"\\E99C\";\r\n}\r\n.icon-stats-bars2:before {\r\n    content: \"\\E99D\";\r\n}\r\n.icon-trophy:before {\r\n    content: \"\\E99E\";\r\n}\r\n.icon-gift:before {\r\n    content: \"\\E99F\";\r\n}\r\n.icon-glass:before {\r\n    content: \"\\E9A0\";\r\n}\r\n.icon-glass2:before {\r\n    content: \"\\E9A1\";\r\n}\r\n.icon-mug:before {\r\n    content: \"\\E9A2\";\r\n}\r\n.icon-spoon-knife:before {\r\n    content: \"\\E9A3\";\r\n}\r\n.icon-leaf:before {\r\n    content: \"\\E9A4\";\r\n}\r\n.icon-rocket:before {\r\n    content: \"\\E9A5\";\r\n}\r\n.icon-meter:before {\r\n    content: \"\\E9A6\";\r\n}\r\n.icon-meter2:before {\r\n    content: \"\\E9A7\";\r\n}\r\n.icon-hammer2:before {\r\n    content: \"\\E9A8\";\r\n}\r\n.icon-fire:before {\r\n    content: \"\\E9A9\";\r\n}\r\n.icon-lab:before {\r\n    content: \"\\E9AA\";\r\n}\r\n.icon-magnet:before {\r\n    content: \"\\E9AB\";\r\n}\r\n.icon-bin:before {\r\n    content: \"\\E9AC\";\r\n}\r\n.icon-bin2:before {\r\n    content: \"\\E9AD\";\r\n}\r\n.icon-briefcase:before {\r\n    content: \"\\E9AE\";\r\n}\r\n.icon-airplane:before {\r\n    content: \"\\E9AF\";\r\n}\r\n.icon-truck:before {\r\n    content: \"\\E9B0\";\r\n}\r\n.icon-road:before {\r\n    content: \"\\E9B1\";\r\n}\r\n.icon-accessibility:before {\r\n    content: \"\\E9B2\";\r\n}\r\n.icon-target:before {\r\n    content: \"\\E9B3\";\r\n}\r\n.icon-shield:before {\r\n    content: \"\\E9B4\";\r\n}\r\n.icon-power:before {\r\n    content: \"\\E9B5\";\r\n}\r\n.icon-switch:before {\r\n    content: \"\\E9B6\";\r\n}\r\n.icon-power-cord:before {\r\n    content: \"\\E9B7\";\r\n}\r\n.icon-clipboard:before {\r\n    content: \"\\E9B8\";\r\n}\r\n.icon-list-numbered:before {\r\n    content: \"\\E9B9\";\r\n}\r\n.icon-list:before {\r\n    content: \"\\E9BA\";\r\n}\r\n.icon-list2:before {\r\n    content: \"\\E9BB\";\r\n}\r\n.icon-tree:before {\r\n    content: \"\\E9BC\";\r\n}\r\n.icon-menu:before {\r\n    content: \"\\E9BD\";\r\n}\r\n.icon-menu2:before {\r\n    content: \"\\E9BE\";\r\n}\r\n.icon-menu3:before {\r\n    content: \"\\E9BF\";\r\n}\r\n.icon-menu4:before {\r\n    content: \"\\E9C0\";\r\n}\r\n.icon-cloud:before {\r\n    content: \"\\E9C1\";\r\n}\r\n.icon-cloud-download:before {\r\n    content: \"\\E9C2\";\r\n}\r\n.icon-cloud-upload:before {\r\n    content: \"\\E9C3\";\r\n}\r\n.icon-cloud-check:before {\r\n    content: \"\\E9C4\";\r\n}\r\n.icon-download2:before {\r\n    content: \"\\E9C5\";\r\n}\r\n.icon-upload2:before {\r\n    content: \"\\E9C6\";\r\n}\r\n.icon-download3:before {\r\n    content: \"\\E9C7\";\r\n}\r\n.icon-upload3:before {\r\n    content: \"\\E9C8\";\r\n}\r\n.icon-sphere:before {\r\n    content: \"\\E9C9\";\r\n}\r\n.icon-earth:before {\r\n    content: \"\\E9CA\";\r\n}\r\n.icon-link:before {\r\n    content: \"\\E9CB\";\r\n}\r\n.icon-flag:before {\r\n    content: \"\\E9CC\";\r\n}\r\n.icon-attachment:before {\r\n    content: \"\\E9CD\";\r\n}\r\n.icon-eye:before {\r\n    content: \"\\E9CE\";\r\n}\r\n.icon-eye-plus:before {\r\n    content: \"\\E9CF\";\r\n}\r\n.icon-eye-minus:before {\r\n    content: \"\\E9D0\";\r\n}\r\n.icon-eye-blocked:before {\r\n    content: \"\\E9D1\";\r\n}\r\n.icon-bookmark:before {\r\n    content: \"\\E9D2\";\r\n}\r\n.icon-bookmarks:before {\r\n    content: \"\\E9D3\";\r\n}\r\n.icon-sun:before {\r\n    content: \"\\E9D4\";\r\n}\r\n.icon-contrast:before {\r\n    content: \"\\E9D5\";\r\n}\r\n.icon-brightness-contrast:before {\r\n    content: \"\\E9D6\";\r\n}\r\n.icon-star-empty:before {\r\n    content: \"\\E9D7\";\r\n}\r\n.icon-star-half:before {\r\n    content: \"\\E9D8\";\r\n}\r\n.icon-star-full:before {\r\n    content: \"\\E9D9\";\r\n}\r\n.icon-heart:before {\r\n    content: \"\\E9DA\";\r\n}\r\n.icon-heart-broken:before {\r\n    content: \"\\E9DB\";\r\n}\r\n.icon-man:before {\r\n    content: \"\\E9DC\";\r\n}\r\n.icon-woman:before {\r\n    content: \"\\E9DD\";\r\n}\r\n.icon-man-woman:before {\r\n    content: \"\\E9DE\";\r\n}\r\n.icon-happy:before {\r\n    content: \"\\E9DF\";\r\n}\r\n.icon-happy2:before {\r\n    content: \"\\E9E0\";\r\n}\r\n.icon-smile:before {\r\n    content: \"\\E9E1\";\r\n}\r\n.icon-smile2:before {\r\n    content: \"\\E9E2\";\r\n}\r\n.icon-tongue:before {\r\n    content: \"\\E9E3\";\r\n}\r\n.icon-tongue2:before {\r\n    content: \"\\E9E4\";\r\n}\r\n.icon-sad:before {\r\n    content: \"\\E9E5\";\r\n}\r\n.icon-sad2:before {\r\n    content: \"\\E9E6\";\r\n}\r\n.icon-wink:before {\r\n    content: \"\\E9E7\";\r\n}\r\n.icon-wink2:before {\r\n    content: \"\\E9E8\";\r\n}\r\n.icon-grin:before {\r\n    content: \"\\E9E9\";\r\n}\r\n.icon-grin2:before {\r\n    content: \"\\E9EA\";\r\n}\r\n.icon-cool:before {\r\n    content: \"\\E9EB\";\r\n}\r\n.icon-cool2:before {\r\n    content: \"\\E9EC\";\r\n}\r\n.icon-angry:before {\r\n    content: \"\\E9ED\";\r\n}\r\n.icon-angry2:before {\r\n    content: \"\\E9EE\";\r\n}\r\n.icon-evil:before {\r\n    content: \"\\E9EF\";\r\n}\r\n.icon-evil2:before {\r\n    content: \"\\E9F0\";\r\n}\r\n.icon-shocked:before {\r\n    content: \"\\E9F1\";\r\n}\r\n.icon-shocked2:before {\r\n    content: \"\\E9F2\";\r\n}\r\n.icon-baffled:before {\r\n    content: \"\\E9F3\";\r\n}\r\n.icon-baffled2:before {\r\n    content: \"\\E9F4\";\r\n}\r\n.icon-confused:before {\r\n    content: \"\\E9F5\";\r\n}\r\n.icon-confused2:before {\r\n    content: \"\\E9F6\";\r\n}\r\n.icon-neutral:before {\r\n    content: \"\\E9F7\";\r\n}\r\n.icon-neutral2:before {\r\n    content: \"\\E9F8\";\r\n}\r\n.icon-hipster:before {\r\n    content: \"\\E9F9\";\r\n}\r\n.icon-hipster2:before {\r\n    content: \"\\E9FA\";\r\n}\r\n.icon-wondering:before {\r\n    content: \"\\E9FB\";\r\n}\r\n.icon-wondering2:before {\r\n    content: \"\\E9FC\";\r\n}\r\n.icon-sleepy:before {\r\n    content: \"\\E9FD\";\r\n}\r\n.icon-sleepy2:before {\r\n    content: \"\\E9FE\";\r\n}\r\n.icon-frustrated:before {\r\n    content: \"\\E9FF\";\r\n}\r\n.icon-frustrated2:before {\r\n    content: \"\\EA00\";\r\n}\r\n.icon-crying:before {\r\n    content: \"\\EA01\";\r\n}\r\n.icon-crying2:before {\r\n    content: \"\\EA02\";\r\n}\r\n.icon-point-up:before {\r\n    content: \"\\EA03\";\r\n}\r\n.icon-point-right:before {\r\n    content: \"\\EA04\";\r\n}\r\n.icon-point-down:before {\r\n    content: \"\\EA05\";\r\n}\r\n.icon-point-left:before {\r\n    content: \"\\EA06\";\r\n}\r\n.icon-warning:before {\r\n    content: \"\\EA07\";\r\n}\r\n.icon-notification:before {\r\n    content: \"\\EA08\";\r\n}\r\n.icon-question:before {\r\n    content: \"\\EA09\";\r\n}\r\n.icon-plus:before {\r\n    content: \"\\EA0A\";\r\n}\r\n.icon-minus:before {\r\n    content: \"\\EA0B\";\r\n}\r\n.icon-info:before {\r\n    content: \"\\EA0C\";\r\n}\r\n.icon-cancel-circle:before {\r\n    content: \"\\EA0D\";\r\n}\r\n.icon-blocked:before {\r\n    content: \"\\EA0E\";\r\n}\r\n.icon-cross:before {\r\n    content: \"\\EA0F\";\r\n}\r\n.icon-checkmark:before {\r\n    content: \"\\EA10\";\r\n}\r\n.icon-checkmark2:before {\r\n    content: \"\\EA11\";\r\n}\r\n.icon-spell-check:before {\r\n    content: \"\\EA12\";\r\n}\r\n.icon-enter:before {\r\n    content: \"\\EA13\";\r\n}\r\n.icon-exit:before {\r\n    content: \"\\EA14\";\r\n}\r\n.icon-play2:before {\r\n    content: \"\\EA15\";\r\n}\r\n.icon-pause:before {\r\n    content: \"\\EA16\";\r\n}\r\n.icon-stop:before {\r\n    content: \"\\EA17\";\r\n}\r\n.icon-previous:before {\r\n    content: \"\\EA18\";\r\n}\r\n.icon-next:before {\r\n    content: \"\\EA19\";\r\n}\r\n.icon-backward:before {\r\n    content: \"\\EA1A\";\r\n}\r\n.icon-forward2:before {\r\n    content: \"\\EA1B\";\r\n}\r\n.icon-play3:before {\r\n    content: \"\\EA1C\";\r\n}\r\n.icon-pause2:before {\r\n    content: \"\\EA1D\";\r\n}\r\n.icon-stop2:before {\r\n    content: \"\\EA1E\";\r\n}\r\n.icon-backward2:before {\r\n    content: \"\\EA1F\";\r\n}\r\n.icon-forward3:before {\r\n    content: \"\\EA20\";\r\n}\r\n.icon-first:before {\r\n    content: \"\\EA21\";\r\n}\r\n.icon-last:before {\r\n    content: \"\\EA22\";\r\n}\r\n.icon-previous2:before {\r\n    content: \"\\EA23\";\r\n}\r\n.icon-next2:before {\r\n    content: \"\\EA24\";\r\n}\r\n.icon-eject:before {\r\n    content: \"\\EA25\";\r\n}\r\n.icon-volume-high:before {\r\n    content: \"\\EA26\";\r\n}\r\n.icon-volume-medium:before {\r\n    content: \"\\EA27\";\r\n}\r\n.icon-volume-low:before {\r\n    content: \"\\EA28\";\r\n}\r\n.icon-volume-mute:before {\r\n    content: \"\\EA29\";\r\n}\r\n.icon-volume-mute2:before {\r\n    content: \"\\EA2A\";\r\n}\r\n.icon-volume-increase:before {\r\n    content: \"\\EA2B\";\r\n}\r\n.icon-volume-decrease:before {\r\n    content: \"\\EA2C\";\r\n}\r\n.icon-loop:before {\r\n    content: \"\\EA2D\";\r\n}\r\n.icon-loop2:before {\r\n    content: \"\\EA2E\";\r\n}\r\n.icon-infinite:before {\r\n    content: \"\\EA2F\";\r\n}\r\n.icon-shuffle:before {\r\n    content: \"\\EA30\";\r\n}\r\n.icon-arrow-up-left:before {\r\n    content: \"\\EA31\";\r\n}\r\n.icon-arrow-up:before {\r\n    content: \"\\EA32\";\r\n}\r\n.icon-arrow-up-right:before {\r\n    content: \"\\EA33\";\r\n}\r\n.icon-arrow-right:before {\r\n    content: \"\\EA34\";\r\n}\r\n.icon-arrow-down-right:before {\r\n    content: \"\\EA35\";\r\n}\r\n.icon-arrow-down:before {\r\n    content: \"\\EA36\";\r\n}\r\n.icon-arrow-down-left:before {\r\n    content: \"\\EA37\";\r\n}\r\n.icon-arrow-left:before {\r\n    content: \"\\EA38\";\r\n}\r\n.icon-arrow-up-left2:before {\r\n    content: \"\\EA39\";\r\n}\r\n.icon-arrow-up2:before {\r\n    content: \"\\EA3A\";\r\n}\r\n.icon-arrow-up-right2:before {\r\n    content: \"\\EA3B\";\r\n}\r\n.icon-arrow-right2:before {\r\n    content: \"\\EA3C\";\r\n}\r\n.icon-arrow-down-right2:before {\r\n    content: \"\\EA3D\";\r\n}\r\n.icon-arrow-down2:before {\r\n    content: \"\\EA3E\";\r\n}\r\n.icon-arrow-down-left2:before {\r\n    content: \"\\EA3F\";\r\n}\r\n.icon-arrow-left2:before {\r\n    content: \"\\EA40\";\r\n}\r\n.icon-circle-up:before {\r\n    content: \"\\EA41\";\r\n}\r\n.icon-circle-right:before {\r\n    content: \"\\EA42\";\r\n}\r\n.icon-circle-down:before {\r\n    content: \"\\EA43\";\r\n}\r\n.icon-circle-left:before {\r\n    content: \"\\EA44\";\r\n}\r\n.icon-tab:before {\r\n    content: \"\\EA45\";\r\n}\r\n.icon-move-up:before {\r\n    content: \"\\EA46\";\r\n}\r\n.icon-move-down:before {\r\n    content: \"\\EA47\";\r\n}\r\n.icon-sort-alpha-asc:before {\r\n    content: \"\\EA48\";\r\n}\r\n.icon-sort-alpha-desc:before {\r\n    content: \"\\EA49\";\r\n}\r\n.icon-sort-numeric-asc:before {\r\n    content: \"\\EA4A\";\r\n}\r\n.icon-sort-numberic-desc:before {\r\n    content: \"\\EA4B\";\r\n}\r\n.icon-sort-amount-asc:before {\r\n    content: \"\\EA4C\";\r\n}\r\n.icon-sort-amount-desc:before {\r\n    content: \"\\EA4D\";\r\n}\r\n.icon-command:before {\r\n    content: \"\\EA4E\";\r\n}\r\n.icon-shift:before {\r\n    content: \"\\EA4F\";\r\n}\r\n.icon-ctrl:before {\r\n    content: \"\\EA50\";\r\n}\r\n.icon-opt:before {\r\n    content: \"\\EA51\";\r\n}\r\n.icon-checkbox-checked:before {\r\n    content: \"\\EA52\";\r\n}\r\n.icon-checkbox-unchecked:before {\r\n    content: \"\\EA53\";\r\n}\r\n.icon-radio-checked:before {\r\n    content: \"\\EA54\";\r\n}\r\n.icon-radio-checked2:before {\r\n    content: \"\\EA55\";\r\n}\r\n.icon-radio-unchecked:before {\r\n    content: \"\\EA56\";\r\n}\r\n.icon-crop:before {\r\n    content: \"\\EA57\";\r\n}\r\n.icon-make-group:before {\r\n    content: \"\\EA58\";\r\n}\r\n.icon-ungroup:before {\r\n    content: \"\\EA59\";\r\n}\r\n.icon-scissors:before {\r\n    content: \"\\EA5A\";\r\n}\r\n.icon-filter:before {\r\n    content: \"\\EA5B\";\r\n}\r\n.icon-font:before {\r\n    content: \"\\EA5C\";\r\n}\r\n.icon-ligature:before {\r\n    content: \"\\EA5D\";\r\n}\r\n.icon-ligature2:before {\r\n    content: \"\\EA5E\";\r\n}\r\n.icon-text-height:before {\r\n    content: \"\\EA5F\";\r\n}\r\n.icon-text-width:before {\r\n    content: \"\\EA60\";\r\n}\r\n.icon-font-size:before {\r\n    content: \"\\EA61\";\r\n}\r\n.icon-bold:before {\r\n    content: \"\\EA62\";\r\n}\r\n.icon-underline:before {\r\n    content: \"\\EA63\";\r\n}\r\n.icon-italic:before {\r\n    content: \"\\EA64\";\r\n}\r\n.icon-strikethrough:before {\r\n    content: \"\\EA65\";\r\n}\r\n.icon-omega:before {\r\n    content: \"\\EA66\";\r\n}\r\n.icon-sigma:before {\r\n    content: \"\\EA67\";\r\n}\r\n.icon-page-break:before {\r\n    content: \"\\EA68\";\r\n}\r\n.icon-superscript:before {\r\n    content: \"\\EA69\";\r\n}\r\n.icon-subscript:before {\r\n    content: \"\\EA6A\";\r\n}\r\n.icon-superscript2:before {\r\n    content: \"\\EA6B\";\r\n}\r\n.icon-subscript2:before {\r\n    content: \"\\EA6C\";\r\n}\r\n.icon-text-color:before {\r\n    content: \"\\EA6D\";\r\n}\r\n.icon-pagebreak:before {\r\n    content: \"\\EA6E\";\r\n}\r\n.icon-clear-formatting:before {\r\n    content: \"\\EA6F\";\r\n}\r\n.icon-table:before {\r\n    content: \"\\EA70\";\r\n}\r\n.icon-table2:before {\r\n    content: \"\\EA71\";\r\n}\r\n.icon-insert-template:before {\r\n    content: \"\\EA72\";\r\n}\r\n.icon-pilcrow:before {\r\n    content: \"\\EA73\";\r\n}\r\n.icon-ltr:before {\r\n    content: \"\\EA74\";\r\n}\r\n.icon-rtl:before {\r\n    content: \"\\EA75\";\r\n}\r\n.icon-section:before {\r\n    content: \"\\EA76\";\r\n}\r\n.icon-paragraph-left:before {\r\n    content: \"\\EA77\";\r\n}\r\n.icon-paragraph-center:before {\r\n    content: \"\\EA78\";\r\n}\r\n.icon-paragraph-right:before {\r\n    content: \"\\EA79\";\r\n}\r\n.icon-paragraph-justify:before {\r\n    content: \"\\EA7A\";\r\n}\r\n.icon-indent-increase:before {\r\n    content: \"\\EA7B\";\r\n}\r\n.icon-indent-decrease:before {\r\n    content: \"\\EA7C\";\r\n}\r\n.icon-share:before {\r\n    content: \"\\EA7D\";\r\n}\r\n.icon-new-tab:before {\r\n    content: \"\\EA7E\";\r\n}\r\n.icon-embed:before {\r\n    content: \"\\EA7F\";\r\n}\r\n.icon-embed2:before {\r\n    content: \"\\EA80\";\r\n}\r\n.icon-terminal:before {\r\n    content: \"\\EA81\";\r\n}\r\n.icon-share2:before {\r\n    content: \"\\EA82\";\r\n}\r\n.icon-mail:before {\r\n    content: \"\\EA83\";\r\n}\r\n.icon-mail2:before {\r\n    content: \"\\EA84\";\r\n}\r\n.icon-mail3:before {\r\n    content: \"\\EA85\";\r\n}\r\n.icon-mail4:before {\r\n    content: \"\\EA86\";\r\n}\r\n.icon-amazon:before {\r\n    content: \"\\EA87\";\r\n}\r\n.icon-google:before {\r\n    content: \"\\EA88\";\r\n}\r\n.icon-google2:before {\r\n    content: \"\\EA89\";\r\n}\r\n.icon-google3:before {\r\n    content: \"\\EA8A\";\r\n}\r\n.icon-google-plus:before {\r\n    content: \"\\EA8B\";\r\n}\r\n.icon-google-plus2:before {\r\n    content: \"\\EA8C\";\r\n}\r\n.icon-google-plus3:before {\r\n    content: \"\\EA8D\";\r\n}\r\n.icon-hangouts:before {\r\n    content: \"\\EA8E\";\r\n}\r\n.icon-google-drive:before {\r\n    content: \"\\EA8F\";\r\n}\r\n.icon-facebook:before {\r\n    content: \"\\EA90\";\r\n}\r\n.icon-facebook2:before {\r\n    content: \"\\EA91\";\r\n}\r\n.icon-instagram:before {\r\n    content: \"\\EA92\";\r\n}\r\n.icon-whatsapp:before {\r\n    content: \"\\EA93\";\r\n}\r\n.icon-spotify:before {\r\n    content: \"\\EA94\";\r\n}\r\n.icon-telegram:before {\r\n    content: \"\\EA95\";\r\n}\r\n.icon-twitter:before {\r\n    content: \"\\EA96\";\r\n}\r\n.icon-vine:before {\r\n    content: \"\\EA97\";\r\n}\r\n.icon-vk:before {\r\n    content: \"\\EA98\";\r\n}\r\n.icon-renren:before {\r\n    content: \"\\EA99\";\r\n}\r\n.icon-sina-weibo:before {\r\n    content: \"\\EA9A\";\r\n}\r\n.icon-rss:before {\r\n    content: \"\\EA9B\";\r\n}\r\n.icon-rss2:before {\r\n    content: \"\\EA9C\";\r\n}\r\n.icon-youtube:before {\r\n    content: \"\\EA9D\";\r\n}\r\n.icon-youtube2:before {\r\n    content: \"\\EA9E\";\r\n}\r\n.icon-twitch:before {\r\n    content: \"\\EA9F\";\r\n}\r\n.icon-vimeo:before {\r\n    content: \"\\EAA0\";\r\n}\r\n.icon-vimeo2:before {\r\n    content: \"\\EAA1\";\r\n}\r\n.icon-lanyrd:before {\r\n    content: \"\\EAA2\";\r\n}\r\n.icon-flickr:before {\r\n    content: \"\\EAA3\";\r\n}\r\n.icon-flickr2:before {\r\n    content: \"\\EAA4\";\r\n}\r\n.icon-flickr3:before {\r\n    content: \"\\EAA5\";\r\n}\r\n.icon-flickr4:before {\r\n    content: \"\\EAA6\";\r\n}\r\n.icon-dribbble:before {\r\n    content: \"\\EAA7\";\r\n}\r\n.icon-behance:before {\r\n    content: \"\\EAA8\";\r\n}\r\n.icon-behance2:before {\r\n    content: \"\\EAA9\";\r\n}\r\n.icon-deviantart:before {\r\n    content: \"\\EAAA\";\r\n}\r\n.icon-500px:before {\r\n    content: \"\\EAAB\";\r\n}\r\n.icon-steam:before {\r\n    content: \"\\EAAC\";\r\n}\r\n.icon-steam2:before {\r\n    content: \"\\EAAD\";\r\n}\r\n.icon-dropbox:before {\r\n    content: \"\\EAAE\";\r\n}\r\n.icon-onedrive:before {\r\n    content: \"\\EAAF\";\r\n}\r\n.icon-github:before {\r\n    content: \"\\EAB0\";\r\n}\r\n.icon-npm:before {\r\n    content: \"\\EAB1\";\r\n}\r\n.icon-basecamp:before {\r\n    content: \"\\EAB2\";\r\n}\r\n.icon-trello:before {\r\n    content: \"\\EAB3\";\r\n}\r\n.icon-wordpress:before {\r\n    content: \"\\EAB4\";\r\n}\r\n.icon-joomla:before {\r\n    content: \"\\EAB5\";\r\n}\r\n.icon-ello:before {\r\n    content: \"\\EAB6\";\r\n}\r\n.icon-blogger:before {\r\n    content: \"\\EAB7\";\r\n}\r\n.icon-blogger2:before {\r\n    content: \"\\EAB8\";\r\n}\r\n.icon-tumblr:before {\r\n    content: \"\\EAB9\";\r\n}\r\n.icon-tumblr2:before {\r\n    content: \"\\EABA\";\r\n}\r\n.icon-yahoo:before {\r\n    content: \"\\EABB\";\r\n}\r\n.icon-yahoo2:before {\r\n    content: \"\\EABC\";\r\n}\r\n.icon-tux:before {\r\n    content: \"\\EABD\";\r\n}\r\n.icon-appleinc:before {\r\n    content: \"\\EABE\";\r\n}\r\n.icon-finder:before {\r\n    content: \"\\EABF\";\r\n}\r\n.icon-android:before {\r\n    content: \"\\EAC0\";\r\n}\r\n.icon-windows:before {\r\n    content: \"\\EAC1\";\r\n}\r\n.icon-windows8:before {\r\n    content: \"\\EAC2\";\r\n}\r\n.icon-soundcloud:before {\r\n    content: \"\\EAC3\";\r\n}\r\n.icon-soundcloud2:before {\r\n    content: \"\\EAC4\";\r\n}\r\n.icon-skype:before {\r\n    content: \"\\EAC5\";\r\n}\r\n.icon-reddit:before {\r\n    content: \"\\EAC6\";\r\n}\r\n.icon-hackernews:before {\r\n    content: \"\\EAC7\";\r\n}\r\n.icon-wikipedia:before {\r\n    content: \"\\EAC8\";\r\n}\r\n.icon-linkedin:before {\r\n    content: \"\\EAC9\";\r\n}\r\n.icon-linkedin2:before {\r\n    content: \"\\EACA\";\r\n}\r\n.icon-lastfm:before {\r\n    content: \"\\EACB\";\r\n}\r\n.icon-lastfm2:before {\r\n    content: \"\\EACC\";\r\n}\r\n.icon-delicious:before {\r\n    content: \"\\EACD\";\r\n}\r\n.icon-stumbleupon:before {\r\n    content: \"\\EACE\";\r\n}\r\n.icon-stumbleupon2:before {\r\n    content: \"\\EACF\";\r\n}\r\n.icon-stackoverflow:before {\r\n    content: \"\\EAD0\";\r\n}\r\n.icon-pinterest:before {\r\n    content: \"\\EAD1\";\r\n}\r\n.icon-pinterest2:before {\r\n    content: \"\\EAD2\";\r\n}\r\n.icon-xing:before {\r\n    content: \"\\EAD3\";\r\n}\r\n.icon-xing2:before {\r\n    content: \"\\EAD4\";\r\n}\r\n.icon-flattr:before {\r\n    content: \"\\EAD5\";\r\n}\r\n.icon-foursquare:before {\r\n    content: \"\\EAD6\";\r\n}\r\n.icon-yelp:before {\r\n    content: \"\\EAD7\";\r\n}\r\n.icon-paypal:before {\r\n    content: \"\\EAD8\";\r\n}\r\n.icon-chrome:before {\r\n    content: \"\\EAD9\";\r\n}\r\n.icon-firefox:before {\r\n    content: \"\\EADA\";\r\n}\r\n.icon-IE:before {\r\n    content: \"\\EADB\";\r\n}\r\n.icon-edge:before {\r\n    content: \"\\EADC\";\r\n}\r\n.icon-safari:before {\r\n    content: \"\\EADD\";\r\n}\r\n.icon-opera:before {\r\n    content: \"\\EADE\";\r\n}\r\n.icon-file-pdf:before {\r\n    content: \"\\EADF\";\r\n}\r\n.icon-file-openoffice:before {\r\n    content: \"\\EAE0\";\r\n}\r\n.icon-file-word:before {\r\n    content: \"\\EAE1\";\r\n}\r\n.icon-file-excel:before {\r\n    content: \"\\EAE2\";\r\n}\r\n.icon-libreoffice:before {\r\n    content: \"\\EAE3\";\r\n}\r\n.icon-html-five:before {\r\n    content: \"\\EAE4\";\r\n}\r\n.icon-html-five2:before {\r\n    content: \"\\EAE5\";\r\n}\r\n.icon-css3:before {\r\n    content: \"\\EAE6\";\r\n}\r\n.icon-git:before {\r\n    content: \"\\EAE7\";\r\n}\r\n.icon-codepen:before {\r\n    content: \"\\EAE8\";\r\n}\r\n.icon-svg:before {\r\n    content: \"\\EAE9\";\r\n}\r\n.icon-IcoMoon:before {\r\n    content: \"\\EAEA\";\r\n}\r\n.icon-uni21:before {\r\n    content: \"!\";\r\n}\r\n.icon-uni22:before {\r\n    content: \"\\\"\";\r\n}\r\n.icon-uni23:before {\r\n    content: \"#\";\r\n}\r\n.icon-uni24:before {\r\n    content: \"$\";\r\n}\r\n.icon-uni25:before {\r\n    content: \"%\";\r\n}\r\n.icon-uni26:before {\r\n    content: \"&\";\r\n}\r\n.icon-uni27:before {\r\n    content: \"'\";\r\n}\r\n.icon-uni28:before {\r\n    content: \"(\";\r\n}\r\n.icon-uni29:before {\r\n    content: \")\";\r\n}\r\n.icon-uni2A:before {\r\n    content: \"*\";\r\n}\r\n.icon-uni2B:before {\r\n    content: \"+\";\r\n}\r\n.icon-uni2C:before {\r\n    content: \",\";\r\n}\r\n.icon-uni2D:before {\r\n    content: \"-\";\r\n}\r\n.icon-uni2E:before {\r\n    content: \".\";\r\n}\r\n.icon-uni2F:before {\r\n    content: \"/\";\r\n}\r\n.icon-uni30:before {\r\n    content: \"0\";\r\n}\r\n.icon-uni31:before {\r\n    content: \"1\";\r\n}\r\n.icon-uni32:before {\r\n    content: \"2\";\r\n}\r\n.icon-uni33:before {\r\n    content: \"3\";\r\n}\r\n.icon-uni34:before {\r\n    content: \"4\";\r\n}\r\n.icon-uni35:before {\r\n    content: \"5\";\r\n}\r\n.icon-uni36:before {\r\n    content: \"6\";\r\n}\r\n.icon-uni37:before {\r\n    content: \"7\";\r\n}\r\n.icon-uni38:before {\r\n    content: \"8\";\r\n}\r\n.icon-uni39:before {\r\n    content: \"9\";\r\n}\r\n.icon-uni3A:before {\r\n    content: \":\";\r\n}\r\n.icon-uni3B:before {\r\n    content: \";\";\r\n}\r\n.icon-uni3C:before {\r\n    content: \"<\";\r\n}\r\n.icon-uni3D:before {\r\n    content: \"=\";\r\n}\r\n.icon-uni3E:before {\r\n    content: \">\";\r\n}\r\n.icon-uni3F:before {\r\n    content: \"?\";\r\n}\r\n.icon-uni40:before {\r\n    content: \"@\";\r\n}\r\n.icon-uni41:before {\r\n    content: \"A\";\r\n}\r\n.icon-uni42:before {\r\n    content: \"B\";\r\n}\r\n.icon-uni43:before {\r\n    content: \"C\";\r\n}\r\n.icon-uni44:before {\r\n    content: \"D\";\r\n}\r\n.icon-uni45:before {\r\n    content: \"E\";\r\n}\r\n.icon-uni46:before {\r\n    content: \"F\";\r\n}\r\n.icon-uni47:before {\r\n    content: \"G\";\r\n}\r\n.icon-uni48:before {\r\n    content: \"H\";\r\n}\r\n.icon-uni49:before {\r\n    content: \"I\";\r\n}\r\n.icon-uni4A:before {\r\n    content: \"J\";\r\n}\r\n.icon-uni4B:before {\r\n    content: \"K\";\r\n}\r\n.icon-uni4C:before {\r\n    content: \"L\";\r\n}\r\n.icon-uni4D:before {\r\n    content: \"M\";\r\n}\r\n.icon-uni4E:before {\r\n    content: \"N\";\r\n}\r\n.icon-uni4F:before {\r\n    content: \"O\";\r\n}\r\n.icon-uni50:before {\r\n    content: \"P\";\r\n}\r\n.icon-uni51:before {\r\n    content: \"Q\";\r\n}\r\n.icon-uni52:before {\r\n    content: \"R\";\r\n}\r\n.icon-uni53:before {\r\n    content: \"S\";\r\n}\r\n.icon-uni54:before {\r\n    content: \"T\";\r\n}\r\n.icon-uni55:before {\r\n    content: \"U\";\r\n}\r\n.icon-uni56:before {\r\n    content: \"V\";\r\n}\r\n.icon-uni57:before {\r\n    content: \"W\";\r\n}\r\n.icon-uni58:before {\r\n    content: \"X\";\r\n}\r\n.icon-uni59:before {\r\n    content: \"Y\";\r\n}\r\n.icon-uni5A:before {\r\n    content: \"Z\";\r\n}\r\n.icon-uni5B:before {\r\n    content: \"[\";\r\n}\r\n.icon-uni5C:before {\r\n    content: \"\\\\\";\r\n}\r\n.icon-uni5D:before {\r\n    content: \"]\";\r\n}\r\n.icon-uni5E:before {\r\n    content: \"^\";\r\n}\r\n.icon-uni5F:before {\r\n    content: \"_\";\r\n}\r\n.icon-uni60:before {\r\n    content: \"`\";\r\n}\r\n.icon-uni61:before {\r\n    content: \"a\";\r\n}\r\n.icon-uni62:before {\r\n    content: \"b\";\r\n}\r\n.icon-uni63:before {\r\n    content: \"c\";\r\n}\r\n.icon-uni64:before {\r\n    content: \"d\";\r\n}\r\n.icon-uni65:before {\r\n    content: \"e\";\r\n}\r\n.icon-uni66:before {\r\n    content: \"f\";\r\n}\r\n.icon-uni67:before {\r\n    content: \"g\";\r\n}\r\n.icon-uni68:before {\r\n    content: \"h\";\r\n}\r\n.icon-uni69:before {\r\n    content: \"i\";\r\n}\r\n.icon-uni6A:before {\r\n    content: \"j\";\r\n}\r\n.icon-uni6B:before {\r\n    content: \"k\";\r\n}\r\n.icon-uni6C:before {\r\n    content: \"l\";\r\n}\r\n.icon-uni6D:before {\r\n    content: \"m\";\r\n}\r\n.icon-uni6E:before {\r\n    content: \"n\";\r\n}\r\n.icon-uni6F:before {\r\n    content: \"o\";\r\n}\r\n.icon-uni70:before {\r\n    content: \"p\";\r\n}\r\n.icon-uni71:before {\r\n    content: \"q\";\r\n}\r\n.icon-uni72:before {\r\n    content: \"r\";\r\n}\r\n.icon-uni73:before {\r\n    content: \"s\";\r\n}\r\n.icon-uni74:before {\r\n    content: \"t\";\r\n}\r\n.icon-uni75:before {\r\n    content: \"u\";\r\n}\r\n.icon-uni76:before {\r\n    content: \"v\";\r\n}\r\n.icon-uni77:before {\r\n    content: \"w\";\r\n}\r\n.icon-uni78:before {\r\n    content: \"x\";\r\n}\r\n.icon-uni79:before {\r\n    content: \"y\";\r\n}\r\n.icon-uni7A:before {\r\n    content: \"z\";\r\n}\r\n.icon-uni7B:before {\r\n    content: \"{\";\r\n}\r\n.icon-uni7C:before {\r\n    content: \"|\";\r\n}\r\n.icon-uni7D:before {\r\n    content: \"}\";\r\n}\r\n.icon-uni7E:before {\r\n    content: \"~\";\r\n}\r\n.icon-uniA9:before {\r\n    content: \"\\A9\";\r\n}\r\n\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "72c742bc4398b2803e5ebcdc65d4a03c.ttf";
+
+/***/ },
+/* 69 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var mainModule = angular.module('mainModule');
+	mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', '$cookieStore',
+	    function ($i18n, $freevenModal, notifierService, $cookieStore) {
+	        var mainService = function () {
+
+	            var self = this;
+
+	            self.user = {};
+
+	            self.isAuthenticated = function () {
+	                if (self.user.token) {
+	                    return true;
+	                }
+	                return false;
+	            };
+
+	            self.logout = function () {
+	                self.user = {};
+	                self.deleteUserCookies();
+	            };
+
+	            self.isArtist = function () {
+	                return self.user.is_artist;
+	            };
+
+	            self.setUserData = function (userData) {
+	                self.user = userData;
+	                self.saveUserCookies(userData);
+	            };
+
+	            self.getUserData = function () {
+	                if (!self.user) {
+	                    self.loadUserDataFromCookies();
+	                }
+	                return self.user;
+	            };
+	            self.loadUserDataFromCookies = function () {
+	                self.user = $cookieStore.get('user_data') || {};
+	            };
+
+	            self.saveUserCookies = function (userData) {
+	                $cookieStore.put('user_data', userData);
+	            };
+
+	            self.deleteUserCookies = function () {
+	                $cookieStore.remove('user_data');
+	            }
+
+	        };
+	        var main = new mainService();
+	        main.loadUserDataFromCookies();
+	        return main;
+	    }]);
+
+
+/***/ },
+/* 70 */
 /***/ function(module, exports) {
 
 	angular.module('restAPIModule', ['ngResource']);
@@ -62410,7 +63901,7 @@
 
 
 /***/ },
-/* 44 */
+/* 71 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -62421,11 +63912,39 @@
 	    return $resource('api/track/:guidTrack', {guid: '@guid'}, {
 	        /*custom urls*/
 	        searchTracks: {
-	            url: 'api/track',
+	            url: 'api/track/',
 	            method: 'GET',
 	            params: {},
 	            isArray: false,
 
+	        },
+	        loadTopTracks: {
+	            /*url: 'api/track/top10',*/
+	            url: 'api/track',
+	            method: 'GET',
+	            params: {},
+	            isArray: false
+	        },
+	        setScoreTrack: {
+	            url: 'api/track/rate_track',
+	            method: 'GET',
+	            params: {
+	                username: '@string',
+	                track_id: '@string',
+	                rate: '@string'
+	            },
+	            isArray: false
+	        },
+	        traceTrack: {
+	            url: 'api/track/trace',
+	            method: 'POST',
+	            params: {
+	                user: '@string',
+	                track: '@string',
+	                artist: '@string',
+	                action: '@string'
+	            },
+	            isArray: false
 	        }
 	    });
 	}]);
@@ -62434,7 +63953,7 @@
 
 
 /***/ },
-/* 45 */
+/* 72 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -62442,7 +63961,96 @@
 	    /**
 	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
 	     * */
-	    return $resource('api/user/:guidUser',  {guid: '@guid'},  {
+	    return $resource('api/user/:guidUser', {guid: '@guid'}, {
+
+	        loginUser: {
+	            url: 'api/user/login',
+	            method: 'GET',
+	            params: {username: '@string', password: '@string'},
+	            isArray: false,
+	        }
+	        ,
+
+	        getUser: {
+	            url: 'api/user/user-detail/:userId',
+	            method: 'GET',
+	            params: {userId:'@id'},
+	            isArray: false,
+	        }
+
+	        ,
+	        forgotPasswordUser: {
+	            url: '/user/request_password_restore',
+	            method: 'GET',
+	            params: {username: '@string'},
+	            isArray: false,
+	        }
+	        ,
+	        restorePasswordUser: {
+	            url: '/user/change_password',
+	            method: 'GET',
+	            params: {username: '@string',password: '@string'},
+	            isArray: false,
+	        }
+	    });
+
+
+	}]);
+
+
+
+
+/***/ },
+/* 73 */
+/***/ function(module, exports) {
+
+	var restApiModule = angular.module('restAPIModule');
+	restApiModule.factory('ArtistApiService', ['$resource', function ($resource) {
+	    /**
+	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
+	     * */
+	    return $resource('/user/artist/:userId', {userId:'@id'});
+
+	}]);
+
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+	var restApiModule = angular.module('restAPIModule');
+	restApiModule.factory('DonationApiService', ['$resource', function ($resource) {
+	    /**
+	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
+	     * */
+	    return $resource('api/donation/:guidTrack', {guid: '@guid'}, {
+	        /*custom urls*/
+	        createDonation: {
+	            url: 'api/user/donate',
+	            method: 'POST',
+	            params: {
+	                artist: '@string',
+	                user: '@string',
+	                value: '@string'
+	            },
+	            isArray: false
+	        },
+
+	        payuDonation: {
+	            url: 'https://sandbox.gateway.payulatam.com/ppp-web-gateway',
+	            method: 'POST',
+	            params: {
+	            },
+	            isArray: false
+	        },
+	         donationList: {
+	            url: 'user/donation-list',
+	            method: 'GET',
+	            params: {
+	            },
+	            isArray: false
+	        }
+
 
 	    });
 	}]);
@@ -62451,7 +64059,7 @@
 
 
 /***/ },
-/* 46 */
+/* 75 */
 /***/ function(module, exports) {
 
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
@@ -62493,7 +64101,7 @@
 
 
 /***/ },
-/* 47 */
+/* 76 */
 /***/ function(module, exports) {
 
 	angular.module('trackListModule', []);
@@ -62511,7 +64119,7 @@
 
 
 /***/ },
-/* 48 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -62521,10 +64129,7 @@
 	     */
 	    var self = this;
 	    self.trackList = trackListService;
-	    self.trackList.loadTracks({});
-	    self.play = function(track){
-	        self.trackList.playSelected(track);
-	    }
+	    //self.trackList.loadTracks();
 	}];
 
 	trackListModule.component('trackList', {
@@ -62534,18 +64139,18 @@
 	    },
 	    controller: TrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(49)
+	    template: __webpack_require__(78)
 	});
 
 
 /***/ },
-/* 49 */
+/* 78 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"row track-list\">\n    <div class=\"col-xs-4 col-sm-4 col-md-3\"\n         ng-repeat=\"track in ctrl.trackList.tracks\">\n        <div class=\"item\">\n            <div class=\"item-media\">\n                <a class=\"item-media-content img-responsive\"\n                   style=\"background-image: url({{ track.image }})\">\n                </a>\n                <div class=\"item-overlay center\">\n                    <button ng-click=\"ctrl.play(track)\" class=\"btn-playpause\">Play</button>\n                </div>\n            </div>\n            <div class=\"item-info\">\n                <div class=\"item-overlay bottom text-right\">\n                    <a href=\"#\" class=\"btn-favorite\">\n                        <i class=\"icon icon-star-full\"></i>\n                        <i class=\"icon icon-star-full\"></i>\n                        <i class=\"icon icon-star-full\"></i>\n                        <i class=\"icon icon-star-empty\"></i>\n                        <i class=\"icon icon-star-empty\"></i>\n                    </a>\n                    <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\n                        <i class=\"fa fa-ellipsis-h\"></i>\n                    </a>\n                    <div class=\"dropdown-menu pull-right black lt\"></div>\n                </div>\n                <div class=\"item-title text-ellipsis\">\n                    <a>{{ track.name }}</a>\n                </div>\n                <div class=\"item-author text-sm text-ellipsis\">\n                    <a class=\"text-muted\">{{ track.description }}</a>\n                </div>\n                <span class=\"item-meta-stats text-xs\">\n                 <i class=\"icon icon-star-full text-muted\"></i> 4/5\n            </span>\n            </div>\n        </div>\n    </div>\n    <br/>\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\n</div>\n";
+	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 50 */
+/* 79 */
 /***/ function(module, exports) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -62553,21 +64158,20 @@
 	    function (TrackApiService, playerService) {
 	        var TrackListService = function () {
 	            var self = this;
-	            self.selectedTrack = {
-	                "id": "20380a36-8777-43f7-a79e-65bdb53f4625",
-	                "name": "My_Chemical_Romance",
-	                "description": "My_Chemical_Romance",
-	                "gender": "gendername2",
-	                "image": "imageurl",
-	                "url": "https://freeven.s3.amazonaws.com/media/tracks/My_Chemical_Romance_-_I_am_not_OK.mp3",
-	                "score": 3
-	            };
+	            self.selectedTrack = {};
 	            self.loading = false;
-	            self.loadTracks = function (params) {
-	                params.format = "json";
+	            self.currentOffset = 0;
+	            self.params = {
+	                format: "json",
+	                offset: 0
+	            };
+	            self.tracks = [];
+	            self.indexTrack = 0;
+	            self.loadTracks = function () {
+	                var self = this;
 	                self.loading = true;
 	                TrackApiService.searchTracks(
-	                    params,
+	                    self.params,
 	                    function (response) {
 	                        self.loading = false;
 	                        self.tracks = response.results;
@@ -62576,21 +64180,74 @@
 	                        console.log('Error loading tracks');
 	                    });
 	            };
+
+	            self.loadTopTracks = function () {
+	                var params = {
+	                    format: "json"
+	                };
+	                self.loading = true;
+	                self.topTracks = [];
+	                TrackApiService.loadTopTracks(
+	                    params,
+	                    function (response) {
+	                        self.loading = false;
+	                        for (var i = 0; i < response.results.length; i++) {
+	                            var track = response.results[i];
+	                            track.position = i + 1;
+	                            self.topTracks.push(track)
+	                        }
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
+	            };
+	            self.nextPage = function () {
+	                self.loading = true;
+	                self.busy = true;
+	                TrackApiService.searchTracks(
+	                    self.params,
+	                    function (response) {
+	                        self.loading = false;
+	                        self.busy = false;
+	                        if (response.results.length > 0) {
+	                            self.tracks = self.tracks.concat(response.results);
+	                            self.params.offset += 10;
+	                        }
+	                        else {
+	                            self.empty = self.tracks.length <= 0;
+	                        }
+	                    },
+	                    function (error) {
+	                        self.busy = false;
+	                        console.log('Error loading tracks');
+	                    });
+	            };
 	            self.playSelected = function (track) {
 	                self.selectedTrack = track;
 	                playerService.playTrack(track);
 	            };
 
+	            self.playFirstTrack = function () {
+	                var self = this;
+	                if (self.tracks && self.tracks.length > 0) {
+	                    playerService.playTrack(self.tracks[0]);
+	                }
+	            };
+
 	            self.next = function () {
-	                //todo: obtain next in the list
-	                var nexTrack = {};
-	                self.playSelected();
+	                if (self.indexTrack <= self.tracks.length - 2) {
+	                    self.indexTrack += 1;
+	                    var nexTrack = self.tracks[self.indexTrack];
+	                    self.playSelected(nexTrack);
+	                }
 	            };
 
 	            self.prev = function () {
-	                //todo: obtain prev in the list
-	                 var prevTrack = {};
-	                self.playSelected();
+	                if (self.indexTrack >= 1) {
+	                    self.indexTrack -= 1;
+	                    var prevTrack = self.tracks[self.indexTrack];
+	                    self.playSelected(prevTrack);
+	                }
 	            };
 	        };
 	        return new TrackListService();
@@ -62598,16 +64255,16 @@
 
 
 /***/ },
-/* 51 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(52);
+	var content = __webpack_require__(81);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62624,21 +64281,21 @@
 	}
 
 /***/ },
-/* 52 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.track-list .text {\n  font-size: 1rem;\n}\n.track-list .text-xs,\n.track-list .text-xxs {\n  font-size: 12px;\n}\n.track-list .text-sm {\n  font-size: 13px;\n}\n.track-list .text-md {\n  font-size: 1.125rem;\n}\n.track-list .text-lg {\n  font-size: 1.5rem;\n}\n.track-list .text-2x {\n  font-size: 2em;\n}\n.track-list .text-3x {\n  font-size: 3em;\n}\n.track-list .text-4x {\n  font-size: 4em;\n}\n.track-list .item {\n  position: relative;\n  margin: 0 auto;\n  border-radius: 3px;\n}\n.track-list .item .bottom {\n  bottom: 0;\n  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));\n  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));\n  border-radius: inherit;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  position: absolute;\n  left: 0;\n  background-repeat: repeat-x;\n  right: 0;\n}\n.track-list .item .center {\n  padding: 0 !important;\n  top: 50%;\n  left: 50%;\n  margin-top: -20px;\n  margin-left: -20px;\n  position: absolute;\n}\n.track-list .item::after {\n  display: table;\n  clear: both;\n}\n.track-list .item-media {\n  position: relative;\n  display: block;\n  padding: 0;\n  border-radius: inherit;\n  overflow: hidden;\n}\n.track-list .item-media:after {\n  content: '';\n  display: block;\n  padding-top: 100%;\n}\n.track-list .item-media-content {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  border: 0;\n  border-radius: inherit;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-color: rgba(120, 120, 120, 0.2);\n}\n.track-list .item-overlay {\n  line-height: 1;\n  color: #fff;\n  padding: 8px;\n  opacity: 0;\n  -webkit-transition: all .2s;\n  transition: all .2s;\n  border-radius: inherit;\n  display: block;\n}\n.track-list .item:hover .item-overlay {\n  opacity: 1;\n  display: block;\n}\n.track-list .item-info {\n  position: relative;\n  padding: 10px 0 20px;\n  border-radius: inherit;\n}\n.track-list .item-info i {\n  color: #fff;\n}\n.track-list .item-info .bottom {\n  bottom: 100%;\n}\n.track-list .item::after {\n  display: table;\n  clear: both;\n}\n.track-list .item::after {\n  content: \"\";\n}\n.track-list .text-ellipsis {\n  display: block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: rgba(0, 0, 0, 0.870588);\n}\n.track-list .item-title {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.track-list .item-author,\n.track-list .item-meta-stats {\n  color: #818a91;\n}\n.track-list .btn-playpause {\n  color: #fff;\n  font-size: 0;\n  border-radius: 100%;\n  background: 0 0;\n  border-width: 0;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n  vertical-align: middle;\n}\n.track-list .btn-playpause:before {\n  -webkit-transition: color .1s linear .1s;\n  transition: color .1s linear .1s;\n  position: absolute !important;\n  z-index: 2;\n  top: 50%;\n  left: 50%;\n  margin-top: -7px;\n  margin-left: -7px;\n}\n.track-list .btn-playpause.active:before,\n.track-list .btn-playpause:hover:before {\n  color: #000;\n}\n.track-list .btn-playpause:after {\n  content: '';\n  border-radius: 100%;\n  box-shadow: inset 0 0 0 2px;\n  position: absolute;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  -webkit-transform: scale3d(0.9, 0.9, 1);\n  transform: scale3d(0.9, 0.9, 1);\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.track-list .btn-playpause.active:after,\n.track-list .btn-playpause:hover:after {\n  -webkit-transform: scale3d(1, 1, 1);\n  transform: scale3d(1, 1, 1);\n  box-shadow: inset 0 0 0 30px;\n}\n.track-list .item .btn-playpause:after {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.track-list .btn-playpause:before {\n  content: \"\\EA1C\";\n  position: relative;\n  padding-left: 2px;\n}\n.track-list .btn-playpause:before {\n  background-color: transparent;\n  display: inline-block;\n  font-family: 'BasicIcon';\n  font-size: 20px;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: 400;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-transform: none;\n  vertical-align: middle;\n  min-width: 14px;\n  text-align: center;\n  margin-top: -10px;\n  margin-left: -10px;\n}\n.track-list .list-loading {\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, ".track-list {\n  padding: 60px 30px;\n  /*height: ~\"calc(100vh - 80px)\";\n  background-color: white;\n  overflow-y: scroll;\n  overflow-x: hidden;*/\n  display: block;\n}\n.track-list .track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.track-list .text {\n  font-size: 1rem;\n}\n.track-list .text-xs,\n.track-list .text-xxs {\n  font-size: 12px;\n}\n.track-list .text-sm {\n  font-size: 13px;\n}\n.track-list .text-md {\n  font-size: 1.125rem;\n}\n.track-list .text-lg {\n  font-size: 1.5rem;\n}\n.track-list .text-2x {\n  font-size: 2em;\n}\n.track-list .text-3x {\n  font-size: 3em;\n}\n.track-list .text-4x {\n  font-size: 4em;\n}\n.track-list .list-loading {\n  text-align: center;\n}\n.track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 53 */
+/* 82 */
 /***/ function(module, exports) {
 
 	angular.module('userPanelModule', []);
@@ -62656,15 +64313,25 @@
 
 
 /***/ },
-/* 54 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  userPanelModule = angular.module('userPanelModule');
-	var UserPanelController = ['$i18n', function ($i18n) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	}];
+	var userPanelModule = angular.module('userPanelModule');
+	var UserPanelController = ['trackListService', 'mainService', 'helpService',
+	    function (trackListService, mainService, helpService ) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.mainService = mainService;
+	        self.loadTopTracks = function () {
+	            trackListService.loadTopTracks();
+	        };
+	        self.enableHelp = function () {
+	            helpService.setEnable(true);
+	            helpService.enablePlayer();
+	        };
+	    }];
 
 	userPanelModule.component('userPanel', {
 	    transclude: true,
@@ -62673,27 +64340,27 @@
 	    },
 	    controller: UserPanelController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(55)
+	    template: __webpack_require__(84)
 	});
 
 
 /***/ },
-/* 55 */
+/* 84 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\n    <!--Search component-->\n    <search title=\"Search\"></search>\n    <h4>Main</h4>\n    <ul class=\"nav nav-sidebar\">\n        <li>\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n        <li class=\"selected\">\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n        <li class=\"active\">\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n    </ul>\n    <h4>Other section</h4>\n    <ul class=\"nav nav-sidebar\">\n        <li>\n            <a href=\"#\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Nav item</span>\n            </a>\n        </li>\n    </ul>\n</div>\n\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span> Subir obras musicales</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
-/* 56 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(57);
+	var content = __webpack_require__(86);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62710,21 +64377,21 @@
 	}
 
 /***/ },
-/* 57 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n", ""]);
+	exports.push([module.id, "/*@media (min-width: 1100px) {\n  .user-panel {\n    width: 15% !important;\n  }\n}*/\n.user-panel {\n  display: block;\n}\n.user-panel h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-panel .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.89);\n  background-color: rgba(54, 60, 67, 0.82);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.user-panel .nav-sidebar > li > a:hover {\n  color: #ffffff;\n  background-color: #3d454c;\n}\n.user-panel .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.user-panel .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.user-panel .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.user-panel .nav-sidebar > li > a > i {\n  margin: 0 2px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.user-panel .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.user-panel .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n  padding: 5px 6px;\n  cursor: pointer;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 58 */
+/* 87 */
 /***/ function(module, exports) {
 
 	angular.module('userMenuModule', []);
@@ -62736,29 +64403,42 @@
 
 
 /***/ },
-/* 59 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userMenuModule = angular.module('userMenuModule');
-	var UserMenuController = ['$i18n', 'userMenuService', function ($i18n, userMenuService) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    var self = this;
+	var UserMenuController = ['$i18n', 'userMenuService', 'loginService', 'mainService',
+	    'userEditService', '$cookieStore',
+	    function ($i18n, userMenuService, loginService, mainService, userEditService, $cookieStore) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
 
-	    self.userMenu = userMenuService;
+	        self.userMenu = userMenuService;
 
-	    self.showAlert = function () {
-	        self.userMenu.loadUsers();
-	    };
-	    self.saveUser = function () {
-	        self.userMenu.saveUser();
-	    };
-	    self.showLoginPopup = function () {
-	        self.userMenu.showLoginPopup();
-	    };
+	        self.login = loginService;
 
-	}];
+	        self.user = mainService;
+
+	        self.userEdit = userEditService;
+
+	        self.idUserAuth = $cookieStore.get('user_data').id_user;
+
+	        self.userEdit.getUser(self.idUserAuth);
+
+	        self.showLoginPopup = function () {
+	            self.userMenu.showLoginPopup();
+	        };
+
+	        self.showEditPopup = function () {
+
+	            self.userEdit.getUser(self.idUserAuth);
+	            self.userEdit.showEditPopup();
+	        };
+
+
+	    }];
 
 	userMenuModule.component('userMenu', {
 	    transclude: true,
@@ -62767,27 +64447,27 @@
 	    },
 	    controller: UserMenuController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(60)
+	    template: __webpack_require__(89)
 	});
 
 
 /***/ },
-/* 60 */
+/* 89 */
 /***/ function(module, exports) {
 
-	module.exports = "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'\n      type='text/css'>\n<link href=\"//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css\" rel=\"stylesheet\">\n<div class=\"user-menu\">\n    <button class=\"g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\" tabindex=\"0\"\n            ng-click=\"ctrl.showLoginPopup()\"\n            title=\"Iniciar sesión en SonidosLibres\"\n            data-toggle=\"modal\" data-target=\"\">\n        <i class=\"icon-user\"></i>\n        {{ 'general_sign_in' | translate }}\n    </button>\n    <button class=\"g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\" tabindex=\"0\"\n            title=\"Crear cuenta en SonidosLibres\"\n            data-toggle=\"modal\" data-target=\"#modalRegister\">\n        {{ 'general_create_account' | translate }}\n    </button>\n</div>\n<div class=\"modal fade user-menu\" tabindex=\"-1\" role=\"dialog\" id=\"modalRegister\">\n    <div class=\"container\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button id=\"id_button_close\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span></button>\n                    <h4 class=\"modal-title\">Crear cuenta en Sonidos Libres</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <form novalidate id=\"registerForm\" enctype=\"multipart/form-data\" name=\"registerForm\"\n                          role=\"form\"\n                          ng-submit=\"ctrl.saveUser()\">\n                        <h4 class=\"control-label\">Información de usuario</h4>\n                        <fieldset class=\"form-group\">\n                            <div class=\"row\">\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.email.$valid && registerForm.email.$dirty, 'has-error': registerForm.email.$invalid && (registerForm.email.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"email\"></i>Email</label>\n                                    <input type=\"text\" name=\"email\" id=\"email\"\n                                           ng-model=\"ctrl.userMenu.newUser.email\"\n                                           placeholder=\"Email...\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.nickname.$valid && registerForm.nickname.$dirty, 'has-error': registerForm.nickname.$invalid && (registerForm.nickname.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"nickname\"></i>Nickname</label>\n                                    <input type=\"text\" name=\"nickname\" id=\"nickname\"\n                                           ng-model=\"ctrl.userMenu.newUser.username\"\n                                           placeholder=\"Nickname...\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                            </div>\n\n                        </fieldset>\n                        <fieldset class=\"form-group\">\n                            <div class=\"row\">\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.first_name.$valid && registerForm.first_name.$dirty, 'has-error': registerForm.first_name.$invalid && (registerForm.first_name.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\n                                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\n                                           ng-model=\"ctrl.userMenu.newUser.first_name\"\n                                           placeholder=\"Nombres...\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.last_name.$valid && registerForm.last_name.$dirty, 'has-error': registerForm.last_name.$invalid && (registerForm.last_name.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\n                                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\n                                           ng-model=\"ctrl.userMenu.newUser.last_name\"\n                                           placeholder=\"Apellidos...\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                            </div>\n\n                        </fieldset>\n                        <fieldset class=\"form-group\">\n                            <div class=\"row\">\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.password1.$valid && registerForm.password1.$dirty, 'has-error': registerForm.password1.$invalid && (registerForm.password1.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\n                                    <input type=\"password\" name=\"password1\" id=\"password1\"\n                                           ng-model=\"ctrl.userMenu.newUser.password1\"\n                                           placeholder=\"Contraseña...\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                                <div class=\"col-md-6\"\n                                     ng-class=\"{'has-success': registerForm.password2.$valid && registerForm.password2.$dirty, 'has-error': registerForm.password2.$invalid && (registerForm.password2.$dirty || registerForm.$submitted)}\">\n                                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\n                                    <input type=\"password\" name=\"password2\" id=\"password2\"\n                                           ng-model=\"ctrl.userMenu.newUser.password2\"\n                                           placeholder=\"Repita contraseña....\"\n                                           class=\"form-control\"\n                                           ng-required=\"true\"/>\n                                </div>\n                            </div>\n                        </fieldset>\n                        <fieldset class=\"form-group\">\n                            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\n                            <br/>\n                            <label class=\"radio-inline\">\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\n                                       ng-model=\"ctrl.userMenu.newUser.is_artist\"\n                                       ng-required=\"true\"\n                                       checked/>\n                                Personal\n                            </label>\n                            <label class=\"radio-inline\">\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\n                                       ng-model=\"ctrl.userMenu.newUser.is_artist\"\n                                       ng-required=\"true\"/>\n                                Artista\n                            </label>\n                        </fieldset>\n                        <div ng-show=\"ctrl.userMenu.newUser.is_artist == 'True'\">\n\n                            <p>\n                                Al registrarte como artísta aceptas que se promoverá el respeto por la propiedad\n                                intelectual\n                                de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.</p>\n                            <fieldset class=\"form-group\" ng-show=\"ctrl.userMenu.newUser.is_artist == 'True'\">\n                                <div class=\"row\">\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\n                                        <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\n                                               ng-model=\"ctrl.userMenu.newUser.artistic_name\"\n                                               placeholder=\"Nombre artístico...\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n\n                                    </div>\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\n                                        <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\n                                               ng-model=\"ctrl.userMenu.newUser.birth_date\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                </div>\n                            </fieldset>\n                            <fieldset class=\"form-group\" >\n                                <div class=\"row\">\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"country\">País</label>\n                                        <input type=\"text\" name=\"country\" id=\"country\"\n                                               ng-model=\"ctrl.userMenu.newUser.country\"\n                                               placeholder=\"País...\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"city\">Ciudad</label>\n                                        <input type=\"text\" name=\"city\" id=\"city\"\n                                               ng-model=\"ctrl.userMenu.newUser.city\"\n                                               placeholder=\"Ciudad....\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                </div>\n                            </fieldset>\n                            <fieldset class=\"form-group\" >\n                                <div class=\"row\">\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\n                                            celular</label>\n                                        <input type=\"text\" name=\"telephone_number\" id=\"telephone_number\"\n                                               ng-model=\"ctrl.userMenu.newUser.telephone_number\"\n                                               placeholder=\"Número de teléfono o celular...\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                    <div class=\"col-md-6\">\n                                        <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\n                                        <input type=\"text\" name=\"address\" id=\"address\"\n                                               ng-model=\"ctrl.userMenu.newUser.address\"\n                                               placeholder=\"Dirección de residencia....\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                </div>\n                            </fieldset>\n                            <fieldset class=\"form-group\">\n                                <div class=\"row\">\n                                    <div class=\"col-md-4\">\n                                        <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\n                                        <input type=\"text\" name=\"bank\" id=\"bank\"\n                                               ng-model=\"ctrl.userMenu.newUser.bank\"\n                                               placeholder=\"Nombre Banco...\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                    <div class=\"col-md-4\">\n                                        <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\n                                        <select class=\"form-control user-menu\" id=\"bank_account_type\"\n                                                ng-model=\"ctrl.userMenu.newUser.bank_account_type\" style=\"width:auto;\">\n                                            <option value=\"\">Tipo de cuenta</option>\n                                            <option value=\"AH\">Ahorros</option>\n                                            <option value=\"CR\">Corriente</option>\n                                        </select>\n                                    </div>\n                                    <div class=\"col-md-4\">\n                                        <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\n                                        <input type=\"text\" name=\"bank_account_number\" id=\"bank_account_number\"\n                                               ng-model=\"ctrl.userMenu.newUser.bank_account_number\"\n                                               placeholder=\"Número de cuenta....\"\n                                               class=\"form-control\"\n                                               ng-required=\"true\"/>\n                                    </div>\n                                </div>\n                            </fieldset>\n\n                        </div>\n\n                        <fieldset class=\"form-group\">\n\n                            <label class=\"checkbox-inline\">\n                                <input\n                                        onchange=\"this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');\"\n                                        type=\"checkbox\" value=\"\" id=\"terms\" ng-required=\"true\">\n                                <p>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\n                                    Condiciones</a>.</p>\n                            </label>\n\n\n                            <button class=\"g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                                    type=\"submit\">\n                                {{ 'general_register'  | translate }}\n                            </button>\n                            <button id=\"idBtnCancelar\" type=\"button\"\n                                    class=\"g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                                    data-dismiss=\"modal\">\n                                {{ 'general_cancel'  | translate }}\n                            </button>\n                        </fieldset>\n\n\n                    </form>\n                </div>\n            </div>\n        </div><!-- /.modal-content -->\n    </div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n";
+	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 61 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(62);
+	var content = __webpack_require__(91);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62804,24 +64484,24 @@
 	}
 
 /***/ },
-/* 62 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".user-menu select.form-control:not([size]):not([multiple]) {\n  height: auto;\n}\n.user-menu body .modal-admin {\n  /* new custom width */\n  width: 750px;\n  /* must be half of the width, minus scrollbar on the left (30px) */\n  margin-left: -375px;\n}\n.g-opacity-transition {\n  -webkit-transition: opacity .2s linear;\n  transition: opacity .2s linear;\n}\n.sc-button-cta,\n.sc-button-cta:hover,\n.sc-button-cta:focus,\n.sc-button-cta:visited {\n  background-color: #02b875;\n  border-color: #363c43;\n  color: #fff;\n}\n.sc-button {\n  display: inline-block;\n  position: relative;\n  height: 26px;\n  margin: 0;\n  padding: 2px 11px 2px 10px;\n  border: 1px solid #e5e5e5;\n  border-radius: 3px;\n  background-color: #fff;\n  cursor: pointer;\n  color: #333;\n  font-size: 14px;\n  line-height: 20px;\n  white-space: nowrap;\n  font-family: \"Interstate\", \"Lucida Grande\", \"Lucida Sans Unicode\", \"Lucida Sans\", Garuda, Verdana, Tahoma, sans-serif;\n  font-weight: 100;\n  text-align: center;\n  vertical-align: baseline;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  box-sizing: border-box;\n}\n", ""]);
+	exports.push([module.id, ".user-menu .menu {\n  list-style: none;\n  margin: 0px;\n  padding: 0px;\n}\n.user-menu .menu:before {\n  content: \"[\";\n}\n.user-menu .menu:after {\n  content: \"]\";\n}\n.user-menu .menu > li {\n  display: inline;\n}\n.user-menu .menu > li:before {\n  content: \"|\";\n  padding-right: 0.3em;\n}\n.user-menu .menu > li:nth-child(1):before {\n  content: \"\";\n  padding: 0;\n}\n.user-menu .fr-cd-member {\n  vertical-align: bottom;\n}\n.user-menu .fr-cd-avatar {\n  border-color: red;\n  background-size: 40px 40px;\n  background-repeat: no-repeat;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  display: block;\n  position: relative;\n  margin: 5px 0 10px 0;\n}\n.user-menu .fr-wp-avatar-label {\n  text-align: center;\n  vertical-align: middle;\n  line-height: 41px;\n  color: #004C3F;\n  font-size: 16px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(77, 80, 90, 0.72);\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-wp-avatar-label {\n  left: 14px;\n}\n.user-menu .fr-cd-member-dropdown-avatar .fr-cd-avatar {\n  margin: 7px 0 16px 18px;\n  vertical-align: middle;\n}\n.user-menu .fr-wp-avatar-adm {\n  position: absolute;\n  bottom: -4px;\n  right: -3px;\n  padding: 0.1em;\n  border-radius: 50%;\n  background-color: white;\n  color: #384656;\n  font-size: 15px;\n}\n.user-menu .dropdown-menu:before {\n  border-bottom: 8px solid #e0e0e0;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu:after {\n  border-bottom: 8px solid #fff;\n  position: absolute;\n  top: -8px;\n  right: 12px;\n  display: inline-block;\n  content: '';\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n.user-menu .dropdown-menu {\n  top: 85%;\n  right: 0;\n  left: auto;\n}\n.fr-cd-bar-menu-btn {\n  display: inline-block;\n  line-height: 48px;\n  margin-left: 18px;\n  cursor: pointer;\n}\n.fr-cd-dropdown {\n  position: relative;\n}\n.fr-cd-member-menu {\n  display: inline-block;\n  cursor: pointer;\n}\n.fr-cd-member-menu:hover {\n  opacity: 0.8;\n  text-decoration: none;\n}\n.fr-cd-member-menu .fr-cd-member-user {\n  display: inline-block;\n  line-height: 1.2;\n  text-align: right;\n  position: relative;\n  top: 0px;\n  left: 31px;\n}\n.fr-cd-member-menu .fr-cd-member-user span {\n  display: block;\n  font-weight: 200;\n  color: #fff;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-name {\n  font-size: 0.9em;\n}\n.fr-cd-member-menu .fr-cd-member-user span.fr-cd-member-email {\n  font-size: 0.9em;\n  display: none;\n}\n.fr-cd-member,\n.fr-cd-member-avatar {\n  display: inline-block;\n}\n.fr-cd-member-avatar {\n  border-radius: 4px;\n}\n.fr-cd-member-dropdown {\n  clear: both;\n  padding: .5em 0 0;\n  border-top: 1px solid #ddd;\n  margin: 0;\n  list-style: none;\n}\n.fr-cd-member-dropdown.clear-line {\n  clear: none;\n  padding-top: 0;\n  border-top: none;\n  margin-top: 0;\n}\n.fr-member-avatar {\n  padding: 13px 13px 13px 13px;\n  width: 67px;\n  display: inline-block;\n  float: left;\n}\n.fr-member-information {\n  height: 68px;\n  display: inline-block;\n  margin: 0px 0px 0px 0px;\n  float: left;\n  line-height: 18px;\n  margin-top: 0px;\n  padding: 5px 0px 0px 0px;\n  clear: none;\n  list-style: none;\n  color: black;\n}\n.fr-member-information > li:nth-child(1) {\n  font-family: 'Open Sans';\n  font-weight: 600;\n}\n.fr-member-information > li > span {\n  line-height: 0em;\n  font-size: 12px;\n}\n.fr-member-information > li > a {\n  line-height: 0.5;\n  font-size: 12px;\n  color: #007166;\n  margin-top: 6px;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a {\n  display: block;\n  padding: 8px 15px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.5;\n  text-decoration: none;\n  white-space: nowrap;\n  color: #444;\n  cursor: pointer;\n}\n.fr-cd-member-dropdown > li > a > i {\n  margin-right: 0.25em;\n}\n.fr-cursor-initial {\n  cursor: initial;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
+/* 92 */
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function($) {/**
+	/**
 	 * Created by diego on 8/10/2016.
 	 */
 
@@ -62846,42 +64526,6 @@
 	                    });
 	            };
 
-	            self.saveUser = function () {
-	                UserApiService.save(
-	                    JSON.stringify(self.newUser),
-	                    function (response) {
-	                        var respuest = response.status;
-	                        if (respuest !== 'OK') {
-	                            $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-	                            $('#modalRegister .modal-title').html("Error en registro!")
-	                            $('#modalRegister .modal-body').html(response.status)
-	                        } else {
-	                            $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-	                            $('#modalRegister .modal-title').html("Registro Exitoso!")
-	                            $('#modalRegister .modal-body').html("Ya puedes iniciar sesión en Sonidos Libres.")
-	                        }
-
-
-	                        console.log(response);
-	                    },
-	                    function (error) {
-	                        $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-	                        $('#modalRegister .modal-title').html("Error en registro!")
-	                        $('#modalRegister .modal-body').html(error)
-	                        console.log('Error saving user');
-	                    });
-	            };
-	            self.deleteUser = function (guidUser) {
-	                UserApiService.delete(
-	                    {guidUser: guidUser},
-	                    function (response) {
-	                        console.log(response);
-	                    },
-	                    function (error) {
-	                        console.log('Error delete user');
-	                    });
-	            };
-
 
 	            this.showLoginPopup = function () {
 	                $freevenModal.showPopup({}, {
@@ -62889,24 +64533,21 @@
 	                });
 	            };
 
-	            this.checkForm = function (form) {
-	                if (!form.terms.checked) {
-	                    alert("Please indicate that you accept the Terms and Conditions");
-	                    form.terms.focus();
-	                    return false;
-	                }
-	                return true;
-	            }
+	            this.showRegisterPopup = function () {
+	                $freevenModal.showPopup({}, {
+	                    template: '<user-register title ="Register"> </user-register>'
+	                });
+	            };
+
 	        };
 	        return new UserMenuService();
 	    }]);
 
 
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 64 */
+/* 93 */
 /***/ function(module, exports) {
 
 	angular.module('searchModule', []);
@@ -62924,7 +64565,7 @@
 
 
 /***/ },
-/* 65 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var searchModule = angular.module('searchModule');
@@ -62962,27 +64603,27 @@
 	    },
 	    controller: SearchController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(66)
+	    template: __webpack_require__(95)
 	});
 
 
 /***/ },
-/* 66 */
+/* 95 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"search\">\n    <input class=\"search-field\"\n           ng-model=\"ctrl.parameter\"\n           ng-change=\"ctrl.changeParameter()\"\n           type=\"text\"\n           placeholder=\"{{ 'general_search' | translate }}\"/>\n    <span class=\"search-cancel\"\n          ng-click=\"ctrl.cancel()\"\n          ng-show=\"ctrl.show()\">\n        x\n    </span>\n</div>\n";
+	module.exports = "<div class=\"search\">\r\n    <input class=\"search-field\"\r\n           ng-model=\"ctrl.parameter\"\r\n           ng-change=\"ctrl.changeParameter()\"\r\n           type=\"text\"\r\n           placeholder=\"{{ 'general_search' | translate }}\"/>\r\n    <span class=\"search-cancel\"\r\n          ng-click=\"ctrl.cancel()\"\r\n          ng-show=\"ctrl.show()\">\r\n        x\r\n    </span>\r\n</div>\r\n";
 
 /***/ },
-/* 67 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(68);
+	var content = __webpack_require__(97);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -62999,24 +64640,24 @@
 	}
 
 /***/ },
-/* 68 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".search {\n  display: block;\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 8px;\n  border: 1px solid #111111;\n}\n.search .search-field,\n.search .search-field:focus {\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border: none;\n  outline-width: 0;\n  margin: 0 0 0 10px;\n}\n.search .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: hidden;\n  cursor: pointer;\n}\n.search:hover .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: visible;\n}\n", ""]);
+	exports.push([module.id, ".search {\n  width: 400px;\n  display: block;\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border-radius: 8px;\n  border: 1px solid #111111;\n  padding: 0 5px;\n  margin: 8px;\n}\n.search .search-field,\n.search .search-field:focus {\n  background-color: #1c1f23;\n  color: #e8e8e8;\n  border: none;\n  outline-width: 0;\n  margin: 0 0 0 10px;\n  width: 93%;\n  height: 33px;\n}\n.search .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: hidden;\n  cursor: pointer;\n}\n.search:hover .search-cancel {\n  color: #818a91;\n  padding: 1px 5px 2px 4px;\n  border-radius: 50%;\n  background-color: #31383e;\n  visibility: visible;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 69 */
+/* 98 */
 /***/ function(module, exports) {
 
-	angular.module('playerModule', []);
+	angular.module('playerModule', ['ngAudio']);
 
 	/* Include this part into your dependencies file
 	 require('../app/player/playerModule.js');
@@ -63031,12 +64672,12 @@
 
 
 /***/ },
-/* 70 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerModule = angular.module('playerModule');
-	var PlayerController = ['playerService', '$scope', 'trackListService',
-	    function (playerService, $scope, trackListService) {
+	var PlayerController = ['playerService', 'trackListService',
+	    function (playerService,  trackListService) {
 	        var self = this;
 	        self.playerService = playerService;
 
@@ -63047,9 +64688,6 @@
 	        self.prev = function () {
 	            trackListService.prev();
 	        };
-	        setInterval(function () {
-	            $scope.$apply();
-	        }, 500);
 	    }];
 
 	playerModule.component('player', {
@@ -63059,26 +64697,26 @@
 	    },
 	    controller: PlayerController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(71)
+	    template: __webpack_require__(100)
 	});
 
 
 /***/ },
-/* 71 */
+/* 100 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"player\">\n    <div class=\"now-playing\">\n        <img width=\"20\" height=\"20\" src=\"{{ ctrl.playerService.track.image }}\"/>\n    </div>\n\n    <div class=\"player-buttons\">\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\n        </button>\n        <button class=\"playpause\"\n                ng-click=\"ctrl.playerService.playpause()\"\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\n        </button>\n        <button class=\"next\" ng-click=\"ctrl.next()\">\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\n        </button>\n    </div>\n\n    <div class=\"player-time\">\n        <input min=\"0\"\n               max=\"{{ ctrl.playerService.audio.duration }}\"\n               step=\"0.01\"\n               type=\"range\"\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\n\n    </div>\n\n    <div class=\"player-volume\">\n        <input min=\"0\"\n               max=\"1\"\n               step=\"0.01\"\n               type=\"range\"\n               ng-model=\"ctrl.playerService.audio.volume\"/>\n\n    </div>\n</div>";
+	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\r\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\r\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 72 */
+/* 101 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('playerModule');
-	playerModule.factory('playerService', [
-	    function () {
+	playerModule.factory('playerService', ['ngAudio', 'TracksApiService', 'mainService',
+	    function (ngAudio, TracksApiService, mainService) {
 	        var PlayerService = function () {
 	            var self = this;
-	            self.audio = new Audio();
+	            self.audio = null;
 	            self.currentNum = 0;
 
 	            // tell audio element to play/pause, you can also use $scope.audio.play() or $scope.audio.pause();
@@ -63088,28 +64726,53 @@
 	            };
 
 	            self.playTrack = function (track) {
-	                //self.audio.src = 'https://freeven.s3.amazonaws.com' + track.url;
-	                self.audio.src = track.url;
+	                if (self.audio) {
+	                    self.audio.pause();
+	                }
+	                self.audio = ngAudio.load(track.url);
 	                self.audio.play();
 	                self.track = track;
+	                self.traceTrack(track);
+	            };
+	            self.showPlayer = function () {
+	                return self.audio != null
 	            };
 
+	            self.traceTrack = function (track) {
+	                var user = mainService.getUserData();
+	                if (user) {//only if the user is authenticated
+	                    TracksApiService.traceTrack(
+	                        {
+	                            user: user.username,
+	                            track: track.id,
+	                            artist: track.artist_id,
+	                            action: 'play'
+	                        },
+	                        function (response) {
+
+	                        },
+	                        function (error) {
+	                            console.log('Error loading tracks');
+	                        });
+	                }
+
+	            };
 	        };
 	        return new PlayerService();
 	    }]);
 
 
 /***/ },
-/* 73 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(74);
+	var content = __webpack_require__(103);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -63126,21 +64789,21 @@
 	}
 
 /***/ },
-/* 74 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".player {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #ffffff;\n  background-color: transparent;\n  color: #ffffff;\n  font-size: 24px;\n  padding: 13px 16px 10px 21px;\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid #363c43;\n  color: #fafafa;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 22px;\n}\n.player .player-volume input {\n  margin-top: 22px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n", ""]);
+	exports.push([module.id, ".player {\n  background-color: #202225;\n  border-top: 1px solid #000;\n  height: 70px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n.player .btn-download i,\n.player .btn-volume i,\n.player .btn-time i {\n  margin-top: 20px;\n  font-size: 23px;\n  position: absolute;\n  color: #999999;\n  cursor: pointer;\n}\n.player .btn-download:hover i,\n.player .btn-volume:hover i,\n.player .btn-time:hover i {\n  color: #fafafa;\n}\n.player .playpause {\n  border-radius: 50%;\n  border: 1px solid #999999;\n  background-color: transparent;\n  color: #999999;\n  font-size: 25px;\n  padding: 11px 15px 9px 16px;\n  margin: 3px 0 0 0;\n}\n.player .playpause:hover {\n  color: #fafafa;\n  border: 1px solid #fafafa;\n  /*font-size: 27px;\n      padding: 12px 14px 8px 19px;*/\n}\n.player .next,\n.player .prev {\n  border-radius: 50%;\n  padding: 10px 16px;\n  font-size: 17px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  color: #999999;\n}\n.player .next:hover,\n.player .prev:hover {\n  background-color: rgba(100, 100, 100, 0.1);\n  color: #fafafa;\n}\n.player .player-range input[type='range'] {\n  -webkit-appearance: none !important;\n  background: #555555;\n  height: 5px;\n  border-radius: 2px;\n}\n.player .player-range input[type='range']::-webkit-slider-thumb {\n  -webkit-appearance: none !important;\n  background: #02b875;\n  height: 10px;\n  width: 10px;\n  border-radius: 5px;\n}\n.player .player-time {\n  margin-left: -1%;\n}\n.player .player-time input {\n  width: 500px;\n  margin-top: 30px;\n}\n.player .player-volume {\n  margin-left: -1%;\n}\n.player .player-volume input {\n  margin-top: 30px;\n}\n.player .paused .play-text,\n.player .pause-text {\n  display: inline-block;\n}\n.player .play-text,\n.player .paused .pause-text {\n  display: none;\n}\n.player * {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.freeven-info,\n.track-info {\n  color: black;\n  margin-left: 30px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 75 */
+/* 104 */
 /***/ function(module, exports) {
 
 	angular.module('loginModule', []);
@@ -63158,30 +64821,46 @@
 
 
 /***/ },
-/* 76 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var loginModule = angular.module('loginModule');
-	var LoginController = ['$i18n', function ($i18n) {
-	    /**
-	     * Tip: add here only visual logic
-	     */
-	    //var self = this;
-	    //self.login = function () {
-	    //    console.log("entrando...");
-	    //};
+	var LoginController = ['$i18n', 'loginService', '$freevenModal', 'userMenuService', 'loginService', '$location',
+	    'forgotPasswordService',
+	    function ($i18n, loginService, $freevenModal, userMenuService, loginService, forgotPasswordService, $location) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
 
-	    self.login = function(username, password) {
-	      return $http.post('http://192.168.0.3:8000/rest-auth/login/', {
-	          'username':username,
-	          'password':password,
-	      }).success(function(data) {
-	          $http.defaults.headers.common.Authorization = 'Token '
-	          + data.key; Account.authenticated = true;
-	          console.log("login success", data)
-	      })
-	    };
-	}];
+	        self.userLogin = loginService;
+
+	        self.userMenu = userMenuService;
+
+	        self.forgotPassword = forgotPasswordService;
+
+
+	        self.login = function () {
+	            self.userLogin.login();
+	        };
+
+	        self.logout = function () {
+	            self.userLogin.logout();
+	            $location.path('/');
+	        };
+
+	        self.closeLoginPopup = function () {
+	            $freevenModal.closePopup();
+	        };
+
+	        self.showRegisterPopup = function () {
+	            self.userMenu.showRegisterPopup();
+	        };
+
+	        self.showForgotPasswordPopup = function () {
+	            self.forgotPassword.showPopup();
+	        };
+	    }];
 
 	loginModule.component('login', {
 	    transclude: true,
@@ -63190,27 +64869,27 @@
 	    },
 	    controller: LoginController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(77)
+	    template: __webpack_require__(106)
 	});
 
 
 /***/ },
-/* 77 */
+/* 106 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"login\">\n    <input type=\"text\"/>\n    <input type=\"password\"/>\n    <button ng-click=\"ctrl.login()\"> {{ 'general_login'  | translate }}</button>\n</div>\n";
+	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 78 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(79);
+	var content = __webpack_require__(108);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(29)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -63227,15 +64906,2367 @@
 	}
 
 /***/ },
-/* 79 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(28)();
+	exports = module.exports = __webpack_require__(30)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".login {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\n", ""]);
+	exports.push([module.id, ".login {\n  text-align: center;\n  font-size: 15px;\n  font-family: 'Titillium Web', sans-serif;\n}\n.login form {\n  background: white;\n  padding: 40px;\n  max-width: 320px;\n  margin: 5px auto;\n  border-radius: 4px;\n}\n.login form input {\n  padding: 6px 112px 1px 17px;\n}\n.login form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.login form a:hover {\n  color: #179b77;\n}\n.login form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.login form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.login form label .req {\n  margin: 2px;\n  color: rgba(111, 136, 243, 0.23);\n}\n.login form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.login form label.active .req {\n  opacity: 0;\n}\n.login form label.highlight {\n  color: black;\n}\n.login form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.login form .btn-social {\n  background-color: white;\n  display: block;\n  text-align: left;\n  font-size: 15px;\n  color: #f9f9f9;\n}\n.login form .btn-social i {\n  font-size: 17px;\n  top: 8px;\n  width: 15px;\n  position: absolute;\n}\n.login form .btn-social span {\n  margin: 0 0 0 26px;\n}\n.login form .btn-social:hover {\n  color: #ffffff;\n}\n.login form .google {\n  background-color: #D2352C;\n}\n.login form .facebook {\n  background-color: #4A63A4;\n}\n.login form .login-section {\n  color: #000;\n  position: relative;\n  margin-bottom: 1em;\n}\n.login form .login-or {\n  color: #000;\n  z-index: 10;\n  margin: 0;\n  font-size: 1.2em;\n}\n.login form .freeven-login-btn,\n.login form .freeven-sing-up-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.login form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.login .messages {\n  color: #FA787E;\n}\n.login .colorMensajes {\n  color: red;\n}\n.login input.ng-valid {\n  border: 1px solid green;\n}\n.login input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 109 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var loginModule = angular.module('loginModule');
+	loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService) {
+	        var loginService = function () {
+
+	            var self = this;
+
+	            self.user = {};
+
+	            self.login = function () {
+	                var self = this;
+	                UserApiService.loginUser(
+	                    //Param
+	                    self.user,
+	                    function (response) {
+	                        if (response.token) {
+	                            mainService.setUserData(response);
+	                            notifierService.success("Bienvenido", response.first_name);
+	                        } else {
+	                            notifierService.error("Error de autenticación", response.status);
+	                        }
+	                    },
+	                    function (error) {
+	                        //notifierService.error("Error de autenticación", error.status);//esta notificacion es automatica
+	                    });
+	            };
+	            self.logout = function () {
+	                self.user = {};
+	                mainService.logout();
+	            };
+
+	            this.showRegisterPopup = function () {
+	                $freevenModal.showPopup({}, {
+	                    template: '<user-register title ="Register"> </user-register>'
+	                });
+	            };
+	        };
+	        return new loginService();
+	    }]);
+
+
+/***/ },
+/* 110 */
+/***/ function(module, exports) {
+
+	angular.module('userRegisterModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/userRegister/userRegisterModule.js');
+	 require('../app/userRegister/userRegisterComponent.js');
+	 require('../app/userRegister/userRegister.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <user-register title ="UserRegister"> </user-register>
+	*/
+
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var userRegisterModule = angular.module('userRegisterModule');
+	var UserRegisterController = ['$i18n', 'userRegisterService', '$freevenModal', function ($i18n, userRegisterService, $freevenModal) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+
+	    self.userRegister = userRegisterService;
+
+	    self.passwordOk = true;
+
+	    self.showAlert = function () {
+	        alert($i18n.translate.general_alert);
+	    };
+
+	    self.saveUser = function () {
+	        self.userRegister.saveUser();
+	    };
+
+	    self.validateForm = function () {
+	        if (self.userRegister.newUser === undefined) {
+	        } else {
+	            var typeUser = self.userRegister.newUser.is_artist;
+	            if (self.userRegister.newUser.password1 != self.userRegister.newUser.password2) {
+	                self.passwordOk = false;
+	            } else {
+	                self.passwordOk = true;
+	            }
+	            if ((typeUser == 'True') && self.passwordOk == true) {
+	                var saveArtist = self.validateFieldsArtist();
+	                if (saveArtist) {
+	                    self.saveUser();
+	                }
+	            }
+	            if ((typeUser == 'False') && self.passwordOk == true) {
+	                var saveUser = self.validateFieldsUser();
+	                if (saveUser) {
+	                    self.saveUser();
+	                }
+	            }
+	        }
+
+	    };
+
+	    self.validateFieldsArtist = function () {
+	        if (self.userRegister.newUser.first_name == undefined
+	            || self.userRegister.newUser.last_name == undefined
+	            || self.userRegister.newUser.username == undefined
+	            || self.userRegister.newUser.password1 == undefined
+	            || self.userRegister.newUser.password2 == undefined
+	            || self.userRegister.newUser.email == undefined
+	            || self.userRegister.newUser.is_artist == undefined
+	            || self.userRegister.newUser.artistic_name == undefined
+	            || self.userRegister.newUser.bank_account_number == undefined
+	            || self.userRegister.newUser.bank_account_type == undefined
+	            || self.userRegister.newUser.bank == undefined
+	            || self.userRegister.newUser.address == undefined
+	            || self.userRegister.newUser.city == undefined
+	            || self.userRegister.newUser.country == undefined
+	            || self.userRegister.newUser.telephone_number == undefined
+	            || self.userRegister.newUser.birth_date == undefined
+	            || self.userRegister.newUser.accept == undefined) {
+	            return false
+	        } else {
+	            return true
+	        }
+	    }
+
+	    self.validateFieldsUser = function () {
+	        if (self.userRegister.newUser.first_name == undefined
+	            || self.userRegister.newUser.last_name == undefined
+	            || self.userRegister.newUser.username == undefined
+	            || self.userRegister.newUser.password1 == undefined
+	            || self.userRegister.newUser.password2 == undefined
+	            || self.userRegister.newUser.email == undefined
+	            || self.userRegister.newUser.is_artist == undefined
+	            || self.userRegister.newUser.accept == undefined) {
+	            return false
+	        } else {
+	            return true
+	        }
+	    }
+
+	    self.closeRegisterPopup = function () {
+	        $freevenModal.closePopup();
+	    };
+
+	}];
+
+	userRegisterModule.component('userRegister', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: UserRegisterController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(112)
+	});
+
+
+/***/ },
+/* 112 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"register\">\r\n    <form name=\"userForm\">\r\n        <div style=\"text-align: center\">\r\n            <h4>Crear cuenta en Freeven</h4>\r\n        </div>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"email\">Email</label>\r\n                    <input type=\"email\" name=\"email\" id=\"email\"\r\n                           ng-model=\"ctrl.userRegister.newUser.email\"\r\n                           placeholder=\"Email...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.userRegister.newUser.username\"\r\n                           placeholder=\"Nombre de usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\r\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                    <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\r\n                           placeholder=\"Nombres...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\r\n                           placeholder=\"Apellidos...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <br/><br/>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\r\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\r\n                    </p>\r\n\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userRegister.newUser.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userRegister.newUser.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>";
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(114);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userRegister.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userRegister.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".register {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.register form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n  border-radius: 4px;\n  box-shadow: 0 4px 10px 4px rgba(28, 31, 35, 0.27);\n}\n.register form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.register form a:hover {\n  color: #179b77;\n}\n.register form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.register form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.register form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.register form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.register form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.register form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.register form label.active .req {\n  opacity: 0;\n}\n.register form label.highlight {\n  color: black;\n}\n.register form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.register form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.register form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.register form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.register .messages {\n  color: #FA787E;\n}\n.register .colorMensajes {\n  color: red;\n}\n.register input.ng-valid {\n  border: 1px solid green;\n}\n.register input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 115 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var userRegisterModule = angular.module('userRegisterModule');
+	userRegisterModule.factory('userRegisterService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService) {
+	        var UserRegisterService = function () {
+
+	            var self = this;
+
+	            self.newUser = {};
+
+	            self.existUser = true;
+
+	            self.loadUsers = function () {
+	                UserApiService.query(
+	                    //Param
+	                    {},
+	                    function (response) {
+	                        self.users = response;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading all users');
+	                    });
+	            };
+
+	            self.saveUser = function () {
+	                UserApiService.save(
+	                    JSON.stringify(self.newUser),
+	                    function (response) {
+	                        var respuest = response.status;
+	                        if (respuest !== 'OK') {
+	                            if (respuest == 'Usuario ya existe.') {
+	                                self.existUser = false;
+	                            } else {
+	                                self.existUser = true;
+	                            }
+	                        } else {
+	                            $freevenModal.closePopup();
+	                            notifierService.success($i18n.translate.user_creation_success, $i18n.translate.user_creation_success_detail);
+	                        }
+
+	                    },
+	                    function (error) {
+	                        $freevenModal.closePopup();
+	                        notifierService.success($i18n.translate.user_creation_error, '');
+	                    });
+	            };
+
+	            this.checkForm = function (form) {
+	                if (!form.terms.checked) {
+	                    alert("Please indicate that you accept the Terms and Conditions");
+	                    form.terms.focus();
+	                    return false;
+	                }
+	                return true;
+	            }
+	        };
+	        return new UserRegisterService();
+	    }]);
+
+
+
+
+/***/ },
+/* 116 */
+/***/ function(module, exports) {
+
+	angular.module('splashModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/splash/splashModule.js');
+	 require('../app/splash/splashComponent.js');
+	 require('../app/splash/splash.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <splash title ="Splash"> </splash>
+	*/
+
+
+/***/ },
+/* 117 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var splashModule = angular.module('splashModule');
+	var SplashController = ['trackListService', function (trackListService) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+	    self.trackListService = trackListService;
+	}];
+
+	splashModule.component('splash', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: SplashController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(118)
+	});
+
+
+/***/ },
+/* 118 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"splash\">\r\n    <div class=\"splash-content\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                . . .\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-7\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3 class=\"app-title\">Freeven</h3>\r\n                        <h5 class=\"app-sub-title\"></h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n                <login></login>\r\n            </div>\r\n            <div class=\"col-md-1\"> </div>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 119 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(120);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./splash.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./splash.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 120 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(121) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "93db96e4fea7c96f7ea2244cc8e2b189.jpg";
+
+/***/ },
+/* 122 */
+/***/ function(module, exports) {
+
+	angular.module('playerPictureModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/playerPicture/playerPictureModule.js');
+	 require('../app/playerPicture/playerPictureComponent.js');
+	 require('../app/playerPicture/playerPicture.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <player-picture title ="PlayerPicture"> </player-picture>
+	*/
+
+
+/***/ },
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var playerPictureModule = angular.module('playerPictureModule');
+	var PlayerPictureController = ['$i18n', 'playerService', function ($i18n, playerService) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+	    self.playerService = playerService;
+	}];
+
+	playerPictureModule.component('playerPicture', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: PlayerPictureController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(124)
+	});
+
+
+/***/ },
+/* 124 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"player-picture\">\r\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\r\n</div>";
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(126);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./playerPicture.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./playerPicture.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".player-picture .picture {\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 127 */
+/***/ function(module, exports) {
+
+	angular.module('trackModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/track/trackModule.js');
+	 require('../app/track/trackComponent.js');
+	 require('../app/track/track.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <track title ="Track"> </track>
+	*/
+
+
+/***/ },
+/* 128 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var trackModule = angular.module('trackModule');
+	var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistService', 'scoreEditorService',
+	    function ($i18n, trackListService, mainService, artistService, scoreEditorService) {
+
+	        var self = this;
+
+	        self.play = function (track) {
+	            trackListService.playSelected(track);
+	        };
+
+	        self.loadArtist = function () {
+	            artistService.loadArtist();
+	        };
+
+	        self.showScoreEditorPopup = function (track) {
+	            scoreEditorService.showScoreEditorPopup(track);
+	        };
+
+	        self.greaterThanOrEqual = function (value) {
+	            var self = this;
+	            if (self.frModel && self.frModel.score) {
+	                return self.frModel.score >= value;
+	            }
+	            return false;
+	        };
+
+	    }];
+
+	trackModule.component('track', {
+	    transclude: true,
+	    bindings: {
+	        title: '@',
+	        frModel: '=frModel',
+	        hideItemInfo: '@'
+	    },
+	    controller: TrackController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(129)
+	});
+
+
+/***/ },
+/* 129 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ ctrl.frModel.url }}\"\r\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\r\n                    <i class=\"icon icon-download\"></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\r\n\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Califica las piezas musicales\"></help-item>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(131);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./track.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./track.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".track .item {\n  position: relative;\n  margin: 0 auto;\n  border-radius: 3px;\n}\n.track .item .bottom {\n  bottom: 0;\n  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));\n  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));\n  border-radius: inherit;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  position: absolute;\n  left: 0;\n  background-repeat: repeat-x;\n  right: 0;\n}\n.track .item .center {\n  padding: 0 !important;\n  top: 50%;\n  left: 50%;\n  margin-top: -20px;\n  margin-left: -20px;\n  position: absolute;\n}\n.track .item .item-media {\n  position: relative;\n  display: block;\n  padding: 0;\n  border-radius: inherit;\n  overflow: hidden;\n}\n.track .item .item-media .btn-playpause {\n  color: #fff;\n  font-size: 0;\n  border-radius: 100%;\n  background: 0 0;\n  border-width: 0;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n  vertical-align: middle;\n}\n.track .item .item-media .btn-playpause:before {\n  -webkit-transition: color .1s linear .1s;\n  transition: color .1s linear .1s;\n  position: absolute !important;\n  z-index: 2;\n  top: 50%;\n  left: 50%;\n  margin-top: -7px;\n  margin-left: -7px;\n}\n.track .item .item-media .btn-playpause.active:before,\n.track .item .item-media .btn-playpause:hover:before {\n  color: #000;\n}\n.track .item .item-media .btn-playpause:after {\n  content: '';\n  border-radius: 100%;\n  box-shadow: inset 0 0 0 2px;\n  position: absolute;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  -webkit-transform: scale3d(0.9, 0.9, 1);\n  transform: scale3d(0.9, 0.9, 1);\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.track .item .item-media .btn-playpause.active:after,\n.track .item .item-media .btn-playpause:hover:after {\n  -webkit-transform: scale3d(1, 1, 1);\n  transform: scale3d(1, 1, 1);\n  box-shadow: inset 0 0 0 30px;\n}\n.track .item .item-media .item .btn-playpause:after {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.track .item .item-media .btn-playpause:before {\n  content: \"\\EA1C\";\n  position: relative;\n  padding-left: 2px;\n}\n.track .item .item-media .btn-playpause:before {\n  background-color: transparent;\n  display: inline-block;\n  font-family: 'BasicIcon';\n  font-size: 20px;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: 400;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-transform: none;\n  vertical-align: middle;\n  min-width: 14px;\n  text-align: center;\n  margin-top: -10px;\n  margin-left: -10px;\n}\n.track .item .item-media:after {\n  content: '';\n  display: block;\n  padding-top: 100%;\n}\n.track .item .item-media-content {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  border: 0;\n  border-radius: inherit;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-color: rgba(120, 120, 120, 0.2);\n}\n.track .item .item-overlay {\n  line-height: 1;\n  color: #fff;\n  padding: 8px;\n  opacity: 0;\n  -webkit-transition: all .2s;\n  transition: all .2s;\n  border-radius: inherit;\n  display: block;\n}\n.track .item .item-info {\n  position: relative;\n  padding: 10px 0 20px;\n  border-radius: inherit;\n}\n.track .item .item-info i {\n  color: #fff;\n}\n.track .item .item-info i.text-muted {\n  color: #dadada;\n}\n.track .item .item-info .bottom {\n  bottom: 100%;\n}\n.track .item .item-info .item-author,\n.track .item .item-info .item-meta-stats {\n  color: #818a91;\n}\n.track .item .item-info .item-title {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.track .item .item-info .btn-download {\n  float: left;\n  font-size: 22px;\n}\n.track .item .text-ellipsis {\n  display: block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: rgba(0, 0, 0, 0.870588);\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item:hover .item-overlay {\n  opacity: 1;\n  display: block;\n}\n.track .item::after {\n  display: table;\n  clear: both;\n}\n.track .item::after {\n  content: \"\";\n}\n.track .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  top: 71%;\n}\n.track .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 32%;\n  left: 46%;\n}\n.track .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 71%;\n  left: 64%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 132 */
+/***/ function(module, exports) {
+
+	angular.module('userEditModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/userEdit/userEditModule.js');
+	 require('../app/userEdit/userEditComponent.js');
+	 require('../app/userEdit/userEdit.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <user-edit title ="UserEdit"> </user-edit>
+	*/
+
+
+/***/ },
+/* 133 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var userEditModule = angular.module('userEditModule');
+	var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope', 'userPasswordService',
+	    'Upload',
+	    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+
+	        var self = this;
+
+	        self.userEdit = userEditService;
+
+	        self.photoProfile = [];
+
+	        self.profileFiles = {};
+
+	        var img = {"img": self.userEdit.user.avatar}
+
+	        self.photoProfile.push(img);
+
+	        self.passwordOk = true;
+
+	        var photoOk;
+
+	        self.userEditPassword = userPasswordService;
+
+	        self.showEditPasswordPopup = function () {
+	            self.userEditPassword.showEditPopup();
+	        };
+
+	        self.close = function () {
+	            userEditService.closeModal();
+	        };
+
+	        self.validateForm = function () {
+	            if (self.userEdit.user === undefined) {
+	            } else {
+	                var typeUser = self.userEdit.user.is_artist;
+	                if ((typeUser == 'True') && self.passwordOk == true) {
+	                    var saveArtist = self.validateFieldsArtist();
+	                    if (saveArtist) {
+	                        self.uploadFilesAndData();
+	                        self.saveUser();
+	                    }
+	                }
+	                if ((typeUser == 'False') && self.passwordOk == true) {
+	                    var saveUser = self.validateFieldsUser();
+	                    if (saveUser) {
+	                        self.uploadFilesAndData();
+	                        self.saveUser();
+	                    }
+	                }
+	            }
+	        };
+
+	        self.validateFieldsArtist = function () {
+	            if (self.userEdit.user.first_name == undefined
+	                || self.userEdit.user.last_name == undefined
+	                || self.userEdit.user.username == undefined
+	                || self.userEdit.user.email == undefined
+	                || self.userEdit.user.is_artist == undefined
+	                || self.userEdit.user.artistic_name == undefined
+	                || self.userEdit.user.bank_account_number == undefined
+	                || self.userEdit.user.bank_account_type == undefined
+	                || self.userEdit.user.bank == undefined
+	                || self.userEdit.user.address == undefined
+	                || self.userEdit.user.city == undefined
+	                || self.userEdit.user.country == undefined
+	                || self.userEdit.user.telephone_number == undefined
+	                || self.userEdit.user.birth_date == undefined
+	            ) {
+	                return false
+	            } else {
+	                self.putPhotoProfile();
+	                return true
+	            }
+	        }
+
+	        self.validateFieldsUser = function () {
+	            if (self.userEdit.user.first_name == undefined
+	                || self.userEdit.user.last_name == undefined
+	                || self.userEdit.user.username == undefined
+	                || self.userEdit.user.email == undefined
+	                || self.userEdit.user.is_artist == undefined
+	            ) {
+	                return false
+	            } else {
+	                self.putPhotoProfile();
+	                return true
+	            }
+	        }
+
+
+	        self.saveUser = function () {
+	            self.userEdit.saveUser();
+	        };
+
+	        $scope.imageUpload = function (event) {
+	            self.photoProfile = [];
+	            var files = event.target.files;
+	            for (var i = 0; i < files.length; i++) {
+	                var file = files[i];
+
+	                var reader = new FileReader();
+	                reader.onload = $scope.imageIsLoaded;
+	                reader.readAsDataURL(file);
+	                console.log("File");
+	                photoOk = file;
+	                console.log(photoOk);
+	            }
+	        }
+
+	        $scope.imageIsLoaded = function (e) {
+	            img = {}
+	            $scope.$apply(function () {
+	                //img = {"img": e.target.result};
+	                img = {"img": e.target.result};
+	                self.photoProfile.push(img);
+	            });
+	        }
+
+	        self.putPhotoProfile = function () {
+	            //self.userEdit.user.avatar = self.photoProfile[0].img;
+	        }
+
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.profileFiles[fieldName] = file;
+	            }
+	        };
+	        self.uploadFilesAndData = function () {
+	            var self = this;
+	            console.log(self.userEdit.user);
+	            console.log(self.profileFiles);
+	            if (self.profileFiles) {
+	                Upload.upload({
+	                    url: 'api/user/update_profile/',
+	                    fields: self.userEdit.user,
+	                    //fields: {camp: "diego"},
+	                    files: self.profileFiles
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    console.log('subido correctamente');
+	                });
+	            }
+	        };
+
+
+	    }];
+
+	userEditModule.component('userEdit', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: UserEditController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(134)
+	});
+
+
+/***/ },
+/* 134 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"user-edit\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar cuenta en Freeven</h4>\r\n  </div>\r\n  <form name=\"userForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <div class=\"card-body card-padding\">\r\n                <div class=\"thumbnail\">\r\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-xs-12\">\r\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\r\n                  <input type='file' id=\"imageUpload\" ng-model-instant\r\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                  accept=\"image/*\" style=\"display: none\"\r\n                  ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                  />\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12 text-center\">\r\n                    <label class=\"control-label\"\r\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                  </div>\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"email\">Email</label>\r\n                <input type=\"email\" name=\"email\" id=\"email\"\r\n                ng-model=\"ctrl.userEdit.user.email\"\r\n                placeholder=\"Email...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                ng-model=\"ctrl.userEdit.user.first_name\"\r\n                placeholder=\"Nombres...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                ng-model=\"ctrl.userEdit.user.last_name\"\r\n                placeholder=\"Apellidos...\"\r\n                class=\"form-control\"\r\n                required/>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n          <br/>\r\n          <label class=\"radio-inline\">\r\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n            ng-model=\"ctrl.userEdit.user.is_artist\"\r\n            required\r\n            checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n              ng-model=\"ctrl.userEdit.user.is_artist\"\r\n              required/>Artista</label>\r\n            </div>\r\n            <div class=\"col-md-6\">\r\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\r\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n            </div>\r\n          </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n            <div class=\"col-md-12\">\r\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n              ng-click=\"ctrl.validateForm()\">\r\n              {{ 'general_edit_user'  | translate }}\r\n            </button>\r\n            <button id=\"idBtnCancelar\" type=\"button\"\r\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.close()\">\r\n            {{ 'general_cancel'  | translate }}\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n  </form>\r\n\r\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n          placeholder=\"Nombre artístico...\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n          ng-model=\"ctrl.userEdit.user.birth_date\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"country\">País</label>\r\n          <select class=\"form-control\" id=\"country\"\r\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n          <option value=\"\">Pais...</option>\r\n          <option value=\"AF\">Afganistán</option>\r\n          <option value=\"AL\">Albania</option>\r\n          <option value=\"DE\">Alemania</option>\r\n          <option value=\"AD\">Andorra</option>\r\n          <option value=\"AO\">Angola</option>\r\n          <option value=\"AI\">Anguilla</option>\r\n          <option value=\"AQ\">Antártida</option>\r\n          <option value=\"AG\">Antigua y Barbuda</option>\r\n          <option value=\"AN\">Antillas Holandesas</option>\r\n          <option value=\"SA\">Arabia Saudí</option>\r\n          <option value=\"DZ\">Argelia</option>\r\n          <option value=\"AR\">Argentina</option>\r\n          <option value=\"AM\">Armenia</option>\r\n          <option value=\"AW\">Aruba</option>\r\n          <option value=\"AU\">Australia</option>\r\n          <option value=\"AT\">Austria</option>\r\n          <option value=\"AZ\">Azerbaiyán</option>\r\n          <option value=\"BS\">Bahamas</option>\r\n          <option value=\"BH\">Bahrein</option>\r\n          <option value=\"BD\">Bangladesh</option>\r\n          <option value=\"BB\">Barbados</option>\r\n          <option value=\"BE\">Bélgica</option>\r\n          <option value=\"BZ\">Belice</option>\r\n          <option value=\"BJ\">Benin</option>\r\n          <option value=\"BM\">Bermudas</option>\r\n          <option value=\"BY\">Bielorrusia</option>\r\n          <option value=\"MM\">Birmania</option>\r\n          <option value=\"BO\">Bolivia</option>\r\n          <option value=\"BA\">Bosnia y Herzegovina</option>\r\n          <option value=\"BW\">Botswana</option>\r\n          <option value=\"BR\">Brasil</option>\r\n          <option value=\"BN\">Brunei</option>\r\n          <option value=\"BG\">Bulgaria</option>\r\n          <option value=\"BF\">Burkina Faso</option>\r\n          <option value=\"BI\">Burundi</option>\r\n          <option value=\"BT\">Bután</option>\r\n          <option value=\"CV\">Cabo Verde</option>\r\n          <option value=\"KH\">Camboya</option>\r\n          <option value=\"CM\">Camerún</option>\r\n          <option value=\"CA\">Canadá</option>\r\n          <option value=\"TD\">Chad</option>\r\n          <option value=\"CL\">Chile</option>\r\n          <option value=\"CN\">China</option>\r\n          <option value=\"CY\">Chipre</option>\r\n          <option value=\"VA\">Ciudad del Vaticano</option>\r\n          <option value=\"CO\">Colombia</option>\r\n          <option value=\"KM\">Comores</option>\r\n          <option value=\"CG\">Congo</option>\r\n          <option value=\"KR\">Corea</option>\r\n          <option value=\"KP\">Corea del Norte</option>\r\n          <option value=\"CI\">Costa de Marfíl</option>\r\n          <option value=\"CR\">Costa Rica</option>\r\n          <option value=\"HR\">Croacia (Hrvatska)</option>\r\n          <option value=\"CU\">Cuba</option>\r\n          <option value=\"DK\">Dinamarca</option>\r\n          <option value=\"DJ\">Djibouti</option>\r\n          <option value=\"DM\">Dominica</option>\r\n          <option value=\"EC\">Ecuador</option>\r\n          <option value=\"EG\">Egipto</option>\r\n          <option value=\"SV\">El Salvador</option>\r\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n          <option value=\"ER\">Eritrea</option>\r\n          <option value=\"SI\">Eslovenia</option>\r\n          <option value=\"ES\" selected>España</option>\r\n          <option value=\"US\">Estados Unidos</option>\r\n          <option value=\"EE\">Estonia</option>\r\n          <option value=\"ET\">Etiopía</option>\r\n          <option value=\"FJ\">Fiji</option>\r\n          <option value=\"PH\">Filipinas</option>\r\n          <option value=\"FI\">Finlandia</option>\r\n          <option value=\"FR\">Francia</option>\r\n          <option value=\"GA\">Gabón</option>\r\n          <option value=\"GM\">Gambia</option>\r\n          <option value=\"GE\">Georgia</option>\r\n          <option value=\"GH\">Ghana</option>\r\n          <option value=\"GI\">Gibraltar</option>\r\n          <option value=\"GD\">Granada</option>\r\n          <option value=\"GR\">Grecia</option>\r\n          <option value=\"GL\">Groenlandia</option>\r\n          <option value=\"GP\">Guadalupe</option>\r\n          <option value=\"GU\">Guam</option>\r\n          <option value=\"GT\">Guatemala</option>\r\n          <option value=\"GY\">Guayana</option>\r\n          <option value=\"GF\">Guayana Francesa</option>\r\n          <option value=\"GN\">Guinea</option>\r\n          <option value=\"GQ\">Guinea Ecuatorial</option>\r\n          <option value=\"GW\">Guinea-Bissau</option>\r\n          <option value=\"HT\">Haití</option>\r\n          <option value=\"HN\">Honduras</option>\r\n          <option value=\"HU\">Hungría</option>\r\n          <option value=\"IN\">India</option>\r\n          <option value=\"ID\">Indonesia</option>\r\n          <option value=\"IQ\">Irak</option>\r\n          <option value=\"IR\">Irán</option>\r\n          <option value=\"IE\">Irlanda</option>\r\n          <option value=\"BV\">Isla Bouvet</option>\r\n          <option value=\"CX\">Isla de Christmas</option>\r\n          <option value=\"IS\">Islandia</option>\r\n          <option value=\"KY\">Islas Caimán</option>\r\n          <option value=\"CK\">Islas Cook</option>\r\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n          <option value=\"FO\">Islas Faroe</option>\r\n          <option value=\"HM\">Islas Heard y McDonald</option>\r\n          <option value=\"FK\">Islas Malvinas</option>\r\n          <option value=\"MP\">Islas Marianas del Norte</option>\r\n          <option value=\"MH\">Islas Marshall</option>\r\n          <option value=\"PW\">Islas Palau</option>\r\n          <option value=\"SB\">Islas Salomón</option>\r\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n          <option value=\"TK\">Islas Tokelau</option>\r\n          <option value=\"TC\">Islas Turks y Caicos</option>\r\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n          <option value=\"WF\">Islas Wallis y Futuna</option>\r\n          <option value=\"IL\">Israel</option>\r\n          <option value=\"IT\">Italia</option>\r\n          <option value=\"JM\">Jamaica</option>\r\n          <option value=\"JP\">Japón</option>\r\n          <option value=\"JO\">Jordania</option>\r\n          <option value=\"KZ\">Kazajistán</option>\r\n          <option value=\"KE\">Kenia</option>\r\n          <option value=\"KG\">Kirguizistán</option>\r\n          <option value=\"KI\">Kiribati</option>\r\n          <option value=\"KW\">Kuwait</option>\r\n          <option value=\"LA\">Laos</option>\r\n          <option value=\"LS\">Lesotho</option>\r\n          <option value=\"LV\">Letonia</option>\r\n          <option value=\"LB\">Líbano</option>\r\n          <option value=\"LR\">Liberia</option>\r\n          <option value=\"LY\">Libia</option>\r\n          <option value=\"LI\">Liechtenstein</option>\r\n          <option value=\"LT\">Lituania</option>\r\n          <option value=\"LU\">Luxemburgo</option>\r\n          <option value=\"MK\">Macedonia</option>\r\n          <option value=\"MG\">Madagascar</option>\r\n          <option value=\"MY\">Malasia</option>\r\n          <option value=\"MW\">Malawi</option>\r\n          <option value=\"MV\">Maldivas</option>\r\n          <option value=\"ML\">Malí</option>\r\n          <option value=\"MT\">Malta</option>\r\n          <option value=\"MA\">Marruecos</option>\r\n          <option value=\"MQ\">Martinica</option>\r\n          <option value=\"MU\">Mauricio</option>\r\n          <option value=\"MR\">Mauritania</option>\r\n          <option value=\"YT\">Mayotte</option>\r\n          <option value=\"MX\">México</option>\r\n          <option value=\"FM\">Micronesia</option>\r\n          <option value=\"MD\">Moldavia</option>\r\n          <option value=\"MC\">Mónaco</option>\r\n          <option value=\"MN\">Mongolia</option>\r\n          <option value=\"MS\">Montserrat</option>\r\n          <option value=\"MZ\">Mozambique</option>\r\n          <option value=\"NA\">Namibia</option>\r\n          <option value=\"NR\">Nauru</option>\r\n          <option value=\"NP\">Nepal</option>\r\n          <option value=\"NI\">Nicaragua</option>\r\n          <option value=\"NE\">Níger</option>\r\n          <option value=\"NG\">Nigeria</option>\r\n          <option value=\"NU\">Niue</option>\r\n          <option value=\"NF\">Norfolk</option>\r\n          <option value=\"NO\">Noruega</option>\r\n          <option value=\"NC\">Nueva Caledonia</option>\r\n          <option value=\"NZ\">Nueva Zelanda</option>\r\n          <option value=\"OM\">Omán</option>\r\n          <option value=\"NL\">Países Bajos</option>\r\n          <option value=\"PA\">Panamá</option>\r\n          <option value=\"PG\">Papúa Nueva Guinea</option>\r\n          <option value=\"PK\">Paquistán</option>\r\n          <option value=\"PY\">Paraguay</option>\r\n          <option value=\"PE\">Perú</option>\r\n          <option value=\"PN\">Pitcairn</option>\r\n          <option value=\"PF\">Polinesia Francesa</option>\r\n          <option value=\"PL\">Polonia</option>\r\n          <option value=\"PT\">Portugal</option>\r\n          <option value=\"PR\">Puerto Rico</option>\r\n          <option value=\"QA\">Qatar</option>\r\n          <option value=\"UK\">Reino Unido</option>\r\n          <option value=\"CF\">República Centroafricana</option>\r\n          <option value=\"CZ\">República Checa</option>\r\n          <option value=\"ZA\">República de Sudáfrica</option>\r\n          <option value=\"DO\">República Dominicana</option>\r\n          <option value=\"SK\">República Eslovaca</option>\r\n          <option value=\"RE\">Reunión</option>\r\n          <option value=\"RW\">Ruanda</option>\r\n          <option value=\"RO\">Rumania</option>\r\n          <option value=\"RU\">Rusia</option>\r\n          <option value=\"EH\">Sahara Occidental</option>\r\n          <option value=\"KN\">Saint Kitts y Nevis</option>\r\n          <option value=\"WS\">Samoa</option>\r\n          <option value=\"AS\">Samoa Americana</option>\r\n          <option value=\"SM\">San Marino</option>\r\n          <option value=\"VC\">San Vicente y Granadinas</option>\r\n          <option value=\"SH\">Santa Helena</option>\r\n          <option value=\"LC\">Santa Lucía</option>\r\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n          <option value=\"SN\">Senegal</option>\r\n          <option value=\"SC\">Seychelles</option>\r\n          <option value=\"SL\">Sierra Leona</option>\r\n          <option value=\"SG\">Singapur</option>\r\n          <option value=\"SY\">Siria</option>\r\n          <option value=\"SO\">Somalia</option>\r\n          <option value=\"LK\">Sri Lanka</option>\r\n          <option value=\"PM\">St Pierre y Miquelon</option>\r\n          <option value=\"SZ\">Suazilandia</option>\r\n          <option value=\"SD\">Sudán</option>\r\n          <option value=\"SE\">Suecia</option>\r\n          <option value=\"CH\">Suiza</option>\r\n          <option value=\"SR\">Surinam</option>\r\n          <option value=\"TH\">Tailandia</option>\r\n          <option value=\"TW\">Taiwán</option>\r\n          <option value=\"TZ\">Tanzania</option>\r\n          <option value=\"TJ\">Tayikistán</option>\r\n          <option value=\"TF\">Territorios franceses del Sur</option>\r\n          <option value=\"TP\">Timor Oriental</option>\r\n          <option value=\"TG\">Togo</option>\r\n          <option value=\"TO\">Tonga</option>\r\n          <option value=\"TT\">Trinidad y Tobago</option>\r\n          <option value=\"TN\">Túnez</option>\r\n          <option value=\"TM\">Turkmenistán</option>\r\n          <option value=\"TR\">Turquía</option>\r\n          <option value=\"TV\">Tuvalu</option>\r\n          <option value=\"UA\">Ucrania</option>\r\n          <option value=\"UG\">Uganda</option>\r\n          <option value=\"UY\">Uruguay</option>\r\n          <option value=\"UZ\">Uzbekistán</option>\r\n          <option value=\"VU\">Vanuatu</option>\r\n          <option value=\"VE\">Venezuela</option>\r\n          <option value=\"VN\">Vietnam</option>\r\n          <option value=\"YE\">Yemen</option>\r\n          <option value=\"YU\">Yugoslavia</option>\r\n          <option value=\"ZM\">Zambia</option>\r\n          <option value=\"ZW\">Zimbabue</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n        <input type=\"text\" name=\"city\" id=\"city\"\r\n        ng-model=\"ctrl.userEdit.user.city\"\r\n        placeholder=\"Ciudad....\"\r\n        class=\"form-control\"\r\n        required/>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n  <fieldset class=\"form-group\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n          celular</label>\r\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n          placeholder=\"Número de teléfono o celular...\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"7\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n            <input type=\"text\" name=\"address\" id=\"address\"\r\n            ng-model=\"ctrl.userEdit.user.address\"\r\n            placeholder=\"Dirección de residencia....\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n            ng-model=\"ctrl.userEdit.user.bank\"\r\n            placeholder=\"Nombre Banco...\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n            <option value=\"\">Tipo de cuenta</option>\r\n            <option value=\"AH\">Ahorros</option>\r\n            <option value=\"CR\">Corriente</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n          placeholder=\"Número de cuenta....\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"9\"\r\n          ng-maxlength=\"25\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n            {{ 'general_edit_user'  | translate }}\r\n          </button>\r\n          <button id=\"idBtnCancelar2\" type=\"button\"\r\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.close()\">\r\n          {{ 'general_cancel'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n</form>\r\n</div>\r\n";
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(136);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userEdit.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userEdit.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".user-edit {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-edit .fr-modal-header,\n.user-edit .fr-modal-content,\n.user-edit .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.user-edit form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-edit form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-edit form a:hover {\n  color: #179b77;\n}\n.user-edit form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-edit form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-edit form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-edit form label.active .req {\n  opacity: 0;\n}\n.user-edit form label.highlight {\n  color: black;\n}\n.user-edit form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-edit form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-edit .messages {\n  color: #FA787E;\n}\n.user-edit .colorMensajes {\n  color: red;\n}\n.user-edit input.ng-valid {\n  border: 1px solid green;\n}\n.user-edit input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 137 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var userEditModule = angular.module('userEditModule');
+	userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter) {
+
+	        var userEditService = function () {
+
+	            var self = this;
+
+	            self.user = {};
+
+	            this.showEditPopup = function () {
+	                $freevenModal.showPopup({}, {
+	                    template: '<user-edit title ="UserEdit"> </user-edit>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.getUser = function (id) {
+
+	                //TODO CONSUME GET USER
+
+	                var self = this;
+	                UserApiService.getUser({userId: id}, function (response) {
+	                        if (response.username != undefined) {
+	                            self.loadUser(response);
+	                        }
+	                    },
+	                    function (error) {
+	                    });
+	            };
+
+	            this.saveUser = function () {
+	                //TODO CONSUME SERVICE SAVE
+
+	                //window.location.reload(true);
+
+	                $freevenModal.closePopup();
+
+	                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
+	            };
+
+	            this.loadUser = function (response) {
+	                self.user.first_name = response.first_name;
+	                self.user.email = response.email;
+	                self.user.last_name = response.last_name;
+	                self.user.username = response.username;
+	                if (response.artist != undefined) {
+	                    self.user.is_artist = "True";
+	                    self.user.artistic_name = response.artist.artistic_name;
+	                    self.user.bank_account_number =  parseInt(response.artist.bank_account_number);
+	                    self.user.bank_account_type = response.artist.bank_account_type;
+	                    self.user.bank = response.artist.bank;
+	                    self.user.address = response.artist.address;
+	                    self.user.city = response.artist.city;
+	                    self.user.country = response.artist.country;
+	                    self.user.telephone_number = parseInt(response.artist.telephone_number);
+	                    self.user.birth_date = new Date(response.artist.birth_date);
+	                    if (response.artist.avatar != null || response.artist.avatar != '') {
+	                        self.user.avatar = response.artist.avatar;
+	                    } else {
+	                        self.user.avatar = 'data:image/png;base64,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';
+	                    }
+	                }
+	                else {
+	                    self.user.is_artist = "False";
+	                    self.user.artistic_name = "";
+	                    self.user.bank_account_number =  "";
+	                    self.user.bank_account_type = "";
+	                    self.user.bank = "";
+	                    self.user.address = "";
+	                    self.user.city = "";
+	                    self.user.country = "";
+	                    self.user.telephone_number = "";
+	                    self.user.birth_date = "";
+	                    self.user.avatar = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfaBg8OIBOz9jhpAAAHzklEQVRYR81YaWwVVRT+Xl/faym0fV3oRlrEhlJwYbXSClGp4ZciP4yif12ixiX+NRo3gsaYGKOEmBjXuMT9h1GhColCKwIqSwvdKMXKayu2pX0t3d6r57t3LjPTTssU/OHXnM7MnXvP+e6555575gUmBLhMjI+Po7mlCWfPnsXY2BjS0tJQVLQAJcUlVo9Lx2URPH26HZ998ancTWDZ0mXIy8tDOJSC2GAMHR1/ov54PZaUlWPLnfcgEAjoQbPEJRN8+923MChEttx5N7KzcxAXL1IRifAvKZiEYDCIo0eP4JNPP8Zd0u/aa5brwbPAJRF88eWtqFpbharKdYpkIJCE5ORkJCUlKSHi8YTIuCIZDoXwxo7XsWL5Stx04wb13i+0tllgx5vbsb5qPVavWoO+vl5weiRFz5FMcnJIrskimixjciA2gEcefgwHDx1AU3OjpckfZkWwoaEeyWJ4xYqViIlRWQAhNiHCt7zXpNQyO4Qxysk8eP9DeO/9d9jZN2ZF8POvPsPtmzbj3Lk+8ZwmRw/qKJlAIqGXlddEgu90Oy9sGx0bxc03bUDNj7uUPj/wTTDaGUWB7NIk8RKNiUlFwhZNjimHkkjEVRuFRCnDw+exeuUq1NXt00p9wDfB+vpjKCtbguGRYWXMeGhigiTiQk4LyRmifNYk49YYISt/6enpQnbY0jwzfBPs7OpEjqQTBj1JaWL0miFnE7PJ6XeGJCc1OjqG/Px8nDnzl6V5ZvgmOCIzDofDlsEJdXWSoLi9Z8RNkvcp4RRZiRFL88zwTTB1TqqKIb1UboNOUs7r+Lh5r4VjuGmoJzU1VSu+CHwTLMgvxN9y1jJraGNu4zYpm6Qtdh+mnc6uLiyQs9oPfBO8+qpr0NzchJSUVId3nN7ybnNPQsft0NCQ6EmxNM8M3wQZ2P/09ioD9IImwbgzxklmzEHMLePjYxJ7YRw+chhVVessrReHb4LEXXdswc6anciKZF+IRW3ckDX3U4UIy+b49cB+VN98i3r2g1kRZJ13TPLhiaYTyMyMKJJOorYnjeiNQY/n5MxXVU31ho2WNn/wTXDPnh+UgaeffAb7avehXs7l3Nz5qigwMIS1qBYVa5FIFj765EMsXrwEP+6uwcGDv6r+fuCr3Pry689pC5tu24z29jZZsjh21XzP+gAbb9moToYRyWv0GtWxYGBVkyobqrmlWc7eGlSsuV7qwWuRX1CA17e/husrKrHuhvWWhelxUYI7d32HkdERbLp1M7q7OxW5ETnumKzb29tx4NB+IRTAlYtKkZWVperC8+fPS99unGxrRWHhAlRWVGFe+jx5F1Sk5+fl49XXXlG14coVqyxL3piRYFvbSVmSH3DfvQ+IwagYCKt4YlzxyGOMcfTAQD86/vpTqpx+tSGYhHNzclFcXKw8yQmEQqwRg6o/j0nG5LPPP43HH31CJpZtWZyKGQlu3fYcnpKY6+o6I0ZoiEtnaj4KjWlhG4kwrM05zbjghGiCwrZEgpsnofrPmZOGbS9txQvPbVP2vDAtwW+/+wZXLFwkS5SvDnjOPhAIqk1BcrzqNn3VpHWB6iwkNCmnsBSbUJ7OyMjEL/vrkJB+1dXeu3vaXVzfcAzl5eUST8PKqPaG8QrnZHYrjeqjzz7+NBnjOSOsIVnoEtTZ19cjBWw1ftr7k2rzgidBfuMyeFk5kxuV01O6BuSzbnPKVE+533NC0jypLSDxew6VlVX4/Y/flO3J8CTYcLwBS8uXifeGRJGebSwWs04EKtfeMV5yE+PGsetFQ4aEOVaPN98x3GADWLOqAofkg8oLngR7ev5BRE4KLhcVMb8xbTDpTvaMN0knOU3WPSau4pqg7uzsLHT/3aWeJ8OTIFNIUlDvPua1EycakZc3XxG2vWcb1/HnJOd8tokZ4abq6emxrEHIjkoaCltPbngSTBYFDHQuba9UMEzMaWlzLYLGa05C3h50iulvSDJcuqQuZGzzHbOAFzxbI5GIbJBzynuNjU2ScEtEuSanvTaZkPGY03P6XhMzk7LHpadnoLW1VSX5sHhvdJpPABdBKqC7S4qvwNFjR9TAoaFBqVwyLyyvbcy+t58phqSejHln3+vvmUgkQ1anR06rNsRlTFiOQHml3jvhIkgFPEczM7P0thf3FxYWqKXWRp3GSMBecho1fbTw2dmml9bc88qwmTs3Hbv37EbZ4jIMDg6qdiemeJCxwR+EFpYskuL0e1x33VqrOLAV28Jn51IamUzWFt2PBceIfGeXIU8q9b21P8upVarszOhBJ7KzchGNdqLul1oslCMvFAqJl1gdmzLfVMvm3llR2228uiWudLHKYdH7/gfvoGL1WkXaC66zmIP5QRONRtHR0YHYQAynTrdJyoEqjUqvLLVyoXsZGAIG5u6CUks9/5sC41T7KdTW7kVLa4t8jC1XlU9RUZGQLlRVO9OQgYsgb7lJ+vr6VArgT7r8iYLLEe08g57es8pSOCV8oThwDJ8R7Mf8Sn30XEFeoZRcuWrCOTk56qOM2YM/Drgm7CRI0DtU0t/fr1INPUrF9I0up9hH79DZIihLoTacNZZpjB5jlsjIyFB15OR8OIUgHykkRW/qUl7v1v8SJMqlpAfpNcYl25zeIzzrQdOkd50mTJk8+FJhdBkxXvPS70nw/wPgX/6YO9oziZ/KAAAAAElFTkSuQmCC';
+	                }
+
+	            }
+
+	        };
+	        return new userEditService();
+	    }]);
+
+
+/***/ },
+/* 138 */
+/***/ function(module, exports) {
+
+	angular.module('userPasswordModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/userPassword/userPasswordModule.js');
+	 require('../app/userPassword/userPasswordComponent.js');
+	 require('../app/userPassword/userPassword.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <user-password title ="UserPassword"> </user-password>
+	*/
+
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var  userPasswordModule = angular.module('userPasswordModule');
+	var UserPasswordController = ['$i18n','userPasswordService','$freevenModal',
+	  function ($i18n,userPasswordService,$freevenModal) {
+	  /**
+	  * Tip: add here only visual logic
+	  */
+	  var self = this;
+
+	  self.userPassword = userPasswordService;
+
+	  self.passwordOk = true;
+
+	  self.close = function () {
+	    self.userPassword.closeModal();
+	  };
+
+	  self.validatePassword = function (){
+	    if(self.userPassword.user.password1 == undefined
+	      || self.userPassword.user.password2 == undefined || self.userPassword.user.password == undefined)
+	      {
+	        return false;
+	      }else{
+	        if (self.userPassword.user.password1 != self.userPassword.user.password2) {
+	          self.passwordOk = false;
+	        } else {
+	          self.passwordOk = true;
+	          self.userPassword.savePassword();
+	        }
+	      }
+	    };
+
+	  }];
+
+	  userPasswordModule.component('userPassword', {
+	    transclude: true,
+	    bindings: {
+	      title: '@'
+	    },
+	    controller: UserPasswordController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(140)
+	  });
+
+
+/***/ },
+/* 140 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(142);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userPassword.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./userPassword.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".user-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-password .fr-modal-header,\n.user-password .fr-modal-content,\n.user-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.user-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-password form a:hover {\n  color: #179b77;\n}\n.user-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-password form label.active .req {\n  opacity: 0;\n}\n.user-password form label.highlight {\n  color: black;\n}\n.user-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-password .messages {\n  color: #FA787E;\n}\n.user-password .colorMensajes {\n  color: red;\n}\n.user-password input.ng-valid {\n  border: 1px solid green;\n}\n.user-password input:required:valid {\n  border: 1px solid green;\n}\n.user-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 143 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var userPasswordModule = angular.module('userPasswordModule');
+	userPasswordModule.factory('userPasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter','userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter,userEditService) {
+
+	        var userPasswordService = function () {
+
+	            var self = this;
+
+	            self.user = {};
+
+	            self.userEdit = userEditService;
+
+	            this.showEditPopup = function () {
+
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<user-password title ="UserPassword"> </user-password>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	                self.userEdit.showEditPopup();
+	            };
+
+	            this.savePassword = function () {
+	                //TODO CONSUME SERVICE SAVE
+	                //window.location.reload(true);
+	                $freevenModal.closePopup();
+	                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_password_success_detail);
+	                self.userEdit.showEditPopup();
+	            };
+
+	        };
+	        return new userPasswordService();
+	    }]);
+
+
+/***/ },
+/* 144 */
+/***/ function(module, exports) {
+
+	angular.module('helpModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/help/helpModule.js');
+	 require('../app/help/helpComponent.js');
+	 require('../app/help/help.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <help title ="Help"> </help>
+	*/
+
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var helpModule = angular.module('helpModule');
+	var HelpController = ['helpService',
+	    function (helpService) {
+	        var self = this;
+	        self.isEnabled = function () {
+	            return helpService.isEnabled();
+	        };
+	        self.closeHelp = function (){
+	            helpService.setEnable(false);
+	        }
+	    }];
+
+	helpModule.component('help', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: HelpController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(146)
+	});
+
+
+/***/ },
+/* 146 */
+/***/ function(module, exports) {
+
+	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
+
+/***/ },
+/* 147 */
+/***/ function(module, exports) {
+
+	var playerModule = angular.module('helpModule');
+	playerModule.factory('helpService', ['trackListService',
+	    function (trackListService) {
+	        var HelpService = function () {
+	            var self = this;
+	            self.enabled = false;
+	            self.isEnabled = function () {
+	                var self = this;
+	                return self.enabled;
+	            };
+
+	            self.setEnable = function (newValue) {
+	                var self = this;
+	                self.enabled = newValue;
+	            };
+
+	            self.enablePlayer = function () {
+	                trackListService.playFirstTrack();
+	            };
+	        };
+	        return new HelpService();
+	    }]);
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(149);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./help.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./help.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".help {\n  background: rgba(0, 0, 0, 0.75);\n  width: 100%;\n  display: block;\n  height: 1800px;\n  z-index: 800;\n  position: fixed;\n  top: 0;\n}\n.help .freeven-accept-btn {\n  bottom: 67px;\n  right: 61px;\n  color: #dff0d8;\n  border: 2px solid white;\n  padding: 19px 35px;\n  display: block;\n  background-color: rgba(51, 51, 51, 0.73);\n  border-radius: 4px;\n  font-size: 16px;\n  font-style: italic;\n  float: right;\n  margin: calc(100vh - 144px) 15px;\n}\n.help .freeven-accept-btn i {\n  margin-right: 17px;\n}\n.help .freeven-accept-btn:hover {\n  background-color: rgba(218, 218, 218, 0.13);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var helpModule = angular.module('helpModule');
+	var HelpItemController = ['helpService', function (helpService) {
+	    var self = this;
+	    self.isEnabled= function(){
+	       return  helpService.isEnabled();
+	    }
+
+	}];
+
+	helpModule.component('helpItem', {
+	    transclude: true,
+	    bindings: {
+	        text: '@'
+	    },
+	    controller: HelpItemController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(151)
+	});
+
+
+/***/ },
+/* 151 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(153);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./helpItem.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js!./../../../node_modules/less-loader/index.js!./helpItem.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".help-item {\n  position: absolute;\n  top: -4px;\n  left: 4px;\n  display: block;\n  opacity: 1;\n  z-index: 801;\n}\n.help-item .help-content {\n  width: 50px;\n  height: 50px;\n  position: relative;\n  opacity: 1;\n}\n.help-item .help-content .pulse {\n  width: 10px;\n  height: 10px;\n  border: 4px solid #02b875;\n  border-radius: 30px;\n  background-color: #716f42;\n  z-index: 10;\n  position: absolute;\n  left: 10px;\n  top: 10px;\n  opacity: 1;\n}\n.help-item .help-content .dot {\n  border: 10px solid #02b875;\n  background: transparent;\n  border-radius: 60px;\n  height: 50px;\n  width: 50px;\n  -webkit-animation: pulse 3s ease-out;\n          animation: pulse 3s ease-out;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  position: absolute;\n  top: -10px;\n  left: -10px;\n  z-index: 1;\n  opacity: 0;\n  opacity: 1;\n}\n.help-item .help-content .help-text {\n  margin-left: 40px;\n  font-size: 13px;\n  width: 150px;\n  display: block;\n  color: #fffed9;\n  text-align: left;\n  opacity: 1;\n  font-style: italic;\n}\n@-webkit-keyframes pulse {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.0;\n  }\n  25% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.1;\n  }\n  50% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.3;\n  }\n  75% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.0;\n  }\n}\n@keyframes pulse {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.0;\n  }\n  25% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0.1;\n  }\n  50% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.3;\n  }\n  75% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.0;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 154 */
+/***/ function(module, exports) {
+
+	angular.module('artistModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/artist/artistModule.js');
+	 require('../app/artist/artistComponent.js');
+	 require('../app/artist/artist.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <artist title ="Artist"> </artist>
+	*/
+
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var artistModule = angular.module('artistModule');
+	var ArtistController = ['$i18n', 'artistService', '$routeParams', 'donationCreatorService',
+	    function ($i18n, artistService, $routeParams, donationCreatorService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.artist = artistService;
+
+	        artistService.loadArtist($routeParams.idArtist);
+	        self.showDonationCreatorPopup = function (artist) {
+	            artist.id = parseInt($routeParams.idArtist);
+	            donationCreatorService.showDonationCreatorPopup(artist);
+	        };
+	    }];
+
+	artistModule.component('artist', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: ArtistController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(156)
+	});
+
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(157) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(159);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./artist.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./artist.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".artist {\n  display: block;\n  background-color: #fdffff;\n  padding: 0 6% 100px 6%;\n}\n.artist .form-group {\n  width: 60%;\n  display: block;\n}\n.artist .form-group .control-label {\n  color: black;\n}\n.artist h1 {\n  color: black;\n}\n.artist p {\n  color: black;\n}\n.artist .fr-profile-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.artist .fr-image-profile-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.artist .fr-image-profile-creator .profile-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.artist .fr-image-profile-creator .profile-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.artist .fr-image-profile-creator .profile-picture-selector span {\n  color: black;\n}\n.artist .fr-image-profile-creator .profile-picture-selector:hover {\n  opacity: 1;\n}\n.artist .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n/*\n  padding: 5px;\n  margin: 70px 8px 8px 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px hsla(0, 0%, 76%, .15);\n  padding-left: 181px;\n*/\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 160 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var artistModule = angular.module('artistModule');
+	artistModule.factory('artistService', ['ArtistApiService', '$i18n', '$freevenModal','$resource',
+	    function (ArtistApiService, $i18n, $freevenModal,$resource) {
+
+	        var artistService = function () {
+
+	            var self = this;
+
+	            self.artist = {};
+	            self.infoArtist = {};
+
+	            self.loadArtist = function (id) {
+	                var self = this;
+	                    ArtistApiService.get({userId:id}, function(response) {
+	                        self.artist = response.user;
+	                        self.infoArtist.avatar  = response.avatar;
+	                        self.infoArtist.city =  response.city;
+	                        self.infoArtist.country = response.country;
+
+	                    },
+	                    function (error) {
+	                    });
+
+	            };
+
+
+
+	        };
+	        return new artistService();
+	    }]);
+
+
+/***/ },
+/* 161 */
+/***/ function(module, exports) {
+
+	angular.module('topTrackListModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/topTrackList/topTrackListModule.js');
+	 require('../app/topTrackList/topTrackListComponent.js');
+	 require('../app/topTrackList/topTrackList.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <top-track-list title ="TopTrackList"> </top-track-list>
+	*/
+
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var topTrackListModule = angular.module('topTrackListModule');
+	var TopTrackListController = ['trackListService', 'artistService',
+	    function (trackListService, artistService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.trackList = trackListService;
+	        self.trackList.loadTopTracks({});
+	        self.loadArtist = function () {
+	            artistService.loadArtist();
+	        };
+	    }];
+
+	topTrackListModule.component('topTrackList', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: TopTrackListController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(163)
+	});
+
+
+/***/ },
+/* 163 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(165);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./topTrackList.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./topTrackList.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".top-track-list {\n  padding: 68px 10%;\n  display: block;\n}\n.top-track-list .top-track-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.top-track-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\n.top-track-list .top-item-description {\n  color: #555555;\n}\n.top-track-list .top-item-description .track-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\n.top-track-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\n.top-track-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.top-track-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\n.top-track-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.top-track-list .text {\n  font-size: 1rem;\n}\n.top-track-list .text-xs,\n.top-track-list .text-xxs {\n  font-size: 12px;\n}\n.top-track-list .text-sm {\n  font-size: 13px;\n}\n.top-track-list .text-md {\n  font-size: 1.125rem;\n}\n.top-track-list .text-lg {\n  font-size: 1.5rem;\n}\n.top-track-list .text-2x {\n  font-size: 2em;\n}\n.top-track-list .text-3x {\n  font-size: 3em;\n}\n.top-track-list .text-4x {\n  font-size: 4em;\n}\n.top-track-list .list-loading {\n  text-align: center;\n}\n.top-track-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.top-track-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.top-track-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.top-track-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 166 */
+/***/ function(module, exports) {
+
+	angular.module('trackCreatorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/trackCreator/trackCreatorModule.js');
+	 require('../app/trackCreator/trackCreatorComponent.js');
+	 require('../app/trackCreator/trackCreator.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <track-creator title ="TrackCreator"> </track-creator>
+	*/
+
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var trackCreatorModule = angular.module('trackCreatorModule');
+	var TrackCreatorController = ['Upload',
+	    function (Upload) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.trackFiles = {};
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.trackFiles[fieldName] = file;
+	            }
+	        };
+	        self.uploadFilesAndData = function () {
+	            var self = this;
+	            if (self.trackFiles) {
+	                Upload.upload({
+	                    url: 'api/track/create/',
+	                    data: {
+	                        name: 'name',
+	                        description: 'description',
+	                        gender: '1',
+	                        artist: '1',
+	                        image: self.trackFiles.image,
+	                        file: self.trackFiles.audio,
+	                        score: 0
+	                    }
+
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    console.log('subido correctamente');
+	                });
+	            }
+	        };
+	    }];
+
+	trackCreatorModule.component('trackCreator', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: TrackCreatorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(168)
+	});
+
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(157) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(169) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div></div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.trackName\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Género</label>\r\n                        <input type=\"text\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span>Seleccione el archivo .mp3</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(171);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./trackCreator.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./trackCreator.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".track-creator {\n  padding: 0 6% 100px 6%;\n}\n.track-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.track-creator .form-group .control-label {\n  color: black;\n}\n.track-creator h1 {\n  color: black;\n}\n.track-creator p {\n  color: black;\n}\n.track-creator .fr-track-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.track-creator .fr-image-track-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.track-creator .fr-image-track-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.track-creator .fr-image-track-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector span {\n  color: black;\n}\n.track-creator .fr-image-track-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.track-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n/*\n  padding: 5px;\n  margin: 70px 8px 8px 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px hsla(0, 0%, 76%, .15);\n  padding-left: 181px;\n*/\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+	angular.module('donationModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/donation/donationModule.js');
+	 require('../app/donation/donationComponent.js');
+	 require('../app/donation/donation.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <donation title ="Donation"> </donation>
+	*/
+
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var donationModule = angular.module('donationModule');
+	var DonationController = ['$i18n', 'donationService',
+	    function ($i18n, donationService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.donationService = donationService;
+	        self.donationService.getDonationList();
+	    }];
+
+	donationModule.component('donation', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: DonationController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(174)
+	});
+
+
+/***/ },
+/* 174 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                        <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\r\n                        <td>{{ donation.user_first_name  }}</td>\r\n                        <td>{{ donation.user_last_name }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\r\n                <h4>Aún no has recibido donaciones </h4>\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(176);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./donation.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./donation.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".donation {\n  padding-top: 65px;\n  display: block;\n  background-color: #fdffff;\n  margin: 8px;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n  color: black;\n  text-align: center;\n}\n.donation span {\n  color: #002300;\n}\n.donation .table {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  align: center;\n  text-align: center;\n  border: 1px solid #000000;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var donationModule = angular.module('donationModule');
+	donationModule.factory('donationService', ['DonationApiService', 'mainService',
+	    function (DonationApiService, mainService) {
+	        var donationService = function () {
+	            var self = this;
+	            self.donations = [];
+	            this.getDonationList = function () {
+	                var user = mainService.getUserData();
+	                DonationApiService.donationList(
+	                    {
+	                        artist__id: user.id_user
+	                    },
+	                    function (response) {
+	                        self.donations = response.results;
+	                        if (self.donations.length == 0) {
+	                            self.listEmpty = true;
+	                        }
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
+	            };
+
+	        };
+	        return new donationService();
+	    }]);
+
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	angular.module('forgotPasswordModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/forgotPassword/forgotPasswordModule.js');
+	 require('../app/forgotPassword/forgotPasswordComponent.js');
+	 require('../app/forgotPassword/forgotPassword.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <forgot-password title ="ForgotPassword"> </forgot-password>
+	*/
+
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var forgotPasswordModule = angular.module('forgotPasswordModule');
+	var ForgotPasswordController = ['$i18n', 'forgotPasswordService', function ($i18n, forgotPasswordService) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+
+	    self.forgotPassword = forgotPasswordService;
+
+	    self.close = function () {
+	        self.forgotPassword.closeModal();
+	    };
+
+	    self.validateForgotPassword = function () {
+	        self.forgotPassword.sendUsername();
+	    };
+
+	}];
+
+	forgotPasswordModule.component('forgotPassword', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: ForgotPasswordController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(180)
+	});
+
+
+/***/ },
+/* 180 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"forgot-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>¿Has olvidado tu contraseña?</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\r\n          <input type=\"text\" name=\"username\" id=\"username\"\r\n          ng-model=\"ctrl.forgotPassword.username.username\"\r\n          placeholder=\"Usuario...\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\r\n         Enviar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
+
+/***/ },
+/* 181 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var forgotPasswordModule = angular.module('forgotPasswordModule');
+	forgotPasswordModule.factory('forgotPasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter', 'userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, userEditService) {
+
+	        var forgotPasswordService = function () {
+
+	            var self = this;
+
+	            self.username = {};
+
+	            this.showPopup = function () {
+
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<forgot-password></forgot-password>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.sendUsername = function () {
+
+	                var self = this;
+	                UserApiService.forgotPasswordUser(
+	                    self.username,
+	                    function (response) {
+	                        notifierService.success("Solicitud enviada", response.status);
+	                    },
+	                    function (error) {
+
+	                    });
+	                $freevenModal.closePopup();
+	            };
+
+	        };
+	        return new forgotPasswordService();
+	    }]);
+
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(183);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./forgotPassword.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./forgotPassword.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "forgot-password {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\nforgot-password .fr-modal-header,\nforgot-password .fr-modal-content,\nforgot-password .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\nforgot-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\nforgot-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\nforgot-password form a:hover {\n  color: #179b77;\n}\nforgot-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\nforgot-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\nforgot-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\nforgot-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\nforgot-password form label.active .req {\n  opacity: 0;\n}\nforgot-password form label.highlight {\n  color: black;\n}\nforgot-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\nforgot-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\nforgot-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\nforgot-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\nforgot-password .messages {\n  color: #FA787E;\n}\nforgot-password .colorMensajes {\n  color: red;\n}\nforgot-password input.ng-valid {\n  border: 1px solid green;\n}\nforgot-password input:required:valid {\n  border: 1px solid green;\n}\nforgot-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 184 */
+/***/ function(module, exports) {
+
+	angular.module('scoreEditorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/scoreEditor/scoreEditorModule.js');
+	 require('../app/scoreEditor/scoreEditorComponent.js');
+	 require('../app/scoreEditor/scoreEditor.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <score-editor title ="ScoreEditor"> </score-editor>
+	*/
+
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var scoreEditorModule = angular.module('scoreEditorModule');
+	var ScoreEditorController = ['scoreEditorService',
+	    function (scoreEditorService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.scoreEditorService = scoreEditorService;
+	        self.setValue = function (value) {
+	            self.score = value;
+	        };
+
+	        self.greaterThanOrEqual = function (value) {
+	            if (self.score) {
+	                return self.score >= value;
+	            }
+	            return false;
+	        };
+	        self.close = function () {
+	            scoreEditorService.closeModal();
+	        };
+
+	        self.save = function () {
+	            scoreEditorService.setScoreValue(self.score);
+	            scoreEditorService.closeModal();
+	        };
+
+	    }];
+
+	scoreEditorModule.component('scoreEditor', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: ScoreEditorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(186)
+	});
+
+
+/***/ },
+/* 186 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"score-editor\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\r\n    </div>\r\n    <div class=\"score-editor-container\">\r\n        <track hide-item-info=\"true\"\r\n               fr-model=\"ctrl.scoreEditorService.track\">\r\n        </track>\r\n\r\n        <div class=\"rating\">\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\r\n                    <span>Guardar</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+/* 187 */
+/***/ function(module, exports) {
+
+	var scoreEditorModule = angular.module('scoreEditorModule');
+	scoreEditorModule.factory('scoreEditorService', ['$freevenModal', 'TracksApiService', 'mainService',
+	    function ($freevenModal, TracksApiService, mainService) {
+	        var scoreEditorService = function () {
+	            var self = this;
+	            self.user = {};
+	            this.showScoreEditorPopup = function (track) {
+	                self.track = track;
+	                $freevenModal.showPopup({}, {
+	                    template: '<score-editor title ="scoreEditor"> </score-editor>'
+	                    //windowClass: 'score-editor-modal'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.setScoreValue = function (value) {
+	                var self = this;
+	                self.loading = true;
+	                var user = mainService.getUserData();
+	                //self.track.score = value;
+	                TracksApiService.setScoreTrack(
+	                    {
+	                        username: user.username,
+	                        track_id: self.track.id,
+	                        rate: value
+	                    },
+	                    function (response) {
+	                        self.loading = false;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading tracks');
+	                    });
+	            };
+
+	        };
+	        return new scoreEditorService();
+	    }]);
+
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(189);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./scoreEditor.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./scoreEditor.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".score-editor {\n  font-family: 'Titillium Web', sans-serif;\n}\n.score-editor .fr-modal-header,\n.score-editor .fr-modal-content,\n.score-editor .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.score-editor .score-editor-container {\n  margin: 5% 0 12px 0;\n  text-align: center;\n  font-size: 32px;\n  color: #dadada;\n  display: block;\n  background-color: #fdffff;\n  padding: 12px 102px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\n.score-editor .rating {\n  unicode-bidi: bidi-override;\n  direction: rtl;\n  text-align: center;\n  cursor: pointer;\n  -webkit-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.score-editor .rating > span {\n  display: inline-block;\n  position: relative;\n  width: 1.1em;\n  -webkit-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.score-editor .rating > span:hover,\n.score-editor .rating > span:hover ~ span {\n  color: transparent;\n}\n.score-editor .rating > span:hover:before,\n.score-editor .rating > span:hover ~ span:before {\n  content: \"\\2605\";\n  position: absolute;\n  left: 5px;\n  color: rgba(2, 184, 117, 0.44);\n}\n.score-editor .rating > span.filled {\n  color: #02b875;\n}\n.score-editor .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n  font-size: 15px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 190 */
+/***/ function(module, exports) {
+
+	angular.module('restorePasswordModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/restorePassword/restorePasswordModule.js');
+	 require('../app/restorePassword/restorePasswordComponent.js');
+	 require('../app/restorePassword/restorePassword.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <restore-password title ="RestorePassword"> </restore-password>
+	*/
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var restorePasswordModule = angular.module('restorePasswordModule');
+	var RestorePasswordController = ['$i18n', '$freevenModal', '$routeParams', 'restorePasswordService',
+	    function ($i18n, $freevenModal, $routeParams, restorePasswordService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.passwordOk = true;
+
+	        console.log($routeParams.idUser);
+
+	        self.restorePassword = restorePasswordService;
+
+	        self.validateRestorePassword = function () {
+	            if (self.restorePassword.username.username == undefined ||
+	                self.restorePassword.username.password == undefined ||
+	                self.restorePassword.username.password2 == undefined) {
+	            } else {
+	                if (self.restorePassword.username.password !=
+	                    self.restorePassword.username.password2) {
+	                    self.passwordOk = false;
+	                } else {
+	                    self.passwordOk = true;
+	                    self.restorePassword.sendChangePassword();
+	                }
+	            }
+	        };
+
+
+	    }];
+
+	restorePasswordModule.component('restorePassword', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: RestorePasswordController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(192)
+	});
+
+
+/***/ },
+/* 192 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(194);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./restorePassword.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./restorePassword.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".restore-password {\n  padding: 0px 0px 67px 252px;\n  background-color: white;\n  font-family: 'Titillium Web', sans-serif;\n}\n.restore-password form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.restore-password form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.restore-password form a:hover {\n  color: #179b77;\n}\n.restore-password form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.restore-password form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.restore-password form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.restore-password form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.restore-password form label.active .req {\n  opacity: 0;\n}\n.restore-password form label.highlight {\n  color: black;\n}\n.restore-password form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.restore-password form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.restore-password form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.restore-password .messages {\n  color: #FA787E;\n}\n.restore-password .colorMensajes {\n  color: red;\n}\n.restore-password input.ng-valid {\n  border: 1px solid green;\n}\n.restore-password input:required:valid {\n  border: 1px solid green;\n}\n.restore-password .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 195 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var restorePasswordModule = angular.module('restorePasswordModule');
+	restorePasswordModule.factory('restorePasswordService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$filter', 'userEditService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, userEditService) {
+
+	        var restorePasswordService = function () {
+
+	            var self = this;
+
+	            self.username = {};
+
+	            this.showPopup = function () {
+
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<forgot-password></forgot-password>'
+	                });
+	            };
+
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.sendChangePassword = function () {
+
+	                var self = this;
+	                UserApiService.restorePasswordUser(
+	                    self.username,
+	                    function (response) {
+	                        notifierService.success("Cambio de contraseña", response.status);
+	                        setTimeout(function () {
+	                            window.location.assign('#/');
+	                            window.location.reload(true);
+	                        }, 5000);
+	                    },
+	                    function (error) {
+	                    });
+
+
+	            };
+
+	        };
+	        return new restorePasswordService();
+	    }]);
+
+
+/***/ },
+/* 196 */
+/***/ function(module, exports) {
+
+	angular.module('donationCreatorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/donationCreator/donationCreatorModule.js');
+	 require('../app/donationCreator/donationCreatorComponent.js');
+	 require('../app/donationCreator/donationCreator.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <donation-creator title ="DonationCreator"> </donation-creator>
+	*/
+
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var donationCreatorModule = angular.module('donationCreatorModule');
+	var DonationCreatorController = ['donationCreatorService', function (donationCreatorService) {
+	    /**
+	     * Tip: add here only visual logic
+	     */
+	    var self = this;
+	    self.step = 0;
+	    self.donation = {
+	        bankAccountNumber: null,
+	        securityCode: null,
+	        value: null
+	    };
+	    self.createDonation = function () {
+	        var self = this;
+	        donationCreatorService.createDonation(self.donation);
+	        self.next();
+	    };
+
+	    self.close = function () {
+	        donationCreatorService.closeModal();
+	    };
+	    self.next = function () {
+	        var self = this;
+	        self.step += 1;
+	    };
+	}];
+
+	donationCreatorModule.component('donationCreator', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: DonationCreatorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(198)
+	});
+
+
+/***/ },
+/* 198 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"donation-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Donación</h4>\r\n    </div>\r\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\">Monto a donar</label>\r\n                    <input type=\"number\"\r\n                           ng-model=\"ctrl.donation.value\"\r\n                           value=\"ctrl.donation.value | currency\"\r\n                           placeholder=\"$ 000 000\"\r\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\r\n                        <span>Hacer donación</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n\r\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\r\n                        <span>Finalizar</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </form>\r\n</div>\r\n";
+
+/***/ },
+/* 199 */
+/***/ function(module, exports) {
+
+	var donationCreatorModule = angular.module('donationCreatorModule');
+	donationCreatorModule.factory('donationCreatorService', ['$freevenModal', 'DonationApiService', 'mainService', 'notifierService',
+	    function ($freevenModal, DonationApiService, mainService, notifierService) {
+	        var DonationCreatorService = function () {
+	            var self = this;
+	            self.user = {};
+	            this.showDonationCreatorPopup = function (artist) {
+	                var self = this;
+	                self.artist = artist;
+	                $freevenModal.showPopup({}, {
+	                    template: '<donation-creator> </donation-creator>'
+	                });
+	            };
+	            this.closeModal = function () {
+	                $freevenModal.closePopup();
+	            };
+
+	            this.createDonation = function (donation) {
+	                var self = this;
+	                var user = mainService.getUserData();
+	                var params = {
+	                    user: user.id_user,
+	                    artist: self.artist.id,
+	                    value: donation.value
+	                };
+	                DonationApiService.createDonation(
+	                    params
+	                    ,
+	                    function (response) {
+	                        //notifierService.success("Transacción correcta", response.status);
+	                    },
+	                    function (error) {
+
+	                    });
+	            };
+	        };
+	        return new DonationCreatorService();
+	    }]);
+
+
+/***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(201);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./donationCreator.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./donationCreator.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".donation-creator {\n  font-family: 'Titillium Web', sans-serif;\n}\n.donation-creator .fr-modal-header,\n.donation-creator .fr-modal-content,\n.donation-creator .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.donation-creator .align-right {\n  text-align: right;\n}\n.donation-creator .donation-value {\n  text-align: right;\n}\n.donation-creator form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.donation-creator form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.donation-creator form a:hover {\n  color: #179b77;\n}\n.donation-creator form h4,\n.donation-creator form h5 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.donation-creator form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.donation-creator form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.donation-creator form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.donation-creator form label.active .req {\n  opacity: 0;\n}\n.donation-creator form label.highlight {\n  color: black;\n}\n.donation-creator form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.donation-creator form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.donation-creator form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.donation-creator form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.donation-creator .messages {\n  color: #FA787E;\n}\n.donation-creator .colorMensajes {\n  color: red;\n}\n.donation-creator input.ng-valid {\n  border: 1px solid green;\n}\n.donation-creator input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
 
 	// exports
 

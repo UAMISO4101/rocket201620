@@ -1,0 +1,26 @@
+<div class="row top-track-list">
+    <h3 class="top-track-list-title">Este es el top de las obras musicales más escuchadas</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="track in ctrl.trackList.topTracks">
+        <div class="row">
+            <track class="top-item-track col-xs-3"
+                   hide-item-info="true"
+                   fr-model="track">
+            </track>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h3 class="track-name">
+                    <a>{{ track.name }}</a>
+                </h3>
+                <h3 class="track-artist">
+                    <a href="#/artist/{{ track.artist_id }}">{{ track.artist }}</a>
+                </h3>
+                <div class="top-item-position">
+                    <h1> {{ track.position }}</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <br/>
+    <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
+</div>

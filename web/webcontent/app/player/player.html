@@ -1,8 +1,11 @@
-<div class="player">
-    <div class="now-playing">
-        <img width="20" height="20" src="{{ ctrl.playerService.track.image }}"/>
-    </div>
-
+ <span class="track-info" ng-if="ctrl.playerService.showPlayer()">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>
+ <span class="freeven-info" ng-if="!ctrl.playerService.showPlayer()">Freeven ® 2016</span>
+<div class="player" ng-if="ctrl.playerService.showPlayer()">
+    <a class="btn-download"
+       href="{{ ctrl.playerService.track.url }}"
+       download="{{ ctrl.playerService.track.name }}.mp3">
+        <i class="icon icon-download"></i>
+    </a>
     <div class="player-buttons">
         <button class="prev" ng-click="ctrl.prev()">
             <i class="glyphicon glyphicon-step-backward"></i>
@@ -18,7 +21,11 @@
         </button>
     </div>
 
-    <div class="player-time">
+    <a class="btn-time">
+        <i class="icon icon-clock"></i>
+    </a>
+
+    <div class="player-time player-range ">
         <input min="0"
                max="{{ ctrl.playerService.audio.duration }}"
                step="0.01"
@@ -26,13 +33,14 @@
                ng-model="ctrl.playerService.audio.currentTime"/>
 
     </div>
-
-    <div class="player-volume">
+    <a class="btn-volume">
+        <i class="icon icon-volume-medium"></i>
+    </a>
+    <div class="player-volume player-range ">
         <input min="0"
                max="1"
                step="0.01"
                type="range"
                ng-model="ctrl.playerService.audio.volume"/>
-
     </div>
 </div>

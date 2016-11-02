@@ -46,3 +46,5 @@ WebContent/dist/stats.json
 
 **/WebContent/dist/production/stats.json
 **/WebContent/dist/production/*.map
+
+web/webcontent/index.html

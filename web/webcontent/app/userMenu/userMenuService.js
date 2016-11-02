@@ -23,42 +23,6 @@ userMenuModule.factory('userMenuService', ['UserApiService', '$i18n', '$freevenM
                     });
             };
 
-            self.saveUser = function () {
-                UserApiService.save(
-                    JSON.stringify(self.newUser),
-                    function (response) {
-                        var respuest = response.status;
-                        if (respuest !== 'OK') {
-                            $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-                            $('#modalRegister .modal-title').html("Error en registro!")
-                            $('#modalRegister .modal-body').html(response.status)
-                        } else {
-                            $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-                            $('#modalRegister .modal-title').html("Registro Exitoso!")
-                            $('#modalRegister .modal-body').html("Ya puedes iniciar sesión en Sonidos Libres.")
-                        }
-
-
-                        console.log(response);
-                    },
-                    function (error) {
-                        $('#modalRegister .close').attr("onclick", "window.location.assign('/#/');window.location.reload(true)");
-                        $('#modalRegister .modal-title').html("Error en registro!")
-                        $('#modalRegister .modal-body').html(error)
-                        console.log('Error saving user');
-                    });
-            };
-            self.deleteUser = function (guidUser) {
-                UserApiService.delete(
-                    {guidUser: guidUser},
-                    function (response) {
-                        console.log(response);
-                    },
-                    function (error) {
-                        console.log('Error delete user');
-                    });
-            };
-
 
             this.showLoginPopup = function () {
                 $freevenModal.showPopup({}, {
@@ -66,14 +30,12 @@ userMenuModule.factory('userMenuService', ['UserApiService', '$i18n', '$freevenM
                 });
             };
 
-            this.checkForm = function (form) {
-                if (!form.terms.checked) {
-                    alert("Please indicate that you accept the Terms and Conditions");
-                    form.terms.focus();
-                    return false;
-                }
-                return true;
-            }
+            this.showRegisterPopup = function () {
+                $freevenModal.showPopup({}, {
+                    template: '<user-register title ="Register"> </user-register>'
+                });
+            };
+
         };
         return new UserMenuService();
     }]);
