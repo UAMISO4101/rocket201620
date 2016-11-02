@@ -50,6 +50,7 @@ require('../app/restAPI/restAPIModule.js');
 require('../app/restAPI/tracksAPIService.js');
 require('../app/restAPI/userAPIService.js');
 require('../app/restAPI/artistAPIService.js');
+require('../app/restAPI/donationAPIService.js');
 
 /**
  * Registro de componentes nuevos
@@ -158,3 +159,8 @@ require('../app/restorePassword/restorePasswordModule.js');
 require('../app/restorePassword/restorePasswordComponent.js');
 require('../app/restorePassword/restorePassword.less');
 require('../app/restorePassword/restorePasswordService.js');
+
+require('../app/donationCreator/donationCreatorModule.js');
+require('../app/donationCreator/donationCreatorComponent.js');
+require('../app/donationCreator/donationCreatorService.js');
+require('../app/donationCreator/donationCreator.less');

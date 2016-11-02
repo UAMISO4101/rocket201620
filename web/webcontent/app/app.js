@@ -31,7 +31,8 @@ var appModules = [
     'donationModule',
     'forgotPasswordModule',
     'scoreEditorModule',
-    'restorePasswordModule'
+    'restorePasswordModule',
+    'donationCreatorModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
