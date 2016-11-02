@@ -10,14 +10,31 @@ class LoginSerializer(serializers.ModelSerializer):
 
 
 class DonationSerializer(serializers.ModelSerializer):
+    user_first_name = serializers.SerializerMethodField()
+    user_last_name = serializers.SerializerMethodField()
+
     class Meta:
         model = Donation
         fields = (
             'artist',
             'user',
+            'user_first_name',
+            'user_last_name',
             'date',
             'value',
         )
+
+    def get_user_first_name(self, obj):
+        try:
+            return obj.user.first_name
+        except:
+            return None
+
+    def get_user_last_name(self, obj):
+        try:
+            return obj.user.last_name
+        except:
+            return None
 
 
 class UserSerializer(serializers.ModelSerializer):

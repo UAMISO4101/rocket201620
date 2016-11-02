@@ -55,7 +55,7 @@ class Donate(CreateAPIView):
 class DonationList(ListAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     filter_backends = (filters.DjangoFilterBackend, )
     filter_fields = (
         'artist__id',
