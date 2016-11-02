@@ -9,13 +9,15 @@
 
                 <table class="table" border="1px">
                     <tbody>
-                    <tr>
-                        <td><h3>Usuario</h3></td>
+                        <tr>
+                        <td><h3>Nombres</h3></td>
+                        <td><h3>Apellidos</h3></td>
                         <td><h3>Valor</h3></td>
                         <td><h3>Fecha</h3></td>
                     </tr>
                     <tr ng-repeat="donation in ctrl.donationService.donations">
-                        <td>{{ donation.user }}</td>
+                        <td>{{ donation.user_first_name  }}</td>
+                        <td>{{ donation.user_last_name }}</td>
                         <td>$ {{ donation.value | number }}</td>
                         <td>{{ donation.date | date:'medium' }}</td>
                     </tr>
