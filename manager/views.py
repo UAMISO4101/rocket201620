@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
@@ -10,12 +11,14 @@ from django.core.urlresolvers import reverse
 from users.business_logic import (
     register_business_agent, update_business_agent
 )
-
+from users.security import StaffuserRequiredMixin
 from tracks.trace_manager import TraceManager
 
 
-@method_decorator(login_required, name='dispatch')
-class IndexView(TemplateView):
+class IndexView(StaffuserRequiredMixin, TemplateView):
+    login_url = '/manager/login/'
+    redirect_field_name = 'redirect_to'
+
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
@@ -35,15 +38,19 @@ class IndexView(TemplateView):
         return context
 
 
-@method_decorator(login_required, name='dispatch')
-class GenderListView(ListView):
+class GenderListView(StaffuserRequiredMixin, ListView):
+    login_url = '/manager/login/'
+    redirect_field_name = 'redirect_to'
+
     model = Gender
     template_name = 'gender_list.html'
     context_object_name = 'genders'
 
 
-@method_decorator(login_required, name='dispatch')
-class GenderCreateView(CreateView):
+class GenderCreateView(StaffuserRequiredMixin, CreateView):
+    login_url = '/manager/login/'
+    redirect_field_name = 'redirect_to'
+
     model = Gender
     template_name = 'gender_create.html'
     context_object_name = 'gender'
@@ -57,8 +64,10 @@ class GenderCreateView(CreateView):
         return reverse('gender-list')
 
 
-@method_decorator(login_required, name='dispatch')
-class GenderUpdateView(UpdateView):
+class GenderUpdateView(StaffuserRequiredMixin, UpdateView):
+    login_url = '/manager/login/'
+    redirect_field_name = 'redirect_to'
+
     model = Gender
     template_name = 'gender_update.html'
     context_object_name = 'gender'
@@ -72,8 +81,10 @@ class GenderUpdateView(UpdateView):
         return reverse('gender-list')
 
 
-@method_decorator(login_required, name='dispatch')
-class BusinessAgentListView(ListView):
+class BusinessAgentListView(StaffuserRequiredMixin, ListView):
+    login_url = '/manager/login/'
+    redirect_field_name = 'redirect_to'
+
     model = BusinessAgent
     template_name = 'businessAgent_list.html'
     context_object_name = 'agents'
@@ -81,7 +92,7 @@ class BusinessAgentListView(ListView):
 
 @csrf_exempt
 def businessAgentCreate(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated() and request.user.is_staff:
         mensaje = ''
         if request.method == 'POST':
             mensaje = register_business_agent(request)
@@ -95,7 +106,7 @@ def businessAgentCreate(request):
 
 @csrf_exempt
 def businessAgentUpdate(request, pk):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated() and request.user.is_staff:
         mensaje = ''
         if request.method == 'POST':
             mensaje = update_business_agent(request, pk)
@@ -109,14 +120,14 @@ def businessAgentUpdate(request, pk):
         return redirect(reverse('manager'))
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(staff_member_required, name='dispatch')
 class UserListView(ListView):
     model = User
     template_name = 'user_list.html'
     context_object_name = 'users'
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(staff_member_required, name='dispatch')
 class UserUpdateView(UpdateView):
     model = User
     template_name = 'user_update.html'
@@ -132,7 +143,7 @@ class UserUpdateView(UpdateView):
         return reverse('user-list')
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(staff_member_required, name='dispatch')
 class ArtistDonationListView(ListView):
     template_name = 'artist-donation-list.html'
     context_object_name = 'donations'

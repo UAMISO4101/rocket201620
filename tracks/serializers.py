@@ -95,12 +95,100 @@ class TrackSerializer(serializers.ModelSerializer):
 
 
 class TopSerializer(serializers.ModelSerializer):
-    track = TrackSerializer(read_only=True)
+    id = serializers.SerializerMethodField()
+    name = serializers.SerializerMethodField()
+    description = serializers.SerializerMethodField()
+    gender = serializers.SerializerMethodField()
+    image = serializers.SerializerMethodField()
+    url = serializers.SerializerMethodField()
+    score = serializers.SerializerMethodField()
+    artist = serializers.SerializerMethodField()
+    artist_id = serializers.SerializerMethodField()
+    artistic_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Top
         fields = (
-            'track',
+            'id',
+            'name',
+            'description',
+            'gender',
+            'image',
+            'url',
+            'score',
+            'artist',
+            'artist_id',
+            'artistic_name',
             'quantity',
             'top_type',
         )
+
+    @classmethod
+    def get_id(self, obj):
+        try:
+            return obj.track.id
+        except:
+            return None
+
+    @classmethod
+    def get_name(self, obj):
+        try:
+            return obj.track.name
+        except:
+            return None
+
+    @classmethod
+    def get_description(self, obj):
+        try:
+            return obj.track.description
+        except:
+            return None
+
+    @classmethod
+    def get_score(self, obj):
+        try:
+            return obj.track.score
+        except:
+            return None
+
+    @classmethod
+    def get_image(self, obj):
+        try:
+            return obj.track.image.url
+        except:
+            return None
+
+    @classmethod
+    def get_url(self, obj):
+        try:
+            return obj.track.file.url
+        except:
+            return None
+
+    @classmethod
+    def get_gender(self, obj):
+        try:
+            return obj.track.gender.name
+        except:
+            return None
+
+    @classmethod
+    def get_artist(self, obj):
+        try:
+            return obj.track.artist.user.username
+        except:
+            return None
+
+    @classmethod
+    def get_artist_id(self, obj):
+        try:
+            return obj.track.artist.id
+        except:
+            return None
+
+    @classmethod
+    def get_artistic_name(self, obj):
+        try:
+            return obj.track.artist.artistic_name
+        except:
+            return None

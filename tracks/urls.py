@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^create/$', TrackCreateView.as_view(), name='track-create'),
     url(r'^trace', trace, name="trace"),
     url(r'^top10/$', Top10.as_view(), name='top10'),
-    url(r'^gender', GenderListView.as_view(), name="gender-list"),
+    url(r'^gender', GenderListView.as_view(), name="gender-list-api"),
 ]
