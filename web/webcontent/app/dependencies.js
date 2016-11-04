@@ -51,6 +51,7 @@ require('../app/restAPI/tracksAPIService.js');
 require('../app/restAPI/userAPIService.js');
 require('../app/restAPI/artistAPIService.js');
 require('../app/restAPI/donationAPIService.js');
+require('../app/restAPI/genderAPIService.js');
 
 /**
  * Registro de componentes nuevos
@@ -164,3 +165,7 @@ require('../app/donationCreator/donationCreatorModule.js');
 require('../app/donationCreator/donationCreatorComponent.js');
 require('../app/donationCreator/donationCreatorService.js');
 require('../app/donationCreator/donationCreator.less');
+
+require('../app/bounce/bounceModule.js');
+require('../app/bounce/bounceComponent.js');
+require('../app/bounce/bounce.less');

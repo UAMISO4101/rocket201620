@@ -7,6 +7,7 @@ var TopTrackListController = ['trackListService', 'artistService',
         var self = this;
         self.trackList = trackListService;
         self.trackList.loadTopTracks({});
+        console.log(self.trackList)
         self.loadArtist = function () {
             artistService.loadArtist();
         };

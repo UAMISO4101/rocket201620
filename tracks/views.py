@@ -37,6 +37,12 @@ class TrackListView(ListAPIView):
     )
 
 
+class Top10(ListAPIView):
+    queryset = Top.objects.filter(
+        top_type='daily', action='play').order_by('-quantity')[:10]
+    serializer_class = TopSerializer
+
+
 class TrackCreateView(CreateAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackUploadSerializer
@@ -72,9 +78,3 @@ def trace(request):
         get_client_ip(request),
     )
     return Response(status=status.HTTP_201_CREATED)
-
-
-class Top10(ListAPIView):
-    queryset = Top.objects.filter(
-        top_type='daily', action='play').order_by('-quantity')[:10]
-    serializer_class = TopSerializer
