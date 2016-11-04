@@ -57958,7 +57958,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * angular-translate - v2.12.1 - 2016-09-15
+	 * angular-translate - v2.13.0 - 2016-10-30
 	 * 
 	 * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
 	 */
@@ -58348,64 +58348,64 @@
 	 *
 	 */
 	angular.module('pascalprecht.translate')
-	.constant('pascalprechtTranslateOverrider', {})
-	.provider('$translate', $translate);
+	  .constant('pascalprechtTranslateOverrider', {})
+	  .provider('$translate', $translate);
 
 	function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvider, pascalprechtTranslateOverrider) {
 
 	  'use strict';
 
 	  var $translationTable = {},
-	      $preferredLanguage,
-	      $availableLanguageKeys = [],
-	      $languageKeyAliases,
-	      $fallbackLanguage,
-	      $fallbackWasString,
-	      $uses,
-	      $nextLang,
-	      $storageFactory,
-	      $storageKey = $STORAGE_KEY,
-	      $storagePrefix,
-	      $missingTranslationHandlerFactory,
-	      $interpolationFactory,
-	      $interpolatorFactories = [],
-	      $loaderFactory,
-	      $cloakClassName = 'translate-cloak',
-	      $loaderOptions,
-	      $notFoundIndicatorLeft,
-	      $notFoundIndicatorRight,
-	      $postCompilingEnabled = false,
-	      $forceAsyncReloadEnabled = false,
-	      $nestedObjectDelimeter = '.',
-	      $isReady = false,
-	      $keepContent = false,
-	      loaderCache,
-	      directivePriority = 0,
-	      statefulFilter = true,
-	      postProcessFn,
-	      uniformLanguageTagResolver = 'default',
-	      languageTagResolver = {
-	        'default': function (tag) {
-	          return (tag || '').split('-').join('_');
-	        },
-	        java: function (tag) {
-	          var temp = (tag || '').split('-').join('_');
-	          var parts = temp.split('_');
-	          return parts.length > 1 ? (parts[0].toLowerCase() + '_' + parts[1].toUpperCase()) : temp;
-	        },
-	        bcp47: function (tag) {
-	          var temp = (tag || '').split('_').join('-');
-	          var parts = temp.split('-');
-	          return parts.length > 1 ? (parts[0].toLowerCase() + '-' + parts[1].toUpperCase()) : temp;
-	        },
-	        'iso639-1': function (tag) {
-	          var temp = (tag || '').split('_').join('-');
-	          var parts = temp.split('-');
-	          return parts[0].toLowerCase();
-	        }
-	      };
+	    $preferredLanguage,
+	    $availableLanguageKeys = [],
+	    $languageKeyAliases,
+	    $fallbackLanguage,
+	    $fallbackWasString,
+	    $uses,
+	    $nextLang,
+	    $storageFactory,
+	    $storageKey = $STORAGE_KEY,
+	    $storagePrefix,
+	    $missingTranslationHandlerFactory,
+	    $interpolationFactory,
+	    $interpolatorFactories = [],
+	    $loaderFactory,
+	    $cloakClassName = 'translate-cloak',
+	    $loaderOptions,
+	    $notFoundIndicatorLeft,
+	    $notFoundIndicatorRight,
+	    $postCompilingEnabled = false,
+	    $forceAsyncReloadEnabled = false,
+	    $nestedObjectDelimeter = '.',
+	    $isReady = false,
+	    $keepContent = false,
+	    loaderCache,
+	    directivePriority = 0,
+	    statefulFilter = true,
+	    postProcessFn,
+	    uniformLanguageTagResolver = 'default',
+	    languageTagResolver = {
+	      'default' : function (tag) {
+	        return (tag || '').split('-').join('_');
+	      },
+	      java : function (tag) {
+	        var temp = (tag || '').split('-').join('_');
+	        var parts = temp.split('_');
+	        return parts.length > 1 ? (parts[0].toLowerCase() + '_' + parts[1].toUpperCase()) : temp;
+	      },
+	      bcp47 : function (tag) {
+	        var temp = (tag || '').split('_').join('-');
+	        var parts = temp.split('-');
+	        return parts.length > 1 ? (parts[0].toLowerCase() + '-' + parts[1].toUpperCase()) : temp;
+	      },
+	      'iso639-1' : function (tag) {
+	        var temp = (tag || '').split('_').join('-');
+	        var parts = temp.split('-');
+	        return parts[0].toLowerCase();
+	      }
+	    };
 
-	  var version = '2.12.1';
+	  var version = '2.13.0';
 
 	  // tries to determine the browsers language
 	  var getFirstBrowserLanguage = function () {
@@ -58416,9 +58416,9 @@
 	    }
 
 	    var nav = $windowProvider.$get().navigator,
-	        browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
-	        i,
-	        language;
+	      browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+	      i,
+	      language;
 
 	    // support for HTML 5.1 "navigator.languages"
 	    if (angular.isArray(nav.languages)) {
@@ -58464,7 +58464,7 @@
 	   *
 	   * @returns {int} Index of search element.
 	   */
-	  var indexOf = function(array, searchElement) {
+	  var indexOf = function (array, searchElement) {
 	    for (var i = 0, len = array.length; i < len; i++) {
 	      if (array[i] === searchElement) {
 	        return i;
@@ -58482,19 +58482,19 @@
 	   *
 	   * @returns {string} The string stripped of whitespace from both ends
 	   */
-	  var trim = function() {
+	  var trim = function () {
 	    return this.toString().replace(/^\s+|\s+$/g, '');
 	  };
 
 	  var negotiateLocale = function (preferred) {
-	    if(!preferred) {
+	    if (!preferred) {
 	      return;
 	    }
 
 	    var avail = [],
-	        locale = angular.lowercase(preferred),
-	        i = 0,
-	        n = $availableLanguageKeys.length;
+	      locale = angular.lowercase(preferred),
+	      i = 0,
+	      n = $availableLanguageKeys.length;
 
 	    for (; i < n; i++) {
 	      avail.push(angular.lowercase($availableLanguageKeys[i]));
@@ -58660,7 +58660,7 @@
 	        flatObject(val, path.concat(key), result, key);
 	      } else {
 	        keyWithPath = path.length ? ('' + path.join($nestedObjectDelimeter) + $nestedObjectDelimeter + key) : key;
-	        if(path.length && key === prevKey){
+	        if (path.length && key === prevKey) {
 	          // Create shortcut path (foo.bar == foo.bar.bar)
 	          keyWithShortPath = '' + path.join($nestedObjectDelimeter);
 	          // Link it to original path
@@ -58733,7 +58733,7 @@
 	    return this;
 	  };
 
-	 /**
+	  /**
 	   * @ngdoc function
 	   * @name pascalprecht.translate.$translateProvider#preferredLanguage
 	   * @methodOf pascalprecht.translate.$translateProvider
@@ -58745,7 +58745,7 @@
 	   *
 	   * @param {string} langKey A language key.
 	   */
-	  this.preferredLanguage = function(langKey) {
+	  this.preferredLanguage = function (langKey) {
 	    if (langKey) {
 	      setupPreferredLanguage(langKey);
 	      return this;
@@ -58843,12 +58843,12 @@
 	    if (langKey) {
 	      if (angular.isString(langKey)) {
 	        $fallbackWasString = true;
-	        $fallbackLanguage = [ langKey ];
+	        $fallbackLanguage = [langKey];
 	      } else if (angular.isArray(langKey)) {
 	        $fallbackWasString = false;
 	        $fallbackLanguage = langKey;
 	      }
-	      if (angular.isString($preferredLanguage)  && indexOf($fallbackLanguage, $preferredLanguage) < 0) {
+	      if (angular.isString($preferredLanguage) && indexOf($fallbackLanguage, $preferredLanguage) < 0) {
 	        $fallbackLanguage.push($preferredLanguage);
 	      }
 
@@ -58902,7 +58902,7 @@
 	    return getLocale();
 	  };
 
-	 /**
+	  /**
 	   * @ngdoc function
 	   * @name pascalprecht.translate.$translateProvider#storageKey
 	   * @methodOf pascalprecht.translate.$translateProvider
@@ -58912,7 +58912,7 @@
 	   *
 	   * @param {string} key A key for the storage.
 	   */
-	  var storageKey = function(key) {
+	  var storageKey = function (key) {
 	    if (!key) {
 	      if ($storagePrefix) {
 	        return $storagePrefix + $storageKey;
@@ -58937,7 +58937,7 @@
 	   * @param {Object=} options Optional configuration object
 	   */
 	  this.useUrlLoader = function (url, options) {
-	    return this.useLoader('$translateUrlLoader', angular.extend({ url: url }, options));
+	    return this.useLoader('$translateUrlLoader', angular.extend({url : url}, options));
 	  };
 
 	  /**
@@ -59168,7 +59168,7 @@
 	      options = {};
 	    } else if (angular.isString(options)) {
 	      options = {
-	        standard: options
+	        standard : options
 	      };
 	    }
 
@@ -59385,1296 +59385,1331 @@
 	   * @param {string} forceLanguage A language to be used instead of the current language
 	   * @returns {object} promise
 	   */
-	  this.$get = [
-	    '$log',
-	    '$injector',
-	    '$rootScope',
-	    '$q',
-	    function ($log, $injector, $rootScope, $q) {
+	  this.$get = ['$log', '$injector', '$rootScope', '$q', function ($log, $injector, $rootScope, $q) {
 
-	      var Storage,
-	          defaultInterpolator = $injector.get($interpolationFactory || '$translateDefaultInterpolation'),
-	          pendingLoader = false,
-	          interpolatorHashMap = {},
-	          langPromises = {},
-	          fallbackIndex,
-	          startFallbackIteration;
+	    var Storage,
+	      defaultInterpolator = $injector.get($interpolationFactory || '$translateDefaultInterpolation'),
+	      pendingLoader = false,
+	      interpolatorHashMap = {},
+	      langPromises = {},
+	      fallbackIndex,
+	      startFallbackIteration;
 
-	      var $translate = function (translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage) {
-	        if (!$uses && $preferredLanguage) {
-	          $uses = $preferredLanguage;
-	        }
-	        var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
-	              (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
+	    var $translate = function (translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage) {
+	      if (!$uses && $preferredLanguage) {
+	        $uses = $preferredLanguage;
+	      }
+	      var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
+	        (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
 
-	        // Check forceLanguage is present
-	        if (forceLanguage) {
-	          loadTranslationsIfMissing(forceLanguage);
-	        }
+	      // Check forceLanguage is present
+	      if (forceLanguage) {
+	        loadTranslationsIfMissing(forceLanguage);
+	      }
 
-	        // Duck detection: If the first argument is an array, a bunch of translations was requested.
-	        // The result is an object.
-	        if (angular.isArray(translationId)) {
-	          // Inspired by Q.allSettled by Kris Kowal
-	          // https://github.com/kriskowal/q/blob/b0fa72980717dc202ffc3cbf03b936e10ebbb9d7/q.js#L1553-1563
-	          // This transforms all promises regardless resolved or rejected
-	          var translateAll = function (translationIds) {
-	            var results = {}; // storing the actual results
-	            var promises = []; // promises to wait for
-	            // Wraps the promise a) being always resolved and b) storing the link id->value
-	            var translate = function (translationId) {
-	              var deferred = $q.defer();
-	              var regardless = function (value) {
-	                results[translationId] = value;
-	                deferred.resolve([translationId, value]);
-	              };
-	              // we don't care whether the promise was resolved or rejected; just store the values
-	              $translate(translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage).then(regardless, regardless);
-	              return deferred.promise;
+	      // Duck detection: If the first argument is an array, a bunch of translations was requested.
+	      // The result is an object.
+	      if (angular.isArray(translationId)) {
+	        // Inspired by Q.allSettled by Kris Kowal
+	        // https://github.com/kriskowal/q/blob/b0fa72980717dc202ffc3cbf03b936e10ebbb9d7/q.js#L1553-1563
+	        // This transforms all promises regardless resolved or rejected
+	        var translateAll = function (translationIds) {
+	          var results = {}; // storing the actual results
+	          var promises = []; // promises to wait for
+	          // Wraps the promise a) being always resolved and b) storing the link id->value
+	          var translate = function (translationId) {
+	            var deferred = $q.defer();
+	            var regardless = function (value) {
+	              results[translationId] = value;
+	              deferred.resolve([translationId, value]);
 	            };
-	            for (var i = 0, c = translationIds.length; i < c; i++) {
-	              promises.push(translate(translationIds[i]));
-	            }
-	            // wait for all (including storing to results)
-	            return $q.all(promises).then(function () {
-	              // return the results
-	              return results;
-	            });
+	            // we don't care whether the promise was resolved or rejected; just store the values
+	            $translate(translationId, interpolateParams, interpolationId, defaultTranslationText, forceLanguage).then(regardless, regardless);
+	            return deferred.promise;
 	          };
-	          return translateAll(translationId);
-	        }
-
-	        var deferred = $q.defer();
-
-	        // trim off any whitespace
-	        if (translationId) {
-	          translationId = trim.apply(translationId);
-	        }
-
-	        var promiseToWaitFor = (function () {
-	          var promise = $preferredLanguage ?
-	            langPromises[$preferredLanguage] :
-	            langPromises[uses];
-
-	          fallbackIndex = 0;
-
-	          if ($storageFactory && !promise) {
-	            // looks like there's no pending promise for $preferredLanguage or
-	            // $uses. Maybe there's one pending for a language that comes from
-	            // storage.
-	            var langKey = Storage.get($storageKey);
-	            promise = langPromises[langKey];
-
-	            if ($fallbackLanguage && $fallbackLanguage.length) {
-	                var index = indexOf($fallbackLanguage, langKey);
-	                // maybe the language from storage is also defined as fallback language
-	                // we increase the fallback language index to not search in that language
-	                // as fallback, since it's probably the first used language
-	                // in that case the index starts after the first element
-	                fallbackIndex = (index === 0) ? 1 : 0;
-
-	                // but we can make sure to ALWAYS fallback to preferred language at least
-	                if (indexOf($fallbackLanguage, $preferredLanguage) < 0) {
-	                  $fallbackLanguage.push($preferredLanguage);
-	                }
-	            }
+	          for (var i = 0, c = translationIds.length; i < c; i++) {
+	            promises.push(translate(translationIds[i]));
 	          }
-	          return promise;
-	        }());
-
-	        if (!promiseToWaitFor) {
-	          // no promise to wait for? okay. Then there's no loader registered
-	          // nor is a one pending for language that comes from storage.
-	          // We can just translate.
-	          determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
-	        } else {
-	          var promiseResolved = function () {
-	            // $uses may have changed while waiting
-	            if (!forceLanguage) {
-	              uses = $uses;
-	            }
-	            determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
-	          };
-	          promiseResolved.displayName = 'promiseResolved';
-
-	          promiseToWaitFor['finally'](promiseResolved);
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @name applyNotFoundIndicators
-	       * @private
-	       *
-	       * @description
-	       * Applies not fount indicators to given translation id, if needed.
-	       * This function gets only executed, if a translation id doesn't exist,
-	       * which is why a translation id is expected as argument.
-	       *
-	       * @param {string} translationId Translation id.
-	       * @returns {string} Same as given translation id but applied with not found
-	       * indicators.
-	       */
-	      var applyNotFoundIndicators = function (translationId) {
-	        // applying notFoundIndicators
-	        if ($notFoundIndicatorLeft) {
-	          translationId = [$notFoundIndicatorLeft, translationId].join(' ');
-	        }
-	        if ($notFoundIndicatorRight) {
-	          translationId = [translationId, $notFoundIndicatorRight].join(' ');
-	        }
-	        return translationId;
-	      };
-
-	      /**
-	       * @name useLanguage
-	       * @private
-	       *
-	       * @description
-	       * Makes actual use of a language by setting a given language key as used
-	       * language and informs registered interpolators to also use the given
-	       * key as locale.
-	       *
-	       * @param {string} key Locale key.
-	       */
-	      var useLanguage = function (key) {
-	        $uses = key;
-
-	        // make sure to store new language key before triggering success event
-	        if ($storageFactory) {
-	          Storage.put($translate.storageKey(), $uses);
-	        }
-
-	        $rootScope.$emit('$translateChangeSuccess', {language: key});
-
-	        // inform default interpolator
-	        defaultInterpolator.setLocale($uses);
-
-	        var eachInterpolator = function (interpolator, id) {
-	          interpolatorHashMap[id].setLocale($uses);
-	        };
-	        eachInterpolator.displayName = 'eachInterpolatorLocaleSetter';
-
-	        // inform all others too!
-	        angular.forEach(interpolatorHashMap, eachInterpolator);
-	        $rootScope.$emit('$translateChangeEnd', {language: key});
-	      };
-
-	      /**
-	       * @name loadAsync
-	       * @private
-	       *
-	       * @description
-	       * Kicks of registered async loader using `$injector` and applies existing
-	       * loader options. When resolved, it updates translation tables accordingly
-	       * or rejects with given language key.
-	       *
-	       * @param {string} key Language key.
-	       * @return {Promise} A promise.
-	       */
-	      var loadAsync = function (key) {
-	        if (!key) {
-	          throw 'No language key specified for loading.';
-	        }
-
-	        var deferred = $q.defer();
-
-	        $rootScope.$emit('$translateLoadingStart', {language: key});
-	        pendingLoader = true;
-
-	        var cache = loaderCache;
-	        if (typeof(cache) === 'string') {
-	          // getting on-demand instance of loader
-	          cache = $injector.get(cache);
-	        }
-
-	        var loaderOptions = angular.extend({}, $loaderOptions, {
-	          key: key,
-	          $http: angular.extend({}, {
-	            cache: cache
-	          }, $loaderOptions.$http)
-	        });
-
-	        var onLoaderSuccess = function (data) {
-	          var translationTable = {};
-	          $rootScope.$emit('$translateLoadingSuccess', {language: key});
-
-	          if (angular.isArray(data)) {
-	            angular.forEach(data, function (table) {
-	              angular.extend(translationTable, flatObject(table));
-	            });
-	          } else {
-	            angular.extend(translationTable, flatObject(data));
-	          }
-	          pendingLoader = false;
-	          deferred.resolve({
-	            key: key,
-	            table: translationTable
+	          // wait for all (including storing to results)
+	          return $q.all(promises).then(function () {
+	            // return the results
+	            return results;
 	          });
-	          $rootScope.$emit('$translateLoadingEnd', {language: key});
 	        };
-	        onLoaderSuccess.displayName = 'onLoaderSuccess';
+	        return translateAll(translationId);
+	      }
 
-	        var onLoaderError = function (key) {
-	          $rootScope.$emit('$translateLoadingError', {language: key});
-	          deferred.reject(key);
-	          $rootScope.$emit('$translateLoadingEnd', {language: key});
-	        };
-	        onLoaderError.displayName = 'onLoaderError';
+	      var deferred = $q.defer();
 
-	        $injector.get($loaderFactory)(loaderOptions)
-	          .then(onLoaderSuccess, onLoaderError);
+	      // trim off any whitespace
+	      if (translationId) {
+	        translationId = trim.apply(translationId);
+	      }
 
-	        return deferred.promise;
-	      };
+	      var promiseToWaitFor = (function () {
+	        var promise = $preferredLanguage ?
+	          langPromises[$preferredLanguage] :
+	          langPromises[uses];
 
-	      if ($storageFactory) {
-	        Storage = $injector.get($storageFactory);
+	        fallbackIndex = 0;
 
-	        if (!Storage.get || !Storage.put) {
-	          throw new Error('Couldn\'t use storage \'' + $storageFactory + '\', missing get() or put() method!');
+	        if ($storageFactory && !promise) {
+	          // looks like there's no pending promise for $preferredLanguage or
+	          // $uses. Maybe there's one pending for a language that comes from
+	          // storage.
+	          var langKey = Storage.get($storageKey);
+	          promise = langPromises[langKey];
+
+	          if ($fallbackLanguage && $fallbackLanguage.length) {
+	            var index = indexOf($fallbackLanguage, langKey);
+	            // maybe the language from storage is also defined as fallback language
+	            // we increase the fallback language index to not search in that language
+	            // as fallback, since it's probably the first used language
+	            // in that case the index starts after the first element
+	            fallbackIndex = (index === 0) ? 1 : 0;
+
+	            // but we can make sure to ALWAYS fallback to preferred language at least
+	            if (indexOf($fallbackLanguage, $preferredLanguage) < 0) {
+	              $fallbackLanguage.push($preferredLanguage);
+	            }
+	          }
 	        }
-	      }
+	        return promise;
+	      }());
 
-	      // if we have additional interpolations that were added via
-	      // $translateProvider.addInterpolation(), we have to map'em
-	      if ($interpolatorFactories.length) {
-	        var eachInterpolationFactory = function (interpolatorFactory) {
-	          var interpolator = $injector.get(interpolatorFactory);
-	          // setting initial locale for each interpolation service
-	          interpolator.setLocale($preferredLanguage || $uses);
-	          // make'em recognizable through id
-	          interpolatorHashMap[interpolator.getInterpolationIdentifier()] = interpolator;
+	      if (!promiseToWaitFor) {
+	        // no promise to wait for? okay. Then there's no loader registered
+	        // nor is a one pending for language that comes from storage.
+	        // We can just translate.
+	        determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
+	      } else {
+	        var promiseResolved = function () {
+	          // $uses may have changed while waiting
+	          if (!forceLanguage) {
+	            uses = $uses;
+	          }
+	          determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses).then(deferred.resolve, deferred.reject);
 	        };
-	        eachInterpolationFactory.displayName = 'interpolationFactoryAdder';
+	        promiseResolved.displayName = 'promiseResolved';
 
-	        angular.forEach($interpolatorFactories, eachInterpolationFactory);
+	        promiseToWaitFor['finally'](promiseResolved);
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @name applyNotFoundIndicators
+	     * @private
+	     *
+	     * @description
+	     * Applies not fount indicators to given translation id, if needed.
+	     * This function gets only executed, if a translation id doesn't exist,
+	     * which is why a translation id is expected as argument.
+	     *
+	     * @param {string} translationId Translation id.
+	     * @returns {string} Same as given translation id but applied with not found
+	     * indicators.
+	     */
+	    var applyNotFoundIndicators = function (translationId) {
+	      // applying notFoundIndicators
+	      if ($notFoundIndicatorLeft) {
+	        translationId = [$notFoundIndicatorLeft, translationId].join(' ');
+	      }
+	      if ($notFoundIndicatorRight) {
+	        translationId = [translationId, $notFoundIndicatorRight].join(' ');
+	      }
+	      return translationId;
+	    };
+
+	    /**
+	     * @name useLanguage
+	     * @private
+	     *
+	     * @description
+	     * Makes actual use of a language by setting a given language key as used
+	     * language and informs registered interpolators to also use the given
+	     * key as locale.
+	     *
+	     * @param {string} key Locale key.
+	     */
+	    var useLanguage = function (key) {
+	      $uses = key;
+
+	      // make sure to store new language key before triggering success event
+	      if ($storageFactory) {
+	        Storage.put($translate.storageKey(), $uses);
 	      }
 
-	      /**
-	       * @name getTranslationTable
-	       * @private
-	       *
-	       * @description
-	       * Returns a promise that resolves to the translation table
-	       * or is rejected if an error occurred.
-	       *
-	       * @param langKey
-	       * @returns {Q.promise}
-	       */
-	      var getTranslationTable = function (langKey) {
-	        var deferred = $q.defer();
-	        if (Object.prototype.hasOwnProperty.call($translationTable, langKey)) {
-	          deferred.resolve($translationTable[langKey]);
-	        } else if (langPromises[langKey]) {
-	          var onResolve = function (data) {
-	            translations(data.key, data.table);
-	            deferred.resolve(data.table);
-	          };
-	          onResolve.displayName = 'translationTableResolver';
-	          langPromises[langKey].then(onResolve, deferred.reject);
+	      $rootScope.$emit('$translateChangeSuccess', {language : key});
+
+	      // inform default interpolator
+	      defaultInterpolator.setLocale($uses);
+
+	      var eachInterpolator = function (interpolator, id) {
+	        interpolatorHashMap[id].setLocale($uses);
+	      };
+	      eachInterpolator.displayName = 'eachInterpolatorLocaleSetter';
+
+	      // inform all others too!
+	      angular.forEach(interpolatorHashMap, eachInterpolator);
+	      $rootScope.$emit('$translateChangeEnd', {language : key});
+	    };
+
+	    /**
+	     * @name loadAsync
+	     * @private
+	     *
+	     * @description
+	     * Kicks of registered async loader using `$injector` and applies existing
+	     * loader options. When resolved, it updates translation tables accordingly
+	     * or rejects with given language key.
+	     *
+	     * @param {string} key Language key.
+	     * @return {Promise} A promise.
+	     */
+	    var loadAsync = function (key) {
+	      if (!key) {
+	        throw 'No language key specified for loading.';
+	      }
+
+	      var deferred = $q.defer();
+
+	      $rootScope.$emit('$translateLoadingStart', {language : key});
+	      pendingLoader = true;
+
+	      var cache = loaderCache;
+	      if (typeof(cache) === 'string') {
+	        // getting on-demand instance of loader
+	        cache = $injector.get(cache);
+	      }
+
+	      var loaderOptions = angular.extend({}, $loaderOptions, {
+	        key : key,
+	        $http : angular.extend({}, {
+	          cache : cache
+	        }, $loaderOptions.$http)
+	      });
+
+	      var onLoaderSuccess = function (data) {
+	        var translationTable = {};
+	        $rootScope.$emit('$translateLoadingSuccess', {language : key});
+
+	        if (angular.isArray(data)) {
+	          angular.forEach(data, function (table) {
+	            angular.extend(translationTable, flatObject(table));
+	          });
+	        } else {
+	          angular.extend(translationTable, flatObject(data));
+	        }
+	        pendingLoader = false;
+	        deferred.resolve({
+	          key : key,
+	          table : translationTable
+	        });
+	        $rootScope.$emit('$translateLoadingEnd', {language : key});
+	      };
+	      onLoaderSuccess.displayName = 'onLoaderSuccess';
+
+	      var onLoaderError = function (key) {
+	        $rootScope.$emit('$translateLoadingError', {language : key});
+	        deferred.reject(key);
+	        $rootScope.$emit('$translateLoadingEnd', {language : key});
+	      };
+	      onLoaderError.displayName = 'onLoaderError';
+
+	      $injector.get($loaderFactory)(loaderOptions)
+	        .then(onLoaderSuccess, onLoaderError);
+
+	      return deferred.promise;
+	    };
+
+	    if ($storageFactory) {
+	      Storage = $injector.get($storageFactory);
+
+	      if (!Storage.get || !Storage.put) {
+	        throw new Error('Couldn\'t use storage \'' + $storageFactory + '\', missing get() or put() method!');
+	      }
+	    }
+
+	    // if we have additional interpolations that were added via
+	    // $translateProvider.addInterpolation(), we have to map'em
+	    if ($interpolatorFactories.length) {
+	      var eachInterpolationFactory = function (interpolatorFactory) {
+	        var interpolator = $injector.get(interpolatorFactory);
+	        // setting initial locale for each interpolation service
+	        interpolator.setLocale($preferredLanguage || $uses);
+	        // make'em recognizable through id
+	        interpolatorHashMap[interpolator.getInterpolationIdentifier()] = interpolator;
+	      };
+	      eachInterpolationFactory.displayName = 'interpolationFactoryAdder';
+
+	      angular.forEach($interpolatorFactories, eachInterpolationFactory);
+	    }
+
+	    /**
+	     * @name getTranslationTable
+	     * @private
+	     *
+	     * @description
+	     * Returns a promise that resolves to the translation table
+	     * or is rejected if an error occurred.
+	     *
+	     * @param langKey
+	     * @returns {Q.promise}
+	     */
+	    var getTranslationTable = function (langKey) {
+	      var deferred = $q.defer();
+	      if (Object.prototype.hasOwnProperty.call($translationTable, langKey)) {
+	        deferred.resolve($translationTable[langKey]);
+	      } else if (langPromises[langKey]) {
+	        var onResolve = function (data) {
+	          translations(data.key, data.table);
+	          deferred.resolve(data.table);
+	        };
+	        onResolve.displayName = 'translationTableResolver';
+	        langPromises[langKey].then(onResolve, deferred.reject);
+	      } else {
+	        deferred.reject();
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @name getFallbackTranslation
+	     * @private
+	     *
+	     * @description
+	     * Returns a promise that will resolve to the translation
+	     * or be rejected if no translation was found for the language.
+	     * This function is currently only used for fallback language translation.
+	     *
+	     * @param langKey The language to translate to.
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise}
+	     */
+	    var getFallbackTranslation = function (langKey, translationId, interpolateParams, Interpolator) {
+	      var deferred = $q.defer();
+
+	      var onResolve = function (translationTable) {
+	        if (Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
+	          Interpolator.setLocale(langKey);
+	          var translation = translationTable[translationId];
+	          if (translation.substr(0, 2) === '@:') {
+	            getFallbackTranslation(langKey, translation.substr(2), interpolateParams, Interpolator)
+	              .then(deferred.resolve, deferred.reject);
+	          } else {
+	            var interpolatedValue = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'service');
+	            interpolatedValue = applyPostProcessing(translationId, translationTable[translationId], interpolatedValue, interpolateParams, langKey);
+
+	            deferred.resolve(interpolatedValue);
+
+	          }
+	          Interpolator.setLocale($uses);
 	        } else {
 	          deferred.reject();
 	        }
-	        return deferred.promise;
 	      };
+	      onResolve.displayName = 'fallbackTranslationResolver';
 
-	      /**
-	       * @name getFallbackTranslation
-	       * @private
-	       *
-	       * @description
-	       * Returns a promise that will resolve to the translation
-	       * or be rejected if no translation was found for the language.
-	       * This function is currently only used for fallback language translation.
-	       *
-	       * @param langKey The language to translate to.
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise}
-	       */
-	      var getFallbackTranslation = function (langKey, translationId, interpolateParams, Interpolator) {
-	        var deferred = $q.defer();
+	      getTranslationTable(langKey).then(onResolve, deferred.reject);
 
-	        var onResolve = function (translationTable) {
-	          if (Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
-	            Interpolator.setLocale(langKey);
-	            var translation = translationTable[translationId];
-	            if (translation.substr(0, 2) === '@:') {
-	              getFallbackTranslation(langKey, translation.substr(2), interpolateParams, Interpolator)
-	                .then(deferred.resolve, deferred.reject);
-	            } else {
-	              var interpolatedValue = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'service');
-	              interpolatedValue = applyPostProcessing(translationId, translationTable[translationId], interpolatedValue, interpolateParams, langKey);
+	      return deferred.promise;
+	    };
 
-	              deferred.resolve(interpolatedValue);
+	    /**
+	     * @name getFallbackTranslationInstant
+	     * @private
+	     *
+	     * @description
+	     * Returns a translation
+	     * This function is currently only used for fallback language translation.
+	     *
+	     * @param langKey The language to translate to.
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @param sanitizeStrategy sanitize strategy override
+	     *
+	     * @returns {string} translation
+	     */
+	    var getFallbackTranslationInstant = function (langKey, translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      var result, translationTable = $translationTable[langKey];
 
-	            }
-	            Interpolator.setLocale($uses);
+	      if (translationTable && Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
+	        Interpolator.setLocale(langKey);
+	        result = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'filter', sanitizeStrategy);
+	        result = applyPostProcessing(translationId, translationTable[translationId], result, interpolateParams, langKey, sanitizeStrategy);
+	        // workaround for TrustedValueHolderType
+	        if (!angular.isString(result) && angular.isFunction(result.$$unwrapTrustedValue)) {
+	          var result2 = result.$$unwrapTrustedValue();
+	          if (result2.substr(0, 2) === '@:') {
+	            return getFallbackTranslationInstant(langKey, result2.substr(2), interpolateParams, Interpolator, sanitizeStrategy);
+	          }
+	        } else if (result.substr(0, 2) === '@:') {
+	          return getFallbackTranslationInstant(langKey, result.substr(2), interpolateParams, Interpolator, sanitizeStrategy);
+	        }
+	        Interpolator.setLocale($uses);
+	      }
+
+	      return result;
+	    };
+
+
+	    /**
+	     * @name translateByHandler
+	     * @private
+	     *
+	     * Translate by missing translation handler.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param defaultTranslationText
+	     * @param sanitizeStrategy sanitize strategy override
+	     *
+	     * @returns translation created by $missingTranslationHandler or translationId is $missingTranslationHandler is
+	     * absent
+	     */
+	    var translateByHandler = function (translationId, interpolateParams, defaultTranslationText, sanitizeStrategy) {
+	      // If we have a handler factory - we might also call it here to determine if it provides
+	      // a default text for a translationid that can't be found anywhere in our tables
+	      if ($missingTranslationHandlerFactory) {
+	        return $injector.get($missingTranslationHandlerFactory)(translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy);
+	      } else {
+	        return translationId;
+	      }
+	    };
+
+	    /**
+	     * @name resolveForFallbackLanguage
+	     * @private
+	     *
+	     * Recursive helper function for fallbackTranslation that will sequentially look
+	     * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
+	     *
+	     * @param fallbackLanguageIndex
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise} Promise that will resolve to the translation.
+	     */
+	    var resolveForFallbackLanguage = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, defaultTranslationText) {
+	      var deferred = $q.defer();
+
+	      if (fallbackLanguageIndex < $fallbackLanguage.length) {
+	        var langKey = $fallbackLanguage[fallbackLanguageIndex];
+	        getFallbackTranslation(langKey, translationId, interpolateParams, Interpolator).then(
+	          function (data) {
+	            deferred.resolve(data);
+	          },
+	          function () {
+	            // Look in the next fallback language for a translation.
+	            // It delays the resolving by passing another promise to resolve.
+	            return resolveForFallbackLanguage(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator, defaultTranslationText).then(deferred.resolve, deferred.reject);
+	          }
+	        );
+	      } else {
+	        // No translation found in any fallback language
+	        // if a default translation text is set in the directive, then return this as a result
+	        if (defaultTranslationText) {
+	          deferred.resolve(defaultTranslationText);
+	        } else {
+	          var missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
+
+	          // if no default translation is set and an error handler is defined, send it to the handler
+	          // and then return the result if it isn't undefined
+	          if ($missingTranslationHandlerFactory && missingTranslationHandlerTranslation) {
+	            deferred.resolve(missingTranslationHandlerTranslation);
 	          } else {
-	            deferred.reject();
+	            deferred.reject(applyNotFoundIndicators(translationId));
 	          }
-	        };
-	        onResolve.displayName = 'fallbackTranslationResolver';
+	        }
+	      }
+	      return deferred.promise;
+	    };
 
-	        getTranslationTable(langKey).then(onResolve, deferred.reject);
+	    /**
+	     * @name resolveForFallbackLanguageInstant
+	     * @private
+	     *
+	     * Recursive helper function for fallbackTranslation that will sequentially look
+	     * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
+	     *
+	     * @param fallbackLanguageIndex
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @param sanitizeStrategy
+	     * @returns {string} translation
+	     */
+	    var resolveForFallbackLanguageInstant = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      var result;
 
-	        return deferred.promise;
-	      };
+	      if (fallbackLanguageIndex < $fallbackLanguage.length) {
+	        var langKey = $fallbackLanguage[fallbackLanguageIndex];
+	        result = getFallbackTranslationInstant(langKey, translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	        if (!result && result !== '') {
+	          result = resolveForFallbackLanguageInstant(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator);
+	        }
+	      }
+	      return result;
+	    };
 
-	      /**
-	       * @name getFallbackTranslationInstant
-	       * @private
-	       *
-	       * @description
-	       * Returns a translation
-	       * This function is currently only used for fallback language translation.
-	       *
-	       * @param langKey The language to translate to.
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {string} translation
-	       */
-	      var getFallbackTranslationInstant = function (langKey, translationId, interpolateParams, Interpolator) {
-	        var result, translationTable = $translationTable[langKey];
+	    /**
+	     * Translates with the usage of the fallback languages.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {Q.promise} Promise, that resolves to the translation.
+	     */
+	    var fallbackTranslation = function (translationId, interpolateParams, Interpolator, defaultTranslationText) {
+	      // Start with the fallbackLanguage with index 0
+	      return resolveForFallbackLanguage((startFallbackIteration > 0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, defaultTranslationText);
+	    };
 
-	        if (translationTable && Object.prototype.hasOwnProperty.call(translationTable, translationId)) {
-	          Interpolator.setLocale(langKey);
-	          result = Interpolator.interpolate(translationTable[translationId], interpolateParams, 'filter');
-	          result = applyPostProcessing(translationId, translationTable[translationId], result, interpolateParams, langKey);
-	          if (result.substr(0, 2) === '@:') {
-	            return getFallbackTranslationInstant(langKey, result.substr(2), interpolateParams, Interpolator);
-	          }
-	          Interpolator.setLocale($uses);
+	    /**
+	     * Translates with the usage of the fallback languages.
+	     *
+	     * @param translationId
+	     * @param interpolateParams
+	     * @param Interpolator
+	     * @returns {String} translation
+	     */
+	    var fallbackTranslationInstant = function (translationId, interpolateParams, Interpolator, sanitizeStrategy) {
+	      // Start with the fallbackLanguage with index 0
+	      return resolveForFallbackLanguageInstant((startFallbackIteration > 0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	    };
+
+	    var determineTranslation = function (translationId, interpolateParams, interpolationId, defaultTranslationText, uses) {
+
+	      var deferred = $q.defer();
+
+	      var table = uses ? $translationTable[uses] : $translationTable,
+	        Interpolator = (interpolationId) ? interpolatorHashMap[interpolationId] : defaultInterpolator;
+
+	      // if the translation id exists, we can just interpolate it
+	      if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
+	        var translation = table[translationId];
+
+	        // If using link, rerun $translate with linked translationId and return it
+	        if (translation.substr(0, 2) === '@:') {
+
+	          $translate(translation.substr(2), interpolateParams, interpolationId, defaultTranslationText, uses)
+	            .then(deferred.resolve, deferred.reject);
+	        } else {
+	          //
+	          var resolvedTranslation = Interpolator.interpolate(translation, interpolateParams, 'service');
+	          resolvedTranslation = applyPostProcessing(translationId, translation, resolvedTranslation, interpolateParams, uses);
+	          deferred.resolve(resolvedTranslation);
+	        }
+	      } else {
+	        var missingTranslationHandlerTranslation;
+	        // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
+	        if ($missingTranslationHandlerFactory && !pendingLoader) {
+	          missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
 	        }
 
-	        return result;
-	      };
-
-
-	      /**
-	       * @name translateByHandler
-	       * @private
-	       *
-	       * Translate by missing translation handler.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param defaultTranslationText
-	       * @returns translation created by $missingTranslationHandler or translationId is $missingTranslationHandler is
-	       * absent
-	       */
-	      var translateByHandler = function (translationId, interpolateParams, defaultTranslationText) {
-	        // If we have a handler factory - we might also call it here to determine if it provides
-	        // a default text for a translationid that can't be found anywhere in our tables
-	        if ($missingTranslationHandlerFactory) {
-	          var resultString = $injector.get($missingTranslationHandlerFactory)(translationId, $uses, interpolateParams, defaultTranslationText);
-	          if (resultString !== undefined) {
-	            return resultString;
-	          } else {
-	            return translationId;
-	          }
-	        } else {
-	          return translationId;
-	        }
-	      };
-
-	      /**
-	       * @name resolveForFallbackLanguage
-	       * @private
-	       *
-	       * Recursive helper function for fallbackTranslation that will sequentially look
-	       * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
-	       *
-	       * @param fallbackLanguageIndex
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise} Promise that will resolve to the translation.
-	       */
-	      var resolveForFallbackLanguage = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator, defaultTranslationText) {
-	        var deferred = $q.defer();
-
-	        if (fallbackLanguageIndex < $fallbackLanguage.length) {
-	          var langKey = $fallbackLanguage[fallbackLanguageIndex];
-	          getFallbackTranslation(langKey, translationId, interpolateParams, Interpolator).then(
-	            function (data) {
-	                deferred.resolve(data);
-	            },
-	            function () {
-	              // Look in the next fallback language for a translation.
-	              // It delays the resolving by passing another promise to resolve.
-	              return resolveForFallbackLanguage(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator, defaultTranslationText).then(deferred.resolve, deferred.reject);
-	            }
-	          );
-	        } else {
-	          // No translation found in any fallback language
-	          // if a default translation text is set in the directive, then return this as a result
+	        // since we couldn't translate the inital requested translation id,
+	        // we try it now with one or more fallback languages, if fallback language(s) is
+	        // configured.
+	        if (uses && $fallbackLanguage && $fallbackLanguage.length) {
+	          fallbackTranslation(translationId, interpolateParams, Interpolator, defaultTranslationText)
+	            .then(function (translation) {
+	              deferred.resolve(translation);
+	            }, function (_translationId) {
+	              deferred.reject(applyNotFoundIndicators(_translationId));
+	            });
+	        } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
 	          if (defaultTranslationText) {
 	            deferred.resolve(defaultTranslationText);
 	          } else {
-	            // if no default translation is set and an error handler is defined, send it to the handler
-	            // and then return the result
-	            if ($missingTranslationHandlerFactory) {
-	              deferred.resolve(translateByHandler(translationId, interpolateParams));
-	            } else {
-	              deferred.reject(translateByHandler(translationId, interpolateParams));
-	            }
-
-	          }
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @name resolveForFallbackLanguageInstant
-	       * @private
-	       *
-	       * Recursive helper function for fallbackTranslation that will sequentially look
-	       * for a translation in the fallbackLanguages starting with fallbackLanguageIndex.
-	       *
-	       * @param fallbackLanguageIndex
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {string} translation
-	       */
-	      var resolveForFallbackLanguageInstant = function (fallbackLanguageIndex, translationId, interpolateParams, Interpolator) {
-	        var result;
-
-	        if (fallbackLanguageIndex < $fallbackLanguage.length) {
-	          var langKey = $fallbackLanguage[fallbackLanguageIndex];
-	          result = getFallbackTranslationInstant(langKey, translationId, interpolateParams, Interpolator);
-	          if (!result) {
-	            result = resolveForFallbackLanguageInstant(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator);
-	          }
-	        }
-	        return result;
-	      };
-
-	      /**
-	       * Translates with the usage of the fallback languages.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {Q.promise} Promise, that resolves to the translation.
-	       */
-	      var fallbackTranslation = function (translationId, interpolateParams, Interpolator, defaultTranslationText) {
-	        // Start with the fallbackLanguage with index 0
-	        return resolveForFallbackLanguage((startFallbackIteration>0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator, defaultTranslationText);
-	      };
-
-	      /**
-	       * Translates with the usage of the fallback languages.
-	       *
-	       * @param translationId
-	       * @param interpolateParams
-	       * @param Interpolator
-	       * @returns {String} translation
-	       */
-	      var fallbackTranslationInstant = function (translationId, interpolateParams, Interpolator) {
-	        // Start with the fallbackLanguage with index 0
-	        return resolveForFallbackLanguageInstant((startFallbackIteration>0 ? startFallbackIteration : fallbackIndex), translationId, interpolateParams, Interpolator);
-	      };
-
-	      var determineTranslation = function (translationId, interpolateParams, interpolationId, defaultTranslationText, uses) {
-
-	        var deferred = $q.defer();
-
-	        var table = uses ? $translationTable[uses] : $translationTable,
-	            Interpolator = (interpolationId) ? interpolatorHashMap[interpolationId] : defaultInterpolator;
-
-	        // if the translation id exists, we can just interpolate it
-	        if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
-	          var translation = table[translationId];
-
-	          // If using link, rerun $translate with linked translationId and return it
-	          if (translation.substr(0, 2) === '@:') {
-
-	            $translate(translation.substr(2), interpolateParams, interpolationId, defaultTranslationText, uses)
-	              .then(deferred.resolve, deferred.reject);
-	          } else {
-	            //
-	            var resolvedTranslation = Interpolator.interpolate(translation, interpolateParams, 'service');
-	            resolvedTranslation = applyPostProcessing(translationId, translation, resolvedTranslation, interpolateParams, uses);
-	            deferred.resolve(resolvedTranslation);
+	            deferred.resolve(missingTranslationHandlerTranslation);
 	          }
 	        } else {
-	          var missingTranslationHandlerTranslation;
-	          // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
-	          if ($missingTranslationHandlerFactory && !pendingLoader) {
-	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, defaultTranslationText);
-	          }
-
-	          // since we couldn't translate the inital requested translation id,
-	          // we try it now with one or more fallback languages, if fallback language(s) is
-	          // configured.
-	          if (uses && $fallbackLanguage && $fallbackLanguage.length) {
-	            fallbackTranslation(translationId, interpolateParams, Interpolator, defaultTranslationText)
-	                .then(function (translation) {
-	                  deferred.resolve(translation);
-	                }, function (_translationId) {
-	                  deferred.reject(applyNotFoundIndicators(_translationId));
-	                });
-	          } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
-	            // looks like the requested translation id doesn't exists.
-	            // Now, if there is a registered handler for missing translations and no
-	            // asyncLoader is pending, we execute the handler
-	            if (defaultTranslationText) {
-	              deferred.resolve(defaultTranslationText);
-	              } else {
-	                deferred.resolve(missingTranslationHandlerTranslation);
-	              }
+	          if (defaultTranslationText) {
+	            deferred.resolve(defaultTranslationText);
 	          } else {
-	            if (defaultTranslationText) {
-	              deferred.resolve(defaultTranslationText);
-	            } else {
-	              deferred.reject(applyNotFoundIndicators(translationId));
-	            }
+	            deferred.reject(applyNotFoundIndicators(translationId));
 	          }
 	        }
-	        return deferred.promise;
-	      };
+	      }
+	      return deferred.promise;
+	    };
 
-	      var determineTranslationInstant = function (translationId, interpolateParams, interpolationId, uses) {
+	    var determineTranslationInstant = function (translationId, interpolateParams, interpolationId, uses, sanitizeStrategy) {
 
-	        var result, table = uses ? $translationTable[uses] : $translationTable,
-	            Interpolator = defaultInterpolator;
+	      var result, table = uses ? $translationTable[uses] : $translationTable,
+	        Interpolator = defaultInterpolator;
 
-	        // if the interpolation id exists use custom interpolator
-	        if (interpolatorHashMap && Object.prototype.hasOwnProperty.call(interpolatorHashMap, interpolationId)) {
-	          Interpolator = interpolatorHashMap[interpolationId];
-	        }
-
-	        // if the translation id exists, we can just interpolate it
-	        if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
-	          var translation = table[translationId];
-
-	          // If using link, rerun $translate with linked translationId and return it
-	          if (translation.substr(0, 2) === '@:') {
-	            result = determineTranslationInstant(translation.substr(2), interpolateParams, interpolationId, uses);
-	          } else {
-	            result = Interpolator.interpolate(translation, interpolateParams, 'filter');
-	            result = applyPostProcessing(translationId, translation, result, interpolateParams, uses);
-	          }
-	        } else {
-	          var missingTranslationHandlerTranslation;
-	          // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
-	          if ($missingTranslationHandlerFactory && !pendingLoader) {
-	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams);
-	          }
-
-	          // since we couldn't translate the inital requested translation id,
-	          // we try it now with one or more fallback languages, if fallback language(s) is
-	          // configured.
-	          if (uses && $fallbackLanguage && $fallbackLanguage.length) {
-	            fallbackIndex = 0;
-	            result = fallbackTranslationInstant(translationId, interpolateParams, Interpolator);
-	          } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
-	            // looks like the requested translation id doesn't exists.
-	            // Now, if there is a registered handler for missing translations and no
-	            // asyncLoader is pending, we execute the handler
-	            result = missingTranslationHandlerTranslation;
-	          } else {
-	            result = applyNotFoundIndicators(translationId);
-	          }
-	        }
-
-	        return result;
-	      };
-
-	      var clearNextLangAndPromise = function(key) {
-	        if ($nextLang === key) {
-	          $nextLang = undefined;
-	        }
-	        langPromises[key] = undefined;
-	      };
-
-	      var applyPostProcessing = function (translationId, translation, resolvedTranslation, interpolateParams, uses) {
-	        var fn = postProcessFn;
-
-	        if (fn) {
-
-	          if (typeof(fn) === 'string') {
-	            // getting on-demand instance
-	            fn = $injector.get(fn);
-	          }
-	          if (fn) {
-	            return fn(translationId, translation, resolvedTranslation, interpolateParams, uses);
-	          }
-	        }
-
-	        return resolvedTranslation;
-	      };
-
-	      var loadTranslationsIfMissing = function (key) {
-	        if (!$translationTable[key] && $loaderFactory && !langPromises[key]) {
-	          langPromises[key] = loadAsync(key).then(function (translation) {
-	            translations(translation.key, translation.table);
-	            return translation;
-	          });
-	        }
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#preferredLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key for the preferred language.
-	       *
-	       * @param {string} langKey language String or Array to be used as preferredLanguage (changing at runtime)
-	       *
-	       * @return {string} preferred language key
-	       */
-	      $translate.preferredLanguage = function (langKey) {
-	        if(langKey) {
-	          setupPreferredLanguage(langKey);
-	        }
-	        return $preferredLanguage;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#cloakClassName
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the configured class name for `translate-cloak` directive.
-	       *
-	       * @return {string} cloakClassName
-	       */
-	      $translate.cloakClassName = function () {
-	        return $cloakClassName;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#nestedObjectDelimeter
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the configured delimiter for nested namespaces.
-	       *
-	       * @return {string} nestedObjectDelimeter
-	       */
-	      $translate.nestedObjectDelimeter = function () {
-	        return $nestedObjectDelimeter;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#fallbackLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key for the fallback languages or sets a new fallback stack.
-	       *
-	       * @param {string=} langKey language String or Array of fallback languages to be used (to change stack at runtime)
-	       *
-	       * @return {string||array} fallback language key
-	       */
-	      $translate.fallbackLanguage = function (langKey) {
-	        if (langKey !== undefined && langKey !== null) {
-	          fallbackStack(langKey);
-
-	          // as we might have an async loader initiated and a new translation language might have been defined
-	          // we need to add the promise to the stack also. So - iterate.
-	          if ($loaderFactory) {
-	            if ($fallbackLanguage && $fallbackLanguage.length) {
-	              for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	                if (!langPromises[$fallbackLanguage[i]]) {
-	                  langPromises[$fallbackLanguage[i]] = loadAsync($fallbackLanguage[i]);
-	                }
-	              }
-	            }
-	          }
-	          $translate.use($translate.use());
-	        }
-	        if ($fallbackWasString) {
-	          return $fallbackLanguage[0];
-	        } else {
-	          return $fallbackLanguage;
-	        }
-
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#useFallbackLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Sets the first key of the fallback language stack to be used for translation.
-	       * Therefore all languages in the fallback array BEFORE this key will be skipped!
-	       *
-	       * @param {string=} langKey Contains the langKey the iteration shall start with. Set to false if you want to
-	       * get back to the whole stack
-	       */
-	      $translate.useFallbackLanguage = function (langKey) {
-	        if (langKey !== undefined && langKey !== null) {
-	          if (!langKey) {
-	            startFallbackIteration = 0;
-	          } else {
-	            var langKeyPosition = indexOf($fallbackLanguage, langKey);
-	            if (langKeyPosition > -1) {
-	              startFallbackIteration = langKeyPosition;
-	            }
-	          }
-
-	        }
-
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#proposedLanguage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the language key of language that is currently loaded asynchronously.
-	       *
-	       * @return {string} language key
-	       */
-	      $translate.proposedLanguage = function () {
-	        return $nextLang;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#storage
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns registered storage.
-	       *
-	       * @return {object} Storage
-	       */
-	      $translate.storage = function () {
-	        return Storage;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#negotiateLocale
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns a language key based on available languages and language aliases. If a
-	       * language key cannot be resolved, returns undefined.
-	       *
-	       * If no or a falsy key is given, returns undefined.
-	       *
-	       * @param {string} [key] Language key
-	       * @return {string|undefined} Language key or undefined if no language key is found.
-	       */
-	      $translate.negotiateLocale = negotiateLocale;
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#use
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Tells angular-translate which language to use by given language key. This method is
-	       * used to change language at runtime. It also takes care of storing the language
-	       * key in a configured store to let your app remember the choosed language.
-	       *
-	       * When trying to 'use' a language which isn't available it tries to load it
-	       * asynchronously with registered loaders.
-	       *
-	       * Returns promise object with loaded language file data or string of the currently used language.
-	       *
-	       * If no or a falsy key is given it returns the currently used language key.
-	       * The returned string will be ```undefined``` if setting up $translate hasn't finished.
-	       * @example
-	       * $translate.use("en_US").then(function(data){
-	       *   $scope.text = $translate("HELLO");
-	       * });
-	       *
-	       * @param {string} [key] Language key
-	       * @return {object|string} Promise with loaded language data or the language key if a falsy param was given.
-	       */
-	      $translate.use = function (key) {
-	        if (!key) {
-	          return $uses;
-	        }
-
-	        var deferred = $q.defer();
-
-	        $rootScope.$emit('$translateChangeStart', {language: key});
-
-	        // Try to get the aliased language key
-	        var aliasedKey = negotiateLocale(key);
-	        // Ensure only registered language keys will be loaded
-	        if ($availableLanguageKeys.length > 0 && !aliasedKey) {
-	          return $q.reject(key);
-	        }
-
-	        if (aliasedKey) {
-	          key = aliasedKey;
-	        }
-
-	        // if there isn't a translation table for the language we've requested,
-	        // we load it asynchronously
-	        $nextLang = key;
-	        if (($forceAsyncReloadEnabled || !$translationTable[key]) && $loaderFactory && !langPromises[key]) {
-	          langPromises[key] = loadAsync(key).then(function (translation) {
-	            translations(translation.key, translation.table);
-	            deferred.resolve(translation.key);
-	            if ($nextLang === key) {
-	              useLanguage(translation.key);
-	            }
-	            return translation;
-	          }, function (key) {
-	            $rootScope.$emit('$translateChangeError', {language: key});
-	            deferred.reject(key);
-	            $rootScope.$emit('$translateChangeEnd', {language: key});
-	            return $q.reject(key);
-	          });
-	          langPromises[key]['finally'](function () {
-	            clearNextLangAndPromise(key);
-	          });
-	        } else if (langPromises[key]) {
-	          // we are already loading this asynchronously
-	          // resolve our new deferred when the old langPromise is resolved
-	          langPromises[key].then(function (translation) {
-	            if ($nextLang === translation.key) {
-	              useLanguage(translation.key);
-	            }
-	            deferred.resolve(translation.key);
-	            return translation;
-	          }, function (key) {
-	            // find first available fallback language if that request has failed
-	            if (!$uses && $fallbackLanguage && $fallbackLanguage.length > 0 && $fallbackLanguage[0] !== key) {
-	              return $translate.use($fallbackLanguage[0]).then(deferred.resolve, deferred.reject);
-	            } else {
-	              return deferred.reject(key);
-	            }
-	          });
-	        } else {
-	          deferred.resolve(key);
-	          useLanguage(key);
-	        }
-
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#resolveClientLocale
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
-	       *
-	       * @returns {string} the current client/browser language key
-	       */
-	      $translate.resolveClientLocale = function () {
-	        return getLocale();
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#storageKey
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the key for the storage.
-	       *
-	       * @return {string} storage key
-	       */
-	      $translate.storageKey = function () {
-	        return storageKey();
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isPostCompilingEnabled
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether post compiling is enabled or not
-	       *
-	       * @return {bool} storage key
-	       */
-	      $translate.isPostCompilingEnabled = function () {
-	        return $postCompilingEnabled;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isForceAsyncReloadEnabled
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether force async reload is enabled or not
-	       *
-	       * @return {boolean} forceAsyncReload value
-	       */
-	      $translate.isForceAsyncReloadEnabled = function () {
-	        return $forceAsyncReloadEnabled;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isKeepContent
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether keepContent or not
-	       *
-	       * @return {boolean} keepContent value
-	       */
-	      $translate.isKeepContent = function () {
-	        return $keepContent;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#refresh
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Refreshes a translation table pointed by the given langKey. If langKey is not specified,
-	       * the module will drop all existent translation tables and load new version of those which
-	       * are currently in use.
-	       *
-	       * Refresh means that the module will drop target translation table and try to load it again.
-	       *
-	       * In case there are no loaders registered the refresh() method will throw an Error.
-	       *
-	       * If the module is able to refresh translation tables refresh() method will broadcast
-	       * $translateRefreshStart and $translateRefreshEnd events.
-	       *
-	       * @example
-	       * // this will drop all currently existent translation tables and reload those which are
-	       * // currently in use
-	       * $translate.refresh();
-	       * // this will refresh a translation table for the en_US language
-	       * $translate.refresh('en_US');
-	       *
-	       * @param {string} langKey A language key of the table, which has to be refreshed
-	       *
-	       * @return {promise} Promise, which will be resolved in case a translation tables refreshing
-	       * process is finished successfully, and reject if not.
-	       */
-	      $translate.refresh = function (langKey) {
-	        if (!$loaderFactory) {
-	          throw new Error('Couldn\'t refresh translation table, no loader registered!');
-	        }
-
-	        var deferred = $q.defer();
-
-	        function resolve() {
-	          deferred.resolve();
-	          $rootScope.$emit('$translateRefreshEnd', {language: langKey});
-	        }
-
-	        function reject() {
-	          deferred.reject();
-	          $rootScope.$emit('$translateRefreshEnd', {language: langKey});
-	        }
-
-	        $rootScope.$emit('$translateRefreshStart', {language: langKey});
-
-	        if (!langKey) {
-	          // if there's no language key specified we refresh ALL THE THINGS!
-	          var tables = [], loadingKeys = {};
-
-	          // reload registered fallback languages
-	          if ($fallbackLanguage && $fallbackLanguage.length) {
-	            for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	              tables.push(loadAsync($fallbackLanguage[i]));
-	              loadingKeys[$fallbackLanguage[i]] = true;
-	            }
-	          }
-
-	          // reload currently used language
-	          if ($uses && !loadingKeys[$uses]) {
-	            tables.push(loadAsync($uses));
-	          }
-
-	          var allTranslationsLoaded = function (tableData) {
-	            $translationTable = {};
-	            angular.forEach(tableData, function (data) {
-	              translations(data.key, data.table);
-	            });
-	            if ($uses) {
-	              useLanguage($uses);
-	            }
-	            resolve();
-	          };
-	          allTranslationsLoaded.displayName = 'refreshPostProcessor';
-
-	          $q.all(tables).then(allTranslationsLoaded, reject);
-
-	        } else if ($translationTable[langKey]) {
-
-	          var oneTranslationsLoaded = function (data) {
-	            translations(data.key, data.table);
-	            if (langKey === $uses) {
-	              useLanguage($uses);
-	            }
-	            resolve();
-	            return data;
-	          };
-	          oneTranslationsLoaded.displayName = 'refreshPostProcessor';
-
-	          loadAsync(langKey).then(oneTranslationsLoaded, reject);
-
-	        } else {
-	          reject();
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#instant
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns a translation instantly from the internal state of loaded translation. All rules
-	       * regarding the current language, the preferred language of even fallback languages will be
-	       * used except any promise handling. If a language was not found, an asynchronous loading
-	       * will be invoked in the background.
-	       *
-	       * @param {string|array} translationId A token which represents a translation id
-	       *                                     This can be optionally an array of translation ids which
-	       *                                     results that the function's promise returns an object where
-	       *                                     each key is the translation id and the value the translation.
-	       * @param {object} interpolateParams Params
-	       * @param {string} interpolationId The id of the interpolation to use
-	       * @param {string} forceLanguage A language to be used instead of the current language
-	       *
-	       * @return {string|object} translation
-	       */
-	      $translate.instant = function (translationId, interpolateParams, interpolationId, forceLanguage) {
-
-	        // we don't want to re-negotiate $uses
-	        var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
-	              (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
-
-	        // Detect undefined and null values to shorten the execution and prevent exceptions
-	        if (translationId === null || angular.isUndefined(translationId)) {
-	          return translationId;
-	        }
-
-	        // Check forceLanguage is present
-	        if (forceLanguage) {
-	          loadTranslationsIfMissing(forceLanguage);
-	        }
-
-	        // Duck detection: If the first argument is an array, a bunch of translations was requested.
-	        // The result is an object.
-	        if (angular.isArray(translationId)) {
-	          var results = {};
-	          for (var i = 0, c = translationId.length; i < c; i++) {
-	            results[translationId[i]] = $translate.instant(translationId[i], interpolateParams, interpolationId, forceLanguage);
-	          }
-	          return results;
-	        }
-
-	        // We discarded unacceptable values. So we just need to verify if translationId is empty String
-	        if (angular.isString(translationId) && translationId.length < 1) {
-	          return translationId;
-	        }
-
-	        // trim off any whitespace
-	        if (translationId) {
-	          translationId = trim.apply(translationId);
-	        }
-
-	        var result, possibleLangKeys = [];
-	        if ($preferredLanguage) {
-	          possibleLangKeys.push($preferredLanguage);
-	        }
-	        if (uses) {
-	          possibleLangKeys.push(uses);
-	        }
-	        if ($fallbackLanguage && $fallbackLanguage.length) {
-	          possibleLangKeys = possibleLangKeys.concat($fallbackLanguage);
-	        }
-	        for (var j = 0, d = possibleLangKeys.length; j < d; j++) {
-	          var possibleLangKey = possibleLangKeys[j];
-	          if ($translationTable[possibleLangKey]) {
-	            if (typeof $translationTable[possibleLangKey][translationId] !== 'undefined') {
-	              result = determineTranslationInstant(translationId, interpolateParams, interpolationId, uses);
-	            }
-	          }
-	          if (typeof result !== 'undefined') {
-	            break;
-	          }
-	        }
-
-	        if (!result && result !== '') {
-	          if ($notFoundIndicatorLeft || $notFoundIndicatorRight) {
-	            result = applyNotFoundIndicators(translationId);
-	          } else {
-	            // Return translation of default interpolator if not found anything.
-	            result = defaultInterpolator.interpolate(translationId, interpolateParams, 'filter');
-	            if ($missingTranslationHandlerFactory && !pendingLoader) {
-	              result = translateByHandler(translationId, interpolateParams);
-	            }
-	          }
-	        }
-
-	        return result;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#versionInfo
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the current version information for the angular-translate library
-	       *
-	       * @return {string} angular-translate version
-	       */
-	      $translate.versionInfo = function () {
-	        return version;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#loaderCache
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns the defined loaderCache.
-	       *
-	       * @return {boolean|string|object} current value of loaderCache
-	       */
-	      $translate.loaderCache = function () {
-	        return loaderCache;
-	      };
-
-	      // internal purpose only
-	      $translate.directivePriority = function () {
-	        return directivePriority;
-	      };
-
-	      // internal purpose only
-	      $translate.statefulFilter = function () {
-	        return statefulFilter;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#isReady
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether the service is "ready" to translate (i.e. loading 1st language).
-	       *
-	       * See also {@link pascalprecht.translate.$translate#methods_onReady onReady()}.
-	       *
-	       * @return {boolean} current value of ready
-	       */
-	      $translate.isReady = function () {
-	        return $isReady;
-	      };
-
-	      var $onReadyDeferred = $q.defer();
-	      $onReadyDeferred.promise.then(function () {
-	        $isReady = true;
-	      });
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#onReady
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * Returns whether the service is "ready" to translate (i.e. loading 1st language).
-	       *
-	       * See also {@link pascalprecht.translate.$translate#methods_isReady isReady()}.
-	       *
-	       * @param {Function=} fn Function to invoke when service is ready
-	       * @return {object} Promise resolved when service is ready
-	       */
-	      $translate.onReady = function (fn) {
-	        var deferred = $q.defer();
-	        if (angular.isFunction(fn)) {
-	          deferred.promise.then(fn);
-	        }
-	        if ($isReady) {
-	          deferred.resolve();
-	        } else {
-	          $onReadyDeferred.promise.then(deferred.resolve);
-	        }
-	        return deferred.promise;
-	      };
-
-	      /**
-	       * @ngdoc function
-	       * @name pascalprecht.translate.$translate#getAvailableLanguageKeys
-	       * @methodOf pascalprecht.translate.$translate
-	       *
-	       * @description
-	       * This function simply returns the registered language keys being defined before in the config phase
-	       * With this, an application can use the array to provide a language selection dropdown or similar
-	       * without any additional effort
-	       *
-	       * @returns {object} returns the list of possibly registered language keys and mapping or null if not defined
-	       */
-	      $translate.getAvailableLanguageKeys = function () {
-	        if ($availableLanguageKeys.length > 0) {
-	          return $availableLanguageKeys;
-	        }
-	        return null;
-	      };
-
-	      // Whenever $translateReady is being fired, this will ensure the state of $isReady
-	      var globalOnReadyListener = $rootScope.$on('$translateReady', function () {
-	        $onReadyDeferred.resolve();
-	        globalOnReadyListener(); // one time only
-	        globalOnReadyListener = null;
-	      });
-	      var globalOnChangeListener = $rootScope.$on('$translateChangeEnd', function () {
-	        $onReadyDeferred.resolve();
-	        globalOnChangeListener(); // one time only
-	        globalOnChangeListener = null;
-	      });
-
-	      if ($loaderFactory) {
-
-	        // If at least one async loader is defined and there are no
-	        // (default) translations available we should try to load them.
-	        if (angular.equals($translationTable, {})) {
-	          if ($translate.use()) {
-	            $translate.use($translate.use());
-	          }
-	        }
-
-	        // Also, if there are any fallback language registered, we start
-	        // loading them asynchronously as soon as we can.
-	        if ($fallbackLanguage && $fallbackLanguage.length) {
-	          var processAsyncResult = function (translation) {
-	            translations(translation.key, translation.table);
-	            $rootScope.$emit('$translateChangeEnd', { language: translation.key });
-	            return translation;
-	          };
-	          for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
-	            var fallbackLanguageId = $fallbackLanguage[i];
-	            if ($forceAsyncReloadEnabled || !$translationTable[fallbackLanguageId]) {
-	              langPromises[fallbackLanguageId] = loadAsync(fallbackLanguageId).then(processAsyncResult);
-	            }
-	          }
-	        }
-	      } else {
-	        $rootScope.$emit('$translateReady', { language: $translate.use() });
+	      // if the interpolation id exists use custom interpolator
+	      if (interpolatorHashMap && Object.prototype.hasOwnProperty.call(interpolatorHashMap, interpolationId)) {
+	        Interpolator = interpolatorHashMap[interpolationId];
 	      }
 
-	      return $translate;
+	      // if the translation id exists, we can just interpolate it
+	      if (table && Object.prototype.hasOwnProperty.call(table, translationId)) {
+	        var translation = table[translationId];
+
+	        // If using link, rerun $translate with linked translationId and return it
+	        if (translation.substr(0, 2) === '@:') {
+	          result = determineTranslationInstant(translation.substr(2), interpolateParams, interpolationId, uses, sanitizeStrategy);
+	        } else {
+	          result = Interpolator.interpolate(translation, interpolateParams, 'filter', sanitizeStrategy);
+	          result = applyPostProcessing(translationId, translation, result, interpolateParams, uses, sanitizeStrategy);
+	        }
+	      } else {
+	        var missingTranslationHandlerTranslation;
+	        // for logging purposes only (as in $translateMissingTranslationHandlerLog), value is not returned to promise
+	        if ($missingTranslationHandlerFactory && !pendingLoader) {
+	          missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, sanitizeStrategy);
+	        }
+
+	        // since we couldn't translate the inital requested translation id,
+	        // we try it now with one or more fallback languages, if fallback language(s) is
+	        // configured.
+	        if (uses && $fallbackLanguage && $fallbackLanguage.length) {
+	          fallbackIndex = 0;
+	          result = fallbackTranslationInstant(translationId, interpolateParams, Interpolator, sanitizeStrategy);
+	        } else if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
+	          result = missingTranslationHandlerTranslation;
+	        } else {
+	          result = applyNotFoundIndicators(translationId);
+	        }
+	      }
+
+	      return result;
+	    };
+
+	    var clearNextLangAndPromise = function (key) {
+	      if ($nextLang === key) {
+	        $nextLang = undefined;
+	      }
+	      langPromises[key] = undefined;
+	    };
+
+	    var applyPostProcessing = function (translationId, translation, resolvedTranslation, interpolateParams, uses, sanitizeStrategy) {
+	      var fn = postProcessFn;
+
+	      if (fn) {
+
+	        if (typeof(fn) === 'string') {
+	          // getting on-demand instance
+	          fn = $injector.get(fn);
+	        }
+	        if (fn) {
+	          return fn(translationId, translation, resolvedTranslation, interpolateParams, uses, sanitizeStrategy);
+	        }
+	      }
+
+	      return resolvedTranslation;
+	    };
+
+	    var loadTranslationsIfMissing = function (key) {
+	      if (!$translationTable[key] && $loaderFactory && !langPromises[key]) {
+	        langPromises[key] = loadAsync(key).then(function (translation) {
+	          translations(translation.key, translation.table);
+	          return translation;
+	        });
+	      }
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#preferredLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key for the preferred language.
+	     *
+	     * @param {string} langKey language String or Array to be used as preferredLanguage (changing at runtime)
+	     *
+	     * @return {string} preferred language key
+	     */
+	    $translate.preferredLanguage = function (langKey) {
+	      if (langKey) {
+	        setupPreferredLanguage(langKey);
+	      }
+	      return $preferredLanguage;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#cloakClassName
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the configured class name for `translate-cloak` directive.
+	     *
+	     * @return {string} cloakClassName
+	     */
+	    $translate.cloakClassName = function () {
+	      return $cloakClassName;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#nestedObjectDelimeter
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the configured delimiter for nested namespaces.
+	     *
+	     * @return {string} nestedObjectDelimeter
+	     */
+	    $translate.nestedObjectDelimeter = function () {
+	      return $nestedObjectDelimeter;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#fallbackLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key for the fallback languages or sets a new fallback stack.
+	     *
+	     * @param {string=} langKey language String or Array of fallback languages to be used (to change stack at runtime)
+	     *
+	     * @return {string||array} fallback language key
+	     */
+	    $translate.fallbackLanguage = function (langKey) {
+	      if (langKey !== undefined && langKey !== null) {
+	        fallbackStack(langKey);
+
+	        // as we might have an async loader initiated and a new translation language might have been defined
+	        // we need to add the promise to the stack also. So - iterate.
+	        if ($loaderFactory) {
+	          if ($fallbackLanguage && $fallbackLanguage.length) {
+	            for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	              if (!langPromises[$fallbackLanguage[i]]) {
+	                langPromises[$fallbackLanguage[i]] = loadAsync($fallbackLanguage[i]);
+	              }
+	            }
+	          }
+	        }
+	        $translate.use($translate.use());
+	      }
+	      if ($fallbackWasString) {
+	        return $fallbackLanguage[0];
+	      } else {
+	        return $fallbackLanguage;
+	      }
+
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#useFallbackLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Sets the first key of the fallback language stack to be used for translation.
+	     * Therefore all languages in the fallback array BEFORE this key will be skipped!
+	     *
+	     * @param {string=} langKey Contains the langKey the iteration shall start with. Set to false if you want to
+	     * get back to the whole stack
+	     */
+	    $translate.useFallbackLanguage = function (langKey) {
+	      if (langKey !== undefined && langKey !== null) {
+	        if (!langKey) {
+	          startFallbackIteration = 0;
+	        } else {
+	          var langKeyPosition = indexOf($fallbackLanguage, langKey);
+	          if (langKeyPosition > -1) {
+	            startFallbackIteration = langKeyPosition;
+	          }
+	        }
+
+	      }
+
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#proposedLanguage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the language key of language that is currently loaded asynchronously.
+	     *
+	     * @return {string} language key
+	     */
+	    $translate.proposedLanguage = function () {
+	      return $nextLang;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#storage
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns registered storage.
+	     *
+	     * @return {object} Storage
+	     */
+	    $translate.storage = function () {
+	      return Storage;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#negotiateLocale
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns a language key based on available languages and language aliases. If a
+	     * language key cannot be resolved, returns undefined.
+	     *
+	     * If no or a falsy key is given, returns undefined.
+	     *
+	     * @param {string} [key] Language key
+	     * @return {string|undefined} Language key or undefined if no language key is found.
+	     */
+	    $translate.negotiateLocale = negotiateLocale;
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#use
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Tells angular-translate which language to use by given language key. This method is
+	     * used to change language at runtime. It also takes care of storing the language
+	     * key in a configured store to let your app remember the choosed language.
+	     *
+	     * When trying to 'use' a language which isn't available it tries to load it
+	     * asynchronously with registered loaders.
+	     *
+	     * Returns promise object with loaded language file data or string of the currently used language.
+	     *
+	     * If no or a falsy key is given it returns the currently used language key.
+	     * The returned string will be ```undefined``` if setting up $translate hasn't finished.
+	     * @example
+	     * $translate.use("en_US").then(function(data){
+	       *   $scope.text = $translate("HELLO");
+	       * });
+	     *
+	     * @param {string} [key] Language key
+	     * @return {object|string} Promise with loaded language data or the language key if a falsy param was given.
+	     */
+	    $translate.use = function (key) {
+	      if (!key) {
+	        return $uses;
+	      }
+
+	      var deferred = $q.defer();
+
+	      $rootScope.$emit('$translateChangeStart', {language : key});
+
+	      // Try to get the aliased language key
+	      var aliasedKey = negotiateLocale(key);
+	      // Ensure only registered language keys will be loaded
+	      if ($availableLanguageKeys.length > 0 && !aliasedKey) {
+	        return $q.reject(key);
+	      }
+
+	      if (aliasedKey) {
+	        key = aliasedKey;
+	      }
+
+	      // if there isn't a translation table for the language we've requested,
+	      // we load it asynchronously
+	      $nextLang = key;
+	      if (($forceAsyncReloadEnabled || !$translationTable[key]) && $loaderFactory && !langPromises[key]) {
+	        langPromises[key] = loadAsync(key).then(function (translation) {
+	          translations(translation.key, translation.table);
+	          deferred.resolve(translation.key);
+	          if ($nextLang === key) {
+	            useLanguage(translation.key);
+	          }
+	          return translation;
+	        }, function (key) {
+	          $rootScope.$emit('$translateChangeError', {language : key});
+	          deferred.reject(key);
+	          $rootScope.$emit('$translateChangeEnd', {language : key});
+	          return $q.reject(key);
+	        });
+	        langPromises[key]['finally'](function () {
+	          clearNextLangAndPromise(key);
+	        });
+	      } else if (langPromises[key]) {
+	        // we are already loading this asynchronously
+	        // resolve our new deferred when the old langPromise is resolved
+	        langPromises[key].then(function (translation) {
+	          if ($nextLang === translation.key) {
+	            useLanguage(translation.key);
+	          }
+	          deferred.resolve(translation.key);
+	          return translation;
+	        }, function (key) {
+	          // find first available fallback language if that request has failed
+	          if (!$uses && $fallbackLanguage && $fallbackLanguage.length > 0 && $fallbackLanguage[0] !== key) {
+	            return $translate.use($fallbackLanguage[0]).then(deferred.resolve, deferred.reject);
+	          } else {
+	            return deferred.reject(key);
+	          }
+	        });
+	      } else {
+	        deferred.resolve(key);
+	        useLanguage(key);
+	      }
+
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#resolveClientLocale
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
+	     *
+	     * @returns {string} the current client/browser language key
+	     */
+	    $translate.resolveClientLocale = function () {
+	      return getLocale();
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#storageKey
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the key for the storage.
+	     *
+	     * @return {string} storage key
+	     */
+	    $translate.storageKey = function () {
+	      return storageKey();
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isPostCompilingEnabled
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether post compiling is enabled or not
+	     *
+	     * @return {bool} storage key
+	     */
+	    $translate.isPostCompilingEnabled = function () {
+	      return $postCompilingEnabled;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isForceAsyncReloadEnabled
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether force async reload is enabled or not
+	     *
+	     * @return {boolean} forceAsyncReload value
+	     */
+	    $translate.isForceAsyncReloadEnabled = function () {
+	      return $forceAsyncReloadEnabled;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isKeepContent
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether keepContent or not
+	     *
+	     * @return {boolean} keepContent value
+	     */
+	    $translate.isKeepContent = function () {
+	      return $keepContent;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#refresh
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Refreshes a translation table pointed by the given langKey. If langKey is not specified,
+	     * the module will drop all existent translation tables and load new version of those which
+	     * are currently in use.
+	     *
+	     * Refresh means that the module will drop target translation table and try to load it again.
+	     *
+	     * In case there are no loaders registered the refresh() method will throw an Error.
+	     *
+	     * If the module is able to refresh translation tables refresh() method will broadcast
+	     * $translateRefreshStart and $translateRefreshEnd events.
+	     *
+	     * @example
+	     * // this will drop all currently existent translation tables and reload those which are
+	     * // currently in use
+	     * $translate.refresh();
+	     * // this will refresh a translation table for the en_US language
+	     * $translate.refresh('en_US');
+	     *
+	     * @param {string} langKey A language key of the table, which has to be refreshed
+	     *
+	     * @return {promise} Promise, which will be resolved in case a translation tables refreshing
+	     * process is finished successfully, and reject if not.
+	     */
+	    $translate.refresh = function (langKey) {
+	      if (!$loaderFactory) {
+	        throw new Error('Couldn\'t refresh translation table, no loader registered!');
+	      }
+
+	      var deferred = $q.defer();
+
+	      function resolve() {
+	        deferred.resolve();
+	        $rootScope.$emit('$translateRefreshEnd', {language : langKey});
+	      }
+
+	      function reject() {
+	        deferred.reject();
+	        $rootScope.$emit('$translateRefreshEnd', {language : langKey});
+	      }
+
+	      $rootScope.$emit('$translateRefreshStart', {language : langKey});
+
+	      if (!langKey) {
+	        // if there's no language key specified we refresh ALL THE THINGS!
+	        var tables = [], loadingKeys = {};
+
+	        // reload registered fallback languages
+	        if ($fallbackLanguage && $fallbackLanguage.length) {
+	          for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	            tables.push(loadAsync($fallbackLanguage[i]));
+	            loadingKeys[$fallbackLanguage[i]] = true;
+	          }
+	        }
+
+	        // reload currently used language
+	        if ($uses && !loadingKeys[$uses]) {
+	          tables.push(loadAsync($uses));
+	        }
+
+	        var allTranslationsLoaded = function (tableData) {
+	          $translationTable = {};
+	          angular.forEach(tableData, function (data) {
+	            translations(data.key, data.table);
+	          });
+	          if ($uses) {
+	            useLanguage($uses);
+	          }
+	          resolve();
+	        };
+	        allTranslationsLoaded.displayName = 'refreshPostProcessor';
+
+	        $q.all(tables).then(allTranslationsLoaded, reject);
+
+	      } else if ($translationTable[langKey]) {
+
+	        var oneTranslationsLoaded = function (data) {
+	          translations(data.key, data.table);
+	          if (langKey === $uses) {
+	            useLanguage($uses);
+	          }
+	          resolve();
+	          return data;
+	        };
+	        oneTranslationsLoaded.displayName = 'refreshPostProcessor';
+
+	        loadAsync(langKey).then(oneTranslationsLoaded, reject);
+
+	      } else {
+	        reject();
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#instant
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns a translation instantly from the internal state of loaded translation. All rules
+	     * regarding the current language, the preferred language of even fallback languages will be
+	     * used except any promise handling. If a language was not found, an asynchronous loading
+	     * will be invoked in the background.
+	     *
+	     * @param {string|array} translationId A token which represents a translation id
+	     *                                     This can be optionally an array of translation ids which
+	     *                                     results that the function's promise returns an object where
+	     *                                     each key is the translation id and the value the translation.
+	     * @param {object} interpolateParams Params
+	     * @param {string} interpolationId The id of the interpolation to use
+	     * @param {string} forceLanguage A language to be used instead of the current language
+	     * @param {string} sanitizeStrategy force sanitize strategy for this call instead of using the configured one
+	     *
+	     * @return {string|object} translation
+	     */
+	    $translate.instant = function (translationId, interpolateParams, interpolationId, forceLanguage, sanitizeStrategy) {
+
+	      // we don't want to re-negotiate $uses
+	      var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
+	        (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
+
+	      // Detect undefined and null values to shorten the execution and prevent exceptions
+	      if (translationId === null || angular.isUndefined(translationId)) {
+	        return translationId;
+	      }
+
+	      // Check forceLanguage is present
+	      if (forceLanguage) {
+	        loadTranslationsIfMissing(forceLanguage);
+	      }
+
+	      // Duck detection: If the first argument is an array, a bunch of translations was requested.
+	      // The result is an object.
+	      if (angular.isArray(translationId)) {
+	        var results = {};
+	        for (var i = 0, c = translationId.length; i < c; i++) {
+	          results[translationId[i]] = $translate.instant(translationId[i], interpolateParams, interpolationId, forceLanguage, sanitizeStrategy);
+	        }
+	        return results;
+	      }
+
+	      // We discarded unacceptable values. So we just need to verify if translationId is empty String
+	      if (angular.isString(translationId) && translationId.length < 1) {
+	        return translationId;
+	      }
+
+	      // trim off any whitespace
+	      if (translationId) {
+	        translationId = trim.apply(translationId);
+	      }
+
+	      var result, possibleLangKeys = [];
+	      if ($preferredLanguage) {
+	        possibleLangKeys.push($preferredLanguage);
+	      }
+	      if (uses) {
+	        possibleLangKeys.push(uses);
+	      }
+	      if ($fallbackLanguage && $fallbackLanguage.length) {
+	        possibleLangKeys = possibleLangKeys.concat($fallbackLanguage);
+	      }
+	      for (var j = 0, d = possibleLangKeys.length; j < d; j++) {
+	        var possibleLangKey = possibleLangKeys[j];
+	        if ($translationTable[possibleLangKey]) {
+	          if (typeof $translationTable[possibleLangKey][translationId] !== 'undefined') {
+	            result = determineTranslationInstant(translationId, interpolateParams, interpolationId, uses, sanitizeStrategy);
+	          }
+	        }
+	        if (typeof result !== 'undefined') {
+	          break;
+	        }
+	      }
+
+	      if (!result && result !== '') {
+	        if ($notFoundIndicatorLeft || $notFoundIndicatorRight) {
+	          result = applyNotFoundIndicators(translationId);
+	        } else {
+	          // Return translation of default interpolator if not found anything.
+	          result = defaultInterpolator.interpolate(translationId, interpolateParams, 'filter', sanitizeStrategy);
+
+	          // looks like the requested translation id doesn't exists.
+	          // Now, if there is a registered handler for missing translations and no
+	          // asyncLoader is pending, we execute the handler
+	          var missingTranslationHandlerTranslation;
+	          if ($missingTranslationHandlerFactory && !pendingLoader) {
+	            missingTranslationHandlerTranslation = translateByHandler(translationId, interpolateParams, sanitizeStrategy);
+	          }
+
+	          if ($missingTranslationHandlerFactory && !pendingLoader && missingTranslationHandlerTranslation) {
+	            result = missingTranslationHandlerTranslation;
+	          }
+	        }
+	      }
+
+	      return result;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#versionInfo
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the current version information for the angular-translate library
+	     *
+	     * @return {string} angular-translate version
+	     */
+	    $translate.versionInfo = function () {
+	      return version;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#loaderCache
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns the defined loaderCache.
+	     *
+	     * @return {boolean|string|object} current value of loaderCache
+	     */
+	    $translate.loaderCache = function () {
+	      return loaderCache;
+	    };
+
+	    // internal purpose only
+	    $translate.directivePriority = function () {
+	      return directivePriority;
+	    };
+
+	    // internal purpose only
+	    $translate.statefulFilter = function () {
+	      return statefulFilter;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#isReady
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether the service is "ready" to translate (i.e. loading 1st language).
+	     *
+	     * See also {@link pascalprecht.translate.$translate#methods_onReady onReady()}.
+	     *
+	     * @return {boolean} current value of ready
+	     */
+	    $translate.isReady = function () {
+	      return $isReady;
+	    };
+
+	    var $onReadyDeferred = $q.defer();
+	    $onReadyDeferred.promise.then(function () {
+	      $isReady = true;
+	    });
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#onReady
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns whether the service is "ready" to translate (i.e. loading 1st language).
+	     *
+	     * See also {@link pascalprecht.translate.$translate#methods_isReady isReady()}.
+	     *
+	     * @param {Function=} fn Function to invoke when service is ready
+	     * @return {object} Promise resolved when service is ready
+	     */
+	    $translate.onReady = function (fn) {
+	      var deferred = $q.defer();
+	      if (angular.isFunction(fn)) {
+	        deferred.promise.then(fn);
+	      }
+	      if ($isReady) {
+	        deferred.resolve();
+	      } else {
+	        $onReadyDeferred.promise.then(deferred.resolve);
+	      }
+	      return deferred.promise;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#getAvailableLanguageKeys
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * This function simply returns the registered language keys being defined before in the config phase
+	     * With this, an application can use the array to provide a language selection dropdown or similar
+	     * without any additional effort
+	     *
+	     * @returns {object} returns the list of possibly registered language keys and mapping or null if not defined
+	     */
+	    $translate.getAvailableLanguageKeys = function () {
+	      if ($availableLanguageKeys.length > 0) {
+	        return $availableLanguageKeys;
+	      }
+	      return null;
+	    };
+
+	    /**
+	     * @ngdoc function
+	     * @name pascalprecht.translate.$translate#getTranslationTable
+	     * @methodOf pascalprecht.translate.$translate
+	     *
+	     * @description
+	     * Returns translation table by the given language key.
+	     *
+	     * Unless a language is provided it returns a translation table of the current one.
+	     * Note: If translation dictionary is currently downloading or in progress
+	     * it will return null.
+	     *
+	     * @param {string} langKey A token which represents a translation id
+	     *
+	     * @return {object} a copy of angular-translate $translationTable
+	     */
+	    $translate.getTranslationTable = function (langKey) {
+	      langKey = langKey || $translate.use();
+	      if (langKey && $translationTable[langKey]) {
+	        return angular.copy($translationTable[langKey]);
+	      }
+	      return null;
+	    };
+
+	    // Whenever $translateReady is being fired, this will ensure the state of $isReady
+	    var globalOnReadyListener = $rootScope.$on('$translateReady', function () {
+	      $onReadyDeferred.resolve();
+	      globalOnReadyListener(); // one time only
+	      globalOnReadyListener = null;
+	    });
+	    var globalOnChangeListener = $rootScope.$on('$translateChangeEnd', function () {
+	      $onReadyDeferred.resolve();
+	      globalOnChangeListener(); // one time only
+	      globalOnChangeListener = null;
+	    });
+
+	    if ($loaderFactory) {
+
+	      // If at least one async loader is defined and there are no
+	      // (default) translations available we should try to load them.
+	      if (angular.equals($translationTable, {})) {
+	        if ($translate.use()) {
+	          $translate.use($translate.use());
+	        }
+	      }
+
+	      // Also, if there are any fallback language registered, we start
+	      // loading them asynchronously as soon as we can.
+	      if ($fallbackLanguage && $fallbackLanguage.length) {
+	        var processAsyncResult = function (translation) {
+	          translations(translation.key, translation.table);
+	          $rootScope.$emit('$translateChangeEnd', {language : translation.key});
+	          return translation;
+	        };
+	        for (var i = 0, len = $fallbackLanguage.length; i < len; i++) {
+	          var fallbackLanguageId = $fallbackLanguage[i];
+	          if ($forceAsyncReloadEnabled || !$translationTable[fallbackLanguageId]) {
+	            langPromises[fallbackLanguageId] = loadAsync(fallbackLanguageId).then(processAsyncResult);
+	          }
+	        }
+	      }
+	    } else {
+	      $rootScope.$emit('$translateReady', {language : $translate.use()});
 	    }
-	  ];
+
+	    return $translate;
+	  }];
 	}
 
 	$translate.displayName = 'displayName';
@@ -60754,9 +60789,9 @@
 	   *
 	   * @returns {string} interpolated string.
 	   */
-	  $translateInterpolator.interpolate = function (value, interpolationParams, context) {
+	  $translateInterpolator.interpolate = function (value, interpolationParams, context, sanitizeStrategy) {
 	    interpolationParams = interpolationParams || {};
-	    interpolationParams = $translateSanitization.sanitize(interpolationParams, 'params', undefined, context);
+	    interpolationParams = $translateSanitization.sanitize(interpolationParams, 'params', sanitizeStrategy, context);
 
 	    var interpolatedText;
 	    if (angular.isNumber(value)) {
@@ -60765,7 +60800,7 @@
 	    } else if (angular.isString(value)) {
 	      // strings must be interpolated (that's the job here)
 	      interpolatedText = $interpolate(value)(interpolationParams);
-	      interpolatedText = $translateSanitization.sanitize(interpolatedText, 'text', undefined, context);
+	      interpolatedText = $translateSanitization.sanitize(interpolatedText, 'text', sanitizeStrategy, context);
 	    } else {
 	      // neither a number or a string, cant interpolate => empty string
 	      interpolatedText = '';
@@ -62545,7 +62580,7 @@
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "f721466883998665b87923b92dea655b.svg";
+	module.exports = __webpack_require__.p + "89889688147bd7575d6327160d64e760.svg";
 
 /***/ },
 /* 36 */
@@ -62912,7 +62947,7 @@
 /* 43 */
 /***/ function(module, exports) {
 
-	module.exports = "<i class=\"r-icon r-icon-world\"></i>\r\n<select class=\"\" ng-model=\"ctrl.$i18n.currentLanguageCulture\" ng-change=\"ctrl.$i18n.changeResource()\">\r\n    <option value=\"en-us\">{{'usermenu_option_english' | translate}}</option>\r\n    <option value=\"es-co\">{{'usermenu_option_spanish' | translate}}</option>\r\n</select>\r\n";
+	module.exports = "<i class=\"r-icon r-icon-world\"></i>\n<select class=\"\" ng-model=\"ctrl.$i18n.currentLanguageCulture\" ng-change=\"ctrl.$i18n.changeResource()\">\n    <option value=\"en-us\">{{'usermenu_option_english' | translate}}</option>\n    <option value=\"es-co\">{{'usermenu_option_spanish' | translate}}</option>\n</select>\n";
 
 /***/ },
 /* 44 */
@@ -63735,7 +63770,7 @@
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <a href=\"#/\">\r\n                <h3 class=\"brand-section\">Freeven</h3>\r\n            </a>\r\n            <search class=\"fr-search\" title=\"Search\"></search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\r\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna restricción.</h3>\r\n        <h3>Descárgalos, escúchalos y úsalos en lo que tú quieras</h3>\r\n    </div>\r\n    <div class=\"wrap\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"sidebar\">\r\n            <h3 class=\"app-title\">Freeven</h3>\r\n            <user-panel title=\"UserPanel\"></user-panel>\r\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n        </div>\r\n        <div class=\"content-section\">\r\n            <div class=\"row-col\">\r\n                <div class=\"col-lg-12 b-r no-border-md\">\r\n                    <div ng-view=\"\"></div>\r\n                </div>\r\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                     <r-i18n></r-i18n>\r\n                 </div>-->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"main\">\n    <div class=\"header\">\n        <div class=\"header-section\">\n            <a href=\"#/\">\n                <h3 class=\"brand-section\">Freeven</h3>\n            </a>\n            <search class=\"fr-search\" title=\"Search\"></search>\n        </div>\n        <div class=\"header-section\">\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\n        </div>\n    </div>\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\n        <div class=\"header-section\">\n            <h3 class=\"brand-section\">Freeven</h3>\n        </div>\n        <div class=\"header-section\">\n        </div>\n    </div>\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna restricción.</h3>\n        <h3>Descárgalos, escúchalos y úsalos en lo que tú quieras</h3>\n    </div>\n    <div class=\"wrap\">\n        <!--<div class=\"topbar\"></div>-->\n\n        <div class=\"sidebar\">\n            <h3 class=\"app-title\">Freeven</h3>\n            <user-panel title=\"UserPanel\"></user-panel>\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\n        </div>\n        <div class=\"content-section\">\n            <div class=\"row-col\">\n                <div class=\"col-lg-12 b-r no-border-md\">\n                    <div ng-view=\"\"></div>\n                </div>\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\n                     <r-i18n></r-i18n>\n                 </div>-->\n            </div>\n        </div>\n\n        <div class=\"footer\">\n            <player title=\"Player\"></player>\n        </div>\n    </div>\n    <div growl class=\"fr-notifier-container\"></div>\n    <help title=\"Help\"></help>\n    <div class=\"fr-track-help-1\">\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\n    </div>\n    <div class=\"fr-track-help-2\">\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\n    </div>\n    <div class=\"fr-track-help-3\">\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\n    </div>\n    <div class=\"fr-track-help-4\">\n        <help-item text=\"Configura tu perfil\"></help-item>\n    </div>\n</div>\n";
 
 /***/ },
 /* 61 */
@@ -63791,7 +63826,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\r\n    font-family: 'icomoon';\r\n    src: url(" + __webpack_require__(64) + ");\r\n    src: url(" + __webpack_require__(64) + ") format('embedded-opentype'), url(" + __webpack_require__(65) + ") format('woff'), url(" + __webpack_require__(66) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n/*------------------------------------------------------------------\r\n1) SVG Icons\r\n-------------------------------------------------------------------*/\r\n[class^=\"music-\"],\r\n[class*=\" music-\"] {\r\n    font-family: 'icomoon';\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.music-feather:before {\r\n    content: \"\\E601\";\r\n}\r\n\r\n.music-eye:before {\r\n    content: \"\\E602\";\r\n}\r\n\r\n.music-featured:before {\r\n    content: \"\\E603\";\r\n}\r\n\r\n.music-logo:before {\r\n    content: \"\\E604\";\r\n}\r\n\r\n.music-microphone:before {\r\n    content: \"\\E605\";\r\n}\r\n\r\n.music-microphone-cut:before {\r\n    content: \"\\E606\";\r\n}\r\n\r\n.music-music-note:before {\r\n    content: \"\\E607\";\r\n}\r\n\r\n.music-newest:before {\r\n    content: \"\\E608\";\r\n}\r\n\r\n.music-player-pause:before {\r\n    content: \"\\E609\";\r\n}\r\n\r\n.music-player-play-full:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-player-play-outline:before {\r\n    content: \"\\E600\";\r\n}\r\n\r\n.music-player-play-bold:before {\r\n    content: \"\\E60B\";\r\n}\r\n\r\n.music-player-random:before {\r\n    content: \"\\E60C\";\r\n}\r\n\r\n.music-player-replay:before {\r\n    content: \"\\E60D\";\r\n}\r\n\r\n.music-player-volume:before {\r\n    content: \"\\E60E\";\r\n}\r\n\r\n.music-plus-button:before {\r\n    content: \"\\E60F\";\r\n}\r\n\r\n.music-search:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-share:before {\r\n    content: \"\\E611\";\r\n}\r\n\r\n.music-side-menu-albums:before {\r\n    content: \"\\E612\";\r\n}\r\n\r\n.music-side-menu-discover:before {\r\n    content: \"\\E613\";\r\n}\r\n\r\n.music-star:before {\r\n    content: \"\\E614\";\r\n}", ""]);
+	exports.push([module.id, "@font-face {\n    font-family: 'icomoon';\n    src: url(" + __webpack_require__(64) + ");\n    src: url(" + __webpack_require__(64) + ") format('embedded-opentype'), url(" + __webpack_require__(65) + ") format('woff'), url(" + __webpack_require__(66) + ") format('truetype');\n    font-weight: normal;\n    font-style: normal;\n}\n\n/*------------------------------------------------------------------\n1) SVG Icons\n-------------------------------------------------------------------*/\n[class^=\"music-\"],\n[class*=\" music-\"] {\n    font-family: 'icomoon';\n    speak: none;\n    font-style: normal;\n    font-weight: normal;\n    font-variant: normal;\n    text-transform: none;\n    line-height: 1;\n    /* Better Font Rendering =========== */\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n\n.music-feather:before {\n    content: \"\\E601\";\n}\n\n.music-eye:before {\n    content: \"\\E602\";\n}\n\n.music-featured:before {\n    content: \"\\E603\";\n}\n\n.music-logo:before {\n    content: \"\\E604\";\n}\n\n.music-microphone:before {\n    content: \"\\E605\";\n}\n\n.music-microphone-cut:before {\n    content: \"\\E606\";\n}\n\n.music-music-note:before {\n    content: \"\\E607\";\n}\n\n.music-newest:before {\n    content: \"\\E608\";\n}\n\n.music-player-pause:before {\n    content: \"\\E609\";\n}\n\n.music-player-play-full:before {\n    content: \"\\E610\";\n}\n\n.music-player-play-outline:before {\n    content: \"\\E600\";\n}\n\n.music-player-play-bold:before {\n    content: \"\\E60B\";\n}\n\n.music-player-random:before {\n    content: \"\\E60C\";\n}\n\n.music-player-replay:before {\n    content: \"\\E60D\";\n}\n\n.music-player-volume:before {\n    content: \"\\E60E\";\n}\n\n.music-plus-button:before {\n    content: \"\\E60F\";\n}\n\n.music-search:before {\n    content: \"\\E610\";\n}\n\n.music-share:before {\n    content: \"\\E611\";\n}\n\n.music-side-menu-albums:before {\n    content: \"\\E612\";\n}\n\n.music-side-menu-discover:before {\n    content: \"\\E613\";\n}\n\n.music-star:before {\n    content: \"\\E614\";\n}", ""]);
 
 	// exports
 
@@ -63823,7 +63858,7 @@
 
 
 	// module
-	exports.push([module.id, "\r\n\r\n@font-face {\r\n    font-family: 'BasicIcon';\r\n    src: url(" + __webpack_require__(68) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n.icon {\r\n    /* use !important to prevent issues with browser extensions that change fonts */\r\n    font-family: 'BasicIcon' !important;\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    \r\n    /* Enable Ligatures ================ */\r\n    letter-spacing: 0;\r\n    -webkit-font-feature-settings: \"liga\";\r\n    -moz-font-feature-settings: \"liga=1\";\r\n    -moz-font-feature-settings: \"liga\";\r\n    -ms-font-feature-settings: \"liga\" 1;\r\n    -o-font-feature-settings: \"liga\";\r\n    font-feature-settings: \"liga\";\r\n\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.icon-home:before {\r\n    content: \"\\E900\";\r\n}\r\n.icon-home2:before {\r\n    content: \"\\E901\";\r\n}\r\n.icon-home3:before {\r\n    content: \"\\E902\";\r\n}\r\n.icon-office:before {\r\n    content: \"\\E903\";\r\n}\r\n.icon-newspaper:before {\r\n    content: \"\\E904\";\r\n}\r\n.icon-pencil:before {\r\n    content: \"\\E905\";\r\n}\r\n.icon-pencil2:before {\r\n    content: \"\\E906\";\r\n}\r\n.icon-quill:before {\r\n    content: \"\\E907\";\r\n}\r\n.icon-pen:before {\r\n    content: \"\\E908\";\r\n}\r\n.icon-blog:before {\r\n    content: \"\\E909\";\r\n}\r\n.icon-eyedropper:before {\r\n    content: \"\\E90A\";\r\n}\r\n.icon-droplet:before {\r\n    content: \"\\E90B\";\r\n}\r\n.icon-paint-format:before {\r\n    content: \"\\E90C\";\r\n}\r\n.icon-image:before {\r\n    content: \"\\E90D\";\r\n}\r\n.icon-images:before {\r\n    content: \"\\E90E\";\r\n}\r\n.icon-camera:before {\r\n    content: \"\\E90F\";\r\n}\r\n.icon-headphones:before {\r\n    content: \"\\E910\";\r\n}\r\n.icon-music:before {\r\n    content: \"\\E911\";\r\n}\r\n.icon-play:before {\r\n    content: \"\\E912\";\r\n}\r\n.icon-film:before {\r\n    content: \"\\E913\";\r\n}\r\n.icon-video-camera:before {\r\n    content: \"\\E914\";\r\n}\r\n.icon-dice:before {\r\n    content: \"\\E915\";\r\n}\r\n.icon-pacman:before {\r\n    content: \"\\E916\";\r\n}\r\n.icon-spades:before {\r\n    content: \"\\E917\";\r\n}\r\n.icon-clubs:before {\r\n    content: \"\\E918\";\r\n}\r\n.icon-diamonds:before {\r\n    content: \"\\E919\";\r\n}\r\n.icon-bullhorn:before {\r\n    content: \"\\E91A\";\r\n}\r\n.icon-connection:before {\r\n    content: \"\\E91B\";\r\n}\r\n.icon-podcast:before {\r\n    content: \"\\E91C\";\r\n}\r\n.icon-feed:before {\r\n    content: \"\\E91D\";\r\n}\r\n.icon-mic:before {\r\n    content: \"\\E91E\";\r\n}\r\n.icon-book:before {\r\n    content: \"\\E91F\";\r\n}\r\n.icon-books:before {\r\n    content: \"\\E920\";\r\n}\r\n.icon-library:before {\r\n    content: \"\\E921\";\r\n}\r\n.icon-file-text:before {\r\n    content: \"\\E922\";\r\n}\r\n.icon-profile:before {\r\n    content: \"\\E923\";\r\n}\r\n.icon-file-empty:before {\r\n    content: \"\\E924\";\r\n}\r\n.icon-files-empty:before {\r\n    content: \"\\E925\";\r\n}\r\n.icon-file-text2:before {\r\n    content: \"\\E926\";\r\n}\r\n.icon-file-picture:before {\r\n    content: \"\\E927\";\r\n}\r\n.icon-file-music:before {\r\n    content: \"\\E928\";\r\n}\r\n.icon-file-play:before {\r\n    content: \"\\E929\";\r\n}\r\n.icon-file-video:before {\r\n    content: \"\\E92A\";\r\n}\r\n.icon-file-zip:before {\r\n    content: \"\\E92B\";\r\n}\r\n.icon-copy:before {\r\n    content: \"\\E92C\";\r\n}\r\n.icon-paste:before {\r\n    content: \"\\E92D\";\r\n}\r\n.icon-stack:before {\r\n    content: \"\\E92E\";\r\n}\r\n.icon-folder:before {\r\n    content: \"\\E92F\";\r\n}\r\n.icon-folder-open:before {\r\n    content: \"\\E930\";\r\n}\r\n.icon-folder-plus:before {\r\n    content: \"\\E931\";\r\n}\r\n.icon-folder-minus:before {\r\n    content: \"\\E932\";\r\n}\r\n.icon-folder-download:before {\r\n    content: \"\\E933\";\r\n}\r\n.icon-folder-upload:before {\r\n    content: \"\\E934\";\r\n}\r\n.icon-price-tag:before {\r\n    content: \"\\E935\";\r\n}\r\n.icon-price-tags:before {\r\n    content: \"\\E936\";\r\n}\r\n.icon-barcode:before {\r\n    content: \"\\E937\";\r\n}\r\n.icon-qrcode:before {\r\n    content: \"\\E938\";\r\n}\r\n.icon-ticket:before {\r\n    content: \"\\E939\";\r\n}\r\n.icon-cart:before {\r\n    content: \"\\E93A\";\r\n}\r\n.icon-coin-dollar:before {\r\n    content: \"\\E93B\";\r\n}\r\n.icon-coin-euro:before {\r\n    content: \"\\E93C\";\r\n}\r\n.icon-coin-pound:before {\r\n    content: \"\\E93D\";\r\n}\r\n.icon-coin-yen:before {\r\n    content: \"\\E93E\";\r\n}\r\n.icon-credit-card:before {\r\n    content: \"\\E93F\";\r\n}\r\n.icon-calculator:before {\r\n    content: \"\\E940\";\r\n}\r\n.icon-lifebuoy:before {\r\n    content: \"\\E941\";\r\n}\r\n.icon-phone:before {\r\n    content: \"\\E942\";\r\n}\r\n.icon-phone-hang-up:before {\r\n    content: \"\\E943\";\r\n}\r\n.icon-address-book:before {\r\n    content: \"\\E944\";\r\n}\r\n.icon-envelop:before {\r\n    content: \"\\E945\";\r\n}\r\n.icon-pushpin:before {\r\n    content: \"\\E946\";\r\n}\r\n.icon-location:before {\r\n    content: \"\\E947\";\r\n}\r\n.icon-location2:before {\r\n    content: \"\\E948\";\r\n}\r\n.icon-compass:before {\r\n    content: \"\\E949\";\r\n}\r\n.icon-compass2:before {\r\n    content: \"\\E94A\";\r\n}\r\n.icon-map:before {\r\n    content: \"\\E94B\";\r\n}\r\n.icon-map2:before {\r\n    content: \"\\E94C\";\r\n}\r\n.icon-history:before {\r\n    content: \"\\E94D\";\r\n}\r\n.icon-clock:before {\r\n    content: \"\\E94E\";\r\n}\r\n.icon-clock2:before {\r\n    content: \"\\E94F\";\r\n}\r\n.icon-alarm:before {\r\n    content: \"\\E950\";\r\n}\r\n.icon-bell:before {\r\n    content: \"\\E951\";\r\n}\r\n.icon-stopwatch:before {\r\n    content: \"\\E952\";\r\n}\r\n.icon-calendar:before {\r\n    content: \"\\E953\";\r\n}\r\n.icon-printer:before {\r\n    content: \"\\E954\";\r\n}\r\n.icon-keyboard:before {\r\n    content: \"\\E955\";\r\n}\r\n.icon-display:before {\r\n    content: \"\\E956\";\r\n}\r\n.icon-laptop:before {\r\n    content: \"\\E957\";\r\n}\r\n.icon-mobile:before {\r\n    content: \"\\E958\";\r\n}\r\n.icon-mobile2:before {\r\n    content: \"\\E959\";\r\n}\r\n.icon-tablet:before {\r\n    content: \"\\E95A\";\r\n}\r\n.icon-tv:before {\r\n    content: \"\\E95B\";\r\n}\r\n.icon-drawer:before {\r\n    content: \"\\E95C\";\r\n}\r\n.icon-drawer2:before {\r\n    content: \"\\E95D\";\r\n}\r\n.icon-box-add:before {\r\n    content: \"\\E95E\";\r\n}\r\n.icon-box-remove:before {\r\n    content: \"\\E95F\";\r\n}\r\n.icon-download:before {\r\n    content: \"\\E960\";\r\n}\r\n.icon-upload:before {\r\n    content: \"\\E961\";\r\n}\r\n.icon-floppy-disk:before {\r\n    content: \"\\E962\";\r\n}\r\n.icon-drive:before {\r\n    content: \"\\E963\";\r\n}\r\n.icon-database:before {\r\n    content: \"\\E964\";\r\n}\r\n.icon-undo:before {\r\n    content: \"\\E965\";\r\n}\r\n.icon-redo:before {\r\n    content: \"\\E966\";\r\n}\r\n.icon-undo2:before {\r\n    content: \"\\E967\";\r\n}\r\n.icon-redo2:before {\r\n    content: \"\\E968\";\r\n}\r\n.icon-forward:before {\r\n    content: \"\\E969\";\r\n}\r\n.icon-reply:before {\r\n    content: \"\\E96A\";\r\n}\r\n.icon-bubble:before {\r\n    content: \"\\E96B\";\r\n}\r\n.icon-bubbles:before {\r\n    content: \"\\E96C\";\r\n}\r\n.icon-bubbles2:before {\r\n    content: \"\\E96D\";\r\n}\r\n.icon-bubble2:before {\r\n    content: \"\\E96E\";\r\n}\r\n.icon-bubbles3:before {\r\n    content: \"\\E96F\";\r\n}\r\n.icon-bubbles4:before {\r\n    content: \"\\E970\";\r\n}\r\n.icon-user:before {\r\n    content: \"\\E971\";\r\n}\r\n.icon-users:before {\r\n    content: \"\\E972\";\r\n}\r\n.icon-user-plus:before {\r\n    content: \"\\E973\";\r\n}\r\n.icon-user-minus:before {\r\n    content: \"\\E974\";\r\n}\r\n.icon-user-check:before {\r\n    content: \"\\E975\";\r\n}\r\n.icon-user-tie:before {\r\n    content: \"\\E976\";\r\n}\r\n.icon-quotes-left:before {\r\n    content: \"\\E977\";\r\n}\r\n.icon-quotes-right:before {\r\n    content: \"\\E978\";\r\n}\r\n.icon-hour-glass:before {\r\n    content: \"\\E979\";\r\n}\r\n.icon-spinner:before {\r\n    content: \"\\E97A\";\r\n}\r\n.icon-spinner2:before {\r\n    content: \"\\E97B\";\r\n}\r\n.icon-spinner3:before {\r\n    content: \"\\E97C\";\r\n}\r\n.icon-spinner4:before {\r\n    content: \"\\E97D\";\r\n}\r\n.icon-spinner5:before {\r\n    content: \"\\E97E\";\r\n}\r\n.icon-spinner6:before {\r\n    content: \"\\E97F\";\r\n}\r\n.icon-spinner7:before {\r\n    content: \"\\E980\";\r\n}\r\n.icon-spinner8:before {\r\n    content: \"\\E981\";\r\n}\r\n.icon-spinner9:before {\r\n    content: \"\\E982\";\r\n}\r\n.icon-spinner10:before {\r\n    content: \"\\E983\";\r\n}\r\n.icon-spinner11:before {\r\n    content: \"\\E984\";\r\n}\r\n.icon-binoculars:before {\r\n    content: \"\\E985\";\r\n}\r\n.icon-search:before {\r\n    content: \"\\E986\";\r\n}\r\n.icon-zoom-in:before {\r\n    content: \"\\E987\";\r\n}\r\n.icon-zoom-out:before {\r\n    content: \"\\E988\";\r\n}\r\n.icon-enlarge:before {\r\n    content: \"\\E989\";\r\n}\r\n.icon-shrink:before {\r\n    content: \"\\E98A\";\r\n}\r\n.icon-enlarge2:before {\r\n    content: \"\\E98B\";\r\n}\r\n.icon-shrink2:before {\r\n    content: \"\\E98C\";\r\n}\r\n.icon-key:before {\r\n    content: \"\\E98D\";\r\n}\r\n.icon-key2:before {\r\n    content: \"\\E98E\";\r\n}\r\n.icon-lock:before {\r\n    content: \"\\E98F\";\r\n}\r\n.icon-unlocked:before {\r\n    content: \"\\E990\";\r\n}\r\n.icon-wrench:before {\r\n    content: \"\\E991\";\r\n}\r\n.icon-equalizer:before {\r\n    content: \"\\E992\";\r\n}\r\n.icon-equalizer2:before {\r\n    content: \"\\E993\";\r\n}\r\n.icon-cog:before {\r\n    content: \"\\E994\";\r\n}\r\n.icon-cogs:before {\r\n    content: \"\\E995\";\r\n}\r\n.icon-hammer:before {\r\n    content: \"\\E996\";\r\n}\r\n.icon-magic-wand:before {\r\n    content: \"\\E997\";\r\n}\r\n.icon-aid-kit:before {\r\n    content: \"\\E998\";\r\n}\r\n.icon-bug:before {\r\n    content: \"\\E999\";\r\n}\r\n.icon-pie-chart:before {\r\n    content: \"\\E99A\";\r\n}\r\n.icon-stats-dots:before {\r\n    content: \"\\E99B\";\r\n}\r\n.icon-stats-bars:before {\r\n    content: \"\\E99C\";\r\n}\r\n.icon-stats-bars2:before {\r\n    content: \"\\E99D\";\r\n}\r\n.icon-trophy:before {\r\n    content: \"\\E99E\";\r\n}\r\n.icon-gift:before {\r\n    content: \"\\E99F\";\r\n}\r\n.icon-glass:before {\r\n    content: \"\\E9A0\";\r\n}\r\n.icon-glass2:before {\r\n    content: \"\\E9A1\";\r\n}\r\n.icon-mug:before {\r\n    content: \"\\E9A2\";\r\n}\r\n.icon-spoon-knife:before {\r\n    content: \"\\E9A3\";\r\n}\r\n.icon-leaf:before {\r\n    content: \"\\E9A4\";\r\n}\r\n.icon-rocket:before {\r\n    content: \"\\E9A5\";\r\n}\r\n.icon-meter:before {\r\n    content: \"\\E9A6\";\r\n}\r\n.icon-meter2:before {\r\n    content: \"\\E9A7\";\r\n}\r\n.icon-hammer2:before {\r\n    content: \"\\E9A8\";\r\n}\r\n.icon-fire:before {\r\n    content: \"\\E9A9\";\r\n}\r\n.icon-lab:before {\r\n    content: \"\\E9AA\";\r\n}\r\n.icon-magnet:before {\r\n    content: \"\\E9AB\";\r\n}\r\n.icon-bin:before {\r\n    content: \"\\E9AC\";\r\n}\r\n.icon-bin2:before {\r\n    content: \"\\E9AD\";\r\n}\r\n.icon-briefcase:before {\r\n    content: \"\\E9AE\";\r\n}\r\n.icon-airplane:before {\r\n    content: \"\\E9AF\";\r\n}\r\n.icon-truck:before {\r\n    content: \"\\E9B0\";\r\n}\r\n.icon-road:before {\r\n    content: \"\\E9B1\";\r\n}\r\n.icon-accessibility:before {\r\n    content: \"\\E9B2\";\r\n}\r\n.icon-target:before {\r\n    content: \"\\E9B3\";\r\n}\r\n.icon-shield:before {\r\n    content: \"\\E9B4\";\r\n}\r\n.icon-power:before {\r\n    content: \"\\E9B5\";\r\n}\r\n.icon-switch:before {\r\n    content: \"\\E9B6\";\r\n}\r\n.icon-power-cord:before {\r\n    content: \"\\E9B7\";\r\n}\r\n.icon-clipboard:before {\r\n    content: \"\\E9B8\";\r\n}\r\n.icon-list-numbered:before {\r\n    content: \"\\E9B9\";\r\n}\r\n.icon-list:before {\r\n    content: \"\\E9BA\";\r\n}\r\n.icon-list2:before {\r\n    content: \"\\E9BB\";\r\n}\r\n.icon-tree:before {\r\n    content: \"\\E9BC\";\r\n}\r\n.icon-menu:before {\r\n    content: \"\\E9BD\";\r\n}\r\n.icon-menu2:before {\r\n    content: \"\\E9BE\";\r\n}\r\n.icon-menu3:before {\r\n    content: \"\\E9BF\";\r\n}\r\n.icon-menu4:before {\r\n    content: \"\\E9C0\";\r\n}\r\n.icon-cloud:before {\r\n    content: \"\\E9C1\";\r\n}\r\n.icon-cloud-download:before {\r\n    content: \"\\E9C2\";\r\n}\r\n.icon-cloud-upload:before {\r\n    content: \"\\E9C3\";\r\n}\r\n.icon-cloud-check:before {\r\n    content: \"\\E9C4\";\r\n}\r\n.icon-download2:before {\r\n    content: \"\\E9C5\";\r\n}\r\n.icon-upload2:before {\r\n    content: \"\\E9C6\";\r\n}\r\n.icon-download3:before {\r\n    content: \"\\E9C7\";\r\n}\r\n.icon-upload3:before {\r\n    content: \"\\E9C8\";\r\n}\r\n.icon-sphere:before {\r\n    content: \"\\E9C9\";\r\n}\r\n.icon-earth:before {\r\n    content: \"\\E9CA\";\r\n}\r\n.icon-link:before {\r\n    content: \"\\E9CB\";\r\n}\r\n.icon-flag:before {\r\n    content: \"\\E9CC\";\r\n}\r\n.icon-attachment:before {\r\n    content: \"\\E9CD\";\r\n}\r\n.icon-eye:before {\r\n    content: \"\\E9CE\";\r\n}\r\n.icon-eye-plus:before {\r\n    content: \"\\E9CF\";\r\n}\r\n.icon-eye-minus:before {\r\n    content: \"\\E9D0\";\r\n}\r\n.icon-eye-blocked:before {\r\n    content: \"\\E9D1\";\r\n}\r\n.icon-bookmark:before {\r\n    content: \"\\E9D2\";\r\n}\r\n.icon-bookmarks:before {\r\n    content: \"\\E9D3\";\r\n}\r\n.icon-sun:before {\r\n    content: \"\\E9D4\";\r\n}\r\n.icon-contrast:before {\r\n    content: \"\\E9D5\";\r\n}\r\n.icon-brightness-contrast:before {\r\n    content: \"\\E9D6\";\r\n}\r\n.icon-star-empty:before {\r\n    content: \"\\E9D7\";\r\n}\r\n.icon-star-half:before {\r\n    content: \"\\E9D8\";\r\n}\r\n.icon-star-full:before {\r\n    content: \"\\E9D9\";\r\n}\r\n.icon-heart:before {\r\n    content: \"\\E9DA\";\r\n}\r\n.icon-heart-broken:before {\r\n    content: \"\\E9DB\";\r\n}\r\n.icon-man:before {\r\n    content: \"\\E9DC\";\r\n}\r\n.icon-woman:before {\r\n    content: \"\\E9DD\";\r\n}\r\n.icon-man-woman:before {\r\n    content: \"\\E9DE\";\r\n}\r\n.icon-happy:before {\r\n    content: \"\\E9DF\";\r\n}\r\n.icon-happy2:before {\r\n    content: \"\\E9E0\";\r\n}\r\n.icon-smile:before {\r\n    content: \"\\E9E1\";\r\n}\r\n.icon-smile2:before {\r\n    content: \"\\E9E2\";\r\n}\r\n.icon-tongue:before {\r\n    content: \"\\E9E3\";\r\n}\r\n.icon-tongue2:before {\r\n    content: \"\\E9E4\";\r\n}\r\n.icon-sad:before {\r\n    content: \"\\E9E5\";\r\n}\r\n.icon-sad2:before {\r\n    content: \"\\E9E6\";\r\n}\r\n.icon-wink:before {\r\n    content: \"\\E9E7\";\r\n}\r\n.icon-wink2:before {\r\n    content: \"\\E9E8\";\r\n}\r\n.icon-grin:before {\r\n    content: \"\\E9E9\";\r\n}\r\n.icon-grin2:before {\r\n    content: \"\\E9EA\";\r\n}\r\n.icon-cool:before {\r\n    content: \"\\E9EB\";\r\n}\r\n.icon-cool2:before {\r\n    content: \"\\E9EC\";\r\n}\r\n.icon-angry:before {\r\n    content: \"\\E9ED\";\r\n}\r\n.icon-angry2:before {\r\n    content: \"\\E9EE\";\r\n}\r\n.icon-evil:before {\r\n    content: \"\\E9EF\";\r\n}\r\n.icon-evil2:before {\r\n    content: \"\\E9F0\";\r\n}\r\n.icon-shocked:before {\r\n    content: \"\\E9F1\";\r\n}\r\n.icon-shocked2:before {\r\n    content: \"\\E9F2\";\r\n}\r\n.icon-baffled:before {\r\n    content: \"\\E9F3\";\r\n}\r\n.icon-baffled2:before {\r\n    content: \"\\E9F4\";\r\n}\r\n.icon-confused:before {\r\n    content: \"\\E9F5\";\r\n}\r\n.icon-confused2:before {\r\n    content: \"\\E9F6\";\r\n}\r\n.icon-neutral:before {\r\n    content: \"\\E9F7\";\r\n}\r\n.icon-neutral2:before {\r\n    content: \"\\E9F8\";\r\n}\r\n.icon-hipster:before {\r\n    content: \"\\E9F9\";\r\n}\r\n.icon-hipster2:before {\r\n    content: \"\\E9FA\";\r\n}\r\n.icon-wondering:before {\r\n    content: \"\\E9FB\";\r\n}\r\n.icon-wondering2:before {\r\n    content: \"\\E9FC\";\r\n}\r\n.icon-sleepy:before {\r\n    content: \"\\E9FD\";\r\n}\r\n.icon-sleepy2:before {\r\n    content: \"\\E9FE\";\r\n}\r\n.icon-frustrated:before {\r\n    content: \"\\E9FF\";\r\n}\r\n.icon-frustrated2:before {\r\n    content: \"\\EA00\";\r\n}\r\n.icon-crying:before {\r\n    content: \"\\EA01\";\r\n}\r\n.icon-crying2:before {\r\n    content: \"\\EA02\";\r\n}\r\n.icon-point-up:before {\r\n    content: \"\\EA03\";\r\n}\r\n.icon-point-right:before {\r\n    content: \"\\EA04\";\r\n}\r\n.icon-point-down:before {\r\n    content: \"\\EA05\";\r\n}\r\n.icon-point-left:before {\r\n    content: \"\\EA06\";\r\n}\r\n.icon-warning:before {\r\n    content: \"\\EA07\";\r\n}\r\n.icon-notification:before {\r\n    content: \"\\EA08\";\r\n}\r\n.icon-question:before {\r\n    content: \"\\EA09\";\r\n}\r\n.icon-plus:before {\r\n    content: \"\\EA0A\";\r\n}\r\n.icon-minus:before {\r\n    content: \"\\EA0B\";\r\n}\r\n.icon-info:before {\r\n    content: \"\\EA0C\";\r\n}\r\n.icon-cancel-circle:before {\r\n    content: \"\\EA0D\";\r\n}\r\n.icon-blocked:before {\r\n    content: \"\\EA0E\";\r\n}\r\n.icon-cross:before {\r\n    content: \"\\EA0F\";\r\n}\r\n.icon-checkmark:before {\r\n    content: \"\\EA10\";\r\n}\r\n.icon-checkmark2:before {\r\n    content: \"\\EA11\";\r\n}\r\n.icon-spell-check:before {\r\n    content: \"\\EA12\";\r\n}\r\n.icon-enter:before {\r\n    content: \"\\EA13\";\r\n}\r\n.icon-exit:before {\r\n    content: \"\\EA14\";\r\n}\r\n.icon-play2:before {\r\n    content: \"\\EA15\";\r\n}\r\n.icon-pause:before {\r\n    content: \"\\EA16\";\r\n}\r\n.icon-stop:before {\r\n    content: \"\\EA17\";\r\n}\r\n.icon-previous:before {\r\n    content: \"\\EA18\";\r\n}\r\n.icon-next:before {\r\n    content: \"\\EA19\";\r\n}\r\n.icon-backward:before {\r\n    content: \"\\EA1A\";\r\n}\r\n.icon-forward2:before {\r\n    content: \"\\EA1B\";\r\n}\r\n.icon-play3:before {\r\n    content: \"\\EA1C\";\r\n}\r\n.icon-pause2:before {\r\n    content: \"\\EA1D\";\r\n}\r\n.icon-stop2:before {\r\n    content: \"\\EA1E\";\r\n}\r\n.icon-backward2:before {\r\n    content: \"\\EA1F\";\r\n}\r\n.icon-forward3:before {\r\n    content: \"\\EA20\";\r\n}\r\n.icon-first:before {\r\n    content: \"\\EA21\";\r\n}\r\n.icon-last:before {\r\n    content: \"\\EA22\";\r\n}\r\n.icon-previous2:before {\r\n    content: \"\\EA23\";\r\n}\r\n.icon-next2:before {\r\n    content: \"\\EA24\";\r\n}\r\n.icon-eject:before {\r\n    content: \"\\EA25\";\r\n}\r\n.icon-volume-high:before {\r\n    content: \"\\EA26\";\r\n}\r\n.icon-volume-medium:before {\r\n    content: \"\\EA27\";\r\n}\r\n.icon-volume-low:before {\r\n    content: \"\\EA28\";\r\n}\r\n.icon-volume-mute:before {\r\n    content: \"\\EA29\";\r\n}\r\n.icon-volume-mute2:before {\r\n    content: \"\\EA2A\";\r\n}\r\n.icon-volume-increase:before {\r\n    content: \"\\EA2B\";\r\n}\r\n.icon-volume-decrease:before {\r\n    content: \"\\EA2C\";\r\n}\r\n.icon-loop:before {\r\n    content: \"\\EA2D\";\r\n}\r\n.icon-loop2:before {\r\n    content: \"\\EA2E\";\r\n}\r\n.icon-infinite:before {\r\n    content: \"\\EA2F\";\r\n}\r\n.icon-shuffle:before {\r\n    content: \"\\EA30\";\r\n}\r\n.icon-arrow-up-left:before {\r\n    content: \"\\EA31\";\r\n}\r\n.icon-arrow-up:before {\r\n    content: \"\\EA32\";\r\n}\r\n.icon-arrow-up-right:before {\r\n    content: \"\\EA33\";\r\n}\r\n.icon-arrow-right:before {\r\n    content: \"\\EA34\";\r\n}\r\n.icon-arrow-down-right:before {\r\n    content: \"\\EA35\";\r\n}\r\n.icon-arrow-down:before {\r\n    content: \"\\EA36\";\r\n}\r\n.icon-arrow-down-left:before {\r\n    content: \"\\EA37\";\r\n}\r\n.icon-arrow-left:before {\r\n    content: \"\\EA38\";\r\n}\r\n.icon-arrow-up-left2:before {\r\n    content: \"\\EA39\";\r\n}\r\n.icon-arrow-up2:before {\r\n    content: \"\\EA3A\";\r\n}\r\n.icon-arrow-up-right2:before {\r\n    content: \"\\EA3B\";\r\n}\r\n.icon-arrow-right2:before {\r\n    content: \"\\EA3C\";\r\n}\r\n.icon-arrow-down-right2:before {\r\n    content: \"\\EA3D\";\r\n}\r\n.icon-arrow-down2:before {\r\n    content: \"\\EA3E\";\r\n}\r\n.icon-arrow-down-left2:before {\r\n    content: \"\\EA3F\";\r\n}\r\n.icon-arrow-left2:before {\r\n    content: \"\\EA40\";\r\n}\r\n.icon-circle-up:before {\r\n    content: \"\\EA41\";\r\n}\r\n.icon-circle-right:before {\r\n    content: \"\\EA42\";\r\n}\r\n.icon-circle-down:before {\r\n    content: \"\\EA43\";\r\n}\r\n.icon-circle-left:before {\r\n    content: \"\\EA44\";\r\n}\r\n.icon-tab:before {\r\n    content: \"\\EA45\";\r\n}\r\n.icon-move-up:before {\r\n    content: \"\\EA46\";\r\n}\r\n.icon-move-down:before {\r\n    content: \"\\EA47\";\r\n}\r\n.icon-sort-alpha-asc:before {\r\n    content: \"\\EA48\";\r\n}\r\n.icon-sort-alpha-desc:before {\r\n    content: \"\\EA49\";\r\n}\r\n.icon-sort-numeric-asc:before {\r\n    content: \"\\EA4A\";\r\n}\r\n.icon-sort-numberic-desc:before {\r\n    content: \"\\EA4B\";\r\n}\r\n.icon-sort-amount-asc:before {\r\n    content: \"\\EA4C\";\r\n}\r\n.icon-sort-amount-desc:before {\r\n    content: \"\\EA4D\";\r\n}\r\n.icon-command:before {\r\n    content: \"\\EA4E\";\r\n}\r\n.icon-shift:before {\r\n    content: \"\\EA4F\";\r\n}\r\n.icon-ctrl:before {\r\n    content: \"\\EA50\";\r\n}\r\n.icon-opt:before {\r\n    content: \"\\EA51\";\r\n}\r\n.icon-checkbox-checked:before {\r\n    content: \"\\EA52\";\r\n}\r\n.icon-checkbox-unchecked:before {\r\n    content: \"\\EA53\";\r\n}\r\n.icon-radio-checked:before {\r\n    content: \"\\EA54\";\r\n}\r\n.icon-radio-checked2:before {\r\n    content: \"\\EA55\";\r\n}\r\n.icon-radio-unchecked:before {\r\n    content: \"\\EA56\";\r\n}\r\n.icon-crop:before {\r\n    content: \"\\EA57\";\r\n}\r\n.icon-make-group:before {\r\n    content: \"\\EA58\";\r\n}\r\n.icon-ungroup:before {\r\n    content: \"\\EA59\";\r\n}\r\n.icon-scissors:before {\r\n    content: \"\\EA5A\";\r\n}\r\n.icon-filter:before {\r\n    content: \"\\EA5B\";\r\n}\r\n.icon-font:before {\r\n    content: \"\\EA5C\";\r\n}\r\n.icon-ligature:before {\r\n    content: \"\\EA5D\";\r\n}\r\n.icon-ligature2:before {\r\n    content: \"\\EA5E\";\r\n}\r\n.icon-text-height:before {\r\n    content: \"\\EA5F\";\r\n}\r\n.icon-text-width:before {\r\n    content: \"\\EA60\";\r\n}\r\n.icon-font-size:before {\r\n    content: \"\\EA61\";\r\n}\r\n.icon-bold:before {\r\n    content: \"\\EA62\";\r\n}\r\n.icon-underline:before {\r\n    content: \"\\EA63\";\r\n}\r\n.icon-italic:before {\r\n    content: \"\\EA64\";\r\n}\r\n.icon-strikethrough:before {\r\n    content: \"\\EA65\";\r\n}\r\n.icon-omega:before {\r\n    content: \"\\EA66\";\r\n}\r\n.icon-sigma:before {\r\n    content: \"\\EA67\";\r\n}\r\n.icon-page-break:before {\r\n    content: \"\\EA68\";\r\n}\r\n.icon-superscript:before {\r\n    content: \"\\EA69\";\r\n}\r\n.icon-subscript:before {\r\n    content: \"\\EA6A\";\r\n}\r\n.icon-superscript2:before {\r\n    content: \"\\EA6B\";\r\n}\r\n.icon-subscript2:before {\r\n    content: \"\\EA6C\";\r\n}\r\n.icon-text-color:before {\r\n    content: \"\\EA6D\";\r\n}\r\n.icon-pagebreak:before {\r\n    content: \"\\EA6E\";\r\n}\r\n.icon-clear-formatting:before {\r\n    content: \"\\EA6F\";\r\n}\r\n.icon-table:before {\r\n    content: \"\\EA70\";\r\n}\r\n.icon-table2:before {\r\n    content: \"\\EA71\";\r\n}\r\n.icon-insert-template:before {\r\n    content: \"\\EA72\";\r\n}\r\n.icon-pilcrow:before {\r\n    content: \"\\EA73\";\r\n}\r\n.icon-ltr:before {\r\n    content: \"\\EA74\";\r\n}\r\n.icon-rtl:before {\r\n    content: \"\\EA75\";\r\n}\r\n.icon-section:before {\r\n    content: \"\\EA76\";\r\n}\r\n.icon-paragraph-left:before {\r\n    content: \"\\EA77\";\r\n}\r\n.icon-paragraph-center:before {\r\n    content: \"\\EA78\";\r\n}\r\n.icon-paragraph-right:before {\r\n    content: \"\\EA79\";\r\n}\r\n.icon-paragraph-justify:before {\r\n    content: \"\\EA7A\";\r\n}\r\n.icon-indent-increase:before {\r\n    content: \"\\EA7B\";\r\n}\r\n.icon-indent-decrease:before {\r\n    content: \"\\EA7C\";\r\n}\r\n.icon-share:before {\r\n    content: \"\\EA7D\";\r\n}\r\n.icon-new-tab:before {\r\n    content: \"\\EA7E\";\r\n}\r\n.icon-embed:before {\r\n    content: \"\\EA7F\";\r\n}\r\n.icon-embed2:before {\r\n    content: \"\\EA80\";\r\n}\r\n.icon-terminal:before {\r\n    content: \"\\EA81\";\r\n}\r\n.icon-share2:before {\r\n    content: \"\\EA82\";\r\n}\r\n.icon-mail:before {\r\n    content: \"\\EA83\";\r\n}\r\n.icon-mail2:before {\r\n    content: \"\\EA84\";\r\n}\r\n.icon-mail3:before {\r\n    content: \"\\EA85\";\r\n}\r\n.icon-mail4:before {\r\n    content: \"\\EA86\";\r\n}\r\n.icon-amazon:before {\r\n    content: \"\\EA87\";\r\n}\r\n.icon-google:before {\r\n    content: \"\\EA88\";\r\n}\r\n.icon-google2:before {\r\n    content: \"\\EA89\";\r\n}\r\n.icon-google3:before {\r\n    content: \"\\EA8A\";\r\n}\r\n.icon-google-plus:before {\r\n    content: \"\\EA8B\";\r\n}\r\n.icon-google-plus2:before {\r\n    content: \"\\EA8C\";\r\n}\r\n.icon-google-plus3:before {\r\n    content: \"\\EA8D\";\r\n}\r\n.icon-hangouts:before {\r\n    content: \"\\EA8E\";\r\n}\r\n.icon-google-drive:before {\r\n    content: \"\\EA8F\";\r\n}\r\n.icon-facebook:before {\r\n    content: \"\\EA90\";\r\n}\r\n.icon-facebook2:before {\r\n    content: \"\\EA91\";\r\n}\r\n.icon-instagram:before {\r\n    content: \"\\EA92\";\r\n}\r\n.icon-whatsapp:before {\r\n    content: \"\\EA93\";\r\n}\r\n.icon-spotify:before {\r\n    content: \"\\EA94\";\r\n}\r\n.icon-telegram:before {\r\n    content: \"\\EA95\";\r\n}\r\n.icon-twitter:before {\r\n    content: \"\\EA96\";\r\n}\r\n.icon-vine:before {\r\n    content: \"\\EA97\";\r\n}\r\n.icon-vk:before {\r\n    content: \"\\EA98\";\r\n}\r\n.icon-renren:before {\r\n    content: \"\\EA99\";\r\n}\r\n.icon-sina-weibo:before {\r\n    content: \"\\EA9A\";\r\n}\r\n.icon-rss:before {\r\n    content: \"\\EA9B\";\r\n}\r\n.icon-rss2:before {\r\n    content: \"\\EA9C\";\r\n}\r\n.icon-youtube:before {\r\n    content: \"\\EA9D\";\r\n}\r\n.icon-youtube2:before {\r\n    content: \"\\EA9E\";\r\n}\r\n.icon-twitch:before {\r\n    content: \"\\EA9F\";\r\n}\r\n.icon-vimeo:before {\r\n    content: \"\\EAA0\";\r\n}\r\n.icon-vimeo2:before {\r\n    content: \"\\EAA1\";\r\n}\r\n.icon-lanyrd:before {\r\n    content: \"\\EAA2\";\r\n}\r\n.icon-flickr:before {\r\n    content: \"\\EAA3\";\r\n}\r\n.icon-flickr2:before {\r\n    content: \"\\EAA4\";\r\n}\r\n.icon-flickr3:before {\r\n    content: \"\\EAA5\";\r\n}\r\n.icon-flickr4:before {\r\n    content: \"\\EAA6\";\r\n}\r\n.icon-dribbble:before {\r\n    content: \"\\EAA7\";\r\n}\r\n.icon-behance:before {\r\n    content: \"\\EAA8\";\r\n}\r\n.icon-behance2:before {\r\n    content: \"\\EAA9\";\r\n}\r\n.icon-deviantart:before {\r\n    content: \"\\EAAA\";\r\n}\r\n.icon-500px:before {\r\n    content: \"\\EAAB\";\r\n}\r\n.icon-steam:before {\r\n    content: \"\\EAAC\";\r\n}\r\n.icon-steam2:before {\r\n    content: \"\\EAAD\";\r\n}\r\n.icon-dropbox:before {\r\n    content: \"\\EAAE\";\r\n}\r\n.icon-onedrive:before {\r\n    content: \"\\EAAF\";\r\n}\r\n.icon-github:before {\r\n    content: \"\\EAB0\";\r\n}\r\n.icon-npm:before {\r\n    content: \"\\EAB1\";\r\n}\r\n.icon-basecamp:before {\r\n    content: \"\\EAB2\";\r\n}\r\n.icon-trello:before {\r\n    content: \"\\EAB3\";\r\n}\r\n.icon-wordpress:before {\r\n    content: \"\\EAB4\";\r\n}\r\n.icon-joomla:before {\r\n    content: \"\\EAB5\";\r\n}\r\n.icon-ello:before {\r\n    content: \"\\EAB6\";\r\n}\r\n.icon-blogger:before {\r\n    content: \"\\EAB7\";\r\n}\r\n.icon-blogger2:before {\r\n    content: \"\\EAB8\";\r\n}\r\n.icon-tumblr:before {\r\n    content: \"\\EAB9\";\r\n}\r\n.icon-tumblr2:before {\r\n    content: \"\\EABA\";\r\n}\r\n.icon-yahoo:before {\r\n    content: \"\\EABB\";\r\n}\r\n.icon-yahoo2:before {\r\n    content: \"\\EABC\";\r\n}\r\n.icon-tux:before {\r\n    content: \"\\EABD\";\r\n}\r\n.icon-appleinc:before {\r\n    content: \"\\EABE\";\r\n}\r\n.icon-finder:before {\r\n    content: \"\\EABF\";\r\n}\r\n.icon-android:before {\r\n    content: \"\\EAC0\";\r\n}\r\n.icon-windows:before {\r\n    content: \"\\EAC1\";\r\n}\r\n.icon-windows8:before {\r\n    content: \"\\EAC2\";\r\n}\r\n.icon-soundcloud:before {\r\n    content: \"\\EAC3\";\r\n}\r\n.icon-soundcloud2:before {\r\n    content: \"\\EAC4\";\r\n}\r\n.icon-skype:before {\r\n    content: \"\\EAC5\";\r\n}\r\n.icon-reddit:before {\r\n    content: \"\\EAC6\";\r\n}\r\n.icon-hackernews:before {\r\n    content: \"\\EAC7\";\r\n}\r\n.icon-wikipedia:before {\r\n    content: \"\\EAC8\";\r\n}\r\n.icon-linkedin:before {\r\n    content: \"\\EAC9\";\r\n}\r\n.icon-linkedin2:before {\r\n    content: \"\\EACA\";\r\n}\r\n.icon-lastfm:before {\r\n    content: \"\\EACB\";\r\n}\r\n.icon-lastfm2:before {\r\n    content: \"\\EACC\";\r\n}\r\n.icon-delicious:before {\r\n    content: \"\\EACD\";\r\n}\r\n.icon-stumbleupon:before {\r\n    content: \"\\EACE\";\r\n}\r\n.icon-stumbleupon2:before {\r\n    content: \"\\EACF\";\r\n}\r\n.icon-stackoverflow:before {\r\n    content: \"\\EAD0\";\r\n}\r\n.icon-pinterest:before {\r\n    content: \"\\EAD1\";\r\n}\r\n.icon-pinterest2:before {\r\n    content: \"\\EAD2\";\r\n}\r\n.icon-xing:before {\r\n    content: \"\\EAD3\";\r\n}\r\n.icon-xing2:before {\r\n    content: \"\\EAD4\";\r\n}\r\n.icon-flattr:before {\r\n    content: \"\\EAD5\";\r\n}\r\n.icon-foursquare:before {\r\n    content: \"\\EAD6\";\r\n}\r\n.icon-yelp:before {\r\n    content: \"\\EAD7\";\r\n}\r\n.icon-paypal:before {\r\n    content: \"\\EAD8\";\r\n}\r\n.icon-chrome:before {\r\n    content: \"\\EAD9\";\r\n}\r\n.icon-firefox:before {\r\n    content: \"\\EADA\";\r\n}\r\n.icon-IE:before {\r\n    content: \"\\EADB\";\r\n}\r\n.icon-edge:before {\r\n    content: \"\\EADC\";\r\n}\r\n.icon-safari:before {\r\n    content: \"\\EADD\";\r\n}\r\n.icon-opera:before {\r\n    content: \"\\EADE\";\r\n}\r\n.icon-file-pdf:before {\r\n    content: \"\\EADF\";\r\n}\r\n.icon-file-openoffice:before {\r\n    content: \"\\EAE0\";\r\n}\r\n.icon-file-word:before {\r\n    content: \"\\EAE1\";\r\n}\r\n.icon-file-excel:before {\r\n    content: \"\\EAE2\";\r\n}\r\n.icon-libreoffice:before {\r\n    content: \"\\EAE3\";\r\n}\r\n.icon-html-five:before {\r\n    content: \"\\EAE4\";\r\n}\r\n.icon-html-five2:before {\r\n    content: \"\\EAE5\";\r\n}\r\n.icon-css3:before {\r\n    content: \"\\EAE6\";\r\n}\r\n.icon-git:before {\r\n    content: \"\\EAE7\";\r\n}\r\n.icon-codepen:before {\r\n    content: \"\\EAE8\";\r\n}\r\n.icon-svg:before {\r\n    content: \"\\EAE9\";\r\n}\r\n.icon-IcoMoon:before {\r\n    content: \"\\EAEA\";\r\n}\r\n.icon-uni21:before {\r\n    content: \"!\";\r\n}\r\n.icon-uni22:before {\r\n    content: \"\\\"\";\r\n}\r\n.icon-uni23:before {\r\n    content: \"#\";\r\n}\r\n.icon-uni24:before {\r\n    content: \"$\";\r\n}\r\n.icon-uni25:before {\r\n    content: \"%\";\r\n}\r\n.icon-uni26:before {\r\n    content: \"&\";\r\n}\r\n.icon-uni27:before {\r\n    content: \"'\";\r\n}\r\n.icon-uni28:before {\r\n    content: \"(\";\r\n}\r\n.icon-uni29:before {\r\n    content: \")\";\r\n}\r\n.icon-uni2A:before {\r\n    content: \"*\";\r\n}\r\n.icon-uni2B:before {\r\n    content: \"+\";\r\n}\r\n.icon-uni2C:before {\r\n    content: \",\";\r\n}\r\n.icon-uni2D:before {\r\n    content: \"-\";\r\n}\r\n.icon-uni2E:before {\r\n    content: \".\";\r\n}\r\n.icon-uni2F:before {\r\n    content: \"/\";\r\n}\r\n.icon-uni30:before {\r\n    content: \"0\";\r\n}\r\n.icon-uni31:before {\r\n    content: \"1\";\r\n}\r\n.icon-uni32:before {\r\n    content: \"2\";\r\n}\r\n.icon-uni33:before {\r\n    content: \"3\";\r\n}\r\n.icon-uni34:before {\r\n    content: \"4\";\r\n}\r\n.icon-uni35:before {\r\n    content: \"5\";\r\n}\r\n.icon-uni36:before {\r\n    content: \"6\";\r\n}\r\n.icon-uni37:before {\r\n    content: \"7\";\r\n}\r\n.icon-uni38:before {\r\n    content: \"8\";\r\n}\r\n.icon-uni39:before {\r\n    content: \"9\";\r\n}\r\n.icon-uni3A:before {\r\n    content: \":\";\r\n}\r\n.icon-uni3B:before {\r\n    content: \";\";\r\n}\r\n.icon-uni3C:before {\r\n    content: \"<\";\r\n}\r\n.icon-uni3D:before {\r\n    content: \"=\";\r\n}\r\n.icon-uni3E:before {\r\n    content: \">\";\r\n}\r\n.icon-uni3F:before {\r\n    content: \"?\";\r\n}\r\n.icon-uni40:before {\r\n    content: \"@\";\r\n}\r\n.icon-uni41:before {\r\n    content: \"A\";\r\n}\r\n.icon-uni42:before {\r\n    content: \"B\";\r\n}\r\n.icon-uni43:before {\r\n    content: \"C\";\r\n}\r\n.icon-uni44:before {\r\n    content: \"D\";\r\n}\r\n.icon-uni45:before {\r\n    content: \"E\";\r\n}\r\n.icon-uni46:before {\r\n    content: \"F\";\r\n}\r\n.icon-uni47:before {\r\n    content: \"G\";\r\n}\r\n.icon-uni48:before {\r\n    content: \"H\";\r\n}\r\n.icon-uni49:before {\r\n    content: \"I\";\r\n}\r\n.icon-uni4A:before {\r\n    content: \"J\";\r\n}\r\n.icon-uni4B:before {\r\n    content: \"K\";\r\n}\r\n.icon-uni4C:before {\r\n    content: \"L\";\r\n}\r\n.icon-uni4D:before {\r\n    content: \"M\";\r\n}\r\n.icon-uni4E:before {\r\n    content: \"N\";\r\n}\r\n.icon-uni4F:before {\r\n    content: \"O\";\r\n}\r\n.icon-uni50:before {\r\n    content: \"P\";\r\n}\r\n.icon-uni51:before {\r\n    content: \"Q\";\r\n}\r\n.icon-uni52:before {\r\n    content: \"R\";\r\n}\r\n.icon-uni53:before {\r\n    content: \"S\";\r\n}\r\n.icon-uni54:before {\r\n    content: \"T\";\r\n}\r\n.icon-uni55:before {\r\n    content: \"U\";\r\n}\r\n.icon-uni56:before {\r\n    content: \"V\";\r\n}\r\n.icon-uni57:before {\r\n    content: \"W\";\r\n}\r\n.icon-uni58:before {\r\n    content: \"X\";\r\n}\r\n.icon-uni59:before {\r\n    content: \"Y\";\r\n}\r\n.icon-uni5A:before {\r\n    content: \"Z\";\r\n}\r\n.icon-uni5B:before {\r\n    content: \"[\";\r\n}\r\n.icon-uni5C:before {\r\n    content: \"\\\\\";\r\n}\r\n.icon-uni5D:before {\r\n    content: \"]\";\r\n}\r\n.icon-uni5E:before {\r\n    content: \"^\";\r\n}\r\n.icon-uni5F:before {\r\n    content: \"_\";\r\n}\r\n.icon-uni60:before {\r\n    content: \"`\";\r\n}\r\n.icon-uni61:before {\r\n    content: \"a\";\r\n}\r\n.icon-uni62:before {\r\n    content: \"b\";\r\n}\r\n.icon-uni63:before {\r\n    content: \"c\";\r\n}\r\n.icon-uni64:before {\r\n    content: \"d\";\r\n}\r\n.icon-uni65:before {\r\n    content: \"e\";\r\n}\r\n.icon-uni66:before {\r\n    content: \"f\";\r\n}\r\n.icon-uni67:before {\r\n    content: \"g\";\r\n}\r\n.icon-uni68:before {\r\n    content: \"h\";\r\n}\r\n.icon-uni69:before {\r\n    content: \"i\";\r\n}\r\n.icon-uni6A:before {\r\n    content: \"j\";\r\n}\r\n.icon-uni6B:before {\r\n    content: \"k\";\r\n}\r\n.icon-uni6C:before {\r\n    content: \"l\";\r\n}\r\n.icon-uni6D:before {\r\n    content: \"m\";\r\n}\r\n.icon-uni6E:before {\r\n    content: \"n\";\r\n}\r\n.icon-uni6F:before {\r\n    content: \"o\";\r\n}\r\n.icon-uni70:before {\r\n    content: \"p\";\r\n}\r\n.icon-uni71:before {\r\n    content: \"q\";\r\n}\r\n.icon-uni72:before {\r\n    content: \"r\";\r\n}\r\n.icon-uni73:before {\r\n    content: \"s\";\r\n}\r\n.icon-uni74:before {\r\n    content: \"t\";\r\n}\r\n.icon-uni75:before {\r\n    content: \"u\";\r\n}\r\n.icon-uni76:before {\r\n    content: \"v\";\r\n}\r\n.icon-uni77:before {\r\n    content: \"w\";\r\n}\r\n.icon-uni78:before {\r\n    content: \"x\";\r\n}\r\n.icon-uni79:before {\r\n    content: \"y\";\r\n}\r\n.icon-uni7A:before {\r\n    content: \"z\";\r\n}\r\n.icon-uni7B:before {\r\n    content: \"{\";\r\n}\r\n.icon-uni7C:before {\r\n    content: \"|\";\r\n}\r\n.icon-uni7D:before {\r\n    content: \"}\";\r\n}\r\n.icon-uni7E:before {\r\n    content: \"~\";\r\n}\r\n.icon-uniA9:before {\r\n    content: \"\\A9\";\r\n}\r\n\r\n", ""]);
+	exports.push([module.id, "\n\n@font-face {\n    font-family: 'BasicIcon';\n    src: url(" + __webpack_require__(68) + ") format('truetype');\n    font-weight: normal;\n    font-style: normal;\n}\n\n.icon {\n    /* use !important to prevent issues with browser extensions that change fonts */\n    font-family: 'BasicIcon' !important;\n    speak: none;\n    font-style: normal;\n    font-weight: normal;\n    font-variant: normal;\n    text-transform: none;\n    line-height: 1;\n    \n    /* Enable Ligatures ================ */\n    letter-spacing: 0;\n    -webkit-font-feature-settings: \"liga\";\n    -moz-font-feature-settings: \"liga=1\";\n    -moz-font-feature-settings: \"liga\";\n    -ms-font-feature-settings: \"liga\" 1;\n    -o-font-feature-settings: \"liga\";\n    font-feature-settings: \"liga\";\n\n    /* Better Font Rendering =========== */\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-home:before {\n    content: \"\\E900\";\n}\n.icon-home2:before {\n    content: \"\\E901\";\n}\n.icon-home3:before {\n    content: \"\\E902\";\n}\n.icon-office:before {\n    content: \"\\E903\";\n}\n.icon-newspaper:before {\n    content: \"\\E904\";\n}\n.icon-pencil:before {\n    content: \"\\E905\";\n}\n.icon-pencil2:before {\n    content: \"\\E906\";\n}\n.icon-quill:before {\n    content: \"\\E907\";\n}\n.icon-pen:before {\n    content: \"\\E908\";\n}\n.icon-blog:before {\n    content: \"\\E909\";\n}\n.icon-eyedropper:before {\n    content: \"\\E90A\";\n}\n.icon-droplet:before {\n    content: \"\\E90B\";\n}\n.icon-paint-format:before {\n    content: \"\\E90C\";\n}\n.icon-image:before {\n    content: \"\\E90D\";\n}\n.icon-images:before {\n    content: \"\\E90E\";\n}\n.icon-camera:before {\n    content: \"\\E90F\";\n}\n.icon-headphones:before {\n    content: \"\\E910\";\n}\n.icon-music:before {\n    content: \"\\E911\";\n}\n.icon-play:before {\n    content: \"\\E912\";\n}\n.icon-film:before {\n    content: \"\\E913\";\n}\n.icon-video-camera:before {\n    content: \"\\E914\";\n}\n.icon-dice:before {\n    content: \"\\E915\";\n}\n.icon-pacman:before {\n    content: \"\\E916\";\n}\n.icon-spades:before {\n    content: \"\\E917\";\n}\n.icon-clubs:before {\n    content: \"\\E918\";\n}\n.icon-diamonds:before {\n    content: \"\\E919\";\n}\n.icon-bullhorn:before {\n    content: \"\\E91A\";\n}\n.icon-connection:before {\n    content: \"\\E91B\";\n}\n.icon-podcast:before {\n    content: \"\\E91C\";\n}\n.icon-feed:before {\n    content: \"\\E91D\";\n}\n.icon-mic:before {\n    content: \"\\E91E\";\n}\n.icon-book:before {\n    content: \"\\E91F\";\n}\n.icon-books:before {\n    content: \"\\E920\";\n}\n.icon-library:before {\n    content: \"\\E921\";\n}\n.icon-file-text:before {\n    content: \"\\E922\";\n}\n.icon-profile:before {\n    content: \"\\E923\";\n}\n.icon-file-empty:before {\n    content: \"\\E924\";\n}\n.icon-files-empty:before {\n    content: \"\\E925\";\n}\n.icon-file-text2:before {\n    content: \"\\E926\";\n}\n.icon-file-picture:before {\n    content: \"\\E927\";\n}\n.icon-file-music:before {\n    content: \"\\E928\";\n}\n.icon-file-play:before {\n    content: \"\\E929\";\n}\n.icon-file-video:before {\n    content: \"\\E92A\";\n}\n.icon-file-zip:before {\n    content: \"\\E92B\";\n}\n.icon-copy:before {\n    content: \"\\E92C\";\n}\n.icon-paste:before {\n    content: \"\\E92D\";\n}\n.icon-stack:before {\n    content: \"\\E92E\";\n}\n.icon-folder:before {\n    content: \"\\E92F\";\n}\n.icon-folder-open:before {\n    content: \"\\E930\";\n}\n.icon-folder-plus:before {\n    content: \"\\E931\";\n}\n.icon-folder-minus:before {\n    content: \"\\E932\";\n}\n.icon-folder-download:before {\n    content: \"\\E933\";\n}\n.icon-folder-upload:before {\n    content: \"\\E934\";\n}\n.icon-price-tag:before {\n    content: \"\\E935\";\n}\n.icon-price-tags:before {\n    content: \"\\E936\";\n}\n.icon-barcode:before {\n    content: \"\\E937\";\n}\n.icon-qrcode:before {\n    content: \"\\E938\";\n}\n.icon-ticket:before {\n    content: \"\\E939\";\n}\n.icon-cart:before {\n    content: \"\\E93A\";\n}\n.icon-coin-dollar:before {\n    content: \"\\E93B\";\n}\n.icon-coin-euro:before {\n    content: \"\\E93C\";\n}\n.icon-coin-pound:before {\n    content: \"\\E93D\";\n}\n.icon-coin-yen:before {\n    content: \"\\E93E\";\n}\n.icon-credit-card:before {\n    content: \"\\E93F\";\n}\n.icon-calculator:before {\n    content: \"\\E940\";\n}\n.icon-lifebuoy:before {\n    content: \"\\E941\";\n}\n.icon-phone:before {\n    content: \"\\E942\";\n}\n.icon-phone-hang-up:before {\n    content: \"\\E943\";\n}\n.icon-address-book:before {\n    content: \"\\E944\";\n}\n.icon-envelop:before {\n    content: \"\\E945\";\n}\n.icon-pushpin:before {\n    content: \"\\E946\";\n}\n.icon-location:before {\n    content: \"\\E947\";\n}\n.icon-location2:before {\n    content: \"\\E948\";\n}\n.icon-compass:before {\n    content: \"\\E949\";\n}\n.icon-compass2:before {\n    content: \"\\E94A\";\n}\n.icon-map:before {\n    content: \"\\E94B\";\n}\n.icon-map2:before {\n    content: \"\\E94C\";\n}\n.icon-history:before {\n    content: \"\\E94D\";\n}\n.icon-clock:before {\n    content: \"\\E94E\";\n}\n.icon-clock2:before {\n    content: \"\\E94F\";\n}\n.icon-alarm:before {\n    content: \"\\E950\";\n}\n.icon-bell:before {\n    content: \"\\E951\";\n}\n.icon-stopwatch:before {\n    content: \"\\E952\";\n}\n.icon-calendar:before {\n    content: \"\\E953\";\n}\n.icon-printer:before {\n    content: \"\\E954\";\n}\n.icon-keyboard:before {\n    content: \"\\E955\";\n}\n.icon-display:before {\n    content: \"\\E956\";\n}\n.icon-laptop:before {\n    content: \"\\E957\";\n}\n.icon-mobile:before {\n    content: \"\\E958\";\n}\n.icon-mobile2:before {\n    content: \"\\E959\";\n}\n.icon-tablet:before {\n    content: \"\\E95A\";\n}\n.icon-tv:before {\n    content: \"\\E95B\";\n}\n.icon-drawer:before {\n    content: \"\\E95C\";\n}\n.icon-drawer2:before {\n    content: \"\\E95D\";\n}\n.icon-box-add:before {\n    content: \"\\E95E\";\n}\n.icon-box-remove:before {\n    content: \"\\E95F\";\n}\n.icon-download:before {\n    content: \"\\E960\";\n}\n.icon-upload:before {\n    content: \"\\E961\";\n}\n.icon-floppy-disk:before {\n    content: \"\\E962\";\n}\n.icon-drive:before {\n    content: \"\\E963\";\n}\n.icon-database:before {\n    content: \"\\E964\";\n}\n.icon-undo:before {\n    content: \"\\E965\";\n}\n.icon-redo:before {\n    content: \"\\E966\";\n}\n.icon-undo2:before {\n    content: \"\\E967\";\n}\n.icon-redo2:before {\n    content: \"\\E968\";\n}\n.icon-forward:before {\n    content: \"\\E969\";\n}\n.icon-reply:before {\n    content: \"\\E96A\";\n}\n.icon-bubble:before {\n    content: \"\\E96B\";\n}\n.icon-bubbles:before {\n    content: \"\\E96C\";\n}\n.icon-bubbles2:before {\n    content: \"\\E96D\";\n}\n.icon-bubble2:before {\n    content: \"\\E96E\";\n}\n.icon-bubbles3:before {\n    content: \"\\E96F\";\n}\n.icon-bubbles4:before {\n    content: \"\\E970\";\n}\n.icon-user:before {\n    content: \"\\E971\";\n}\n.icon-users:before {\n    content: \"\\E972\";\n}\n.icon-user-plus:before {\n    content: \"\\E973\";\n}\n.icon-user-minus:before {\n    content: \"\\E974\";\n}\n.icon-user-check:before {\n    content: \"\\E975\";\n}\n.icon-user-tie:before {\n    content: \"\\E976\";\n}\n.icon-quotes-left:before {\n    content: \"\\E977\";\n}\n.icon-quotes-right:before {\n    content: \"\\E978\";\n}\n.icon-hour-glass:before {\n    content: \"\\E979\";\n}\n.icon-spinner:before {\n    content: \"\\E97A\";\n}\n.icon-spinner2:before {\n    content: \"\\E97B\";\n}\n.icon-spinner3:before {\n    content: \"\\E97C\";\n}\n.icon-spinner4:before {\n    content: \"\\E97D\";\n}\n.icon-spinner5:before {\n    content: \"\\E97E\";\n}\n.icon-spinner6:before {\n    content: \"\\E97F\";\n}\n.icon-spinner7:before {\n    content: \"\\E980\";\n}\n.icon-spinner8:before {\n    content: \"\\E981\";\n}\n.icon-spinner9:before {\n    content: \"\\E982\";\n}\n.icon-spinner10:before {\n    content: \"\\E983\";\n}\n.icon-spinner11:before {\n    content: \"\\E984\";\n}\n.icon-binoculars:before {\n    content: \"\\E985\";\n}\n.icon-search:before {\n    content: \"\\E986\";\n}\n.icon-zoom-in:before {\n    content: \"\\E987\";\n}\n.icon-zoom-out:before {\n    content: \"\\E988\";\n}\n.icon-enlarge:before {\n    content: \"\\E989\";\n}\n.icon-shrink:before {\n    content: \"\\E98A\";\n}\n.icon-enlarge2:before {\n    content: \"\\E98B\";\n}\n.icon-shrink2:before {\n    content: \"\\E98C\";\n}\n.icon-key:before {\n    content: \"\\E98D\";\n}\n.icon-key2:before {\n    content: \"\\E98E\";\n}\n.icon-lock:before {\n    content: \"\\E98F\";\n}\n.icon-unlocked:before {\n    content: \"\\E990\";\n}\n.icon-wrench:before {\n    content: \"\\E991\";\n}\n.icon-equalizer:before {\n    content: \"\\E992\";\n}\n.icon-equalizer2:before {\n    content: \"\\E993\";\n}\n.icon-cog:before {\n    content: \"\\E994\";\n}\n.icon-cogs:before {\n    content: \"\\E995\";\n}\n.icon-hammer:before {\n    content: \"\\E996\";\n}\n.icon-magic-wand:before {\n    content: \"\\E997\";\n}\n.icon-aid-kit:before {\n    content: \"\\E998\";\n}\n.icon-bug:before {\n    content: \"\\E999\";\n}\n.icon-pie-chart:before {\n    content: \"\\E99A\";\n}\n.icon-stats-dots:before {\n    content: \"\\E99B\";\n}\n.icon-stats-bars:before {\n    content: \"\\E99C\";\n}\n.icon-stats-bars2:before {\n    content: \"\\E99D\";\n}\n.icon-trophy:before {\n    content: \"\\E99E\";\n}\n.icon-gift:before {\n    content: \"\\E99F\";\n}\n.icon-glass:before {\n    content: \"\\E9A0\";\n}\n.icon-glass2:before {\n    content: \"\\E9A1\";\n}\n.icon-mug:before {\n    content: \"\\E9A2\";\n}\n.icon-spoon-knife:before {\n    content: \"\\E9A3\";\n}\n.icon-leaf:before {\n    content: \"\\E9A4\";\n}\n.icon-rocket:before {\n    content: \"\\E9A5\";\n}\n.icon-meter:before {\n    content: \"\\E9A6\";\n}\n.icon-meter2:before {\n    content: \"\\E9A7\";\n}\n.icon-hammer2:before {\n    content: \"\\E9A8\";\n}\n.icon-fire:before {\n    content: \"\\E9A9\";\n}\n.icon-lab:before {\n    content: \"\\E9AA\";\n}\n.icon-magnet:before {\n    content: \"\\E9AB\";\n}\n.icon-bin:before {\n    content: \"\\E9AC\";\n}\n.icon-bin2:before {\n    content: \"\\E9AD\";\n}\n.icon-briefcase:before {\n    content: \"\\E9AE\";\n}\n.icon-airplane:before {\n    content: \"\\E9AF\";\n}\n.icon-truck:before {\n    content: \"\\E9B0\";\n}\n.icon-road:before {\n    content: \"\\E9B1\";\n}\n.icon-accessibility:before {\n    content: \"\\E9B2\";\n}\n.icon-target:before {\n    content: \"\\E9B3\";\n}\n.icon-shield:before {\n    content: \"\\E9B4\";\n}\n.icon-power:before {\n    content: \"\\E9B5\";\n}\n.icon-switch:before {\n    content: \"\\E9B6\";\n}\n.icon-power-cord:before {\n    content: \"\\E9B7\";\n}\n.icon-clipboard:before {\n    content: \"\\E9B8\";\n}\n.icon-list-numbered:before {\n    content: \"\\E9B9\";\n}\n.icon-list:before {\n    content: \"\\E9BA\";\n}\n.icon-list2:before {\n    content: \"\\E9BB\";\n}\n.icon-tree:before {\n    content: \"\\E9BC\";\n}\n.icon-menu:before {\n    content: \"\\E9BD\";\n}\n.icon-menu2:before {\n    content: \"\\E9BE\";\n}\n.icon-menu3:before {\n    content: \"\\E9BF\";\n}\n.icon-menu4:before {\n    content: \"\\E9C0\";\n}\n.icon-cloud:before {\n    content: \"\\E9C1\";\n}\n.icon-cloud-download:before {\n    content: \"\\E9C2\";\n}\n.icon-cloud-upload:before {\n    content: \"\\E9C3\";\n}\n.icon-cloud-check:before {\n    content: \"\\E9C4\";\n}\n.icon-download2:before {\n    content: \"\\E9C5\";\n}\n.icon-upload2:before {\n    content: \"\\E9C6\";\n}\n.icon-download3:before {\n    content: \"\\E9C7\";\n}\n.icon-upload3:before {\n    content: \"\\E9C8\";\n}\n.icon-sphere:before {\n    content: \"\\E9C9\";\n}\n.icon-earth:before {\n    content: \"\\E9CA\";\n}\n.icon-link:before {\n    content: \"\\E9CB\";\n}\n.icon-flag:before {\n    content: \"\\E9CC\";\n}\n.icon-attachment:before {\n    content: \"\\E9CD\";\n}\n.icon-eye:before {\n    content: \"\\E9CE\";\n}\n.icon-eye-plus:before {\n    content: \"\\E9CF\";\n}\n.icon-eye-minus:before {\n    content: \"\\E9D0\";\n}\n.icon-eye-blocked:before {\n    content: \"\\E9D1\";\n}\n.icon-bookmark:before {\n    content: \"\\E9D2\";\n}\n.icon-bookmarks:before {\n    content: \"\\E9D3\";\n}\n.icon-sun:before {\n    content: \"\\E9D4\";\n}\n.icon-contrast:before {\n    content: \"\\E9D5\";\n}\n.icon-brightness-contrast:before {\n    content: \"\\E9D6\";\n}\n.icon-star-empty:before {\n    content: \"\\E9D7\";\n}\n.icon-star-half:before {\n    content: \"\\E9D8\";\n}\n.icon-star-full:before {\n    content: \"\\E9D9\";\n}\n.icon-heart:before {\n    content: \"\\E9DA\";\n}\n.icon-heart-broken:before {\n    content: \"\\E9DB\";\n}\n.icon-man:before {\n    content: \"\\E9DC\";\n}\n.icon-woman:before {\n    content: \"\\E9DD\";\n}\n.icon-man-woman:before {\n    content: \"\\E9DE\";\n}\n.icon-happy:before {\n    content: \"\\E9DF\";\n}\n.icon-happy2:before {\n    content: \"\\E9E0\";\n}\n.icon-smile:before {\n    content: \"\\E9E1\";\n}\n.icon-smile2:before {\n    content: \"\\E9E2\";\n}\n.icon-tongue:before {\n    content: \"\\E9E3\";\n}\n.icon-tongue2:before {\n    content: \"\\E9E4\";\n}\n.icon-sad:before {\n    content: \"\\E9E5\";\n}\n.icon-sad2:before {\n    content: \"\\E9E6\";\n}\n.icon-wink:before {\n    content: \"\\E9E7\";\n}\n.icon-wink2:before {\n    content: \"\\E9E8\";\n}\n.icon-grin:before {\n    content: \"\\E9E9\";\n}\n.icon-grin2:before {\n    content: \"\\E9EA\";\n}\n.icon-cool:before {\n    content: \"\\E9EB\";\n}\n.icon-cool2:before {\n    content: \"\\E9EC\";\n}\n.icon-angry:before {\n    content: \"\\E9ED\";\n}\n.icon-angry2:before {\n    content: \"\\E9EE\";\n}\n.icon-evil:before {\n    content: \"\\E9EF\";\n}\n.icon-evil2:before {\n    content: \"\\E9F0\";\n}\n.icon-shocked:before {\n    content: \"\\E9F1\";\n}\n.icon-shocked2:before {\n    content: \"\\E9F2\";\n}\n.icon-baffled:before {\n    content: \"\\E9F3\";\n}\n.icon-baffled2:before {\n    content: \"\\E9F4\";\n}\n.icon-confused:before {\n    content: \"\\E9F5\";\n}\n.icon-confused2:before {\n    content: \"\\E9F6\";\n}\n.icon-neutral:before {\n    content: \"\\E9F7\";\n}\n.icon-neutral2:before {\n    content: \"\\E9F8\";\n}\n.icon-hipster:before {\n    content: \"\\E9F9\";\n}\n.icon-hipster2:before {\n    content: \"\\E9FA\";\n}\n.icon-wondering:before {\n    content: \"\\E9FB\";\n}\n.icon-wondering2:before {\n    content: \"\\E9FC\";\n}\n.icon-sleepy:before {\n    content: \"\\E9FD\";\n}\n.icon-sleepy2:before {\n    content: \"\\E9FE\";\n}\n.icon-frustrated:before {\n    content: \"\\E9FF\";\n}\n.icon-frustrated2:before {\n    content: \"\\EA00\";\n}\n.icon-crying:before {\n    content: \"\\EA01\";\n}\n.icon-crying2:before {\n    content: \"\\EA02\";\n}\n.icon-point-up:before {\n    content: \"\\EA03\";\n}\n.icon-point-right:before {\n    content: \"\\EA04\";\n}\n.icon-point-down:before {\n    content: \"\\EA05\";\n}\n.icon-point-left:before {\n    content: \"\\EA06\";\n}\n.icon-warning:before {\n    content: \"\\EA07\";\n}\n.icon-notification:before {\n    content: \"\\EA08\";\n}\n.icon-question:before {\n    content: \"\\EA09\";\n}\n.icon-plus:before {\n    content: \"\\EA0A\";\n}\n.icon-minus:before {\n    content: \"\\EA0B\";\n}\n.icon-info:before {\n    content: \"\\EA0C\";\n}\n.icon-cancel-circle:before {\n    content: \"\\EA0D\";\n}\n.icon-blocked:before {\n    content: \"\\EA0E\";\n}\n.icon-cross:before {\n    content: \"\\EA0F\";\n}\n.icon-checkmark:before {\n    content: \"\\EA10\";\n}\n.icon-checkmark2:before {\n    content: \"\\EA11\";\n}\n.icon-spell-check:before {\n    content: \"\\EA12\";\n}\n.icon-enter:before {\n    content: \"\\EA13\";\n}\n.icon-exit:before {\n    content: \"\\EA14\";\n}\n.icon-play2:before {\n    content: \"\\EA15\";\n}\n.icon-pause:before {\n    content: \"\\EA16\";\n}\n.icon-stop:before {\n    content: \"\\EA17\";\n}\n.icon-previous:before {\n    content: \"\\EA18\";\n}\n.icon-next:before {\n    content: \"\\EA19\";\n}\n.icon-backward:before {\n    content: \"\\EA1A\";\n}\n.icon-forward2:before {\n    content: \"\\EA1B\";\n}\n.icon-play3:before {\n    content: \"\\EA1C\";\n}\n.icon-pause2:before {\n    content: \"\\EA1D\";\n}\n.icon-stop2:before {\n    content: \"\\EA1E\";\n}\n.icon-backward2:before {\n    content: \"\\EA1F\";\n}\n.icon-forward3:before {\n    content: \"\\EA20\";\n}\n.icon-first:before {\n    content: \"\\EA21\";\n}\n.icon-last:before {\n    content: \"\\EA22\";\n}\n.icon-previous2:before {\n    content: \"\\EA23\";\n}\n.icon-next2:before {\n    content: \"\\EA24\";\n}\n.icon-eject:before {\n    content: \"\\EA25\";\n}\n.icon-volume-high:before {\n    content: \"\\EA26\";\n}\n.icon-volume-medium:before {\n    content: \"\\EA27\";\n}\n.icon-volume-low:before {\n    content: \"\\EA28\";\n}\n.icon-volume-mute:before {\n    content: \"\\EA29\";\n}\n.icon-volume-mute2:before {\n    content: \"\\EA2A\";\n}\n.icon-volume-increase:before {\n    content: \"\\EA2B\";\n}\n.icon-volume-decrease:before {\n    content: \"\\EA2C\";\n}\n.icon-loop:before {\n    content: \"\\EA2D\";\n}\n.icon-loop2:before {\n    content: \"\\EA2E\";\n}\n.icon-infinite:before {\n    content: \"\\EA2F\";\n}\n.icon-shuffle:before {\n    content: \"\\EA30\";\n}\n.icon-arrow-up-left:before {\n    content: \"\\EA31\";\n}\n.icon-arrow-up:before {\n    content: \"\\EA32\";\n}\n.icon-arrow-up-right:before {\n    content: \"\\EA33\";\n}\n.icon-arrow-right:before {\n    content: \"\\EA34\";\n}\n.icon-arrow-down-right:before {\n    content: \"\\EA35\";\n}\n.icon-arrow-down:before {\n    content: \"\\EA36\";\n}\n.icon-arrow-down-left:before {\n    content: \"\\EA37\";\n}\n.icon-arrow-left:before {\n    content: \"\\EA38\";\n}\n.icon-arrow-up-left2:before {\n    content: \"\\EA39\";\n}\n.icon-arrow-up2:before {\n    content: \"\\EA3A\";\n}\n.icon-arrow-up-right2:before {\n    content: \"\\EA3B\";\n}\n.icon-arrow-right2:before {\n    content: \"\\EA3C\";\n}\n.icon-arrow-down-right2:before {\n    content: \"\\EA3D\";\n}\n.icon-arrow-down2:before {\n    content: \"\\EA3E\";\n}\n.icon-arrow-down-left2:before {\n    content: \"\\EA3F\";\n}\n.icon-arrow-left2:before {\n    content: \"\\EA40\";\n}\n.icon-circle-up:before {\n    content: \"\\EA41\";\n}\n.icon-circle-right:before {\n    content: \"\\EA42\";\n}\n.icon-circle-down:before {\n    content: \"\\EA43\";\n}\n.icon-circle-left:before {\n    content: \"\\EA44\";\n}\n.icon-tab:before {\n    content: \"\\EA45\";\n}\n.icon-move-up:before {\n    content: \"\\EA46\";\n}\n.icon-move-down:before {\n    content: \"\\EA47\";\n}\n.icon-sort-alpha-asc:before {\n    content: \"\\EA48\";\n}\n.icon-sort-alpha-desc:before {\n    content: \"\\EA49\";\n}\n.icon-sort-numeric-asc:before {\n    content: \"\\EA4A\";\n}\n.icon-sort-numberic-desc:before {\n    content: \"\\EA4B\";\n}\n.icon-sort-amount-asc:before {\n    content: \"\\EA4C\";\n}\n.icon-sort-amount-desc:before {\n    content: \"\\EA4D\";\n}\n.icon-command:before {\n    content: \"\\EA4E\";\n}\n.icon-shift:before {\n    content: \"\\EA4F\";\n}\n.icon-ctrl:before {\n    content: \"\\EA50\";\n}\n.icon-opt:before {\n    content: \"\\EA51\";\n}\n.icon-checkbox-checked:before {\n    content: \"\\EA52\";\n}\n.icon-checkbox-unchecked:before {\n    content: \"\\EA53\";\n}\n.icon-radio-checked:before {\n    content: \"\\EA54\";\n}\n.icon-radio-checked2:before {\n    content: \"\\EA55\";\n}\n.icon-radio-unchecked:before {\n    content: \"\\EA56\";\n}\n.icon-crop:before {\n    content: \"\\EA57\";\n}\n.icon-make-group:before {\n    content: \"\\EA58\";\n}\n.icon-ungroup:before {\n    content: \"\\EA59\";\n}\n.icon-scissors:before {\n    content: \"\\EA5A\";\n}\n.icon-filter:before {\n    content: \"\\EA5B\";\n}\n.icon-font:before {\n    content: \"\\EA5C\";\n}\n.icon-ligature:before {\n    content: \"\\EA5D\";\n}\n.icon-ligature2:before {\n    content: \"\\EA5E\";\n}\n.icon-text-height:before {\n    content: \"\\EA5F\";\n}\n.icon-text-width:before {\n    content: \"\\EA60\";\n}\n.icon-font-size:before {\n    content: \"\\EA61\";\n}\n.icon-bold:before {\n    content: \"\\EA62\";\n}\n.icon-underline:before {\n    content: \"\\EA63\";\n}\n.icon-italic:before {\n    content: \"\\EA64\";\n}\n.icon-strikethrough:before {\n    content: \"\\EA65\";\n}\n.icon-omega:before {\n    content: \"\\EA66\";\n}\n.icon-sigma:before {\n    content: \"\\EA67\";\n}\n.icon-page-break:before {\n    content: \"\\EA68\";\n}\n.icon-superscript:before {\n    content: \"\\EA69\";\n}\n.icon-subscript:before {\n    content: \"\\EA6A\";\n}\n.icon-superscript2:before {\n    content: \"\\EA6B\";\n}\n.icon-subscript2:before {\n    content: \"\\EA6C\";\n}\n.icon-text-color:before {\n    content: \"\\EA6D\";\n}\n.icon-pagebreak:before {\n    content: \"\\EA6E\";\n}\n.icon-clear-formatting:before {\n    content: \"\\EA6F\";\n}\n.icon-table:before {\n    content: \"\\EA70\";\n}\n.icon-table2:before {\n    content: \"\\EA71\";\n}\n.icon-insert-template:before {\n    content: \"\\EA72\";\n}\n.icon-pilcrow:before {\n    content: \"\\EA73\";\n}\n.icon-ltr:before {\n    content: \"\\EA74\";\n}\n.icon-rtl:before {\n    content: \"\\EA75\";\n}\n.icon-section:before {\n    content: \"\\EA76\";\n}\n.icon-paragraph-left:before {\n    content: \"\\EA77\";\n}\n.icon-paragraph-center:before {\n    content: \"\\EA78\";\n}\n.icon-paragraph-right:before {\n    content: \"\\EA79\";\n}\n.icon-paragraph-justify:before {\n    content: \"\\EA7A\";\n}\n.icon-indent-increase:before {\n    content: \"\\EA7B\";\n}\n.icon-indent-decrease:before {\n    content: \"\\EA7C\";\n}\n.icon-share:before {\n    content: \"\\EA7D\";\n}\n.icon-new-tab:before {\n    content: \"\\EA7E\";\n}\n.icon-embed:before {\n    content: \"\\EA7F\";\n}\n.icon-embed2:before {\n    content: \"\\EA80\";\n}\n.icon-terminal:before {\n    content: \"\\EA81\";\n}\n.icon-share2:before {\n    content: \"\\EA82\";\n}\n.icon-mail:before {\n    content: \"\\EA83\";\n}\n.icon-mail2:before {\n    content: \"\\EA84\";\n}\n.icon-mail3:before {\n    content: \"\\EA85\";\n}\n.icon-mail4:before {\n    content: \"\\EA86\";\n}\n.icon-amazon:before {\n    content: \"\\EA87\";\n}\n.icon-google:before {\n    content: \"\\EA88\";\n}\n.icon-google2:before {\n    content: \"\\EA89\";\n}\n.icon-google3:before {\n    content: \"\\EA8A\";\n}\n.icon-google-plus:before {\n    content: \"\\EA8B\";\n}\n.icon-google-plus2:before {\n    content: \"\\EA8C\";\n}\n.icon-google-plus3:before {\n    content: \"\\EA8D\";\n}\n.icon-hangouts:before {\n    content: \"\\EA8E\";\n}\n.icon-google-drive:before {\n    content: \"\\EA8F\";\n}\n.icon-facebook:before {\n    content: \"\\EA90\";\n}\n.icon-facebook2:before {\n    content: \"\\EA91\";\n}\n.icon-instagram:before {\n    content: \"\\EA92\";\n}\n.icon-whatsapp:before {\n    content: \"\\EA93\";\n}\n.icon-spotify:before {\n    content: \"\\EA94\";\n}\n.icon-telegram:before {\n    content: \"\\EA95\";\n}\n.icon-twitter:before {\n    content: \"\\EA96\";\n}\n.icon-vine:before {\n    content: \"\\EA97\";\n}\n.icon-vk:before {\n    content: \"\\EA98\";\n}\n.icon-renren:before {\n    content: \"\\EA99\";\n}\n.icon-sina-weibo:before {\n    content: \"\\EA9A\";\n}\n.icon-rss:before {\n    content: \"\\EA9B\";\n}\n.icon-rss2:before {\n    content: \"\\EA9C\";\n}\n.icon-youtube:before {\n    content: \"\\EA9D\";\n}\n.icon-youtube2:before {\n    content: \"\\EA9E\";\n}\n.icon-twitch:before {\n    content: \"\\EA9F\";\n}\n.icon-vimeo:before {\n    content: \"\\EAA0\";\n}\n.icon-vimeo2:before {\n    content: \"\\EAA1\";\n}\n.icon-lanyrd:before {\n    content: \"\\EAA2\";\n}\n.icon-flickr:before {\n    content: \"\\EAA3\";\n}\n.icon-flickr2:before {\n    content: \"\\EAA4\";\n}\n.icon-flickr3:before {\n    content: \"\\EAA5\";\n}\n.icon-flickr4:before {\n    content: \"\\EAA6\";\n}\n.icon-dribbble:before {\n    content: \"\\EAA7\";\n}\n.icon-behance:before {\n    content: \"\\EAA8\";\n}\n.icon-behance2:before {\n    content: \"\\EAA9\";\n}\n.icon-deviantart:before {\n    content: \"\\EAAA\";\n}\n.icon-500px:before {\n    content: \"\\EAAB\";\n}\n.icon-steam:before {\n    content: \"\\EAAC\";\n}\n.icon-steam2:before {\n    content: \"\\EAAD\";\n}\n.icon-dropbox:before {\n    content: \"\\EAAE\";\n}\n.icon-onedrive:before {\n    content: \"\\EAAF\";\n}\n.icon-github:before {\n    content: \"\\EAB0\";\n}\n.icon-npm:before {\n    content: \"\\EAB1\";\n}\n.icon-basecamp:before {\n    content: \"\\EAB2\";\n}\n.icon-trello:before {\n    content: \"\\EAB3\";\n}\n.icon-wordpress:before {\n    content: \"\\EAB4\";\n}\n.icon-joomla:before {\n    content: \"\\EAB5\";\n}\n.icon-ello:before {\n    content: \"\\EAB6\";\n}\n.icon-blogger:before {\n    content: \"\\EAB7\";\n}\n.icon-blogger2:before {\n    content: \"\\EAB8\";\n}\n.icon-tumblr:before {\n    content: \"\\EAB9\";\n}\n.icon-tumblr2:before {\n    content: \"\\EABA\";\n}\n.icon-yahoo:before {\n    content: \"\\EABB\";\n}\n.icon-yahoo2:before {\n    content: \"\\EABC\";\n}\n.icon-tux:before {\n    content: \"\\EABD\";\n}\n.icon-appleinc:before {\n    content: \"\\EABE\";\n}\n.icon-finder:before {\n    content: \"\\EABF\";\n}\n.icon-android:before {\n    content: \"\\EAC0\";\n}\n.icon-windows:before {\n    content: \"\\EAC1\";\n}\n.icon-windows8:before {\n    content: \"\\EAC2\";\n}\n.icon-soundcloud:before {\n    content: \"\\EAC3\";\n}\n.icon-soundcloud2:before {\n    content: \"\\EAC4\";\n}\n.icon-skype:before {\n    content: \"\\EAC5\";\n}\n.icon-reddit:before {\n    content: \"\\EAC6\";\n}\n.icon-hackernews:before {\n    content: \"\\EAC7\";\n}\n.icon-wikipedia:before {\n    content: \"\\EAC8\";\n}\n.icon-linkedin:before {\n    content: \"\\EAC9\";\n}\n.icon-linkedin2:before {\n    content: \"\\EACA\";\n}\n.icon-lastfm:before {\n    content: \"\\EACB\";\n}\n.icon-lastfm2:before {\n    content: \"\\EACC\";\n}\n.icon-delicious:before {\n    content: \"\\EACD\";\n}\n.icon-stumbleupon:before {\n    content: \"\\EACE\";\n}\n.icon-stumbleupon2:before {\n    content: \"\\EACF\";\n}\n.icon-stackoverflow:before {\n    content: \"\\EAD0\";\n}\n.icon-pinterest:before {\n    content: \"\\EAD1\";\n}\n.icon-pinterest2:before {\n    content: \"\\EAD2\";\n}\n.icon-xing:before {\n    content: \"\\EAD3\";\n}\n.icon-xing2:before {\n    content: \"\\EAD4\";\n}\n.icon-flattr:before {\n    content: \"\\EAD5\";\n}\n.icon-foursquare:before {\n    content: \"\\EAD6\";\n}\n.icon-yelp:before {\n    content: \"\\EAD7\";\n}\n.icon-paypal:before {\n    content: \"\\EAD8\";\n}\n.icon-chrome:before {\n    content: \"\\EAD9\";\n}\n.icon-firefox:before {\n    content: \"\\EADA\";\n}\n.icon-IE:before {\n    content: \"\\EADB\";\n}\n.icon-edge:before {\n    content: \"\\EADC\";\n}\n.icon-safari:before {\n    content: \"\\EADD\";\n}\n.icon-opera:before {\n    content: \"\\EADE\";\n}\n.icon-file-pdf:before {\n    content: \"\\EADF\";\n}\n.icon-file-openoffice:before {\n    content: \"\\EAE0\";\n}\n.icon-file-word:before {\n    content: \"\\EAE1\";\n}\n.icon-file-excel:before {\n    content: \"\\EAE2\";\n}\n.icon-libreoffice:before {\n    content: \"\\EAE3\";\n}\n.icon-html-five:before {\n    content: \"\\EAE4\";\n}\n.icon-html-five2:before {\n    content: \"\\EAE5\";\n}\n.icon-css3:before {\n    content: \"\\EAE6\";\n}\n.icon-git:before {\n    content: \"\\EAE7\";\n}\n.icon-codepen:before {\n    content: \"\\EAE8\";\n}\n.icon-svg:before {\n    content: \"\\EAE9\";\n}\n.icon-IcoMoon:before {\n    content: \"\\EAEA\";\n}\n.icon-uni21:before {\n    content: \"!\";\n}\n.icon-uni22:before {\n    content: \"\\\"\";\n}\n.icon-uni23:before {\n    content: \"#\";\n}\n.icon-uni24:before {\n    content: \"$\";\n}\n.icon-uni25:before {\n    content: \"%\";\n}\n.icon-uni26:before {\n    content: \"&\";\n}\n.icon-uni27:before {\n    content: \"'\";\n}\n.icon-uni28:before {\n    content: \"(\";\n}\n.icon-uni29:before {\n    content: \")\";\n}\n.icon-uni2A:before {\n    content: \"*\";\n}\n.icon-uni2B:before {\n    content: \"+\";\n}\n.icon-uni2C:before {\n    content: \",\";\n}\n.icon-uni2D:before {\n    content: \"-\";\n}\n.icon-uni2E:before {\n    content: \".\";\n}\n.icon-uni2F:before {\n    content: \"/\";\n}\n.icon-uni30:before {\n    content: \"0\";\n}\n.icon-uni31:before {\n    content: \"1\";\n}\n.icon-uni32:before {\n    content: \"2\";\n}\n.icon-uni33:before {\n    content: \"3\";\n}\n.icon-uni34:before {\n    content: \"4\";\n}\n.icon-uni35:before {\n    content: \"5\";\n}\n.icon-uni36:before {\n    content: \"6\";\n}\n.icon-uni37:before {\n    content: \"7\";\n}\n.icon-uni38:before {\n    content: \"8\";\n}\n.icon-uni39:before {\n    content: \"9\";\n}\n.icon-uni3A:before {\n    content: \":\";\n}\n.icon-uni3B:before {\n    content: \";\";\n}\n.icon-uni3C:before {\n    content: \"<\";\n}\n.icon-uni3D:before {\n    content: \"=\";\n}\n.icon-uni3E:before {\n    content: \">\";\n}\n.icon-uni3F:before {\n    content: \"?\";\n}\n.icon-uni40:before {\n    content: \"@\";\n}\n.icon-uni41:before {\n    content: \"A\";\n}\n.icon-uni42:before {\n    content: \"B\";\n}\n.icon-uni43:before {\n    content: \"C\";\n}\n.icon-uni44:before {\n    content: \"D\";\n}\n.icon-uni45:before {\n    content: \"E\";\n}\n.icon-uni46:before {\n    content: \"F\";\n}\n.icon-uni47:before {\n    content: \"G\";\n}\n.icon-uni48:before {\n    content: \"H\";\n}\n.icon-uni49:before {\n    content: \"I\";\n}\n.icon-uni4A:before {\n    content: \"J\";\n}\n.icon-uni4B:before {\n    content: \"K\";\n}\n.icon-uni4C:before {\n    content: \"L\";\n}\n.icon-uni4D:before {\n    content: \"M\";\n}\n.icon-uni4E:before {\n    content: \"N\";\n}\n.icon-uni4F:before {\n    content: \"O\";\n}\n.icon-uni50:before {\n    content: \"P\";\n}\n.icon-uni51:before {\n    content: \"Q\";\n}\n.icon-uni52:before {\n    content: \"R\";\n}\n.icon-uni53:before {\n    content: \"S\";\n}\n.icon-uni54:before {\n    content: \"T\";\n}\n.icon-uni55:before {\n    content: \"U\";\n}\n.icon-uni56:before {\n    content: \"V\";\n}\n.icon-uni57:before {\n    content: \"W\";\n}\n.icon-uni58:before {\n    content: \"X\";\n}\n.icon-uni59:before {\n    content: \"Y\";\n}\n.icon-uni5A:before {\n    content: \"Z\";\n}\n.icon-uni5B:before {\n    content: \"[\";\n}\n.icon-uni5C:before {\n    content: \"\\\\\";\n}\n.icon-uni5D:before {\n    content: \"]\";\n}\n.icon-uni5E:before {\n    content: \"^\";\n}\n.icon-uni5F:before {\n    content: \"_\";\n}\n.icon-uni60:before {\n    content: \"`\";\n}\n.icon-uni61:before {\n    content: \"a\";\n}\n.icon-uni62:before {\n    content: \"b\";\n}\n.icon-uni63:before {\n    content: \"c\";\n}\n.icon-uni64:before {\n    content: \"d\";\n}\n.icon-uni65:before {\n    content: \"e\";\n}\n.icon-uni66:before {\n    content: \"f\";\n}\n.icon-uni67:before {\n    content: \"g\";\n}\n.icon-uni68:before {\n    content: \"h\";\n}\n.icon-uni69:before {\n    content: \"i\";\n}\n.icon-uni6A:before {\n    content: \"j\";\n}\n.icon-uni6B:before {\n    content: \"k\";\n}\n.icon-uni6C:before {\n    content: \"l\";\n}\n.icon-uni6D:before {\n    content: \"m\";\n}\n.icon-uni6E:before {\n    content: \"n\";\n}\n.icon-uni6F:before {\n    content: \"o\";\n}\n.icon-uni70:before {\n    content: \"p\";\n}\n.icon-uni71:before {\n    content: \"q\";\n}\n.icon-uni72:before {\n    content: \"r\";\n}\n.icon-uni73:before {\n    content: \"s\";\n}\n.icon-uni74:before {\n    content: \"t\";\n}\n.icon-uni75:before {\n    content: \"u\";\n}\n.icon-uni76:before {\n    content: \"v\";\n}\n.icon-uni77:before {\n    content: \"w\";\n}\n.icon-uni78:before {\n    content: \"x\";\n}\n.icon-uni79:before {\n    content: \"y\";\n}\n.icon-uni7A:before {\n    content: \"z\";\n}\n.icon-uni7B:before {\n    content: \"{\";\n}\n.icon-uni7C:before {\n    content: \"|\";\n}\n.icon-uni7D:before {\n    content: \"}\";\n}\n.icon-uni7E:before {\n    content: \"~\";\n}\n.icon-uniA9:before {\n    content: \"\\A9\";\n}\n\n", ""]);
 
 	// exports
 
@@ -63925,7 +63960,7 @@
 
 	        },
 	        loadTopTracks: {
-	            /*url: 'api/track/top10',*/
+	            // url: 'api/track/top10',
 	            url: 'api/track',
 	            method: 'GET',
 	            params: {},
@@ -63954,8 +63989,6 @@
 	        }
 	    });
 	}]);
-
-
 
 
 /***/ },
@@ -64178,7 +64211,7 @@
 /* 79 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n        <h3 class=\"view-more\"><i class=\"icon icon-arrow-down\"></i></h3>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track-list\">\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\n    <div class=\"row \"\n         infinite-scroll='ctrl.trackList.nextPage()'\n         infinite-scroll-disabled='ctrl.trackList.busy'\n         infinite-scroll-distance='50'>\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\n               fr-model=\"track\"\n               ng-repeat=\"track in ctrl.trackList.tracks\">\n        </track>\n        <br/>\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\n        <h3 class=\"view-more\"><i class=\"icon icon-arrow-down\"></i></h3>\n    </div>\n</div>\n";
 
 /***/ },
 /* 80 */
@@ -64379,7 +64412,7 @@
 /* 85 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span> Subir obras musicales</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\n    <!--Search component-->\n    <ul class=\"nav nav-sidebar\">\n        <li>\n            <a href=\"#/top\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Ver el top de pistas más escuchadas</span>\n            </a>\n            <a href=\"#/\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Ver todas las pistas</span>\n            </a>\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Ver ayuda</span>\n            </a>\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span> Subir obras musicales</span>\n            </a>\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\n                <i class=\"music-side-menu-albums\"></i>\n                <span>Mis donaciones</span>\n            </a>\n\n        </li>\n    </ul>\n</div>\n\n";
 
 /***/ },
 /* 86 */
@@ -64486,7 +64519,7 @@
 /* 90 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
+	module.exports = "<div class=\"user-menu\">\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\n        <div class=\"fr-cd-bar-menu-btn\">\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <span class=\"fr-cd-member\">\n               <div>\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\n                     <span class=\"fr-wp-avatar-label\"></span>\n                 </span>\n                 </div>\n            </span>\n                </a>\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\n                    <div class=\"fr-member-avatar\">\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\n                            </span>\n                    </div>\n                    <ul class=\"fr-member-information\">\n                        <li>\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\n                        </li>\n                        <li>\n                            <a ng-click=\"ctrl.showEditPopup()\">\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\n                            </a>\n                        </li>\n                    </ul>\n                    <ul class=\"fr-cd-member-dropdown\">\n                        <li>\n                            <i18n></i18n>\n                        </li>\n                        <li>\n                            <a ng-click=\"ctrl.login.logout()\">\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\n                            </a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n";
 
 /***/ },
 /* 91 */
@@ -64643,7 +64676,7 @@
 /* 96 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"search\">\r\n    <input class=\"search-field\"\r\n           ng-model=\"ctrl.parameter\"\r\n           ng-change=\"ctrl.changeParameter()\"\r\n           type=\"text\"\r\n           placeholder=\"{{ 'general_search' | translate }}\"/>\r\n    <span class=\"search-cancel\"\r\n          ng-click=\"ctrl.cancel()\"\r\n          ng-show=\"ctrl.show()\">\r\n        x\r\n    </span>\r\n</div>\r\n";
+	module.exports = "<div class=\"search\">\n    <input class=\"search-field\"\n           ng-model=\"ctrl.parameter\"\n           ng-change=\"ctrl.changeParameter()\"\n           type=\"text\"\n           placeholder=\"{{ 'general_search' | translate }}\"/>\n    <span class=\"search-cancel\"\n          ng-click=\"ctrl.cancel()\"\n          ng-show=\"ctrl.show()\">\n        x\n    </span>\n</div>\n";
 
 /***/ },
 /* 97 */
@@ -64737,7 +64770,7 @@
 /* 101 */
 /***/ function(module, exports) {
 
-	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\r\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\r\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
+	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\n    <a class=\"btn-download\"\n       href=\"{{ ctrl.playerService.track.url }}\"\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\n        <i class=\"icon icon-download\"></i>\n    </a>\n    <div class=\"player-buttons\">\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\n        </button>\n        <button class=\"playpause\"\n                ng-click=\"ctrl.playerService.playpause()\"\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\n        </button>\n        <button class=\"next\" ng-click=\"ctrl.next()\">\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\n        </button>\n    </div>\n\n    <a class=\"btn-time\">\n        <i class=\"icon icon-clock\"></i>\n    </a>\n\n    <div class=\"player-time player-range \">\n        <input min=\"0\"\n               max=\"{{ ctrl.playerService.audio.duration }}\"\n               step=\"0.01\"\n               type=\"range\"\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\n\n    </div>\n    <a class=\"btn-volume\">\n        <i class=\"icon icon-volume-medium\"></i>\n    </a>\n    <div class=\"player-volume player-range \">\n        <input min=\"0\"\n               max=\"1\"\n               step=\"0.01\"\n               type=\"range\"\n               ng-model=\"ctrl.playerService.audio.volume\"/>\n    </div>\n</div>";
 
 /***/ },
 /* 102 */
@@ -64909,7 +64942,7 @@
 /* 107 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
+	module.exports = "<div class=\"login\">\n    <form name=\"userLogin\">\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <a class=\"btn btn-social google\">\n                    <i class=\"icon icon-google-plus\"></i>\n                    <span>Iniciar sesión con Google+</span>\n                </a>\n            </div>\n        </div>\n        <br>\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <a class=\"btn btn-social facebook\">\n                    <i class=\"icon icon-facebook\"></i>\n                    <span>Iniciar sesión con Facebook</span>\n                </a>\n            </div>\n        </div>\n        <br>\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <div class=\"login-section\">\n                    <h3 class=\"login-or\">o</h3>\n                </div>\n            </div>\n        </div>\n        <br>\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\n                <input type=\"text\" name=\"username\" id=\"username\"\n                       ng-model=\"ctrl.userLogin.user.username\"\n                       placeholder=\"Usuario\"\n                       class=\"form-control\"\n                       required/>\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\n                    </span>\n            </div>\n        </div>\n        <br>\n        <div class=\"row\">\n\n            <div class=\"col-md-12\">\n                <input type=\"password\" name=\"password\" id=\"password\"\n                       ng-model=\"ctrl.userLogin.user.password\"\n                       placeholder=\"Contraseña...\"\n                       class=\"form-control\"\n                       required/>\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\n            </div>\n\n        </div>\n        <br>\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                        ng-click=\"ctrl.login()\">\n                    {{ 'general_login'  | translate }}\n                </button>\n            </div>\n        </div>\n        <br>\n\n        <div class=\"row\">\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\n                ¿Has olvidado tu contraseña?\n            </a>\n        </div>\n\n    </form>\n    <form>\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\n                <br>\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                        tabindex=\"0\"\n                        title=\"Crear cuenta en Freeve\"\n                        ng-click=\"ctrl.showRegisterPopup()\"\n                        data-toggle=\"modal\" data-target=\"\">\n                    {{ 'general_create_account' | translate }}\n                </button>\n            </div>\n        </div>\n    </form>\n\n</div>\n";
 
 /***/ },
 /* 108 */
@@ -65127,7 +65160,7 @@
 /* 113 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"register\">\r\n    <form name=\"userForm\">\r\n        <div style=\"text-align: center\">\r\n            <h4>Crear cuenta en Freeven</h4>\r\n        </div>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"email\">Email</label>\r\n                    <input type=\"email\" name=\"email\" id=\"email\"\r\n                           ng-model=\"ctrl.userRegister.newUser.email\"\r\n                           placeholder=\"Email...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.userRegister.newUser.username\"\r\n                           placeholder=\"Nombre de usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\r\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                    <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\r\n                           placeholder=\"Nombres...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\r\n                           placeholder=\"Apellidos...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <br/><br/>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\r\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\r\n                    </p>\r\n\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userRegister.newUser.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userRegister.newUser.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>";
+	module.exports = "<div class=\"register\">\n    <form name=\"userForm\">\n        <div style=\"text-align: center\">\n            <h4>Crear cuenta en Freeven</h4>\n        </div>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"email\">Email</label>\n                    <input type=\"email\" name=\"email\" id=\"email\"\n                           ng-model=\"ctrl.userRegister.newUser.email\"\n                           placeholder=\"Email...\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\n                    </span>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\n                    <input type=\"text\" name=\"username\" id=\"username\"\n                           ng-model=\"ctrl.userRegister.newUser.username\"\n                           placeholder=\"Nombre de usuario...\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\n                    </span>\n                    <div class=\"col-md-12\">\n                    <span class=\"messages\"\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\n                    </div>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\n                           placeholder=\"Nombres...\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\n                    </span>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\n                           placeholder=\"Apellidos...\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\n                           placeholder=\"Contraseña...\"\n                           class=\"form-control\"\n                           required\n                           ng-minlength=\"6\"/>\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\n                           placeholder=\"Repita contraseña....\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\n                    </span>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <span class=\"messages\"\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\n            <br/>\n            <label class=\"radio-inline\">\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\n                       required\n                       checked/>Personal</label>\n            <label class=\"radio-inline\">\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\n                       required/>Artista</label>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\n                <div class=\"col-md-12\">\n                    <label class=\"checkbox-inline\">\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\n                               required>\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\n                            Condiciones</a>.</span>\n                    </label>\n                    <br/><br/>\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                            ng-click=\"ctrl.validateForm()\">\n                        {{ 'general_register'  | translate }}\n                    </button>\n                    <button id=\"idBtnCancelar\" type=\"button\"\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                            ng-click=\"ctrl.closeRegisterPopup()\">\n                        {{ 'general_cancel'  | translate }}\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n    </form>\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\n                    </p>\n\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\n                           placeholder=\"Nombre artístico...\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\n                    </span>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"country\">País</label>\n                    <select class=\"form-control\" id=\"country\"\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\n                        <option value=\"\">Pais...</option>\n                        <option value=\"AF\">Afganistán</option>\n                        <option value=\"AL\">Albania</option>\n                        <option value=\"DE\">Alemania</option>\n                        <option value=\"AD\">Andorra</option>\n                        <option value=\"AO\">Angola</option>\n                        <option value=\"AI\">Anguilla</option>\n                        <option value=\"AQ\">Antártida</option>\n                        <option value=\"AG\">Antigua y Barbuda</option>\n                        <option value=\"AN\">Antillas Holandesas</option>\n                        <option value=\"SA\">Arabia Saudí</option>\n                        <option value=\"DZ\">Argelia</option>\n                        <option value=\"AR\">Argentina</option>\n                        <option value=\"AM\">Armenia</option>\n                        <option value=\"AW\">Aruba</option>\n                        <option value=\"AU\">Australia</option>\n                        <option value=\"AT\">Austria</option>\n                        <option value=\"AZ\">Azerbaiyán</option>\n                        <option value=\"BS\">Bahamas</option>\n                        <option value=\"BH\">Bahrein</option>\n                        <option value=\"BD\">Bangladesh</option>\n                        <option value=\"BB\">Barbados</option>\n                        <option value=\"BE\">Bélgica</option>\n                        <option value=\"BZ\">Belice</option>\n                        <option value=\"BJ\">Benin</option>\n                        <option value=\"BM\">Bermudas</option>\n                        <option value=\"BY\">Bielorrusia</option>\n                        <option value=\"MM\">Birmania</option>\n                        <option value=\"BO\">Bolivia</option>\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\n                        <option value=\"BW\">Botswana</option>\n                        <option value=\"BR\">Brasil</option>\n                        <option value=\"BN\">Brunei</option>\n                        <option value=\"BG\">Bulgaria</option>\n                        <option value=\"BF\">Burkina Faso</option>\n                        <option value=\"BI\">Burundi</option>\n                        <option value=\"BT\">Bután</option>\n                        <option value=\"CV\">Cabo Verde</option>\n                        <option value=\"KH\">Camboya</option>\n                        <option value=\"CM\">Camerún</option>\n                        <option value=\"CA\">Canadá</option>\n                        <option value=\"TD\">Chad</option>\n                        <option value=\"CL\">Chile</option>\n                        <option value=\"CN\">China</option>\n                        <option value=\"CY\">Chipre</option>\n                        <option value=\"VA\">Ciudad del Vaticano</option>\n                        <option value=\"CO\">Colombia</option>\n                        <option value=\"KM\">Comores</option>\n                        <option value=\"CG\">Congo</option>\n                        <option value=\"KR\">Corea</option>\n                        <option value=\"KP\">Corea del Norte</option>\n                        <option value=\"CI\">Costa de Marfíl</option>\n                        <option value=\"CR\">Costa Rica</option>\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\n                        <option value=\"CU\">Cuba</option>\n                        <option value=\"DK\">Dinamarca</option>\n                        <option value=\"DJ\">Djibouti</option>\n                        <option value=\"DM\">Dominica</option>\n                        <option value=\"EC\">Ecuador</option>\n                        <option value=\"EG\">Egipto</option>\n                        <option value=\"SV\">El Salvador</option>\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\n                        <option value=\"ER\">Eritrea</option>\n                        <option value=\"SI\">Eslovenia</option>\n                        <option value=\"ES\" selected>España</option>\n                        <option value=\"US\">Estados Unidos</option>\n                        <option value=\"EE\">Estonia</option>\n                        <option value=\"ET\">Etiopía</option>\n                        <option value=\"FJ\">Fiji</option>\n                        <option value=\"PH\">Filipinas</option>\n                        <option value=\"FI\">Finlandia</option>\n                        <option value=\"FR\">Francia</option>\n                        <option value=\"GA\">Gabón</option>\n                        <option value=\"GM\">Gambia</option>\n                        <option value=\"GE\">Georgia</option>\n                        <option value=\"GH\">Ghana</option>\n                        <option value=\"GI\">Gibraltar</option>\n                        <option value=\"GD\">Granada</option>\n                        <option value=\"GR\">Grecia</option>\n                        <option value=\"GL\">Groenlandia</option>\n                        <option value=\"GP\">Guadalupe</option>\n                        <option value=\"GU\">Guam</option>\n                        <option value=\"GT\">Guatemala</option>\n                        <option value=\"GY\">Guayana</option>\n                        <option value=\"GF\">Guayana Francesa</option>\n                        <option value=\"GN\">Guinea</option>\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\n                        <option value=\"GW\">Guinea-Bissau</option>\n                        <option value=\"HT\">Haití</option>\n                        <option value=\"HN\">Honduras</option>\n                        <option value=\"HU\">Hungría</option>\n                        <option value=\"IN\">India</option>\n                        <option value=\"ID\">Indonesia</option>\n                        <option value=\"IQ\">Irak</option>\n                        <option value=\"IR\">Irán</option>\n                        <option value=\"IE\">Irlanda</option>\n                        <option value=\"BV\">Isla Bouvet</option>\n                        <option value=\"CX\">Isla de Christmas</option>\n                        <option value=\"IS\">Islandia</option>\n                        <option value=\"KY\">Islas Caimán</option>\n                        <option value=\"CK\">Islas Cook</option>\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\n                        <option value=\"FO\">Islas Faroe</option>\n                        <option value=\"HM\">Islas Heard y McDonald</option>\n                        <option value=\"FK\">Islas Malvinas</option>\n                        <option value=\"MP\">Islas Marianas del Norte</option>\n                        <option value=\"MH\">Islas Marshall</option>\n                        <option value=\"PW\">Islas Palau</option>\n                        <option value=\"SB\">Islas Salomón</option>\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\n                        <option value=\"TK\">Islas Tokelau</option>\n                        <option value=\"TC\">Islas Turks y Caicos</option>\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\n                        <option value=\"IL\">Israel</option>\n                        <option value=\"IT\">Italia</option>\n                        <option value=\"JM\">Jamaica</option>\n                        <option value=\"JP\">Japón</option>\n                        <option value=\"JO\">Jordania</option>\n                        <option value=\"KZ\">Kazajistán</option>\n                        <option value=\"KE\">Kenia</option>\n                        <option value=\"KG\">Kirguizistán</option>\n                        <option value=\"KI\">Kiribati</option>\n                        <option value=\"KW\">Kuwait</option>\n                        <option value=\"LA\">Laos</option>\n                        <option value=\"LS\">Lesotho</option>\n                        <option value=\"LV\">Letonia</option>\n                        <option value=\"LB\">Líbano</option>\n                        <option value=\"LR\">Liberia</option>\n                        <option value=\"LY\">Libia</option>\n                        <option value=\"LI\">Liechtenstein</option>\n                        <option value=\"LT\">Lituania</option>\n                        <option value=\"LU\">Luxemburgo</option>\n                        <option value=\"MK\">Macedonia</option>\n                        <option value=\"MG\">Madagascar</option>\n                        <option value=\"MY\">Malasia</option>\n                        <option value=\"MW\">Malawi</option>\n                        <option value=\"MV\">Maldivas</option>\n                        <option value=\"ML\">Malí</option>\n                        <option value=\"MT\">Malta</option>\n                        <option value=\"MA\">Marruecos</option>\n                        <option value=\"MQ\">Martinica</option>\n                        <option value=\"MU\">Mauricio</option>\n                        <option value=\"MR\">Mauritania</option>\n                        <option value=\"YT\">Mayotte</option>\n                        <option value=\"MX\">México</option>\n                        <option value=\"FM\">Micronesia</option>\n                        <option value=\"MD\">Moldavia</option>\n                        <option value=\"MC\">Mónaco</option>\n                        <option value=\"MN\">Mongolia</option>\n                        <option value=\"MS\">Montserrat</option>\n                        <option value=\"MZ\">Mozambique</option>\n                        <option value=\"NA\">Namibia</option>\n                        <option value=\"NR\">Nauru</option>\n                        <option value=\"NP\">Nepal</option>\n                        <option value=\"NI\">Nicaragua</option>\n                        <option value=\"NE\">Níger</option>\n                        <option value=\"NG\">Nigeria</option>\n                        <option value=\"NU\">Niue</option>\n                        <option value=\"NF\">Norfolk</option>\n                        <option value=\"NO\">Noruega</option>\n                        <option value=\"NC\">Nueva Caledonia</option>\n                        <option value=\"NZ\">Nueva Zelanda</option>\n                        <option value=\"OM\">Omán</option>\n                        <option value=\"NL\">Países Bajos</option>\n                        <option value=\"PA\">Panamá</option>\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\n                        <option value=\"PK\">Paquistán</option>\n                        <option value=\"PY\">Paraguay</option>\n                        <option value=\"PE\">Perú</option>\n                        <option value=\"PN\">Pitcairn</option>\n                        <option value=\"PF\">Polinesia Francesa</option>\n                        <option value=\"PL\">Polonia</option>\n                        <option value=\"PT\">Portugal</option>\n                        <option value=\"PR\">Puerto Rico</option>\n                        <option value=\"QA\">Qatar</option>\n                        <option value=\"UK\">Reino Unido</option>\n                        <option value=\"CF\">República Centroafricana</option>\n                        <option value=\"CZ\">República Checa</option>\n                        <option value=\"ZA\">República de Sudáfrica</option>\n                        <option value=\"DO\">República Dominicana</option>\n                        <option value=\"SK\">República Eslovaca</option>\n                        <option value=\"RE\">Reunión</option>\n                        <option value=\"RW\">Ruanda</option>\n                        <option value=\"RO\">Rumania</option>\n                        <option value=\"RU\">Rusia</option>\n                        <option value=\"EH\">Sahara Occidental</option>\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\n                        <option value=\"WS\">Samoa</option>\n                        <option value=\"AS\">Samoa Americana</option>\n                        <option value=\"SM\">San Marino</option>\n                        <option value=\"VC\">San Vicente y Granadinas</option>\n                        <option value=\"SH\">Santa Helena</option>\n                        <option value=\"LC\">Santa Lucía</option>\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\n                        <option value=\"SN\">Senegal</option>\n                        <option value=\"SC\">Seychelles</option>\n                        <option value=\"SL\">Sierra Leona</option>\n                        <option value=\"SG\">Singapur</option>\n                        <option value=\"SY\">Siria</option>\n                        <option value=\"SO\">Somalia</option>\n                        <option value=\"LK\">Sri Lanka</option>\n                        <option value=\"PM\">St Pierre y Miquelon</option>\n                        <option value=\"SZ\">Suazilandia</option>\n                        <option value=\"SD\">Sudán</option>\n                        <option value=\"SE\">Suecia</option>\n                        <option value=\"CH\">Suiza</option>\n                        <option value=\"SR\">Surinam</option>\n                        <option value=\"TH\">Tailandia</option>\n                        <option value=\"TW\">Taiwán</option>\n                        <option value=\"TZ\">Tanzania</option>\n                        <option value=\"TJ\">Tayikistán</option>\n                        <option value=\"TF\">Territorios franceses del Sur</option>\n                        <option value=\"TP\">Timor Oriental</option>\n                        <option value=\"TG\">Togo</option>\n                        <option value=\"TO\">Tonga</option>\n                        <option value=\"TT\">Trinidad y Tobago</option>\n                        <option value=\"TN\">Túnez</option>\n                        <option value=\"TM\">Turkmenistán</option>\n                        <option value=\"TR\">Turquía</option>\n                        <option value=\"TV\">Tuvalu</option>\n                        <option value=\"UA\">Ucrania</option>\n                        <option value=\"UG\">Uganda</option>\n                        <option value=\"UY\">Uruguay</option>\n                        <option value=\"UZ\">Uzbekistán</option>\n                        <option value=\"VU\">Vanuatu</option>\n                        <option value=\"VE\">Venezuela</option>\n                        <option value=\"VN\">Vietnam</option>\n                        <option value=\"YE\">Yemen</option>\n                        <option value=\"YU\">Yugoslavia</option>\n                        <option value=\"ZM\">Zambia</option>\n                        <option value=\"ZW\">Zimbabue</option>\n                    </select>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\n                    <input type=\"text\" name=\"city\" id=\"city\"\n                           ng-model=\"ctrl.userRegister.newUser.city\"\n                           placeholder=\"Ciudad....\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\n                        celular</label>\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\n                           placeholder=\"Número de teléfono o celular...\"\n                           class=\"form-control\"\n                           ng-minlength=\"7\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\n                        corto.</span>\n                </div>\n                <div class=\"col-md-6\">\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\n                    <input type=\"text\" name=\"address\" id=\"address\"\n                           ng-model=\"ctrl.userRegister.newUser.address\"\n                           placeholder=\"Dirección de residencia....\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-4\">\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\n                           placeholder=\"Nombre Banco...\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n                <div class=\"col-md-4\">\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\n                        <option value=\"\">Tipo de cuenta</option>\n                        <option value=\"AH\">Ahorros</option>\n                        <option value=\"CR\">Corriente</option>\n                    </select>\n                </div>\n                <div class=\"col-md-4\">\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\n                           placeholder=\"Número de cuenta....\"\n                           class=\"form-control\"\n                           ng-minlength=\"9\"\n                           ng-maxlength=\"25\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\n                        corto.</span>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <label class=\"checkbox-inline\">\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\n                               required>\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\n                            Condiciones</a>.</span>\n                    </label>\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\n                        {{ 'general_register'  | translate }}\n                    </button>\n                    <button id=\"idBtnCancelar2\" type=\"button\"\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                            ng-click=\"ctrl.closeRegisterPopup()\">\n                        {{ 'general_cancel'  | translate }}\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n    </form>\n</div>";
 
 /***/ },
 /* 114 */
@@ -65284,7 +65317,7 @@
 /* 119 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"splash\">\r\n    <div class=\"splash-content\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                . . .\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-7\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3 class=\"app-title\">Freeven</h3>\r\n                        <h5 class=\"app-sub-title\"></h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n                <login></login>\r\n            </div>\r\n            <div class=\"col-md-1\"> </div>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"splash\">\n    <div class=\"splash-content\">\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                . . .\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-md-7\">\n\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n                        <h3 class=\"app-title\">Freeven</h3>\n                        <h5 class=\"app-sub-title\"></h5>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-md-4\">\n                <login></login>\n            </div>\n            <div class=\"col-md-1\"> </div>\n        </div>\n    </div>\n</div>";
 
 /***/ },
 /* 120 */
@@ -65378,7 +65411,7 @@
 /* 125 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"player-picture\">\r\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\r\n</div>";
+	module.exports = "<div class=\"player-picture\">\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\n</div>";
 
 /***/ },
 /* 126 */
@@ -65489,7 +65522,7 @@
 /* 130 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ ctrl.frModel.url }}\"\r\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\r\n                    <i class=\"icon icon-download\"></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\r\n\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Califica las piezas musicales\"></help-item>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"track\">\n    <div class=\"item\">\n        <div class=\"item-media\">\n            <a class=\"item-media-content img-responsive\"\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\n            </a>\n            <div class=\"item-overlay center\">\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\n            </div>\n        </div>\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\n            <div class=\"item-overlay bottom text-right\">\n                <a class=\"btn-download\"\n                   href=\"{{ ctrl.frModel.url }}\"\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\n                    <i class=\"icon icon-download\"></i>\n                </a>\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\n                    <i class=\"icon\"\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\n                    <i class=\"icon\"\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\n                    <i class=\"icon\"\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\n                    <i class=\"icon\"\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\n                    <i class=\"icon\"\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\n\n                </a>\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\n                    <i class=\"fa fa-ellipsis-h\"></i>\n                </a>\n                <div class=\"dropdown-menu pull-right black lt\"></div>\n            </div>\n            <div class=\"item-title text-ellipsis\">\n                <p>{{ ctrl.frModel.name }}</p>\n            </div>\n            <div class=\"item-author text-sm text-ellipsis\">\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\n            </div>\n            <span class=\"item-meta-stats text-xs\">\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\n            </span>\n        </div>\n    </div>\n    <div class=\"fr-track-help-1\">\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\n    </div>\n    <div class=\"fr-track-help-2\">\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\n    </div>\n    <div class=\"fr-track-help-3\">\n        <help-item text=\"Califica las piezas musicales\"></help-item>\n    </div>\n</div>\n";
 
 /***/ },
 /* 131 */
@@ -65716,7 +65749,7 @@
 /* 135 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-edit\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar cuenta en Freeven</h4>\r\n  </div>\r\n  <form name=\"userForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <div class=\"card-body card-padding\">\r\n                <div class=\"thumbnail\">\r\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-xs-12\">\r\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\r\n                  <input type='file' id=\"imageUpload\" ng-model-instant\r\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                  accept=\"image/*\" style=\"display: none\"\r\n                  ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                  />\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12 text-center\">\r\n                    <label class=\"control-label\"\r\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                  </div>\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"email\">Email</label>\r\n                <input type=\"email\" name=\"email\" id=\"email\"\r\n                ng-model=\"ctrl.userEdit.user.email\"\r\n                placeholder=\"Email...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                ng-model=\"ctrl.userEdit.user.first_name\"\r\n                placeholder=\"Nombres...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                ng-model=\"ctrl.userEdit.user.last_name\"\r\n                placeholder=\"Apellidos...\"\r\n                class=\"form-control\"\r\n                required/>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n          <br/>\r\n          <label class=\"radio-inline\">\r\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n            ng-model=\"ctrl.userEdit.user.is_artist\"\r\n            required\r\n            checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n              ng-model=\"ctrl.userEdit.user.is_artist\"\r\n              required/>Artista</label>\r\n            </div>\r\n            <div class=\"col-md-6\">\r\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\r\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n            </div>\r\n          </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n            <div class=\"col-md-12\">\r\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n              ng-click=\"ctrl.validateForm()\">\r\n              {{ 'general_edit_user'  | translate }}\r\n            </button>\r\n            <button id=\"idBtnCancelar\" type=\"button\"\r\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.close()\">\r\n            {{ 'general_cancel'  | translate }}\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n  </form>\r\n\r\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n          placeholder=\"Nombre artístico...\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n          ng-model=\"ctrl.userEdit.user.birth_date\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"country\">País</label>\r\n          <select class=\"form-control\" id=\"country\"\r\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n          <option value=\"\">Pais...</option>\r\n          <option value=\"AF\">Afganistán</option>\r\n          <option value=\"AL\">Albania</option>\r\n          <option value=\"DE\">Alemania</option>\r\n          <option value=\"AD\">Andorra</option>\r\n          <option value=\"AO\">Angola</option>\r\n          <option value=\"AI\">Anguilla</option>\r\n          <option value=\"AQ\">Antártida</option>\r\n          <option value=\"AG\">Antigua y Barbuda</option>\r\n          <option value=\"AN\">Antillas Holandesas</option>\r\n          <option value=\"SA\">Arabia Saudí</option>\r\n          <option value=\"DZ\">Argelia</option>\r\n          <option value=\"AR\">Argentina</option>\r\n          <option value=\"AM\">Armenia</option>\r\n          <option value=\"AW\">Aruba</option>\r\n          <option value=\"AU\">Australia</option>\r\n          <option value=\"AT\">Austria</option>\r\n          <option value=\"AZ\">Azerbaiyán</option>\r\n          <option value=\"BS\">Bahamas</option>\r\n          <option value=\"BH\">Bahrein</option>\r\n          <option value=\"BD\">Bangladesh</option>\r\n          <option value=\"BB\">Barbados</option>\r\n          <option value=\"BE\">Bélgica</option>\r\n          <option value=\"BZ\">Belice</option>\r\n          <option value=\"BJ\">Benin</option>\r\n          <option value=\"BM\">Bermudas</option>\r\n          <option value=\"BY\">Bielorrusia</option>\r\n          <option value=\"MM\">Birmania</option>\r\n          <option value=\"BO\">Bolivia</option>\r\n          <option value=\"BA\">Bosnia y Herzegovina</option>\r\n          <option value=\"BW\">Botswana</option>\r\n          <option value=\"BR\">Brasil</option>\r\n          <option value=\"BN\">Brunei</option>\r\n          <option value=\"BG\">Bulgaria</option>\r\n          <option value=\"BF\">Burkina Faso</option>\r\n          <option value=\"BI\">Burundi</option>\r\n          <option value=\"BT\">Bután</option>\r\n          <option value=\"CV\">Cabo Verde</option>\r\n          <option value=\"KH\">Camboya</option>\r\n          <option value=\"CM\">Camerún</option>\r\n          <option value=\"CA\">Canadá</option>\r\n          <option value=\"TD\">Chad</option>\r\n          <option value=\"CL\">Chile</option>\r\n          <option value=\"CN\">China</option>\r\n          <option value=\"CY\">Chipre</option>\r\n          <option value=\"VA\">Ciudad del Vaticano</option>\r\n          <option value=\"CO\">Colombia</option>\r\n          <option value=\"KM\">Comores</option>\r\n          <option value=\"CG\">Congo</option>\r\n          <option value=\"KR\">Corea</option>\r\n          <option value=\"KP\">Corea del Norte</option>\r\n          <option value=\"CI\">Costa de Marfíl</option>\r\n          <option value=\"CR\">Costa Rica</option>\r\n          <option value=\"HR\">Croacia (Hrvatska)</option>\r\n          <option value=\"CU\">Cuba</option>\r\n          <option value=\"DK\">Dinamarca</option>\r\n          <option value=\"DJ\">Djibouti</option>\r\n          <option value=\"DM\">Dominica</option>\r\n          <option value=\"EC\">Ecuador</option>\r\n          <option value=\"EG\">Egipto</option>\r\n          <option value=\"SV\">El Salvador</option>\r\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n          <option value=\"ER\">Eritrea</option>\r\n          <option value=\"SI\">Eslovenia</option>\r\n          <option value=\"ES\" selected>España</option>\r\n          <option value=\"US\">Estados Unidos</option>\r\n          <option value=\"EE\">Estonia</option>\r\n          <option value=\"ET\">Etiopía</option>\r\n          <option value=\"FJ\">Fiji</option>\r\n          <option value=\"PH\">Filipinas</option>\r\n          <option value=\"FI\">Finlandia</option>\r\n          <option value=\"FR\">Francia</option>\r\n          <option value=\"GA\">Gabón</option>\r\n          <option value=\"GM\">Gambia</option>\r\n          <option value=\"GE\">Georgia</option>\r\n          <option value=\"GH\">Ghana</option>\r\n          <option value=\"GI\">Gibraltar</option>\r\n          <option value=\"GD\">Granada</option>\r\n          <option value=\"GR\">Grecia</option>\r\n          <option value=\"GL\">Groenlandia</option>\r\n          <option value=\"GP\">Guadalupe</option>\r\n          <option value=\"GU\">Guam</option>\r\n          <option value=\"GT\">Guatemala</option>\r\n          <option value=\"GY\">Guayana</option>\r\n          <option value=\"GF\">Guayana Francesa</option>\r\n          <option value=\"GN\">Guinea</option>\r\n          <option value=\"GQ\">Guinea Ecuatorial</option>\r\n          <option value=\"GW\">Guinea-Bissau</option>\r\n          <option value=\"HT\">Haití</option>\r\n          <option value=\"HN\">Honduras</option>\r\n          <option value=\"HU\">Hungría</option>\r\n          <option value=\"IN\">India</option>\r\n          <option value=\"ID\">Indonesia</option>\r\n          <option value=\"IQ\">Irak</option>\r\n          <option value=\"IR\">Irán</option>\r\n          <option value=\"IE\">Irlanda</option>\r\n          <option value=\"BV\">Isla Bouvet</option>\r\n          <option value=\"CX\">Isla de Christmas</option>\r\n          <option value=\"IS\">Islandia</option>\r\n          <option value=\"KY\">Islas Caimán</option>\r\n          <option value=\"CK\">Islas Cook</option>\r\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n          <option value=\"FO\">Islas Faroe</option>\r\n          <option value=\"HM\">Islas Heard y McDonald</option>\r\n          <option value=\"FK\">Islas Malvinas</option>\r\n          <option value=\"MP\">Islas Marianas del Norte</option>\r\n          <option value=\"MH\">Islas Marshall</option>\r\n          <option value=\"PW\">Islas Palau</option>\r\n          <option value=\"SB\">Islas Salomón</option>\r\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n          <option value=\"TK\">Islas Tokelau</option>\r\n          <option value=\"TC\">Islas Turks y Caicos</option>\r\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n          <option value=\"WF\">Islas Wallis y Futuna</option>\r\n          <option value=\"IL\">Israel</option>\r\n          <option value=\"IT\">Italia</option>\r\n          <option value=\"JM\">Jamaica</option>\r\n          <option value=\"JP\">Japón</option>\r\n          <option value=\"JO\">Jordania</option>\r\n          <option value=\"KZ\">Kazajistán</option>\r\n          <option value=\"KE\">Kenia</option>\r\n          <option value=\"KG\">Kirguizistán</option>\r\n          <option value=\"KI\">Kiribati</option>\r\n          <option value=\"KW\">Kuwait</option>\r\n          <option value=\"LA\">Laos</option>\r\n          <option value=\"LS\">Lesotho</option>\r\n          <option value=\"LV\">Letonia</option>\r\n          <option value=\"LB\">Líbano</option>\r\n          <option value=\"LR\">Liberia</option>\r\n          <option value=\"LY\">Libia</option>\r\n          <option value=\"LI\">Liechtenstein</option>\r\n          <option value=\"LT\">Lituania</option>\r\n          <option value=\"LU\">Luxemburgo</option>\r\n          <option value=\"MK\">Macedonia</option>\r\n          <option value=\"MG\">Madagascar</option>\r\n          <option value=\"MY\">Malasia</option>\r\n          <option value=\"MW\">Malawi</option>\r\n          <option value=\"MV\">Maldivas</option>\r\n          <option value=\"ML\">Malí</option>\r\n          <option value=\"MT\">Malta</option>\r\n          <option value=\"MA\">Marruecos</option>\r\n          <option value=\"MQ\">Martinica</option>\r\n          <option value=\"MU\">Mauricio</option>\r\n          <option value=\"MR\">Mauritania</option>\r\n          <option value=\"YT\">Mayotte</option>\r\n          <option value=\"MX\">México</option>\r\n          <option value=\"FM\">Micronesia</option>\r\n          <option value=\"MD\">Moldavia</option>\r\n          <option value=\"MC\">Mónaco</option>\r\n          <option value=\"MN\">Mongolia</option>\r\n          <option value=\"MS\">Montserrat</option>\r\n          <option value=\"MZ\">Mozambique</option>\r\n          <option value=\"NA\">Namibia</option>\r\n          <option value=\"NR\">Nauru</option>\r\n          <option value=\"NP\">Nepal</option>\r\n          <option value=\"NI\">Nicaragua</option>\r\n          <option value=\"NE\">Níger</option>\r\n          <option value=\"NG\">Nigeria</option>\r\n          <option value=\"NU\">Niue</option>\r\n          <option value=\"NF\">Norfolk</option>\r\n          <option value=\"NO\">Noruega</option>\r\n          <option value=\"NC\">Nueva Caledonia</option>\r\n          <option value=\"NZ\">Nueva Zelanda</option>\r\n          <option value=\"OM\">Omán</option>\r\n          <option value=\"NL\">Países Bajos</option>\r\n          <option value=\"PA\">Panamá</option>\r\n          <option value=\"PG\">Papúa Nueva Guinea</option>\r\n          <option value=\"PK\">Paquistán</option>\r\n          <option value=\"PY\">Paraguay</option>\r\n          <option value=\"PE\">Perú</option>\r\n          <option value=\"PN\">Pitcairn</option>\r\n          <option value=\"PF\">Polinesia Francesa</option>\r\n          <option value=\"PL\">Polonia</option>\r\n          <option value=\"PT\">Portugal</option>\r\n          <option value=\"PR\">Puerto Rico</option>\r\n          <option value=\"QA\">Qatar</option>\r\n          <option value=\"UK\">Reino Unido</option>\r\n          <option value=\"CF\">República Centroafricana</option>\r\n          <option value=\"CZ\">República Checa</option>\r\n          <option value=\"ZA\">República de Sudáfrica</option>\r\n          <option value=\"DO\">República Dominicana</option>\r\n          <option value=\"SK\">República Eslovaca</option>\r\n          <option value=\"RE\">Reunión</option>\r\n          <option value=\"RW\">Ruanda</option>\r\n          <option value=\"RO\">Rumania</option>\r\n          <option value=\"RU\">Rusia</option>\r\n          <option value=\"EH\">Sahara Occidental</option>\r\n          <option value=\"KN\">Saint Kitts y Nevis</option>\r\n          <option value=\"WS\">Samoa</option>\r\n          <option value=\"AS\">Samoa Americana</option>\r\n          <option value=\"SM\">San Marino</option>\r\n          <option value=\"VC\">San Vicente y Granadinas</option>\r\n          <option value=\"SH\">Santa Helena</option>\r\n          <option value=\"LC\">Santa Lucía</option>\r\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n          <option value=\"SN\">Senegal</option>\r\n          <option value=\"SC\">Seychelles</option>\r\n          <option value=\"SL\">Sierra Leona</option>\r\n          <option value=\"SG\">Singapur</option>\r\n          <option value=\"SY\">Siria</option>\r\n          <option value=\"SO\">Somalia</option>\r\n          <option value=\"LK\">Sri Lanka</option>\r\n          <option value=\"PM\">St Pierre y Miquelon</option>\r\n          <option value=\"SZ\">Suazilandia</option>\r\n          <option value=\"SD\">Sudán</option>\r\n          <option value=\"SE\">Suecia</option>\r\n          <option value=\"CH\">Suiza</option>\r\n          <option value=\"SR\">Surinam</option>\r\n          <option value=\"TH\">Tailandia</option>\r\n          <option value=\"TW\">Taiwán</option>\r\n          <option value=\"TZ\">Tanzania</option>\r\n          <option value=\"TJ\">Tayikistán</option>\r\n          <option value=\"TF\">Territorios franceses del Sur</option>\r\n          <option value=\"TP\">Timor Oriental</option>\r\n          <option value=\"TG\">Togo</option>\r\n          <option value=\"TO\">Tonga</option>\r\n          <option value=\"TT\">Trinidad y Tobago</option>\r\n          <option value=\"TN\">Túnez</option>\r\n          <option value=\"TM\">Turkmenistán</option>\r\n          <option value=\"TR\">Turquía</option>\r\n          <option value=\"TV\">Tuvalu</option>\r\n          <option value=\"UA\">Ucrania</option>\r\n          <option value=\"UG\">Uganda</option>\r\n          <option value=\"UY\">Uruguay</option>\r\n          <option value=\"UZ\">Uzbekistán</option>\r\n          <option value=\"VU\">Vanuatu</option>\r\n          <option value=\"VE\">Venezuela</option>\r\n          <option value=\"VN\">Vietnam</option>\r\n          <option value=\"YE\">Yemen</option>\r\n          <option value=\"YU\">Yugoslavia</option>\r\n          <option value=\"ZM\">Zambia</option>\r\n          <option value=\"ZW\">Zimbabue</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n        <input type=\"text\" name=\"city\" id=\"city\"\r\n        ng-model=\"ctrl.userEdit.user.city\"\r\n        placeholder=\"Ciudad....\"\r\n        class=\"form-control\"\r\n        required/>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n  <fieldset class=\"form-group\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n          celular</label>\r\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n          placeholder=\"Número de teléfono o celular...\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"7\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n            <input type=\"text\" name=\"address\" id=\"address\"\r\n            ng-model=\"ctrl.userEdit.user.address\"\r\n            placeholder=\"Dirección de residencia....\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n            ng-model=\"ctrl.userEdit.user.bank\"\r\n            placeholder=\"Nombre Banco...\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n            <option value=\"\">Tipo de cuenta</option>\r\n            <option value=\"AH\">Ahorros</option>\r\n            <option value=\"CR\">Corriente</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n          placeholder=\"Número de cuenta....\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"9\"\r\n          ng-maxlength=\"25\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n            {{ 'general_edit_user'  | translate }}\r\n          </button>\r\n          <button id=\"idBtnCancelar2\" type=\"button\"\r\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.close()\">\r\n          {{ 'general_cancel'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n</form>\r\n</div>\r\n";
+	module.exports = "<div class=\"user-edit\">\n  <div class=\"fr-modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\n      <span aria-hidden=\"true\">&times;</span>\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\n    </button>\n    <h4>Editar cuenta en Freeven</h4>\n  </div>\n  <form name=\"userForm\">\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <div class=\"row\">\n            <div class=\"col-md-12 text-center\">\n              <div class=\"card-body card-padding\">\n                <div class=\"thumbnail\">\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-xs-12\">\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\n                  <input type='file' id=\"imageUpload\" ng-model-instant\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\n                  accept=\"image/*\" style=\"display: none\"\n                  ngf-change=\"ctrl.attachFile($files,'image')\"\n                  />\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-12 text-center\">\n              <fieldset class=\"form-group\">\n                <div class=\"row\">\n                  <div class=\"col-md-12 text-center\">\n                    <label class=\"control-label\"\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\n                  </div>\n                </div>\n              </fieldset>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-md-6\">\n          <fieldset class=\"form-group\">\n            <div class=\"row\">\n              <div class=\"col-md-12\">\n                <label class=\"control-label\" for=\"email\">Email</label>\n                <input type=\"email\" name=\"email\" id=\"email\"\n                ng-model=\"ctrl.userEdit.user.email\"\n                placeholder=\"Email...\"\n                class=\"form-control\"\n                required/>\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\n                </span>\n              </div>\n            </div>\n          </fieldset>\n          <fieldset class=\"form-group\">\n            <div class=\"row\">\n              <div class=\"col-md-12\">\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\n                ng-model=\"ctrl.userEdit.user.first_name\"\n                placeholder=\"Nombres...\"\n                class=\"form-control\"\n                required/>\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\n                </span>\n              </div>\n            </div>\n          </fieldset>\n          <fieldset class=\"form-group\">\n            <div class=\"row\">\n              <div class=\"col-md-12\">\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\n                ng-model=\"ctrl.userEdit.user.last_name\"\n                placeholder=\"Apellidos...\"\n                class=\"form-control\"\n                required/>\n              </div>\n            </div>\n          </fieldset>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\n          <br/>\n          <label class=\"radio-inline\">\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\n            ng-model=\"ctrl.userEdit.user.is_artist\"\n            required\n            checked/>Personal</label>\n            <label class=\"radio-inline\">\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\n              ng-model=\"ctrl.userEdit.user.is_artist\"\n              required/>Artista</label>\n            </div>\n            <div class=\"col-md-6\">\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\n            </div>\n          </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\n            <div class=\"col-md-12\">\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n              ng-click=\"ctrl.validateForm()\">\n              {{ 'general_edit_user'  | translate }}\n            </button>\n            <button id=\"idBtnCancelar\" type=\"button\"\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n            ng-click=\"ctrl.close()\">\n            {{ 'general_cancel'  | translate }}\n          </button>\n        </div>\n      </div>\n    </fieldset>\n  </form>\n\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\n          placeholder=\"Nombre artístico...\"\n          class=\"form-control\"\n          required/>\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\n          </span>\n        </div>\n        <div class=\"col-md-6\">\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\n          ng-model=\"ctrl.userEdit.user.birth_date\"\n          class=\"form-control\"\n          required/>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <label class=\"control-label\" for=\"country\">País</label>\n          <select class=\"form-control\" id=\"country\"\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\n          <option value=\"\">Pais...</option>\n          <option value=\"AF\">Afganistán</option>\n          <option value=\"AL\">Albania</option>\n          <option value=\"DE\">Alemania</option>\n          <option value=\"AD\">Andorra</option>\n          <option value=\"AO\">Angola</option>\n          <option value=\"AI\">Anguilla</option>\n          <option value=\"AQ\">Antártida</option>\n          <option value=\"AG\">Antigua y Barbuda</option>\n          <option value=\"AN\">Antillas Holandesas</option>\n          <option value=\"SA\">Arabia Saudí</option>\n          <option value=\"DZ\">Argelia</option>\n          <option value=\"AR\">Argentina</option>\n          <option value=\"AM\">Armenia</option>\n          <option value=\"AW\">Aruba</option>\n          <option value=\"AU\">Australia</option>\n          <option value=\"AT\">Austria</option>\n          <option value=\"AZ\">Azerbaiyán</option>\n          <option value=\"BS\">Bahamas</option>\n          <option value=\"BH\">Bahrein</option>\n          <option value=\"BD\">Bangladesh</option>\n          <option value=\"BB\">Barbados</option>\n          <option value=\"BE\">Bélgica</option>\n          <option value=\"BZ\">Belice</option>\n          <option value=\"BJ\">Benin</option>\n          <option value=\"BM\">Bermudas</option>\n          <option value=\"BY\">Bielorrusia</option>\n          <option value=\"MM\">Birmania</option>\n          <option value=\"BO\">Bolivia</option>\n          <option value=\"BA\">Bosnia y Herzegovina</option>\n          <option value=\"BW\">Botswana</option>\n          <option value=\"BR\">Brasil</option>\n          <option value=\"BN\">Brunei</option>\n          <option value=\"BG\">Bulgaria</option>\n          <option value=\"BF\">Burkina Faso</option>\n          <option value=\"BI\">Burundi</option>\n          <option value=\"BT\">Bután</option>\n          <option value=\"CV\">Cabo Verde</option>\n          <option value=\"KH\">Camboya</option>\n          <option value=\"CM\">Camerún</option>\n          <option value=\"CA\">Canadá</option>\n          <option value=\"TD\">Chad</option>\n          <option value=\"CL\">Chile</option>\n          <option value=\"CN\">China</option>\n          <option value=\"CY\">Chipre</option>\n          <option value=\"VA\">Ciudad del Vaticano</option>\n          <option value=\"CO\">Colombia</option>\n          <option value=\"KM\">Comores</option>\n          <option value=\"CG\">Congo</option>\n          <option value=\"KR\">Corea</option>\n          <option value=\"KP\">Corea del Norte</option>\n          <option value=\"CI\">Costa de Marfíl</option>\n          <option value=\"CR\">Costa Rica</option>\n          <option value=\"HR\">Croacia (Hrvatska)</option>\n          <option value=\"CU\">Cuba</option>\n          <option value=\"DK\">Dinamarca</option>\n          <option value=\"DJ\">Djibouti</option>\n          <option value=\"DM\">Dominica</option>\n          <option value=\"EC\">Ecuador</option>\n          <option value=\"EG\">Egipto</option>\n          <option value=\"SV\">El Salvador</option>\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\n          <option value=\"ER\">Eritrea</option>\n          <option value=\"SI\">Eslovenia</option>\n          <option value=\"ES\" selected>España</option>\n          <option value=\"US\">Estados Unidos</option>\n          <option value=\"EE\">Estonia</option>\n          <option value=\"ET\">Etiopía</option>\n          <option value=\"FJ\">Fiji</option>\n          <option value=\"PH\">Filipinas</option>\n          <option value=\"FI\">Finlandia</option>\n          <option value=\"FR\">Francia</option>\n          <option value=\"GA\">Gabón</option>\n          <option value=\"GM\">Gambia</option>\n          <option value=\"GE\">Georgia</option>\n          <option value=\"GH\">Ghana</option>\n          <option value=\"GI\">Gibraltar</option>\n          <option value=\"GD\">Granada</option>\n          <option value=\"GR\">Grecia</option>\n          <option value=\"GL\">Groenlandia</option>\n          <option value=\"GP\">Guadalupe</option>\n          <option value=\"GU\">Guam</option>\n          <option value=\"GT\">Guatemala</option>\n          <option value=\"GY\">Guayana</option>\n          <option value=\"GF\">Guayana Francesa</option>\n          <option value=\"GN\">Guinea</option>\n          <option value=\"GQ\">Guinea Ecuatorial</option>\n          <option value=\"GW\">Guinea-Bissau</option>\n          <option value=\"HT\">Haití</option>\n          <option value=\"HN\">Honduras</option>\n          <option value=\"HU\">Hungría</option>\n          <option value=\"IN\">India</option>\n          <option value=\"ID\">Indonesia</option>\n          <option value=\"IQ\">Irak</option>\n          <option value=\"IR\">Irán</option>\n          <option value=\"IE\">Irlanda</option>\n          <option value=\"BV\">Isla Bouvet</option>\n          <option value=\"CX\">Isla de Christmas</option>\n          <option value=\"IS\">Islandia</option>\n          <option value=\"KY\">Islas Caimán</option>\n          <option value=\"CK\">Islas Cook</option>\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\n          <option value=\"FO\">Islas Faroe</option>\n          <option value=\"HM\">Islas Heard y McDonald</option>\n          <option value=\"FK\">Islas Malvinas</option>\n          <option value=\"MP\">Islas Marianas del Norte</option>\n          <option value=\"MH\">Islas Marshall</option>\n          <option value=\"PW\">Islas Palau</option>\n          <option value=\"SB\">Islas Salomón</option>\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\n          <option value=\"TK\">Islas Tokelau</option>\n          <option value=\"TC\">Islas Turks y Caicos</option>\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\n          <option value=\"WF\">Islas Wallis y Futuna</option>\n          <option value=\"IL\">Israel</option>\n          <option value=\"IT\">Italia</option>\n          <option value=\"JM\">Jamaica</option>\n          <option value=\"JP\">Japón</option>\n          <option value=\"JO\">Jordania</option>\n          <option value=\"KZ\">Kazajistán</option>\n          <option value=\"KE\">Kenia</option>\n          <option value=\"KG\">Kirguizistán</option>\n          <option value=\"KI\">Kiribati</option>\n          <option value=\"KW\">Kuwait</option>\n          <option value=\"LA\">Laos</option>\n          <option value=\"LS\">Lesotho</option>\n          <option value=\"LV\">Letonia</option>\n          <option value=\"LB\">Líbano</option>\n          <option value=\"LR\">Liberia</option>\n          <option value=\"LY\">Libia</option>\n          <option value=\"LI\">Liechtenstein</option>\n          <option value=\"LT\">Lituania</option>\n          <option value=\"LU\">Luxemburgo</option>\n          <option value=\"MK\">Macedonia</option>\n          <option value=\"MG\">Madagascar</option>\n          <option value=\"MY\">Malasia</option>\n          <option value=\"MW\">Malawi</option>\n          <option value=\"MV\">Maldivas</option>\n          <option value=\"ML\">Malí</option>\n          <option value=\"MT\">Malta</option>\n          <option value=\"MA\">Marruecos</option>\n          <option value=\"MQ\">Martinica</option>\n          <option value=\"MU\">Mauricio</option>\n          <option value=\"MR\">Mauritania</option>\n          <option value=\"YT\">Mayotte</option>\n          <option value=\"MX\">México</option>\n          <option value=\"FM\">Micronesia</option>\n          <option value=\"MD\">Moldavia</option>\n          <option value=\"MC\">Mónaco</option>\n          <option value=\"MN\">Mongolia</option>\n          <option value=\"MS\">Montserrat</option>\n          <option value=\"MZ\">Mozambique</option>\n          <option value=\"NA\">Namibia</option>\n          <option value=\"NR\">Nauru</option>\n          <option value=\"NP\">Nepal</option>\n          <option value=\"NI\">Nicaragua</option>\n          <option value=\"NE\">Níger</option>\n          <option value=\"NG\">Nigeria</option>\n          <option value=\"NU\">Niue</option>\n          <option value=\"NF\">Norfolk</option>\n          <option value=\"NO\">Noruega</option>\n          <option value=\"NC\">Nueva Caledonia</option>\n          <option value=\"NZ\">Nueva Zelanda</option>\n          <option value=\"OM\">Omán</option>\n          <option value=\"NL\">Países Bajos</option>\n          <option value=\"PA\">Panamá</option>\n          <option value=\"PG\">Papúa Nueva Guinea</option>\n          <option value=\"PK\">Paquistán</option>\n          <option value=\"PY\">Paraguay</option>\n          <option value=\"PE\">Perú</option>\n          <option value=\"PN\">Pitcairn</option>\n          <option value=\"PF\">Polinesia Francesa</option>\n          <option value=\"PL\">Polonia</option>\n          <option value=\"PT\">Portugal</option>\n          <option value=\"PR\">Puerto Rico</option>\n          <option value=\"QA\">Qatar</option>\n          <option value=\"UK\">Reino Unido</option>\n          <option value=\"CF\">República Centroafricana</option>\n          <option value=\"CZ\">República Checa</option>\n          <option value=\"ZA\">República de Sudáfrica</option>\n          <option value=\"DO\">República Dominicana</option>\n          <option value=\"SK\">República Eslovaca</option>\n          <option value=\"RE\">Reunión</option>\n          <option value=\"RW\">Ruanda</option>\n          <option value=\"RO\">Rumania</option>\n          <option value=\"RU\">Rusia</option>\n          <option value=\"EH\">Sahara Occidental</option>\n          <option value=\"KN\">Saint Kitts y Nevis</option>\n          <option value=\"WS\">Samoa</option>\n          <option value=\"AS\">Samoa Americana</option>\n          <option value=\"SM\">San Marino</option>\n          <option value=\"VC\">San Vicente y Granadinas</option>\n          <option value=\"SH\">Santa Helena</option>\n          <option value=\"LC\">Santa Lucía</option>\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\n          <option value=\"SN\">Senegal</option>\n          <option value=\"SC\">Seychelles</option>\n          <option value=\"SL\">Sierra Leona</option>\n          <option value=\"SG\">Singapur</option>\n          <option value=\"SY\">Siria</option>\n          <option value=\"SO\">Somalia</option>\n          <option value=\"LK\">Sri Lanka</option>\n          <option value=\"PM\">St Pierre y Miquelon</option>\n          <option value=\"SZ\">Suazilandia</option>\n          <option value=\"SD\">Sudán</option>\n          <option value=\"SE\">Suecia</option>\n          <option value=\"CH\">Suiza</option>\n          <option value=\"SR\">Surinam</option>\n          <option value=\"TH\">Tailandia</option>\n          <option value=\"TW\">Taiwán</option>\n          <option value=\"TZ\">Tanzania</option>\n          <option value=\"TJ\">Tayikistán</option>\n          <option value=\"TF\">Territorios franceses del Sur</option>\n          <option value=\"TP\">Timor Oriental</option>\n          <option value=\"TG\">Togo</option>\n          <option value=\"TO\">Tonga</option>\n          <option value=\"TT\">Trinidad y Tobago</option>\n          <option value=\"TN\">Túnez</option>\n          <option value=\"TM\">Turkmenistán</option>\n          <option value=\"TR\">Turquía</option>\n          <option value=\"TV\">Tuvalu</option>\n          <option value=\"UA\">Ucrania</option>\n          <option value=\"UG\">Uganda</option>\n          <option value=\"UY\">Uruguay</option>\n          <option value=\"UZ\">Uzbekistán</option>\n          <option value=\"VU\">Vanuatu</option>\n          <option value=\"VE\">Venezuela</option>\n          <option value=\"VN\">Vietnam</option>\n          <option value=\"YE\">Yemen</option>\n          <option value=\"YU\">Yugoslavia</option>\n          <option value=\"ZM\">Zambia</option>\n          <option value=\"ZW\">Zimbabue</option>\n        </select>\n      </div>\n      <div class=\"col-md-6\">\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\n        <input type=\"text\" name=\"city\" id=\"city\"\n        ng-model=\"ctrl.userEdit.user.city\"\n        placeholder=\"Ciudad....\"\n        class=\"form-control\"\n        required/>\n      </div>\n    </div>\n  </fieldset>\n  <fieldset class=\"form-group\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\n          celular</label>\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\n          placeholder=\"Número de teléfono o celular...\"\n          class=\"form-control\"\n          ng-minlength=\"7\"\n          required/>\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\n            corto.</span>\n          </div>\n          <div class=\"col-md-6\">\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\n            <input type=\"text\" name=\"address\" id=\"address\"\n            ng-model=\"ctrl.userEdit.user.address\"\n            placeholder=\"Dirección de residencia....\"\n            class=\"form-control\"\n            required/>\n          </div>\n        </div>\n      </fieldset>\n      <fieldset class=\"form-group\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\n            <input type=\"text\" name=\"bank\" id=\"bank\"\n            ng-model=\"ctrl.userEdit.user.bank\"\n            placeholder=\"Nombre Banco...\"\n            class=\"form-control\"\n            required/>\n          </div>\n          <div class=\"col-md-4\">\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\n            <option value=\"\">Tipo de cuenta</option>\n            <option value=\"AH\">Ahorros</option>\n            <option value=\"CR\">Corriente</option>\n          </select>\n        </div>\n        <div class=\"col-md-4\">\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\n          placeholder=\"Número de cuenta....\"\n          class=\"form-control\"\n          ng-minlength=\"9\"\n          ng-maxlength=\"25\"\n          required/>\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\n            corto.</span>\n          </div>\n        </div>\n      </fieldset>\n      <fieldset class=\"form-group\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\n            {{ 'general_edit_user'  | translate }}\n          </button>\n          <button id=\"idBtnCancelar2\" type=\"button\"\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n          ng-click=\"ctrl.close()\">\n          {{ 'general_cancel'  | translate }}\n        </button>\n      </div>\n    </div>\n  </fieldset>\n</form>\n</div>\n";
 
 /***/ },
 /* 136 */
@@ -65924,7 +65957,7 @@
 /* 141 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
+	module.exports = "<div class=\"user-password\">\n  <div class=\"fr-modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\n      <span aria-hidden=\"true\">&times;</span>\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\n    </button>\n    <h4>Editar contraseña</h4>\n  </div>\n  <form name=\"passwordForm\">\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\n          <input type=\"password\" name=\"password\" id=\"password\"\n          ng-model=\"ctrl.userPassword.user.password\"\n          placeholder=\"Contraseña actual...\"\n          class=\"form-control\"\n          required\n          ng-minlength=\"6\"/>\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\n          <input type=\"password\" name=\"password1\" id=\"password1\"\n          ng-model=\"ctrl.userPassword.user.password1\"\n          placeholder=\"Contraseña...\"\n          class=\"form-control\"\n          required\n          ng-minlength=\"6\"/>\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\n          <input type=\"password\" name=\"password2\" id=\"password2\"\n          ng-model=\"ctrl.userPassword.user.password2\"\n          placeholder=\"Repita contraseña....\"\n          class=\"form-control\"\n          required/>\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\n          </span>\n        </div>\n      </dvi>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <span class=\"messages\"\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\n        </div>\n      </div>\n\n    </fieldset>\n\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12 center-button-pass\">\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\n          {{ 'general_edit_user'  | translate }}\n        </button>\n      </div>\n    </div>\n  </fieldset>\n    <fieldset class=\"form-group\">\n        <div class=\"row\">\n          <div class=\"col-md-12 center-button-pass\">\n        <button id=\"idBtnCancelar2\" type=\"button\"\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n        ng-click=\"ctrl.close()\">\n        {{ 'general_cancel'  | translate }}\n      </button>\n    </div>\n  </div>\n</fieldset>\n</form>\n</div>\n";
 
 /***/ },
 /* 142 */
@@ -66062,7 +66095,7 @@
 /* 147 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
+	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\n    <button type=\"button\"\n            class=\"freeven-accept-btn\"\n            ng-click=\"ctrl.closeHelp()\">\n        <i class=\"icon icon-checkmark\"></i>\n        <span>Entendido</span>\n    </button>\n</div>\n";
 
 /***/ },
 /* 148 */
@@ -66160,7 +66193,7 @@
 /* 152 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"help-item\">\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\n        <div class=\"dot\"></div>\n        <div class=\"pulse\"></div>\n        <span class=\"help-text\">{{ ctrl.text }}</span>\n    </div>\n</div>";
 
 /***/ },
 /* 153 */
@@ -66256,7 +66289,7 @@
 /* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\n    <div class=\"fr-profile-creator\">\n        <img align=\"left\"\n             class=\"fr-image-lg\"\n             src=\"" + __webpack_require__(158) + "\"\n             alt=\"Profile image example\"/>\n\n        <div class=\"fr-image-profile-creator thumbnail\">\n            <img align=\"left\"\n                 class=\"\"\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\n                 alt=\"Profile image example\"/>\n            </a>\n        </div>\n\n        <div></div>\n        <div class=\"fr-profile-creator-text\">\n            <fieldset class=\"form-group\">\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\n                        <p>{{ ctrl.artist.infoArtist.country }}\n                            <a href=\"#\">\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\n                            </a>\n                        </p>\n                    </div>\n                </div>\n            </fieldset>\n        </div>\n\n\n        <fieldset class=\"align-right form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\n                        Hacer una donación\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n\n    </div>\n</div>\n";
 
 /***/ },
 /* 158 */
@@ -66375,6 +66408,7 @@
 	        var self = this;
 	        self.trackList = trackListService;
 	        self.trackList.loadTopTracks({});
+	        console.log(self.trackList)
 	        self.loadArtist = function () {
 	            artistService.loadArtist();
 	        };
@@ -66395,7 +66429,7 @@
 /* 164 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
+	module.exports = "<div class=\"row top-track-list\">\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\n        <div class=\"row\">\n            <track class=\"top-item-track col-xs-3\"\n                   hide-item-info=\"true\"\n                   fr-model=\"track\">\n            </track>\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\n                <h3 class=\"track-name\">\n                    <a>{{ track.name }}</a>\n                </h3>\n                <h3 class=\"track-artist\">\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\n                </h3>\n                <div class=\"top-item-position\">\n                    <h1> {{ track.position }}</h1>\n                </div>\n            </div>\n\n        </div>\n    </div>\n\n    <br/>\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\n</div>\n";
 
 /***/ },
 /* 165 */
@@ -66541,7 +66575,7 @@
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(170) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\n    <div class=\"fr-track-creator\">\n        <img align=\"left\"\n             class=\"fr-image-lg\"\n             src=\"" + __webpack_require__(158) + "\"\n             alt=\"Profile image example\"/>\n\n        <div class=\"fr-image-track-creator thumbnail\">\n            <img align=\"left\"\n                 class=\"\"\n                 src=\"" + __webpack_require__(170) + "\"\n                 alt=\"Profile image example\"/>\n            <a ngf-select\n               ngf-multiple=\"false\"\n               accept=\".jpg\"\n               filters=\".jpg\"\n               ngf-change=\"ctrl.attachFile($files,'image')\"\n               class=\"form-control track-picture-selector\">\n                <i class=\"icon icon-images\"></i>\n                <span>Seleccione la carátula</span>\n            </a>\n        </div>\n\n\n        <div>\n\n        </div>\n        <div class=\"fr-track-creator-text\">\n            <fieldset class=\"form-group\">\n                <h4>Llena estos campos para subir una pieza musical</h4>\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\n                        <input type=\"text\"\n                               ng-model=\"ctrl.name\"\n                               placeholder=\"Nombre de la pista...\"\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\n                    </div>\n                    <div class=\"col-md-12\">\n                        <label class=\"control-label\">Descripción</label>\n                        <input type=\"text\"\n                               ng-model=\"ctrl.description\"\n                               placeholder=\"Descripción...\"\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\n                    </div>\n                    <div class=\"col-md-12\">\n                        <label class=\"control-label\">Género</label>\n\n                        <select placeholder=\"Género...\"\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\n                                ng-model=\"ctrl.gender\">\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\n                        </select>\n                    </div>\n                    <div class=\"col-md-12\">\n                        <label class=\"control-label\">Archivo de audio</label>\n                        <a ngf-select\n                           ngf-multiple=\"false\"\n                           accept=\".mp3\"\n                           filters=\".mp3\"\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\n                           class=\"form-control\">\n                            <i class=\"icon icon-upload\">\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\n                            </i>\n                        </a>\n                    </div>\n                </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n                <div class=\"row\">\n                    <div class=\"col-md-10\">\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\n                            <span>Crear pista</span>\n                        </button>\n                    </div>\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\n                        <bounce title=\"Bounce\"></bounce>\n                    </div>\n                </div>\n            </fieldset>\n        </div>\n    </div>\n</div>";
 
 /***/ },
 /* 170 */
@@ -66637,7 +66671,7 @@
 /* 175 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                        <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\r\n                        <td>{{ donation.user_first_name  }}</td>\r\n                        <td>{{ donation.user_last_name }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\r\n                <h4>Aún no has recibido donaciones </h4>\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
+	module.exports = "<div class=\"donation\">\n\n    <fieldset class=\"form-group\">\n        <div class=\"row\">\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\n\n                <h2>Mis donaciones</h2>\n                <p>Lista de donaciones recibidas:</p>\n\n                <table class=\"table\" border=\"1px\">\n                    <tbody>\n                        <tr>\n                        <td><h3>Nombres</h3></td>\n                        <td><h3>Apellidos</h3></td>\n                        <td><h3>Valor</h3></td>\n                        <td><h3>Fecha</h3></td>\n                    </tr>\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\n                        <td>{{ donation.user_first_name  }}</td>\n                        <td>{{ donation.user_last_name }}</td>\n                        <td>$ {{ donation.value | number }}</td>\n                        <td>{{ donation.date | date:'medium' }}</td>\n                    </tr>\n                    </tbody>\n                </table>\n\n            </div>\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\n                <h4>Aún no has recibido donaciones </h4>\n            </div>\n        </div>\n    </fieldset>\n</div>\n\n\n";
 
 /***/ },
 /* 176 */
@@ -66771,7 +66805,7 @@
 /* 181 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"forgot-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>¿Has olvidado tu contraseña?</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\r\n          <input type=\"text\" name=\"username\" id=\"username\"\r\n          ng-model=\"ctrl.forgotPassword.username.username\"\r\n          placeholder=\"Usuario...\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\r\n         Enviar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
+	module.exports = "<div class=\"forgot-password\">\n  <div class=\"fr-modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\n      <span aria-hidden=\"true\">&times;</span>\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\n    </button>\n    <h4>¿Has olvidado tu contraseña?</h4>\n  </div>\n  <form name=\"passwordForm\">\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\n          <input type=\"text\" name=\"username\" id=\"username\"\n          ng-model=\"ctrl.forgotPassword.username.username\"\n          placeholder=\"Usuario...\"\n          class=\"form-control\"\n          required/>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <div class=\"col-md-12 center-button-pass\">\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\n         Enviar\n        </button>\n      </div>\n    </div>\n  </fieldset>\n    <fieldset class=\"form-group\">\n        <div class=\"row\">\n          <div class=\"col-md-12 center-button-pass\">\n        <button id=\"idBtnCancelar2\" type=\"button\"\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n        ng-click=\"ctrl.close()\">\n        {{ 'general_cancel'  | translate }}\n      </button>\n    </div>\n  </div>\n</fieldset>\n</form>\n</div>\n";
 
 /***/ },
 /* 182 */
@@ -66929,7 +66963,7 @@
 /* 187 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"score-editor\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\r\n    </div>\r\n    <div class=\"score-editor-container\">\r\n        <track hide-item-info=\"true\"\r\n               fr-model=\"ctrl.scoreEditorService.track\">\r\n        </track>\r\n\r\n        <div class=\"rating\">\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\r\n                    <span>Guardar</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"score-editor\">\n    <div class=\"fr-modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\n            <span aria-hidden=\"true\">&times;</span>\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\n        </button>\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\n    </div>\n    <div class=\"score-editor-container\">\n        <track hide-item-info=\"true\"\n               fr-model=\"ctrl.scoreEditorService.track\">\n        </track>\n\n        <div class=\"rating\">\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\n                    <span>Guardar</span>\n                </button>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ },
 /* 188 */
@@ -67086,7 +67120,7 @@
 /* 193 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"restore-password\">\n    <form name=\"restoreForm\">\n        <fieldset class=\"form-group\">\n            <label>Actualizar contraseña</label>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\n                    <input type=\"text\" name=\"username\" id=\"username\"\n                           ng-model=\"ctrl.restorePassword.username.username\"\n                           placeholder=\"Usuario...\"\n                           class=\"form-control\"\n                           required/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\n                    <input type=\"password\" name=\"password\" id=\"password\"\n                           ng-model=\"ctrl.restorePassword.username.password\"\n                           placeholder=\"Contraseña...\"\n                           class=\"form-control\"\n                           required\n                           ng-minlength=\"6\"/>\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\n                           ng-model=\"ctrl.restorePassword.username.password2\"\n                           placeholder=\"Repita contraseña....\"\n                           class=\"form-control\"\n                           required/>\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\n          </span>\n                </div>\n                </dvi>\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n          <span class=\"messages\"\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\n                    </div>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12 center-button-pass\">\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\n                        Enviar\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n    </form>\n</div>\n";
 
 /***/ },
 /* 194 */
@@ -67246,7 +67280,7 @@
 /* 199 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"donation-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Donación</h4>\r\n    </div>\r\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\">Monto a donar</label>\r\n                    <input type=\"number\"\r\n                           ng-model=\"ctrl.donation.value\"\r\n                           value=\"ctrl.donation.value | currency\"\r\n                           placeholder=\"$ 000 000\"\r\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\r\n                        <span>Hacer donación</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n\r\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\r\n                        <span>Finalizar</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"donation-creator\">\n    <div class=\"fr-modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\n            <span aria-hidden=\"true\">&times;</span>\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\n        </button>\n        <h4>Donación</h4>\n    </div>\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <label class=\"control-label\">Monto a donar</label>\n                    <input type=\"number\"\n                           ng-model=\"ctrl.donation.value\"\n                           value=\"ctrl.donation.value | currency\"\n                           placeholder=\"$ 000 000\"\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\n                </div>\n            </div>\n        </fieldset>\n        <fieldset class=\"align-right form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\n                        <span>Hacer donación</span>\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n    </form>\n\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\n\n        <fieldset class=\"form-group\">\n            <div class=\"row\">\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\n            </div>\n        </fieldset>\n        <fieldset class=\"align-right form-group\">\n            <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\n                        <span>Finalizar</span>\n                    </button>\n                </div>\n            </div>\n        </fieldset>\n\n    </form>\n</div>\n";
 
 /***/ },
 /* 200 */
@@ -67378,7 +67412,7 @@
 /* 205 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"bounce1\"></div>\r\n<div class=\"bounce2\"></div>\r\n<div class=\"bounce3\"></div>\r\n";
+	module.exports = "<div class=\"bounce1\"></div>\n<div class=\"bounce2\"></div>\n<div class=\"bounce3\"></div>\n";
 
 /***/ },
 /* 206 */

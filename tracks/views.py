@@ -25,6 +25,7 @@ class GenderListView(ListAPIView):
         'description',
     )
 
+
 class TrackListView(ListAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
@@ -34,6 +35,12 @@ class TrackListView(ListAPIView):
         'gender__name',
         'artist__user__username',
     )
+
+
+class Top10(ListAPIView):
+    queryset = Top.objects.filter(
+        top_type='daily', action='play').order_by('-quantity')[:10]
+    serializer_class = TopSerializer
 
 
 class TrackCreateView(CreateAPIView):
@@ -71,9 +78,3 @@ def trace(request):
         get_client_ip(request),
     )
     return Response(status=status.HTTP_201_CREATED)
-
-
-class Top10(ListAPIView):
-    queryset = Top.objects.filter(
-        top_type='daily', action='play').order_by('-quantity')[:10]
-    serializer_class = TopSerializer

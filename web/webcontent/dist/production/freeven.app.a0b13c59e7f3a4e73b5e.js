@@ -63960,8 +63960,8 @@
 
 	        },
 	        loadTopTracks: {
-	            /*url: 'api/track/top10',*/
-	            url: 'api/track',
+	            url: 'api/track/top10',
+	            //url: 'api/track',
 	            method: 'GET',
 	            params: {},
 	            isArray: false
@@ -63989,8 +63989,6 @@
 	        }
 	    });
 	}]);
-
-
 
 
 /***/ },
@@ -64233,11 +64231,11 @@
 	            };
 	            self.tracks = [];
 	            self.indexTrack = 0;
-	            self.loadTracks = function () {
+	            self.loadTracks = function (params) {
 	                var self = this;
 	                self.loading = true;
 	                TrackApiService.searchTracks(
-	                    self.params,
+	                   params,
 	                    function (response) {
 	                        self.loading = false;
 	                        self.tracks = response.results;
@@ -64643,10 +64641,11 @@
 	    self.parameter = null;
 	    self.changeParameter = function () {
 	        self = this;
-	        if (self.parameter.length > 3) {
+	        if (self.parameter.length > 3 || self.parameter.length == 0) {
 	            var params = {
 	                search: self.parameter,
-	                page: 1
+	                page: 1,
+	                format:'json'
 	            };
 	            trackListService.loadTracks(params);
 	        }
@@ -65491,7 +65490,9 @@
 	        };
 
 	        self.showScoreEditorPopup = function (track) {
-	            scoreEditorService.showScoreEditorPopup(track);
+	            if(mainService.isAuthenticated()){
+	                 scoreEditorService.showScoreEditorPopup(track);
+	            }
 	        };
 
 	        self.greaterThanOrEqual = function (value) {
@@ -66407,6 +66408,7 @@
 	        var self = this;
 	        self.trackList = trackListService;
 	        self.trackList.loadTopTracks({});
+	        console.log(self.trackList)
 	        self.loadArtist = function () {
 	            artistService.loadArtist();
 	        };
