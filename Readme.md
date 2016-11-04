@@ -24,4 +24,4 @@ python manage.py runserver --settings=freeven.settings.dev
 celery -A freeven worker --loglevel=info
 ```
 
-development-integration
+stage-integration
