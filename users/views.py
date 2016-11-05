@@ -8,7 +8,7 @@ from users.business_logic import (
     request_password_restore_action, change_password_action,
     update_profile_action, change_password_op_action
 )
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView
 from .models import Donation, Artist
 from .serializers import (DonationSerializer, ArtistSerializer,
                           UserRetriveSerializer)
@@ -103,3 +103,11 @@ class UserRetrieveView(RetrieveAPIView):
     def get_queryset(self):
         user = User.objects.filter(pk=self.kwargs['pk'])
         return user
+
+
+class ArtistUpdateView(UpdateAPIView):
+    serializer_class = ArtistSerializer
+
+    def get_queryset(self):
+        artist = Artist.objects.filter(pk=self.kwargs['pk'])
+        return artist

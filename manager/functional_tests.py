@@ -6,7 +6,7 @@ __autor__ = 'Rocket Team'
 
 class FuncionalTest(TestCase):
     def setUp(self):
-        self.browser = webdriver.Chrome("/Users/jose/Downloads/chromedriver")
+        self.browser = webdriver.Chrome("./chromedriver")
 
     def tearDown(self):
         self.browser.quit()

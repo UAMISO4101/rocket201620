@@ -27,4 +27,9 @@ urlpatterns = [
         views.UserRetrieveView.as_view(),
         name='user-detail'
     ),
+    url(
+        r'^artist-update/(?P<pk>\d+)',
+        views.ArtistUpdateView.as_view(),
+        name='artist-update'
+    ),
 ]
