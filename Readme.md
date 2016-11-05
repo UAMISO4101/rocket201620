@@ -10,8 +10,10 @@ git config credential.helper store
 git pull
 ```
 
-###Demo:
-https://freeven-srv-dev.herokuapp.com
+###Instancias de Freeven:
+Desarrollo: https://freeven-srv-dev.herokuapp.com
+Pruebas:    https://freeven-srv-stg.herokuapp.com
+Producción: https://freeven-srv.herokuapp.com
 
 
 ### Para ejecutar en local
