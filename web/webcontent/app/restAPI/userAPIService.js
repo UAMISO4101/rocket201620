@@ -33,7 +33,19 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
             method: 'GET',
             params: {username: '@string',password: '@string'},
             isArray: false,
-        }
+        },
+
+        updateUserInfo: {
+            url: '/user/update_profile/',
+            method: 'GET',
+            params: {
+                username: '@string',
+                email: '@string',
+                first_name: '@string',
+                last_name: '@string'
+            },
+            isArray: false,
+        },
     });
 
 

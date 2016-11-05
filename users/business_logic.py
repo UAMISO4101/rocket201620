@@ -56,7 +56,7 @@ def register_user_in_model(json_data):
     is_artist = str_to_bool(is_artist)
 
     if (username != "" and password1 != "" and password2 != "" and
-       email != "" and first_name != "" and last_name != ""):
+                email != "" and first_name != "" and last_name != ""):
 
         exist_user = User.objects.filter(username=username)
 
@@ -200,8 +200,8 @@ def register_business_agent(request):
     password2 = request.POST.get('password2')
 
     if (username is not "" and password1 is not "" and password2 is not "" and
-       email is not "" and first_name is not "" and
-       last_name is not ""):
+                email is not "" and first_name is not "" and
+                last_name is not ""):
 
         exist_user = User.objects.filter(username=username)
         if exist_user.count() > 0:
@@ -357,7 +357,7 @@ def change_password_op_action(request):
     old_password = request.GET.get('password')
 
     if (username is not None and password is not None and
-       old_password is not None):
+                old_password is not None):
         user = authenticate(username=username, password=old_password)
         if user is not None:
             user.set_password(password)
@@ -371,13 +371,15 @@ def change_password_op_action(request):
 
 
 def update_profile_action(json_data):
-    first_name = json_data.POST['first_name']
-    last_name = json_data.POST['last_name']
-    username = json_data.POST['username']
-    email = json_data.POST['email']
+    first_name = json_data.GET['first_name']
+    last_name = json_data.GET['last_name']
+    username = json_data.GET['username']
+    email = json_data.GET['email']
+
+    status = ''
 
     if (username != "" and email != "" and first_name != "" and
-       last_name != ""):
+                last_name != ""):
 
         user = User.objects.get(username=username)
 
@@ -386,19 +388,10 @@ def update_profile_action(json_data):
             user.first_name = first_name
             user.last_name = last_name
             user.email = email
-            is_artist = json_data.POST['is_artist']
             user.save()
-            if (str_to_bool(is_artist)):
-                status = update_profile_artist_action(user, json_data)
 
-            '''if (status != ""):
-                is_agent = json_data.POST['is_agent']
-                if (str_to_bool(is_agent)):
-                    status = update_profile_agent_action(user,
-                                                         json_data[
-                                                             'status'
-                                                         ])
-                                                         '''
+            status = 'Datos de usuario actualizados.'
+
         else:
             status = 'Usuario no existe.'
     else:
