@@ -1,7 +1,7 @@
 var userEditModule = angular.module('userEditModule');
 var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope', 'userPasswordService',
-    'Upload',
-    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload) {
+    'Upload', 'mainService',
+    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload, mainService) {
         /**
          * Tip: add here only visual logic
          */
@@ -19,8 +19,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
         self.photoProfile.push(img);
 
         self.passwordOk = true;
-
-        var photoOk;
 
         self.userEditPassword = userPasswordService;
 
@@ -46,7 +44,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
                 if ((typeUser == 'False') && self.passwordOk == true) {
                     var saveUser = self.validateFieldsUser();
                     if (saveUser) {
-                        self.uploadFilesAndData();
                         self.saveUser();
                     }
                 }
@@ -71,7 +68,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             ) {
                 return false
             } else {
-                self.putPhotoProfile();
                 return true
             }
         }
@@ -85,7 +81,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             ) {
                 return false
             } else {
-                self.putPhotoProfile();
                 return true
             }
         }
@@ -100,49 +95,37 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
             var files = event.target.files;
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
-
+                self.profileFiles['image'] = file;
                 var reader = new FileReader();
                 reader.onload = $scope.imageIsLoaded;
                 reader.readAsDataURL(file);
-
-                photoOk = file;
-
             }
         }
 
         $scope.imageIsLoaded = function (e) {
             img = {}
             $scope.$apply(function () {
-                //img = {"img": e.target.result};
                 img = {"img": e.target.result};
                 self.photoProfile.push(img);
             });
         }
 
-        self.putPhotoProfile = function () {
-            //self.userEdit.user.avatar = self.photoProfile[0].img;
-        }
-
-        self.attachFile = function (files, fieldName) {
-            if (files && files.length > 0) {
-                var file = files[0];
-                self.profileFiles[fieldName] = file;
-            }
-        };
         self.uploadFilesAndData = function () {
             var self = this;
-
+            var user = mainService.getUserData();
+            self.userEdit.user.avatar = self.profileFiles.image;
             if (self.profileFiles) {
                 Upload.upload({
-                    url: 'api/user/update_profile/',
-                    fields: self.userEdit.user,
-                    files: self.profileFiles
+                    url: 'user/artist-update/' + user.id_artist,
+                    method: 'PUT',
+                    data: self.userEdit.user
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
+                    notifierService.success("Perfil actualizado correctamente", ".");
+                    window.location.reload(true);
                 });
             }
         };
-
 
     }];
 

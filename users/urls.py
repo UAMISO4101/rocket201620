@@ -12,7 +12,7 @@ urlpatterns = [
         views.ArtistRetrieveView.as_view(),
         name='artist-detail'
     ),
-    url(r'^update_profile/$', views.update_profile,
+    url(r'^update_profile', views.update_profile,
         name='update_profile'),
     url(r'^login/$', views.login_user, name='login'),
     url(r'^donate', views.Donate.as_view(), name='donate'),

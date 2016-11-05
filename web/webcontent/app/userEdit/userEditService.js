@@ -24,9 +24,6 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
             };
 
             this.getUser = function (id) {
-
-                //TODO CONSUME GET USER
-
                 var self = this;
                 UserApiService.getUser({userId: id}, function (response) {
                         if (response.username != undefined) {
@@ -38,16 +35,22 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
             };
 
             this.saveUser = function () {
-                //TODO CONSUME SERVICE SAVE
+                UserApiService.updateUserInfo(
+                    self.user,
+                    function (response) {
+                        $freevenModal.closePopup();
+                        console.log(response);
+                        notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
+                        window.location.reload(true);
+                    },
+                    function (error) {
 
-                //window.location.reload(true);
-
-                $freevenModal.closePopup();
-
-                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
+                    });
             };
 
             this.loadUser = function (response) {
+                console.log("Get user");
+                console.log(response);
                 self.user.first_name = response.first_name;
                 self.user.email = response.email;
                 self.user.last_name = response.last_name;
@@ -55,7 +58,7 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
                 if (response.artist != undefined) {
                     self.user.is_artist = "True";
                     self.user.artistic_name = response.artist.artistic_name;
-                    self.user.bank_account_number =  parseInt(response.artist.bank_account_number);
+                    self.user.bank_account_number = parseInt(response.artist.bank_account_number);
                     self.user.bank_account_type = response.artist.bank_account_type;
                     self.user.bank = response.artist.bank;
                     self.user.address = response.artist.address;
@@ -72,7 +75,7 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
                 else {
                     self.user.is_artist = "False";
                     self.user.artistic_name = "";
-                    self.user.bank_account_number =  "";
+                    self.user.bank_account_number = "";
                     self.user.bank_account_type = "";
                     self.user.bank = "";
                     self.user.address = "";

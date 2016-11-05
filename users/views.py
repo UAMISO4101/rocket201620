@@ -48,7 +48,7 @@ class Donate(CreateAPIView):
 class DonationList(ListAPIView):
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
-    filter_backends = (filters.DjangoFilterBackend, )
+    filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = (
         'artist__id',
     )
@@ -89,10 +89,9 @@ def change_password_op(request):
 @csrf_exempt
 def update_profile(request):
     if request.user.is_authenticated():
-        if request.method == 'POST':
+        if request.method == 'GET':
             response = update_profile_action(request)
-            return JsonResponse({})
-
+            return JsonResponse(response)
     else:
         return redirect(reverse('user'))
 
