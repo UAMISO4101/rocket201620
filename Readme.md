@@ -10,8 +10,10 @@ git config credential.helper store
 git pull
 ```
 
-###Demo:
-https://freeven-srv-dev.herokuapp.com
+###Instancias de Freeven:
+Desarrollo: https://freeven-srv-dev.herokuapp.com
+Pruebas:    https://freeven-srv-stg.herokuapp.com
+Producción: https://freeven-srv.herokuapp.com
 
 
 ### Para ejecutar en local
@@ -24,4 +26,13 @@ python manage.py runserver --settings=freeven.settings.dev
 celery -A freeven worker --loglevel=info
 ```
 
-development-integration
+
+master-integration
+
+
+TravisCI Build Status
+[![Build Status](https://travis-ci.org/UAMISO4101/rocket201620.svg?branch=development)](https://travis-ci.org/UAMISO4101/rocket201620)
+
+
+Codacy
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/585e1194afa94447a4b665fa7a11f890)](https://www.codacy.com/app/f-arruza/rocket201620?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UAMISO4101/rocket201620&amp;utm_campaign=Badge_Grade)
