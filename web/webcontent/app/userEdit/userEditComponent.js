@@ -1,7 +1,7 @@
 var userEditModule = angular.module('userEditModule');
 var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope', 'userPasswordService',
-    'Upload', 'mainService',
-    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload, mainService) {
+    'Upload', 'mainService','$routeParams',
+    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload, mainService,$routeParams) {
         /**
          * Tip: add here only visual logic
          */
@@ -21,6 +21,9 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
         self.passwordOk = true;
 
         self.userEditPassword = userPasswordService;
+
+        self.userEdit.getUser($routeParams.idUser);
+
 
         self.showEditPasswordPopup = function () {
             self.userEditPassword.showEditPopup();
@@ -121,7 +124,6 @@ var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope',
                     data: self.userEdit.user
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
-                    notifierService.success("Perfil actualizado correctamente", ".");
                     window.location.reload(true);
                 });
             }

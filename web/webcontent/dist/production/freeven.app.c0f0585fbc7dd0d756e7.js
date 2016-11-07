@@ -201,23 +201,23 @@
 
 	__webpack_require__(133);
 	__webpack_require__(134);
-	__webpack_require__(136);
-	__webpack_require__(138);
-
+	__webpack_require__(137);
 	__webpack_require__(139);
+
 	__webpack_require__(140);
-	__webpack_require__(142);
-	__webpack_require__(144);
-
+	__webpack_require__(141);
+	__webpack_require__(143);
 	__webpack_require__(145);
-	__webpack_require__(146);
-	__webpack_require__(148);
-	__webpack_require__(149);
-	__webpack_require__(151);
-	__webpack_require__(153);
 
-	__webpack_require__(155);
+	__webpack_require__(146);
+	__webpack_require__(147);
+	__webpack_require__(149);
+	__webpack_require__(150);
+	__webpack_require__(152);
+	__webpack_require__(154);
+
 	__webpack_require__(156);
+	__webpack_require__(157);
 	__webpack_require__(159);
 	__webpack_require__(161);
 
@@ -229,8 +229,8 @@
 	__webpack_require__(168);
 	__webpack_require__(171);
 
-	__webpack_require__(155);
 	__webpack_require__(156);
+	__webpack_require__(157);
 	__webpack_require__(159);
 	__webpack_require__(161);
 
@@ -62352,39 +62352,72 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	(function (window, document) {
-	  'use strict';
-	  var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
-	  angular.extend(appConfigurations, {
-	    'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
-	      function configuration($routeProvider, $httpProvider, $translateProvider) {
-	        var languageEs = __webpack_require__(26);
-	        var languageEn = __webpack_require__(27);
-	        $translateProvider.translations('es-co', languageEs);
-	        $translateProvider.translations('en-us', languageEn);
-	        $translateProvider.preferredLanguage('en-co');
-	        $translateProvider.useSanitizeValueStrategy(null);
-	        $routeProvider.when('/', {
-	          template: '<track-list> </track-list>'
-	        });
-	        $routeProvider.when('/artist/:idArtist', {
-	          template: '<artist></artist>'
-	        });
-	        $routeProvider.when('/top', {
-	          template: '<top-track-list></top-track-list>'
-	        });
-	         $routeProvider.when('/upload', {
-	          template: '<track-creator></track-creator>'
-	        });
-	          $routeProvider.when('/donation', {
-	          template: '<donation></donation>'
-	        });
-	        $routeProvider.when('/user/pass/restore/yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw/:idUser', {
-	          template: '<restore-password></restore-password>'
-	        });
-	        $routeProvider.otherwise({redirectTo: '/'});
-	        $httpProvider.interceptors.push('notifierInterceptor');
-	      }]
-	  });
+	    'use strict';
+	    var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+	    angular.extend(appConfigurations, {
+	        'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
+	            function configuration($routeProvider, $httpProvider, $translateProvider) {
+	                var languageEs = __webpack_require__(26);
+	                var languageEn = __webpack_require__(27);
+	                $translateProvider.translations('es-co', languageEs);
+	                $translateProvider.translations('en-us', languageEn);
+	                $translateProvider.preferredLanguage('en-co');
+	                $translateProvider.useSanitizeValueStrategy(null);
+	                $routeProvider.when('/', {
+	                    template: '<track-list> </track-list>'
+	                });
+	                $routeProvider.when('/artist/:idArtist', {
+	                    template: '<artist></artist>'
+	                });
+	                $routeProvider.when('/top', {
+	                    template: '<top-track-list></top-track-list>'
+	                });
+	                $routeProvider.when('/upload', {
+	                    template: '<track-creator></track-creator>'
+	                });
+	                $routeProvider.when('/donation', {
+	                    template: '<donation></donation>',
+	                    requireAuthentication: true,
+	                    resolve: {
+	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+	                            var deferred = $q.defer();
+	                            var authenticated = mainService.isAuthenticated();
+	                            if (authenticated) {
+	                                deferred.resolve();
+	                            } else {
+	                                deferred.reject();
+	                                $location.url('#/');
+	                            }
+	                            return deferred.promise;
+	                        }]
+	                    }
+	                });
+	                $routeProvider.when('/user/pass/restore/yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw/:idUser', {
+	                    template: '<restore-password></restore-password>'
+	                });
+	                $routeProvider.when('/profile/:idUser', {
+	                    template: '<user-edit></user-edit>',
+	                    requireAuthentication: true,
+	                    resolve: {
+	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+	                            var deferred = $q.defer();
+	                            var authenticated = mainService.isAuthenticated();
+	                            if (authenticated) {
+	                                deferred.resolve();
+	                            } else {
+	                                deferred.reject();
+	                                $location.url('#/');
+	                            }
+	                            return deferred.promise;
+	                        }]
+	                    }
+	                });
+
+
+	                $routeProvider.otherwise({redirectTo: '/'});
+	                $httpProvider.interceptors.push('notifierInterceptor');
+	            }]
+	    });
 	})(window, document);
 
 
@@ -64257,6 +64290,7 @@
 	                    });
 	            };
 
+
 	            self.loadTopTracks = function () {
 	                var params = {
 	                    format: "json"
@@ -64508,9 +64542,8 @@
 	        };
 
 	        self.showEditPopup = function () {
-
 	            self.userEdit.getUser(self.idUserAuth);
-	            self.userEdit.showEditPopup();
+	            window.location.assign("#/profile/" + self.idUserAuth);
 	        };
 
 
@@ -65034,6 +65067,8 @@
 	            self.logout = function () {
 	                self.user = {};
 	                mainService.logout();
+	                window.location.reload(true);
+	                window.location.assign("#/");
 	            };
 
 	            this.showRegisterPopup = function () {
@@ -65600,8 +65635,8 @@
 
 	var userEditModule = angular.module('userEditModule');
 	var UserEditController = ['$i18n', '$freevenModal', 'userEditService', '$scope', 'userPasswordService',
-	    'Upload', 'mainService',
-	    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload, mainService) {
+	    'Upload', 'mainService','$routeParams',
+	    function ($i18n, $freevenModal, userEditService, $scope, userPasswordService, Upload, mainService,$routeParams) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -65621,6 +65656,9 @@
 	        self.passwordOk = true;
 
 	        self.userEditPassword = userPasswordService;
+
+	        self.userEdit.getUser($routeParams.idUser);
+
 
 	        self.showEditPasswordPopup = function () {
 	            self.userEditPassword.showEditPopup();
@@ -65721,7 +65759,6 @@
 	                    data: self.userEdit.user
 	                }).progress(function (evt) {
 	                }).success(function (data, status, headers, config) {
-	                    notifierService.success("Perfil actualizado correctamente", ".");
 	                    window.location.reload(true);
 	                });
 	            }
@@ -65742,18 +65779,24 @@
 
 /***/ },
 /* 135 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"user-edit\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar cuenta en Freeven</h4>\r\n  </div>\r\n  <form name=\"userForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <div class=\"card-body card-padding\">\r\n                <div class=\"thumbnail\">\r\n                  <img ng-src=\"{{ ctrl.photoProfile[0].img }}\"/>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-xs-12\">\r\n                  <label for=\"imageUpload\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar foto perfil</label>\r\n                  <input type='file' id=\"imageUpload\" ng-model-instant\r\n                  onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                  accept=\"image/*\" style=\"display: none\"\r\n                  />\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n              <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-12 text-center\">\r\n                    <label class=\"control-label\"\r\n                    for=\"username\"></i>{{ ctrl.userEdit.user.username }}</label>\r\n                  </div>\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"email\">Email</label>\r\n                <input type=\"email\" name=\"email\" id=\"email\"\r\n                ng-model=\"ctrl.userEdit.user.email\"\r\n                placeholder=\"Email...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                  <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                  <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                ng-model=\"ctrl.userEdit.user.first_name\"\r\n                placeholder=\"Nombres...\"\r\n                class=\"form-control\"\r\n                required/>\r\n                <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                  <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n          <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                ng-model=\"ctrl.userEdit.user.last_name\"\r\n                placeholder=\"Apellidos...\"\r\n                class=\"form-control\"\r\n                required/>\r\n              </div>\r\n            </div>\r\n          </fieldset>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n          <br/>\r\n          <label class=\"radio-inline\">\r\n            <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n            ng-model=\"ctrl.userEdit.user.is_artist\"\r\n            required\r\n            checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n              <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n              ng-model=\"ctrl.userEdit.user.is_artist\"\r\n              required/>Artista</label>\r\n            </div>\r\n            <div class=\"col-md-6\">\r\n                <label for=\"changePassword\" class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar contraseña</label>\r\n                <input type='button' id=\"changePassword\" style=\"display: none\" ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n            </div>\r\n          </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n          <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n            <div class=\"col-md-12\">\r\n              <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n              ng-click=\"ctrl.validateForm()\">\r\n              {{ 'general_edit_user'  | translate }}\r\n            </button>\r\n            <button id=\"idBtnCancelar\" type=\"button\"\r\n            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.close()\">\r\n            {{ 'general_cancel'  | translate }}\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n  </form>\r\n\r\n  <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n          <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n          ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n          placeholder=\"Nombre artístico...\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n          <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n          ng-model=\"ctrl.userEdit.user.birth_date\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <label class=\"control-label\" for=\"country\">País</label>\r\n          <select class=\"form-control\" id=\"country\"\r\n          ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n          <option value=\"\">Pais...</option>\r\n          <option value=\"AF\">Afganistán</option>\r\n          <option value=\"AL\">Albania</option>\r\n          <option value=\"DE\">Alemania</option>\r\n          <option value=\"AD\">Andorra</option>\r\n          <option value=\"AO\">Angola</option>\r\n          <option value=\"AI\">Anguilla</option>\r\n          <option value=\"AQ\">Antártida</option>\r\n          <option value=\"AG\">Antigua y Barbuda</option>\r\n          <option value=\"AN\">Antillas Holandesas</option>\r\n          <option value=\"SA\">Arabia Saudí</option>\r\n          <option value=\"DZ\">Argelia</option>\r\n          <option value=\"AR\">Argentina</option>\r\n          <option value=\"AM\">Armenia</option>\r\n          <option value=\"AW\">Aruba</option>\r\n          <option value=\"AU\">Australia</option>\r\n          <option value=\"AT\">Austria</option>\r\n          <option value=\"AZ\">Azerbaiyán</option>\r\n          <option value=\"BS\">Bahamas</option>\r\n          <option value=\"BH\">Bahrein</option>\r\n          <option value=\"BD\">Bangladesh</option>\r\n          <option value=\"BB\">Barbados</option>\r\n          <option value=\"BE\">Bélgica</option>\r\n          <option value=\"BZ\">Belice</option>\r\n          <option value=\"BJ\">Benin</option>\r\n          <option value=\"BM\">Bermudas</option>\r\n          <option value=\"BY\">Bielorrusia</option>\r\n          <option value=\"MM\">Birmania</option>\r\n          <option value=\"BO\">Bolivia</option>\r\n          <option value=\"BA\">Bosnia y Herzegovina</option>\r\n          <option value=\"BW\">Botswana</option>\r\n          <option value=\"BR\">Brasil</option>\r\n          <option value=\"BN\">Brunei</option>\r\n          <option value=\"BG\">Bulgaria</option>\r\n          <option value=\"BF\">Burkina Faso</option>\r\n          <option value=\"BI\">Burundi</option>\r\n          <option value=\"BT\">Bután</option>\r\n          <option value=\"CV\">Cabo Verde</option>\r\n          <option value=\"KH\">Camboya</option>\r\n          <option value=\"CM\">Camerún</option>\r\n          <option value=\"CA\">Canadá</option>\r\n          <option value=\"TD\">Chad</option>\r\n          <option value=\"CL\">Chile</option>\r\n          <option value=\"CN\">China</option>\r\n          <option value=\"CY\">Chipre</option>\r\n          <option value=\"VA\">Ciudad del Vaticano</option>\r\n          <option value=\"CO\">Colombia</option>\r\n          <option value=\"KM\">Comores</option>\r\n          <option value=\"CG\">Congo</option>\r\n          <option value=\"KR\">Corea</option>\r\n          <option value=\"KP\">Corea del Norte</option>\r\n          <option value=\"CI\">Costa de Marfíl</option>\r\n          <option value=\"CR\">Costa Rica</option>\r\n          <option value=\"HR\">Croacia (Hrvatska)</option>\r\n          <option value=\"CU\">Cuba</option>\r\n          <option value=\"DK\">Dinamarca</option>\r\n          <option value=\"DJ\">Djibouti</option>\r\n          <option value=\"DM\">Dominica</option>\r\n          <option value=\"EC\">Ecuador</option>\r\n          <option value=\"EG\">Egipto</option>\r\n          <option value=\"SV\">El Salvador</option>\r\n          <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n          <option value=\"ER\">Eritrea</option>\r\n          <option value=\"SI\">Eslovenia</option>\r\n          <option value=\"ES\" selected>España</option>\r\n          <option value=\"US\">Estados Unidos</option>\r\n          <option value=\"EE\">Estonia</option>\r\n          <option value=\"ET\">Etiopía</option>\r\n          <option value=\"FJ\">Fiji</option>\r\n          <option value=\"PH\">Filipinas</option>\r\n          <option value=\"FI\">Finlandia</option>\r\n          <option value=\"FR\">Francia</option>\r\n          <option value=\"GA\">Gabón</option>\r\n          <option value=\"GM\">Gambia</option>\r\n          <option value=\"GE\">Georgia</option>\r\n          <option value=\"GH\">Ghana</option>\r\n          <option value=\"GI\">Gibraltar</option>\r\n          <option value=\"GD\">Granada</option>\r\n          <option value=\"GR\">Grecia</option>\r\n          <option value=\"GL\">Groenlandia</option>\r\n          <option value=\"GP\">Guadalupe</option>\r\n          <option value=\"GU\">Guam</option>\r\n          <option value=\"GT\">Guatemala</option>\r\n          <option value=\"GY\">Guayana</option>\r\n          <option value=\"GF\">Guayana Francesa</option>\r\n          <option value=\"GN\">Guinea</option>\r\n          <option value=\"GQ\">Guinea Ecuatorial</option>\r\n          <option value=\"GW\">Guinea-Bissau</option>\r\n          <option value=\"HT\">Haití</option>\r\n          <option value=\"HN\">Honduras</option>\r\n          <option value=\"HU\">Hungría</option>\r\n          <option value=\"IN\">India</option>\r\n          <option value=\"ID\">Indonesia</option>\r\n          <option value=\"IQ\">Irak</option>\r\n          <option value=\"IR\">Irán</option>\r\n          <option value=\"IE\">Irlanda</option>\r\n          <option value=\"BV\">Isla Bouvet</option>\r\n          <option value=\"CX\">Isla de Christmas</option>\r\n          <option value=\"IS\">Islandia</option>\r\n          <option value=\"KY\">Islas Caimán</option>\r\n          <option value=\"CK\">Islas Cook</option>\r\n          <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n          <option value=\"FO\">Islas Faroe</option>\r\n          <option value=\"HM\">Islas Heard y McDonald</option>\r\n          <option value=\"FK\">Islas Malvinas</option>\r\n          <option value=\"MP\">Islas Marianas del Norte</option>\r\n          <option value=\"MH\">Islas Marshall</option>\r\n          <option value=\"PW\">Islas Palau</option>\r\n          <option value=\"SB\">Islas Salomón</option>\r\n          <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n          <option value=\"TK\">Islas Tokelau</option>\r\n          <option value=\"TC\">Islas Turks y Caicos</option>\r\n          <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n          <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n          <option value=\"WF\">Islas Wallis y Futuna</option>\r\n          <option value=\"IL\">Israel</option>\r\n          <option value=\"IT\">Italia</option>\r\n          <option value=\"JM\">Jamaica</option>\r\n          <option value=\"JP\">Japón</option>\r\n          <option value=\"JO\">Jordania</option>\r\n          <option value=\"KZ\">Kazajistán</option>\r\n          <option value=\"KE\">Kenia</option>\r\n          <option value=\"KG\">Kirguizistán</option>\r\n          <option value=\"KI\">Kiribati</option>\r\n          <option value=\"KW\">Kuwait</option>\r\n          <option value=\"LA\">Laos</option>\r\n          <option value=\"LS\">Lesotho</option>\r\n          <option value=\"LV\">Letonia</option>\r\n          <option value=\"LB\">Líbano</option>\r\n          <option value=\"LR\">Liberia</option>\r\n          <option value=\"LY\">Libia</option>\r\n          <option value=\"LI\">Liechtenstein</option>\r\n          <option value=\"LT\">Lituania</option>\r\n          <option value=\"LU\">Luxemburgo</option>\r\n          <option value=\"MK\">Macedonia</option>\r\n          <option value=\"MG\">Madagascar</option>\r\n          <option value=\"MY\">Malasia</option>\r\n          <option value=\"MW\">Malawi</option>\r\n          <option value=\"MV\">Maldivas</option>\r\n          <option value=\"ML\">Malí</option>\r\n          <option value=\"MT\">Malta</option>\r\n          <option value=\"MA\">Marruecos</option>\r\n          <option value=\"MQ\">Martinica</option>\r\n          <option value=\"MU\">Mauricio</option>\r\n          <option value=\"MR\">Mauritania</option>\r\n          <option value=\"YT\">Mayotte</option>\r\n          <option value=\"MX\">México</option>\r\n          <option value=\"FM\">Micronesia</option>\r\n          <option value=\"MD\">Moldavia</option>\r\n          <option value=\"MC\">Mónaco</option>\r\n          <option value=\"MN\">Mongolia</option>\r\n          <option value=\"MS\">Montserrat</option>\r\n          <option value=\"MZ\">Mozambique</option>\r\n          <option value=\"NA\">Namibia</option>\r\n          <option value=\"NR\">Nauru</option>\r\n          <option value=\"NP\">Nepal</option>\r\n          <option value=\"NI\">Nicaragua</option>\r\n          <option value=\"NE\">Níger</option>\r\n          <option value=\"NG\">Nigeria</option>\r\n          <option value=\"NU\">Niue</option>\r\n          <option value=\"NF\">Norfolk</option>\r\n          <option value=\"NO\">Noruega</option>\r\n          <option value=\"NC\">Nueva Caledonia</option>\r\n          <option value=\"NZ\">Nueva Zelanda</option>\r\n          <option value=\"OM\">Omán</option>\r\n          <option value=\"NL\">Países Bajos</option>\r\n          <option value=\"PA\">Panamá</option>\r\n          <option value=\"PG\">Papúa Nueva Guinea</option>\r\n          <option value=\"PK\">Paquistán</option>\r\n          <option value=\"PY\">Paraguay</option>\r\n          <option value=\"PE\">Perú</option>\r\n          <option value=\"PN\">Pitcairn</option>\r\n          <option value=\"PF\">Polinesia Francesa</option>\r\n          <option value=\"PL\">Polonia</option>\r\n          <option value=\"PT\">Portugal</option>\r\n          <option value=\"PR\">Puerto Rico</option>\r\n          <option value=\"QA\">Qatar</option>\r\n          <option value=\"UK\">Reino Unido</option>\r\n          <option value=\"CF\">República Centroafricana</option>\r\n          <option value=\"CZ\">República Checa</option>\r\n          <option value=\"ZA\">República de Sudáfrica</option>\r\n          <option value=\"DO\">República Dominicana</option>\r\n          <option value=\"SK\">República Eslovaca</option>\r\n          <option value=\"RE\">Reunión</option>\r\n          <option value=\"RW\">Ruanda</option>\r\n          <option value=\"RO\">Rumania</option>\r\n          <option value=\"RU\">Rusia</option>\r\n          <option value=\"EH\">Sahara Occidental</option>\r\n          <option value=\"KN\">Saint Kitts y Nevis</option>\r\n          <option value=\"WS\">Samoa</option>\r\n          <option value=\"AS\">Samoa Americana</option>\r\n          <option value=\"SM\">San Marino</option>\r\n          <option value=\"VC\">San Vicente y Granadinas</option>\r\n          <option value=\"SH\">Santa Helena</option>\r\n          <option value=\"LC\">Santa Lucía</option>\r\n          <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n          <option value=\"SN\">Senegal</option>\r\n          <option value=\"SC\">Seychelles</option>\r\n          <option value=\"SL\">Sierra Leona</option>\r\n          <option value=\"SG\">Singapur</option>\r\n          <option value=\"SY\">Siria</option>\r\n          <option value=\"SO\">Somalia</option>\r\n          <option value=\"LK\">Sri Lanka</option>\r\n          <option value=\"PM\">St Pierre y Miquelon</option>\r\n          <option value=\"SZ\">Suazilandia</option>\r\n          <option value=\"SD\">Sudán</option>\r\n          <option value=\"SE\">Suecia</option>\r\n          <option value=\"CH\">Suiza</option>\r\n          <option value=\"SR\">Surinam</option>\r\n          <option value=\"TH\">Tailandia</option>\r\n          <option value=\"TW\">Taiwán</option>\r\n          <option value=\"TZ\">Tanzania</option>\r\n          <option value=\"TJ\">Tayikistán</option>\r\n          <option value=\"TF\">Territorios franceses del Sur</option>\r\n          <option value=\"TP\">Timor Oriental</option>\r\n          <option value=\"TG\">Togo</option>\r\n          <option value=\"TO\">Tonga</option>\r\n          <option value=\"TT\">Trinidad y Tobago</option>\r\n          <option value=\"TN\">Túnez</option>\r\n          <option value=\"TM\">Turkmenistán</option>\r\n          <option value=\"TR\">Turquía</option>\r\n          <option value=\"TV\">Tuvalu</option>\r\n          <option value=\"UA\">Ucrania</option>\r\n          <option value=\"UG\">Uganda</option>\r\n          <option value=\"UY\">Uruguay</option>\r\n          <option value=\"UZ\">Uzbekistán</option>\r\n          <option value=\"VU\">Vanuatu</option>\r\n          <option value=\"VE\">Venezuela</option>\r\n          <option value=\"VN\">Vietnam</option>\r\n          <option value=\"YE\">Yemen</option>\r\n          <option value=\"YU\">Yugoslavia</option>\r\n          <option value=\"ZM\">Zambia</option>\r\n          <option value=\"ZW\">Zimbabue</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n        <input type=\"text\" name=\"city\" id=\"city\"\r\n        ng-model=\"ctrl.userEdit.user.city\"\r\n        placeholder=\"Ciudad....\"\r\n        class=\"form-control\"\r\n        required/>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n  <fieldset class=\"form-group\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n          celular</label>\r\n          <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n          ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n          placeholder=\"Número de teléfono o celular...\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"7\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n            <input type=\"text\" name=\"address\" id=\"address\"\r\n            ng-model=\"ctrl.userEdit.user.address\"\r\n            placeholder=\"Dirección de residencia....\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n            ng-model=\"ctrl.userEdit.user.bank\"\r\n            placeholder=\"Nombre Banco...\"\r\n            class=\"form-control\"\r\n            required/>\r\n          </div>\r\n          <div class=\"col-md-4\">\r\n            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n            ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\" required>\r\n            <option value=\"\">Tipo de cuenta</option>\r\n            <option value=\"AH\">Ahorros</option>\r\n            <option value=\"CR\">Corriente</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n          <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n          ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n          placeholder=\"Número de cuenta....\"\r\n          class=\"form-control\"\r\n          ng-minlength=\"9\"\r\n          ng-maxlength=\"25\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n            corto.</span>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n      <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n            {{ 'general_edit_user'  | translate }}\r\n          </button>\r\n          <button id=\"idBtnCancelar2\" type=\"button\"\r\n          class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.close()\">\r\n          {{ 'general_cancel'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n</form>\r\n</div>\r\n";
+	module.exports = "<div class=\"user-edit\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.photoProfile[0].img }}\"\r\n                 alt=\"Profile image example\"/>\r\n            <label for=\"imageUpload\"\r\n                   class=\"freeven-accept-btn\">Cambiar\r\n                avatar</label>\r\n            <input type='file' id=\"imageUpload\" ng-model-instant\r\n                   onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                   accept=\"image/*\" style=\"display: none\"/>\r\n        </div>\r\n\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <form name=\"userForm\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"><h3>\r\n                                            {{ ctrl.userEdit.user.username }}\r\n                                        </h3></label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"email\">Email</label>\r\n                            <input type=\"email\" name=\"email\" id=\"email\"\r\n                                   ng-model=\"ctrl.userEdit.user.email\"\r\n                                   placeholder=\"Email...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                          <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                          <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                                        </span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                            <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                   placeholder=\"Nombres...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\"\r\n                                  ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                            <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                            <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                   placeholder=\"Apellidos...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n                                <label for=\"changePassword\"\r\n                                       class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar\r\n                                    contraseña</label>\r\n                                <input type='button' id=\"changePassword\" style=\"display: none\"\r\n                                       ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n                            <br/>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required\r\n                                       checked/>Personal</label>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required/>Artista</label>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n\r\n                            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                                <div class=\"col-md-12 text-center\">\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n                </form>\r\n                <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <fieldset>\r\n                                <label class=\"control-label\" for=\"artistic_name\">Nombre Artístico</label>\r\n                                <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                                       placeholder=\"Nombre artístico...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\"\r\n                                      ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                            <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                                   ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"country\">País</label>\r\n                            <select class=\"form-control\" id=\"country\"\r\n                                    ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                                <option value=\"\">Pais...</option>\r\n                                <option value=\"AF\">Afganistán</option>\r\n                                <option value=\"AL\">Albania</option>\r\n                                <option value=\"DE\">Alemania</option>\r\n                                <option value=\"AD\">Andorra</option>\r\n                                <option value=\"AO\">Angola</option>\r\n                                <option value=\"AI\">Anguilla</option>\r\n                                <option value=\"AQ\">Antártida</option>\r\n                                <option value=\"AG\">Antigua y Barbuda</option>\r\n                                <option value=\"AN\">Antillas Holandesas</option>\r\n                                <option value=\"SA\">Arabia Saudí</option>\r\n                                <option value=\"DZ\">Argelia</option>\r\n                                <option value=\"AR\">Argentina</option>\r\n                                <option value=\"AM\">Armenia</option>\r\n                                <option value=\"AW\">Aruba</option>\r\n                                <option value=\"AU\">Australia</option>\r\n                                <option value=\"AT\">Austria</option>\r\n                                <option value=\"AZ\">Azerbaiyán</option>\r\n                                <option value=\"BS\">Bahamas</option>\r\n                                <option value=\"BH\">Bahrein</option>\r\n                                <option value=\"BD\">Bangladesh</option>\r\n                                <option value=\"BB\">Barbados</option>\r\n                                <option value=\"BE\">Bélgica</option>\r\n                                <option value=\"BZ\">Belice</option>\r\n                                <option value=\"BJ\">Benin</option>\r\n                                <option value=\"BM\">Bermudas</option>\r\n                                <option value=\"BY\">Bielorrusia</option>\r\n                                <option value=\"MM\">Birmania</option>\r\n                                <option value=\"BO\">Bolivia</option>\r\n                                <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                                <option value=\"BW\">Botswana</option>\r\n                                <option value=\"BR\">Brasil</option>\r\n                                <option value=\"BN\">Brunei</option>\r\n                                <option value=\"BG\">Bulgaria</option>\r\n                                <option value=\"BF\">Burkina Faso</option>\r\n                                <option value=\"BI\">Burundi</option>\r\n                                <option value=\"BT\">Bután</option>\r\n                                <option value=\"CV\">Cabo Verde</option>\r\n                                <option value=\"KH\">Camboya</option>\r\n                                <option value=\"CM\">Camerún</option>\r\n                                <option value=\"CA\">Canadá</option>\r\n                                <option value=\"TD\">Chad</option>\r\n                                <option value=\"CL\">Chile</option>\r\n                                <option value=\"CN\">China</option>\r\n                                <option value=\"CY\">Chipre</option>\r\n                                <option value=\"VA\">Ciudad del Vaticano</option>\r\n                                <option value=\"CO\">Colombia</option>\r\n                                <option value=\"KM\">Comores</option>\r\n                                <option value=\"CG\">Congo</option>\r\n                                <option value=\"KR\">Corea</option>\r\n                                <option value=\"KP\">Corea del Norte</option>\r\n                                <option value=\"CI\">Costa de Marfíl</option>\r\n                                <option value=\"CR\">Costa Rica</option>\r\n                                <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                                <option value=\"CU\">Cuba</option>\r\n                                <option value=\"DK\">Dinamarca</option>\r\n                                <option value=\"DJ\">Djibouti</option>\r\n                                <option value=\"DM\">Dominica</option>\r\n                                <option value=\"EC\">Ecuador</option>\r\n                                <option value=\"EG\">Egipto</option>\r\n                                <option value=\"SV\">El Salvador</option>\r\n                                <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                                <option value=\"ER\">Eritrea</option>\r\n                                <option value=\"SI\">Eslovenia</option>\r\n                                <option value=\"ES\" selected>España</option>\r\n                                <option value=\"US\">Estados Unidos</option>\r\n                                <option value=\"EE\">Estonia</option>\r\n                                <option value=\"ET\">Etiopía</option>\r\n                                <option value=\"FJ\">Fiji</option>\r\n                                <option value=\"PH\">Filipinas</option>\r\n                                <option value=\"FI\">Finlandia</option>\r\n                                <option value=\"FR\">Francia</option>\r\n                                <option value=\"GA\">Gabón</option>\r\n                                <option value=\"GM\">Gambia</option>\r\n                                <option value=\"GE\">Georgia</option>\r\n                                <option value=\"GH\">Ghana</option>\r\n                                <option value=\"GI\">Gibraltar</option>\r\n                                <option value=\"GD\">Granada</option>\r\n                                <option value=\"GR\">Grecia</option>\r\n                                <option value=\"GL\">Groenlandia</option>\r\n                                <option value=\"GP\">Guadalupe</option>\r\n                                <option value=\"GU\">Guam</option>\r\n                                <option value=\"GT\">Guatemala</option>\r\n                                <option value=\"GY\">Guayana</option>\r\n                                <option value=\"GF\">Guayana Francesa</option>\r\n                                <option value=\"GN\">Guinea</option>\r\n                                <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                                <option value=\"GW\">Guinea-Bissau</option>\r\n                                <option value=\"HT\">Haití</option>\r\n                                <option value=\"HN\">Honduras</option>\r\n                                <option value=\"HU\">Hungría</option>\r\n                                <option value=\"IN\">India</option>\r\n                                <option value=\"ID\">Indonesia</option>\r\n                                <option value=\"IQ\">Irak</option>\r\n                                <option value=\"IR\">Irán</option>\r\n                                <option value=\"IE\">Irlanda</option>\r\n                                <option value=\"BV\">Isla Bouvet</option>\r\n                                <option value=\"CX\">Isla de Christmas</option>\r\n                                <option value=\"IS\">Islandia</option>\r\n                                <option value=\"KY\">Islas Caimán</option>\r\n                                <option value=\"CK\">Islas Cook</option>\r\n                                <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                                <option value=\"FO\">Islas Faroe</option>\r\n                                <option value=\"HM\">Islas Heard y McDonald</option>\r\n                                <option value=\"FK\">Islas Malvinas</option>\r\n                                <option value=\"MP\">Islas Marianas del Norte</option>\r\n                                <option value=\"MH\">Islas Marshall</option>\r\n                                <option value=\"PW\">Islas Palau</option>\r\n                                <option value=\"SB\">Islas Salomón</option>\r\n                                <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                                <option value=\"TK\">Islas Tokelau</option>\r\n                                <option value=\"TC\">Islas Turks y Caicos</option>\r\n                                <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                                <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                                <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                                <option value=\"IL\">Israel</option>\r\n                                <option value=\"IT\">Italia</option>\r\n                                <option value=\"JM\">Jamaica</option>\r\n                                <option value=\"JP\">Japón</option>\r\n                                <option value=\"JO\">Jordania</option>\r\n                                <option value=\"KZ\">Kazajistán</option>\r\n                                <option value=\"KE\">Kenia</option>\r\n                                <option value=\"KG\">Kirguizistán</option>\r\n                                <option value=\"KI\">Kiribati</option>\r\n                                <option value=\"KW\">Kuwait</option>\r\n                                <option value=\"LA\">Laos</option>\r\n                                <option value=\"LS\">Lesotho</option>\r\n                                <option value=\"LV\">Letonia</option>\r\n                                <option value=\"LB\">Líbano</option>\r\n                                <option value=\"LR\">Liberia</option>\r\n                                <option value=\"LY\">Libia</option>\r\n                                <option value=\"LI\">Liechtenstein</option>\r\n                                <option value=\"LT\">Lituania</option>\r\n                                <option value=\"LU\">Luxemburgo</option>\r\n                                <option value=\"MK\">Macedonia</option>\r\n                                <option value=\"MG\">Madagascar</option>\r\n                                <option value=\"MY\">Malasia</option>\r\n                                <option value=\"MW\">Malawi</option>\r\n                                <option value=\"MV\">Maldivas</option>\r\n                                <option value=\"ML\">Malí</option>\r\n                                <option value=\"MT\">Malta</option>\r\n                                <option value=\"MA\">Marruecos</option>\r\n                                <option value=\"MQ\">Martinica</option>\r\n                                <option value=\"MU\">Mauricio</option>\r\n                                <option value=\"MR\">Mauritania</option>\r\n                                <option value=\"YT\">Mayotte</option>\r\n                                <option value=\"MX\">México</option>\r\n                                <option value=\"FM\">Micronesia</option>\r\n                                <option value=\"MD\">Moldavia</option>\r\n                                <option value=\"MC\">Mónaco</option>\r\n                                <option value=\"MN\">Mongolia</option>\r\n                                <option value=\"MS\">Montserrat</option>\r\n                                <option value=\"MZ\">Mozambique</option>\r\n                                <option value=\"NA\">Namibia</option>\r\n                                <option value=\"NR\">Nauru</option>\r\n                                <option value=\"NP\">Nepal</option>\r\n                                <option value=\"NI\">Nicaragua</option>\r\n                                <option value=\"NE\">Níger</option>\r\n                                <option value=\"NG\">Nigeria</option>\r\n                                <option value=\"NU\">Niue</option>\r\n                                <option value=\"NF\">Norfolk</option>\r\n                                <option value=\"NO\">Noruega</option>\r\n                                <option value=\"NC\">Nueva Caledonia</option>\r\n                                <option value=\"NZ\">Nueva Zelanda</option>\r\n                                <option value=\"OM\">Omán</option>\r\n                                <option value=\"NL\">Países Bajos</option>\r\n                                <option value=\"PA\">Panamá</option>\r\n                                <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                                <option value=\"PK\">Paquistán</option>\r\n                                <option value=\"PY\">Paraguay</option>\r\n                                <option value=\"PE\">Perú</option>\r\n                                <option value=\"PN\">Pitcairn</option>\r\n                                <option value=\"PF\">Polinesia Francesa</option>\r\n                                <option value=\"PL\">Polonia</option>\r\n                                <option value=\"PT\">Portugal</option>\r\n                                <option value=\"PR\">Puerto Rico</option>\r\n                                <option value=\"QA\">Qatar</option>\r\n                                <option value=\"UK\">Reino Unido</option>\r\n                                <option value=\"CF\">República Centroafricana</option>\r\n                                <option value=\"CZ\">República Checa</option>\r\n                                <option value=\"ZA\">República de Sudáfrica</option>\r\n                                <option value=\"DO\">República Dominicana</option>\r\n                                <option value=\"SK\">República Eslovaca</option>\r\n                                <option value=\"RE\">Reunión</option>\r\n                                <option value=\"RW\">Ruanda</option>\r\n                                <option value=\"RO\">Rumania</option>\r\n                                <option value=\"RU\">Rusia</option>\r\n                                <option value=\"EH\">Sahara Occidental</option>\r\n                                <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                                <option value=\"WS\">Samoa</option>\r\n                                <option value=\"AS\">Samoa Americana</option>\r\n                                <option value=\"SM\">San Marino</option>\r\n                                <option value=\"VC\">San Vicente y Granadinas</option>\r\n                                <option value=\"SH\">Santa Helena</option>\r\n                                <option value=\"LC\">Santa Lucía</option>\r\n                                <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                                <option value=\"SN\">Senegal</option>\r\n                                <option value=\"SC\">Seychelles</option>\r\n                                <option value=\"SL\">Sierra Leona</option>\r\n                                <option value=\"SG\">Singapur</option>\r\n                                <option value=\"SY\">Siria</option>\r\n                                <option value=\"SO\">Somalia</option>\r\n                                <option value=\"LK\">Sri Lanka</option>\r\n                                <option value=\"PM\">St Pierre y Miquelon</option>\r\n                                <option value=\"SZ\">Suazilandia</option>\r\n                                <option value=\"SD\">Sudán</option>\r\n                                <option value=\"SE\">Suecia</option>\r\n                                <option value=\"CH\">Suiza</option>\r\n                                <option value=\"SR\">Surinam</option>\r\n                                <option value=\"TH\">Tailandia</option>\r\n                                <option value=\"TW\">Taiwán</option>\r\n                                <option value=\"TZ\">Tanzania</option>\r\n                                <option value=\"TJ\">Tayikistán</option>\r\n                                <option value=\"TF\">Territorios franceses del Sur</option>\r\n                                <option value=\"TP\">Timor Oriental</option>\r\n                                <option value=\"TG\">Togo</option>\r\n                                <option value=\"TO\">Tonga</option>\r\n                                <option value=\"TT\">Trinidad y Tobago</option>\r\n                                <option value=\"TN\">Túnez</option>\r\n                                <option value=\"TM\">Turkmenistán</option>\r\n                                <option value=\"TR\">Turquía</option>\r\n                                <option value=\"TV\">Tuvalu</option>\r\n                                <option value=\"UA\">Ucrania</option>\r\n                                <option value=\"UG\">Uganda</option>\r\n                                <option value=\"UY\">Uruguay</option>\r\n                                <option value=\"UZ\">Uzbekistán</option>\r\n                                <option value=\"VU\">Vanuatu</option>\r\n                                <option value=\"VE\">Venezuela</option>\r\n                                <option value=\"VN\">Vietnam</option>\r\n                                <option value=\"YE\">Yemen</option>\r\n                                <option value=\"YU\">Yugoslavia</option>\r\n                                <option value=\"ZM\">Zambia</option>\r\n                                <option value=\"ZW\">Zimbabue</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                            <input type=\"text\" name=\"city\" id=\"city\"\r\n                                   ng-model=\"ctrl.userEdit.user.city\"\r\n                                   placeholder=\"Ciudad....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                                celular</label>\r\n                            <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                                   placeholder=\"Número de teléfono o celular...\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"7\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                            <input type=\"text\" name=\"address\" id=\"address\"\r\n                                   ng-model=\"ctrl.userEdit.user.address\"\r\n                                   placeholder=\"Dirección de residencia....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank\"\r\n                                   placeholder=\"Nombre Banco...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                                    ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\"\r\n                                    required>\r\n                                <option value=\"\">Tipo de cuenta</option>\r\n                                <option value=\"AH\">Ahorros</option>\r\n                                <option value=\"CR\">Corriente</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                            <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                                   placeholder=\"Número de cuenta....\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"9\"\r\n                                   ng-maxlength=\"25\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n\r\n\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(137);
+	var content = __webpack_require__(138);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65773,7 +65816,7 @@
 	}
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65781,13 +65824,13 @@
 
 
 	// module
-	exports.push([module.id, ".user-edit {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\n.user-edit .fr-modal-header,\n.user-edit .fr-modal-content,\n.user-edit .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\n.user-edit form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\n.user-edit form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.user-edit form a:hover {\n  color: #179b77;\n}\n.user-edit form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\n.user-edit form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\n.user-edit form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\n.user-edit form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\n.user-edit form label.active .req {\n  opacity: 0;\n}\n.user-edit form label.highlight {\n  color: black;\n}\n.user-edit form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-edit form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-edit .messages {\n  color: #FA787E;\n}\n.user-edit .colorMensajes {\n  color: red;\n}\n.user-edit input.ng-valid {\n  border: 1px solid green;\n}\n.user-edit input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
+	exports.push([module.id, ".user-edit {\n  padding: 0 6% 100px 6%;\n}\n.user-edit .form-group {\n  width: 60%;\n  display: block;\n  color: black;\n}\n.user-edit .form-group .control-label {\n  color: black;\n}\n.user-edit h1,\n.user-edit h3,\n.user-edit h4,\n.user-edit p {\n  color: black;\n}\n.user-edit .fr-profile-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.user-edit .fr-image-profile-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.user-edit .fr-image-profile-creator .profile-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.user-edit .fr-image-profile-creator .profile-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.user-edit .fr-image-profile-creator .profile-picture-selector span {\n  color: black;\n}\n.user-edit .fr-image-profile-creator .profile-picture-selector:hover {\n  opacity: 1;\n}\n.user-edit input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\n.user-edit .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n.user-edit form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\n.user-edit .messages {\n  color: #FA787E;\n}\n.user-edit .colorMensajes {\n  color: red;\n}\n.user-edit input.ng-valid {\n  border: 1px solid green;\n}\n.user-edit input:required:valid {\n  border: 1px solid green;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports) {
 
 	/**
@@ -65796,8 +65839,8 @@
 
 	var userEditModule = angular.module('userEditModule');
 	userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$filter',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter) {
+	    'mainService', '$filter', '$cookieStore',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, $cookieStore) {
 
 	        var userEditService = function () {
 
@@ -65817,23 +65860,33 @@
 
 	            this.getUser = function (id) {
 	                var self = this;
-	                UserApiService.getUser({userId: id}, function (response) {
-	                        if (response.username != undefined) {
-	                            self.loadUser(response);
-	                        }
-	                    },
-	                    function (error) {
-	                    });
+	                self.idUserAuth = $cookieStore.get('user_data').id_user;
+	                if (id == self.idUserAuth) {
+	                    UserApiService.getUser({userId: id}, function (response) {
+	                            if (response.username != undefined) {
+	                                self.loadUser(response);
+	                            }
+	                        },
+	                        function (error) {
+	                        });
+	                } else {
+	                    window.location.assign("#/");
+	                }
+
+
 	            };
 
 	            this.saveUser = function () {
 	                UserApiService.updateUserInfo(
 	                    self.user,
 	                    function (response) {
-	                        $freevenModal.closePopup();
-	                        console.log(response);
-	                        notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
+
+	                        self.idUserAuth = $cookieStore.get('user_data').id_user;
+	                        self.getUser(self.idUserAuth);
+
 	                        window.location.reload(true);
+	                        window.location.assign("#/profile");
+
 	                    },
 	                    function (error) {
 
@@ -65841,8 +65894,7 @@
 	            };
 
 	            this.loadUser = function (response) {
-	                console.log("Get user");
-	                console.log(response);
+
 	                self.user.first_name = response.first_name;
 	                self.user.email = response.email;
 	                self.user.last_name = response.last_name;
@@ -65886,7 +65938,7 @@
 
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports) {
 
 	angular.module('userPasswordModule', []);
@@ -65904,67 +65956,66 @@
 
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  userPasswordModule = angular.module('userPasswordModule');
-	var UserPasswordController = ['$i18n','userPasswordService','$freevenModal',
-	  function ($i18n,userPasswordService,$freevenModal) {
-	  /**
-	  * Tip: add here only visual logic
-	  */
-	  var self = this;
+	var userPasswordModule = angular.module('userPasswordModule');
+	var UserPasswordController = ['$i18n', 'userPasswordService', '$freevenModal',
+	    function ($i18n, userPasswordService, $freevenModal) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
 
-	  self.userPassword = userPasswordService;
+	        self.userPassword = userPasswordService;
 
-	  self.passwordOk = true;
+	        self.passwordOk = true;
 
-	  self.close = function () {
-	    self.userPassword.closeModal();
-	  };
+	        self.close = function () {
+	            self.userPassword.closeModal();
+	        };
 
-	  self.validatePassword = function (){
-	    if(self.userPassword.user.password1 == undefined
-	      || self.userPassword.user.password2 == undefined || self.userPassword.user.password == undefined)
-	      {
-	        return false;
-	      }else{
-	        if (self.userPassword.user.password1 != self.userPassword.user.password2) {
-	          self.passwordOk = false;
-	        } else {
-	          self.passwordOk = true;
-	          self.userPassword.savePassword();
-	        }
-	      }
-	    };
+	        self.validatePassword = function () {
+	            if (self.userPassword.user.password1 == undefined
+	                || self.userPassword.user.password2 == undefined || self.userPassword.user.password == undefined) {
+	                return false;
+	            } else {
+	                if (self.userPassword.user.password1 != self.userPassword.user.password2) {
+	                    self.passwordOk = false;
+	                } else {
+	                    self.passwordOk = true;
+	                    self.userPassword.savePassword();
+	                }
+	            }
+	        };
 
-	  }];
+	    }];
 
-	  userPasswordModule.component('userPassword', {
+	userPasswordModule.component('userPassword', {
 	    transclude: true,
 	    bindings: {
-	      title: '@'
+	        title: '@'
 	    },
 	    controller: UserPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(141)
-	  });
+	    template: __webpack_require__(142)
+	});
 
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(143);
+	var content = __webpack_require__(144);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65984,7 +66035,7 @@
 	}
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65998,7 +66049,7 @@
 
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports) {
 
 	/**
@@ -66028,15 +66079,13 @@
 
 	            this.closeModal = function () {
 	                $freevenModal.closePopup();
-	                self.userEdit.showEditPopup();
 	            };
 
 	            this.savePassword = function () {
 	                //TODO CONSUME SERVICE SAVE
-	                //window.location.reload(true);
+	                window.location.reload(true);
 	                $freevenModal.closePopup();
 	                notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_password_success_detail);
-	                self.userEdit.showEditPopup();
 	            };
 
 	        };
@@ -66045,7 +66094,7 @@
 
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports) {
 
 	angular.module('helpModule', []);
@@ -66063,7 +66112,7 @@
 
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66085,18 +66134,18 @@
 	    },
 	    controller: HelpController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(147)
+	    template: __webpack_require__(148)
 	});
 
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('helpModule');
@@ -66124,13 +66173,13 @@
 
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(150);
+	var content = __webpack_require__(151);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66150,7 +66199,7 @@
 	}
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66164,7 +66213,7 @@
 
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66183,24 +66232,24 @@
 	    },
 	    controller: HelpItemController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(152)
+	    template: __webpack_require__(153)
 	});
 
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(154);
+	var content = __webpack_require__(155);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66220,7 +66269,7 @@
 	}
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66234,7 +66283,7 @@
 
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports) {
 
 	angular.module('artistModule', []);
@@ -66252,7 +66301,7 @@
 
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var artistModule = angular.module('artistModule');
@@ -66279,21 +66328,15 @@
 	    },
 	    controller: ArtistController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(157)
+	    template: __webpack_require__(158)
 	});
 
-
-/***/ },
-/* 157 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 159 */
@@ -66573,7 +66616,7 @@
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(158) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(170) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(170) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 170 */

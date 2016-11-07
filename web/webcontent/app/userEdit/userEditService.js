@@ -4,8 +4,8 @@
 
 var userEditModule = angular.module('userEditModule');
 userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-    'mainService', '$filter',
-    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter) {
+    'mainService', '$filter', '$cookieStore',
+    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $filter, $cookieStore) {
 
         var userEditService = function () {
 
@@ -25,23 +25,33 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
 
             this.getUser = function (id) {
                 var self = this;
-                UserApiService.getUser({userId: id}, function (response) {
-                        if (response.username != undefined) {
-                            self.loadUser(response);
-                        }
-                    },
-                    function (error) {
-                    });
+                self.idUserAuth = $cookieStore.get('user_data').id_user;
+                if (id == self.idUserAuth) {
+                    UserApiService.getUser({userId: id}, function (response) {
+                            if (response.username != undefined) {
+                                self.loadUser(response);
+                            }
+                        },
+                        function (error) {
+                        });
+                } else {
+                    window.location.assign("#/");
+                }
+
+
             };
 
             this.saveUser = function () {
                 UserApiService.updateUserInfo(
                     self.user,
                     function (response) {
-                        $freevenModal.closePopup();
-                        console.log(response);
-                        notifierService.success($i18n.translate.user_edit_success, $i18n.translate.user_edit_success_detail);
+
+                        self.idUserAuth = $cookieStore.get('user_data').id_user;
+                        self.getUser(self.idUserAuth);
+
                         window.location.reload(true);
+                        window.location.assign("#/profile");
+
                     },
                     function (error) {
 
@@ -49,8 +59,7 @@ userEditModule.factory('userEditService', ['UserApiService', '$i18n', '$freevenM
             };
 
             this.loadUser = function (response) {
-                console.log("Get user");
-                console.log(response);
+
                 self.user.first_name = response.first_name;
                 self.user.email = response.email;
                 self.user.last_name = response.last_name;

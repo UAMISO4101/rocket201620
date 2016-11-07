@@ -24,9 +24,8 @@ var UserMenuController = ['$i18n', 'userMenuService', 'loginService', 'mainServi
         };
 
         self.showEditPopup = function () {
-
             self.userEdit.getUser(self.idUserAuth);
-            self.userEdit.showEditPopup();
+            window.location.assign("#/profile/" + self.idUserAuth);
         };
 
 

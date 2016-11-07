@@ -32,6 +32,8 @@ loginModule.factory('loginService', ['UserApiService', '$i18n', '$freevenModal',
             self.logout = function () {
                 self.user = {};
                 mainService.logout();
+                window.location.reload(true);
+                window.location.assign("#/");
             };
 
             this.showRegisterPopup = function () {
