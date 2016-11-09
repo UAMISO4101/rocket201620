@@ -1,0 +1,34 @@
+<div class="row event-list">
+    <h3 class="top-event-list-title">Próximos eventos</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="event in ctrl.eventList.events">
+
+        <div class="row">
+            <div class="top-item-track col-xs-3">
+                 <img align="left"
+                 class=""
+                 src="../styles/images/maps.jpg"
+                 alt="Profile image example"/>
+            </div>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h3 class="event-name">
+                    {{ event.eventName }}
+                </h3>
+                <h3 class="event-artist">
+                    <a href="#/artist/{{ event.artist_id }}">{{ event.artistName }}</a>
+                </h3>
+                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>
+                <h5>Lugar: {{ event.eventPlace }}
+                    <a href="#">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </a>
+                </h5>
+                <h5>Descripción {{ event.eventDescription }}</h5>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/>
+    <h3 ng-if="ctrl.eventList.loading" class="list-loading">{{ 'loading_events' | translate }}</h3>
+</div>

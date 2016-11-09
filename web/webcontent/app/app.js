@@ -33,7 +33,9 @@ var appModules = [
     'scoreEditorModule',
     'restorePasswordModule',
     'donationCreatorModule',
-    'bounceModule'
+    'bounceModule',
+    'postCreatorModule',
+    'eventListModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

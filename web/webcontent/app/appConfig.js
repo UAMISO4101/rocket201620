@@ -19,6 +19,9 @@
                 $routeProvider.when('/top', {
                     template: '<top-track-list></top-track-list>'
                 });
+                $routeProvider.when('/events', {
+                    template: '<event-list></event-list>'
+                });
                 $routeProvider.when('/upload', {
                     template: '<track-creator></track-creator>'
                 });
@@ -44,6 +47,23 @@
                 });
                 $routeProvider.when('/profile/:idUser', {
                     template: '<user-edit></user-edit>',
+                    requireAuthentication: true,
+                    resolve: {
+                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+                            var deferred = $q.defer();
+                            var authenticated = mainService.isAuthenticated();
+                            if (authenticated) {
+                                deferred.resolve();
+                            } else {
+                                deferred.reject();
+                                $location.url('#/');
+                            }
+                            return deferred.promise;
+                        }]
+                    }
+                });
+                $routeProvider.when('/post', {
+                    template: '<post-creator></post-creator>',
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {

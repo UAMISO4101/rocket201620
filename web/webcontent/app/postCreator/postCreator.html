@@ -1,0 +1,85 @@
+<div class="post-creator" xmlns="http://www.w3.org/1999/html">
+    <div class="fr-track-creator">
+        <img align="left"
+             class="fr-image-lg"
+             src="../styles/images/eventos.jpg"
+             alt="Profile image example"/>
+
+        <div class="fr-image-track-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="../styles/images/evento2.png"
+                 alt="Profile image example"/>
+        </div>
+        <div>
+        </div>
+        <div class="fr-track-creator-text">
+            <form name="eventForm">
+                <fieldset class="form-group">
+                    <h4>Llena estos campos para publicar un evento</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="control-label" for="eventName">Nombre del evento</label>
+                            <input type="text" name="eventName" id="eventName"
+                                   ng-model="ctrl.event.event.eventName"
+                                   placeholder="Nombre del evento..."
+                                   class="form-control"
+                                   required/>
+                            <span class="messages" ng-show="eventForm.$submitted || eventForm.eventName.$touched">
+                            <span ng-show="eventForm.eventName.$invalid">El campo es obligatorio.</span>
+                            </span>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="control-label" for="eventPlace">Lugar del evento</label>
+                            <input type="text" name="eventPlace" id="eventPlace"
+                                   ng-model="ctrl.event.event.eventPlace"
+                                   placeholder="Lugar del evento..."
+                                   class="form-control"
+                                   required/>
+                            <span class="messages" ng-show="eventForm.$submitted || eventForm.eventPlace.$touched">
+                            <span ng-show="eventForm.eventPlace.$invalid">El campo es obligatorio.</span>
+                            </span>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="control-label" for="date_event">Fecha y Hora del evento</label>
+                            <input type="datetime-local" id="date_event" name="date_event"
+                                   class="form-control"
+                                   ng-model="ctrl.event.event.date_event"
+                                   required/>
+                        </div>
+
+                        <div class="col-md-12">
+                    <span class="messages"
+                          ng-show="!ctrl.dateOk">La fecha no es correcta. Por favor, verifique</span>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="control-label" for="eventDescription">Descripción del evento</label>
+                            <textarea type="text" name="eventDescription" id="eventDescription"
+                                      ng-model="ctrl.event.event.eventDescription"
+                                      placeholder="Descripción del evento..."
+                                      class="form-control"
+                                      rows="3"
+                                      required></textarea>
+                            <span class="messages" ng-show="eventForm.$submitted || eventForm.eventPlace.$touched">
+                            <span ng-show="eventForm.eventPlace.$invalid">El campo es obligatorio.</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <button class="freeven-accept-btn" ng-click="ctrl.saveEvent()">
+                                <span>Publicar evento</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2" ng-if="ctrl.event.loading">
+                            <bounce title="Bounce">Publicando evento</bounce>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

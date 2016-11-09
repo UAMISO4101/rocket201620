@@ -169,3 +169,13 @@ require('../app/donationCreator/donationCreator.less');
 require('../app/bounce/bounceModule.js');
 require('../app/bounce/bounceComponent.js');
 require('../app/bounce/bounce.less');
+
+require('../app/postCreator/postCreatorModule.js');
+require('../app/postCreator/postCreatorComponent.js');
+require('../app/postCreator/postCreatorService.js');
+require('../app/postCreator/postCreator.less');
+
+require('../app/eventList/eventListModule.js');
+require('../app/eventList/eventListService.js');
+require('../app/eventList/eventListComponent.js');
+require('../app/eventList/eventList.less');

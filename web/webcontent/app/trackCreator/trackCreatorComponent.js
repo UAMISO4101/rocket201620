@@ -19,7 +19,6 @@ var TrackCreatorController = ['Upload', 'mainService', 'GenderApiService', 'noti
                 {}
                 ,
                 function (response) {
-                    console.log(response);
                     self.genderOptions = response.results;
                 },
                 function (error) {
