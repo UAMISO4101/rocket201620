@@ -169,6 +169,7 @@ class TrackAnctSerializer(TrackSerializer):
         try:
             count_votes = Vote.objects.filter(
                 track__id=obj.id, item__id=self.itemid).count()
+            print(self.itemid)
             return count_votes
         except:
             return None
