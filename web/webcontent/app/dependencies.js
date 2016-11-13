@@ -184,3 +184,7 @@ require('../app/competitionList/competitionListModule.js');
 require('../app/competitionList/competitionListComponent.js');
 require('../app/competitionList/competitionListService.js');
 require('../app/competitionList/competitionList.less');
+
+require('../app/competitionParticipate/competitionParticipateModule.js');
+require('../app/competitionParticipate/competitionParticipateComponent.js');
+require('../app/competitionParticipate/competitionParticipate.less');

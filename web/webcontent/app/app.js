@@ -36,7 +36,8 @@ var appModules = [
     'bounceModule',
     'postCreatorModule',
     'eventListModule',
-    'competitionListModule'
+    'competitionListModule',
+    'competitionParticipateModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
