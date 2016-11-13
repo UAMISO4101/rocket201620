@@ -211,3 +211,24 @@ class AnnouncementFullSerializer(AnnouncementSerializer):
             'owner_email',
             'items',
         )
+
+
+class VoteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Vote
+        fields = (
+            'id',
+            'item',
+            'user',
+            'track',
+        )
+
+
+class VoteUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Vote
+        fields = (
+            'track',
+        )

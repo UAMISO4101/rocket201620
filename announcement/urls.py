@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from .views import (AnnouncementListView, AnnouncementCreateView,
                     ItemCreateView, AnnouncementUpdateView, ItemUpdateView,
-                    AnnouncementCompleteListView)
+                    AnnouncementCompleteListView, VoteListView, VoteCreateView,
+                    VoteUpdateView)
 
 
 urlpatterns = [
@@ -14,4 +15,12 @@ urlpatterns = [
         name='anct-update'),
     url(r'^item-update/(?P<pk>\d+)/$', ItemUpdateView.as_view(),
         name='item-update'),
+    url(r'^vote-get/(?P<item>\d+)/(?P<user>\d+)/$',
+        VoteListView.as_view(),
+        name='vote-get'),
+    url(r'^vote-create/$', VoteCreateView.as_view(),
+        name='vote-create'),
+    url(r'^vote-update/(?P<item>\d+)/(?P<user>\d+)/$',
+        VoteUpdateView.as_view(),
+        name='vote-update'),
 ]
