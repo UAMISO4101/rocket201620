@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Gender, Track, Top
+from .models import Gender, Track, Top, Playlist
 
 
 @admin.register(Gender)
@@ -24,3 +24,8 @@ class TopAdmin(admin.ModelAdmin):
         'action',
         'top_type',
     )
+
+
+@admin.register(Playlist)
+class PlaylistAdmin(admin.ModelAdmin):
+    pass

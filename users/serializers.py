@@ -96,6 +96,7 @@ class BussinessAgentSerializer(serializers.ModelSerializer):
             'country',
             'telephone_number',
         )
+
         @classmethod
         def get_avatar(self, obj):
             try:
