@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Announcement, Item
 from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
-                          ItemUploadSerializer)
+                          ItemUploadSerializer, AnnouncementFullSerializer)
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 
@@ -15,6 +15,14 @@ class AnnouncementListView(ListAPIView):
         'description',
         'id',
     )
+
+
+class AnnouncementCompleteListView(ListAPIView):
+    serializer_class = AnnouncementFullSerializer
+
+    def get_queryset(self):
+        anct = Announcement.objects.filter(pk=self.kwargs['pk'])
+        return anct  
 
 
 class AnnouncementCreateView(CreateAPIView):

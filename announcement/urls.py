@@ -1,10 +1,13 @@
 from django.conf.urls import url
 from .views import (AnnouncementListView, AnnouncementCreateView,
-                    ItemCreateView, AnnouncementUpdateView, ItemUpdateView)
+                    ItemCreateView, AnnouncementUpdateView, ItemUpdateView,
+                    AnnouncementCompleteListView)
 
 
 urlpatterns = [
     url(r'^$', AnnouncementListView.as_view(), name='anct-list'),
+    url(r'^full/(?P<pk>\d+)/$', AnnouncementCompleteListView.as_view(),
+        name='anctc-list'),
     url(r'^create/$', AnnouncementCreateView.as_view(), name='anct-create'),
     url(r'^item-create/$', ItemCreateView.as_view(), name='item-create'),
     url(r'^update/(?P<pk>\d+)/$', AnnouncementUpdateView.as_view(),
