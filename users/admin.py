@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Artist, BusinessAgent, TokenUser, Donation
+from .models import Artist, BusinessAgent, TokenUser, Donation, Event
 
 
 @admin.register(Artist)
@@ -25,3 +25,8 @@ class DonationAdmin(admin.ModelAdmin):
         'date',
         'value',
     )
+
+
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+    pass

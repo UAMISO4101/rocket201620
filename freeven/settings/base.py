@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'users',
     'manager',
     'tracks',
+    'announcement',
     'web',
 ]
 
