@@ -11,7 +11,7 @@ class Announcement(models.Model):
     end_date = models.DateField(blank=False, null=False)
     image = models.ImageField(upload_to='anct_images', null=True, blank=True)
     popular_selection = models.BooleanField(default=True)
-    state = models.BooleanField(default=True)
+    open = models.BooleanField(default=True)
 
     owner = models.ForeignKey(BusinessAgent, blank=False, null=False,
                               related_name='ancts')
@@ -29,7 +29,8 @@ class Item(models.Model):
                                      on_delete=models.CASCADE,
                                      related_name='items')
     gender = models.ForeignKey(Gender, blank=True, null=True)
-    tracks = models.ManyToManyField(Track, related_name='ancts')
+    tracks = models.ManyToManyField(Track, blank=True, null=True,
+                                    related_name='ancts')
     winner = models.ForeignKey(Track, blank=True, null=True)
 
     def __str__(self):
