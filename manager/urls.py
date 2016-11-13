@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^user/$', UserListView.as_view(), name='user-list'),
     url(r'^user/update/(?P<pk>\d+)/$', UserUpdateView.as_view(),
         name='user-update'),
-    url(r'^artist-donation-list/$', ArtistDonationListView.as_view(), name='artist-donation-list'),
+    url(r'^artist-donation-list/$', ArtistDonationListView.as_view(),
+        name='artist-donation-list'),    
 ]

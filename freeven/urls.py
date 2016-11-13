@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^manager/', include('manager.urls')),
     url(r'^track/', include('tracks.urls')),
+    url(r'^announcement/', include('announcement.urls')),
     url(r'^api/track/', include('tracks.urls')),
     url(r'^user/', include('users.urls')),
     url(r'^api/user/', include('users.urls')),
