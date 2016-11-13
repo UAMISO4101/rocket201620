@@ -1,0 +1,69 @@
+<div class="row competition-list">
+    <h3 class="top-competition-list-title">Listado de convocatorias</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="competition in ctrl.competitionList.competitions">
+
+        <div class="row">
+            <div class="top-item-track col-xs-3">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img align="left"
+                             class=""
+                             src="../styles/images/microfono.jpg"
+                             alt="Profile image example"/>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <button class="freeven-accept-btn"
+                                ng-click="ctrl.participate(competition.competittionId)">
+                            Participar
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h4 class="competition-name">
+                    {{ competition.competitionName }}
+                </h4>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <span class=" glyphicon glyphicon-calendar">
+                <strong>Desde:</strong>
+                    <h5>{{ competition.date_competition_start | date:'medium' }}</h5>
+                </span>
+                    </div>
+                    <div class="col-xs-6">
+                <span class=" glyphicon glyphicon-calendar">
+               <strong>Hasta:</strong>
+                        <h5>
+                            {{ competition.date_competition_dead_line | date:'medium' }}</h5>
+               </span>
+                    </div>
+                </div>
+                <h5><strong>Descripción:</strong> {{ competition.competitionDescription }}</h5>
+                <h5><strong>Caracteristicas</strong></h5>
+                <table class="table" border="1px">
+                    <tbody>
+                    <tr>
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Tipo</strong></td>
+                        <td><strong>Caracteristicas</strong></td>
+                    </tr>
+                    <tr ng-repeat="work in competition.works">
+                        <td>{{ work.workName }}</td>
+                        <td>{{ work.typeWork }}</td>
+                        <td>{{ work.feature }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/>
+</div>

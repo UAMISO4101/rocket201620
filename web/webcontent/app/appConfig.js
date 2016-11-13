@@ -22,6 +22,9 @@
                 $routeProvider.when('/events', {
                     template: '<event-list></event-list>'
                 });
+                $routeProvider.when('/competitions', {
+                    template: '<competition-list></competition-list>'
+                });
                 $routeProvider.when('/upload', {
                     template: '<track-creator></track-creator>'
                 });
