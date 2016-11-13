@@ -146,7 +146,7 @@ class TrackAnctSerializer(TrackSerializer):
     def __init__(self, *args, **kwargs):
         super(TrackAnctSerializer, self).__init__(*args, **kwargs)
         print(kwargs['context']['id'])
-        self.itemid = kwargs['context']['id']
+        itemid = kwargs['context']['id']
 
     class Meta:
         model = Track
@@ -176,7 +176,7 @@ class TrackAnctSerializer(TrackSerializer):
 
 
 class ItemFullSerializer(ItemSerializer):
-    tracks = TrackAnctSerializer(many=True, context={'id': 1})
+    tracks = TrackAnctSerializer(many=True, context={'id': 100})
 
     class Meta:
         model = Item

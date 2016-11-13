@@ -22,7 +22,7 @@ class AnnouncementCompleteListView(ListAPIView):
 
     def get_queryset(self):
         anct = Announcement.objects.filter(pk=self.kwargs['pk'])
-        return anct
+        return anct  
 
 
 class AnnouncementCreateView(CreateAPIView):
