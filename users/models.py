@@ -42,6 +42,24 @@ class Artist(models.Model):
         return self.user.username
 
 
+class Event(models.Model):
+    name = models.CharField(max_length=50)
+    date = models.DateField(blank=False, null=False)
+    place = models.CharField(max_length=50, blank=False, null=False)
+    latitude = models.CharField(max_length=10, blank=True, null=True)
+    longitude = models.CharField(max_length=10, blank=True, null=True)
+
+    description = models.CharField(max_length=200, null=False)
+    image = models.ImageField(upload_to='event_images', null=True, blank=True)
+
+    artist = models.ForeignKey(Artist, blank=False, null=False,
+                               on_delete=models.CASCADE,
+                               related_name='events')
+
+    def __str__(self):
+        return self.name
+
+
 class Donation(models.Model):
     artist = models.ForeignKey(Artist)
     user = models.ForeignKey(User)

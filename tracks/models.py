@@ -40,3 +40,12 @@ class Top(models.Model):
     quantity = models.IntegerField()
     action = models.CharField(max_length=50)
     top_type = models.CharField(max_length=50)
+
+
+class Playlist(models.Model):
+    name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, blank=False, null=False)
+    tracks = models.ManyToManyField(Track)
+
+    def __str__(self):
+        return self.name
