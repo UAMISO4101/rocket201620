@@ -48,4 +48,4 @@ class Vote(models.Model):
         unique_together = ("item", "user")
 
     def __str__(self):
-        return self.item + '-' + self.user
+        return self.item.name + ' - ' + self.track.name
