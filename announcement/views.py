@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import Announcement, Item
+from .models import Announcement, Item, Vote
 from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
-                          ItemUploadSerializer)
+                          ItemUploadSerializer, AnnouncementFullSerializer,
+                          VoteSerializer, VoteUpdateSerializer)
 from rest_framework import filters
-from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
+from rest_framework.generics import (ListAPIView, CreateAPIView, UpdateAPIView)
 
 
 class AnnouncementListView(ListAPIView):
@@ -15,6 +16,14 @@ class AnnouncementListView(ListAPIView):
         'description',
         'id',
     )
+
+
+class AnnouncementCompleteListView(ListAPIView):
+    serializer_class = AnnouncementFullSerializer
+
+    def get_queryset(self):
+        anct = Announcement.objects.filter(pk=self.kwargs['pk'])
+        return anct
 
 
 class AnnouncementCreateView(CreateAPIView):
@@ -41,3 +50,29 @@ class ItemUpdateView(UpdateAPIView):
     def get_queryset(self):
         item = Item.objects.filter(pk=self.kwargs['pk'])
         return item
+
+
+class VoteListView(ListAPIView):
+    serializer_class = VoteSerializer
+
+    def get_queryset(self):
+        if self.kwargs['user'] is not None:
+            vote = Vote.objects.filter(item=self.kwargs['item'],
+                                       user=self.kwargs['user'])
+        else:
+            vote = Vote.objects.filter(item=self.kwargs['item'])
+        return vote
+
+
+class VoteCreateView(CreateAPIView):
+    queryset = Vote.objects.all()
+    serializer_class = VoteSerializer
+
+
+class VoteUpdateView(UpdateAPIView):
+    serializer_class = VoteUpdateSerializer
+
+    def get_queryset(self):
+        vote = Vote.objects.filter(item=self.kwargs['item'],
+                                   user=self.kwargs['user'])
+        return vote

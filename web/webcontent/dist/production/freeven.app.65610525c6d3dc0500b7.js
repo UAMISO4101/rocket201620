@@ -81,7 +81,9 @@
 	    'donationCreatorModule',
 	    'bounceModule',
 	    'postCreatorModule',
-	    'eventListModule'
+	    'eventListModule',
+	    'competitionListModule',
+	    'competitionParticipateModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -275,6 +277,15 @@
 	__webpack_require__(217);
 	__webpack_require__(218);
 	__webpack_require__(221);
+
+	__webpack_require__(223);
+	__webpack_require__(224);
+	__webpack_require__(227);
+	__webpack_require__(228);
+
+	__webpack_require__(230);
+	__webpack_require__(231);
+	__webpack_require__(233);
 
 /***/ },
 /* 2 */
@@ -62387,6 +62398,9 @@
 	                $routeProvider.when('/events', {
 	                    template: '<event-list></event-list>'
 	                });
+	                $routeProvider.when('/competitions', {
+	                    template: '<competition-list></competition-list>'
+	                });
 	                $routeProvider.when('/upload', {
 	                    template: '<track-creator></track-creator>'
 	                });
@@ -64490,7 +64504,7 @@
 /* 85 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 86 */
@@ -67856,6 +67870,344 @@
 
 	// module
 	exports.push([module.id, ".event-list {\n  padding: 68px 10%;\n  display: block;\n}\n.event-list .top-event-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.event-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\n.event-list .top-item-description {\n  color: #555555;\n}\n.event-list .top-item-description .event-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\n.event-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\n.event-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.event-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\n.event-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.event-list .text {\n  font-size: 1rem;\n}\n.event-list .text-xs,\n.event-list .text-xxs {\n  font-size: 12px;\n}\n.event-list .text-sm {\n  font-size: 13px;\n}\n.event-list .text-md {\n  font-size: 1.125rem;\n}\n.event-list .text-lg {\n  font-size: 1.5rem;\n}\n.event-list .text-2x {\n  font-size: 2em;\n}\n.event-list .text-3x {\n  font-size: 3em;\n}\n.event-list .text-4x {\n  font-size: 4em;\n}\n.event-list .list-loading {\n  text-align: center;\n}\n.event-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.event-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.event-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.event-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.event-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 223 */
+/***/ function(module, exports) {
+
+	angular.module('competitionListModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/competitionList/competitionListModule.js');
+	 require('../app/competitionList/competitionListComponent.js');
+	 require('../app/competitionList/competitionList.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <competition-list title ="CompetitionList"> </competition-list>
+	*/
+
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var competitionListModule = angular.module('competitionListModule');
+	var CompetitionListController = ['$i18n', 'competitionListService', 'mainService', 'Upload',
+	    '$freevenModal', 'notifierService',
+	    function ($i18n, competitionListService, mainService, Upload, $freevenModal, notifierService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.competitionList = competitionListService;
+
+	        self.competitionList.listCompetitions();
+
+	        self.participate = function (id) {
+	            var authenticated = mainService.isAuthenticated();
+	            if (authenticated) {
+	                var isArtist = mainService.isArtist();
+	                if (isArtist) {
+	                    self.loadPopUp(id);
+	                } else {
+	                    notifierService.info("Convocatorias", "Sólo los artistas pueden participar");
+	                }
+	            } else {
+	                notifierService.warning("Convocatorias", "Por favor, inice sesión para participar");
+	            }
+	        }
+
+	        self.loadPopUp = function (id) {
+	            self.competitionList.showLoadTrackPopup(id);
+	        }
+
+	    }];
+
+	competitionListModule.component('competitionList', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: CompetitionListController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(225)
+	});
+
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"row competition-list\">\r\n    <h3 class=\"top-competition-list-title\">Listado de convocatorias</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"competition in ctrl.competitionList.competitions\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"" + __webpack_require__(226) + "\"\r\n                             alt=\"Profile image example\"/>\r\n                    </div>\r\n                </div>\r\n                <br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <button class=\"freeven-accept-btn\"\r\n                                ng-click=\"ctrl.participate(competition.competittionId)\">\r\n                            Participar\r\n                        </button>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ competition.competitionName }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ competition.date_competition_start | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ competition.date_competition_dead_line | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ competition.competitionDescription }}</h5>\r\n                <h5><strong>Caracteristicas</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Caracteristicas</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"work in competition.works\">\r\n                        <td>{{ work.workName }}</td>\r\n                        <td>{{ work.typeWork }}</td>\r\n                        <td>{{ work.feature }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n</div>";
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "c3b5002b06ad09ef310ba44af42385d9.jpg";
+
+/***/ },
+/* 227 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var competitionListModule = angular.module('competitionListModule');
+	competitionListModule.factory('competitionListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$cookieStore',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	        var competitionListService = function () {
+
+	            var self = this;
+
+	            self.competitions = [];
+
+	            self.works = [];
+
+	            self.competition = {};
+	            self.competition2 = {};
+
+	            self.work1 = {};
+	            self.work2 = {};
+
+	            self.loading = false;
+
+	            self.listCompetitions = function () {
+	                self.competitions = [];
+	                self.works = [];
+
+	                self.loadMockData();
+
+	            };
+
+	            self.showLoadTrackPopup = function (id) {
+	                var self = this;
+	                self.selectedIdCompetition = id
+	                $freevenModal.showPopup({}, {
+	                    size: 'small',
+	                    template: '<competition-participate></competition-participate>'
+	                });
+	            };
+
+	            self.getSelectedIdCompetition = function () {
+	                var self = this;
+	                return self.selectedIdCompetition;
+	            };
+
+	            self.loadMockData = function () {
+	                //Load works
+	                self.work1.workName = "Sólo guitarra";
+	                self.work1.typeWork = "Instrumento";
+	                self.work1.feature = "Máximo puede durar 1 minuto.";
+
+
+	                self.work2.workName = "Sólo piano";
+	                self.work2.typeWork = "Instrumento";
+	                self.work2.feature = "Se debe enviar en formato mp3, 30 segundos.";
+
+	                self.works.push(self.work1);
+	                self.works.push(self.work2);
+
+	                self.competition.competitionName = "Convocatoria para pélicula Salvaje";
+	                self.competition.competittionId = 1;
+	                self.competition.date_competition_start = new Date();
+	                self.competition.date_competition_dead_line = new Date();
+	                self.competition.competitionDescription = "Necesitamos sonidos de animales para la pelicula";
+	                self.competition.works = self.works;
+
+	                self.competition2.competitionName = "Convocatoria para pélicula de niños";
+	                self.competition2.competittionId = 2;
+	                self.competition2.date_competition_start = new Date();
+	                self.competition2.date_competition_dead_line = new Date();
+	                self.competition2.competitionDescription = "Necesitamos sonidos de niños llorando para la pelicula";
+	                self.competition2.works = self.works;
+
+
+	                self.competitions.push(self.competition);
+	                self.competitions.push(self.competition2);
+
+	            }
+
+
+	        };
+	        return new competitionListService();
+	    }]);
+
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(229);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionList.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionList.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "competition-list {\n  padding: 68px 10%;\n  display: block;\n}\ncompetition-list .top-competition-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\ncompetition-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\ncompetition-list .top-item-description {\n  color: #555555;\n}\ncompetition-list .top-item-description .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\ncompetition-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\ncompetition-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\ncompetition-list a {\n  cursor: pointer;\n  color: inherit;\n}\ncompetition-list .text {\n  font-size: 1rem;\n}\ncompetition-list .text-xs,\ncompetition-list .text-xxs {\n  font-size: 12px;\n}\ncompetition-list .text-sm {\n  font-size: 13px;\n}\ncompetition-list .text-md {\n  font-size: 1.125rem;\n}\ncompetition-list .text-lg {\n  font-size: 1.5rem;\n}\ncompetition-list .text-2x {\n  font-size: 2em;\n}\ncompetition-list .text-3x {\n  font-size: 3em;\n}\ncompetition-list .text-4x {\n  font-size: 4em;\n}\ncompetition-list .list-loading {\n  text-align: center;\n}\ncompetition-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\ncompetition-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\ncompetition-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\ncompetition-list .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 230 */
+/***/ function(module, exports) {
+
+	angular.module('competitionParticipateModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/competitionParticipate/competitionParticipateModule.js');
+	 require('../app/competitionParticipate/competitionParticipateComponent.js');
+	 require('../app/competitionParticipate/competitionParticipate.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <competition-participate title ="CompetitionParticipate"> </competition-participate>
+	*/
+
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var competitionParticipateModule = angular.module('competitionParticipateModule');
+	var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
+	    'competitionListService',
+	    function ($i18n, $freevenModal, mainService, Upload, notifierService,competitionListService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.participateValidate = function () {
+	            self.uploadFileToParticipate();
+	        }
+	        self.trackFiles = {};
+	        self.loading = false;
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.trackFiles[fieldName] = file;
+	            }
+	        };
+
+	        self.uploadFileToParticipate = function () {
+	            var self = this;
+	            var user = mainService.getUserData();
+	            self.idCompetition = competitionListService.getSelectedIdCompetition();
+	            self.loading = true;
+	            if (self.trackFiles) {
+	                Upload.upload({
+	                    url: 'api/announcement/participate/',
+	                    data: {
+	                        idCompetition: self.idCompetition,
+	                        artist: user.id_artist,
+	                        file: self.trackFiles.audio
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    self.loading = false;
+	                    self.close();
+	                    console.log('Enviado a convocatoria correctamente');
+	                    notifierService.success("La pieza musical se ha sido enviada para participar", ".");
+	                });
+	            }
+	        };
+
+
+	        self.close = function () {
+	            $freevenModal.closePopup();
+	        };
+
+	    }];
+
+	competitionParticipateModule.component('competitionParticipate', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: CompetitionParticipateController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(232)
+	});
+
+
+/***/ },
+/* 232 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Carga tu obra músical</label>\r\n                    <a ngf-select\r\n                       ngf-multiple=\"false\"\r\n                       accept=\".mp3\"\r\n                       filters=\".mp3\"\r\n                       ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                       class=\"form-control\">\r\n                        <i class=\"icon icon-upload\">\r\n                            <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                            <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                        </i>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(234);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionParticipate.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionParticipate.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
 
 	// exports
 
