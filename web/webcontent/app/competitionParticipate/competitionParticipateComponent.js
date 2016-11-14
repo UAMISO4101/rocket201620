@@ -29,11 +29,13 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
             var self = this;
             var user = mainService.getUserData();
             self.loading = true;
-            console.log(self.itemsSelected);
             if (self.trackFiles) {
                 Upload.upload({
                     url: 'api/announcement/participate/',
                     data: {
+                        items: self.itemsSelected,
+                        tracks: self.tracksSelected,
+                        artist_id: user.id_artist,
                     }
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
@@ -59,7 +61,22 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
 
         };
 
+        self.loadFullTracksArtist = function (id) {
+            if (id != undefined) {
+                ArtistApiService.getTracksForArtist(
+                    {guidArtist: id},
+                    function (response) {
+                        self.tracksArtist = response.results;
+                    },
+                    function (error) {
+                        console.log('Error loading full tracks artist');
+                    });
+            }
+
+        };
+
         self.loadFullCompetition(self.idCompetition);
+        self.loadFullTracksArtist(2);
 
 
         self.close = function () {
