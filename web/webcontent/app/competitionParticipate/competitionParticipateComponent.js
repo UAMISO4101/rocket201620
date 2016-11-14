@@ -19,6 +19,7 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.itemsSelected = [];
         self.tracksSelected = [];
 
+
         self.attachFile = function (files, fieldName) {
             if (files && files.length > 0) {
                 var file = files[0];
@@ -29,8 +30,6 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.uploadFileToParticipate = function () {
             var self = this;
             var user = mainService.getUserData();
-
-
             self.loading = true;
             if (self.trackFiles) {
                 Upload.upload({
@@ -85,10 +84,6 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.close = function () {
             $freevenModal.closePopup();
         };
-
-        jQuery(document).ready(function ($) {
-            $('#undo_redo').multiselect();
-        });
 
     }];
 
