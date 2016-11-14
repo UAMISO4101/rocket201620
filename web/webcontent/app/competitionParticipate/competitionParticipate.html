@@ -27,6 +27,17 @@
         </fieldset>
         <fieldset class="form-group">
             <div class="row">
+                <div class="col-md-12">
+                    <select class="form-control" name="browsers" multiple
+                            ng-model="ctrl.itemsSelected">
+                        <option ng-repeat="item in  ctrl.items"
+                                ng-value="item.id">{{ item.name }}</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
                 <div class="col-md-12 center-button-pass">
                     <button class="freeven-accept-btn"
                             ng-click="ctrl.participateValidate()" ng-disabled="competitionForm.$invalid">
