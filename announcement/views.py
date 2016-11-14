@@ -32,17 +32,17 @@ class AnnouncementCreateView(CreateAPIView):
     serializer_class = AnnouncementUploadSerializer
 
 
-class ItemCreateView(CreateAPIView):
-    queryset = Item.objects.all()
-    serializer_class = ItemUploadSerializer
-
-
 class AnnouncementUpdateView(UpdateAPIView):
     serializer_class = AnnouncementUploadSerializer
 
     def get_queryset(self):
         anct = Announcement.objects.filter(pk=self.kwargs['pk'])
         return anct
+
+
+class ItemCreateView(CreateAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemUploadSerializer
 
 
 class ItemUpdateView(UpdateAPIView):
