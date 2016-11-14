@@ -52,6 +52,7 @@ require('../app/restAPI/userAPIService.js');
 require('../app/restAPI/artistAPIService.js');
 require('../app/restAPI/donationAPIService.js');
 require('../app/restAPI/genderAPIService.js');
+require('../app/restAPI/competitionAPIService.js');
 
 /**
  * Registro de componentes nuevos

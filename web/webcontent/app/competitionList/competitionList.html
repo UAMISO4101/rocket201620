@@ -8,15 +8,17 @@
                     <div class="col-xs-12">
                         <img align="left"
                              class=""
-                             src="../styles/images/microfono.jpg"
-                             alt="Profile image example"/>
+                             src="{{ competition.image }}"
+                             alt="Profile image example"
+                             height="200" width="200"
+                        />
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <button class="freeven-accept-btn"
-                                ng-click="ctrl.participate(competition.competittionId)">
+                                ng-click="ctrl.participate(competition.id)">
                             Participar
                         </button>
                     </div>
@@ -25,36 +27,36 @@
             </div>
             <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
                 <h4 class="competition-name">
-                    {{ competition.competitionName }}
+                    {{ competition.name }}
                 </h4>
                 <div class="row">
                     <div class="col-xs-6">
                         <span class=" glyphicon glyphicon-calendar">
                 <strong>Desde:</strong>
-                    <h5>{{ competition.date_competition_start | date:'medium' }}</h5>
+                    <h5>{{ competition.start_date | date:'medium' }}</h5>
                 </span>
                     </div>
                     <div class="col-xs-6">
                 <span class=" glyphicon glyphicon-calendar">
                <strong>Hasta:</strong>
                         <h5>
-                            {{ competition.date_competition_dead_line | date:'medium' }}</h5>
+                            {{ competition.end_date | date:'medium' }}</h5>
                </span>
                     </div>
                 </div>
-                <h5><strong>Descripción:</strong> {{ competition.competitionDescription }}</h5>
-                <h5><strong>Caracteristicas</strong></h5>
+                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>
+                <h5><strong>Items</strong></h5>
                 <table class="table" border="1px">
                     <tbody>
                     <tr>
                         <td><strong>Nombre</strong></td>
                         <td><strong>Tipo</strong></td>
-                        <td><strong>Caracteristicas</strong></td>
+                        <td><strong>Descripción</strong></td>
                     </tr>
-                    <tr ng-repeat="work in competition.works">
-                        <td>{{ work.workName }}</td>
-                        <td>{{ work.typeWork }}</td>
-                        <td>{{ work.feature }}</td>
+                    <tr ng-repeat="item in competition.items">
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.gender }}</td>
+                        <td>{{ item.description }}</td>
                     </tr>
                     </tbody>
                 </table>
