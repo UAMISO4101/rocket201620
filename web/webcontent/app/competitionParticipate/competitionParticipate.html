@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-6">
                     <select class="form-control" name="items" multiple
-                            ng-model="ctrl.itemsSelected">
+                            ng-model="ctrl.itemsSelected" required>
                         <option ng-repeat="item in  ctrl.items"
                                 ng-value="item.id">{{ item.name }}</option>
                     </select>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-6">
                     <select class="form-control" name="tracks" multiple
-                            ng-model="ctrl.tracksSelected">
+                            ng-model="ctrl.tracksSelected" required>
                         <option ng-repeat="track in  ctrl.tracksArtist"
                                 ng-value="track.id">{{ track.name }}</option>
                     </select>
