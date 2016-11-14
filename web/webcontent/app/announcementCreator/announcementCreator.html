@@ -1,5 +1,83 @@
-<a target="_blank" href="https://docs.angularjs.org/guide/component">
-    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>
-    <br/>
-    <a ng-click="ctrl.showAlert()">Click here</a>
-</a>
+<div class="announcement-creator">
+    <div class="fr-announcement-creator">
+        <img align="left"
+             class="fr-image-lg"
+             src="../styles/images/portada.jpg"
+             alt="Profile image example"/>
+
+        <div class="fr-image-announcement-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="../styles/images/announcement.jpg"
+                 alt="Profile image example"/>
+            <a ngf-select
+               ngf-multiple="false"
+               accept=".jpg"
+               filters=".jpg"
+               ngf-change="ctrl.attachFile($files,'image')"
+               class="form-control track-picture-selector">
+                <i class="icon icon-images"></i>
+                <span>Seleccione la imagen de la convocatoria</span>
+            </a>
+        </div>
+
+
+        <div>
+
+        </div>
+        <div class="fr-announcement-creator-text">
+            <fieldset class="form-group">
+                <h4>Llena estos campos para crear una convocatoria</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label" for="artistic_name">Nombre de la pista</label>
+                        <input type="text"
+                               ng-model="ctrl.name"
+                               placeholder="Nombre de la pista..."
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Descripción</label>
+                        <input type="text"
+                               ng-model="ctrl.description"
+                               placeholder="Descripción..."
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Fecha de inicio</label>
+                        <input type="date" class="form-control"
+                               ng-model="ctrl.start_date"
+                               class="form-control"
+                               required/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Fecha de cierre</label>
+                        <input type="date" class="form-control"
+                               ng-model="ctrl.end_date"
+                               class="form-control"
+                               required/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">El ganador se escogerá po seleccion popular</label>
+                        <input type="checkbox" class="form-control"
+                               ng-model="ctrl.popular_selection"
+                               class="form-control"
+                               required/>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-10">
+                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData()">
+                            <span>Crear convocatoria</span>
+                        </button>
+                    </div>
+                    <div class="col-md-2" ng-if="ctrl.loading">
+                        <bounce title="Bounce"></bounce>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

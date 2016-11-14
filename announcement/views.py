@@ -3,7 +3,8 @@ from .models import Announcement, Item, Vote
 from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
                           ItemUploadSerializer, AnnouncementFullSerializer,
                           VoteSerializer, VoteUpdateSerializer,
-                          AnctParticipateSerializer)
+                          ParticipateSerializer, SelectWinnerSerializer,
+                          ItemSerializer, ItemFullSerializer)
 from rest_framework import filters
 from rest_framework.generics import (ListAPIView, CreateAPIView, UpdateAPIView)
 
@@ -32,17 +33,25 @@ class AnnouncementCreateView(CreateAPIView):
     serializer_class = AnnouncementUploadSerializer
 
 
-class ItemCreateView(CreateAPIView):
-    queryset = Item.objects.all()
-    serializer_class = ItemUploadSerializer
-
-
 class AnnouncementUpdateView(UpdateAPIView):
     serializer_class = AnnouncementUploadSerializer
 
     def get_queryset(self):
         anct = Announcement.objects.filter(pk=self.kwargs['pk'])
         return anct
+
+
+class ItemListView(ListAPIView):
+    serializer_class = ItemFullSerializer
+
+    def get_queryset(self):
+        items = Item.objects.filter(announcement_id=self.kwargs['anct_id'])
+        return items
+
+
+class ItemCreateView(CreateAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemUploadSerializer
 
 
 class ItemUpdateView(UpdateAPIView):
@@ -79,8 +88,16 @@ class VoteUpdateView(UpdateAPIView):
         return vote
 
 
-class ParticipateUpdateView(UpdateAPIView):
-    serializer_class = AnctParticipateSerializer
+class ParticipateView(UpdateAPIView):
+    serializer_class = ParticipateSerializer
+
+    def get_queryset(self):
+        item = Item.objects.filter(pk=self.kwargs['pk'])
+        return item
+
+
+class SelectWinnerView(UpdateAPIView):
+    serializer_class = SelectWinnerSerializer
 
     def get_queryset(self):
         item = Item.objects.filter(pk=self.kwargs['pk'])
