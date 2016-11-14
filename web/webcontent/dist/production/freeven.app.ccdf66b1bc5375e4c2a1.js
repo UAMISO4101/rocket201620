@@ -64140,7 +64140,16 @@
 	    /**
 	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
 	     * */
-	    return $resource('/user/artist/:userId', {userId:'@id'});
+	    return $resource('/user/artist/:userId', {userId: '@id'},
+	        {
+	            getTracksForArtist: {
+	                url: 'track/for_artistic/:guidArtist',
+	                method: 'GET',
+	                params: {guidArtist: '@id'},
+	                isArray: false
+	            }
+
+	        });
 
 	}]);
 
@@ -68088,8 +68097,9 @@
 
 	var competitionParticipateModule = angular.module('competitionParticipateModule');
 	var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
-	    'competitionListService', 'CompetitionApiService',
-	    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService, CompetitionApiService) {
+	    'competitionListService', 'CompetitionApiService', 'ArtistApiService',
+	    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService,
+	              CompetitionApiService, ArtistApiService) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -68103,6 +68113,7 @@
 	        self.trackFiles = {};
 	        self.loading = false;
 	        self.itemsSelected = [];
+	        self.tracksSelected = [];
 
 	        self.attachFile = function (files, fieldName) {
 	            if (files && files.length > 0) {
@@ -68115,14 +68126,13 @@
 	            var self = this;
 	            var user = mainService.getUserData();
 	            self.loading = true;
-	            console.log(self.itemsSelected);
 	            if (self.trackFiles) {
 	                Upload.upload({
 	                    url: 'api/announcement/participate/',
 	                    data: {
-	                        idCompetition: self.idCompetition,
-	                        artist: user.id_artist,
-	                        file: self.trackFiles.audio
+	                        items: self.itemsSelected,
+	                        tracks: self.tracksSelected,
+	                        artist_id: user.id_artist,
 	                    }
 	                }).progress(function (evt) {
 	                }).success(function (data, status, headers, config) {
@@ -68148,7 +68158,22 @@
 
 	        };
 
+	        self.loadFullTracksArtist = function (id) {
+	            if (id != undefined) {
+	                ArtistApiService.getTracksForArtist(
+	                    {guidArtist: id},
+	                    function (response) {
+	                        self.tracksArtist = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full tracks artist');
+	                    });
+	            }
+
+	        };
+
 	        self.loadFullCompetition(self.idCompetition);
+	        self.loadFullTracksArtist(2);
 
 
 	        self.close = function () {
@@ -68172,7 +68197,7 @@
 /* 232 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Carga tu obra músical</label>\r\n                    <a ngf-select\r\n                       ngf-multiple=\"false\"\r\n                       accept=\".mp3\"\r\n                       filters=\".mp3\"\r\n                       ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                       class=\"form-control\">\r\n                        <i class=\"icon icon-upload\">\r\n                            <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                            <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                        </i>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <select class=\"form-control\" name=\"browsers\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\">\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar items</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"items\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\">\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar mis obras</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"tracks\" multiple\r\n                            ng-model=\"ctrl.tracksSelected\">\r\n                        <option ng-repeat=\"track in  ctrl.tracksArtist\"\r\n                                ng-value=\"track.id\">{{ track.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
 /* 233 */
@@ -68209,7 +68234,7 @@
 
 
 	// module
-	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form span {\n  color: black;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
 
 	// exports
 
