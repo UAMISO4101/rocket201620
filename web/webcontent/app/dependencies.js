@@ -189,3 +189,7 @@ require('../app/competitionList/competitionList.less');
 require('../app/competitionParticipate/competitionParticipateModule.js');
 require('../app/competitionParticipate/competitionParticipateComponent.js');
 require('../app/competitionParticipate/competitionParticipate.less');
+
+ require('../app/announcementCreator/announcementCreatorModule.js');
+ require('../app/announcementCreator/announcementCreatorComponent.js');
+ require('../app/announcementCreator/announcementCreator.less');

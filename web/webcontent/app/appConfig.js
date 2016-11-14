@@ -1,6 +1,17 @@
 (function (window, document) {
     'use strict';
     var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+    var checkAuthentication = function ($q, mainService, $location) {
+        var deferred = $q.defer();
+        var authenticated = mainService.isAuthenticated();
+        if (authenticated) {
+            deferred.resolve();
+        } else {
+            deferred.reject();
+            $location.url('#/');
+        }
+        return deferred.promise;
+    };
     angular.extend(appConfigurations, {
         'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
             function configuration($routeProvider, $httpProvider, $translateProvider) {
@@ -33,15 +44,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                           return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -53,15 +56,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                             return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -70,15 +65,17 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                             return checkAuthentication($q, mainService, $location);
+                        }]
+                    }
+                });
+
+                 $routeProvider.when('/announcement', {
+                    template: '<announcement-creator> </announcement-creator>',
+                    requireAuthentication: true,
+                    resolve: {
+                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+                             return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
