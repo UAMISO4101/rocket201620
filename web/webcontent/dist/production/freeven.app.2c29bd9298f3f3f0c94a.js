@@ -68132,7 +68132,7 @@
 	        self.uploadFileToParticipate = function () {
 	            var self = this;
 	            var user = mainService.getUserData();
-	            console.log(self.filters);
+	            self.tracksSelected = self.filters;
 	            self.loading = true;
 	            if (self.trackFiles) {
 	                Upload.upload({

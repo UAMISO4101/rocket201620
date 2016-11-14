@@ -19,6 +19,7 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.itemsSelected = [];
         self.tracksSelected = [];
 
+        self.filters = [];
 
         self.attachFile = function (files, fieldName) {
             if (files && files.length > 0) {
@@ -30,6 +31,7 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.uploadFileToParticipate = function () {
             var self = this;
             var user = mainService.getUserData();
+            self.tracksSelected = self.filters;
             self.loading = true;
             if (self.trackFiles) {
                 Upload.upload({
