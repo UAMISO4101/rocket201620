@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Announcement, Item, Vote
 from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
                           ItemUploadSerializer, AnnouncementFullSerializer,
-                          VoteSerializer, VoteUpdateSerializer)
+                          VoteSerializer, VoteUpdateSerializer,
+                          AnctParticipateSerializer)
 from rest_framework import filters
 from rest_framework.generics import (ListAPIView, CreateAPIView, UpdateAPIView)
 
@@ -76,3 +77,11 @@ class VoteUpdateView(UpdateAPIView):
         vote = Vote.objects.filter(item=self.kwargs['item'],
                                    user=self.kwargs['user'])
         return vote
+
+
+class ParticipateCreateView(UpdateAPIView):
+    serializer_class = AnctParticipateSerializer
+
+    def get_queryset(self):
+        item = Item.objects.filter(pk=self.kwargs['item'])
+        return item

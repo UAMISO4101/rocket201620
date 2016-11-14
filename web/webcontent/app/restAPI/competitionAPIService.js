@@ -5,6 +5,12 @@ restApiModule.factory('CompetitionApiService', ['$resource', function ($resource
      * */
     return $resource('announcement/:guidCompetition', {guid: '@guid'}, {
         /*custom urls*/
+            getCompetition: {
+            url: 'announcement/full/:guidCompetition',
+            method: 'GET',
+            params: {guidCompetition: '@id'},
+            isArray: false
+        }
     });
 }]);
 

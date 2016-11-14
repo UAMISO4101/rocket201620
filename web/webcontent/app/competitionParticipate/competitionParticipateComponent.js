@@ -1,17 +1,21 @@
 var competitionParticipateModule = angular.module('competitionParticipateModule');
 var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
-    'competitionListService',
-    function ($i18n, $freevenModal, mainService, Upload, notifierService,competitionListService) {
+    'competitionListService', 'CompetitionApiService',
+    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService, CompetitionApiService) {
         /**
          * Tip: add here only visual logic
          */
         var self = this;
+
+        self.idCompetition = competitionListService.getSelectedIdCompetition();
 
         self.participateValidate = function () {
             self.uploadFileToParticipate();
         }
         self.trackFiles = {};
         self.loading = false;
+        self.itemsSelected = [];
+
         self.attachFile = function (files, fieldName) {
             if (files && files.length > 0) {
                 var file = files[0];
@@ -22,8 +26,8 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.uploadFileToParticipate = function () {
             var self = this;
             var user = mainService.getUserData();
-            self.idCompetition = competitionListService.getSelectedIdCompetition();
             self.loading = true;
+            console.log(self.itemsSelected);
             if (self.trackFiles) {
                 Upload.upload({
                     url: 'api/announcement/participate/',
@@ -41,6 +45,22 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
                 });
             }
         };
+
+        self.loadFullCompetition = function (id) {
+            if (id != undefined) {
+                CompetitionApiService.getCompetition(
+                    {guidCompetition: id},
+                    function (response) {
+                        self.items = response.results[0].items;
+                    },
+                    function (error) {
+                        console.log('Error loading full competition');
+                    });
+            }
+
+        };
+
+        self.loadFullCompetition(self.idCompetition);
 
 
         self.close = function () {
