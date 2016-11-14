@@ -214,7 +214,6 @@ class AnnouncementFullSerializer(AnnouncementSerializer):
 
 
 class VoteSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Vote
         fields = (
@@ -226,7 +225,6 @@ class VoteSerializer(serializers.ModelSerializer):
 
 
 class VoteUpdateSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Vote
         fields = (
@@ -235,12 +233,8 @@ class VoteUpdateSerializer(serializers.ModelSerializer):
 
 
 class AnctParticipateSerializer(serializers.ModelSerializer):
-
     class Meta:
-        model = Vote
+        model = Item
         fields = (
-            'id',
-            'item',
-            'user',
-            'track',
+            'tracks',
         )

@@ -83,6 +83,5 @@ class ParticipateCreateView(UpdateAPIView):
     serializer_class = AnctParticipateSerializer
 
     def get_queryset(self):
-        item = Vote.objects.filter(item=self.kwargs['item'],
-                                   user=self.kwargs['user'])
+        item = Item.objects.filter(pk=self.kwargs['item'])
         return item
