@@ -28,14 +28,12 @@ competitionListModule.factory('competitionListService', ['UserApiService', '$i18
                     }
                 );
 
-
             };
 
             self.showLoadTrackPopup = function (id) {
                 var self = this;
                 self.selectedIdCompetition = id
                 $freevenModal.showPopup({}, {
-                    size: 'small',
                     template: '<competition-participate></competition-participate>'
                 });
             };

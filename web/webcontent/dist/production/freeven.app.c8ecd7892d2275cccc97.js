@@ -64225,6 +64225,12 @@
 	     * */
 	    return $resource('announcement/:guidCompetition', {guid: '@guid'}, {
 	        /*custom urls*/
+	            getCompetition: {
+	            url: 'announcement/full/:guidCompetition',
+	            method: 'GET',
+	            params: {guidCompetition: '@id'},
+	            isArray: false
+	        }
 	    });
 	}]);
 
@@ -67998,14 +68004,12 @@
 	                    }
 	                );
 
-
 	            };
 
 	            self.showLoadTrackPopup = function (id) {
 	                var self = this;
 	                self.selectedIdCompetition = id
 	                $freevenModal.showPopup({}, {
-	                    size: 'small',
 	                    template: '<competition-participate></competition-participate>'
 	                });
 	            };
@@ -68084,18 +68088,22 @@
 
 	var competitionParticipateModule = angular.module('competitionParticipateModule');
 	var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
-	    'competitionListService',
-	    function ($i18n, $freevenModal, mainService, Upload, notifierService,competitionListService) {
+	    'competitionListService', 'CompetitionApiService',
+	    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService, CompetitionApiService) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
 	        var self = this;
+
+	        self.idCompetition = competitionListService.getSelectedIdCompetition();
 
 	        self.participateValidate = function () {
 	            self.uploadFileToParticipate();
 	        }
 	        self.trackFiles = {};
 	        self.loading = false;
+	        self.itemsSelected = [];
+
 	        self.attachFile = function (files, fieldName) {
 	            if (files && files.length > 0) {
 	                var file = files[0];
@@ -68106,8 +68114,8 @@
 	        self.uploadFileToParticipate = function () {
 	            var self = this;
 	            var user = mainService.getUserData();
-	            self.idCompetition = competitionListService.getSelectedIdCompetition();
 	            self.loading = true;
+	            console.log(self.itemsSelected);
 	            if (self.trackFiles) {
 	                Upload.upload({
 	                    url: 'api/announcement/participate/',
@@ -68125,6 +68133,22 @@
 	                });
 	            }
 	        };
+
+	        self.loadFullCompetition = function (id) {
+	            if (id != undefined) {
+	                CompetitionApiService.getCompetition(
+	                    {guidCompetition: id},
+	                    function (response) {
+	                        self.items = response.results[0].items;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full competition');
+	                    });
+	            }
+
+	        };
+
+	        self.loadFullCompetition(self.idCompetition);
 
 
 	        self.close = function () {
@@ -68148,7 +68172,7 @@
 /* 232 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Carga tu obra músical</label>\r\n                    <a ngf-select\r\n                       ngf-multiple=\"false\"\r\n                       accept=\".mp3\"\r\n                       filters=\".mp3\"\r\n                       ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                       class=\"form-control\">\r\n                        <i class=\"icon icon-upload\">\r\n                            <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                            <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                        </i>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Carga tu obra músical</label>\r\n                    <a ngf-select\r\n                       ngf-multiple=\"false\"\r\n                       accept=\".mp3\"\r\n                       filters=\".mp3\"\r\n                       ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                       class=\"form-control\">\r\n                        <i class=\"icon icon-upload\">\r\n                            <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                            <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                        </i>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <select class=\"form-control\" name=\"browsers\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\">\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
 /* 233 */
