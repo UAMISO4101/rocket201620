@@ -2,7 +2,7 @@ from django.conf.urls import url
 from .views import (AnnouncementListView, AnnouncementCreateView,
                     ItemCreateView, AnnouncementUpdateView, ItemUpdateView,
                     AnnouncementCompleteListView, VoteListView, VoteCreateView,
-                    VoteUpdateView)
+                    VoteUpdateView, ParticipateCreateView)
 
 
 urlpatterns = [
@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^vote-update/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteUpdateView.as_view(),
         name='vote-update'),
+    url(r'^participate/(?P<item>\d+)/$', ParticipateCreateView.as_view(),
+        name='anct-participate'),
 ]

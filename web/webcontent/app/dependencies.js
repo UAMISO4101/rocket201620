@@ -52,6 +52,7 @@ require('../app/restAPI/userAPIService.js');
 require('../app/restAPI/artistAPIService.js');
 require('../app/restAPI/donationAPIService.js');
 require('../app/restAPI/genderAPIService.js');
+require('../app/restAPI/competitionAPIService.js');
 
 /**
  * Registro de componentes nuevos
@@ -188,3 +189,7 @@ require('../app/competitionList/competitionList.less');
 require('../app/competitionParticipate/competitionParticipateModule.js');
 require('../app/competitionParticipate/competitionParticipateComponent.js');
 require('../app/competitionParticipate/competitionParticipate.less');
+
+ require('../app/announcementCreator/announcementCreatorModule.js');
+ require('../app/announcementCreator/announcementCreatorComponent.js');
+ require('../app/announcementCreator/announcementCreator.less');

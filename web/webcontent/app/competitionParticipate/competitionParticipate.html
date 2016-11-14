@@ -9,19 +9,29 @@
     <form name="competitionForm">
         <fieldset class="form-group">
             <div class="row">
-                <div class="col-md-12">
-                    <label class="control-label" for="username">Carga tu obra músical</label>
-                    <a ngf-select
-                       ngf-multiple="false"
-                       accept=".mp3"
-                       filters=".mp3"
-                       ngf-change="ctrl.attachFile($files,'audio')"
-                       class="form-control">
-                        <i class="icon icon-upload">
-                            <span ng-if="!ctrl.trackFiles.audio">Seleccione el archivo .mp3</span>
-                            <span ng-if="ctrl.trackFiles.audio">{{ ctrl.trackFiles.audio.name }}</span>
-                        </i>
-                    </a>
+                <div class="col-md-6">
+                    <span>Seleccionar items</span>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="items" multiple
+                            ng-model="ctrl.itemsSelected">
+                        <option ng-repeat="item in  ctrl.items"
+                                ng-value="item.id">{{ item.name }}</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <span>Seleccionar mis obras</span>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="tracks" multiple
+                            ng-model="ctrl.tracksSelected">
+                        <option ng-repeat="track in  ctrl.tracksArtist"
+                                ng-value="track.id">{{ track.name }}</option>
+                    </select>
                 </div>
             </div>
         </fieldset>
