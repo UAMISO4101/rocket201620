@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^vote-update/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteUpdateView.as_view(),
         name='vote-update'),
+    url(r'^participate/(?P<item>\d+)/(?P<track>\d+)/$', VoteCreateView.as_view(),
+        name='anct-participate'),
 ]

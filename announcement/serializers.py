@@ -232,3 +232,15 @@ class VoteUpdateSerializer(serializers.ModelSerializer):
         fields = (
             'track',
         )
+
+
+class AnctParticipateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Vote
+        fields = (
+            'id',
+            'item',
+            'user',
+            'track',
+        )
