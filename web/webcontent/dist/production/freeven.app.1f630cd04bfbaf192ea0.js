@@ -68113,12 +68113,13 @@
 	        self.idCompetition = competitionListService.getSelectedIdCompetition();
 
 	        self.participateValidate = function () {
-	            self.uploadFileToParticipate();
+	            self.goToParticipate();
 	        }
 	        self.trackFiles = {};
 	        self.loading = false;
-	        self.itemsSelected = [];
+	        self.itemsSelected = {};
 	        self.tracksSelected = [];
+	        self.participateData = {};
 
 	        self.filters = [];
 
@@ -68129,31 +68130,19 @@
 	            }
 	        };
 
-	        self.uploadFileToParticipate = function () {
+	        self.goToParticipate = function () {
 	            var self = this;
 	            var user = mainService.getUserData();
 	            self.tracksSelected = self.filters;
 	            self.loading = true;
-	            if (self.trackFiles) {
-	                Upload.upload({
-	                    url: 'api/announcement/participate/',
-	                    data: {
-	                        items: self.itemsSelected,
-	                        tracks: self.tracksSelected,
-	                        artist_id: user.id_artist,
-	                    }
-	                }).progress(function (evt) {
-	                }).success(function (data, status, headers, config) {
-	                    self.loading = false;
-	                    self.close();
-	                    console.log('Enviado a convocatoria correctamente');
-	                    notifierService.success("La pieza musical se ha sido enviada para participar", ".");
-	                });
-	            }
+	            self.createRelationItemTrack();
+
 	        };
 
 	        self.loadFullCompetition = function (id) {
+
 	            if (id != undefined) {
+	                self.participateData.IdCompetition = id;
 	                CompetitionApiService.getCompetition(
 	                    {guidCompetition: id},
 	                    function (response) {
@@ -68177,6 +68166,20 @@
 	                        console.log('Error loading full tracks artist');
 	                    });
 	            }
+
+	        };
+
+	        self.createRelationItemTrack = function () {
+	            var self = this;
+	            var relations = [];
+	            for (var i = 0; i < self.items.length; i++) {
+	                var relation = {};
+	                relation.idItem = self.items[i].id;
+	                relation.idTrack = self.items[i].track.id;
+	                relations.push(relation);
+	            }
+	            self.participateData.relations = relations;
+	            console.log(self.participateData);
 
 	        };
 
@@ -68205,7 +68208,7 @@
 /* 232 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                     <h4>Por favor, asocia una obra a cada item</h4>\r\n                    <table class=\"table\" border=\"1px\">\r\n                        <tbody>\r\n                        <tr>\r\n                            <td><strong>Identificación</strong></td>\r\n                            <td><strong>Nombre</strong></td>\r\n                            <td><strong>Tipo</strong></td>\r\n                            <td><strong>Mi obra seleccionada</strong></td>\r\n                        </tr>\r\n                        <tr ng-repeat=\"item in ctrl.items\">\r\n                            <td>{{ item.id }}\r\n                            </td>\r\n                            <td>{{ item.name }}</td>\r\n                            <td>{{ item.gender }}</td>\r\n                            <td><select ng-options=\"track.name for track in ctrl.tracksArtist\"\r\n                                        ng-model=\"ctrl.filters[$index]\" required>\r\n                                <option value=\"\" disabled>Seleccionar obra</option>\r\n                            </select>\r\n                            </td>\r\n                        </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <h4>Por favor, asocia una obra a cada item</h4>\r\n                    <table class=\"table\" border=\"1px\">\r\n                        <tbody>\r\n                        <tr>\r\n                            <td><strong>Identificación</strong></td>\r\n                            <td><strong>Nombre</strong></td>\r\n                            <td><strong>Tipo</strong></td>\r\n                            <td><strong>Mi obra seleccionada</strong></td>\r\n                        </tr>\r\n                        <tr ng-repeat=\"item in ctrl.items\">\r\n                            <td>{{ item.id }}</td>\r\n                            <td>{{ item.name }}</td>\r\n                            <td>{{ item.gender }}</td>\r\n                            <td><select ng-options=\"track.name for track in ctrl.tracksArtist\"\r\n                                        ng-model=\"item.track\" required>\r\n                                <option value=\"\" disabled>Seleccionar obra</option>\r\n                            </select>\r\n                            </td>\r\n                        </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
 /* 233 */
