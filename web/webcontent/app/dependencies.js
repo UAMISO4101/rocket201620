@@ -10,7 +10,8 @@ require('../app/appConfig.js');
 require('../app/styles/css/bootstrap.less');
 require('../app/styles/css/bootstrap-theme.less');
 require('../app/styles/css/app.less');
-
+require('../app/styles/js/multiselect.js');
+require('../app/styles/js/multiselect.min.js');
 /**
  * Internationalization = i18n
  **/

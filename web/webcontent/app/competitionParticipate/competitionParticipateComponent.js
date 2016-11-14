@@ -8,6 +8,7 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
          */
         var self = this;
 
+
         self.idCompetition = competitionListService.getSelectedIdCompetition();
 
         self.participateValidate = function () {
@@ -28,6 +29,8 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.uploadFileToParticipate = function () {
             var self = this;
             var user = mainService.getUserData();
+
+
             self.loading = true;
             if (self.trackFiles) {
                 Upload.upload({
@@ -58,10 +61,10 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
                         console.log('Error loading full competition');
                     });
             }
-
         };
 
         self.loadFullTracksArtist = function (id) {
+
             if (id != undefined) {
                 ArtistApiService.getTracksForArtist(
                     {guidArtist: id},
@@ -76,12 +79,16 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         };
 
         self.loadFullCompetition(self.idCompetition);
-        self.loadFullTracksArtist(2);
+        self.loadFullTracksArtist(mainService.getArtistId());
 
 
         self.close = function () {
             $freevenModal.closePopup();
         };
+
+        jQuery(document).ready(function ($) {
+            $('#undo_redo').multiselect();
+        });
 
     }];
 

@@ -9,6 +9,32 @@
     <form name="competitionForm">
         <fieldset class="form-group">
             <div class="row">
+                <div class="col-xs-5">
+                    <select name="from[]" id="undo_redo" class="form-control"
+                            ng-model="ctrl.itemsSelected"
+                            multiple="multiple" size="8">
+                        <option ng-repeat="item in  ctrl.items"
+                                ng-value="item.id">{{ item.name }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-2">
+                    <button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block"><i
+                            class="glyphicon glyphicon-forward"></i></button>
+                    <button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block"><i
+                            class="glyphicon glyphicon-chevron-right"></i></button>
+                    <button type="button" id="undo_redo_leftSelected" class="btn btn-default btn-block"><i
+                            class="glyphicon glyphicon-chevron-left"></i></button>
+                    <button type="button" id="undo_redo_leftAll" class="btn btn-default btn-block"><i
+                            class="glyphicon glyphicon-backward"></i></button>
+                </div>
+                <div class="col-xs-5">
+                    <select name="to[]" id="undo_redo_to" ng-model="ctrl.itemsSelected" class="form-control"
+                            multiple="multiple" size="8" required></select>
+                </div>
+            </div>
+        </fieldset>
+        <!--<fieldset class="form-group">
+            <div class="row">
                 <div class="col-md-6">
                     <span>Seleccionar items</span>
                 </div>
@@ -20,7 +46,7 @@
                     </select>
                 </div>
             </div>
-        </fieldset>
+        </fieldset>-->
         <fieldset class="form-group">
             <div class="row">
                 <div class="col-md-6">

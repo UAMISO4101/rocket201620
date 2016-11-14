@@ -108,185 +108,186 @@
 	__webpack_require__(28);
 	__webpack_require__(37);
 	__webpack_require__(39);
-
+	__webpack_require__(41);
+	__webpack_require__(42);
 	/**
 	 * Internationalization = i18n
 	 **/
-	__webpack_require__(41);
-	__webpack_require__(42);
+	__webpack_require__(43);
 	__webpack_require__(44);
-
-	__webpack_require__(45);
 	__webpack_require__(46);
+
 	__webpack_require__(47);
 	__webpack_require__(48);
+	__webpack_require__(49);
 	__webpack_require__(50);
+	__webpack_require__(52);
 
 	/**
 	 * common Directives
 	 **/
-	__webpack_require__(52);
-	__webpack_require__(53);
 	__webpack_require__(54);
+	__webpack_require__(55);
 	__webpack_require__(56);
-	__webpack_require__(57);
+	__webpack_require__(58);
+	__webpack_require__(59);
 
 
 	/**
 	 * mainComponent Module
 	 **/
 
-	__webpack_require__(58);
-	__webpack_require__(59);
+	__webpack_require__(60);
 	__webpack_require__(61);
-	__webpack_require__(69);
+	__webpack_require__(63);
+	__webpack_require__(71);
 
 	/**
 	 * REST API
 	 */
-	__webpack_require__(70);
-	__webpack_require__(71);
 	__webpack_require__(72);
 	__webpack_require__(73);
 	__webpack_require__(74);
 	__webpack_require__(75);
 	__webpack_require__(76);
+	__webpack_require__(77);
+	__webpack_require__(78);
 
 	/**
 	 * Registro de componentes nuevos
 	 */
 
-	__webpack_require__(77);
-
-	__webpack_require__(78);
 	__webpack_require__(79);
+
+	__webpack_require__(80);
 	__webpack_require__(81);
-	__webpack_require__(82);
-
+	__webpack_require__(83);
 	__webpack_require__(84);
-	__webpack_require__(85);
-	__webpack_require__(87);
 
+	__webpack_require__(86);
+	__webpack_require__(87);
 	__webpack_require__(89);
-	__webpack_require__(90);
+
+	__webpack_require__(91);
 	__webpack_require__(92);
 	__webpack_require__(94);
-
-
-	__webpack_require__(95);
 	__webpack_require__(96);
+
+
+	__webpack_require__(97);
 	__webpack_require__(98);
-
 	__webpack_require__(100);
-	__webpack_require__(101);
-	__webpack_require__(103);
-	__webpack_require__(104);
 
+	__webpack_require__(102);
+	__webpack_require__(103);
+	__webpack_require__(105);
 	__webpack_require__(106);
-	__webpack_require__(107);
+
+	__webpack_require__(108);
 	__webpack_require__(109);
 	__webpack_require__(111);
-
-	__webpack_require__(112);
 	__webpack_require__(113);
+
+	__webpack_require__(114);
 	__webpack_require__(115);
 	__webpack_require__(117);
-
-	__webpack_require__(118);
 	__webpack_require__(119);
+
+	__webpack_require__(120);
 	__webpack_require__(121);
+	__webpack_require__(123);
 
-	__webpack_require__(124);
-	__webpack_require__(125);
+	__webpack_require__(126);
 	__webpack_require__(127);
-
 	__webpack_require__(129);
-	__webpack_require__(130);
+
+	__webpack_require__(131);
 	__webpack_require__(132);
-
 	__webpack_require__(134);
-	__webpack_require__(135);
-	__webpack_require__(138);
-	__webpack_require__(140);
 
-	__webpack_require__(141);
+	__webpack_require__(136);
+	__webpack_require__(137);
+	__webpack_require__(140);
 	__webpack_require__(142);
+
+	__webpack_require__(143);
 	__webpack_require__(144);
 	__webpack_require__(146);
-
-	__webpack_require__(147);
 	__webpack_require__(148);
+
+	__webpack_require__(149);
 	__webpack_require__(150);
-	__webpack_require__(151);
+	__webpack_require__(152);
 	__webpack_require__(153);
 	__webpack_require__(155);
-
 	__webpack_require__(157);
-	__webpack_require__(158);
+
+	__webpack_require__(159);
 	__webpack_require__(160);
 	__webpack_require__(162);
-
-	__webpack_require__(163);
 	__webpack_require__(164);
+
+	__webpack_require__(165);
 	__webpack_require__(166);
-
 	__webpack_require__(168);
-	__webpack_require__(169);
-	__webpack_require__(172);
 
-	__webpack_require__(157);
-	__webpack_require__(158);
+	__webpack_require__(170);
+	__webpack_require__(171);
+	__webpack_require__(174);
+
+	__webpack_require__(159);
 	__webpack_require__(160);
 	__webpack_require__(162);
+	__webpack_require__(164);
 
-	__webpack_require__(174);
-	__webpack_require__(175);
+	__webpack_require__(176);
 	__webpack_require__(177);
 	__webpack_require__(179);
-
-	__webpack_require__(180);
 	__webpack_require__(181);
+
+	__webpack_require__(182);
 	__webpack_require__(183);
-	__webpack_require__(184);
-
-
+	__webpack_require__(185);
 	__webpack_require__(186);
-	__webpack_require__(187);
-	__webpack_require__(189);
-	__webpack_require__(190);
 
+
+	__webpack_require__(188);
+	__webpack_require__(189);
+	__webpack_require__(191);
 	__webpack_require__(192);
-	__webpack_require__(193);
+
+	__webpack_require__(194);
 	__webpack_require__(195);
 	__webpack_require__(197);
-
-	__webpack_require__(198);
 	__webpack_require__(199);
+
+	__webpack_require__(200);
 	__webpack_require__(201);
-	__webpack_require__(202);
-
+	__webpack_require__(203);
 	__webpack_require__(204);
-	__webpack_require__(205);
+
+	__webpack_require__(206);
 	__webpack_require__(207);
-
 	__webpack_require__(209);
-	__webpack_require__(210);
-	__webpack_require__(214);
-	__webpack_require__(215);
 
+	__webpack_require__(211);
+	__webpack_require__(212);
+	__webpack_require__(216);
 	__webpack_require__(217);
-	__webpack_require__(218);
+
 	__webpack_require__(219);
-	__webpack_require__(222);
-
+	__webpack_require__(220);
+	__webpack_require__(221);
 	__webpack_require__(224);
-	__webpack_require__(225);
-	__webpack_require__(227);
-	__webpack_require__(228);
 
+	__webpack_require__(226);
+	__webpack_require__(227);
+	__webpack_require__(229);
 	__webpack_require__(230);
-	__webpack_require__(231);
+
+	__webpack_require__(232);
 	__webpack_require__(233);
+	__webpack_require__(235);
 
 /***/ },
 /* 2 */
@@ -62996,6 +62997,664 @@
 
 /***/ },
 /* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(jQuery) {/*
+	 * @license
+	 *
+	 * Multiselect v2.3.1
+	 * http://crlcu.github.io/multiselect/
+	 *
+	 * Copyright (c) 2016 Adrian Crisan
+	 * Licensed under the MIT license (https://github.com/crlcu/multiselect/blob/master/LICENSE)
+	 */
+
+	if (typeof jQuery === 'undefined') {
+	    throw new Error('multiselect requires jQuery');
+	}
+
+	;(function ($) {
+	    'use strict';
+
+	    var version = $.fn.jquery.split(' ')[0].split('.');
+
+	    if (version[0] < 2 && version[1] < 7) {
+	        throw new Error('multiselect requires jQuery version 1.7 or higher');
+	    }
+	})(jQuery);
+
+	;(function (factory) {
+	    if (true) {
+	        // AMD. Register as an anonymous module depending on jQuery.
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else {
+	        // No AMD. Register plugin with global jQuery object.
+	        factory(jQuery);
+	    }
+	}(function ($) {
+	    'use strict';
+
+	    var Multiselect = (function($) {
+	        /** Multiselect object constructor
+	         *
+	         *  @class Multiselect
+	         *  @constructor
+	        **/
+	        function Multiselect( $select, settings ) {
+	            var id = $select.prop('id');
+	            this.$left = $select;
+	            this.$right = $( settings.right ).length ? $( settings.right ) : $('#' + id + '_to');
+	            this.actions = {
+	                $leftAll:       $( settings.leftAll ).length ? $( settings.leftAll ) : $('#' + id + '_leftAll'),
+	                $rightAll:      $( settings.rightAll ).length ? $( settings.rightAll ) : $('#' + id + '_rightAll'),
+	                $leftSelected:  $( settings.leftSelected ).length ? $( settings.leftSelected ) : $('#' + id + '_leftSelected'),
+	                $rightSelected: $( settings.rightSelected ).length ? $( settings.rightSelected ) : $('#' + id + '_rightSelected'),
+
+	                $undo:          $( settings.undo ).length ? $( settings.undo ) : $('#' + id + '_undo'),
+	                $redo:          $( settings.redo ).length ? $( settings.redo ) : $('#' + id + '_redo'),
+
+	                $moveUp:        $( settings.moveUp ).length ? $( settings.moveUp ) : $('#' + id + '_move_up'),
+	                $moveDown:      $( settings.moveDown ).length ? $( settings.moveDown ) : $('#' + id + '_move_down')
+	            };
+
+	            delete settings.leftAll;
+	            delete settings.leftSelected;
+	            delete settings.right;
+	            delete settings.rightAll;
+	            delete settings.rightSelected;
+	            delete settings.undo;
+	            delete settings.redo;
+	            delete settings.moveUp;
+	            delete settings.moveDown;
+
+	            this.options = {
+	                keepRenderingSort:  settings.keepRenderingSort,
+	                submitAllLeft:      settings.submitAllLeft !== undefined ? settings.submitAllLeft : true,
+	                submitAllRight:     settings.submitAllRight !== undefined ? settings.submitAllRight : true,
+	                search:             settings.search,
+	                ignoreDisabled:     settings.ignoreDisabled !== undefined ? settings.ignoreDisabled : false
+	            };
+
+	            delete settings.keepRenderingSort, settings.submitAllLeft, settings.submitAllRight, settings.search, settings.ignoreDisabled;
+
+	            this.callbacks = settings;
+
+	            this.init();
+	        }
+
+	        Multiselect.prototype = {
+	            init: function() {
+	                var self = this;
+	                self.undoStack = [];
+	                self.redoStack = [];
+
+	                // For the moment disable sort if there is a optgroup element
+	                if (self.$left.find('optgroup').length || self.$right.find('optgroup').length) {
+	                    self.callbacks.sort = false;
+	                }
+
+	                if (self.options.keepRenderingSort) {
+	                    self.skipInitSort = true;
+
+	                    if (self.callbacks.sort !== false) {
+	                        self.callbacks.sort = function(a, b) {
+	                            return $(a).data('position') > $(b).data('position') ? 1 : -1;
+	                        };
+	                    }
+
+	                    self.$left.find('option').each(function(index, option) {
+	                        $(option).data('position', index);
+	                    });
+
+	                    self.$right.find('option').each(function(index, option) {
+	                        $(option).data('position', index);
+	                    });
+	                }
+
+	                if ( typeof self.callbacks.startUp == 'function' ) {
+	                    self.callbacks.startUp( self.$left, self.$right );
+	                }
+
+	                if ( !self.skipInitSort && typeof self.callbacks.sort == 'function' ) {
+	                    self.$left.mSort(self.callbacks.sort);
+
+	                    self.$right.each(function(i, select) {
+	                        $(select).mSort(self.callbacks.sort);
+	                    });
+	                }
+
+	                // Append left filter
+	                if (self.options.search && self.options.search.left) {
+	                    self.options.search.$left = $(self.options.search.left);
+	                    self.$left.before(self.options.search.$left);
+	                }
+
+	                // Append right filter
+	                if (self.options.search && self.options.search.right) {
+	                    self.options.search.$right = $(self.options.search.right);
+	                    self.$right.before($(self.options.search.$right));
+	                }
+
+	                // Initialize events
+	                self.events();
+	            },
+
+	            events: function() {
+	                var self = this;
+
+	                // Attach event to left filter
+	                if (self.options.search && self.options.search.$left) {
+	                    self.options.search.$left.on('keyup', function(e) {
+	                        if (this.value) {
+	                            var $toShow = self.$left.find('option:search("' + this.value + '")').mShow();
+	                            var $toHide = self.$left.find('option:not(:search("' + this.value + '"))').mHide();
+	                            var $grpHide= self.$left.find('option.hidden').parent('optgroup').not($(":visible").parent()).mHide();
+	                            var $grpShow= self.$left.find('option:not(.hidden)').parent('optgroup').mShow();
+	                        } else {
+	                            self.$left.find('option, optgroup').mShow();
+	                        }
+	                    });
+	                }
+
+	                // Attach event to right filter
+	                if (self.options.search && self.options.search.$right) {
+	                    self.options.search.$right.on('keyup', function(e) {
+	                        if (this.value) {
+	                            var $toShow = self.$right.find('option:search("' + this.value + '")').mShow();
+	                            var $toHide = self.$right.find('option:not(:search("' + this.value + '"))').mHide();
+	                            var $grpHide= self.$right.find('option.hidden').parent('optgroup').not($(":visible").parent()).mHide();
+	                            var $grpShow= self.$right.find('option:not(.hidden)').parent('optgroup').mShow();
+	                        } else {
+	                            self.$right.find('option, optgroup').mShow();
+	                        }
+	                    });
+	                }
+
+	                // Select all the options from left and right side when submiting the parent form
+	                self.$right.closest('form').on('submit', function(e) {
+	                    self.$left.find('option').prop('selected', self.options.submitAllLeft);
+	                    self.$right.find('option').prop('selected', self.options.submitAllRight);
+	                });
+
+	                // Attach event for double clicking on options from left side
+	                self.$left.on('dblclick', 'option', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$left.find('option:selected');
+
+	                    if ( $options.length ) {
+	                        self.moveToRight($options, e);
+	                    }
+	                });
+	                
+	                // Attach event for pushing ENTER on options from left side
+	                self.$left.on('keypress', function(e) {
+	                    if (e.keyCode === 13) {
+	                        e.preventDefault();
+	                        
+	                        var $options = self.$left.find('option:selected');
+
+	                        if ( $options.length ) {
+	                            self.moveToRight($options, e);
+	                        }
+	                    }
+	                });
+
+	                // Attach event for double clicking on options from right side
+	                self.$right.on('dblclick', 'option', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$right.find('option:selected');
+
+	                    if ( $options.length ) {
+	                        self.moveToLeft($options, e);
+	                    }
+	                });
+
+	                // Attach event for pushing BACKSPACE or DEL on options from right side
+	                self.$right.on('keydown', function(e) {
+	                    if (e.keyCode === 8 || e.keyCode === 46) {
+	                        e.preventDefault();
+
+	                        var $options = self.$right.find('option:selected');
+
+	                        if ( $options.length ) {
+	                            self.moveToLeft($options, e);
+	                        }
+	                    }
+	                });
+
+	                // dblclick support for IE
+	                if ( navigator.userAgent.match(/MSIE/i)  || navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('Edge/') > 0) {
+	                    self.$left.dblclick(function(e) {
+	                        self.actions.$rightSelected.trigger('click');
+	                    });
+
+	                    self.$right.dblclick(function(e) {
+	                        self.actions.$leftSelected.trigger('click');
+	                    });
+	                }
+
+	                self.actions.$rightSelected.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$left.find('option:selected');
+
+	                    if ( $options.length ) {
+	                        self.moveToRight($options, e);
+	                    }
+
+	                    $(this).blur();
+	                });
+
+	                self.actions.$leftSelected.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$right.find('option:selected');
+
+	                    if ( $options.length ) {
+	                        self.moveToLeft($options, e);
+	                    }
+
+	                    $(this).blur();
+	                });
+
+	                self.actions.$rightAll.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$left.children(':not(span):not(.hidden)');
+
+	                    if ( $options.length ) {
+	                        self.moveToRight($options, e);
+	                    }
+
+	                    $(this).blur();
+	                });
+
+	                self.actions.$leftAll.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    var $options = self.$right.children(':not(span):not(.hidden)');
+
+	                    if ( $options.length ) {
+	                        self.moveToLeft($options, e);
+	                    }
+
+	                    $(this).blur();
+	                });
+
+	                self.actions.$undo.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    self.undo(e);
+	                });
+
+	                self.actions.$redo.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    self.redo(e);
+	                });
+
+	                self.actions.$moveUp.on('click', function(e) {
+	                    e.preventDefault();
+
+	                    self.doNotSortRight = true;
+	                    
+	                    var $options = self.$right.find(':selected:not(span):not(.hidden)');
+
+	                    $options.first().prev().before($options);
+
+	                    $(this).blur();
+	                });
+
+	                self.actions.$moveDown.on('click', function(e) {                    
+	                    e.preventDefault();
+
+	                    self.doNotSortRight = true;
+
+	                    var $options = self.$right.find(':selected:not(span):not(.hidden)');
+	                    
+	                    $options.last().next().after($options);
+
+	                    $(this).blur();
+	                });
+	            },
+
+	            moveToRight: function( $options, event, silent, skipStack ) {
+	                var self = this;
+
+	                if ( typeof self.callbacks.moveToRight == 'function' ) {
+	                    return self.callbacks.moveToRight( self, $options, event, silent, skipStack );
+	                } else {
+	                    if ( typeof self.callbacks.beforeMoveToRight == 'function' && !silent ) {
+	                        if ( !self.callbacks.beforeMoveToRight( self.$left, self.$right, $options ) ) {
+	                            return false;
+	                        }
+	                    }
+
+	                    $options.each(function(index, option) {
+	                        var $option = $(option);
+
+	                        if (self.options.ignoreDisabled && $option.is(':disabled')) {
+	                            return true;
+	                        }
+
+	                        if ($option.parent().is('optgroup')) {
+	                            var $leftGroup = $option.parent();
+	                            var $rightGroup = self.$right.find('optgroup[label="' + $leftGroup.prop('label') + '"]');
+
+	                            if (!$rightGroup.length) {
+	                                $rightGroup = $leftGroup.clone();
+	                                $rightGroup.children().remove();
+	                            }
+
+	                            $option = $rightGroup.append($option);
+
+	                            $leftGroup.removeIfEmpty();
+	                        }
+
+	                        self.$right.move($option);
+	                    });
+
+	                    if ( !skipStack ) {
+	                        self.undoStack.push(['right', $options ]);
+	                        self.redoStack = [];
+	                    }
+
+	                    if ( typeof self.callbacks.sort == 'function' && !silent && !self.doNotSortRight ) {
+	                        self.$right.mSort(self.callbacks.sort);
+	                    }
+
+	                    if ( typeof self.callbacks.afterMoveToRight == 'function' && !silent ) {
+	                        self.callbacks.afterMoveToRight( self.$left, self.$right, $options );
+	                    }
+
+	                    return self;
+	                }
+	            },
+
+	            moveToLeft: function( $options, event, silent, skipStack ) {
+	                var self = this;
+
+	                if ( typeof self.callbacks.moveToLeft == 'function' ) {
+	                    return self.callbacks.moveToLeft( self, $options, event, silent, skipStack );
+	                } else {
+	                    if ( typeof self.callbacks.beforeMoveToLeft == 'function' && !silent ) {
+	                        if ( !self.callbacks.beforeMoveToLeft( self.$left, self.$right, $options ) ) {
+	                            return false;
+	                        }
+	                    }
+
+	                    $options.each(function(index, option) {
+	                        var $option = $(option);
+
+	                        if ($option.is('optgroup') || $option.parent().is('optgroup')) {
+	                            var $rightGroup = $option.is('optgroup') ? $option : $option.parent();
+	                            var $leftGroup = self.$left.find('optgroup[label="' + $rightGroup.prop('label') + '"]');
+
+	                            if (!$leftGroup.length) {
+	                                $leftGroup = $rightGroup.clone();
+	                                $leftGroup.children().remove();
+	                            }
+
+	                            $option = $leftGroup.append($option.is('optgroup') ? $option.children() : $option );
+
+	                            $rightGroup.removeIfEmpty();
+	                        }
+
+	                        self.$left.move($option);
+	                    });
+
+	                    if ( !skipStack ) {
+	                        self.undoStack.push(['left', $options ]);
+	                        self.redoStack = [];
+	                    }
+
+	                    if ( typeof self.callbacks.sort == 'function' && !silent ) {
+	                        self.$left.mSort(self.callbacks.sort);
+	                    }
+
+	                    if ( typeof self.callbacks.afterMoveToLeft == 'function' && !silent ) {
+	                        self.callbacks.afterMoveToLeft( self.$left, self.$right, $options );
+	                    }
+
+	                    return self;
+	                }
+	            },
+
+	            undo: function(event) {
+	                var self = this;
+	                var last = self.undoStack.pop();
+
+	                if ( last ) {
+	                    self.redoStack.push(last);
+
+	                    switch(last[0]) {
+	                        case 'left':
+	                            self.moveToRight(last[1], event, false, true);
+	                            break;
+	                        case 'right':
+	                            self.moveToLeft(last[1], event, false, true);
+	                            break;
+	                    }
+	                }
+	            },
+
+	            redo: function(event) {
+	                var self = this;
+	                var last = self.redoStack.pop();
+
+	                if ( last ) {
+	                    self.undoStack.push(last);
+
+	                    switch(last[0]) {
+	                        case 'left':
+	                            self.moveToLeft(last[1], event, false, true);
+	                            break;
+	                        case 'right':
+	                            self.moveToRight(last[1], event, false, true);
+	                            break;
+	                    }
+	                }
+	            }
+	        }
+
+	        return Multiselect;
+	    })($);
+
+	    $.multiselect = {
+	        defaults: {
+	            /** will be executed once - remove from $left all options that are already in $right
+	             *
+	             *  @method startUp
+	             *  @attribute $left jQuery object
+	             *  @attribute $right jQuery object
+	            **/
+	            startUp: function( $left, $right ) {
+	                $right.find('option').each(function(index, option) {
+	                    var $option = $left.find('option[value="' + option.value + '"]');
+	                    var $parent = $option.parent();
+
+	                    $option.remove();
+
+	                    if ($parent.prop('tagName') == 'OPTGROUP') {
+	                        $parent.removeIfEmpty();
+	                    }
+	                });
+	            },
+
+	            /** will be executed each time before moving option[s] to right
+	             *
+	             *  IMPORTANT : this method must return boolean value
+	             *      true    : continue to moveToRight method
+	             *      false   : stop
+	             *
+	             *  @method beforeMoveToRight
+	             *  @attribute $left jQuery object
+	             *  @attribute $right jQuery object
+	             *  @attribute $options HTML object (the option[s] which was selected to be moved)
+	             *
+	             *  @default true
+	             *  @return {boolean}
+	            **/
+	            beforeMoveToRight: function($left, $right, $options) { return true; },
+
+	            /*  will be executed each time after moving option[s] to right
+	             *
+	             *  @method afterMoveToRight
+	             *  @attribute $left jQuery object
+	             *  @attribute $right jQuery object
+	             *  @attribute $options HTML object (the option[s] which was selected to be moved)
+	            **/
+	            afterMoveToRight: function($left, $right, $options) {},
+
+	            /** will be executed each time before moving option[s] to left
+	             *
+	             *  IMPORTANT : this method must return boolean value
+	             *      true    : continue to moveToRight method
+	             *      false   : stop
+	             *
+	             *  @method beforeMoveToLeft
+	             *  @attribute $left jQuery object
+	             *  @attribute $right jQuery object
+	             *  @attribute $options HTML object (the option[s] which was selected to be moved)
+	             *
+	             *  @default true
+	             *  @return {boolean}
+	            **/
+	            beforeMoveToLeft: function($left, $right, $options) { return true; },
+
+	            /*  will be executed each time after moving option[s] to left
+	             *
+	             *  @method afterMoveToLeft
+	             *  @attribute $left jQuery object
+	             *  @attribute $right jQuery object
+	             *  @attribute $options HTML object (the option[s] which was selected to be moved)
+	            **/
+	            afterMoveToLeft: function($left, $right, $options) {},
+
+	            /** sort options by option text
+	             *
+	             *  @method sort
+	             *  @attribute a HTML option
+	             *  @attribute b HTML option
+	             *
+	             *  @return 1/-1
+	            **/
+	            sort: function(a, b) {
+	                if (a.innerHTML == 'NA') {
+	                    return 1;
+	                } else if (b.innerHTML == 'NA') {
+	                    return -1;
+	                }
+
+	                return (a.innerHTML > b.innerHTML) ? 1 : -1;
+	            }
+	        }
+	    };
+
+	    var ua = window.navigator.userAgent;
+	    var isIE = (ua.indexOf("MSIE ") + ua.indexOf("Trident/") + ua.indexOf("Edge/")) > -3;
+
+	    $.fn.multiselect = function( options ) {
+	        return this.each(function() {
+	            var $this    = $(this),
+	                data     = $this.data('crlcu.multiselect'),
+	                settings = $.extend({}, $.multiselect.defaults, $this.data(), (typeof options === 'object' && options));
+
+	            if (!data) {
+	                $this.data('crlcu.multiselect', (data = new Multiselect($this, settings)));
+	            }
+	        });
+	    };
+
+	    // append options
+	    // then set the selected attribute to false
+	    $.fn.move = function( $options ) {
+	        this
+	            .append($options)
+	            .find('option')
+	            .prop('selected', false);
+
+	        return this;
+	    };
+
+	    $.fn.removeIfEmpty = function() {
+	        if (!this.children().length) {
+	            this.remove();
+	        }
+
+	        return this;
+	    };
+
+	    $.fn.mShow = function() {
+	        this.removeClass('hidden').show();
+
+	        if ( isIE ) {
+	            this.each(function(index, option) {
+	                // Remove <span> to make it compatible with IE
+	                if($(option).parent().is('span')) {
+	                    $(option).parent().replaceWith(option);
+	                }
+
+	                $(option).show();
+	            });
+	        }
+
+	        return this;
+	    };
+
+	    $.fn.mHide = function() {
+	        this.addClass('hidden').hide();
+
+	        if ( isIE ) {
+	            this.each(function(index, option) {
+	                // Wrap with <span> to make it compatible with IE
+	                if(!$(option).parent().is('span')) {
+	                    $(option).wrap('<span>').hide();
+	                }
+	            });
+	        }
+
+	        return this;
+	    };
+
+	    // sort options then reappend them to the select
+	    $.fn.mSort = function(callback) {
+	        this
+	            .find('option')
+	            .sort(callback)
+	            .appendTo(this);
+
+	        return this;
+	    };
+
+	    $.expr[":"].search = function(elem, index, meta) {
+	        return $(elem).text().toUpperCase().indexOf(meta[3].toUpperCase()) >= 0;
+	    }
+	}));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(jQuery) {/*
+	 * @license
+	 *
+	 * Multiselect v2.3.1
+	 * http://crlcu.github.io/multiselect/
+	 *
+	 * Copyright (c) 2016 Adrian Crisan
+	 * Licensed under the MIT license (https://github.com/crlcu/multiselect/blob/master/LICENSE)
+	 */
+	if("undefined"==typeof jQuery)throw Error("multiselect requires jQuery");(function($){"use strict";var version=$.fn.jquery.split(" ")[0].split(".");if(2>version[0]&&7>version[1])throw Error("multiselect requires jQuery version 1.7 or higher")})(jQuery),function(factory){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):factory(jQuery)}(function($){"use strict";var Multiselect=function($){function Multiselect($select,settings){var id=$select.prop("id");this.$left=$select,this.$right=$(settings.right).length?$(settings.right):$("#"+id+"_to"),this.actions={$leftAll:$(settings.leftAll).length?$(settings.leftAll):$("#"+id+"_leftAll"),$rightAll:$(settings.rightAll).length?$(settings.rightAll):$("#"+id+"_rightAll"),$leftSelected:$(settings.leftSelected).length?$(settings.leftSelected):$("#"+id+"_leftSelected"),$rightSelected:$(settings.rightSelected).length?$(settings.rightSelected):$("#"+id+"_rightSelected"),$undo:$(settings.undo).length?$(settings.undo):$("#"+id+"_undo"),$redo:$(settings.redo).length?$(settings.redo):$("#"+id+"_redo"),$moveUp:$(settings.moveUp).length?$(settings.moveUp):$("#"+id+"_move_up"),$moveDown:$(settings.moveDown).length?$(settings.moveDown):$("#"+id+"_move_down")},delete settings.leftAll,delete settings.leftSelected,delete settings.right,delete settings.rightAll,delete settings.rightSelected,delete settings.undo,delete settings.redo,delete settings.moveUp,delete settings.moveDown,this.options={keepRenderingSort:settings.keepRenderingSort,submitAllLeft:void 0!==settings.submitAllLeft?settings.submitAllLeft:!0,submitAllRight:void 0!==settings.submitAllRight?settings.submitAllRight:!0,search:settings.search,ignoreDisabled:void 0!==settings.ignoreDisabled?settings.ignoreDisabled:!1},delete settings.keepRenderingSort,settings.submitAllLeft,settings.submitAllRight,settings.search,settings.ignoreDisabled,this.callbacks=settings,this.init()}return Multiselect.prototype={init:function(){var self=this;self.undoStack=[],self.redoStack=[],(self.$left.find("optgroup").length||self.$right.find("optgroup").length)&&(self.callbacks.sort=!1),self.options.keepRenderingSort&&(self.skipInitSort=!0,self.callbacks.sort!==!1&&(self.callbacks.sort=function(a,b){return $(a).data("position")>$(b).data("position")?1:-1}),self.$left.find("option").each(function(index,option){$(option).data("position",index)}),self.$right.find("option").each(function(index,option){$(option).data("position",index)})),"function"==typeof self.callbacks.startUp&&self.callbacks.startUp(self.$left,self.$right),self.skipInitSort||"function"!=typeof self.callbacks.sort||(self.$left.mSort(self.callbacks.sort),self.$right.each(function(i,select){$(select).mSort(self.callbacks.sort)})),self.options.search&&self.options.search.left&&(self.options.search.$left=$(self.options.search.left),self.$left.before(self.options.search.$left)),self.options.search&&self.options.search.right&&(self.options.search.$right=$(self.options.search.right),self.$right.before($(self.options.search.$right))),self.events()},events:function(){var self=this;self.options.search&&self.options.search.$left&&self.options.search.$left.on("keyup",function(){this.value?(self.$left.find('option:search("'+this.value+'")').mShow(),self.$left.find('option:not(:search("'+this.value+'"))').mHide(),self.$left.find("option.hidden").parent("optgroup").not($(":visible").parent()).mHide(),self.$left.find("option:not(.hidden)").parent("optgroup").mShow()):self.$left.find("option, optgroup").mShow()}),self.options.search&&self.options.search.$right&&self.options.search.$right.on("keyup",function(){this.value?(self.$right.find('option:search("'+this.value+'")').mShow(),self.$right.find('option:not(:search("'+this.value+'"))').mHide(),self.$right.find("option.hidden").parent("optgroup").not($(":visible").parent()).mHide(),self.$right.find("option:not(.hidden)").parent("optgroup").mShow()):self.$right.find("option, optgroup").mShow()}),self.$right.closest("form").on("submit",function(){self.$left.find("option").prop("selected",self.options.submitAllLeft),self.$right.find("option").prop("selected",self.options.submitAllRight)}),self.$left.on("dblclick","option",function(e){e.preventDefault();var $options=self.$left.find("option:selected");$options.length&&self.moveToRight($options,e)}),self.$left.on("keypress",function(e){if(13===e.keyCode){e.preventDefault();var $options=self.$left.find("option:selected");$options.length&&self.moveToRight($options,e)}}),self.$right.on("dblclick","option",function(e){e.preventDefault();var $options=self.$right.find("option:selected");$options.length&&self.moveToLeft($options,e)}),self.$right.on("keydown",function(e){if(8===e.keyCode||46===e.keyCode){e.preventDefault();var $options=self.$right.find("option:selected");$options.length&&self.moveToLeft($options,e)}}),(navigator.userAgent.match(/MSIE/i)||navigator.userAgent.indexOf("Trident/")>0||navigator.userAgent.indexOf("Edge/")>0)&&(self.$left.dblclick(function(){self.actions.$rightSelected.trigger("click")}),self.$right.dblclick(function(){self.actions.$leftSelected.trigger("click")})),self.actions.$rightSelected.on("click",function(e){e.preventDefault();var $options=self.$left.find("option:selected");$options.length&&self.moveToRight($options,e),$(this).blur()}),self.actions.$leftSelected.on("click",function(e){e.preventDefault();var $options=self.$right.find("option:selected");$options.length&&self.moveToLeft($options,e),$(this).blur()}),self.actions.$rightAll.on("click",function(e){e.preventDefault();var $options=self.$left.children(":not(span):not(.hidden)");$options.length&&self.moveToRight($options,e),$(this).blur()}),self.actions.$leftAll.on("click",function(e){e.preventDefault();var $options=self.$right.children(":not(span):not(.hidden)");$options.length&&self.moveToLeft($options,e),$(this).blur()}),self.actions.$undo.on("click",function(e){e.preventDefault(),self.undo(e)}),self.actions.$redo.on("click",function(e){e.preventDefault(),self.redo(e)}),self.actions.$moveUp.on("click",function(e){e.preventDefault(),self.doNotSortRight=!0;var $options=self.$right.find(":selected:not(span):not(.hidden)");$options.first().prev().before($options),$(this).blur()}),self.actions.$moveDown.on("click",function(e){e.preventDefault(),self.doNotSortRight=!0;var $options=self.$right.find(":selected:not(span):not(.hidden)");$options.last().next().after($options),$(this).blur()})},moveToRight:function($options,event,silent,skipStack){var self=this;return"function"==typeof self.callbacks.moveToRight?self.callbacks.moveToRight(self,$options,event,silent,skipStack):"function"!=typeof self.callbacks.beforeMoveToRight||silent||self.callbacks.beforeMoveToRight(self.$left,self.$right,$options)?($options.each(function(index,option){var $option=$(option);if(self.options.ignoreDisabled&&$option.is(":disabled"))return!0;if($option.parent().is("optgroup")){var $leftGroup=$option.parent(),$rightGroup=self.$right.find('optgroup[label="'+$leftGroup.prop("label")+'"]');$rightGroup.length||($rightGroup=$leftGroup.clone(),$rightGroup.children().remove()),$option=$rightGroup.append($option),$leftGroup.removeIfEmpty()}self.$right.move($option)}),skipStack||(self.undoStack.push(["right",$options]),self.redoStack=[]),"function"!=typeof self.callbacks.sort||silent||self.doNotSortRight||self.$right.mSort(self.callbacks.sort),"function"!=typeof self.callbacks.afterMoveToRight||silent||self.callbacks.afterMoveToRight(self.$left,self.$right,$options),self):!1},moveToLeft:function($options,event,silent,skipStack){var self=this;return"function"==typeof self.callbacks.moveToLeft?self.callbacks.moveToLeft(self,$options,event,silent,skipStack):"function"!=typeof self.callbacks.beforeMoveToLeft||silent||self.callbacks.beforeMoveToLeft(self.$left,self.$right,$options)?($options.each(function(index,option){var $option=$(option);if($option.is("optgroup")||$option.parent().is("optgroup")){var $rightGroup=$option.is("optgroup")?$option:$option.parent(),$leftGroup=self.$left.find('optgroup[label="'+$rightGroup.prop("label")+'"]');$leftGroup.length||($leftGroup=$rightGroup.clone(),$leftGroup.children().remove()),$option=$leftGroup.append($option.is("optgroup")?$option.children():$option),$rightGroup.removeIfEmpty()}self.$left.move($option)}),skipStack||(self.undoStack.push(["left",$options]),self.redoStack=[]),"function"!=typeof self.callbacks.sort||silent||self.$left.mSort(self.callbacks.sort),"function"!=typeof self.callbacks.afterMoveToLeft||silent||self.callbacks.afterMoveToLeft(self.$left,self.$right,$options),self):!1},undo:function(event){var self=this,last=self.undoStack.pop();if(last)switch(self.redoStack.push(last),last[0]){case"left":self.moveToRight(last[1],event,!1,!0);break;case"right":self.moveToLeft(last[1],event,!1,!0)}},redo:function(event){var self=this,last=self.redoStack.pop();if(last)switch(self.undoStack.push(last),last[0]){case"left":self.moveToLeft(last[1],event,!1,!0);break;case"right":self.moveToRight(last[1],event,!1,!0)}}},Multiselect}($);$.multiselect={defaults:{startUp:function($left,$right){$right.find("option").each(function(index,option){var $option=$left.find('option[value="'+option.value+'"]'),$parent=$option.parent();$option.remove(),"OPTGROUP"==$parent.prop("tagName")&&$parent.removeIfEmpty()})},beforeMoveToRight:function(){return!0},afterMoveToRight:function(){},beforeMoveToLeft:function(){return!0},afterMoveToLeft:function(){},sort:function(a,b){return"NA"==a.innerHTML?1:"NA"==b.innerHTML?-1:a.innerHTML>b.innerHTML?1:-1}}};var ua=window.navigator.userAgent,isIE=ua.indexOf("MSIE ")+ua.indexOf("Trident/")+ua.indexOf("Edge/")>-3;$.fn.multiselect=function(options){return this.each(function(){var $this=$(this),data=$this.data("crlcu.multiselect"),settings=$.extend({},$.multiselect.defaults,$this.data(),"object"==typeof options&&options);data||$this.data("crlcu.multiselect",data=new Multiselect($this,settings))})},$.fn.move=function($options){return this.append($options).find("option").prop("selected",!1),this},$.fn.removeIfEmpty=function(){return this.children().length||this.remove(),this},$.fn.mShow=function(){return this.removeClass("hidden").show(),isIE&&this.each(function(index,option){$(option).parent().is("span")&&$(option).parent().replaceWith(option),$(option).show()}),this},$.fn.mHide=function(){return this.addClass("hidden").hide(),isIE&&this.each(function(index,option){$(option).parent().is("span")||$(option).wrap("<span>").hide()}),this},$.fn.mSort=function(callback){return this.find("option").sort(callback).appendTo(this),this},$.expr[":"].search=function(elem,index,meta){return $(elem).text().toUpperCase().indexOf(meta[3].toUpperCase())>=0}});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 43 */
 /***/ function(module, exports) {
 
 	angular.module('i18nModule', ['ngCookies' ]);
@@ -63003,7 +63662,7 @@
 
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var i18nModule = angular.module('i18nModule');
@@ -63018,19 +63677,19 @@
 	        scope: {},
 	        controller: 'I18nController',
 	        controllerAs: 'ctrl',
-	        template: __webpack_require__(43)
+	        template: __webpack_require__(45)
 	    };
 	}]);
 
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports) {
 
 	module.exports = "<i class=\"r-icon r-icon-world\"></i>\r\n<select class=\"\" ng-model=\"ctrl.$i18n.currentLanguageCulture\" ng-change=\"ctrl.$i18n.changeResource()\">\r\n    <option value=\"en-us\">{{'usermenu_option_english' | translate}}</option>\r\n    <option value=\"es-co\">{{'usermenu_option_spanish' | translate}}</option>\r\n</select>\r\n";
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var i18nModule = angular.module('i18nModule');
@@ -63059,7 +63718,7 @@
 
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports) {
 
 	var notifierModule = angular.module('notifierModule', ['angular-growl']);
@@ -63071,7 +63730,7 @@
 	}]);
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports) {
 
 	// Protected resource interceptor for http
@@ -63119,7 +63778,7 @@
 	}]);
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports) {
 
 	var notifierModule = angular.module('notifierModule');
@@ -63152,13 +63811,13 @@
 
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(49);
+	var content = __webpack_require__(51);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -63178,7 +63837,7 @@
 	}
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63192,13 +63851,13 @@
 
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(51);
+	var content = __webpack_require__(53);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -63218,7 +63877,7 @@
 	}
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63232,7 +63891,7 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
 	angular.module('commonDirectivesModule', [])
@@ -63245,7 +63904,7 @@
 
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports) {
 
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
@@ -63350,13 +64009,13 @@
 
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(55);
+	var content = __webpack_require__(57);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -63376,7 +64035,7 @@
 	}
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63390,7 +64049,7 @@
 
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports) {
 
 	/* module to create pinterest like responsive masonry grid system for angular */
@@ -63733,7 +64392,7 @@
 	}(angular, window));
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports) {
 
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
@@ -63797,7 +64456,7 @@
 
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
 	angular.module('mainModule', []);
@@ -63815,7 +64474,7 @@
 
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var mainModule = angular.module('mainModule');
@@ -63842,24 +64501,24 @@
 	    },
 	    controller: MainController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(60)
+	    template: __webpack_require__(62)
 	});
 
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"main\">\r\n    <div class=\"header\">\r\n        <div class=\"header-section\">\r\n            <a href=\"#/\">\r\n                <h3 class=\"brand-section\">Freeven</h3>\r\n            </a>\r\n            <search class=\"fr-search\" title=\"Search\"></search>\r\n        </div>\r\n        <div class=\"header-section\">\r\n            <user-menu class=\"fr-user-menu\" ng-if=\"ctrl.mainService.isAuthenticated()\"></user-menu>\r\n        </div>\r\n    </div>\r\n    <splash class=\"freeven-splash\" ng-if=\"!ctrl.mainService.isAuthenticated()\" title=\"Splash\"></splash>\r\n    <div ng-if=\"!ctrl.mainService.isAuthenticated()\" class=\"header-fake\">\r\n        <div class=\"header-section\">\r\n            <h3 class=\"brand-section\">Freeven</h3>\r\n        </div>\r\n        <div class=\"header-section\">\r\n        </div>\r\n    </div>\r\n    <div class=\"brand-description\" ng-if=\"!ctrl.mainService.isAuthenticated()\">\r\n        <h3>En Freeven encontrarás sonidos musicales que puedes utilizar sin ninguna restricción.</h3>\r\n        <h3>Descárgalos, escúchalos y úsalos en lo que tú quieras</h3>\r\n    </div>\r\n    <div class=\"wrap\">\r\n        <!--<div class=\"topbar\"></div>-->\r\n\r\n        <div class=\"sidebar\">\r\n            <h3 class=\"app-title\">Freeven</h3>\r\n            <user-panel title=\"UserPanel\"></user-panel>\r\n            <player-picture class=\"freeven-player-picture\" title=\"PlayerPicture\"></player-picture>\r\n        </div>\r\n        <div class=\"content-section\">\r\n            <div class=\"row-col\">\r\n                <div class=\"col-lg-12 b-r no-border-md\">\r\n                    <div ng-view=\"\"></div>\r\n                </div>\r\n                <!-- <div class=\"col-lg-3 w-xxl w-auto-md freeven-aside\">\r\n                     <r-i18n></r-i18n>\r\n                 </div>-->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <player title=\"Player\"></player>\r\n        </div>\r\n    </div>\r\n    <div growl class=\"fr-notifier-container\"></div>\r\n    <help title=\"Help\"></help>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes controlar tus pistas\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Aquí puedes ver el top \"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Sube mas piezas musicales\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-4\">\r\n        <help-item text=\"Configura tu perfil\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(62);
+	var content = __webpack_require__(64);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -63879,7 +64538,7 @@
 	}
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63888,8 +64547,8 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Crimson+Text);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);", ""]);
-	exports.i(__webpack_require__(63), "");
-	exports.i(__webpack_require__(67), "");
+	exports.i(__webpack_require__(65), "");
+	exports.i(__webpack_require__(69), "");
 
 	// module
 	exports.push([module.id, "/*Icons*/\nhtml,\nbody {\n  color: white;\n  /* para el score editor*/\n}\nhtml .modal-small,\nbody .modal-small {\n  max-width: 350px;\n}\nhtml .score-editor-modal .modal-dialog .modal-content,\nbody .score-editor-modal .modal-dialog .modal-content {\n  position: relative;\n  background-color: rgba(255, 0, 0, 0.45);\n  background-clip: padding-box;\n  border: none;\n  border-radius: 6px;\n  outline: 0;\n  box-shadow: none;\n}\nhtml *:focus,\nbody *:focus {\n  outline: none;\n}\n.main .align-right {\n  text-align: right;\n}\n.main .align-left {\n  text-align: left;\n}\n.main a {\n  cursor: pointer;\n}\n.main .brand-description {\n  color: black;\n  float: right;\n  width: 76%;\n  padding-right: 5%;\n}\n.main .brand-description h3 {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.main .header-fake {\n  margin-top: calc(100vh);\n  margin-bottom: 30px;\n}\n.main .header {\n  position: fixed;\n  z-index: 4;\n  top: 0px;\n}\n.main .header,\n.main .header-fake {\n  background-color: #41434b;\n  height: 50px;\n  width: 100%;\n  display: block;\n  padding: 0 10px;\n}\n.main .header .header-section,\n.main .header-fake .header-section {\n  float: left;\n  width: 50%;\n  display: inline-block;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.main .header .header-section .brand-section,\n.main .header-fake .header-section .brand-section {\n  font-family: Amatic SC;\n  margin: 10px 0px 0 23px;\n  font-size: 27px;\n  color: #ffffff;\n}\n.main .header .header-section .fr-search,\n.main .header-fake .header-section .fr-search {\n  margin-left: 19%;\n}\n.main .header .header-section .header-item,\n.main .header-fake .header-section .header-item {\n  margin-left: auto;\n  padding: 8px 27px;\n  text-decoration: none;\n  color: rgba(250, 250, 250, 0.93);\n  border-radius: 3px;\n  margin: 6px 0px 11px 0px;\n}\n.main .header .header-section .header-item:hover,\n.main .header-fake .header-section .header-item:hover {\n  color: #fafafa;\n  background-color: rgba(250, 250, 250, 0.21);\n}\n.main .header .header-section .fr-user-menu,\n.main .header-fake .header-section .fr-user-menu {\n  margin-left: auto;\n}\n.main .fr-track-help-1 {\n  display: block;\n  position: absolute;\n  bottom: 40px;\n}\n.main .fr-track-help-2 {\n  display: block;\n  position: absolute;\n  top: 112px;\n}\n.main .fr-track-help-3 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 43%;\n}\n.main .fr-track-help-4 {\n  display: block;\n  position: absolute;\n  top: 8px;\n  right: 200px;\n}\n.main .freeven-splash {\n  position: absolute;\n  z-index: 10;\n  display: block;\n  width: 100%;\n  top: 0px;\n  height: calc(100vh);\n}\n.main .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.main .wrap {\n  height: 100vh;\n}\n.main .wrap .topbar {\n  height: 60px;\n  background-color: #363c43;\n  border-bottom: 1px solid #000;\n}\n.main .wrap .sidebar {\n  width: 200px;\n  display: block;\n  position: fixed;\n  height: 1112px;\n  top: 130px;\n}\n.main .wrap .sidebar .freeven-player-picture {\n  margin-top: 15px;\n  display: block;\n  margin-right: 8px;\n}\n.main .wrap .sidebar .app-title {\n  text-align: center;\n  font-family: 'Amatic SC';\n  color: white;\n  margin-top: 38px;\n}\n.main .wrap .sidebar h4 {\n  font-size: 12px;\n  margin-top: 25px;\n  padding-left: 15px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.main .wrap .content-section {\n  width: calc(100% - 200px);\n  background-color: white;\n  float: right;\n}\n.main .wrap .content-section .freeven-aside {\n  height: calc(100vh - 70px);\n  border-left: 1px solid rgba(218, 218, 218, 0.4);\n}\n.main .wrap .content-section .col-lg-9 {\n  padding: 0px;\n}\n.main .wrap .footer {\n  min-height: 30px;\n  width: 100%;\n  z-index: 4;\n  position: fixed;\n  bottom: 0px;\n  background-color: #dadada;\n  z-index: 45;\n}\n.main .nav-sidebar > li > a {\n  margin: 1px 0;\n  padding: 0;\n  width: 96%;\n  display: inline-block;\n  border-radius: 4px;\n  color: rgba(255, 255, 255, 0.7);\n  background-color: rgba(54, 60, 67, 0.4);\n  text-decoration: none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  font-size: 14px;\n}\n.main .nav-sidebar > li > a:hover {\n  color: rgba(255, 255, 255, 0.870588);\n  background-color: #3d454c;\n}\n.main .nav-sidebar > li {\n  border-left: 3px solid rgba(54, 60, 67, 0.4);\n}\n.main .nav-sidebar > li.active {\n  border-left: 3px solid #02b875;\n}\n.main .nav-sidebar > li.selected a {\n  background-color: #02b875;\n}\n.main .nav-sidebar > li > a > i {\n  margin: 0 10px 0 8px;\n  font-size: 35px;\n  color: rgba(255, 255, 255, 0.85);\n  -webkit-transition: all 0.4s ease-out;\n  transition: all 0.4s ease-out;\n}\n.main .nav-sidebar > li:hover > a > i {\n  font-size: 35px;\n}\n.main .nav-sidebar > li > a > span {\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center;\n}\n::-webkit-scrollbar {\n  width: 8px;\n  height: 6px;\n}\n::-webkit-scrollbar-thumb {\n  background: #999999;\n  border: 1px solid #ccc;\n}\n::-webkit-scrollbar-track {\n  background: yellow;\n}\n::-webkit-scrollbar-track-piece {\n  background-color: #dadada;\n  -webkit-border-radius: 6px;\n}\n::-webkit-scrollbar-button:start:decrement,\n::-webkit-scrollbar-button:end:increment {\n  display: none;\n}\n", ""]);
@@ -63898,7 +64557,7 @@
 
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63906,31 +64565,31 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\r\n    font-family: 'icomoon';\r\n    src: url(" + __webpack_require__(64) + ");\r\n    src: url(" + __webpack_require__(64) + ") format('embedded-opentype'), url(" + __webpack_require__(65) + ") format('woff'), url(" + __webpack_require__(66) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n/*------------------------------------------------------------------\r\n1) SVG Icons\r\n-------------------------------------------------------------------*/\r\n[class^=\"music-\"],\r\n[class*=\" music-\"] {\r\n    font-family: 'icomoon';\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.music-feather:before {\r\n    content: \"\\E601\";\r\n}\r\n\r\n.music-eye:before {\r\n    content: \"\\E602\";\r\n}\r\n\r\n.music-featured:before {\r\n    content: \"\\E603\";\r\n}\r\n\r\n.music-logo:before {\r\n    content: \"\\E604\";\r\n}\r\n\r\n.music-microphone:before {\r\n    content: \"\\E605\";\r\n}\r\n\r\n.music-microphone-cut:before {\r\n    content: \"\\E606\";\r\n}\r\n\r\n.music-music-note:before {\r\n    content: \"\\E607\";\r\n}\r\n\r\n.music-newest:before {\r\n    content: \"\\E608\";\r\n}\r\n\r\n.music-player-pause:before {\r\n    content: \"\\E609\";\r\n}\r\n\r\n.music-player-play-full:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-player-play-outline:before {\r\n    content: \"\\E600\";\r\n}\r\n\r\n.music-player-play-bold:before {\r\n    content: \"\\E60B\";\r\n}\r\n\r\n.music-player-random:before {\r\n    content: \"\\E60C\";\r\n}\r\n\r\n.music-player-replay:before {\r\n    content: \"\\E60D\";\r\n}\r\n\r\n.music-player-volume:before {\r\n    content: \"\\E60E\";\r\n}\r\n\r\n.music-plus-button:before {\r\n    content: \"\\E60F\";\r\n}\r\n\r\n.music-search:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-share:before {\r\n    content: \"\\E611\";\r\n}\r\n\r\n.music-side-menu-albums:before {\r\n    content: \"\\E612\";\r\n}\r\n\r\n.music-side-menu-discover:before {\r\n    content: \"\\E613\";\r\n}\r\n\r\n.music-star:before {\r\n    content: \"\\E614\";\r\n}", ""]);
+	exports.push([module.id, "@font-face {\r\n    font-family: 'icomoon';\r\n    src: url(" + __webpack_require__(66) + ");\r\n    src: url(" + __webpack_require__(66) + ") format('embedded-opentype'), url(" + __webpack_require__(67) + ") format('woff'), url(" + __webpack_require__(68) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n/*------------------------------------------------------------------\r\n1) SVG Icons\r\n-------------------------------------------------------------------*/\r\n[class^=\"music-\"],\r\n[class*=\" music-\"] {\r\n    font-family: 'icomoon';\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.music-feather:before {\r\n    content: \"\\E601\";\r\n}\r\n\r\n.music-eye:before {\r\n    content: \"\\E602\";\r\n}\r\n\r\n.music-featured:before {\r\n    content: \"\\E603\";\r\n}\r\n\r\n.music-logo:before {\r\n    content: \"\\E604\";\r\n}\r\n\r\n.music-microphone:before {\r\n    content: \"\\E605\";\r\n}\r\n\r\n.music-microphone-cut:before {\r\n    content: \"\\E606\";\r\n}\r\n\r\n.music-music-note:before {\r\n    content: \"\\E607\";\r\n}\r\n\r\n.music-newest:before {\r\n    content: \"\\E608\";\r\n}\r\n\r\n.music-player-pause:before {\r\n    content: \"\\E609\";\r\n}\r\n\r\n.music-player-play-full:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-player-play-outline:before {\r\n    content: \"\\E600\";\r\n}\r\n\r\n.music-player-play-bold:before {\r\n    content: \"\\E60B\";\r\n}\r\n\r\n.music-player-random:before {\r\n    content: \"\\E60C\";\r\n}\r\n\r\n.music-player-replay:before {\r\n    content: \"\\E60D\";\r\n}\r\n\r\n.music-player-volume:before {\r\n    content: \"\\E60E\";\r\n}\r\n\r\n.music-plus-button:before {\r\n    content: \"\\E60F\";\r\n}\r\n\r\n.music-search:before {\r\n    content: \"\\E610\";\r\n}\r\n\r\n.music-share:before {\r\n    content: \"\\E611\";\r\n}\r\n\r\n.music-side-menu-albums:before {\r\n    content: \"\\E612\";\r\n}\r\n\r\n.music-side-menu-discover:before {\r\n    content: \"\\E613\";\r\n}\r\n\r\n.music-star:before {\r\n    content: \"\\E614\";\r\n}", ""]);
 
 	// exports
 
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "a4c6473881ec9622d155a1087417d794.eot";
-
-/***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	module.exports = "data:application/font-woff;base64,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"
 
 /***/ },
 /* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "55d997fb91cb1f8b882b2b50c3ba70e2.ttf";
+	module.exports = __webpack_require__.p + "a4c6473881ec9622d155a1087417d794.eot";
 
 /***/ },
 /* 67 */
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff;base64,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"
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "55d997fb91cb1f8b882b2b50c3ba70e2.ttf";
+
+/***/ },
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -63938,19 +64597,19 @@
 
 
 	// module
-	exports.push([module.id, "\r\n\r\n@font-face {\r\n    font-family: 'BasicIcon';\r\n    src: url(" + __webpack_require__(68) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n.icon {\r\n    /* use !important to prevent issues with browser extensions that change fonts */\r\n    font-family: 'BasicIcon' !important;\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    \r\n    /* Enable Ligatures ================ */\r\n    letter-spacing: 0;\r\n    -webkit-font-feature-settings: \"liga\";\r\n    -moz-font-feature-settings: \"liga=1\";\r\n    -moz-font-feature-settings: \"liga\";\r\n    -ms-font-feature-settings: \"liga\" 1;\r\n    -o-font-feature-settings: \"liga\";\r\n    font-feature-settings: \"liga\";\r\n\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.icon-home:before {\r\n    content: \"\\E900\";\r\n}\r\n.icon-home2:before {\r\n    content: \"\\E901\";\r\n}\r\n.icon-home3:before {\r\n    content: \"\\E902\";\r\n}\r\n.icon-office:before {\r\n    content: \"\\E903\";\r\n}\r\n.icon-newspaper:before {\r\n    content: \"\\E904\";\r\n}\r\n.icon-pencil:before {\r\n    content: \"\\E905\";\r\n}\r\n.icon-pencil2:before {\r\n    content: \"\\E906\";\r\n}\r\n.icon-quill:before {\r\n    content: \"\\E907\";\r\n}\r\n.icon-pen:before {\r\n    content: \"\\E908\";\r\n}\r\n.icon-blog:before {\r\n    content: \"\\E909\";\r\n}\r\n.icon-eyedropper:before {\r\n    content: \"\\E90A\";\r\n}\r\n.icon-droplet:before {\r\n    content: \"\\E90B\";\r\n}\r\n.icon-paint-format:before {\r\n    content: \"\\E90C\";\r\n}\r\n.icon-image:before {\r\n    content: \"\\E90D\";\r\n}\r\n.icon-images:before {\r\n    content: \"\\E90E\";\r\n}\r\n.icon-camera:before {\r\n    content: \"\\E90F\";\r\n}\r\n.icon-headphones:before {\r\n    content: \"\\E910\";\r\n}\r\n.icon-music:before {\r\n    content: \"\\E911\";\r\n}\r\n.icon-play:before {\r\n    content: \"\\E912\";\r\n}\r\n.icon-film:before {\r\n    content: \"\\E913\";\r\n}\r\n.icon-video-camera:before {\r\n    content: \"\\E914\";\r\n}\r\n.icon-dice:before {\r\n    content: \"\\E915\";\r\n}\r\n.icon-pacman:before {\r\n    content: \"\\E916\";\r\n}\r\n.icon-spades:before {\r\n    content: \"\\E917\";\r\n}\r\n.icon-clubs:before {\r\n    content: \"\\E918\";\r\n}\r\n.icon-diamonds:before {\r\n    content: \"\\E919\";\r\n}\r\n.icon-bullhorn:before {\r\n    content: \"\\E91A\";\r\n}\r\n.icon-connection:before {\r\n    content: \"\\E91B\";\r\n}\r\n.icon-podcast:before {\r\n    content: \"\\E91C\";\r\n}\r\n.icon-feed:before {\r\n    content: \"\\E91D\";\r\n}\r\n.icon-mic:before {\r\n    content: \"\\E91E\";\r\n}\r\n.icon-book:before {\r\n    content: \"\\E91F\";\r\n}\r\n.icon-books:before {\r\n    content: \"\\E920\";\r\n}\r\n.icon-library:before {\r\n    content: \"\\E921\";\r\n}\r\n.icon-file-text:before {\r\n    content: \"\\E922\";\r\n}\r\n.icon-profile:before {\r\n    content: \"\\E923\";\r\n}\r\n.icon-file-empty:before {\r\n    content: \"\\E924\";\r\n}\r\n.icon-files-empty:before {\r\n    content: \"\\E925\";\r\n}\r\n.icon-file-text2:before {\r\n    content: \"\\E926\";\r\n}\r\n.icon-file-picture:before {\r\n    content: \"\\E927\";\r\n}\r\n.icon-file-music:before {\r\n    content: \"\\E928\";\r\n}\r\n.icon-file-play:before {\r\n    content: \"\\E929\";\r\n}\r\n.icon-file-video:before {\r\n    content: \"\\E92A\";\r\n}\r\n.icon-file-zip:before {\r\n    content: \"\\E92B\";\r\n}\r\n.icon-copy:before {\r\n    content: \"\\E92C\";\r\n}\r\n.icon-paste:before {\r\n    content: \"\\E92D\";\r\n}\r\n.icon-stack:before {\r\n    content: \"\\E92E\";\r\n}\r\n.icon-folder:before {\r\n    content: \"\\E92F\";\r\n}\r\n.icon-folder-open:before {\r\n    content: \"\\E930\";\r\n}\r\n.icon-folder-plus:before {\r\n    content: \"\\E931\";\r\n}\r\n.icon-folder-minus:before {\r\n    content: \"\\E932\";\r\n}\r\n.icon-folder-download:before {\r\n    content: \"\\E933\";\r\n}\r\n.icon-folder-upload:before {\r\n    content: \"\\E934\";\r\n}\r\n.icon-price-tag:before {\r\n    content: \"\\E935\";\r\n}\r\n.icon-price-tags:before {\r\n    content: \"\\E936\";\r\n}\r\n.icon-barcode:before {\r\n    content: \"\\E937\";\r\n}\r\n.icon-qrcode:before {\r\n    content: \"\\E938\";\r\n}\r\n.icon-ticket:before {\r\n    content: \"\\E939\";\r\n}\r\n.icon-cart:before {\r\n    content: \"\\E93A\";\r\n}\r\n.icon-coin-dollar:before {\r\n    content: \"\\E93B\";\r\n}\r\n.icon-coin-euro:before {\r\n    content: \"\\E93C\";\r\n}\r\n.icon-coin-pound:before {\r\n    content: \"\\E93D\";\r\n}\r\n.icon-coin-yen:before {\r\n    content: \"\\E93E\";\r\n}\r\n.icon-credit-card:before {\r\n    content: \"\\E93F\";\r\n}\r\n.icon-calculator:before {\r\n    content: \"\\E940\";\r\n}\r\n.icon-lifebuoy:before {\r\n    content: \"\\E941\";\r\n}\r\n.icon-phone:before {\r\n    content: \"\\E942\";\r\n}\r\n.icon-phone-hang-up:before {\r\n    content: \"\\E943\";\r\n}\r\n.icon-address-book:before {\r\n    content: \"\\E944\";\r\n}\r\n.icon-envelop:before {\r\n    content: \"\\E945\";\r\n}\r\n.icon-pushpin:before {\r\n    content: \"\\E946\";\r\n}\r\n.icon-location:before {\r\n    content: \"\\E947\";\r\n}\r\n.icon-location2:before {\r\n    content: \"\\E948\";\r\n}\r\n.icon-compass:before {\r\n    content: \"\\E949\";\r\n}\r\n.icon-compass2:before {\r\n    content: \"\\E94A\";\r\n}\r\n.icon-map:before {\r\n    content: \"\\E94B\";\r\n}\r\n.icon-map2:before {\r\n    content: \"\\E94C\";\r\n}\r\n.icon-history:before {\r\n    content: \"\\E94D\";\r\n}\r\n.icon-clock:before {\r\n    content: \"\\E94E\";\r\n}\r\n.icon-clock2:before {\r\n    content: \"\\E94F\";\r\n}\r\n.icon-alarm:before {\r\n    content: \"\\E950\";\r\n}\r\n.icon-bell:before {\r\n    content: \"\\E951\";\r\n}\r\n.icon-stopwatch:before {\r\n    content: \"\\E952\";\r\n}\r\n.icon-calendar:before {\r\n    content: \"\\E953\";\r\n}\r\n.icon-printer:before {\r\n    content: \"\\E954\";\r\n}\r\n.icon-keyboard:before {\r\n    content: \"\\E955\";\r\n}\r\n.icon-display:before {\r\n    content: \"\\E956\";\r\n}\r\n.icon-laptop:before {\r\n    content: \"\\E957\";\r\n}\r\n.icon-mobile:before {\r\n    content: \"\\E958\";\r\n}\r\n.icon-mobile2:before {\r\n    content: \"\\E959\";\r\n}\r\n.icon-tablet:before {\r\n    content: \"\\E95A\";\r\n}\r\n.icon-tv:before {\r\n    content: \"\\E95B\";\r\n}\r\n.icon-drawer:before {\r\n    content: \"\\E95C\";\r\n}\r\n.icon-drawer2:before {\r\n    content: \"\\E95D\";\r\n}\r\n.icon-box-add:before {\r\n    content: \"\\E95E\";\r\n}\r\n.icon-box-remove:before {\r\n    content: \"\\E95F\";\r\n}\r\n.icon-download:before {\r\n    content: \"\\E960\";\r\n}\r\n.icon-upload:before {\r\n    content: \"\\E961\";\r\n}\r\n.icon-floppy-disk:before {\r\n    content: \"\\E962\";\r\n}\r\n.icon-drive:before {\r\n    content: \"\\E963\";\r\n}\r\n.icon-database:before {\r\n    content: \"\\E964\";\r\n}\r\n.icon-undo:before {\r\n    content: \"\\E965\";\r\n}\r\n.icon-redo:before {\r\n    content: \"\\E966\";\r\n}\r\n.icon-undo2:before {\r\n    content: \"\\E967\";\r\n}\r\n.icon-redo2:before {\r\n    content: \"\\E968\";\r\n}\r\n.icon-forward:before {\r\n    content: \"\\E969\";\r\n}\r\n.icon-reply:before {\r\n    content: \"\\E96A\";\r\n}\r\n.icon-bubble:before {\r\n    content: \"\\E96B\";\r\n}\r\n.icon-bubbles:before {\r\n    content: \"\\E96C\";\r\n}\r\n.icon-bubbles2:before {\r\n    content: \"\\E96D\";\r\n}\r\n.icon-bubble2:before {\r\n    content: \"\\E96E\";\r\n}\r\n.icon-bubbles3:before {\r\n    content: \"\\E96F\";\r\n}\r\n.icon-bubbles4:before {\r\n    content: \"\\E970\";\r\n}\r\n.icon-user:before {\r\n    content: \"\\E971\";\r\n}\r\n.icon-users:before {\r\n    content: \"\\E972\";\r\n}\r\n.icon-user-plus:before {\r\n    content: \"\\E973\";\r\n}\r\n.icon-user-minus:before {\r\n    content: \"\\E974\";\r\n}\r\n.icon-user-check:before {\r\n    content: \"\\E975\";\r\n}\r\n.icon-user-tie:before {\r\n    content: \"\\E976\";\r\n}\r\n.icon-quotes-left:before {\r\n    content: \"\\E977\";\r\n}\r\n.icon-quotes-right:before {\r\n    content: \"\\E978\";\r\n}\r\n.icon-hour-glass:before {\r\n    content: \"\\E979\";\r\n}\r\n.icon-spinner:before {\r\n    content: \"\\E97A\";\r\n}\r\n.icon-spinner2:before {\r\n    content: \"\\E97B\";\r\n}\r\n.icon-spinner3:before {\r\n    content: \"\\E97C\";\r\n}\r\n.icon-spinner4:before {\r\n    content: \"\\E97D\";\r\n}\r\n.icon-spinner5:before {\r\n    content: \"\\E97E\";\r\n}\r\n.icon-spinner6:before {\r\n    content: \"\\E97F\";\r\n}\r\n.icon-spinner7:before {\r\n    content: \"\\E980\";\r\n}\r\n.icon-spinner8:before {\r\n    content: \"\\E981\";\r\n}\r\n.icon-spinner9:before {\r\n    content: \"\\E982\";\r\n}\r\n.icon-spinner10:before {\r\n    content: \"\\E983\";\r\n}\r\n.icon-spinner11:before {\r\n    content: \"\\E984\";\r\n}\r\n.icon-binoculars:before {\r\n    content: \"\\E985\";\r\n}\r\n.icon-search:before {\r\n    content: \"\\E986\";\r\n}\r\n.icon-zoom-in:before {\r\n    content: \"\\E987\";\r\n}\r\n.icon-zoom-out:before {\r\n    content: \"\\E988\";\r\n}\r\n.icon-enlarge:before {\r\n    content: \"\\E989\";\r\n}\r\n.icon-shrink:before {\r\n    content: \"\\E98A\";\r\n}\r\n.icon-enlarge2:before {\r\n    content: \"\\E98B\";\r\n}\r\n.icon-shrink2:before {\r\n    content: \"\\E98C\";\r\n}\r\n.icon-key:before {\r\n    content: \"\\E98D\";\r\n}\r\n.icon-key2:before {\r\n    content: \"\\E98E\";\r\n}\r\n.icon-lock:before {\r\n    content: \"\\E98F\";\r\n}\r\n.icon-unlocked:before {\r\n    content: \"\\E990\";\r\n}\r\n.icon-wrench:before {\r\n    content: \"\\E991\";\r\n}\r\n.icon-equalizer:before {\r\n    content: \"\\E992\";\r\n}\r\n.icon-equalizer2:before {\r\n    content: \"\\E993\";\r\n}\r\n.icon-cog:before {\r\n    content: \"\\E994\";\r\n}\r\n.icon-cogs:before {\r\n    content: \"\\E995\";\r\n}\r\n.icon-hammer:before {\r\n    content: \"\\E996\";\r\n}\r\n.icon-magic-wand:before {\r\n    content: \"\\E997\";\r\n}\r\n.icon-aid-kit:before {\r\n    content: \"\\E998\";\r\n}\r\n.icon-bug:before {\r\n    content: \"\\E999\";\r\n}\r\n.icon-pie-chart:before {\r\n    content: \"\\E99A\";\r\n}\r\n.icon-stats-dots:before {\r\n    content: \"\\E99B\";\r\n}\r\n.icon-stats-bars:before {\r\n    content: \"\\E99C\";\r\n}\r\n.icon-stats-bars2:before {\r\n    content: \"\\E99D\";\r\n}\r\n.icon-trophy:before {\r\n    content: \"\\E99E\";\r\n}\r\n.icon-gift:before {\r\n    content: \"\\E99F\";\r\n}\r\n.icon-glass:before {\r\n    content: \"\\E9A0\";\r\n}\r\n.icon-glass2:before {\r\n    content: \"\\E9A1\";\r\n}\r\n.icon-mug:before {\r\n    content: \"\\E9A2\";\r\n}\r\n.icon-spoon-knife:before {\r\n    content: \"\\E9A3\";\r\n}\r\n.icon-leaf:before {\r\n    content: \"\\E9A4\";\r\n}\r\n.icon-rocket:before {\r\n    content: \"\\E9A5\";\r\n}\r\n.icon-meter:before {\r\n    content: \"\\E9A6\";\r\n}\r\n.icon-meter2:before {\r\n    content: \"\\E9A7\";\r\n}\r\n.icon-hammer2:before {\r\n    content: \"\\E9A8\";\r\n}\r\n.icon-fire:before {\r\n    content: \"\\E9A9\";\r\n}\r\n.icon-lab:before {\r\n    content: \"\\E9AA\";\r\n}\r\n.icon-magnet:before {\r\n    content: \"\\E9AB\";\r\n}\r\n.icon-bin:before {\r\n    content: \"\\E9AC\";\r\n}\r\n.icon-bin2:before {\r\n    content: \"\\E9AD\";\r\n}\r\n.icon-briefcase:before {\r\n    content: \"\\E9AE\";\r\n}\r\n.icon-airplane:before {\r\n    content: \"\\E9AF\";\r\n}\r\n.icon-truck:before {\r\n    content: \"\\E9B0\";\r\n}\r\n.icon-road:before {\r\n    content: \"\\E9B1\";\r\n}\r\n.icon-accessibility:before {\r\n    content: \"\\E9B2\";\r\n}\r\n.icon-target:before {\r\n    content: \"\\E9B3\";\r\n}\r\n.icon-shield:before {\r\n    content: \"\\E9B4\";\r\n}\r\n.icon-power:before {\r\n    content: \"\\E9B5\";\r\n}\r\n.icon-switch:before {\r\n    content: \"\\E9B6\";\r\n}\r\n.icon-power-cord:before {\r\n    content: \"\\E9B7\";\r\n}\r\n.icon-clipboard:before {\r\n    content: \"\\E9B8\";\r\n}\r\n.icon-list-numbered:before {\r\n    content: \"\\E9B9\";\r\n}\r\n.icon-list:before {\r\n    content: \"\\E9BA\";\r\n}\r\n.icon-list2:before {\r\n    content: \"\\E9BB\";\r\n}\r\n.icon-tree:before {\r\n    content: \"\\E9BC\";\r\n}\r\n.icon-menu:before {\r\n    content: \"\\E9BD\";\r\n}\r\n.icon-menu2:before {\r\n    content: \"\\E9BE\";\r\n}\r\n.icon-menu3:before {\r\n    content: \"\\E9BF\";\r\n}\r\n.icon-menu4:before {\r\n    content: \"\\E9C0\";\r\n}\r\n.icon-cloud:before {\r\n    content: \"\\E9C1\";\r\n}\r\n.icon-cloud-download:before {\r\n    content: \"\\E9C2\";\r\n}\r\n.icon-cloud-upload:before {\r\n    content: \"\\E9C3\";\r\n}\r\n.icon-cloud-check:before {\r\n    content: \"\\E9C4\";\r\n}\r\n.icon-download2:before {\r\n    content: \"\\E9C5\";\r\n}\r\n.icon-upload2:before {\r\n    content: \"\\E9C6\";\r\n}\r\n.icon-download3:before {\r\n    content: \"\\E9C7\";\r\n}\r\n.icon-upload3:before {\r\n    content: \"\\E9C8\";\r\n}\r\n.icon-sphere:before {\r\n    content: \"\\E9C9\";\r\n}\r\n.icon-earth:before {\r\n    content: \"\\E9CA\";\r\n}\r\n.icon-link:before {\r\n    content: \"\\E9CB\";\r\n}\r\n.icon-flag:before {\r\n    content: \"\\E9CC\";\r\n}\r\n.icon-attachment:before {\r\n    content: \"\\E9CD\";\r\n}\r\n.icon-eye:before {\r\n    content: \"\\E9CE\";\r\n}\r\n.icon-eye-plus:before {\r\n    content: \"\\E9CF\";\r\n}\r\n.icon-eye-minus:before {\r\n    content: \"\\E9D0\";\r\n}\r\n.icon-eye-blocked:before {\r\n    content: \"\\E9D1\";\r\n}\r\n.icon-bookmark:before {\r\n    content: \"\\E9D2\";\r\n}\r\n.icon-bookmarks:before {\r\n    content: \"\\E9D3\";\r\n}\r\n.icon-sun:before {\r\n    content: \"\\E9D4\";\r\n}\r\n.icon-contrast:before {\r\n    content: \"\\E9D5\";\r\n}\r\n.icon-brightness-contrast:before {\r\n    content: \"\\E9D6\";\r\n}\r\n.icon-star-empty:before {\r\n    content: \"\\E9D7\";\r\n}\r\n.icon-star-half:before {\r\n    content: \"\\E9D8\";\r\n}\r\n.icon-star-full:before {\r\n    content: \"\\E9D9\";\r\n}\r\n.icon-heart:before {\r\n    content: \"\\E9DA\";\r\n}\r\n.icon-heart-broken:before {\r\n    content: \"\\E9DB\";\r\n}\r\n.icon-man:before {\r\n    content: \"\\E9DC\";\r\n}\r\n.icon-woman:before {\r\n    content: \"\\E9DD\";\r\n}\r\n.icon-man-woman:before {\r\n    content: \"\\E9DE\";\r\n}\r\n.icon-happy:before {\r\n    content: \"\\E9DF\";\r\n}\r\n.icon-happy2:before {\r\n    content: \"\\E9E0\";\r\n}\r\n.icon-smile:before {\r\n    content: \"\\E9E1\";\r\n}\r\n.icon-smile2:before {\r\n    content: \"\\E9E2\";\r\n}\r\n.icon-tongue:before {\r\n    content: \"\\E9E3\";\r\n}\r\n.icon-tongue2:before {\r\n    content: \"\\E9E4\";\r\n}\r\n.icon-sad:before {\r\n    content: \"\\E9E5\";\r\n}\r\n.icon-sad2:before {\r\n    content: \"\\E9E6\";\r\n}\r\n.icon-wink:before {\r\n    content: \"\\E9E7\";\r\n}\r\n.icon-wink2:before {\r\n    content: \"\\E9E8\";\r\n}\r\n.icon-grin:before {\r\n    content: \"\\E9E9\";\r\n}\r\n.icon-grin2:before {\r\n    content: \"\\E9EA\";\r\n}\r\n.icon-cool:before {\r\n    content: \"\\E9EB\";\r\n}\r\n.icon-cool2:before {\r\n    content: \"\\E9EC\";\r\n}\r\n.icon-angry:before {\r\n    content: \"\\E9ED\";\r\n}\r\n.icon-angry2:before {\r\n    content: \"\\E9EE\";\r\n}\r\n.icon-evil:before {\r\n    content: \"\\E9EF\";\r\n}\r\n.icon-evil2:before {\r\n    content: \"\\E9F0\";\r\n}\r\n.icon-shocked:before {\r\n    content: \"\\E9F1\";\r\n}\r\n.icon-shocked2:before {\r\n    content: \"\\E9F2\";\r\n}\r\n.icon-baffled:before {\r\n    content: \"\\E9F3\";\r\n}\r\n.icon-baffled2:before {\r\n    content: \"\\E9F4\";\r\n}\r\n.icon-confused:before {\r\n    content: \"\\E9F5\";\r\n}\r\n.icon-confused2:before {\r\n    content: \"\\E9F6\";\r\n}\r\n.icon-neutral:before {\r\n    content: \"\\E9F7\";\r\n}\r\n.icon-neutral2:before {\r\n    content: \"\\E9F8\";\r\n}\r\n.icon-hipster:before {\r\n    content: \"\\E9F9\";\r\n}\r\n.icon-hipster2:before {\r\n    content: \"\\E9FA\";\r\n}\r\n.icon-wondering:before {\r\n    content: \"\\E9FB\";\r\n}\r\n.icon-wondering2:before {\r\n    content: \"\\E9FC\";\r\n}\r\n.icon-sleepy:before {\r\n    content: \"\\E9FD\";\r\n}\r\n.icon-sleepy2:before {\r\n    content: \"\\E9FE\";\r\n}\r\n.icon-frustrated:before {\r\n    content: \"\\E9FF\";\r\n}\r\n.icon-frustrated2:before {\r\n    content: \"\\EA00\";\r\n}\r\n.icon-crying:before {\r\n    content: \"\\EA01\";\r\n}\r\n.icon-crying2:before {\r\n    content: \"\\EA02\";\r\n}\r\n.icon-point-up:before {\r\n    content: \"\\EA03\";\r\n}\r\n.icon-point-right:before {\r\n    content: \"\\EA04\";\r\n}\r\n.icon-point-down:before {\r\n    content: \"\\EA05\";\r\n}\r\n.icon-point-left:before {\r\n    content: \"\\EA06\";\r\n}\r\n.icon-warning:before {\r\n    content: \"\\EA07\";\r\n}\r\n.icon-notification:before {\r\n    content: \"\\EA08\";\r\n}\r\n.icon-question:before {\r\n    content: \"\\EA09\";\r\n}\r\n.icon-plus:before {\r\n    content: \"\\EA0A\";\r\n}\r\n.icon-minus:before {\r\n    content: \"\\EA0B\";\r\n}\r\n.icon-info:before {\r\n    content: \"\\EA0C\";\r\n}\r\n.icon-cancel-circle:before {\r\n    content: \"\\EA0D\";\r\n}\r\n.icon-blocked:before {\r\n    content: \"\\EA0E\";\r\n}\r\n.icon-cross:before {\r\n    content: \"\\EA0F\";\r\n}\r\n.icon-checkmark:before {\r\n    content: \"\\EA10\";\r\n}\r\n.icon-checkmark2:before {\r\n    content: \"\\EA11\";\r\n}\r\n.icon-spell-check:before {\r\n    content: \"\\EA12\";\r\n}\r\n.icon-enter:before {\r\n    content: \"\\EA13\";\r\n}\r\n.icon-exit:before {\r\n    content: \"\\EA14\";\r\n}\r\n.icon-play2:before {\r\n    content: \"\\EA15\";\r\n}\r\n.icon-pause:before {\r\n    content: \"\\EA16\";\r\n}\r\n.icon-stop:before {\r\n    content: \"\\EA17\";\r\n}\r\n.icon-previous:before {\r\n    content: \"\\EA18\";\r\n}\r\n.icon-next:before {\r\n    content: \"\\EA19\";\r\n}\r\n.icon-backward:before {\r\n    content: \"\\EA1A\";\r\n}\r\n.icon-forward2:before {\r\n    content: \"\\EA1B\";\r\n}\r\n.icon-play3:before {\r\n    content: \"\\EA1C\";\r\n}\r\n.icon-pause2:before {\r\n    content: \"\\EA1D\";\r\n}\r\n.icon-stop2:before {\r\n    content: \"\\EA1E\";\r\n}\r\n.icon-backward2:before {\r\n    content: \"\\EA1F\";\r\n}\r\n.icon-forward3:before {\r\n    content: \"\\EA20\";\r\n}\r\n.icon-first:before {\r\n    content: \"\\EA21\";\r\n}\r\n.icon-last:before {\r\n    content: \"\\EA22\";\r\n}\r\n.icon-previous2:before {\r\n    content: \"\\EA23\";\r\n}\r\n.icon-next2:before {\r\n    content: \"\\EA24\";\r\n}\r\n.icon-eject:before {\r\n    content: \"\\EA25\";\r\n}\r\n.icon-volume-high:before {\r\n    content: \"\\EA26\";\r\n}\r\n.icon-volume-medium:before {\r\n    content: \"\\EA27\";\r\n}\r\n.icon-volume-low:before {\r\n    content: \"\\EA28\";\r\n}\r\n.icon-volume-mute:before {\r\n    content: \"\\EA29\";\r\n}\r\n.icon-volume-mute2:before {\r\n    content: \"\\EA2A\";\r\n}\r\n.icon-volume-increase:before {\r\n    content: \"\\EA2B\";\r\n}\r\n.icon-volume-decrease:before {\r\n    content: \"\\EA2C\";\r\n}\r\n.icon-loop:before {\r\n    content: \"\\EA2D\";\r\n}\r\n.icon-loop2:before {\r\n    content: \"\\EA2E\";\r\n}\r\n.icon-infinite:before {\r\n    content: \"\\EA2F\";\r\n}\r\n.icon-shuffle:before {\r\n    content: \"\\EA30\";\r\n}\r\n.icon-arrow-up-left:before {\r\n    content: \"\\EA31\";\r\n}\r\n.icon-arrow-up:before {\r\n    content: \"\\EA32\";\r\n}\r\n.icon-arrow-up-right:before {\r\n    content: \"\\EA33\";\r\n}\r\n.icon-arrow-right:before {\r\n    content: \"\\EA34\";\r\n}\r\n.icon-arrow-down-right:before {\r\n    content: \"\\EA35\";\r\n}\r\n.icon-arrow-down:before {\r\n    content: \"\\EA36\";\r\n}\r\n.icon-arrow-down-left:before {\r\n    content: \"\\EA37\";\r\n}\r\n.icon-arrow-left:before {\r\n    content: \"\\EA38\";\r\n}\r\n.icon-arrow-up-left2:before {\r\n    content: \"\\EA39\";\r\n}\r\n.icon-arrow-up2:before {\r\n    content: \"\\EA3A\";\r\n}\r\n.icon-arrow-up-right2:before {\r\n    content: \"\\EA3B\";\r\n}\r\n.icon-arrow-right2:before {\r\n    content: \"\\EA3C\";\r\n}\r\n.icon-arrow-down-right2:before {\r\n    content: \"\\EA3D\";\r\n}\r\n.icon-arrow-down2:before {\r\n    content: \"\\EA3E\";\r\n}\r\n.icon-arrow-down-left2:before {\r\n    content: \"\\EA3F\";\r\n}\r\n.icon-arrow-left2:before {\r\n    content: \"\\EA40\";\r\n}\r\n.icon-circle-up:before {\r\n    content: \"\\EA41\";\r\n}\r\n.icon-circle-right:before {\r\n    content: \"\\EA42\";\r\n}\r\n.icon-circle-down:before {\r\n    content: \"\\EA43\";\r\n}\r\n.icon-circle-left:before {\r\n    content: \"\\EA44\";\r\n}\r\n.icon-tab:before {\r\n    content: \"\\EA45\";\r\n}\r\n.icon-move-up:before {\r\n    content: \"\\EA46\";\r\n}\r\n.icon-move-down:before {\r\n    content: \"\\EA47\";\r\n}\r\n.icon-sort-alpha-asc:before {\r\n    content: \"\\EA48\";\r\n}\r\n.icon-sort-alpha-desc:before {\r\n    content: \"\\EA49\";\r\n}\r\n.icon-sort-numeric-asc:before {\r\n    content: \"\\EA4A\";\r\n}\r\n.icon-sort-numberic-desc:before {\r\n    content: \"\\EA4B\";\r\n}\r\n.icon-sort-amount-asc:before {\r\n    content: \"\\EA4C\";\r\n}\r\n.icon-sort-amount-desc:before {\r\n    content: \"\\EA4D\";\r\n}\r\n.icon-command:before {\r\n    content: \"\\EA4E\";\r\n}\r\n.icon-shift:before {\r\n    content: \"\\EA4F\";\r\n}\r\n.icon-ctrl:before {\r\n    content: \"\\EA50\";\r\n}\r\n.icon-opt:before {\r\n    content: \"\\EA51\";\r\n}\r\n.icon-checkbox-checked:before {\r\n    content: \"\\EA52\";\r\n}\r\n.icon-checkbox-unchecked:before {\r\n    content: \"\\EA53\";\r\n}\r\n.icon-radio-checked:before {\r\n    content: \"\\EA54\";\r\n}\r\n.icon-radio-checked2:before {\r\n    content: \"\\EA55\";\r\n}\r\n.icon-radio-unchecked:before {\r\n    content: \"\\EA56\";\r\n}\r\n.icon-crop:before {\r\n    content: \"\\EA57\";\r\n}\r\n.icon-make-group:before {\r\n    content: \"\\EA58\";\r\n}\r\n.icon-ungroup:before {\r\n    content: \"\\EA59\";\r\n}\r\n.icon-scissors:before {\r\n    content: \"\\EA5A\";\r\n}\r\n.icon-filter:before {\r\n    content: \"\\EA5B\";\r\n}\r\n.icon-font:before {\r\n    content: \"\\EA5C\";\r\n}\r\n.icon-ligature:before {\r\n    content: \"\\EA5D\";\r\n}\r\n.icon-ligature2:before {\r\n    content: \"\\EA5E\";\r\n}\r\n.icon-text-height:before {\r\n    content: \"\\EA5F\";\r\n}\r\n.icon-text-width:before {\r\n    content: \"\\EA60\";\r\n}\r\n.icon-font-size:before {\r\n    content: \"\\EA61\";\r\n}\r\n.icon-bold:before {\r\n    content: \"\\EA62\";\r\n}\r\n.icon-underline:before {\r\n    content: \"\\EA63\";\r\n}\r\n.icon-italic:before {\r\n    content: \"\\EA64\";\r\n}\r\n.icon-strikethrough:before {\r\n    content: \"\\EA65\";\r\n}\r\n.icon-omega:before {\r\n    content: \"\\EA66\";\r\n}\r\n.icon-sigma:before {\r\n    content: \"\\EA67\";\r\n}\r\n.icon-page-break:before {\r\n    content: \"\\EA68\";\r\n}\r\n.icon-superscript:before {\r\n    content: \"\\EA69\";\r\n}\r\n.icon-subscript:before {\r\n    content: \"\\EA6A\";\r\n}\r\n.icon-superscript2:before {\r\n    content: \"\\EA6B\";\r\n}\r\n.icon-subscript2:before {\r\n    content: \"\\EA6C\";\r\n}\r\n.icon-text-color:before {\r\n    content: \"\\EA6D\";\r\n}\r\n.icon-pagebreak:before {\r\n    content: \"\\EA6E\";\r\n}\r\n.icon-clear-formatting:before {\r\n    content: \"\\EA6F\";\r\n}\r\n.icon-table:before {\r\n    content: \"\\EA70\";\r\n}\r\n.icon-table2:before {\r\n    content: \"\\EA71\";\r\n}\r\n.icon-insert-template:before {\r\n    content: \"\\EA72\";\r\n}\r\n.icon-pilcrow:before {\r\n    content: \"\\EA73\";\r\n}\r\n.icon-ltr:before {\r\n    content: \"\\EA74\";\r\n}\r\n.icon-rtl:before {\r\n    content: \"\\EA75\";\r\n}\r\n.icon-section:before {\r\n    content: \"\\EA76\";\r\n}\r\n.icon-paragraph-left:before {\r\n    content: \"\\EA77\";\r\n}\r\n.icon-paragraph-center:before {\r\n    content: \"\\EA78\";\r\n}\r\n.icon-paragraph-right:before {\r\n    content: \"\\EA79\";\r\n}\r\n.icon-paragraph-justify:before {\r\n    content: \"\\EA7A\";\r\n}\r\n.icon-indent-increase:before {\r\n    content: \"\\EA7B\";\r\n}\r\n.icon-indent-decrease:before {\r\n    content: \"\\EA7C\";\r\n}\r\n.icon-share:before {\r\n    content: \"\\EA7D\";\r\n}\r\n.icon-new-tab:before {\r\n    content: \"\\EA7E\";\r\n}\r\n.icon-embed:before {\r\n    content: \"\\EA7F\";\r\n}\r\n.icon-embed2:before {\r\n    content: \"\\EA80\";\r\n}\r\n.icon-terminal:before {\r\n    content: \"\\EA81\";\r\n}\r\n.icon-share2:before {\r\n    content: \"\\EA82\";\r\n}\r\n.icon-mail:before {\r\n    content: \"\\EA83\";\r\n}\r\n.icon-mail2:before {\r\n    content: \"\\EA84\";\r\n}\r\n.icon-mail3:before {\r\n    content: \"\\EA85\";\r\n}\r\n.icon-mail4:before {\r\n    content: \"\\EA86\";\r\n}\r\n.icon-amazon:before {\r\n    content: \"\\EA87\";\r\n}\r\n.icon-google:before {\r\n    content: \"\\EA88\";\r\n}\r\n.icon-google2:before {\r\n    content: \"\\EA89\";\r\n}\r\n.icon-google3:before {\r\n    content: \"\\EA8A\";\r\n}\r\n.icon-google-plus:before {\r\n    content: \"\\EA8B\";\r\n}\r\n.icon-google-plus2:before {\r\n    content: \"\\EA8C\";\r\n}\r\n.icon-google-plus3:before {\r\n    content: \"\\EA8D\";\r\n}\r\n.icon-hangouts:before {\r\n    content: \"\\EA8E\";\r\n}\r\n.icon-google-drive:before {\r\n    content: \"\\EA8F\";\r\n}\r\n.icon-facebook:before {\r\n    content: \"\\EA90\";\r\n}\r\n.icon-facebook2:before {\r\n    content: \"\\EA91\";\r\n}\r\n.icon-instagram:before {\r\n    content: \"\\EA92\";\r\n}\r\n.icon-whatsapp:before {\r\n    content: \"\\EA93\";\r\n}\r\n.icon-spotify:before {\r\n    content: \"\\EA94\";\r\n}\r\n.icon-telegram:before {\r\n    content: \"\\EA95\";\r\n}\r\n.icon-twitter:before {\r\n    content: \"\\EA96\";\r\n}\r\n.icon-vine:before {\r\n    content: \"\\EA97\";\r\n}\r\n.icon-vk:before {\r\n    content: \"\\EA98\";\r\n}\r\n.icon-renren:before {\r\n    content: \"\\EA99\";\r\n}\r\n.icon-sina-weibo:before {\r\n    content: \"\\EA9A\";\r\n}\r\n.icon-rss:before {\r\n    content: \"\\EA9B\";\r\n}\r\n.icon-rss2:before {\r\n    content: \"\\EA9C\";\r\n}\r\n.icon-youtube:before {\r\n    content: \"\\EA9D\";\r\n}\r\n.icon-youtube2:before {\r\n    content: \"\\EA9E\";\r\n}\r\n.icon-twitch:before {\r\n    content: \"\\EA9F\";\r\n}\r\n.icon-vimeo:before {\r\n    content: \"\\EAA0\";\r\n}\r\n.icon-vimeo2:before {\r\n    content: \"\\EAA1\";\r\n}\r\n.icon-lanyrd:before {\r\n    content: \"\\EAA2\";\r\n}\r\n.icon-flickr:before {\r\n    content: \"\\EAA3\";\r\n}\r\n.icon-flickr2:before {\r\n    content: \"\\EAA4\";\r\n}\r\n.icon-flickr3:before {\r\n    content: \"\\EAA5\";\r\n}\r\n.icon-flickr4:before {\r\n    content: \"\\EAA6\";\r\n}\r\n.icon-dribbble:before {\r\n    content: \"\\EAA7\";\r\n}\r\n.icon-behance:before {\r\n    content: \"\\EAA8\";\r\n}\r\n.icon-behance2:before {\r\n    content: \"\\EAA9\";\r\n}\r\n.icon-deviantart:before {\r\n    content: \"\\EAAA\";\r\n}\r\n.icon-500px:before {\r\n    content: \"\\EAAB\";\r\n}\r\n.icon-steam:before {\r\n    content: \"\\EAAC\";\r\n}\r\n.icon-steam2:before {\r\n    content: \"\\EAAD\";\r\n}\r\n.icon-dropbox:before {\r\n    content: \"\\EAAE\";\r\n}\r\n.icon-onedrive:before {\r\n    content: \"\\EAAF\";\r\n}\r\n.icon-github:before {\r\n    content: \"\\EAB0\";\r\n}\r\n.icon-npm:before {\r\n    content: \"\\EAB1\";\r\n}\r\n.icon-basecamp:before {\r\n    content: \"\\EAB2\";\r\n}\r\n.icon-trello:before {\r\n    content: \"\\EAB3\";\r\n}\r\n.icon-wordpress:before {\r\n    content: \"\\EAB4\";\r\n}\r\n.icon-joomla:before {\r\n    content: \"\\EAB5\";\r\n}\r\n.icon-ello:before {\r\n    content: \"\\EAB6\";\r\n}\r\n.icon-blogger:before {\r\n    content: \"\\EAB7\";\r\n}\r\n.icon-blogger2:before {\r\n    content: \"\\EAB8\";\r\n}\r\n.icon-tumblr:before {\r\n    content: \"\\EAB9\";\r\n}\r\n.icon-tumblr2:before {\r\n    content: \"\\EABA\";\r\n}\r\n.icon-yahoo:before {\r\n    content: \"\\EABB\";\r\n}\r\n.icon-yahoo2:before {\r\n    content: \"\\EABC\";\r\n}\r\n.icon-tux:before {\r\n    content: \"\\EABD\";\r\n}\r\n.icon-appleinc:before {\r\n    content: \"\\EABE\";\r\n}\r\n.icon-finder:before {\r\n    content: \"\\EABF\";\r\n}\r\n.icon-android:before {\r\n    content: \"\\EAC0\";\r\n}\r\n.icon-windows:before {\r\n    content: \"\\EAC1\";\r\n}\r\n.icon-windows8:before {\r\n    content: \"\\EAC2\";\r\n}\r\n.icon-soundcloud:before {\r\n    content: \"\\EAC3\";\r\n}\r\n.icon-soundcloud2:before {\r\n    content: \"\\EAC4\";\r\n}\r\n.icon-skype:before {\r\n    content: \"\\EAC5\";\r\n}\r\n.icon-reddit:before {\r\n    content: \"\\EAC6\";\r\n}\r\n.icon-hackernews:before {\r\n    content: \"\\EAC7\";\r\n}\r\n.icon-wikipedia:before {\r\n    content: \"\\EAC8\";\r\n}\r\n.icon-linkedin:before {\r\n    content: \"\\EAC9\";\r\n}\r\n.icon-linkedin2:before {\r\n    content: \"\\EACA\";\r\n}\r\n.icon-lastfm:before {\r\n    content: \"\\EACB\";\r\n}\r\n.icon-lastfm2:before {\r\n    content: \"\\EACC\";\r\n}\r\n.icon-delicious:before {\r\n    content: \"\\EACD\";\r\n}\r\n.icon-stumbleupon:before {\r\n    content: \"\\EACE\";\r\n}\r\n.icon-stumbleupon2:before {\r\n    content: \"\\EACF\";\r\n}\r\n.icon-stackoverflow:before {\r\n    content: \"\\EAD0\";\r\n}\r\n.icon-pinterest:before {\r\n    content: \"\\EAD1\";\r\n}\r\n.icon-pinterest2:before {\r\n    content: \"\\EAD2\";\r\n}\r\n.icon-xing:before {\r\n    content: \"\\EAD3\";\r\n}\r\n.icon-xing2:before {\r\n    content: \"\\EAD4\";\r\n}\r\n.icon-flattr:before {\r\n    content: \"\\EAD5\";\r\n}\r\n.icon-foursquare:before {\r\n    content: \"\\EAD6\";\r\n}\r\n.icon-yelp:before {\r\n    content: \"\\EAD7\";\r\n}\r\n.icon-paypal:before {\r\n    content: \"\\EAD8\";\r\n}\r\n.icon-chrome:before {\r\n    content: \"\\EAD9\";\r\n}\r\n.icon-firefox:before {\r\n    content: \"\\EADA\";\r\n}\r\n.icon-IE:before {\r\n    content: \"\\EADB\";\r\n}\r\n.icon-edge:before {\r\n    content: \"\\EADC\";\r\n}\r\n.icon-safari:before {\r\n    content: \"\\EADD\";\r\n}\r\n.icon-opera:before {\r\n    content: \"\\EADE\";\r\n}\r\n.icon-file-pdf:before {\r\n    content: \"\\EADF\";\r\n}\r\n.icon-file-openoffice:before {\r\n    content: \"\\EAE0\";\r\n}\r\n.icon-file-word:before {\r\n    content: \"\\EAE1\";\r\n}\r\n.icon-file-excel:before {\r\n    content: \"\\EAE2\";\r\n}\r\n.icon-libreoffice:before {\r\n    content: \"\\EAE3\";\r\n}\r\n.icon-html-five:before {\r\n    content: \"\\EAE4\";\r\n}\r\n.icon-html-five2:before {\r\n    content: \"\\EAE5\";\r\n}\r\n.icon-css3:before {\r\n    content: \"\\EAE6\";\r\n}\r\n.icon-git:before {\r\n    content: \"\\EAE7\";\r\n}\r\n.icon-codepen:before {\r\n    content: \"\\EAE8\";\r\n}\r\n.icon-svg:before {\r\n    content: \"\\EAE9\";\r\n}\r\n.icon-IcoMoon:before {\r\n    content: \"\\EAEA\";\r\n}\r\n.icon-uni21:before {\r\n    content: \"!\";\r\n}\r\n.icon-uni22:before {\r\n    content: \"\\\"\";\r\n}\r\n.icon-uni23:before {\r\n    content: \"#\";\r\n}\r\n.icon-uni24:before {\r\n    content: \"$\";\r\n}\r\n.icon-uni25:before {\r\n    content: \"%\";\r\n}\r\n.icon-uni26:before {\r\n    content: \"&\";\r\n}\r\n.icon-uni27:before {\r\n    content: \"'\";\r\n}\r\n.icon-uni28:before {\r\n    content: \"(\";\r\n}\r\n.icon-uni29:before {\r\n    content: \")\";\r\n}\r\n.icon-uni2A:before {\r\n    content: \"*\";\r\n}\r\n.icon-uni2B:before {\r\n    content: \"+\";\r\n}\r\n.icon-uni2C:before {\r\n    content: \",\";\r\n}\r\n.icon-uni2D:before {\r\n    content: \"-\";\r\n}\r\n.icon-uni2E:before {\r\n    content: \".\";\r\n}\r\n.icon-uni2F:before {\r\n    content: \"/\";\r\n}\r\n.icon-uni30:before {\r\n    content: \"0\";\r\n}\r\n.icon-uni31:before {\r\n    content: \"1\";\r\n}\r\n.icon-uni32:before {\r\n    content: \"2\";\r\n}\r\n.icon-uni33:before {\r\n    content: \"3\";\r\n}\r\n.icon-uni34:before {\r\n    content: \"4\";\r\n}\r\n.icon-uni35:before {\r\n    content: \"5\";\r\n}\r\n.icon-uni36:before {\r\n    content: \"6\";\r\n}\r\n.icon-uni37:before {\r\n    content: \"7\";\r\n}\r\n.icon-uni38:before {\r\n    content: \"8\";\r\n}\r\n.icon-uni39:before {\r\n    content: \"9\";\r\n}\r\n.icon-uni3A:before {\r\n    content: \":\";\r\n}\r\n.icon-uni3B:before {\r\n    content: \";\";\r\n}\r\n.icon-uni3C:before {\r\n    content: \"<\";\r\n}\r\n.icon-uni3D:before {\r\n    content: \"=\";\r\n}\r\n.icon-uni3E:before {\r\n    content: \">\";\r\n}\r\n.icon-uni3F:before {\r\n    content: \"?\";\r\n}\r\n.icon-uni40:before {\r\n    content: \"@\";\r\n}\r\n.icon-uni41:before {\r\n    content: \"A\";\r\n}\r\n.icon-uni42:before {\r\n    content: \"B\";\r\n}\r\n.icon-uni43:before {\r\n    content: \"C\";\r\n}\r\n.icon-uni44:before {\r\n    content: \"D\";\r\n}\r\n.icon-uni45:before {\r\n    content: \"E\";\r\n}\r\n.icon-uni46:before {\r\n    content: \"F\";\r\n}\r\n.icon-uni47:before {\r\n    content: \"G\";\r\n}\r\n.icon-uni48:before {\r\n    content: \"H\";\r\n}\r\n.icon-uni49:before {\r\n    content: \"I\";\r\n}\r\n.icon-uni4A:before {\r\n    content: \"J\";\r\n}\r\n.icon-uni4B:before {\r\n    content: \"K\";\r\n}\r\n.icon-uni4C:before {\r\n    content: \"L\";\r\n}\r\n.icon-uni4D:before {\r\n    content: \"M\";\r\n}\r\n.icon-uni4E:before {\r\n    content: \"N\";\r\n}\r\n.icon-uni4F:before {\r\n    content: \"O\";\r\n}\r\n.icon-uni50:before {\r\n    content: \"P\";\r\n}\r\n.icon-uni51:before {\r\n    content: \"Q\";\r\n}\r\n.icon-uni52:before {\r\n    content: \"R\";\r\n}\r\n.icon-uni53:before {\r\n    content: \"S\";\r\n}\r\n.icon-uni54:before {\r\n    content: \"T\";\r\n}\r\n.icon-uni55:before {\r\n    content: \"U\";\r\n}\r\n.icon-uni56:before {\r\n    content: \"V\";\r\n}\r\n.icon-uni57:before {\r\n    content: \"W\";\r\n}\r\n.icon-uni58:before {\r\n    content: \"X\";\r\n}\r\n.icon-uni59:before {\r\n    content: \"Y\";\r\n}\r\n.icon-uni5A:before {\r\n    content: \"Z\";\r\n}\r\n.icon-uni5B:before {\r\n    content: \"[\";\r\n}\r\n.icon-uni5C:before {\r\n    content: \"\\\\\";\r\n}\r\n.icon-uni5D:before {\r\n    content: \"]\";\r\n}\r\n.icon-uni5E:before {\r\n    content: \"^\";\r\n}\r\n.icon-uni5F:before {\r\n    content: \"_\";\r\n}\r\n.icon-uni60:before {\r\n    content: \"`\";\r\n}\r\n.icon-uni61:before {\r\n    content: \"a\";\r\n}\r\n.icon-uni62:before {\r\n    content: \"b\";\r\n}\r\n.icon-uni63:before {\r\n    content: \"c\";\r\n}\r\n.icon-uni64:before {\r\n    content: \"d\";\r\n}\r\n.icon-uni65:before {\r\n    content: \"e\";\r\n}\r\n.icon-uni66:before {\r\n    content: \"f\";\r\n}\r\n.icon-uni67:before {\r\n    content: \"g\";\r\n}\r\n.icon-uni68:before {\r\n    content: \"h\";\r\n}\r\n.icon-uni69:before {\r\n    content: \"i\";\r\n}\r\n.icon-uni6A:before {\r\n    content: \"j\";\r\n}\r\n.icon-uni6B:before {\r\n    content: \"k\";\r\n}\r\n.icon-uni6C:before {\r\n    content: \"l\";\r\n}\r\n.icon-uni6D:before {\r\n    content: \"m\";\r\n}\r\n.icon-uni6E:before {\r\n    content: \"n\";\r\n}\r\n.icon-uni6F:before {\r\n    content: \"o\";\r\n}\r\n.icon-uni70:before {\r\n    content: \"p\";\r\n}\r\n.icon-uni71:before {\r\n    content: \"q\";\r\n}\r\n.icon-uni72:before {\r\n    content: \"r\";\r\n}\r\n.icon-uni73:before {\r\n    content: \"s\";\r\n}\r\n.icon-uni74:before {\r\n    content: \"t\";\r\n}\r\n.icon-uni75:before {\r\n    content: \"u\";\r\n}\r\n.icon-uni76:before {\r\n    content: \"v\";\r\n}\r\n.icon-uni77:before {\r\n    content: \"w\";\r\n}\r\n.icon-uni78:before {\r\n    content: \"x\";\r\n}\r\n.icon-uni79:before {\r\n    content: \"y\";\r\n}\r\n.icon-uni7A:before {\r\n    content: \"z\";\r\n}\r\n.icon-uni7B:before {\r\n    content: \"{\";\r\n}\r\n.icon-uni7C:before {\r\n    content: \"|\";\r\n}\r\n.icon-uni7D:before {\r\n    content: \"}\";\r\n}\r\n.icon-uni7E:before {\r\n    content: \"~\";\r\n}\r\n.icon-uniA9:before {\r\n    content: \"\\A9\";\r\n}\r\n\r\n", ""]);
+	exports.push([module.id, "\r\n\r\n@font-face {\r\n    font-family: 'BasicIcon';\r\n    src: url(" + __webpack_require__(70) + ") format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n.icon {\r\n    /* use !important to prevent issues with browser extensions that change fonts */\r\n    font-family: 'BasicIcon' !important;\r\n    speak: none;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-variant: normal;\r\n    text-transform: none;\r\n    line-height: 1;\r\n    \r\n    /* Enable Ligatures ================ */\r\n    letter-spacing: 0;\r\n    -webkit-font-feature-settings: \"liga\";\r\n    -moz-font-feature-settings: \"liga=1\";\r\n    -moz-font-feature-settings: \"liga\";\r\n    -ms-font-feature-settings: \"liga\" 1;\r\n    -o-font-feature-settings: \"liga\";\r\n    font-feature-settings: \"liga\";\r\n\r\n    /* Better Font Rendering =========== */\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.icon-home:before {\r\n    content: \"\\E900\";\r\n}\r\n.icon-home2:before {\r\n    content: \"\\E901\";\r\n}\r\n.icon-home3:before {\r\n    content: \"\\E902\";\r\n}\r\n.icon-office:before {\r\n    content: \"\\E903\";\r\n}\r\n.icon-newspaper:before {\r\n    content: \"\\E904\";\r\n}\r\n.icon-pencil:before {\r\n    content: \"\\E905\";\r\n}\r\n.icon-pencil2:before {\r\n    content: \"\\E906\";\r\n}\r\n.icon-quill:before {\r\n    content: \"\\E907\";\r\n}\r\n.icon-pen:before {\r\n    content: \"\\E908\";\r\n}\r\n.icon-blog:before {\r\n    content: \"\\E909\";\r\n}\r\n.icon-eyedropper:before {\r\n    content: \"\\E90A\";\r\n}\r\n.icon-droplet:before {\r\n    content: \"\\E90B\";\r\n}\r\n.icon-paint-format:before {\r\n    content: \"\\E90C\";\r\n}\r\n.icon-image:before {\r\n    content: \"\\E90D\";\r\n}\r\n.icon-images:before {\r\n    content: \"\\E90E\";\r\n}\r\n.icon-camera:before {\r\n    content: \"\\E90F\";\r\n}\r\n.icon-headphones:before {\r\n    content: \"\\E910\";\r\n}\r\n.icon-music:before {\r\n    content: \"\\E911\";\r\n}\r\n.icon-play:before {\r\n    content: \"\\E912\";\r\n}\r\n.icon-film:before {\r\n    content: \"\\E913\";\r\n}\r\n.icon-video-camera:before {\r\n    content: \"\\E914\";\r\n}\r\n.icon-dice:before {\r\n    content: \"\\E915\";\r\n}\r\n.icon-pacman:before {\r\n    content: \"\\E916\";\r\n}\r\n.icon-spades:before {\r\n    content: \"\\E917\";\r\n}\r\n.icon-clubs:before {\r\n    content: \"\\E918\";\r\n}\r\n.icon-diamonds:before {\r\n    content: \"\\E919\";\r\n}\r\n.icon-bullhorn:before {\r\n    content: \"\\E91A\";\r\n}\r\n.icon-connection:before {\r\n    content: \"\\E91B\";\r\n}\r\n.icon-podcast:before {\r\n    content: \"\\E91C\";\r\n}\r\n.icon-feed:before {\r\n    content: \"\\E91D\";\r\n}\r\n.icon-mic:before {\r\n    content: \"\\E91E\";\r\n}\r\n.icon-book:before {\r\n    content: \"\\E91F\";\r\n}\r\n.icon-books:before {\r\n    content: \"\\E920\";\r\n}\r\n.icon-library:before {\r\n    content: \"\\E921\";\r\n}\r\n.icon-file-text:before {\r\n    content: \"\\E922\";\r\n}\r\n.icon-profile:before {\r\n    content: \"\\E923\";\r\n}\r\n.icon-file-empty:before {\r\n    content: \"\\E924\";\r\n}\r\n.icon-files-empty:before {\r\n    content: \"\\E925\";\r\n}\r\n.icon-file-text2:before {\r\n    content: \"\\E926\";\r\n}\r\n.icon-file-picture:before {\r\n    content: \"\\E927\";\r\n}\r\n.icon-file-music:before {\r\n    content: \"\\E928\";\r\n}\r\n.icon-file-play:before {\r\n    content: \"\\E929\";\r\n}\r\n.icon-file-video:before {\r\n    content: \"\\E92A\";\r\n}\r\n.icon-file-zip:before {\r\n    content: \"\\E92B\";\r\n}\r\n.icon-copy:before {\r\n    content: \"\\E92C\";\r\n}\r\n.icon-paste:before {\r\n    content: \"\\E92D\";\r\n}\r\n.icon-stack:before {\r\n    content: \"\\E92E\";\r\n}\r\n.icon-folder:before {\r\n    content: \"\\E92F\";\r\n}\r\n.icon-folder-open:before {\r\n    content: \"\\E930\";\r\n}\r\n.icon-folder-plus:before {\r\n    content: \"\\E931\";\r\n}\r\n.icon-folder-minus:before {\r\n    content: \"\\E932\";\r\n}\r\n.icon-folder-download:before {\r\n    content: \"\\E933\";\r\n}\r\n.icon-folder-upload:before {\r\n    content: \"\\E934\";\r\n}\r\n.icon-price-tag:before {\r\n    content: \"\\E935\";\r\n}\r\n.icon-price-tags:before {\r\n    content: \"\\E936\";\r\n}\r\n.icon-barcode:before {\r\n    content: \"\\E937\";\r\n}\r\n.icon-qrcode:before {\r\n    content: \"\\E938\";\r\n}\r\n.icon-ticket:before {\r\n    content: \"\\E939\";\r\n}\r\n.icon-cart:before {\r\n    content: \"\\E93A\";\r\n}\r\n.icon-coin-dollar:before {\r\n    content: \"\\E93B\";\r\n}\r\n.icon-coin-euro:before {\r\n    content: \"\\E93C\";\r\n}\r\n.icon-coin-pound:before {\r\n    content: \"\\E93D\";\r\n}\r\n.icon-coin-yen:before {\r\n    content: \"\\E93E\";\r\n}\r\n.icon-credit-card:before {\r\n    content: \"\\E93F\";\r\n}\r\n.icon-calculator:before {\r\n    content: \"\\E940\";\r\n}\r\n.icon-lifebuoy:before {\r\n    content: \"\\E941\";\r\n}\r\n.icon-phone:before {\r\n    content: \"\\E942\";\r\n}\r\n.icon-phone-hang-up:before {\r\n    content: \"\\E943\";\r\n}\r\n.icon-address-book:before {\r\n    content: \"\\E944\";\r\n}\r\n.icon-envelop:before {\r\n    content: \"\\E945\";\r\n}\r\n.icon-pushpin:before {\r\n    content: \"\\E946\";\r\n}\r\n.icon-location:before {\r\n    content: \"\\E947\";\r\n}\r\n.icon-location2:before {\r\n    content: \"\\E948\";\r\n}\r\n.icon-compass:before {\r\n    content: \"\\E949\";\r\n}\r\n.icon-compass2:before {\r\n    content: \"\\E94A\";\r\n}\r\n.icon-map:before {\r\n    content: \"\\E94B\";\r\n}\r\n.icon-map2:before {\r\n    content: \"\\E94C\";\r\n}\r\n.icon-history:before {\r\n    content: \"\\E94D\";\r\n}\r\n.icon-clock:before {\r\n    content: \"\\E94E\";\r\n}\r\n.icon-clock2:before {\r\n    content: \"\\E94F\";\r\n}\r\n.icon-alarm:before {\r\n    content: \"\\E950\";\r\n}\r\n.icon-bell:before {\r\n    content: \"\\E951\";\r\n}\r\n.icon-stopwatch:before {\r\n    content: \"\\E952\";\r\n}\r\n.icon-calendar:before {\r\n    content: \"\\E953\";\r\n}\r\n.icon-printer:before {\r\n    content: \"\\E954\";\r\n}\r\n.icon-keyboard:before {\r\n    content: \"\\E955\";\r\n}\r\n.icon-display:before {\r\n    content: \"\\E956\";\r\n}\r\n.icon-laptop:before {\r\n    content: \"\\E957\";\r\n}\r\n.icon-mobile:before {\r\n    content: \"\\E958\";\r\n}\r\n.icon-mobile2:before {\r\n    content: \"\\E959\";\r\n}\r\n.icon-tablet:before {\r\n    content: \"\\E95A\";\r\n}\r\n.icon-tv:before {\r\n    content: \"\\E95B\";\r\n}\r\n.icon-drawer:before {\r\n    content: \"\\E95C\";\r\n}\r\n.icon-drawer2:before {\r\n    content: \"\\E95D\";\r\n}\r\n.icon-box-add:before {\r\n    content: \"\\E95E\";\r\n}\r\n.icon-box-remove:before {\r\n    content: \"\\E95F\";\r\n}\r\n.icon-download:before {\r\n    content: \"\\E960\";\r\n}\r\n.icon-upload:before {\r\n    content: \"\\E961\";\r\n}\r\n.icon-floppy-disk:before {\r\n    content: \"\\E962\";\r\n}\r\n.icon-drive:before {\r\n    content: \"\\E963\";\r\n}\r\n.icon-database:before {\r\n    content: \"\\E964\";\r\n}\r\n.icon-undo:before {\r\n    content: \"\\E965\";\r\n}\r\n.icon-redo:before {\r\n    content: \"\\E966\";\r\n}\r\n.icon-undo2:before {\r\n    content: \"\\E967\";\r\n}\r\n.icon-redo2:before {\r\n    content: \"\\E968\";\r\n}\r\n.icon-forward:before {\r\n    content: \"\\E969\";\r\n}\r\n.icon-reply:before {\r\n    content: \"\\E96A\";\r\n}\r\n.icon-bubble:before {\r\n    content: \"\\E96B\";\r\n}\r\n.icon-bubbles:before {\r\n    content: \"\\E96C\";\r\n}\r\n.icon-bubbles2:before {\r\n    content: \"\\E96D\";\r\n}\r\n.icon-bubble2:before {\r\n    content: \"\\E96E\";\r\n}\r\n.icon-bubbles3:before {\r\n    content: \"\\E96F\";\r\n}\r\n.icon-bubbles4:before {\r\n    content: \"\\E970\";\r\n}\r\n.icon-user:before {\r\n    content: \"\\E971\";\r\n}\r\n.icon-users:before {\r\n    content: \"\\E972\";\r\n}\r\n.icon-user-plus:before {\r\n    content: \"\\E973\";\r\n}\r\n.icon-user-minus:before {\r\n    content: \"\\E974\";\r\n}\r\n.icon-user-check:before {\r\n    content: \"\\E975\";\r\n}\r\n.icon-user-tie:before {\r\n    content: \"\\E976\";\r\n}\r\n.icon-quotes-left:before {\r\n    content: \"\\E977\";\r\n}\r\n.icon-quotes-right:before {\r\n    content: \"\\E978\";\r\n}\r\n.icon-hour-glass:before {\r\n    content: \"\\E979\";\r\n}\r\n.icon-spinner:before {\r\n    content: \"\\E97A\";\r\n}\r\n.icon-spinner2:before {\r\n    content: \"\\E97B\";\r\n}\r\n.icon-spinner3:before {\r\n    content: \"\\E97C\";\r\n}\r\n.icon-spinner4:before {\r\n    content: \"\\E97D\";\r\n}\r\n.icon-spinner5:before {\r\n    content: \"\\E97E\";\r\n}\r\n.icon-spinner6:before {\r\n    content: \"\\E97F\";\r\n}\r\n.icon-spinner7:before {\r\n    content: \"\\E980\";\r\n}\r\n.icon-spinner8:before {\r\n    content: \"\\E981\";\r\n}\r\n.icon-spinner9:before {\r\n    content: \"\\E982\";\r\n}\r\n.icon-spinner10:before {\r\n    content: \"\\E983\";\r\n}\r\n.icon-spinner11:before {\r\n    content: \"\\E984\";\r\n}\r\n.icon-binoculars:before {\r\n    content: \"\\E985\";\r\n}\r\n.icon-search:before {\r\n    content: \"\\E986\";\r\n}\r\n.icon-zoom-in:before {\r\n    content: \"\\E987\";\r\n}\r\n.icon-zoom-out:before {\r\n    content: \"\\E988\";\r\n}\r\n.icon-enlarge:before {\r\n    content: \"\\E989\";\r\n}\r\n.icon-shrink:before {\r\n    content: \"\\E98A\";\r\n}\r\n.icon-enlarge2:before {\r\n    content: \"\\E98B\";\r\n}\r\n.icon-shrink2:before {\r\n    content: \"\\E98C\";\r\n}\r\n.icon-key:before {\r\n    content: \"\\E98D\";\r\n}\r\n.icon-key2:before {\r\n    content: \"\\E98E\";\r\n}\r\n.icon-lock:before {\r\n    content: \"\\E98F\";\r\n}\r\n.icon-unlocked:before {\r\n    content: \"\\E990\";\r\n}\r\n.icon-wrench:before {\r\n    content: \"\\E991\";\r\n}\r\n.icon-equalizer:before {\r\n    content: \"\\E992\";\r\n}\r\n.icon-equalizer2:before {\r\n    content: \"\\E993\";\r\n}\r\n.icon-cog:before {\r\n    content: \"\\E994\";\r\n}\r\n.icon-cogs:before {\r\n    content: \"\\E995\";\r\n}\r\n.icon-hammer:before {\r\n    content: \"\\E996\";\r\n}\r\n.icon-magic-wand:before {\r\n    content: \"\\E997\";\r\n}\r\n.icon-aid-kit:before {\r\n    content: \"\\E998\";\r\n}\r\n.icon-bug:before {\r\n    content: \"\\E999\";\r\n}\r\n.icon-pie-chart:before {\r\n    content: \"\\E99A\";\r\n}\r\n.icon-stats-dots:before {\r\n    content: \"\\E99B\";\r\n}\r\n.icon-stats-bars:before {\r\n    content: \"\\E99C\";\r\n}\r\n.icon-stats-bars2:before {\r\n    content: \"\\E99D\";\r\n}\r\n.icon-trophy:before {\r\n    content: \"\\E99E\";\r\n}\r\n.icon-gift:before {\r\n    content: \"\\E99F\";\r\n}\r\n.icon-glass:before {\r\n    content: \"\\E9A0\";\r\n}\r\n.icon-glass2:before {\r\n    content: \"\\E9A1\";\r\n}\r\n.icon-mug:before {\r\n    content: \"\\E9A2\";\r\n}\r\n.icon-spoon-knife:before {\r\n    content: \"\\E9A3\";\r\n}\r\n.icon-leaf:before {\r\n    content: \"\\E9A4\";\r\n}\r\n.icon-rocket:before {\r\n    content: \"\\E9A5\";\r\n}\r\n.icon-meter:before {\r\n    content: \"\\E9A6\";\r\n}\r\n.icon-meter2:before {\r\n    content: \"\\E9A7\";\r\n}\r\n.icon-hammer2:before {\r\n    content: \"\\E9A8\";\r\n}\r\n.icon-fire:before {\r\n    content: \"\\E9A9\";\r\n}\r\n.icon-lab:before {\r\n    content: \"\\E9AA\";\r\n}\r\n.icon-magnet:before {\r\n    content: \"\\E9AB\";\r\n}\r\n.icon-bin:before {\r\n    content: \"\\E9AC\";\r\n}\r\n.icon-bin2:before {\r\n    content: \"\\E9AD\";\r\n}\r\n.icon-briefcase:before {\r\n    content: \"\\E9AE\";\r\n}\r\n.icon-airplane:before {\r\n    content: \"\\E9AF\";\r\n}\r\n.icon-truck:before {\r\n    content: \"\\E9B0\";\r\n}\r\n.icon-road:before {\r\n    content: \"\\E9B1\";\r\n}\r\n.icon-accessibility:before {\r\n    content: \"\\E9B2\";\r\n}\r\n.icon-target:before {\r\n    content: \"\\E9B3\";\r\n}\r\n.icon-shield:before {\r\n    content: \"\\E9B4\";\r\n}\r\n.icon-power:before {\r\n    content: \"\\E9B5\";\r\n}\r\n.icon-switch:before {\r\n    content: \"\\E9B6\";\r\n}\r\n.icon-power-cord:before {\r\n    content: \"\\E9B7\";\r\n}\r\n.icon-clipboard:before {\r\n    content: \"\\E9B8\";\r\n}\r\n.icon-list-numbered:before {\r\n    content: \"\\E9B9\";\r\n}\r\n.icon-list:before {\r\n    content: \"\\E9BA\";\r\n}\r\n.icon-list2:before {\r\n    content: \"\\E9BB\";\r\n}\r\n.icon-tree:before {\r\n    content: \"\\E9BC\";\r\n}\r\n.icon-menu:before {\r\n    content: \"\\E9BD\";\r\n}\r\n.icon-menu2:before {\r\n    content: \"\\E9BE\";\r\n}\r\n.icon-menu3:before {\r\n    content: \"\\E9BF\";\r\n}\r\n.icon-menu4:before {\r\n    content: \"\\E9C0\";\r\n}\r\n.icon-cloud:before {\r\n    content: \"\\E9C1\";\r\n}\r\n.icon-cloud-download:before {\r\n    content: \"\\E9C2\";\r\n}\r\n.icon-cloud-upload:before {\r\n    content: \"\\E9C3\";\r\n}\r\n.icon-cloud-check:before {\r\n    content: \"\\E9C4\";\r\n}\r\n.icon-download2:before {\r\n    content: \"\\E9C5\";\r\n}\r\n.icon-upload2:before {\r\n    content: \"\\E9C6\";\r\n}\r\n.icon-download3:before {\r\n    content: \"\\E9C7\";\r\n}\r\n.icon-upload3:before {\r\n    content: \"\\E9C8\";\r\n}\r\n.icon-sphere:before {\r\n    content: \"\\E9C9\";\r\n}\r\n.icon-earth:before {\r\n    content: \"\\E9CA\";\r\n}\r\n.icon-link:before {\r\n    content: \"\\E9CB\";\r\n}\r\n.icon-flag:before {\r\n    content: \"\\E9CC\";\r\n}\r\n.icon-attachment:before {\r\n    content: \"\\E9CD\";\r\n}\r\n.icon-eye:before {\r\n    content: \"\\E9CE\";\r\n}\r\n.icon-eye-plus:before {\r\n    content: \"\\E9CF\";\r\n}\r\n.icon-eye-minus:before {\r\n    content: \"\\E9D0\";\r\n}\r\n.icon-eye-blocked:before {\r\n    content: \"\\E9D1\";\r\n}\r\n.icon-bookmark:before {\r\n    content: \"\\E9D2\";\r\n}\r\n.icon-bookmarks:before {\r\n    content: \"\\E9D3\";\r\n}\r\n.icon-sun:before {\r\n    content: \"\\E9D4\";\r\n}\r\n.icon-contrast:before {\r\n    content: \"\\E9D5\";\r\n}\r\n.icon-brightness-contrast:before {\r\n    content: \"\\E9D6\";\r\n}\r\n.icon-star-empty:before {\r\n    content: \"\\E9D7\";\r\n}\r\n.icon-star-half:before {\r\n    content: \"\\E9D8\";\r\n}\r\n.icon-star-full:before {\r\n    content: \"\\E9D9\";\r\n}\r\n.icon-heart:before {\r\n    content: \"\\E9DA\";\r\n}\r\n.icon-heart-broken:before {\r\n    content: \"\\E9DB\";\r\n}\r\n.icon-man:before {\r\n    content: \"\\E9DC\";\r\n}\r\n.icon-woman:before {\r\n    content: \"\\E9DD\";\r\n}\r\n.icon-man-woman:before {\r\n    content: \"\\E9DE\";\r\n}\r\n.icon-happy:before {\r\n    content: \"\\E9DF\";\r\n}\r\n.icon-happy2:before {\r\n    content: \"\\E9E0\";\r\n}\r\n.icon-smile:before {\r\n    content: \"\\E9E1\";\r\n}\r\n.icon-smile2:before {\r\n    content: \"\\E9E2\";\r\n}\r\n.icon-tongue:before {\r\n    content: \"\\E9E3\";\r\n}\r\n.icon-tongue2:before {\r\n    content: \"\\E9E4\";\r\n}\r\n.icon-sad:before {\r\n    content: \"\\E9E5\";\r\n}\r\n.icon-sad2:before {\r\n    content: \"\\E9E6\";\r\n}\r\n.icon-wink:before {\r\n    content: \"\\E9E7\";\r\n}\r\n.icon-wink2:before {\r\n    content: \"\\E9E8\";\r\n}\r\n.icon-grin:before {\r\n    content: \"\\E9E9\";\r\n}\r\n.icon-grin2:before {\r\n    content: \"\\E9EA\";\r\n}\r\n.icon-cool:before {\r\n    content: \"\\E9EB\";\r\n}\r\n.icon-cool2:before {\r\n    content: \"\\E9EC\";\r\n}\r\n.icon-angry:before {\r\n    content: \"\\E9ED\";\r\n}\r\n.icon-angry2:before {\r\n    content: \"\\E9EE\";\r\n}\r\n.icon-evil:before {\r\n    content: \"\\E9EF\";\r\n}\r\n.icon-evil2:before {\r\n    content: \"\\E9F0\";\r\n}\r\n.icon-shocked:before {\r\n    content: \"\\E9F1\";\r\n}\r\n.icon-shocked2:before {\r\n    content: \"\\E9F2\";\r\n}\r\n.icon-baffled:before {\r\n    content: \"\\E9F3\";\r\n}\r\n.icon-baffled2:before {\r\n    content: \"\\E9F4\";\r\n}\r\n.icon-confused:before {\r\n    content: \"\\E9F5\";\r\n}\r\n.icon-confused2:before {\r\n    content: \"\\E9F6\";\r\n}\r\n.icon-neutral:before {\r\n    content: \"\\E9F7\";\r\n}\r\n.icon-neutral2:before {\r\n    content: \"\\E9F8\";\r\n}\r\n.icon-hipster:before {\r\n    content: \"\\E9F9\";\r\n}\r\n.icon-hipster2:before {\r\n    content: \"\\E9FA\";\r\n}\r\n.icon-wondering:before {\r\n    content: \"\\E9FB\";\r\n}\r\n.icon-wondering2:before {\r\n    content: \"\\E9FC\";\r\n}\r\n.icon-sleepy:before {\r\n    content: \"\\E9FD\";\r\n}\r\n.icon-sleepy2:before {\r\n    content: \"\\E9FE\";\r\n}\r\n.icon-frustrated:before {\r\n    content: \"\\E9FF\";\r\n}\r\n.icon-frustrated2:before {\r\n    content: \"\\EA00\";\r\n}\r\n.icon-crying:before {\r\n    content: \"\\EA01\";\r\n}\r\n.icon-crying2:before {\r\n    content: \"\\EA02\";\r\n}\r\n.icon-point-up:before {\r\n    content: \"\\EA03\";\r\n}\r\n.icon-point-right:before {\r\n    content: \"\\EA04\";\r\n}\r\n.icon-point-down:before {\r\n    content: \"\\EA05\";\r\n}\r\n.icon-point-left:before {\r\n    content: \"\\EA06\";\r\n}\r\n.icon-warning:before {\r\n    content: \"\\EA07\";\r\n}\r\n.icon-notification:before {\r\n    content: \"\\EA08\";\r\n}\r\n.icon-question:before {\r\n    content: \"\\EA09\";\r\n}\r\n.icon-plus:before {\r\n    content: \"\\EA0A\";\r\n}\r\n.icon-minus:before {\r\n    content: \"\\EA0B\";\r\n}\r\n.icon-info:before {\r\n    content: \"\\EA0C\";\r\n}\r\n.icon-cancel-circle:before {\r\n    content: \"\\EA0D\";\r\n}\r\n.icon-blocked:before {\r\n    content: \"\\EA0E\";\r\n}\r\n.icon-cross:before {\r\n    content: \"\\EA0F\";\r\n}\r\n.icon-checkmark:before {\r\n    content: \"\\EA10\";\r\n}\r\n.icon-checkmark2:before {\r\n    content: \"\\EA11\";\r\n}\r\n.icon-spell-check:before {\r\n    content: \"\\EA12\";\r\n}\r\n.icon-enter:before {\r\n    content: \"\\EA13\";\r\n}\r\n.icon-exit:before {\r\n    content: \"\\EA14\";\r\n}\r\n.icon-play2:before {\r\n    content: \"\\EA15\";\r\n}\r\n.icon-pause:before {\r\n    content: \"\\EA16\";\r\n}\r\n.icon-stop:before {\r\n    content: \"\\EA17\";\r\n}\r\n.icon-previous:before {\r\n    content: \"\\EA18\";\r\n}\r\n.icon-next:before {\r\n    content: \"\\EA19\";\r\n}\r\n.icon-backward:before {\r\n    content: \"\\EA1A\";\r\n}\r\n.icon-forward2:before {\r\n    content: \"\\EA1B\";\r\n}\r\n.icon-play3:before {\r\n    content: \"\\EA1C\";\r\n}\r\n.icon-pause2:before {\r\n    content: \"\\EA1D\";\r\n}\r\n.icon-stop2:before {\r\n    content: \"\\EA1E\";\r\n}\r\n.icon-backward2:before {\r\n    content: \"\\EA1F\";\r\n}\r\n.icon-forward3:before {\r\n    content: \"\\EA20\";\r\n}\r\n.icon-first:before {\r\n    content: \"\\EA21\";\r\n}\r\n.icon-last:before {\r\n    content: \"\\EA22\";\r\n}\r\n.icon-previous2:before {\r\n    content: \"\\EA23\";\r\n}\r\n.icon-next2:before {\r\n    content: \"\\EA24\";\r\n}\r\n.icon-eject:before {\r\n    content: \"\\EA25\";\r\n}\r\n.icon-volume-high:before {\r\n    content: \"\\EA26\";\r\n}\r\n.icon-volume-medium:before {\r\n    content: \"\\EA27\";\r\n}\r\n.icon-volume-low:before {\r\n    content: \"\\EA28\";\r\n}\r\n.icon-volume-mute:before {\r\n    content: \"\\EA29\";\r\n}\r\n.icon-volume-mute2:before {\r\n    content: \"\\EA2A\";\r\n}\r\n.icon-volume-increase:before {\r\n    content: \"\\EA2B\";\r\n}\r\n.icon-volume-decrease:before {\r\n    content: \"\\EA2C\";\r\n}\r\n.icon-loop:before {\r\n    content: \"\\EA2D\";\r\n}\r\n.icon-loop2:before {\r\n    content: \"\\EA2E\";\r\n}\r\n.icon-infinite:before {\r\n    content: \"\\EA2F\";\r\n}\r\n.icon-shuffle:before {\r\n    content: \"\\EA30\";\r\n}\r\n.icon-arrow-up-left:before {\r\n    content: \"\\EA31\";\r\n}\r\n.icon-arrow-up:before {\r\n    content: \"\\EA32\";\r\n}\r\n.icon-arrow-up-right:before {\r\n    content: \"\\EA33\";\r\n}\r\n.icon-arrow-right:before {\r\n    content: \"\\EA34\";\r\n}\r\n.icon-arrow-down-right:before {\r\n    content: \"\\EA35\";\r\n}\r\n.icon-arrow-down:before {\r\n    content: \"\\EA36\";\r\n}\r\n.icon-arrow-down-left:before {\r\n    content: \"\\EA37\";\r\n}\r\n.icon-arrow-left:before {\r\n    content: \"\\EA38\";\r\n}\r\n.icon-arrow-up-left2:before {\r\n    content: \"\\EA39\";\r\n}\r\n.icon-arrow-up2:before {\r\n    content: \"\\EA3A\";\r\n}\r\n.icon-arrow-up-right2:before {\r\n    content: \"\\EA3B\";\r\n}\r\n.icon-arrow-right2:before {\r\n    content: \"\\EA3C\";\r\n}\r\n.icon-arrow-down-right2:before {\r\n    content: \"\\EA3D\";\r\n}\r\n.icon-arrow-down2:before {\r\n    content: \"\\EA3E\";\r\n}\r\n.icon-arrow-down-left2:before {\r\n    content: \"\\EA3F\";\r\n}\r\n.icon-arrow-left2:before {\r\n    content: \"\\EA40\";\r\n}\r\n.icon-circle-up:before {\r\n    content: \"\\EA41\";\r\n}\r\n.icon-circle-right:before {\r\n    content: \"\\EA42\";\r\n}\r\n.icon-circle-down:before {\r\n    content: \"\\EA43\";\r\n}\r\n.icon-circle-left:before {\r\n    content: \"\\EA44\";\r\n}\r\n.icon-tab:before {\r\n    content: \"\\EA45\";\r\n}\r\n.icon-move-up:before {\r\n    content: \"\\EA46\";\r\n}\r\n.icon-move-down:before {\r\n    content: \"\\EA47\";\r\n}\r\n.icon-sort-alpha-asc:before {\r\n    content: \"\\EA48\";\r\n}\r\n.icon-sort-alpha-desc:before {\r\n    content: \"\\EA49\";\r\n}\r\n.icon-sort-numeric-asc:before {\r\n    content: \"\\EA4A\";\r\n}\r\n.icon-sort-numberic-desc:before {\r\n    content: \"\\EA4B\";\r\n}\r\n.icon-sort-amount-asc:before {\r\n    content: \"\\EA4C\";\r\n}\r\n.icon-sort-amount-desc:before {\r\n    content: \"\\EA4D\";\r\n}\r\n.icon-command:before {\r\n    content: \"\\EA4E\";\r\n}\r\n.icon-shift:before {\r\n    content: \"\\EA4F\";\r\n}\r\n.icon-ctrl:before {\r\n    content: \"\\EA50\";\r\n}\r\n.icon-opt:before {\r\n    content: \"\\EA51\";\r\n}\r\n.icon-checkbox-checked:before {\r\n    content: \"\\EA52\";\r\n}\r\n.icon-checkbox-unchecked:before {\r\n    content: \"\\EA53\";\r\n}\r\n.icon-radio-checked:before {\r\n    content: \"\\EA54\";\r\n}\r\n.icon-radio-checked2:before {\r\n    content: \"\\EA55\";\r\n}\r\n.icon-radio-unchecked:before {\r\n    content: \"\\EA56\";\r\n}\r\n.icon-crop:before {\r\n    content: \"\\EA57\";\r\n}\r\n.icon-make-group:before {\r\n    content: \"\\EA58\";\r\n}\r\n.icon-ungroup:before {\r\n    content: \"\\EA59\";\r\n}\r\n.icon-scissors:before {\r\n    content: \"\\EA5A\";\r\n}\r\n.icon-filter:before {\r\n    content: \"\\EA5B\";\r\n}\r\n.icon-font:before {\r\n    content: \"\\EA5C\";\r\n}\r\n.icon-ligature:before {\r\n    content: \"\\EA5D\";\r\n}\r\n.icon-ligature2:before {\r\n    content: \"\\EA5E\";\r\n}\r\n.icon-text-height:before {\r\n    content: \"\\EA5F\";\r\n}\r\n.icon-text-width:before {\r\n    content: \"\\EA60\";\r\n}\r\n.icon-font-size:before {\r\n    content: \"\\EA61\";\r\n}\r\n.icon-bold:before {\r\n    content: \"\\EA62\";\r\n}\r\n.icon-underline:before {\r\n    content: \"\\EA63\";\r\n}\r\n.icon-italic:before {\r\n    content: \"\\EA64\";\r\n}\r\n.icon-strikethrough:before {\r\n    content: \"\\EA65\";\r\n}\r\n.icon-omega:before {\r\n    content: \"\\EA66\";\r\n}\r\n.icon-sigma:before {\r\n    content: \"\\EA67\";\r\n}\r\n.icon-page-break:before {\r\n    content: \"\\EA68\";\r\n}\r\n.icon-superscript:before {\r\n    content: \"\\EA69\";\r\n}\r\n.icon-subscript:before {\r\n    content: \"\\EA6A\";\r\n}\r\n.icon-superscript2:before {\r\n    content: \"\\EA6B\";\r\n}\r\n.icon-subscript2:before {\r\n    content: \"\\EA6C\";\r\n}\r\n.icon-text-color:before {\r\n    content: \"\\EA6D\";\r\n}\r\n.icon-pagebreak:before {\r\n    content: \"\\EA6E\";\r\n}\r\n.icon-clear-formatting:before {\r\n    content: \"\\EA6F\";\r\n}\r\n.icon-table:before {\r\n    content: \"\\EA70\";\r\n}\r\n.icon-table2:before {\r\n    content: \"\\EA71\";\r\n}\r\n.icon-insert-template:before {\r\n    content: \"\\EA72\";\r\n}\r\n.icon-pilcrow:before {\r\n    content: \"\\EA73\";\r\n}\r\n.icon-ltr:before {\r\n    content: \"\\EA74\";\r\n}\r\n.icon-rtl:before {\r\n    content: \"\\EA75\";\r\n}\r\n.icon-section:before {\r\n    content: \"\\EA76\";\r\n}\r\n.icon-paragraph-left:before {\r\n    content: \"\\EA77\";\r\n}\r\n.icon-paragraph-center:before {\r\n    content: \"\\EA78\";\r\n}\r\n.icon-paragraph-right:before {\r\n    content: \"\\EA79\";\r\n}\r\n.icon-paragraph-justify:before {\r\n    content: \"\\EA7A\";\r\n}\r\n.icon-indent-increase:before {\r\n    content: \"\\EA7B\";\r\n}\r\n.icon-indent-decrease:before {\r\n    content: \"\\EA7C\";\r\n}\r\n.icon-share:before {\r\n    content: \"\\EA7D\";\r\n}\r\n.icon-new-tab:before {\r\n    content: \"\\EA7E\";\r\n}\r\n.icon-embed:before {\r\n    content: \"\\EA7F\";\r\n}\r\n.icon-embed2:before {\r\n    content: \"\\EA80\";\r\n}\r\n.icon-terminal:before {\r\n    content: \"\\EA81\";\r\n}\r\n.icon-share2:before {\r\n    content: \"\\EA82\";\r\n}\r\n.icon-mail:before {\r\n    content: \"\\EA83\";\r\n}\r\n.icon-mail2:before {\r\n    content: \"\\EA84\";\r\n}\r\n.icon-mail3:before {\r\n    content: \"\\EA85\";\r\n}\r\n.icon-mail4:before {\r\n    content: \"\\EA86\";\r\n}\r\n.icon-amazon:before {\r\n    content: \"\\EA87\";\r\n}\r\n.icon-google:before {\r\n    content: \"\\EA88\";\r\n}\r\n.icon-google2:before {\r\n    content: \"\\EA89\";\r\n}\r\n.icon-google3:before {\r\n    content: \"\\EA8A\";\r\n}\r\n.icon-google-plus:before {\r\n    content: \"\\EA8B\";\r\n}\r\n.icon-google-plus2:before {\r\n    content: \"\\EA8C\";\r\n}\r\n.icon-google-plus3:before {\r\n    content: \"\\EA8D\";\r\n}\r\n.icon-hangouts:before {\r\n    content: \"\\EA8E\";\r\n}\r\n.icon-google-drive:before {\r\n    content: \"\\EA8F\";\r\n}\r\n.icon-facebook:before {\r\n    content: \"\\EA90\";\r\n}\r\n.icon-facebook2:before {\r\n    content: \"\\EA91\";\r\n}\r\n.icon-instagram:before {\r\n    content: \"\\EA92\";\r\n}\r\n.icon-whatsapp:before {\r\n    content: \"\\EA93\";\r\n}\r\n.icon-spotify:before {\r\n    content: \"\\EA94\";\r\n}\r\n.icon-telegram:before {\r\n    content: \"\\EA95\";\r\n}\r\n.icon-twitter:before {\r\n    content: \"\\EA96\";\r\n}\r\n.icon-vine:before {\r\n    content: \"\\EA97\";\r\n}\r\n.icon-vk:before {\r\n    content: \"\\EA98\";\r\n}\r\n.icon-renren:before {\r\n    content: \"\\EA99\";\r\n}\r\n.icon-sina-weibo:before {\r\n    content: \"\\EA9A\";\r\n}\r\n.icon-rss:before {\r\n    content: \"\\EA9B\";\r\n}\r\n.icon-rss2:before {\r\n    content: \"\\EA9C\";\r\n}\r\n.icon-youtube:before {\r\n    content: \"\\EA9D\";\r\n}\r\n.icon-youtube2:before {\r\n    content: \"\\EA9E\";\r\n}\r\n.icon-twitch:before {\r\n    content: \"\\EA9F\";\r\n}\r\n.icon-vimeo:before {\r\n    content: \"\\EAA0\";\r\n}\r\n.icon-vimeo2:before {\r\n    content: \"\\EAA1\";\r\n}\r\n.icon-lanyrd:before {\r\n    content: \"\\EAA2\";\r\n}\r\n.icon-flickr:before {\r\n    content: \"\\EAA3\";\r\n}\r\n.icon-flickr2:before {\r\n    content: \"\\EAA4\";\r\n}\r\n.icon-flickr3:before {\r\n    content: \"\\EAA5\";\r\n}\r\n.icon-flickr4:before {\r\n    content: \"\\EAA6\";\r\n}\r\n.icon-dribbble:before {\r\n    content: \"\\EAA7\";\r\n}\r\n.icon-behance:before {\r\n    content: \"\\EAA8\";\r\n}\r\n.icon-behance2:before {\r\n    content: \"\\EAA9\";\r\n}\r\n.icon-deviantart:before {\r\n    content: \"\\EAAA\";\r\n}\r\n.icon-500px:before {\r\n    content: \"\\EAAB\";\r\n}\r\n.icon-steam:before {\r\n    content: \"\\EAAC\";\r\n}\r\n.icon-steam2:before {\r\n    content: \"\\EAAD\";\r\n}\r\n.icon-dropbox:before {\r\n    content: \"\\EAAE\";\r\n}\r\n.icon-onedrive:before {\r\n    content: \"\\EAAF\";\r\n}\r\n.icon-github:before {\r\n    content: \"\\EAB0\";\r\n}\r\n.icon-npm:before {\r\n    content: \"\\EAB1\";\r\n}\r\n.icon-basecamp:before {\r\n    content: \"\\EAB2\";\r\n}\r\n.icon-trello:before {\r\n    content: \"\\EAB3\";\r\n}\r\n.icon-wordpress:before {\r\n    content: \"\\EAB4\";\r\n}\r\n.icon-joomla:before {\r\n    content: \"\\EAB5\";\r\n}\r\n.icon-ello:before {\r\n    content: \"\\EAB6\";\r\n}\r\n.icon-blogger:before {\r\n    content: \"\\EAB7\";\r\n}\r\n.icon-blogger2:before {\r\n    content: \"\\EAB8\";\r\n}\r\n.icon-tumblr:before {\r\n    content: \"\\EAB9\";\r\n}\r\n.icon-tumblr2:before {\r\n    content: \"\\EABA\";\r\n}\r\n.icon-yahoo:before {\r\n    content: \"\\EABB\";\r\n}\r\n.icon-yahoo2:before {\r\n    content: \"\\EABC\";\r\n}\r\n.icon-tux:before {\r\n    content: \"\\EABD\";\r\n}\r\n.icon-appleinc:before {\r\n    content: \"\\EABE\";\r\n}\r\n.icon-finder:before {\r\n    content: \"\\EABF\";\r\n}\r\n.icon-android:before {\r\n    content: \"\\EAC0\";\r\n}\r\n.icon-windows:before {\r\n    content: \"\\EAC1\";\r\n}\r\n.icon-windows8:before {\r\n    content: \"\\EAC2\";\r\n}\r\n.icon-soundcloud:before {\r\n    content: \"\\EAC3\";\r\n}\r\n.icon-soundcloud2:before {\r\n    content: \"\\EAC4\";\r\n}\r\n.icon-skype:before {\r\n    content: \"\\EAC5\";\r\n}\r\n.icon-reddit:before {\r\n    content: \"\\EAC6\";\r\n}\r\n.icon-hackernews:before {\r\n    content: \"\\EAC7\";\r\n}\r\n.icon-wikipedia:before {\r\n    content: \"\\EAC8\";\r\n}\r\n.icon-linkedin:before {\r\n    content: \"\\EAC9\";\r\n}\r\n.icon-linkedin2:before {\r\n    content: \"\\EACA\";\r\n}\r\n.icon-lastfm:before {\r\n    content: \"\\EACB\";\r\n}\r\n.icon-lastfm2:before {\r\n    content: \"\\EACC\";\r\n}\r\n.icon-delicious:before {\r\n    content: \"\\EACD\";\r\n}\r\n.icon-stumbleupon:before {\r\n    content: \"\\EACE\";\r\n}\r\n.icon-stumbleupon2:before {\r\n    content: \"\\EACF\";\r\n}\r\n.icon-stackoverflow:before {\r\n    content: \"\\EAD0\";\r\n}\r\n.icon-pinterest:before {\r\n    content: \"\\EAD1\";\r\n}\r\n.icon-pinterest2:before {\r\n    content: \"\\EAD2\";\r\n}\r\n.icon-xing:before {\r\n    content: \"\\EAD3\";\r\n}\r\n.icon-xing2:before {\r\n    content: \"\\EAD4\";\r\n}\r\n.icon-flattr:before {\r\n    content: \"\\EAD5\";\r\n}\r\n.icon-foursquare:before {\r\n    content: \"\\EAD6\";\r\n}\r\n.icon-yelp:before {\r\n    content: \"\\EAD7\";\r\n}\r\n.icon-paypal:before {\r\n    content: \"\\EAD8\";\r\n}\r\n.icon-chrome:before {\r\n    content: \"\\EAD9\";\r\n}\r\n.icon-firefox:before {\r\n    content: \"\\EADA\";\r\n}\r\n.icon-IE:before {\r\n    content: \"\\EADB\";\r\n}\r\n.icon-edge:before {\r\n    content: \"\\EADC\";\r\n}\r\n.icon-safari:before {\r\n    content: \"\\EADD\";\r\n}\r\n.icon-opera:before {\r\n    content: \"\\EADE\";\r\n}\r\n.icon-file-pdf:before {\r\n    content: \"\\EADF\";\r\n}\r\n.icon-file-openoffice:before {\r\n    content: \"\\EAE0\";\r\n}\r\n.icon-file-word:before {\r\n    content: \"\\EAE1\";\r\n}\r\n.icon-file-excel:before {\r\n    content: \"\\EAE2\";\r\n}\r\n.icon-libreoffice:before {\r\n    content: \"\\EAE3\";\r\n}\r\n.icon-html-five:before {\r\n    content: \"\\EAE4\";\r\n}\r\n.icon-html-five2:before {\r\n    content: \"\\EAE5\";\r\n}\r\n.icon-css3:before {\r\n    content: \"\\EAE6\";\r\n}\r\n.icon-git:before {\r\n    content: \"\\EAE7\";\r\n}\r\n.icon-codepen:before {\r\n    content: \"\\EAE8\";\r\n}\r\n.icon-svg:before {\r\n    content: \"\\EAE9\";\r\n}\r\n.icon-IcoMoon:before {\r\n    content: \"\\EAEA\";\r\n}\r\n.icon-uni21:before {\r\n    content: \"!\";\r\n}\r\n.icon-uni22:before {\r\n    content: \"\\\"\";\r\n}\r\n.icon-uni23:before {\r\n    content: \"#\";\r\n}\r\n.icon-uni24:before {\r\n    content: \"$\";\r\n}\r\n.icon-uni25:before {\r\n    content: \"%\";\r\n}\r\n.icon-uni26:before {\r\n    content: \"&\";\r\n}\r\n.icon-uni27:before {\r\n    content: \"'\";\r\n}\r\n.icon-uni28:before {\r\n    content: \"(\";\r\n}\r\n.icon-uni29:before {\r\n    content: \")\";\r\n}\r\n.icon-uni2A:before {\r\n    content: \"*\";\r\n}\r\n.icon-uni2B:before {\r\n    content: \"+\";\r\n}\r\n.icon-uni2C:before {\r\n    content: \",\";\r\n}\r\n.icon-uni2D:before {\r\n    content: \"-\";\r\n}\r\n.icon-uni2E:before {\r\n    content: \".\";\r\n}\r\n.icon-uni2F:before {\r\n    content: \"/\";\r\n}\r\n.icon-uni30:before {\r\n    content: \"0\";\r\n}\r\n.icon-uni31:before {\r\n    content: \"1\";\r\n}\r\n.icon-uni32:before {\r\n    content: \"2\";\r\n}\r\n.icon-uni33:before {\r\n    content: \"3\";\r\n}\r\n.icon-uni34:before {\r\n    content: \"4\";\r\n}\r\n.icon-uni35:before {\r\n    content: \"5\";\r\n}\r\n.icon-uni36:before {\r\n    content: \"6\";\r\n}\r\n.icon-uni37:before {\r\n    content: \"7\";\r\n}\r\n.icon-uni38:before {\r\n    content: \"8\";\r\n}\r\n.icon-uni39:before {\r\n    content: \"9\";\r\n}\r\n.icon-uni3A:before {\r\n    content: \":\";\r\n}\r\n.icon-uni3B:before {\r\n    content: \";\";\r\n}\r\n.icon-uni3C:before {\r\n    content: \"<\";\r\n}\r\n.icon-uni3D:before {\r\n    content: \"=\";\r\n}\r\n.icon-uni3E:before {\r\n    content: \">\";\r\n}\r\n.icon-uni3F:before {\r\n    content: \"?\";\r\n}\r\n.icon-uni40:before {\r\n    content: \"@\";\r\n}\r\n.icon-uni41:before {\r\n    content: \"A\";\r\n}\r\n.icon-uni42:before {\r\n    content: \"B\";\r\n}\r\n.icon-uni43:before {\r\n    content: \"C\";\r\n}\r\n.icon-uni44:before {\r\n    content: \"D\";\r\n}\r\n.icon-uni45:before {\r\n    content: \"E\";\r\n}\r\n.icon-uni46:before {\r\n    content: \"F\";\r\n}\r\n.icon-uni47:before {\r\n    content: \"G\";\r\n}\r\n.icon-uni48:before {\r\n    content: \"H\";\r\n}\r\n.icon-uni49:before {\r\n    content: \"I\";\r\n}\r\n.icon-uni4A:before {\r\n    content: \"J\";\r\n}\r\n.icon-uni4B:before {\r\n    content: \"K\";\r\n}\r\n.icon-uni4C:before {\r\n    content: \"L\";\r\n}\r\n.icon-uni4D:before {\r\n    content: \"M\";\r\n}\r\n.icon-uni4E:before {\r\n    content: \"N\";\r\n}\r\n.icon-uni4F:before {\r\n    content: \"O\";\r\n}\r\n.icon-uni50:before {\r\n    content: \"P\";\r\n}\r\n.icon-uni51:before {\r\n    content: \"Q\";\r\n}\r\n.icon-uni52:before {\r\n    content: \"R\";\r\n}\r\n.icon-uni53:before {\r\n    content: \"S\";\r\n}\r\n.icon-uni54:before {\r\n    content: \"T\";\r\n}\r\n.icon-uni55:before {\r\n    content: \"U\";\r\n}\r\n.icon-uni56:before {\r\n    content: \"V\";\r\n}\r\n.icon-uni57:before {\r\n    content: \"W\";\r\n}\r\n.icon-uni58:before {\r\n    content: \"X\";\r\n}\r\n.icon-uni59:before {\r\n    content: \"Y\";\r\n}\r\n.icon-uni5A:before {\r\n    content: \"Z\";\r\n}\r\n.icon-uni5B:before {\r\n    content: \"[\";\r\n}\r\n.icon-uni5C:before {\r\n    content: \"\\\\\";\r\n}\r\n.icon-uni5D:before {\r\n    content: \"]\";\r\n}\r\n.icon-uni5E:before {\r\n    content: \"^\";\r\n}\r\n.icon-uni5F:before {\r\n    content: \"_\";\r\n}\r\n.icon-uni60:before {\r\n    content: \"`\";\r\n}\r\n.icon-uni61:before {\r\n    content: \"a\";\r\n}\r\n.icon-uni62:before {\r\n    content: \"b\";\r\n}\r\n.icon-uni63:before {\r\n    content: \"c\";\r\n}\r\n.icon-uni64:before {\r\n    content: \"d\";\r\n}\r\n.icon-uni65:before {\r\n    content: \"e\";\r\n}\r\n.icon-uni66:before {\r\n    content: \"f\";\r\n}\r\n.icon-uni67:before {\r\n    content: \"g\";\r\n}\r\n.icon-uni68:before {\r\n    content: \"h\";\r\n}\r\n.icon-uni69:before {\r\n    content: \"i\";\r\n}\r\n.icon-uni6A:before {\r\n    content: \"j\";\r\n}\r\n.icon-uni6B:before {\r\n    content: \"k\";\r\n}\r\n.icon-uni6C:before {\r\n    content: \"l\";\r\n}\r\n.icon-uni6D:before {\r\n    content: \"m\";\r\n}\r\n.icon-uni6E:before {\r\n    content: \"n\";\r\n}\r\n.icon-uni6F:before {\r\n    content: \"o\";\r\n}\r\n.icon-uni70:before {\r\n    content: \"p\";\r\n}\r\n.icon-uni71:before {\r\n    content: \"q\";\r\n}\r\n.icon-uni72:before {\r\n    content: \"r\";\r\n}\r\n.icon-uni73:before {\r\n    content: \"s\";\r\n}\r\n.icon-uni74:before {\r\n    content: \"t\";\r\n}\r\n.icon-uni75:before {\r\n    content: \"u\";\r\n}\r\n.icon-uni76:before {\r\n    content: \"v\";\r\n}\r\n.icon-uni77:before {\r\n    content: \"w\";\r\n}\r\n.icon-uni78:before {\r\n    content: \"x\";\r\n}\r\n.icon-uni79:before {\r\n    content: \"y\";\r\n}\r\n.icon-uni7A:before {\r\n    content: \"z\";\r\n}\r\n.icon-uni7B:before {\r\n    content: \"{\";\r\n}\r\n.icon-uni7C:before {\r\n    content: \"|\";\r\n}\r\n.icon-uni7D:before {\r\n    content: \"}\";\r\n}\r\n.icon-uni7E:before {\r\n    content: \"~\";\r\n}\r\n.icon-uniA9:before {\r\n    content: \"\\A9\";\r\n}\r\n\r\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "72c742bc4398b2803e5ebcdc65d4a03c.ttf";
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports) {
 
 	/**
@@ -63980,6 +64639,10 @@
 
 	            self.isArtist = function () {
 	                return self.user.is_artist;
+	            };
+
+	            self.getArtistId = function () {
+	                return self.user.id_artist;
 	            };
 
 	            self.setUserData = function (userData) {
@@ -64013,7 +64676,7 @@
 
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports) {
 
 	angular.module('restAPIModule', ['ngResource']);
@@ -64022,7 +64685,7 @@
 
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64072,7 +64735,7 @@
 
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64132,7 +64795,7 @@
 
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64155,7 +64818,7 @@
 
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64199,7 +64862,7 @@
 
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64224,7 +64887,7 @@
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restAPIModule');
@@ -64247,7 +64910,7 @@
 
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports) {
 
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
@@ -64289,7 +64952,7 @@
 
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports) {
 
 	angular.module('trackListModule', []);
@@ -64307,7 +64970,7 @@
 
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64327,18 +64990,18 @@
 	    },
 	    controller: TrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(80)
+	    template: __webpack_require__(82)
 	});
 
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n        <h3 class=\"view-more\"><i class=\"icon icon-arrow-down\"></i></h3>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64444,13 +65107,13 @@
 
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(83);
+	var content = __webpack_require__(85);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64470,7 +65133,7 @@
 	}
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64484,7 +65147,7 @@
 
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports) {
 
 	angular.module('userPanelModule', []);
@@ -64502,7 +65165,7 @@
 
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPanelModule = angular.module('userPanelModule');
@@ -64529,24 +65192,24 @@
 	    },
 	    controller: UserPanelController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(86)
+	    template: __webpack_require__(88)
 	});
 
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(88);
+	var content = __webpack_require__(90);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64566,7 +65229,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64580,7 +65243,7 @@
 
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports) {
 
 	angular.module('userMenuModule', []);
@@ -64592,7 +65255,7 @@
 
 
 /***/ },
-/* 90 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userMenuModule = angular.module('userMenuModule');
@@ -64635,24 +65298,24 @@
 	    },
 	    controller: UserMenuController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(91)
+	    template: __webpack_require__(93)
 	});
 
 
 /***/ },
-/* 91 */
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 92 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(93);
+	var content = __webpack_require__(95);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64672,7 +65335,7 @@
 	}
 
 /***/ },
-/* 93 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64686,7 +65349,7 @@
 
 
 /***/ },
-/* 94 */
+/* 96 */
 /***/ function(module, exports) {
 
 	/**
@@ -64735,7 +65398,7 @@
 
 
 /***/ },
-/* 95 */
+/* 97 */
 /***/ function(module, exports) {
 
 	angular.module('searchModule', []);
@@ -64753,7 +65416,7 @@
 
 
 /***/ },
-/* 96 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var searchModule = angular.module('searchModule');
@@ -64792,24 +65455,24 @@
 	    },
 	    controller: SearchController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(97)
+	    template: __webpack_require__(99)
 	});
 
 
 /***/ },
-/* 97 */
+/* 99 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"search\">\r\n    <input class=\"search-field\"\r\n           ng-model=\"ctrl.parameter\"\r\n           ng-change=\"ctrl.changeParameter()\"\r\n           type=\"text\"\r\n           placeholder=\"{{ 'general_search' | translate }}\"/>\r\n    <span class=\"search-cancel\"\r\n          ng-click=\"ctrl.cancel()\"\r\n          ng-show=\"ctrl.show()\">\r\n        x\r\n    </span>\r\n</div>\r\n";
 
 /***/ },
-/* 98 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(99);
+	var content = __webpack_require__(101);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64829,7 +65492,7 @@
 	}
 
 /***/ },
-/* 99 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64843,7 +65506,7 @@
 
 
 /***/ },
-/* 100 */
+/* 102 */
 /***/ function(module, exports) {
 
 	angular.module('playerModule', ['ngAudio']);
@@ -64861,7 +65524,7 @@
 
 
 /***/ },
-/* 101 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerModule = angular.module('playerModule');
@@ -64886,18 +65549,18 @@
 	    },
 	    controller: PlayerController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(102)
+	    template: __webpack_require__(104)
 	});
 
 
 /***/ },
-/* 102 */
+/* 104 */
 /***/ function(module, exports) {
 
 	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\r\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\r\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 103 */
+/* 105 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('playerModule');
@@ -64952,13 +65615,13 @@
 
 
 /***/ },
-/* 104 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(105);
+	var content = __webpack_require__(107);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64978,7 +65641,7 @@
 	}
 
 /***/ },
-/* 105 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64992,7 +65655,7 @@
 
 
 /***/ },
-/* 106 */
+/* 108 */
 /***/ function(module, exports) {
 
 	angular.module('loginModule', []);
@@ -65010,7 +65673,7 @@
 
 
 /***/ },
-/* 107 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var loginModule = angular.module('loginModule');
@@ -65058,24 +65721,24 @@
 	    },
 	    controller: LoginController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(108)
+	    template: __webpack_require__(110)
 	});
 
 
 /***/ },
-/* 108 */
+/* 110 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 109 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(110);
+	var content = __webpack_require__(112);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65095,7 +65758,7 @@
 	}
 
 /***/ },
-/* 110 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65109,7 +65772,7 @@
 
 
 /***/ },
-/* 111 */
+/* 113 */
 /***/ function(module, exports) {
 
 	/**
@@ -65161,7 +65824,7 @@
 
 
 /***/ },
-/* 112 */
+/* 114 */
 /***/ function(module, exports) {
 
 	angular.module('userRegisterModule', []);
@@ -65179,7 +65842,7 @@
 
 
 /***/ },
-/* 113 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userRegisterModule = angular.module('userRegisterModule');
@@ -65278,24 +65941,24 @@
 	    },
 	    controller: UserRegisterController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(114)
+	    template: __webpack_require__(116)
 	});
 
 
 /***/ },
-/* 114 */
+/* 116 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"register\">\r\n    <form name=\"userForm\">\r\n        <div style=\"text-align: center\">\r\n            <h4>Crear cuenta en Freeven</h4>\r\n        </div>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"email\">Email</label>\r\n                    <input type=\"email\" name=\"email\" id=\"email\"\r\n                           ng-model=\"ctrl.userRegister.newUser.email\"\r\n                           placeholder=\"Email...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.userRegister.newUser.username\"\r\n                           placeholder=\"Nombre de usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\r\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                    <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\r\n                           placeholder=\"Nombres...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\r\n                           placeholder=\"Apellidos...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <br/><br/>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\r\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\r\n                    </p>\r\n\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userRegister.newUser.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userRegister.newUser.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>";
 
 /***/ },
-/* 115 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(116);
+	var content = __webpack_require__(118);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65315,7 +65978,7 @@
 	}
 
 /***/ },
-/* 116 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65329,7 +65992,7 @@
 
 
 /***/ },
-/* 117 */
+/* 119 */
 /***/ function(module, exports) {
 
 	/**
@@ -65398,7 +66061,7 @@
 
 
 /***/ },
-/* 118 */
+/* 120 */
 /***/ function(module, exports) {
 
 	angular.module('splashModule', []);
@@ -65416,7 +66079,7 @@
 
 
 /***/ },
-/* 119 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var splashModule = angular.module('splashModule');
@@ -65435,24 +66098,24 @@
 	    },
 	    controller: SplashController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(120)
+	    template: __webpack_require__(122)
 	});
 
 
 /***/ },
-/* 120 */
+/* 122 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"splash\">\r\n    <div class=\"splash-content\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                . . .\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-7\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3 class=\"app-title\">Freeven</h3>\r\n                        <h5 class=\"app-sub-title\"></h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n                <login></login>\r\n            </div>\r\n            <div class=\"col-md-1\"> </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 121 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(122);
+	var content = __webpack_require__(124);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65472,7 +66135,7 @@
 	}
 
 /***/ },
-/* 122 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65480,19 +66143,19 @@
 
 
 	// module
-	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(123) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
+	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(125) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 123 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "93db96e4fea7c96f7ea2244cc8e2b189.jpg";
 
 /***/ },
-/* 124 */
+/* 126 */
 /***/ function(module, exports) {
 
 	angular.module('playerPictureModule', []);
@@ -65510,7 +66173,7 @@
 
 
 /***/ },
-/* 125 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerPictureModule = angular.module('playerPictureModule');
@@ -65529,24 +66192,24 @@
 	    },
 	    controller: PlayerPictureController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(126)
+	    template: __webpack_require__(128)
 	});
 
 
 /***/ },
-/* 126 */
+/* 128 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"player-picture\">\r\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\r\n</div>";
 
 /***/ },
-/* 127 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(128);
+	var content = __webpack_require__(130);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65566,7 +66229,7 @@
 	}
 
 /***/ },
-/* 128 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65580,7 +66243,7 @@
 
 
 /***/ },
-/* 129 */
+/* 131 */
 /***/ function(module, exports) {
 
 	angular.module('trackModule', []);
@@ -65598,7 +66261,7 @@
 
 
 /***/ },
-/* 130 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
@@ -65640,24 +66303,24 @@
 	    },
 	    controller: TrackController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(131)
+	    template: __webpack_require__(133)
 	});
 
 
 /***/ },
-/* 131 */
+/* 133 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ ctrl.frModel.url }}\"\r\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\r\n                    <i class=\"icon icon-download\"></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\r\n\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Califica las piezas musicales\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 132 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(133);
+	var content = __webpack_require__(135);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65677,7 +66340,7 @@
 	}
 
 /***/ },
-/* 133 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65691,7 +66354,7 @@
 
 
 /***/ },
-/* 134 */
+/* 136 */
 /***/ function(module, exports) {
 
 	angular.module('userEditModule', []);
@@ -65709,7 +66372,7 @@
 
 
 /***/ },
-/* 135 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userEditModule = angular.module('userEditModule');
@@ -65852,30 +66515,30 @@
 	    },
 	    controller: UserEditController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(136)
+	    template: __webpack_require__(138)
 	});
 
-
-/***/ },
-/* 136 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"user-edit\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.photoProfile[0].img }}\"\r\n                 alt=\"Profile image example\"/>\r\n            <label for=\"imageUpload\"\r\n                   class=\"freeven-accept-btn\">Cambiar\r\n                avatar</label>\r\n            <input type='file' id=\"imageUpload\" ng-model-instant\r\n                   onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                   accept=\"image/*\" style=\"display: none\"/>\r\n        </div>\r\n\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <form name=\"userForm\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"><h3>\r\n                                            {{ ctrl.userEdit.user.username }}\r\n                                        </h3></label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"email\">Email</label>\r\n                            <input type=\"email\" name=\"email\" id=\"email\"\r\n                                   ng-model=\"ctrl.userEdit.user.email\"\r\n                                   placeholder=\"Email...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                          <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                          <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                                        </span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                            <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                   placeholder=\"Nombres...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\"\r\n                                  ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                            <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                            <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                   placeholder=\"Apellidos...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n                                <label for=\"changePassword\"\r\n                                       class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar\r\n                                    contraseña</label>\r\n                                <input type='button' id=\"changePassword\" style=\"display: none\"\r\n                                       ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n                            <br/>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required\r\n                                       checked/>Personal</label>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required/>Artista</label>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n\r\n                            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                                <div class=\"col-md-12 text-center\">\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n                </form>\r\n                <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <fieldset>\r\n                                <label class=\"control-label\" for=\"artistic_name\">Nombre Artístico</label>\r\n                                <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                                       placeholder=\"Nombre artístico...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\"\r\n                                      ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                            <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                                   ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"country\">País</label>\r\n                            <select class=\"form-control\" id=\"country\"\r\n                                    ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                                <option value=\"\">Pais...</option>\r\n                                <option value=\"AF\">Afganistán</option>\r\n                                <option value=\"AL\">Albania</option>\r\n                                <option value=\"DE\">Alemania</option>\r\n                                <option value=\"AD\">Andorra</option>\r\n                                <option value=\"AO\">Angola</option>\r\n                                <option value=\"AI\">Anguilla</option>\r\n                                <option value=\"AQ\">Antártida</option>\r\n                                <option value=\"AG\">Antigua y Barbuda</option>\r\n                                <option value=\"AN\">Antillas Holandesas</option>\r\n                                <option value=\"SA\">Arabia Saudí</option>\r\n                                <option value=\"DZ\">Argelia</option>\r\n                                <option value=\"AR\">Argentina</option>\r\n                                <option value=\"AM\">Armenia</option>\r\n                                <option value=\"AW\">Aruba</option>\r\n                                <option value=\"AU\">Australia</option>\r\n                                <option value=\"AT\">Austria</option>\r\n                                <option value=\"AZ\">Azerbaiyán</option>\r\n                                <option value=\"BS\">Bahamas</option>\r\n                                <option value=\"BH\">Bahrein</option>\r\n                                <option value=\"BD\">Bangladesh</option>\r\n                                <option value=\"BB\">Barbados</option>\r\n                                <option value=\"BE\">Bélgica</option>\r\n                                <option value=\"BZ\">Belice</option>\r\n                                <option value=\"BJ\">Benin</option>\r\n                                <option value=\"BM\">Bermudas</option>\r\n                                <option value=\"BY\">Bielorrusia</option>\r\n                                <option value=\"MM\">Birmania</option>\r\n                                <option value=\"BO\">Bolivia</option>\r\n                                <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                                <option value=\"BW\">Botswana</option>\r\n                                <option value=\"BR\">Brasil</option>\r\n                                <option value=\"BN\">Brunei</option>\r\n                                <option value=\"BG\">Bulgaria</option>\r\n                                <option value=\"BF\">Burkina Faso</option>\r\n                                <option value=\"BI\">Burundi</option>\r\n                                <option value=\"BT\">Bután</option>\r\n                                <option value=\"CV\">Cabo Verde</option>\r\n                                <option value=\"KH\">Camboya</option>\r\n                                <option value=\"CM\">Camerún</option>\r\n                                <option value=\"CA\">Canadá</option>\r\n                                <option value=\"TD\">Chad</option>\r\n                                <option value=\"CL\">Chile</option>\r\n                                <option value=\"CN\">China</option>\r\n                                <option value=\"CY\">Chipre</option>\r\n                                <option value=\"VA\">Ciudad del Vaticano</option>\r\n                                <option value=\"CO\">Colombia</option>\r\n                                <option value=\"KM\">Comores</option>\r\n                                <option value=\"CG\">Congo</option>\r\n                                <option value=\"KR\">Corea</option>\r\n                                <option value=\"KP\">Corea del Norte</option>\r\n                                <option value=\"CI\">Costa de Marfíl</option>\r\n                                <option value=\"CR\">Costa Rica</option>\r\n                                <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                                <option value=\"CU\">Cuba</option>\r\n                                <option value=\"DK\">Dinamarca</option>\r\n                                <option value=\"DJ\">Djibouti</option>\r\n                                <option value=\"DM\">Dominica</option>\r\n                                <option value=\"EC\">Ecuador</option>\r\n                                <option value=\"EG\">Egipto</option>\r\n                                <option value=\"SV\">El Salvador</option>\r\n                                <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                                <option value=\"ER\">Eritrea</option>\r\n                                <option value=\"SI\">Eslovenia</option>\r\n                                <option value=\"ES\" selected>España</option>\r\n                                <option value=\"US\">Estados Unidos</option>\r\n                                <option value=\"EE\">Estonia</option>\r\n                                <option value=\"ET\">Etiopía</option>\r\n                                <option value=\"FJ\">Fiji</option>\r\n                                <option value=\"PH\">Filipinas</option>\r\n                                <option value=\"FI\">Finlandia</option>\r\n                                <option value=\"FR\">Francia</option>\r\n                                <option value=\"GA\">Gabón</option>\r\n                                <option value=\"GM\">Gambia</option>\r\n                                <option value=\"GE\">Georgia</option>\r\n                                <option value=\"GH\">Ghana</option>\r\n                                <option value=\"GI\">Gibraltar</option>\r\n                                <option value=\"GD\">Granada</option>\r\n                                <option value=\"GR\">Grecia</option>\r\n                                <option value=\"GL\">Groenlandia</option>\r\n                                <option value=\"GP\">Guadalupe</option>\r\n                                <option value=\"GU\">Guam</option>\r\n                                <option value=\"GT\">Guatemala</option>\r\n                                <option value=\"GY\">Guayana</option>\r\n                                <option value=\"GF\">Guayana Francesa</option>\r\n                                <option value=\"GN\">Guinea</option>\r\n                                <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                                <option value=\"GW\">Guinea-Bissau</option>\r\n                                <option value=\"HT\">Haití</option>\r\n                                <option value=\"HN\">Honduras</option>\r\n                                <option value=\"HU\">Hungría</option>\r\n                                <option value=\"IN\">India</option>\r\n                                <option value=\"ID\">Indonesia</option>\r\n                                <option value=\"IQ\">Irak</option>\r\n                                <option value=\"IR\">Irán</option>\r\n                                <option value=\"IE\">Irlanda</option>\r\n                                <option value=\"BV\">Isla Bouvet</option>\r\n                                <option value=\"CX\">Isla de Christmas</option>\r\n                                <option value=\"IS\">Islandia</option>\r\n                                <option value=\"KY\">Islas Caimán</option>\r\n                                <option value=\"CK\">Islas Cook</option>\r\n                                <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                                <option value=\"FO\">Islas Faroe</option>\r\n                                <option value=\"HM\">Islas Heard y McDonald</option>\r\n                                <option value=\"FK\">Islas Malvinas</option>\r\n                                <option value=\"MP\">Islas Marianas del Norte</option>\r\n                                <option value=\"MH\">Islas Marshall</option>\r\n                                <option value=\"PW\">Islas Palau</option>\r\n                                <option value=\"SB\">Islas Salomón</option>\r\n                                <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                                <option value=\"TK\">Islas Tokelau</option>\r\n                                <option value=\"TC\">Islas Turks y Caicos</option>\r\n                                <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                                <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                                <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                                <option value=\"IL\">Israel</option>\r\n                                <option value=\"IT\">Italia</option>\r\n                                <option value=\"JM\">Jamaica</option>\r\n                                <option value=\"JP\">Japón</option>\r\n                                <option value=\"JO\">Jordania</option>\r\n                                <option value=\"KZ\">Kazajistán</option>\r\n                                <option value=\"KE\">Kenia</option>\r\n                                <option value=\"KG\">Kirguizistán</option>\r\n                                <option value=\"KI\">Kiribati</option>\r\n                                <option value=\"KW\">Kuwait</option>\r\n                                <option value=\"LA\">Laos</option>\r\n                                <option value=\"LS\">Lesotho</option>\r\n                                <option value=\"LV\">Letonia</option>\r\n                                <option value=\"LB\">Líbano</option>\r\n                                <option value=\"LR\">Liberia</option>\r\n                                <option value=\"LY\">Libia</option>\r\n                                <option value=\"LI\">Liechtenstein</option>\r\n                                <option value=\"LT\">Lituania</option>\r\n                                <option value=\"LU\">Luxemburgo</option>\r\n                                <option value=\"MK\">Macedonia</option>\r\n                                <option value=\"MG\">Madagascar</option>\r\n                                <option value=\"MY\">Malasia</option>\r\n                                <option value=\"MW\">Malawi</option>\r\n                                <option value=\"MV\">Maldivas</option>\r\n                                <option value=\"ML\">Malí</option>\r\n                                <option value=\"MT\">Malta</option>\r\n                                <option value=\"MA\">Marruecos</option>\r\n                                <option value=\"MQ\">Martinica</option>\r\n                                <option value=\"MU\">Mauricio</option>\r\n                                <option value=\"MR\">Mauritania</option>\r\n                                <option value=\"YT\">Mayotte</option>\r\n                                <option value=\"MX\">México</option>\r\n                                <option value=\"FM\">Micronesia</option>\r\n                                <option value=\"MD\">Moldavia</option>\r\n                                <option value=\"MC\">Mónaco</option>\r\n                                <option value=\"MN\">Mongolia</option>\r\n                                <option value=\"MS\">Montserrat</option>\r\n                                <option value=\"MZ\">Mozambique</option>\r\n                                <option value=\"NA\">Namibia</option>\r\n                                <option value=\"NR\">Nauru</option>\r\n                                <option value=\"NP\">Nepal</option>\r\n                                <option value=\"NI\">Nicaragua</option>\r\n                                <option value=\"NE\">Níger</option>\r\n                                <option value=\"NG\">Nigeria</option>\r\n                                <option value=\"NU\">Niue</option>\r\n                                <option value=\"NF\">Norfolk</option>\r\n                                <option value=\"NO\">Noruega</option>\r\n                                <option value=\"NC\">Nueva Caledonia</option>\r\n                                <option value=\"NZ\">Nueva Zelanda</option>\r\n                                <option value=\"OM\">Omán</option>\r\n                                <option value=\"NL\">Países Bajos</option>\r\n                                <option value=\"PA\">Panamá</option>\r\n                                <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                                <option value=\"PK\">Paquistán</option>\r\n                                <option value=\"PY\">Paraguay</option>\r\n                                <option value=\"PE\">Perú</option>\r\n                                <option value=\"PN\">Pitcairn</option>\r\n                                <option value=\"PF\">Polinesia Francesa</option>\r\n                                <option value=\"PL\">Polonia</option>\r\n                                <option value=\"PT\">Portugal</option>\r\n                                <option value=\"PR\">Puerto Rico</option>\r\n                                <option value=\"QA\">Qatar</option>\r\n                                <option value=\"UK\">Reino Unido</option>\r\n                                <option value=\"CF\">República Centroafricana</option>\r\n                                <option value=\"CZ\">República Checa</option>\r\n                                <option value=\"ZA\">República de Sudáfrica</option>\r\n                                <option value=\"DO\">República Dominicana</option>\r\n                                <option value=\"SK\">República Eslovaca</option>\r\n                                <option value=\"RE\">Reunión</option>\r\n                                <option value=\"RW\">Ruanda</option>\r\n                                <option value=\"RO\">Rumania</option>\r\n                                <option value=\"RU\">Rusia</option>\r\n                                <option value=\"EH\">Sahara Occidental</option>\r\n                                <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                                <option value=\"WS\">Samoa</option>\r\n                                <option value=\"AS\">Samoa Americana</option>\r\n                                <option value=\"SM\">San Marino</option>\r\n                                <option value=\"VC\">San Vicente y Granadinas</option>\r\n                                <option value=\"SH\">Santa Helena</option>\r\n                                <option value=\"LC\">Santa Lucía</option>\r\n                                <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                                <option value=\"SN\">Senegal</option>\r\n                                <option value=\"SC\">Seychelles</option>\r\n                                <option value=\"SL\">Sierra Leona</option>\r\n                                <option value=\"SG\">Singapur</option>\r\n                                <option value=\"SY\">Siria</option>\r\n                                <option value=\"SO\">Somalia</option>\r\n                                <option value=\"LK\">Sri Lanka</option>\r\n                                <option value=\"PM\">St Pierre y Miquelon</option>\r\n                                <option value=\"SZ\">Suazilandia</option>\r\n                                <option value=\"SD\">Sudán</option>\r\n                                <option value=\"SE\">Suecia</option>\r\n                                <option value=\"CH\">Suiza</option>\r\n                                <option value=\"SR\">Surinam</option>\r\n                                <option value=\"TH\">Tailandia</option>\r\n                                <option value=\"TW\">Taiwán</option>\r\n                                <option value=\"TZ\">Tanzania</option>\r\n                                <option value=\"TJ\">Tayikistán</option>\r\n                                <option value=\"TF\">Territorios franceses del Sur</option>\r\n                                <option value=\"TP\">Timor Oriental</option>\r\n                                <option value=\"TG\">Togo</option>\r\n                                <option value=\"TO\">Tonga</option>\r\n                                <option value=\"TT\">Trinidad y Tobago</option>\r\n                                <option value=\"TN\">Túnez</option>\r\n                                <option value=\"TM\">Turkmenistán</option>\r\n                                <option value=\"TR\">Turquía</option>\r\n                                <option value=\"TV\">Tuvalu</option>\r\n                                <option value=\"UA\">Ucrania</option>\r\n                                <option value=\"UG\">Uganda</option>\r\n                                <option value=\"UY\">Uruguay</option>\r\n                                <option value=\"UZ\">Uzbekistán</option>\r\n                                <option value=\"VU\">Vanuatu</option>\r\n                                <option value=\"VE\">Venezuela</option>\r\n                                <option value=\"VN\">Vietnam</option>\r\n                                <option value=\"YE\">Yemen</option>\r\n                                <option value=\"YU\">Yugoslavia</option>\r\n                                <option value=\"ZM\">Zambia</option>\r\n                                <option value=\"ZW\">Zimbabue</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                            <input type=\"text\" name=\"city\" id=\"city\"\r\n                                   ng-model=\"ctrl.userEdit.user.city\"\r\n                                   placeholder=\"Ciudad....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                                celular</label>\r\n                            <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                                   placeholder=\"Número de teléfono o celular...\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"7\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                            <input type=\"text\" name=\"address\" id=\"address\"\r\n                                   ng-model=\"ctrl.userEdit.user.address\"\r\n                                   placeholder=\"Dirección de residencia....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank\"\r\n                                   placeholder=\"Nombre Banco...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                                    ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\"\r\n                                    required>\r\n                                <option value=\"\">Tipo de cuenta</option>\r\n                                <option value=\"AH\">Ahorros</option>\r\n                                <option value=\"CR\">Corriente</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                            <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                                   placeholder=\"Número de cuenta....\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"9\"\r\n                                   ng-maxlength=\"25\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
-
-/***/ },
-/* 137 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
 
 /***/ },
 /* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<div class=\"user-edit\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(139) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.photoProfile[0].img }}\"\r\n                 alt=\"Profile image example\"/>\r\n            <label for=\"imageUpload\"\r\n                   class=\"freeven-accept-btn\">Cambiar\r\n                avatar</label>\r\n            <input type='file' id=\"imageUpload\" ng-model-instant\r\n                   onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                   accept=\"image/*\" style=\"display: none\"/>\r\n        </div>\r\n\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <form name=\"userForm\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"><h3>\r\n                                            {{ ctrl.userEdit.user.username }}\r\n                                        </h3></label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"email\">Email</label>\r\n                            <input type=\"email\" name=\"email\" id=\"email\"\r\n                                   ng-model=\"ctrl.userEdit.user.email\"\r\n                                   placeholder=\"Email...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                          <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                          <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                                        </span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                            <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                   placeholder=\"Nombres...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\"\r\n                                  ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                            <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                            <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                   placeholder=\"Apellidos...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n                                <label for=\"changePassword\"\r\n                                       class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar\r\n                                    contraseña</label>\r\n                                <input type='button' id=\"changePassword\" style=\"display: none\"\r\n                                       ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n                            <br/>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required\r\n                                       checked/>Personal</label>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required/>Artista</label>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n\r\n                            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                                <div class=\"col-md-12 text-center\">\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n                </form>\r\n                <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <fieldset>\r\n                                <label class=\"control-label\" for=\"artistic_name\">Nombre Artístico</label>\r\n                                <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                                       placeholder=\"Nombre artístico...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\"\r\n                                      ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                            <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                                   ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"country\">País</label>\r\n                            <select class=\"form-control\" id=\"country\"\r\n                                    ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                                <option value=\"\">Pais...</option>\r\n                                <option value=\"AF\">Afganistán</option>\r\n                                <option value=\"AL\">Albania</option>\r\n                                <option value=\"DE\">Alemania</option>\r\n                                <option value=\"AD\">Andorra</option>\r\n                                <option value=\"AO\">Angola</option>\r\n                                <option value=\"AI\">Anguilla</option>\r\n                                <option value=\"AQ\">Antártida</option>\r\n                                <option value=\"AG\">Antigua y Barbuda</option>\r\n                                <option value=\"AN\">Antillas Holandesas</option>\r\n                                <option value=\"SA\">Arabia Saudí</option>\r\n                                <option value=\"DZ\">Argelia</option>\r\n                                <option value=\"AR\">Argentina</option>\r\n                                <option value=\"AM\">Armenia</option>\r\n                                <option value=\"AW\">Aruba</option>\r\n                                <option value=\"AU\">Australia</option>\r\n                                <option value=\"AT\">Austria</option>\r\n                                <option value=\"AZ\">Azerbaiyán</option>\r\n                                <option value=\"BS\">Bahamas</option>\r\n                                <option value=\"BH\">Bahrein</option>\r\n                                <option value=\"BD\">Bangladesh</option>\r\n                                <option value=\"BB\">Barbados</option>\r\n                                <option value=\"BE\">Bélgica</option>\r\n                                <option value=\"BZ\">Belice</option>\r\n                                <option value=\"BJ\">Benin</option>\r\n                                <option value=\"BM\">Bermudas</option>\r\n                                <option value=\"BY\">Bielorrusia</option>\r\n                                <option value=\"MM\">Birmania</option>\r\n                                <option value=\"BO\">Bolivia</option>\r\n                                <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                                <option value=\"BW\">Botswana</option>\r\n                                <option value=\"BR\">Brasil</option>\r\n                                <option value=\"BN\">Brunei</option>\r\n                                <option value=\"BG\">Bulgaria</option>\r\n                                <option value=\"BF\">Burkina Faso</option>\r\n                                <option value=\"BI\">Burundi</option>\r\n                                <option value=\"BT\">Bután</option>\r\n                                <option value=\"CV\">Cabo Verde</option>\r\n                                <option value=\"KH\">Camboya</option>\r\n                                <option value=\"CM\">Camerún</option>\r\n                                <option value=\"CA\">Canadá</option>\r\n                                <option value=\"TD\">Chad</option>\r\n                                <option value=\"CL\">Chile</option>\r\n                                <option value=\"CN\">China</option>\r\n                                <option value=\"CY\">Chipre</option>\r\n                                <option value=\"VA\">Ciudad del Vaticano</option>\r\n                                <option value=\"CO\">Colombia</option>\r\n                                <option value=\"KM\">Comores</option>\r\n                                <option value=\"CG\">Congo</option>\r\n                                <option value=\"KR\">Corea</option>\r\n                                <option value=\"KP\">Corea del Norte</option>\r\n                                <option value=\"CI\">Costa de Marfíl</option>\r\n                                <option value=\"CR\">Costa Rica</option>\r\n                                <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                                <option value=\"CU\">Cuba</option>\r\n                                <option value=\"DK\">Dinamarca</option>\r\n                                <option value=\"DJ\">Djibouti</option>\r\n                                <option value=\"DM\">Dominica</option>\r\n                                <option value=\"EC\">Ecuador</option>\r\n                                <option value=\"EG\">Egipto</option>\r\n                                <option value=\"SV\">El Salvador</option>\r\n                                <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                                <option value=\"ER\">Eritrea</option>\r\n                                <option value=\"SI\">Eslovenia</option>\r\n                                <option value=\"ES\" selected>España</option>\r\n                                <option value=\"US\">Estados Unidos</option>\r\n                                <option value=\"EE\">Estonia</option>\r\n                                <option value=\"ET\">Etiopía</option>\r\n                                <option value=\"FJ\">Fiji</option>\r\n                                <option value=\"PH\">Filipinas</option>\r\n                                <option value=\"FI\">Finlandia</option>\r\n                                <option value=\"FR\">Francia</option>\r\n                                <option value=\"GA\">Gabón</option>\r\n                                <option value=\"GM\">Gambia</option>\r\n                                <option value=\"GE\">Georgia</option>\r\n                                <option value=\"GH\">Ghana</option>\r\n                                <option value=\"GI\">Gibraltar</option>\r\n                                <option value=\"GD\">Granada</option>\r\n                                <option value=\"GR\">Grecia</option>\r\n                                <option value=\"GL\">Groenlandia</option>\r\n                                <option value=\"GP\">Guadalupe</option>\r\n                                <option value=\"GU\">Guam</option>\r\n                                <option value=\"GT\">Guatemala</option>\r\n                                <option value=\"GY\">Guayana</option>\r\n                                <option value=\"GF\">Guayana Francesa</option>\r\n                                <option value=\"GN\">Guinea</option>\r\n                                <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                                <option value=\"GW\">Guinea-Bissau</option>\r\n                                <option value=\"HT\">Haití</option>\r\n                                <option value=\"HN\">Honduras</option>\r\n                                <option value=\"HU\">Hungría</option>\r\n                                <option value=\"IN\">India</option>\r\n                                <option value=\"ID\">Indonesia</option>\r\n                                <option value=\"IQ\">Irak</option>\r\n                                <option value=\"IR\">Irán</option>\r\n                                <option value=\"IE\">Irlanda</option>\r\n                                <option value=\"BV\">Isla Bouvet</option>\r\n                                <option value=\"CX\">Isla de Christmas</option>\r\n                                <option value=\"IS\">Islandia</option>\r\n                                <option value=\"KY\">Islas Caimán</option>\r\n                                <option value=\"CK\">Islas Cook</option>\r\n                                <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                                <option value=\"FO\">Islas Faroe</option>\r\n                                <option value=\"HM\">Islas Heard y McDonald</option>\r\n                                <option value=\"FK\">Islas Malvinas</option>\r\n                                <option value=\"MP\">Islas Marianas del Norte</option>\r\n                                <option value=\"MH\">Islas Marshall</option>\r\n                                <option value=\"PW\">Islas Palau</option>\r\n                                <option value=\"SB\">Islas Salomón</option>\r\n                                <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                                <option value=\"TK\">Islas Tokelau</option>\r\n                                <option value=\"TC\">Islas Turks y Caicos</option>\r\n                                <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                                <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                                <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                                <option value=\"IL\">Israel</option>\r\n                                <option value=\"IT\">Italia</option>\r\n                                <option value=\"JM\">Jamaica</option>\r\n                                <option value=\"JP\">Japón</option>\r\n                                <option value=\"JO\">Jordania</option>\r\n                                <option value=\"KZ\">Kazajistán</option>\r\n                                <option value=\"KE\">Kenia</option>\r\n                                <option value=\"KG\">Kirguizistán</option>\r\n                                <option value=\"KI\">Kiribati</option>\r\n                                <option value=\"KW\">Kuwait</option>\r\n                                <option value=\"LA\">Laos</option>\r\n                                <option value=\"LS\">Lesotho</option>\r\n                                <option value=\"LV\">Letonia</option>\r\n                                <option value=\"LB\">Líbano</option>\r\n                                <option value=\"LR\">Liberia</option>\r\n                                <option value=\"LY\">Libia</option>\r\n                                <option value=\"LI\">Liechtenstein</option>\r\n                                <option value=\"LT\">Lituania</option>\r\n                                <option value=\"LU\">Luxemburgo</option>\r\n                                <option value=\"MK\">Macedonia</option>\r\n                                <option value=\"MG\">Madagascar</option>\r\n                                <option value=\"MY\">Malasia</option>\r\n                                <option value=\"MW\">Malawi</option>\r\n                                <option value=\"MV\">Maldivas</option>\r\n                                <option value=\"ML\">Malí</option>\r\n                                <option value=\"MT\">Malta</option>\r\n                                <option value=\"MA\">Marruecos</option>\r\n                                <option value=\"MQ\">Martinica</option>\r\n                                <option value=\"MU\">Mauricio</option>\r\n                                <option value=\"MR\">Mauritania</option>\r\n                                <option value=\"YT\">Mayotte</option>\r\n                                <option value=\"MX\">México</option>\r\n                                <option value=\"FM\">Micronesia</option>\r\n                                <option value=\"MD\">Moldavia</option>\r\n                                <option value=\"MC\">Mónaco</option>\r\n                                <option value=\"MN\">Mongolia</option>\r\n                                <option value=\"MS\">Montserrat</option>\r\n                                <option value=\"MZ\">Mozambique</option>\r\n                                <option value=\"NA\">Namibia</option>\r\n                                <option value=\"NR\">Nauru</option>\r\n                                <option value=\"NP\">Nepal</option>\r\n                                <option value=\"NI\">Nicaragua</option>\r\n                                <option value=\"NE\">Níger</option>\r\n                                <option value=\"NG\">Nigeria</option>\r\n                                <option value=\"NU\">Niue</option>\r\n                                <option value=\"NF\">Norfolk</option>\r\n                                <option value=\"NO\">Noruega</option>\r\n                                <option value=\"NC\">Nueva Caledonia</option>\r\n                                <option value=\"NZ\">Nueva Zelanda</option>\r\n                                <option value=\"OM\">Omán</option>\r\n                                <option value=\"NL\">Países Bajos</option>\r\n                                <option value=\"PA\">Panamá</option>\r\n                                <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                                <option value=\"PK\">Paquistán</option>\r\n                                <option value=\"PY\">Paraguay</option>\r\n                                <option value=\"PE\">Perú</option>\r\n                                <option value=\"PN\">Pitcairn</option>\r\n                                <option value=\"PF\">Polinesia Francesa</option>\r\n                                <option value=\"PL\">Polonia</option>\r\n                                <option value=\"PT\">Portugal</option>\r\n                                <option value=\"PR\">Puerto Rico</option>\r\n                                <option value=\"QA\">Qatar</option>\r\n                                <option value=\"UK\">Reino Unido</option>\r\n                                <option value=\"CF\">República Centroafricana</option>\r\n                                <option value=\"CZ\">República Checa</option>\r\n                                <option value=\"ZA\">República de Sudáfrica</option>\r\n                                <option value=\"DO\">República Dominicana</option>\r\n                                <option value=\"SK\">República Eslovaca</option>\r\n                                <option value=\"RE\">Reunión</option>\r\n                                <option value=\"RW\">Ruanda</option>\r\n                                <option value=\"RO\">Rumania</option>\r\n                                <option value=\"RU\">Rusia</option>\r\n                                <option value=\"EH\">Sahara Occidental</option>\r\n                                <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                                <option value=\"WS\">Samoa</option>\r\n                                <option value=\"AS\">Samoa Americana</option>\r\n                                <option value=\"SM\">San Marino</option>\r\n                                <option value=\"VC\">San Vicente y Granadinas</option>\r\n                                <option value=\"SH\">Santa Helena</option>\r\n                                <option value=\"LC\">Santa Lucía</option>\r\n                                <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                                <option value=\"SN\">Senegal</option>\r\n                                <option value=\"SC\">Seychelles</option>\r\n                                <option value=\"SL\">Sierra Leona</option>\r\n                                <option value=\"SG\">Singapur</option>\r\n                                <option value=\"SY\">Siria</option>\r\n                                <option value=\"SO\">Somalia</option>\r\n                                <option value=\"LK\">Sri Lanka</option>\r\n                                <option value=\"PM\">St Pierre y Miquelon</option>\r\n                                <option value=\"SZ\">Suazilandia</option>\r\n                                <option value=\"SD\">Sudán</option>\r\n                                <option value=\"SE\">Suecia</option>\r\n                                <option value=\"CH\">Suiza</option>\r\n                                <option value=\"SR\">Surinam</option>\r\n                                <option value=\"TH\">Tailandia</option>\r\n                                <option value=\"TW\">Taiwán</option>\r\n                                <option value=\"TZ\">Tanzania</option>\r\n                                <option value=\"TJ\">Tayikistán</option>\r\n                                <option value=\"TF\">Territorios franceses del Sur</option>\r\n                                <option value=\"TP\">Timor Oriental</option>\r\n                                <option value=\"TG\">Togo</option>\r\n                                <option value=\"TO\">Tonga</option>\r\n                                <option value=\"TT\">Trinidad y Tobago</option>\r\n                                <option value=\"TN\">Túnez</option>\r\n                                <option value=\"TM\">Turkmenistán</option>\r\n                                <option value=\"TR\">Turquía</option>\r\n                                <option value=\"TV\">Tuvalu</option>\r\n                                <option value=\"UA\">Ucrania</option>\r\n                                <option value=\"UG\">Uganda</option>\r\n                                <option value=\"UY\">Uruguay</option>\r\n                                <option value=\"UZ\">Uzbekistán</option>\r\n                                <option value=\"VU\">Vanuatu</option>\r\n                                <option value=\"VE\">Venezuela</option>\r\n                                <option value=\"VN\">Vietnam</option>\r\n                                <option value=\"YE\">Yemen</option>\r\n                                <option value=\"YU\">Yugoslavia</option>\r\n                                <option value=\"ZM\">Zambia</option>\r\n                                <option value=\"ZW\">Zimbabue</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                            <input type=\"text\" name=\"city\" id=\"city\"\r\n                                   ng-model=\"ctrl.userEdit.user.city\"\r\n                                   placeholder=\"Ciudad....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                                celular</label>\r\n                            <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                                   placeholder=\"Número de teléfono o celular...\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"7\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                            <input type=\"text\" name=\"address\" id=\"address\"\r\n                                   ng-model=\"ctrl.userEdit.user.address\"\r\n                                   placeholder=\"Dirección de residencia....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank\"\r\n                                   placeholder=\"Nombre Banco...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                                    ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\"\r\n                                    required>\r\n                                <option value=\"\">Tipo de cuenta</option>\r\n                                <option value=\"AH\">Ahorros</option>\r\n                                <option value=\"CR\">Corriente</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                            <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                                   placeholder=\"Número de cuenta....\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"9\"\r\n                                   ng-maxlength=\"25\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(139);
+	var content = __webpack_require__(141);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65895,7 +66558,7 @@
 	}
 
 /***/ },
-/* 139 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65909,7 +66572,7 @@
 
 
 /***/ },
-/* 140 */
+/* 142 */
 /***/ function(module, exports) {
 
 	/**
@@ -66017,7 +66680,7 @@
 
 
 /***/ },
-/* 141 */
+/* 143 */
 /***/ function(module, exports) {
 
 	angular.module('userPasswordModule', []);
@@ -66035,7 +66698,7 @@
 
 
 /***/ },
-/* 142 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPasswordModule = angular.module('userPasswordModule');
@@ -66077,24 +66740,24 @@
 	    },
 	    controller: UserPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(143)
+	    template: __webpack_require__(145)
 	});
 
 
 /***/ },
-/* 143 */
+/* 145 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(145);
+	var content = __webpack_require__(147);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66114,7 +66777,7 @@
 	}
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66128,7 +66791,7 @@
 
 
 /***/ },
-/* 146 */
+/* 148 */
 /***/ function(module, exports) {
 
 	/**
@@ -66173,7 +66836,7 @@
 
 
 /***/ },
-/* 147 */
+/* 149 */
 /***/ function(module, exports) {
 
 	angular.module('helpModule', []);
@@ -66191,7 +66854,7 @@
 
 
 /***/ },
-/* 148 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66213,18 +66876,18 @@
 	    },
 	    controller: HelpController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(149)
+	    template: __webpack_require__(151)
 	});
 
 
 /***/ },
-/* 149 */
+/* 151 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
 
 /***/ },
-/* 150 */
+/* 152 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('helpModule');
@@ -66252,13 +66915,13 @@
 
 
 /***/ },
-/* 151 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(152);
+	var content = __webpack_require__(154);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66278,7 +66941,7 @@
 	}
 
 /***/ },
-/* 152 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66292,7 +66955,7 @@
 
 
 /***/ },
-/* 153 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66311,24 +66974,24 @@
 	    },
 	    controller: HelpItemController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(154)
+	    template: __webpack_require__(156)
 	});
 
 
 /***/ },
-/* 154 */
+/* 156 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 155 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(156);
+	var content = __webpack_require__(158);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66348,7 +67011,7 @@
 	}
 
 /***/ },
-/* 156 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66362,7 +67025,7 @@
 
 
 /***/ },
-/* 157 */
+/* 159 */
 /***/ function(module, exports) {
 
 	angular.module('artistModule', []);
@@ -66380,7 +67043,7 @@
 
 
 /***/ },
-/* 158 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var artistModule = angular.module('artistModule');
@@ -66407,24 +67070,24 @@
 	    },
 	    controller: ArtistController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(159)
+	    template: __webpack_require__(161)
 	});
 
 
 /***/ },
-/* 159 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(139) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 160 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(161);
+	var content = __webpack_require__(163);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66444,7 +67107,7 @@
 	}
 
 /***/ },
-/* 161 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66458,7 +67121,7 @@
 
 
 /***/ },
-/* 162 */
+/* 164 */
 /***/ function(module, exports) {
 
 	/**
@@ -66498,7 +67161,7 @@
 
 
 /***/ },
-/* 163 */
+/* 165 */
 /***/ function(module, exports) {
 
 	angular.module('topTrackListModule', []);
@@ -66516,7 +67179,7 @@
 
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var topTrackListModule = angular.module('topTrackListModule');
@@ -66541,24 +67204,24 @@
 	    },
 	    controller: TopTrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(165)
+	    template: __webpack_require__(167)
 	});
 
 
 /***/ },
-/* 165 */
+/* 167 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <h5>Número de reproducciones: {{ track.quantity }}</h5>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
 
 /***/ },
-/* 166 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(167);
+	var content = __webpack_require__(169);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66578,7 +67241,7 @@
 	}
 
 /***/ },
-/* 167 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66592,7 +67255,7 @@
 
 
 /***/ },
-/* 168 */
+/* 170 */
 /***/ function(module, exports) {
 
 	angular.module('trackCreatorModule', []);
@@ -66610,7 +67273,7 @@
 
 
 /***/ },
-/* 169 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackCreatorModule = angular.module('trackCreatorModule');
@@ -66686,30 +67349,30 @@
 	    },
 	    controller: TrackCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(170)
+	    template: __webpack_require__(172)
 	});
 
-
-/***/ },
-/* 170 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(171) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ },
-/* 171 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
 
 /***/ },
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(139) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(173) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(173);
+	var content = __webpack_require__(175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66729,7 +67392,7 @@
 	}
 
 /***/ },
-/* 173 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66743,7 +67406,7 @@
 
 
 /***/ },
-/* 174 */
+/* 176 */
 /***/ function(module, exports) {
 
 	angular.module('donationModule', []);
@@ -66761,7 +67424,7 @@
 
 
 /***/ },
-/* 175 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationModule = angular.module('donationModule');
@@ -66782,24 +67445,24 @@
 	    },
 	    controller: DonationController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(176)
+	    template: __webpack_require__(178)
 	});
 
 
 /***/ },
-/* 176 */
+/* 178 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                        <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\r\n                        <td>{{ donation.user_first_name  }}</td>\r\n                        <td>{{ donation.user_last_name }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\r\n                <h4>Aún no has recibido donaciones </h4>\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
 
 /***/ },
-/* 177 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(178);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66819,7 +67482,7 @@
 	}
 
 /***/ },
-/* 178 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66833,7 +67496,7 @@
 
 
 /***/ },
-/* 179 */
+/* 181 */
 /***/ function(module, exports) {
 
 	/**
@@ -66869,7 +67532,7 @@
 
 
 /***/ },
-/* 180 */
+/* 182 */
 /***/ function(module, exports) {
 
 	angular.module('forgotPasswordModule', []);
@@ -66887,7 +67550,7 @@
 
 
 /***/ },
-/* 181 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var forgotPasswordModule = angular.module('forgotPasswordModule');
@@ -66916,18 +67579,18 @@
 	    },
 	    controller: ForgotPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(182)
+	    template: __webpack_require__(184)
 	});
 
 
 /***/ },
-/* 182 */
+/* 184 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"forgot-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>¿Has olvidado tu contraseña?</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\r\n          <input type=\"text\" name=\"username\" id=\"username\"\r\n          ng-model=\"ctrl.forgotPassword.username.username\"\r\n          placeholder=\"Usuario...\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\r\n         Enviar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 183 */
+/* 185 */
 /***/ function(module, exports) {
 
 	/**
@@ -66977,13 +67640,13 @@
 
 
 /***/ },
-/* 184 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(185);
+	var content = __webpack_require__(187);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67003,7 +67666,7 @@
 	}
 
 /***/ },
-/* 185 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67017,7 +67680,7 @@
 
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports) {
 
 	angular.module('scoreEditorModule', []);
@@ -67035,7 +67698,7 @@
 
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -67074,18 +67737,18 @@
 	    },
 	    controller: ScoreEditorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(188)
+	    template: __webpack_require__(190)
 	});
 
 
 /***/ },
-/* 188 */
+/* 190 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"score-editor\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\r\n    </div>\r\n    <div class=\"score-editor-container\">\r\n        <track hide-item-info=\"true\"\r\n               fr-model=\"ctrl.scoreEditorService.track\">\r\n        </track>\r\n\r\n        <div class=\"rating\">\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\r\n                    <span>Guardar</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 189 */
+/* 191 */
 /***/ function(module, exports) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -67131,13 +67794,13 @@
 
 
 /***/ },
-/* 190 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(191);
+	var content = __webpack_require__(193);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67157,7 +67820,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67171,7 +67834,7 @@
 
 
 /***/ },
-/* 192 */
+/* 194 */
 /***/ function(module, exports) {
 
 	angular.module('restorePasswordModule', []);
@@ -67189,7 +67852,7 @@
 
 
 /***/ },
-/* 193 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var restorePasswordModule = angular.module('restorePasswordModule');
@@ -67231,24 +67894,24 @@
 	    },
 	    controller: RestorePasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(194)
+	    template: __webpack_require__(196)
 	});
 
 
 /***/ },
-/* 194 */
+/* 196 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 195 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(196);
+	var content = __webpack_require__(198);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67268,7 +67931,7 @@
 	}
 
 /***/ },
-/* 196 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67282,7 +67945,7 @@
 
 
 /***/ },
-/* 197 */
+/* 199 */
 /***/ function(module, exports) {
 
 	/**
@@ -67336,7 +67999,7 @@
 
 
 /***/ },
-/* 198 */
+/* 200 */
 /***/ function(module, exports) {
 
 	angular.module('donationCreatorModule', []);
@@ -67354,7 +68017,7 @@
 
 
 /***/ },
-/* 199 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67391,18 +68054,18 @@
 	    },
 	    controller: DonationCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(200)
+	    template: __webpack_require__(202)
 	});
 
 
 /***/ },
-/* 200 */
+/* 202 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Donación</h4>\r\n    </div>\r\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\">Monto a donar</label>\r\n                    <input type=\"number\"\r\n                           ng-model=\"ctrl.donation.value\"\r\n                           value=\"ctrl.donation.value | currency\"\r\n                           placeholder=\"$ 000 000\"\r\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\r\n                        <span>Hacer donación</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n\r\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\r\n                        <span>Finalizar</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 201 */
+/* 203 */
 /***/ function(module, exports) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67446,13 +68109,13 @@
 
 
 /***/ },
-/* 202 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(203);
+	var content = __webpack_require__(205);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67472,7 +68135,7 @@
 	}
 
 /***/ },
-/* 203 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67486,7 +68149,7 @@
 
 
 /***/ },
-/* 204 */
+/* 206 */
 /***/ function(module, exports) {
 
 	angular.module('bounceModule', []);
@@ -67504,7 +68167,7 @@
 
 
 /***/ },
-/* 205 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var  bounceModule = angular.module('bounceModule');
@@ -67523,24 +68186,24 @@
 	    },
 	    controller: BounceController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(206)
+	    template: __webpack_require__(208)
 	});
 
 
 /***/ },
-/* 206 */
+/* 208 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"bounce1\"></div>\r\n<div class=\"bounce2\"></div>\r\n<div class=\"bounce3\"></div>\r\n";
 
 /***/ },
-/* 207 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(208);
+	var content = __webpack_require__(210);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67560,7 +68223,7 @@
 	}
 
 /***/ },
-/* 208 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67574,7 +68237,7 @@
 
 
 /***/ },
-/* 209 */
+/* 211 */
 /***/ function(module, exports) {
 
 	angular.module('postCreatorModule', []);
@@ -67592,7 +68255,7 @@
 
 
 /***/ },
-/* 210 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var postCreatorModule = angular.module('postCreatorModule');
@@ -67648,30 +68311,30 @@
 	    },
 	    controller: PostCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(211)
+	    template: __webpack_require__(213)
 	});
 
-
-/***/ },
-/* 211 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.eventName\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.eventPlace\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date_event\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.eventDescription\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n                        <div class=\"col-md-2\" ng-if=\"ctrl.event.loading\">\r\n                            <bounce title=\"Bounce\">Publicando evento</bounce>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "a7d964bb837d8a671f40661c2d9084af.jpg";
 
 /***/ },
 /* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "55772eb4043520f5770a55cb7b8d7454.png";
+	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(214) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(215) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.eventName\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.eventPlace\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date_event\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.eventDescription\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n                        <div class=\"col-md-2\" ng-if=\"ctrl.event.loading\">\r\n                            <bounce title=\"Bounce\">Publicando evento</bounce>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "a7d964bb837d8a671f40661c2d9084af.jpg";
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "55772eb4043520f5770a55cb7b8d7454.png";
+
+/***/ },
+/* 216 */
 /***/ function(module, exports) {
 
 	/**
@@ -67709,13 +68372,13 @@
 
 
 /***/ },
-/* 215 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(216);
+	var content = __webpack_require__(218);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67735,7 +68398,7 @@
 	}
 
 /***/ },
-/* 216 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67749,7 +68412,7 @@
 
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports) {
 
 	angular.module('eventListModule', []);
@@ -67767,7 +68430,7 @@
 
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports) {
 
 	/**
@@ -67823,7 +68486,7 @@
 
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eventListModule = angular.module('eventListModule');
@@ -67851,30 +68514,30 @@
 	    },
 	    controller: EventListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(220)
+	    template: __webpack_require__(222)
 	});
 
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(221) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.eventName }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artistName }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.eventPlace }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.eventDescription }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "d009533eb0f70eae18ac7fa16841e466.jpg";
 
 /***/ },
 /* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(223) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.eventName }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artistName }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.eventPlace }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.eventDescription }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "d009533eb0f70eae18ac7fa16841e466.jpg";
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(225);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67894,7 +68557,7 @@
 	}
 
 /***/ },
-/* 223 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67908,7 +68571,7 @@
 
 
 /***/ },
-/* 224 */
+/* 226 */
 /***/ function(module, exports) {
 
 	angular.module('competitionListModule', []);
@@ -67926,7 +68589,7 @@
 
 
 /***/ },
-/* 225 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionListModule = angular.module('competitionListModule');
@@ -67969,18 +68632,18 @@
 	    },
 	    controller: CompetitionListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(226)
+	    template: __webpack_require__(228)
 	});
 
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row competition-list\">\r\n    <h3 class=\"top-competition-list-title\">Listado de convocatorias</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"competition in ctrl.competitionList.competitions\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n                <br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <button class=\"freeven-accept-btn\"\r\n                                ng-click=\"ctrl.participate(competition.id)\">\r\n                            Participar\r\n                        </button>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in competition.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n</div>";
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports) {
 
 	/**
@@ -68034,13 +68697,13 @@
 
 
 /***/ },
-/* 228 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(229);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68060,7 +68723,7 @@
 	}
 
 /***/ },
-/* 229 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -68074,7 +68737,7 @@
 
 
 /***/ },
-/* 230 */
+/* 232 */
 /***/ function(module, exports) {
 
 	angular.module('competitionParticipateModule', []);
@@ -68092,10 +68755,10 @@
 
 
 /***/ },
-/* 231 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var competitionParticipateModule = angular.module('competitionParticipateModule');
+	/* WEBPACK VAR INJECTION */(function(jQuery) {var competitionParticipateModule = angular.module('competitionParticipateModule');
 	var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
 	    'competitionListService', 'CompetitionApiService', 'ArtistApiService',
 	    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService,
@@ -68104,6 +68767,7 @@
 	         * Tip: add here only visual logic
 	         */
 	        var self = this;
+
 
 	        self.idCompetition = competitionListService.getSelectedIdCompetition();
 
@@ -68125,6 +68789,8 @@
 	        self.uploadFileToParticipate = function () {
 	            var self = this;
 	            var user = mainService.getUserData();
+
+
 	            self.loading = true;
 	            if (self.trackFiles) {
 	                Upload.upload({
@@ -68155,10 +68821,10 @@
 	                        console.log('Error loading full competition');
 	                    });
 	            }
-
 	        };
 
 	        self.loadFullTracksArtist = function (id) {
+
 	            if (id != undefined) {
 	                ArtistApiService.getTracksForArtist(
 	                    {guidArtist: id},
@@ -68173,12 +68839,16 @@
 	        };
 
 	        self.loadFullCompetition(self.idCompetition);
-	        self.loadFullTracksArtist(2);
+	        self.loadFullTracksArtist(mainService.getArtistId());
 
 
 	        self.close = function () {
 	            $freevenModal.closePopup();
 	        };
+
+	        jQuery(document).ready(function ($) {
+	            $('#undo_redo').multiselect();
+	        });
 
 	    }];
 
@@ -68189,24 +68859,25 @@
 	    },
 	    controller: CompetitionParticipateController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(232)
+	    template: __webpack_require__(234)
 	});
 
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 232 */
+/* 234 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar items</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"items\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\" required>\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar mis obras</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"tracks\" multiple\r\n                            ng-model=\"ctrl.tracksSelected\" required>\r\n                        <option ng-repeat=\"track in  ctrl.tracksArtist\"\r\n                                ng-value=\"track.id\">{{ track.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xs-5\">\r\n                    <select name=\"from[]\" id=\"undo_redo\" class=\"form-control\"\r\n                            ng-model=\"ctrl.itemsSelected\"\r\n                            multiple=\"multiple\" size=\"8\">\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-xs-2\">\r\n                    <button type=\"button\" id=\"undo_redo_rightAll\" class=\"btn btn-default btn-block\"><i\r\n                            class=\"glyphicon glyphicon-forward\"></i></button>\r\n                    <button type=\"button\" id=\"undo_redo_rightSelected\" class=\"btn btn-default btn-block\"><i\r\n                            class=\"glyphicon glyphicon-chevron-right\"></i></button>\r\n                    <button type=\"button\" id=\"undo_redo_leftSelected\" class=\"btn btn-default btn-block\"><i\r\n                            class=\"glyphicon glyphicon-chevron-left\"></i></button>\r\n                    <button type=\"button\" id=\"undo_redo_leftAll\" class=\"btn btn-default btn-block\"><i\r\n                            class=\"glyphicon glyphicon-backward\"></i></button>\r\n                </div>\r\n                <div class=\"col-xs-5\">\r\n                    <select name=\"to[]\" id=\"undo_redo_to\" ng-model=\"ctrl.itemsSelected\" class=\"form-control\"\r\n                            multiple=\"multiple\" size=\"8\" required></select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <!--<fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar items</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"items\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\" required>\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>-->\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar mis obras</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"tracks\" multiple\r\n                            ng-model=\"ctrl.tracksSelected\" required>\r\n                        <option ng-repeat=\"track in  ctrl.tracksArtist\"\r\n                                ng-value=\"track.id\">{{ track.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 233 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(234);
+	var content = __webpack_require__(236);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68226,7 +68897,7 @@
 	}
 
 /***/ },
-/* 234 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
