@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Donation, Artist, BusinessAgent
+from .models import Donation, Artist, BusinessAgent, Event
 
 
 class LoginSerializer(serializers.ModelSerializer):
@@ -118,4 +118,91 @@ class UserRetriveSerializer(serializers.ModelSerializer):
             'email',
             'artist',
             'agent',
+        )
+
+
+class EventSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+    artist = serializers.SerializerMethodField()
+    artist_id = serializers.SerializerMethodField()
+    artist_user_id = serializers.SerializerMethodField()
+    artist_name = serializers.SerializerMethodField()
+    artist_email = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Event
+        fields = (
+            'id',
+            'name',
+            'date',
+            'place',
+            'latitude',
+            'longitude',
+            'description',
+            'image',
+            'artist',
+            'artist_id',
+            'artist_user_id',
+            'artist_name',
+            'artist_email',
+        )
+
+    @classmethod
+    def get_image(self, obj):
+        try:
+            return obj.image.url
+        except:
+            return None
+
+    @classmethod
+    def get_artist(self, obj):
+        try:
+            return obj.artist.user.username
+        except:
+            return None
+
+    @classmethod
+    def get_artist_user_id(self, obj):
+        try:
+            return obj.artist.user.id
+        except:
+            return None
+
+    @classmethod
+    def get_artist_id(self, obj):
+        try:
+            return obj.artist.id
+        except:
+            return None
+
+    @classmethod
+    def get_artist_name(self, obj):
+        try:
+            return obj.artist.user.first_name + ' ' + obj.artist.user.last_name
+        except:
+            return None
+
+    @classmethod
+    def get_artist_email(self, obj):
+        try:
+            return obj.artist.user.email
+        except:
+            return None
+
+
+class EventUploadSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(max_length=None, use_url=True)
+
+    class Meta:
+        model = Event
+        fields = (
+            'id',
+            'name',
+            'date',
+            'place',
+            'latitude',
+            'longitude',
+            'description',
+            'image',
+            'artist',
         )
