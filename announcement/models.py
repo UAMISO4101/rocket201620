@@ -36,6 +36,15 @@ class Item(models.Model):
                                     related_name='ancts')
     winner = models.ForeignKey(Track, blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        if self.id is not None and self.winner is not None:
+            item_track = Track.objects.filter(id=self.winner.id,
+                                              ancts__id=self.id)
+            if len(item_track) == 0:
+                error = 'Obra no inscrita en esta categoría.'
+                raise serializers.ValidationError(error)
+        super(Item, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 

@@ -37,7 +37,8 @@ var appModules = [
     'postCreatorModule',
     'eventListModule',
     'competitionListModule',
-    'competitionParticipateModule'
+    'competitionParticipateModule',
+    'announcementCreatorModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

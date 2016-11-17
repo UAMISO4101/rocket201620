@@ -44,6 +44,7 @@ class ItemUploadSerializer(serializers.ModelSerializer):
             'description',
             'image',
             'gender',
+            'winner',
             'announcement',
         )
 
@@ -186,6 +187,7 @@ class ItemFullSerializer(ItemSerializer):
             'description',
             'image',
             'gender',
+            'winner',
             'tracks',
         )
 
@@ -232,9 +234,17 @@ class VoteUpdateSerializer(serializers.ModelSerializer):
         )
 
 
-class AnctParticipateSerializer(serializers.ModelSerializer):
+class ParticipateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = (
             'tracks',
+        )
+
+
+class SelectWinnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = (
+            'winner',
         )
