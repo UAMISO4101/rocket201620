@@ -76,6 +76,11 @@
                                 <span ng-if="!ctrl.files.image">Seleccione la imagen del evento</span>
                                 <span ng-if="ctrl.files.image">{{ ctrl.files.image.name }}</span>
                             </a>
+
+                        </div>
+                        <div class="col-md-12">
+                                  <span class="messages"
+                                        ng-show="!ctrl.image">¿Olvido agregar una imagen?</span>
                         </div>
 
                     </div>

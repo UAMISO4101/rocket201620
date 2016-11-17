@@ -4,8 +4,8 @@
 
 var eventListModule = angular.module('eventListModule');
 eventListModule.factory('eventListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-    'mainService', '$cookieStore',
-    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+    'mainService', '$cookieStore','UserApiService',
+    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore,UserApiService) {
         var eventListService = function () {
 
             var self = this;
@@ -19,7 +19,15 @@ eventListModule.factory('eventListService', ['UserApiService', '$i18n', '$freeve
 
             self.listEvents = function () {
                 self.events = [];
-                self.loadMockData();
+                UserApiService.getEvents(
+                    {},
+                    function (response) {
+                         self.events = response.results;
+                    },
+                    function (error) {
+                        console.log('Error loading events');
+                    }
+                );
 
             };
 

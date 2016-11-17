@@ -278,20 +278,20 @@
 	__webpack_require__(217);
 	__webpack_require__(218);
 	__webpack_require__(219);
-	__webpack_require__(222);
+	__webpack_require__(221);
 
+	__webpack_require__(223);
 	__webpack_require__(224);
-	__webpack_require__(225);
+	__webpack_require__(226);
 	__webpack_require__(227);
-	__webpack_require__(228);
 
+	__webpack_require__(229);
 	__webpack_require__(230);
-	__webpack_require__(231);
-	__webpack_require__(233);
+	__webpack_require__(232);
 
+	 __webpack_require__(234);
 	 __webpack_require__(235);
-	 __webpack_require__(236);
-	 __webpack_require__(239);
+	 __webpack_require__(238);
 
 /***/ },
 /* 2 */
@@ -64129,6 +64129,12 @@
 	            },
 	            isArray: false,
 	        },
+	         getEvents: {
+	            url: 'api/user/event-list/',
+	            method: 'GET',
+	            params: {},
+	            isArray: false,
+	        }
 	    });
 
 
@@ -67611,6 +67617,7 @@
 	        self.event = postCreatorService;
 	        self.dateOk = true;
 	        self.files = {};
+	        self.image = true;
 
 
 	        self.saveEvent = function () {
@@ -67627,13 +67634,14 @@
 	        self.validateDate = function () {
 	            var today = new Date();
 	            var isToday = (today.toDateString() == self.event.event.date.toDateString());
-	            var isLess = (today.toDateString() > self.event.event.date.toDateString());
-	            if (isToday == false && isLess == true) {
+	            var isLess = (today.toDateString() < self.event.event.date.toDateString());
+
+	            if (isToday == false && isLess == false) {
 	                return true;
 	            } else {
 	                return false;
 	            }
-	        }
+	        };
 
 	        self.validateFieldsPostCreator = function () {
 	            if (self.event.event.name == undefined
@@ -67643,10 +67651,12 @@
 	                return false;
 	            } else {
 	                if (self.files) {
-	                    self.event.event.image = self.files.image;
-	                    return true;
-	                } else {
-	                    return false;
+	                    if (self.validateImage()) {
+	                        return true;
+	                    } else {
+	                        return false;
+	                    }
+
 	                }
 	            }
 	        }
@@ -67657,6 +67667,17 @@
 	                self.files[fieldName] = file;
 	            }
 	        };
+
+	        self.validateImage = function () {
+	            self.event.event.image = self.files.image;
+	            if (self.event.event.image == undefined) {
+	                self.image = false;
+	                return false;
+	            } else {
+	                self.image = true;
+	                return true;
+	            }
+	        }
 
 	    }];
 
@@ -67675,7 +67696,7 @@
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.name\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.place\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.description\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"imagenEvent\">Imagen del evento</label>\r\n                            <a ngf-select\r\n                               ngf-multiple=\"false\"\r\n                               accept=\".jpg\"\r\n                               filters=\".jpg\"\r\n                               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                               class=\"form-control track-picture-selector\">\r\n                                <i class=\"icon icon-images\"></i>\r\n                                <span ng-if=\"!ctrl.files.image\">Seleccione la imagen del evento</span>\r\n                                <span ng-if=\"ctrl.files.image\">{{ ctrl.files.image.name }}</span>\r\n                            </a>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.name\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.place\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.description\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"imagenEvent\">Imagen del evento</label>\r\n                            <a ngf-select\r\n                               ngf-multiple=\"false\"\r\n                               accept=\".jpg\"\r\n                               filters=\".jpg\"\r\n                               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                               class=\"form-control track-picture-selector\">\r\n                                <i class=\"icon icon-images\"></i>\r\n                                <span ng-if=\"!ctrl.files.image\">Seleccione la imagen del evento</span>\r\n                                <span ng-if=\"ctrl.files.image\">{{ ctrl.files.image.name }}</span>\r\n                            </a>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                                  <span class=\"messages\"\r\n                                        ng-show=\"!ctrl.image\">¿Olvido agregar una imagen?</span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 212 */
@@ -67729,6 +67750,7 @@
 	                }).success(function (data, status, headers, config) {
 	                    if (status == 201) {
 	                        notifierService.success("Eventos", "Tu evento ha sido creado");
+	                        window.location.assign("#/events");
 	                    } else {
 	                        notifierService.error("Eventos", "Error creando el evento");
 	                    }
@@ -67813,8 +67835,8 @@
 
 	var eventListModule = angular.module('eventListModule');
 	eventListModule.factory('eventListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore','UserApiService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore,UserApiService) {
 	        var eventListService = function () {
 
 	            var self = this;
@@ -67828,7 +67850,15 @@
 
 	            self.listEvents = function () {
 	                self.events = [];
-	                self.loadMockData();
+	                UserApiService.getEvents(
+	                    {},
+	                    function (response) {
+	                         self.events = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading events');
+	                    }
+	                );
 
 	            };
 
@@ -67894,24 +67924,18 @@
 
 /***/ },
 /* 220 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(221) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.eventName }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artistName }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.eventPlace }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.eventDescription }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
+	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ event.image }}\"\r\n                 alt=\"Profile image example\"\r\n                    height=\"200\" width=\"200\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.name }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artist }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.place }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.description }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
 
 /***/ },
 /* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "d009533eb0f70eae18ac7fa16841e466.jpg";
-
-/***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67931,7 +67955,7 @@
 	}
 
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67945,7 +67969,7 @@
 
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports) {
 
 	angular.module('competitionListModule', []);
@@ -67963,7 +67987,7 @@
 
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionListModule = angular.module('competitionListModule');
@@ -68006,18 +68030,18 @@
 	    },
 	    controller: CompetitionListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(226)
+	    template: __webpack_require__(225)
 	});
 
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row competition-list\">\r\n    <h3 class=\"top-competition-list-title\">Listado de convocatorias</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"competition in ctrl.competitionList.competitions\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n                <br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <button class=\"freeven-accept-btn\"\r\n                                ng-click=\"ctrl.participate(competition.id)\">\r\n                            Participar\r\n                        </button>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in competition.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n</div>";
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports) {
 
 	/**
@@ -68071,13 +68095,13 @@
 
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(229);
+	var content = __webpack_require__(228);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68097,7 +68121,7 @@
 	}
 
 /***/ },
-/* 229 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -68111,7 +68135,7 @@
 
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports) {
 
 	angular.module('competitionParticipateModule', []);
@@ -68129,7 +68153,7 @@
 
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionParticipateModule = angular.module('competitionParticipateModule');
@@ -68233,24 +68257,24 @@
 	    },
 	    controller: CompetitionParticipateController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(232)
+	    template: __webpack_require__(231)
 	});
 
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <h4>Por favor, asocia una obra a cada item</h4>\r\n                    <table class=\"table\" border=\"1px\">\r\n                        <tbody>\r\n                        <tr>\r\n                            <td><strong>Identificación</strong></td>\r\n                            <td><strong>Nombre</strong></td>\r\n                            <td><strong>Tipo</strong></td>\r\n                            <td><strong>Mi obra seleccionada</strong></td>\r\n                        </tr>\r\n                        <tr ng-repeat=\"item in ctrl.items\">\r\n                            <td>{{ item.id }}</td>\r\n                            <td>{{ item.name }}</td>\r\n                            <td>{{ item.gender }}</td>\r\n                            <td><select ng-options=\"track.name for track in ctrl.tracksArtist\"\r\n                                        ng-model=\"item.track\" required>\r\n                                <option value=\"\" disabled>Seleccionar obra</option>\r\n                            </select>\r\n                            </td>\r\n                        </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 233 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(234);
+	var content = __webpack_require__(233);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68270,7 +68294,7 @@
 	}
 
 /***/ },
-/* 234 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -68284,7 +68308,7 @@
 
 
 /***/ },
-/* 235 */
+/* 234 */
 /***/ function(module, exports) {
 
 	angular.module('announcementCreatorModule', []);
@@ -68302,7 +68326,7 @@
 
 
 /***/ },
-/* 236 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var announcementCreatorModule = angular.module('announcementCreatorModule');
@@ -68353,30 +68377,30 @@
 	    },
 	    controller: AnnouncementCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(237)
+	    template: __webpack_require__(236)
 	});
 
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"announcement-creator\">\r\n    <div class=\"fr-announcement-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-announcement-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(237) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la imagen de la convocatoria</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-announcement-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para crear una convocatoria</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de inicio</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.start_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de cierre</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.end_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">El ganador se escogerá po seleccion popular</label>\r\n                        <input type=\"checkbox\" class=\"form-control\"\r\n                               ng-model=\"ctrl.popular_selection\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear convocatoria</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"announcement-creator\">\r\n    <div class=\"fr-announcement-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-announcement-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(238) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la imagen de la convocatoria</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-announcement-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para crear una convocatoria</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de inicio</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.start_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de cierre</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.end_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">El ganador se escogerá po seleccion popular</label>\r\n                        <input type=\"checkbox\" class=\"form-control\"\r\n                               ng-model=\"ctrl.popular_selection\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear convocatoria</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = __webpack_require__.p + "255d428492ecce6251791d7ad424e634.jpg";
 
 /***/ },
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "255d428492ecce6251791d7ad424e634.jpg";
-
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(240);
+	var content = __webpack_require__(239);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68396,7 +68420,7 @@
 	}
 
 /***/ },
-/* 240 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();

@@ -34,6 +34,7 @@ postCreatorModule.factory('postCreatorService', ['UserApiService', '$i18n', '$fr
                 }).success(function (data, status, headers, config) {
                     if (status == 201) {
                         notifierService.success("Eventos", "Tu evento ha sido creado");
+                        window.location.assign("#/events");
                     } else {
                         notifierService.error("Eventos", "Error creando el evento");
                     }

@@ -8,6 +8,7 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
         self.event = postCreatorService;
         self.dateOk = true;
         self.files = {};
+        self.image = true;
 
 
         self.saveEvent = function () {
@@ -24,13 +25,14 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
         self.validateDate = function () {
             var today = new Date();
             var isToday = (today.toDateString() == self.event.event.date.toDateString());
-            var isLess = (today.toDateString() > self.event.event.date.toDateString());
-            if (isToday == false && isLess == true) {
+            var isLess = (today.toDateString() < self.event.event.date.toDateString());
+
+            if (isToday == false && isLess == false) {
                 return true;
             } else {
                 return false;
             }
-        }
+        };
 
         self.validateFieldsPostCreator = function () {
             if (self.event.event.name == undefined
@@ -40,10 +42,12 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
                 return false;
             } else {
                 if (self.files) {
-                    self.event.event.image = self.files.image;
-                    return true;
-                } else {
-                    return false;
+                    if (self.validateImage()) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
                 }
             }
         }
@@ -54,6 +58,17 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
                 self.files[fieldName] = file;
             }
         };
+
+        self.validateImage = function () {
+            self.event.event.image = self.files.image;
+            if (self.event.event.image == undefined) {
+                self.image = false;
+                return false;
+            } else {
+                self.image = true;
+                return true;
+            }
+        }
 
     }];
 

@@ -46,6 +46,12 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
             },
             isArray: false,
         },
+         getEvents: {
+            url: 'api/user/event-list/',
+            method: 'GET',
+            params: {},
+            isArray: false,
+        }
     });
 
 
