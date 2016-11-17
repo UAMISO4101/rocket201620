@@ -16,7 +16,7 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
         getUser: {
             url: 'api/user/user-detail/:userId',
             method: 'GET',
-            params: {userId:'@id'},
+            params: {userId: '@id'},
             isArray: false,
         }
 
@@ -31,7 +31,7 @@ restApiModule.factory('UserApiService', ['$resource', function ($resource) {
         restorePasswordUser: {
             url: '/user/change_password',
             method: 'GET',
-            params: {username: '@string',password: '@string'},
+            params: {username: '@string', password: '@string'},
             isArray: false,
         },
 

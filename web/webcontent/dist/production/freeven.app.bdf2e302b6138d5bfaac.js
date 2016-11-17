@@ -64099,7 +64099,7 @@
 	        getUser: {
 	            url: 'api/user/user-detail/:userId',
 	            method: 'GET',
-	            params: {userId:'@id'},
+	            params: {userId: '@id'},
 	            isArray: false,
 	        }
 
@@ -64114,7 +64114,7 @@
 	        restorePasswordUser: {
 	            url: '/user/change_password',
 	            method: 'GET',
-	            params: {username: '@string',password: '@string'},
+	            params: {username: '@string', password: '@string'},
 	            isArray: false,
 	        },
 
@@ -66865,7 +66865,7 @@
 	                        }
 	                    },
 	                    function (error) {
-	                        console.log('Error loading tracks');
+	                        console.log('Error loading donations');
 	                    });
 	            };
 
@@ -67610,6 +67610,7 @@
 	        var self = this;
 	        self.event = postCreatorService;
 	        self.dateOk = true;
+	        self.files = {};
 
 
 	        self.saveEvent = function () {
@@ -67625,8 +67626,8 @@
 
 	        self.validateDate = function () {
 	            var today = new Date();
-	            var isToday = (today.toDateString() == self.event.event.date_event.toDateString());
-	            var isLess = (today.toDateString() > self.event.event.date_event.toDateString());
+	            var isToday = (today.toDateString() == self.event.event.date.toDateString());
+	            var isLess = (today.toDateString() > self.event.event.date.toDateString());
 	            if (isToday == false && isLess == true) {
 	                return true;
 	            } else {
@@ -67635,15 +67636,27 @@
 	        }
 
 	        self.validateFieldsPostCreator = function () {
-	            if (self.event.event.eventName == undefined
-	                || self.event.event.eventPlace == undefined
-	                || self.event.event.date_event == undefined
-	                || self.event.event.eventDescription == undefined) {
+	            if (self.event.event.name == undefined
+	                || self.event.event.place == undefined
+	                || self.event.event.date == undefined
+	                || self.event.event.description == undefined) {
 	                return false;
 	            } else {
-	                return true;
+	                if (self.files) {
+	                    self.event.event.image = self.files.image;
+	                    return true;
+	                } else {
+	                    return false;
+	                }
 	            }
 	        }
+
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
 
 	    }];
 
@@ -67662,7 +67675,7 @@
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.eventName\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.eventPlace\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date_event\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.eventDescription\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n                        <div class=\"col-md-2\" ng-if=\"ctrl.event.loading\">\r\n                            <bounce title=\"Bounce\">Publicando evento</bounce>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.name\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.place\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.description\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"imagenEvent\">Imagen del evento</label>\r\n                            <a ngf-select\r\n                               ngf-multiple=\"false\"\r\n                               accept=\".jpg\"\r\n                               filters=\".jpg\"\r\n                               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                               class=\"form-control track-picture-selector\">\r\n                                <i class=\"icon icon-images\"></i>\r\n                                <span ng-if=\"!ctrl.files.image\">Seleccione la imagen del evento</span>\r\n                                <span ng-if=\"ctrl.files.image\">{{ ctrl.files.image.name }}</span>\r\n                            </a>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 212 */
@@ -67686,8 +67699,8 @@
 
 	var postCreatorModule = angular.module('postCreatorModule');
 	postCreatorModule.factory('postCreatorService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore', 'UserApiService', 'Upload',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore, UserApiService, Upload) {
 	        var postCreatorService = function () {
 
 	            var self = this;
@@ -67696,12 +67709,30 @@
 
 	            self.loading = false;
 
-	            self.idUserAuth = $cookieStore.get('user_data').id_user;
+	            self.idUserAuth = mainService.getArtistId();
 
 	            self.saveEvent = function () {
-	                self.event.artistId = self.idUserAuth;
-	                console.log("saveEvent");
-	                console.log(self.event);
+	                self.event.artist = self.idUserAuth;
+	                Upload.upload({
+	                    url: 'api/user/event-create/',
+	                    data: {
+	                        name: self.event.name,
+	                        date: self.event.date,
+	                        place: self.event.place,
+	                        latitude: 0,
+	                        longitude: 0,
+	                        description: self.event.description,
+	                        image: self.event.image,
+	                        artist: self.event.artist,
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    if (status == 201) {
+	                        notifierService.success("Eventos", "Tu evento ha sido creado");
+	                    } else {
+	                        notifierService.error("Eventos", "Error creando el evento");
+	                    }
+	                });
 
 	                setTimeout(function () {
 	                    self.loading = true;

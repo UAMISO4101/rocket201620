@@ -7,6 +7,7 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
         var self = this;
         self.event = postCreatorService;
         self.dateOk = true;
+        self.files = {};
 
 
         self.saveEvent = function () {
@@ -22,8 +23,8 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
 
         self.validateDate = function () {
             var today = new Date();
-            var isToday = (today.toDateString() == self.event.event.date_event.toDateString());
-            var isLess = (today.toDateString() > self.event.event.date_event.toDateString());
+            var isToday = (today.toDateString() == self.event.event.date.toDateString());
+            var isLess = (today.toDateString() > self.event.event.date.toDateString());
             if (isToday == false && isLess == true) {
                 return true;
             } else {
@@ -32,15 +33,27 @@ var PostCreatorController = ['$i18n', 'postCreatorService',
         }
 
         self.validateFieldsPostCreator = function () {
-            if (self.event.event.eventName == undefined
-                || self.event.event.eventPlace == undefined
-                || self.event.event.date_event == undefined
-                || self.event.event.eventDescription == undefined) {
+            if (self.event.event.name == undefined
+                || self.event.event.place == undefined
+                || self.event.event.date == undefined
+                || self.event.event.description == undefined) {
                 return false;
             } else {
-                return true;
+                if (self.files) {
+                    self.event.event.image = self.files.image;
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
+
+        self.attachFile = function (files, fieldName) {
+            if (files && files.length > 0) {
+                var file = files[0];
+                self.files[fieldName] = file;
+            }
+        };
 
     }];
 
