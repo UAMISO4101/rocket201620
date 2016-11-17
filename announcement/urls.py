@@ -5,7 +5,6 @@ from .views import (AnnouncementListView, AnnouncementCreateView,
                     VoteUpdateView, ParticipateView, ItemListView,
                     SelectWinnerView)
 
-
 urlpatterns = [
     url(r'^$', AnnouncementListView.as_view(), name='anct-list'),
     url(r'^full/(?P<pk>\d+)/$', AnnouncementCompleteListView.as_view(),

@@ -83,7 +83,8 @@
 	    'postCreatorModule',
 	    'eventListModule',
 	    'competitionListModule',
-	    'competitionParticipateModule'
+	    'competitionParticipateModule',
+	    'announcementCreatorModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -277,16 +278,20 @@
 	__webpack_require__(217);
 	__webpack_require__(218);
 	__webpack_require__(219);
-	__webpack_require__(222);
+	__webpack_require__(221);
 
+	__webpack_require__(223);
 	__webpack_require__(224);
-	__webpack_require__(225);
+	__webpack_require__(226);
 	__webpack_require__(227);
-	__webpack_require__(228);
 
+	__webpack_require__(229);
 	__webpack_require__(230);
-	__webpack_require__(231);
-	__webpack_require__(233);
+	__webpack_require__(232);
+
+	 __webpack_require__(234);
+	 __webpack_require__(235);
+	 __webpack_require__(238);
 
 /***/ },
 /* 2 */
@@ -62378,6 +62383,17 @@
 	(function (window, document) {
 	    'use strict';
 	    var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+	    var checkAuthentication = function ($q, mainService, $location) {
+	        var deferred = $q.defer();
+	        var authenticated = mainService.isAuthenticated();
+	        if (authenticated) {
+	            deferred.resolve();
+	        } else {
+	            deferred.reject();
+	            $location.url('#/');
+	        }
+	        return deferred.promise;
+	    };
 	    angular.extend(appConfigurations, {
 	        'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
 	            function configuration($routeProvider, $httpProvider, $translateProvider) {
@@ -62410,15 +62426,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                           return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62430,15 +62438,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62447,15 +62447,17 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
+	                        }]
+	                    }
+	                });
+
+	                 $routeProvider.when('/announcement', {
+	                    template: '<announcement-creator> </announcement-creator>',
+	                    requireAuthentication: true,
+	                    resolve: {
+	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -63982,6 +63984,10 @@
 	                return self.user.is_artist;
 	            };
 
+	            self.getArtistId = function () {
+	                return self.user.id_artist;
+	            };
+
 	            self.setUserData = function (userData) {
 	                self.user = userData;
 	                self.saveUserCookies(userData);
@@ -64093,7 +64099,7 @@
 	        getUser: {
 	            url: 'api/user/user-detail/:userId',
 	            method: 'GET',
-	            params: {userId:'@id'},
+	            params: {userId: '@id'},
 	            isArray: false,
 	        }
 
@@ -64108,7 +64114,7 @@
 	        restorePasswordUser: {
 	            url: '/user/change_password',
 	            method: 'GET',
-	            params: {username: '@string',password: '@string'},
+	            params: {username: '@string', password: '@string'},
 	            isArray: false,
 	        },
 
@@ -64123,6 +64129,12 @@
 	            },
 	            isArray: false,
 	        },
+	         getEvents: {
+	            url: 'api/user/event-list/',
+	            method: 'GET',
+	            params: {},
+	            isArray: false,
+	        }
 	    });
 
 
@@ -64537,7 +64549,7 @@
 /* 86 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-logo\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-music-note\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-share\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a ng-href=\"#/announcement\" class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\">\r\n                <i class=\"music-side-menu-discover\"></i>\r\n                <span>Crear convocatoria</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 87 */
@@ -66859,7 +66871,7 @@
 	                        }
 	                    },
 	                    function (error) {
-	                        console.log('Error loading tracks');
+	                        console.log('Error loading donations');
 	                    });
 	            };
 
@@ -67604,6 +67616,8 @@
 	        var self = this;
 	        self.event = postCreatorService;
 	        self.dateOk = true;
+	        self.files = {};
+	        self.image = true;
 
 
 	        self.saveEvent = function () {
@@ -67619,22 +67633,48 @@
 
 	        self.validateDate = function () {
 	            var today = new Date();
-	            var isToday = (today.toDateString() == self.event.event.date_event.toDateString());
-	            var isLess = (today.toDateString() > self.event.event.date_event.toDateString());
-	            if (isToday == false && isLess == true) {
+	            var isToday = (today.toDateString() == self.event.event.date.toDateString());
+	            var isLess = (today.toDateString() < self.event.event.date.toDateString());
+
+	            if (isToday == false && isLess == false) {
 	                return true;
 	            } else {
 	                return false;
 	            }
-	        }
+	        };
 
 	        self.validateFieldsPostCreator = function () {
-	            if (self.event.event.eventName == undefined
-	                || self.event.event.eventPlace == undefined
-	                || self.event.event.date_event == undefined
-	                || self.event.event.eventDescription == undefined) {
+	            if (self.event.event.name == undefined
+	                || self.event.event.place == undefined
+	                || self.event.event.date == undefined
+	                || self.event.event.description == undefined) {
 	                return false;
 	            } else {
+	                if (self.files) {
+	                    if (self.validateImage()) {
+	                        return true;
+	                    } else {
+	                        return false;
+	                    }
+
+	                }
+	            }
+	        }
+
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
+
+	        self.validateImage = function () {
+	            self.event.event.image = self.files.image;
+	            if (self.event.event.image == undefined) {
+	                self.image = false;
+	                return false;
+	            } else {
+	                self.image = true;
 	                return true;
 	            }
 	        }
@@ -67656,7 +67696,7 @@
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.eventName\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.eventPlace\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date_event\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.eventDescription\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n                        <div class=\"col-md-2\" ng-if=\"ctrl.event.loading\">\r\n                            <bounce title=\"Bounce\">Publicando evento</bounce>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.name\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.place\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.description\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"imagenEvent\">Imagen del evento</label>\r\n                            <a ngf-select\r\n                               ngf-multiple=\"false\"\r\n                               accept=\".jpg\"\r\n                               filters=\".jpg\"\r\n                               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                               class=\"form-control track-picture-selector\">\r\n                                <i class=\"icon icon-images\"></i>\r\n                                <span ng-if=\"!ctrl.files.image\">Seleccione la imagen del evento</span>\r\n                                <span ng-if=\"ctrl.files.image\">{{ ctrl.files.image.name }}</span>\r\n                            </a>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                                  <span class=\"messages\"\r\n                                        ng-show=\"!ctrl.image\">¿Olvido agregar una imagen?</span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 212 */
@@ -67680,8 +67720,8 @@
 
 	var postCreatorModule = angular.module('postCreatorModule');
 	postCreatorModule.factory('postCreatorService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore', 'UserApiService', 'Upload',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore, UserApiService, Upload) {
 	        var postCreatorService = function () {
 
 	            var self = this;
@@ -67690,12 +67730,31 @@
 
 	            self.loading = false;
 
-	            self.idUserAuth = $cookieStore.get('user_data').id_user;
+	            self.idUserAuth = mainService.getArtistId();
 
 	            self.saveEvent = function () {
-	                self.event.artistId = self.idUserAuth;
-	                console.log("saveEvent");
-	                console.log(self.event);
+	                self.event.artist = self.idUserAuth;
+	                Upload.upload({
+	                    url: 'api/user/event-create/',
+	                    data: {
+	                        name: self.event.name,
+	                        date: self.event.date,
+	                        place: self.event.place,
+	                        latitude: 0,
+	                        longitude: 0,
+	                        description: self.event.description,
+	                        image: self.event.image,
+	                        artist: self.event.artist,
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    if (status == 201) {
+	                        notifierService.success("Eventos", "Tu evento ha sido creado");
+	                        window.location.assign("#/events");
+	                    } else {
+	                        notifierService.error("Eventos", "Error creando el evento");
+	                    }
+	                });
 
 	                setTimeout(function () {
 	                    self.loading = true;
@@ -67776,8 +67835,8 @@
 
 	var eventListModule = angular.module('eventListModule');
 	eventListModule.factory('eventListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore','UserApiService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore,UserApiService) {
 	        var eventListService = function () {
 
 	            var self = this;
@@ -67791,7 +67850,15 @@
 
 	            self.listEvents = function () {
 	                self.events = [];
-	                self.loadMockData();
+	                UserApiService.getEvents(
+	                    {},
+	                    function (response) {
+	                         self.events = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading events');
+	                    }
+	                );
 
 	            };
 
@@ -67857,24 +67924,18 @@
 
 /***/ },
 /* 220 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(221) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.eventName }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artistName }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.eventPlace }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.eventDescription }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
+	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ event.image }}\"\r\n                 alt=\"Profile image example\"\r\n                    height=\"200\" width=\"200\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.name }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artist }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.place }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.description }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
 
 /***/ },
 /* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "d009533eb0f70eae18ac7fa16841e466.jpg";
-
-/***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67894,7 +67955,7 @@
 	}
 
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67908,7 +67969,7 @@
 
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports) {
 
 	angular.module('competitionListModule', []);
@@ -67926,7 +67987,7 @@
 
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionListModule = angular.module('competitionListModule');
@@ -67969,18 +68030,18 @@
 	    },
 	    controller: CompetitionListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(226)
+	    template: __webpack_require__(225)
 	});
 
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row competition-list\">\r\n    <h3 class=\"top-competition-list-title\">Listado de convocatorias</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"competition in ctrl.competitionList.competitions\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n                <br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <button class=\"freeven-accept-btn\"\r\n                                ng-click=\"ctrl.participate(competition.id)\">\r\n                            Participar\r\n                        </button>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in competition.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n</div>";
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports) {
 
 	/**
@@ -68034,13 +68095,13 @@
 
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(229);
+	var content = __webpack_require__(228);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68060,7 +68121,7 @@
 	}
 
 /***/ },
-/* 229 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -68074,7 +68135,7 @@
 
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports) {
 
 	angular.module('competitionParticipateModule', []);
@@ -68092,7 +68153,7 @@
 
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionParticipateModule = angular.module('competitionParticipateModule');
@@ -68105,15 +68166,19 @@
 	         */
 	        var self = this;
 
+
 	        self.idCompetition = competitionListService.getSelectedIdCompetition();
 
 	        self.participateValidate = function () {
-	            self.uploadFileToParticipate();
+	            self.goToParticipate();
 	        }
 	        self.trackFiles = {};
 	        self.loading = false;
-	        self.itemsSelected = [];
+	        self.itemsSelected = {};
 	        self.tracksSelected = [];
+	        self.participateData = {};
+
+	        self.filters = [];
 
 	        self.attachFile = function (files, fieldName) {
 	            if (files && files.length > 0) {
@@ -68122,30 +68187,19 @@
 	            }
 	        };
 
-	        self.uploadFileToParticipate = function () {
+	        self.goToParticipate = function () {
 	            var self = this;
 	            var user = mainService.getUserData();
+	            self.tracksSelected = self.filters;
 	            self.loading = true;
-	            if (self.trackFiles) {
-	                Upload.upload({
-	                    url: 'api/announcement/participate/',
-	                    data: {
-	                        items: self.itemsSelected,
-	                        tracks: self.tracksSelected,
-	                        artist_id: user.id_artist,
-	                    }
-	                }).progress(function (evt) {
-	                }).success(function (data, status, headers, config) {
-	                    self.loading = false;
-	                    self.close();
-	                    console.log('Enviado a convocatoria correctamente');
-	                    notifierService.success("La pieza musical se ha sido enviada para participar", ".");
-	                });
-	            }
+	            self.createRelationItemTrack();
+
 	        };
 
 	        self.loadFullCompetition = function (id) {
+
 	            if (id != undefined) {
+	                self.participateData.IdCompetition = id;
 	                CompetitionApiService.getCompetition(
 	                    {guidCompetition: id},
 	                    function (response) {
@@ -68155,10 +68209,10 @@
 	                        console.log('Error loading full competition');
 	                    });
 	            }
-
 	        };
 
 	        self.loadFullTracksArtist = function (id) {
+
 	            if (id != undefined) {
 	                ArtistApiService.getTracksForArtist(
 	                    {guidArtist: id},
@@ -68172,8 +68226,22 @@
 
 	        };
 
+	        self.createRelationItemTrack = function () {
+	            var self = this;
+	            var relations = [];
+	            for (var i = 0; i < self.items.length; i++) {
+	                var relation = {};
+	                relation.idItem = self.items[i].id;
+	                relation.idTrack = self.items[i].track.id;
+	                relations.push(relation);
+	            }
+	            self.participateData.relations = relations;
+	            console.log(self.participateData);
+
+	        };
+
 	        self.loadFullCompetition(self.idCompetition);
-	        self.loadFullTracksArtist(2);
+	        self.loadFullTracksArtist(mainService.getArtistId());
 
 
 	        self.close = function () {
@@ -68189,24 +68257,24 @@
 	    },
 	    controller: CompetitionParticipateController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(232)
+	    template: __webpack_require__(231)
 	});
 
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar items</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"items\" multiple\r\n                            ng-model=\"ctrl.itemsSelected\">\r\n                        <option ng-repeat=\"item in  ctrl.items\"\r\n                                ng-value=\"item.id\">{{ item.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <span>Seleccionar mis obras</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <select class=\"form-control\" name=\"tracks\" multiple\r\n                            ng-model=\"ctrl.tracksSelected\">\r\n                        <option ng-repeat=\"track in  ctrl.tracksArtist\"\r\n                                ng-value=\"track.id\">{{ track.name }}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <h4>Por favor, asocia una obra a cada item</h4>\r\n                    <table class=\"table\" border=\"1px\">\r\n                        <tbody>\r\n                        <tr>\r\n                            <td><strong>Identificación</strong></td>\r\n                            <td><strong>Nombre</strong></td>\r\n                            <td><strong>Tipo</strong></td>\r\n                            <td><strong>Mi obra seleccionada</strong></td>\r\n                        </tr>\r\n                        <tr ng-repeat=\"item in ctrl.items\">\r\n                            <td>{{ item.id }}</td>\r\n                            <td>{{ item.name }}</td>\r\n                            <td>{{ item.gender }}</td>\r\n                            <td><select ng-options=\"track.name for track in ctrl.tracksArtist\"\r\n                                        ng-model=\"item.track\" required>\r\n                                <option value=\"\" disabled>Seleccionar obra</option>\r\n                            </select>\r\n                            </td>\r\n                        </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 233 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(234);
+	var content = __webpack_require__(233);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -68226,7 +68294,7 @@
 	}
 
 /***/ },
-/* 234 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -68234,7 +68302,133 @@
 
 
 	// module
-	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form span {\n  color: black;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form table {\n  color: black;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form span {\n  color: black;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 234 */
+/***/ function(module, exports) {
+
+	angular.module('announcementCreatorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/announcementCreator/announcementCreatorModule.js');
+	 require('../app/announcementCreator/announcementCreatorComponent.js');
+	 require('../app/announcementCreator/announcementCreator.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <announcement-creator title ="AnnouncementCreator"> </announcement-creator>
+	*/
+
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var announcementCreatorModule = angular.module('announcementCreatorModule');
+	var AnnouncementCreatorController = ['Upload', 'mainService',
+	    function (Upload, mainService) {
+	        var self = this;
+	        self.files = {};
+	        self.loading = false;
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
+
+	        self.uploadFilesAndData = function () {
+	            var self = this;
+	            var user = mainService.getUserData();
+	            self.loading = true;
+	            if (self.files) {
+	                Upload.upload({
+	                    url: 'announcement/create/',
+	                    data: {
+	                        name: self.name,
+	                        description: self.description,
+	                        start_date: "2016-01-02",
+	                        end_date: "2016-05-02",
+	                        image: self.files.image,
+	                        popular_selection: true,
+	                        open: true,
+	                        owner: user.id_agent || 1,
+	                        score: 0
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    self.loading = false;
+	                    console.log('subido correctamente');
+	                    notifierService.success("La convocatoria se ha creado correctamente", ".");
+	                });
+	            }
+	        };
+	    }];
+
+	announcementCreatorModule.component('announcementCreator', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: AnnouncementCreatorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(236)
+	});
+
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"announcement-creator\">\r\n    <div class=\"fr-announcement-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-announcement-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(237) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la imagen de la convocatoria</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-announcement-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para crear una convocatoria</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de inicio</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.start_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de cierre</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.end_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">El ganador se escogerá po seleccion popular</label>\r\n                        <input type=\"checkbox\" class=\"form-control\"\r\n                               ng-model=\"ctrl.popular_selection\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear convocatoria</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "255d428492ecce6251791d7ad424e634.jpg";
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(239);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".announcement-creator {\n  padding: 0 6% 100px 6%;\n}\n.announcement-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.announcement-creator .form-group .control-label {\n  color: black;\n}\n.announcement-creator h1,\n.announcement-creator h3,\n.announcement-creator h4,\n.announcement-creator p {\n  color: black;\n}\n.announcement-creator .fr-announcement-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.announcement-creator .fr-image-announcement-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector span {\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.announcement-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
 
 	// exports
 
