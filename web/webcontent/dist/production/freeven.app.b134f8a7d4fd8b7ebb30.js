@@ -83,7 +83,8 @@
 	    'postCreatorModule',
 	    'eventListModule',
 	    'competitionListModule',
-	    'competitionParticipateModule'
+	    'competitionParticipateModule',
+	    'announcementCreatorModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -287,6 +288,10 @@
 	__webpack_require__(230);
 	__webpack_require__(231);
 	__webpack_require__(233);
+
+	 __webpack_require__(235);
+	 __webpack_require__(236);
+	 __webpack_require__(239);
 
 /***/ },
 /* 2 */
@@ -62378,6 +62383,17 @@
 	(function (window, document) {
 	    'use strict';
 	    var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+	    var checkAuthentication = function ($q, mainService, $location) {
+	        var deferred = $q.defer();
+	        var authenticated = mainService.isAuthenticated();
+	        if (authenticated) {
+	            deferred.resolve();
+	        } else {
+	            deferred.reject();
+	            $location.url('#/');
+	        }
+	        return deferred.promise;
+	    };
 	    angular.extend(appConfigurations, {
 	        'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
 	            function configuration($routeProvider, $httpProvider, $translateProvider) {
@@ -62410,15 +62426,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                           return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62430,15 +62438,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62447,15 +62447,17 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
+	                        }]
+	                    }
+	                });
+
+	                 $routeProvider.when('/announcement', {
+	                    template: '<announcement-creator> </announcement-creator>',
+	                    requireAuthentication: true,
+	                    resolve: {
+	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -64541,7 +64543,7 @@
 /* 86 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-logo\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-music-note\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-share\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a ng-href=\"#/announcement\" class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\">\r\n                <i class=\"music-side-menu-discover\"></i>\r\n                <span>Crear convocatoria</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 87 */
@@ -68246,6 +68248,132 @@
 
 	// module
 	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form table {\n  color: black;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form span {\n  color: black;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 235 */
+/***/ function(module, exports) {
+
+	angular.module('announcementCreatorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/announcementCreator/announcementCreatorModule.js');
+	 require('../app/announcementCreator/announcementCreatorComponent.js');
+	 require('../app/announcementCreator/announcementCreator.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <announcement-creator title ="AnnouncementCreator"> </announcement-creator>
+	*/
+
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var announcementCreatorModule = angular.module('announcementCreatorModule');
+	var AnnouncementCreatorController = ['Upload', 'mainService',
+	    function (Upload, mainService) {
+	        var self = this;
+	        self.files = {};
+	        self.loading = false;
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
+
+	        self.uploadFilesAndData = function () {
+	            var self = this;
+	            var user = mainService.getUserData();
+	            self.loading = true;
+	            if (self.files) {
+	                Upload.upload({
+	                    url: 'announcement/create/',
+	                    data: {
+	                        name: self.name,
+	                        description: self.description,
+	                        start_date: "2016-01-02",
+	                        end_date: "2016-05-02",
+	                        image: self.files.image,
+	                        popular_selection: true,
+	                        open: true,
+	                        owner: user.id_agent || 1,
+	                        score: 0
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    self.loading = false;
+	                    console.log('subido correctamente');
+	                    notifierService.success("La convocatoria se ha creado correctamente", ".");
+	                });
+	            }
+	        };
+	    }];
+
+	announcementCreatorModule.component('announcementCreator', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: AnnouncementCreatorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(237)
+	});
+
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"announcement-creator\">\r\n    <div class=\"fr-announcement-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-announcement-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(238) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la imagen de la convocatoria</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-announcement-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para crear una convocatoria</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de inicio</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.start_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de cierre</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.end_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">El ganador se escogerá po seleccion popular</label>\r\n                        <input type=\"checkbox\" class=\"form-control\"\r\n                               ng-model=\"ctrl.popular_selection\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear convocatoria</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "255d428492ecce6251791d7ad424e634.jpg";
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(240);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".announcement-creator {\n  padding: 0 6% 100px 6%;\n}\n.announcement-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.announcement-creator .form-group .control-label {\n  color: black;\n}\n.announcement-creator h1,\n.announcement-creator h3,\n.announcement-creator h4,\n.announcement-creator p {\n  color: black;\n}\n.announcement-creator .fr-announcement-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.announcement-creator .fr-image-announcement-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector span {\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.announcement-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
 
 	// exports
 
