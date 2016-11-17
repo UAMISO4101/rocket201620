@@ -27,6 +27,10 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
                 return self.user.is_artist;
             };
 
+            self.getArtistId = function () {
+                return self.user.id_artist;
+            };
+
             self.setUserData = function (userData) {
                 self.user = userData;
                 self.saveUserCookies(userData);
