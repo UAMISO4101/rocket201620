@@ -1,8 +1,10 @@
+# -*- coding: UTF-8 -*-
 from django.db import models
 from users.models import BusinessAgent
 from tracks.models import Gender, Track
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from rest_framework import serializers
 
 
 class Announcement(models.Model):
@@ -34,6 +36,15 @@ class Item(models.Model):
                                     related_name='ancts')
     winner = models.ForeignKey(Track, blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        if self.id is not None and self.winner is not None:
+            item_track = Track.objects.filter(id=self.winner.id,
+                                              ancts__id=self.id)
+            if len(item_track) == 0:
+                error = 'Obra no inscrita en esta categoría.'
+                raise serializers.ValidationError(error)
+        super(Item, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
@@ -49,7 +60,8 @@ class Vote(models.Model):
         item_track = Track.objects.filter(ancts__id=self.item.id)
 
         if len(item_track) == 0:
-            raise ValidationError('Obra no inscrita en la convocatoria.')
+            error = 'Obra no inscrita en esta categoría de la convocatoria.'
+            raise serializers.ValidationError(error)
         else:
             super(Vote, self).save(*args, **kwargs)
 

@@ -81,7 +81,10 @@
 	    'donationCreatorModule',
 	    'bounceModule',
 	    'postCreatorModule',
-	    'eventListModule'
+	    'eventListModule',
+	    'competitionListModule',
+	    'competitionParticipateModule',
+	    'announcementCreatorModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -148,133 +151,147 @@
 	__webpack_require__(73);
 	__webpack_require__(74);
 	__webpack_require__(75);
+	__webpack_require__(76);
 
 	/**
 	 * Registro de componentes nuevos
 	 */
 
-	__webpack_require__(76);
-
 	__webpack_require__(77);
+
 	__webpack_require__(78);
-	__webpack_require__(80);
+	__webpack_require__(79);
 	__webpack_require__(81);
+	__webpack_require__(82);
 
-	__webpack_require__(83);
 	__webpack_require__(84);
-	__webpack_require__(86);
+	__webpack_require__(85);
+	__webpack_require__(87);
 
-	__webpack_require__(88);
 	__webpack_require__(89);
-	__webpack_require__(91);
-	__webpack_require__(93);
-
-
+	__webpack_require__(90);
+	__webpack_require__(92);
 	__webpack_require__(94);
+
+
 	__webpack_require__(95);
-	__webpack_require__(97);
+	__webpack_require__(96);
+	__webpack_require__(98);
 
-	__webpack_require__(99);
 	__webpack_require__(100);
-	__webpack_require__(102);
+	__webpack_require__(101);
 	__webpack_require__(103);
+	__webpack_require__(104);
 
-	__webpack_require__(105);
 	__webpack_require__(106);
-	__webpack_require__(108);
-	__webpack_require__(110);
-
+	__webpack_require__(107);
+	__webpack_require__(109);
 	__webpack_require__(111);
+
 	__webpack_require__(112);
-	__webpack_require__(114);
-	__webpack_require__(116);
-
+	__webpack_require__(113);
+	__webpack_require__(115);
 	__webpack_require__(117);
+
 	__webpack_require__(118);
-	__webpack_require__(120);
+	__webpack_require__(119);
+	__webpack_require__(121);
 
-	__webpack_require__(123);
 	__webpack_require__(124);
-	__webpack_require__(126);
+	__webpack_require__(125);
+	__webpack_require__(127);
 
-	__webpack_require__(128);
 	__webpack_require__(129);
-	__webpack_require__(131);
+	__webpack_require__(130);
+	__webpack_require__(132);
 
-	__webpack_require__(133);
 	__webpack_require__(134);
-	__webpack_require__(137);
-	__webpack_require__(139);
-
+	__webpack_require__(135);
+	__webpack_require__(138);
 	__webpack_require__(140);
+
 	__webpack_require__(141);
-	__webpack_require__(143);
-	__webpack_require__(145);
-
+	__webpack_require__(142);
+	__webpack_require__(144);
 	__webpack_require__(146);
+
 	__webpack_require__(147);
-	__webpack_require__(149);
+	__webpack_require__(148);
 	__webpack_require__(150);
-	__webpack_require__(152);
-	__webpack_require__(154);
+	__webpack_require__(151);
+	__webpack_require__(153);
+	__webpack_require__(155);
 
-	__webpack_require__(156);
 	__webpack_require__(157);
-	__webpack_require__(159);
-	__webpack_require__(161);
-
+	__webpack_require__(158);
+	__webpack_require__(160);
 	__webpack_require__(162);
+
 	__webpack_require__(163);
-	__webpack_require__(165);
+	__webpack_require__(164);
+	__webpack_require__(166);
 
-	__webpack_require__(167);
 	__webpack_require__(168);
-	__webpack_require__(171);
+	__webpack_require__(169);
+	__webpack_require__(172);
 
-	__webpack_require__(156);
 	__webpack_require__(157);
-	__webpack_require__(159);
-	__webpack_require__(161);
+	__webpack_require__(158);
+	__webpack_require__(160);
+	__webpack_require__(162);
 
-	__webpack_require__(173);
 	__webpack_require__(174);
-	__webpack_require__(176);
-	__webpack_require__(178);
-
+	__webpack_require__(175);
+	__webpack_require__(177);
 	__webpack_require__(179);
+
 	__webpack_require__(180);
-	__webpack_require__(182);
+	__webpack_require__(181);
 	__webpack_require__(183);
+	__webpack_require__(184);
 
 
-	__webpack_require__(185);
 	__webpack_require__(186);
-	__webpack_require__(188);
+	__webpack_require__(187);
 	__webpack_require__(189);
+	__webpack_require__(190);
 
-	__webpack_require__(191);
 	__webpack_require__(192);
-	__webpack_require__(194);
-	__webpack_require__(196);
-
+	__webpack_require__(193);
+	__webpack_require__(195);
 	__webpack_require__(197);
+
 	__webpack_require__(198);
-	__webpack_require__(200);
+	__webpack_require__(199);
 	__webpack_require__(201);
+	__webpack_require__(202);
 
-	__webpack_require__(203);
 	__webpack_require__(204);
-	__webpack_require__(206);
+	__webpack_require__(205);
+	__webpack_require__(207);
 
-	__webpack_require__(208);
 	__webpack_require__(209);
-	__webpack_require__(213);
+	__webpack_require__(210);
 	__webpack_require__(214);
+	__webpack_require__(215);
 
-	__webpack_require__(216);
 	__webpack_require__(217);
 	__webpack_require__(218);
+	__webpack_require__(219);
 	__webpack_require__(221);
+
+	__webpack_require__(223);
+	__webpack_require__(224);
+	__webpack_require__(226);
+	__webpack_require__(227);
+
+	__webpack_require__(229);
+	__webpack_require__(230);
+	__webpack_require__(232);
+
+	 __webpack_require__(234);
+	 __webpack_require__(235);
+	 __webpack_require__(238);
 
 /***/ },
 /* 2 */
@@ -62366,6 +62383,17 @@
 	(function (window, document) {
 	    'use strict';
 	    var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+	    var checkAuthentication = function ($q, mainService, $location) {
+	        var deferred = $q.defer();
+	        var authenticated = mainService.isAuthenticated();
+	        if (authenticated) {
+	            deferred.resolve();
+	        } else {
+	            deferred.reject();
+	            $location.url('#/');
+	        }
+	        return deferred.promise;
+	    };
 	    angular.extend(appConfigurations, {
 	        'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
 	            function configuration($routeProvider, $httpProvider, $translateProvider) {
@@ -62387,6 +62415,9 @@
 	                $routeProvider.when('/events', {
 	                    template: '<event-list></event-list>'
 	                });
+	                $routeProvider.when('/competitions', {
+	                    template: '<competition-list></competition-list>'
+	                });
 	                $routeProvider.when('/upload', {
 	                    template: '<track-creator></track-creator>'
 	                });
@@ -62395,15 +62426,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                           return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62415,15 +62438,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62432,15 +62447,17 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                            var deferred = $q.defer();
-	                            var authenticated = mainService.isAuthenticated();
-	                            if (authenticated) {
-	                                deferred.resolve();
-	                            } else {
-	                                deferred.reject();
-	                                $location.url('#/');
-	                            }
-	                            return deferred.promise;
+	                             return checkAuthentication($q, mainService, $location);
+	                        }]
+	                    }
+	                });
+
+	                 $routeProvider.when('/announcement', {
+	                    template: '<announcement-creator> </announcement-creator>',
+	                    requireAuthentication: true,
+	                    resolve: {
+	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+	                             return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -63967,6 +63984,10 @@
 	                return self.user.is_artist;
 	            };
 
+	            self.getArtistId = function () {
+	                return self.user.id_artist;
+	            };
+
 	            self.setUserData = function (userData) {
 	                self.user = userData;
 	                self.saveUserCookies(userData);
@@ -64078,7 +64099,7 @@
 	        getUser: {
 	            url: 'api/user/user-detail/:userId',
 	            method: 'GET',
-	            params: {userId:'@id'},
+	            params: {userId: '@id'},
 	            isArray: false,
 	        }
 
@@ -64093,7 +64114,7 @@
 	        restorePasswordUser: {
 	            url: '/user/change_password',
 	            method: 'GET',
-	            params: {username: '@string',password: '@string'},
+	            params: {username: '@string', password: '@string'},
 	            isArray: false,
 	        },
 
@@ -64108,6 +64129,12 @@
 	            },
 	            isArray: false,
 	        },
+	         getEvents: {
+	            url: 'api/user/event-list/',
+	            method: 'GET',
+	            params: {},
+	            isArray: false,
+	        }
 	    });
 
 
@@ -64125,7 +64152,16 @@
 	    /**
 	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
 	     * */
-	    return $resource('/user/artist/:userId', {userId:'@id'});
+	    return $resource('/user/artist/:userId', {userId: '@id'},
+	        {
+	            getTracksForArtist: {
+	                url: 'track/for_artistic/:guidArtist',
+	                method: 'GET',
+	                params: {guidArtist: '@id'},
+	                isArray: false
+	            }
+
+	        });
 
 	}]);
 
@@ -64203,6 +64239,29 @@
 /* 76 */
 /***/ function(module, exports) {
 
+	var restApiModule = angular.module('restAPIModule');
+	restApiModule.factory('CompetitionApiService', ['$resource', function ($resource) {
+	    /**
+	     * This configuration enable POST, GET, PUT DELETE operations for the defined url and custom urls
+	     * */
+	    return $resource('announcement/:guidCompetition', {guid: '@guid'}, {
+	        /*custom urls*/
+	            getCompetition: {
+	            url: 'announcement/full/:guidCompetition',
+	            method: 'GET',
+	            params: {guidCompetition: '@id'},
+	            isArray: false
+	        }
+	    });
+	}]);
+
+
+
+
+/***/ },
+/* 77 */
+/***/ function(module, exports) {
+
 	var commonDirectivesModule = angular.module('commonDirectivesModule');
 	commonDirectivesModule.factory('$freevenModal', ['$uibModal', function ($uibModal) {
 	    var ModalAreaService = function () {
@@ -64242,7 +64301,7 @@
 
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports) {
 
 	angular.module('trackListModule', []);
@@ -64260,7 +64319,7 @@
 
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64280,18 +64339,18 @@
 	    },
 	    controller: TrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(79)
+	    template: __webpack_require__(80)
 	});
 
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"track-list\">\r\n    <h3 class=\"track-list-title\">Esto es lo mas reciente</h3>\r\n    <div class=\"row \"\r\n         infinite-scroll='ctrl.trackList.nextPage()'\r\n         infinite-scroll-disabled='ctrl.trackList.busy'\r\n         infinite-scroll-distance='50'>\r\n        <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n               fr-model=\"track\"\r\n               ng-repeat=\"track in ctrl.trackList.tracks\">\r\n        </track>\r\n        <br/>\r\n        <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n        <h3 class=\"view-more\"><i class=\"icon icon-arrow-down\"></i></h3>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports) {
 
 	var trackListModule = angular.module('trackListModule');
@@ -64397,13 +64456,13 @@
 
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(82);
+	var content = __webpack_require__(83);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64423,7 +64482,7 @@
 	}
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64437,7 +64496,7 @@
 
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports) {
 
 	angular.module('userPanelModule', []);
@@ -64455,7 +64514,7 @@
 
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPanelModule = angular.module('userPanelModule');
@@ -64482,24 +64541,24 @@
 	    },
 	    controller: UserPanelController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(85)
+	    template: __webpack_require__(86)
 	});
 
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-logo\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n              <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-music-note\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n            <a href=\"#/events\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-share\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n            <a ng-href=\"#/announcement\" class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\">\r\n                <i class=\"music-side-menu-discover\"></i>\r\n                <span>Crear convocatoria</span>\r\n            </a>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(87);
+	var content = __webpack_require__(88);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64519,7 +64578,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64533,7 +64592,7 @@
 
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports) {
 
 	angular.module('userMenuModule', []);
@@ -64545,7 +64604,7 @@
 
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userMenuModule = angular.module('userMenuModule');
@@ -64588,24 +64647,24 @@
 	    },
 	    controller: UserMenuController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(90)
+	    template: __webpack_require__(91)
 	});
 
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-menu\">\r\n    <div class=\"fr-cd-user-menu fr-cd-inline fr-cd-menu-flex text-right\">\r\n        <div class=\"fr-cd-bar-menu-btn\">\r\n            <div class=\"fr-cd-dropdown user-menu\" uib-dropdown=\"\" on-toggle=\"toggled(open)\">\r\n                <a class=\"fr-cd-member-menu\" uib-dropdown-toggle=\"\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <span class=\"fr-cd-member\">\r\n               <div>\r\n                 <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                     <span class=\"fr-wp-avatar-label\"></span>\r\n                 </span>\r\n                 </div>\r\n            </span>\r\n                </a>\r\n                <div class=\"dropdown-menu fr-cursor-initial\" role=\"menu\" ng-click=\"$event.stopPropagation()\">\r\n                    <div class=\"fr-member-avatar\">\r\n                            <span class=\"fr-cd-avatar\" style=\"background-image: url({{ ctrl.userEdit.user.avatar }}); width: 40px; height: 40px;\">\r\n                            </span>\r\n                    </div>\r\n                    <ul class=\"fr-member-information\">\r\n                        <li>\r\n                            <span class=\"fr-cd-member-name\">{{ ctrl.user.user.first_name }}</span>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.showEditPopup()\">\r\n                                <span class=\"\">{{ 'usermenu_edit_profile' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                    <ul class=\"fr-cd-member-dropdown\">\r\n                        <li>\r\n                            <i18n></i18n>\r\n                        </li>\r\n                        <li>\r\n                            <a ng-click=\"ctrl.login.logout()\">\r\n                                <i class=\"fr-icon fr-icon-log-out\"></i>\r\n                                <span class=\"\">{{ 'usermenu_logout' | translate }}</span>\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(92);
+	var content = __webpack_require__(93);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64625,7 +64684,7 @@
 	}
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64639,7 +64698,7 @@
 
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports) {
 
 	/**
@@ -64688,7 +64747,7 @@
 
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports) {
 
 	angular.module('searchModule', []);
@@ -64706,7 +64765,7 @@
 
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var searchModule = angular.module('searchModule');
@@ -64745,24 +64804,24 @@
 	    },
 	    controller: SearchController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(96)
+	    template: __webpack_require__(97)
 	});
 
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"search\">\r\n    <input class=\"search-field\"\r\n           ng-model=\"ctrl.parameter\"\r\n           ng-change=\"ctrl.changeParameter()\"\r\n           type=\"text\"\r\n           placeholder=\"{{ 'general_search' | translate }}\"/>\r\n    <span class=\"search-cancel\"\r\n          ng-click=\"ctrl.cancel()\"\r\n          ng-show=\"ctrl.show()\">\r\n        x\r\n    </span>\r\n</div>\r\n";
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(98);
+	var content = __webpack_require__(99);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64782,7 +64841,7 @@
 	}
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64796,7 +64855,7 @@
 
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports) {
 
 	angular.module('playerModule', ['ngAudio']);
@@ -64814,7 +64873,7 @@
 
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerModule = angular.module('playerModule');
@@ -64839,18 +64898,18 @@
 	    },
 	    controller: PlayerController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(101)
+	    template: __webpack_require__(102)
 	});
 
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports) {
 
 	module.exports = " <span class=\"track-info\" ng-if=\"ctrl.playerService.showPlayer()\">{{ ctrl.playerService.track.name}} - {{ ctrl.playerService.track.artist}}</span>\r\n <span class=\"freeven-info\" ng-if=\"!ctrl.playerService.showPlayer()\">Freeven ® 2016</span>\r\n<div class=\"player\" ng-if=\"ctrl.playerService.showPlayer()\">\r\n    <a class=\"btn-download\"\r\n       href=\"{{ ctrl.playerService.track.url }}\"\r\n       download=\"{{ ctrl.playerService.track.name }}.mp3\">\r\n        <i class=\"icon icon-download\"></i>\r\n    </a>\r\n    <div class=\"player-buttons\">\r\n        <button class=\"prev\" ng-click=\"ctrl.prev()\">\r\n            <i class=\"glyphicon glyphicon-step-backward\"></i>\r\n        </button>\r\n        <button class=\"playpause\"\r\n                ng-click=\"ctrl.playerService.playpause()\"\r\n                ng-class=\"{paused:ctrl.playerService.audio.paused}\">\r\n            <span class=\"play-text\"><i class=\"glyphicon glyphicon-play\"></i> </span>\r\n            <span class=\"pause-text\"><i class=\"glyphicon glyphicon-pause\"></i> </span>\r\n        </button>\r\n        <button class=\"next\" ng-click=\"ctrl.next()\">\r\n            <i class=\"glyphicon glyphicon-step-forward\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <a class=\"btn-time\">\r\n        <i class=\"icon icon-clock\"></i>\r\n    </a>\r\n\r\n    <div class=\"player-time player-range \">\r\n        <input min=\"0\"\r\n               max=\"{{ ctrl.playerService.audio.duration }}\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.currentTime\"/>\r\n\r\n    </div>\r\n    <a class=\"btn-volume\">\r\n        <i class=\"icon icon-volume-medium\"></i>\r\n    </a>\r\n    <div class=\"player-volume player-range \">\r\n        <input min=\"0\"\r\n               max=\"1\"\r\n               step=\"0.01\"\r\n               type=\"range\"\r\n               ng-model=\"ctrl.playerService.audio.volume\"/>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('playerModule');
@@ -64905,13 +64964,13 @@
 
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(104);
+	var content = __webpack_require__(105);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -64931,7 +64990,7 @@
 	}
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -64945,7 +65004,7 @@
 
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports) {
 
 	angular.module('loginModule', []);
@@ -64963,7 +65022,7 @@
 
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var loginModule = angular.module('loginModule');
@@ -65011,24 +65070,24 @@
 	    },
 	    controller: LoginController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(107)
+	    template: __webpack_require__(108)
 	});
 
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(109);
+	var content = __webpack_require__(110);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65048,7 +65107,7 @@
 	}
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65062,7 +65121,7 @@
 
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports) {
 
 	/**
@@ -65114,7 +65173,7 @@
 
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports) {
 
 	angular.module('userRegisterModule', []);
@@ -65132,7 +65191,7 @@
 
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userRegisterModule = angular.module('userRegisterModule');
@@ -65231,24 +65290,24 @@
 	    },
 	    controller: UserRegisterController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(113)
+	    template: __webpack_require__(114)
 	});
 
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"register\">\r\n    <form name=\"userForm\">\r\n        <div style=\"text-align: center\">\r\n            <h4>Crear cuenta en Freeven</h4>\r\n        </div>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"email\">Email</label>\r\n                    <input type=\"email\" name=\"email\" id=\"email\"\r\n                           ng-model=\"ctrl.userRegister.newUser.email\"\r\n                           placeholder=\"Email...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                    <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                    <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"username\"></i>Nombre de usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.userRegister.newUser.username\"\r\n                           placeholder=\"Nombre de usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.username.$touched\">\r\n                    <span ng-show=\"userForm.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                    <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.userRegister.existUser\">El usuario ya existe</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                    <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.first_name\"\r\n                           placeholder=\"Nombres...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                    <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                    <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.last_name\"\r\n                           placeholder=\"Apellidos...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password1\">Contraseña</label>\r\n                    <input type=\"password\" name=\"password1\" id=\"password1\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password1\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"userForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"password2\">Repita Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.userRegister.newUser.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n                    <span ng-show=\"userForm.password2.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <label class=\"control-label\" for=\"radioOne\">Seleccione el tipo de cuenta</label>\r\n            <br/>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required\r\n                       checked/>Personal</label>\r\n            <label class=\"radio-inline\">\r\n                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                       ng-model=\"ctrl.userRegister.newUser.is_artist\"\r\n                       required/>Artista</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\" ng-hide=\"ctrl.userRegister.newUser.is_artist == 'True'\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms1\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <br/><br/>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n    <form ng-show=\"ctrl.userRegister.newUser.is_artist == 'True'\" name=\"artistForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <p>Al registrarte como artista aceptas que se promoverá el respeto por la propiedad\r\n                        intelectual de acuerdo a, nuestro <a href=\"#\">Reglamento de Propiedad Intelectual</a>.\r\n                    </p>\r\n\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"artistic_name\">Nombre artístico</label>\r\n                    <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                           ng-model=\"ctrl.userRegister.newUser.artistic_name\"\r\n                           placeholder=\"Nombre artístico...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n                    <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                    <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                           ng-model=\"ctrl.userRegister.newUser.birth_date\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"country\">País</label>\r\n                    <select class=\"form-control\" id=\"country\"\r\n                            ng-model=\"ctrl.userRegister.newUser.country\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Pais...</option>\r\n                        <option value=\"AF\">Afganistán</option>\r\n                        <option value=\"AL\">Albania</option>\r\n                        <option value=\"DE\">Alemania</option>\r\n                        <option value=\"AD\">Andorra</option>\r\n                        <option value=\"AO\">Angola</option>\r\n                        <option value=\"AI\">Anguilla</option>\r\n                        <option value=\"AQ\">Antártida</option>\r\n                        <option value=\"AG\">Antigua y Barbuda</option>\r\n                        <option value=\"AN\">Antillas Holandesas</option>\r\n                        <option value=\"SA\">Arabia Saudí</option>\r\n                        <option value=\"DZ\">Argelia</option>\r\n                        <option value=\"AR\">Argentina</option>\r\n                        <option value=\"AM\">Armenia</option>\r\n                        <option value=\"AW\">Aruba</option>\r\n                        <option value=\"AU\">Australia</option>\r\n                        <option value=\"AT\">Austria</option>\r\n                        <option value=\"AZ\">Azerbaiyán</option>\r\n                        <option value=\"BS\">Bahamas</option>\r\n                        <option value=\"BH\">Bahrein</option>\r\n                        <option value=\"BD\">Bangladesh</option>\r\n                        <option value=\"BB\">Barbados</option>\r\n                        <option value=\"BE\">Bélgica</option>\r\n                        <option value=\"BZ\">Belice</option>\r\n                        <option value=\"BJ\">Benin</option>\r\n                        <option value=\"BM\">Bermudas</option>\r\n                        <option value=\"BY\">Bielorrusia</option>\r\n                        <option value=\"MM\">Birmania</option>\r\n                        <option value=\"BO\">Bolivia</option>\r\n                        <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                        <option value=\"BW\">Botswana</option>\r\n                        <option value=\"BR\">Brasil</option>\r\n                        <option value=\"BN\">Brunei</option>\r\n                        <option value=\"BG\">Bulgaria</option>\r\n                        <option value=\"BF\">Burkina Faso</option>\r\n                        <option value=\"BI\">Burundi</option>\r\n                        <option value=\"BT\">Bután</option>\r\n                        <option value=\"CV\">Cabo Verde</option>\r\n                        <option value=\"KH\">Camboya</option>\r\n                        <option value=\"CM\">Camerún</option>\r\n                        <option value=\"CA\">Canadá</option>\r\n                        <option value=\"TD\">Chad</option>\r\n                        <option value=\"CL\">Chile</option>\r\n                        <option value=\"CN\">China</option>\r\n                        <option value=\"CY\">Chipre</option>\r\n                        <option value=\"VA\">Ciudad del Vaticano</option>\r\n                        <option value=\"CO\">Colombia</option>\r\n                        <option value=\"KM\">Comores</option>\r\n                        <option value=\"CG\">Congo</option>\r\n                        <option value=\"KR\">Corea</option>\r\n                        <option value=\"KP\">Corea del Norte</option>\r\n                        <option value=\"CI\">Costa de Marfíl</option>\r\n                        <option value=\"CR\">Costa Rica</option>\r\n                        <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                        <option value=\"CU\">Cuba</option>\r\n                        <option value=\"DK\">Dinamarca</option>\r\n                        <option value=\"DJ\">Djibouti</option>\r\n                        <option value=\"DM\">Dominica</option>\r\n                        <option value=\"EC\">Ecuador</option>\r\n                        <option value=\"EG\">Egipto</option>\r\n                        <option value=\"SV\">El Salvador</option>\r\n                        <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                        <option value=\"ER\">Eritrea</option>\r\n                        <option value=\"SI\">Eslovenia</option>\r\n                        <option value=\"ES\" selected>España</option>\r\n                        <option value=\"US\">Estados Unidos</option>\r\n                        <option value=\"EE\">Estonia</option>\r\n                        <option value=\"ET\">Etiopía</option>\r\n                        <option value=\"FJ\">Fiji</option>\r\n                        <option value=\"PH\">Filipinas</option>\r\n                        <option value=\"FI\">Finlandia</option>\r\n                        <option value=\"FR\">Francia</option>\r\n                        <option value=\"GA\">Gabón</option>\r\n                        <option value=\"GM\">Gambia</option>\r\n                        <option value=\"GE\">Georgia</option>\r\n                        <option value=\"GH\">Ghana</option>\r\n                        <option value=\"GI\">Gibraltar</option>\r\n                        <option value=\"GD\">Granada</option>\r\n                        <option value=\"GR\">Grecia</option>\r\n                        <option value=\"GL\">Groenlandia</option>\r\n                        <option value=\"GP\">Guadalupe</option>\r\n                        <option value=\"GU\">Guam</option>\r\n                        <option value=\"GT\">Guatemala</option>\r\n                        <option value=\"GY\">Guayana</option>\r\n                        <option value=\"GF\">Guayana Francesa</option>\r\n                        <option value=\"GN\">Guinea</option>\r\n                        <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                        <option value=\"GW\">Guinea-Bissau</option>\r\n                        <option value=\"HT\">Haití</option>\r\n                        <option value=\"HN\">Honduras</option>\r\n                        <option value=\"HU\">Hungría</option>\r\n                        <option value=\"IN\">India</option>\r\n                        <option value=\"ID\">Indonesia</option>\r\n                        <option value=\"IQ\">Irak</option>\r\n                        <option value=\"IR\">Irán</option>\r\n                        <option value=\"IE\">Irlanda</option>\r\n                        <option value=\"BV\">Isla Bouvet</option>\r\n                        <option value=\"CX\">Isla de Christmas</option>\r\n                        <option value=\"IS\">Islandia</option>\r\n                        <option value=\"KY\">Islas Caimán</option>\r\n                        <option value=\"CK\">Islas Cook</option>\r\n                        <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                        <option value=\"FO\">Islas Faroe</option>\r\n                        <option value=\"HM\">Islas Heard y McDonald</option>\r\n                        <option value=\"FK\">Islas Malvinas</option>\r\n                        <option value=\"MP\">Islas Marianas del Norte</option>\r\n                        <option value=\"MH\">Islas Marshall</option>\r\n                        <option value=\"PW\">Islas Palau</option>\r\n                        <option value=\"SB\">Islas Salomón</option>\r\n                        <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                        <option value=\"TK\">Islas Tokelau</option>\r\n                        <option value=\"TC\">Islas Turks y Caicos</option>\r\n                        <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                        <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                        <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                        <option value=\"IL\">Israel</option>\r\n                        <option value=\"IT\">Italia</option>\r\n                        <option value=\"JM\">Jamaica</option>\r\n                        <option value=\"JP\">Japón</option>\r\n                        <option value=\"JO\">Jordania</option>\r\n                        <option value=\"KZ\">Kazajistán</option>\r\n                        <option value=\"KE\">Kenia</option>\r\n                        <option value=\"KG\">Kirguizistán</option>\r\n                        <option value=\"KI\">Kiribati</option>\r\n                        <option value=\"KW\">Kuwait</option>\r\n                        <option value=\"LA\">Laos</option>\r\n                        <option value=\"LS\">Lesotho</option>\r\n                        <option value=\"LV\">Letonia</option>\r\n                        <option value=\"LB\">Líbano</option>\r\n                        <option value=\"LR\">Liberia</option>\r\n                        <option value=\"LY\">Libia</option>\r\n                        <option value=\"LI\">Liechtenstein</option>\r\n                        <option value=\"LT\">Lituania</option>\r\n                        <option value=\"LU\">Luxemburgo</option>\r\n                        <option value=\"MK\">Macedonia</option>\r\n                        <option value=\"MG\">Madagascar</option>\r\n                        <option value=\"MY\">Malasia</option>\r\n                        <option value=\"MW\">Malawi</option>\r\n                        <option value=\"MV\">Maldivas</option>\r\n                        <option value=\"ML\">Malí</option>\r\n                        <option value=\"MT\">Malta</option>\r\n                        <option value=\"MA\">Marruecos</option>\r\n                        <option value=\"MQ\">Martinica</option>\r\n                        <option value=\"MU\">Mauricio</option>\r\n                        <option value=\"MR\">Mauritania</option>\r\n                        <option value=\"YT\">Mayotte</option>\r\n                        <option value=\"MX\">México</option>\r\n                        <option value=\"FM\">Micronesia</option>\r\n                        <option value=\"MD\">Moldavia</option>\r\n                        <option value=\"MC\">Mónaco</option>\r\n                        <option value=\"MN\">Mongolia</option>\r\n                        <option value=\"MS\">Montserrat</option>\r\n                        <option value=\"MZ\">Mozambique</option>\r\n                        <option value=\"NA\">Namibia</option>\r\n                        <option value=\"NR\">Nauru</option>\r\n                        <option value=\"NP\">Nepal</option>\r\n                        <option value=\"NI\">Nicaragua</option>\r\n                        <option value=\"NE\">Níger</option>\r\n                        <option value=\"NG\">Nigeria</option>\r\n                        <option value=\"NU\">Niue</option>\r\n                        <option value=\"NF\">Norfolk</option>\r\n                        <option value=\"NO\">Noruega</option>\r\n                        <option value=\"NC\">Nueva Caledonia</option>\r\n                        <option value=\"NZ\">Nueva Zelanda</option>\r\n                        <option value=\"OM\">Omán</option>\r\n                        <option value=\"NL\">Países Bajos</option>\r\n                        <option value=\"PA\">Panamá</option>\r\n                        <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                        <option value=\"PK\">Paquistán</option>\r\n                        <option value=\"PY\">Paraguay</option>\r\n                        <option value=\"PE\">Perú</option>\r\n                        <option value=\"PN\">Pitcairn</option>\r\n                        <option value=\"PF\">Polinesia Francesa</option>\r\n                        <option value=\"PL\">Polonia</option>\r\n                        <option value=\"PT\">Portugal</option>\r\n                        <option value=\"PR\">Puerto Rico</option>\r\n                        <option value=\"QA\">Qatar</option>\r\n                        <option value=\"UK\">Reino Unido</option>\r\n                        <option value=\"CF\">República Centroafricana</option>\r\n                        <option value=\"CZ\">República Checa</option>\r\n                        <option value=\"ZA\">República de Sudáfrica</option>\r\n                        <option value=\"DO\">República Dominicana</option>\r\n                        <option value=\"SK\">República Eslovaca</option>\r\n                        <option value=\"RE\">Reunión</option>\r\n                        <option value=\"RW\">Ruanda</option>\r\n                        <option value=\"RO\">Rumania</option>\r\n                        <option value=\"RU\">Rusia</option>\r\n                        <option value=\"EH\">Sahara Occidental</option>\r\n                        <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                        <option value=\"WS\">Samoa</option>\r\n                        <option value=\"AS\">Samoa Americana</option>\r\n                        <option value=\"SM\">San Marino</option>\r\n                        <option value=\"VC\">San Vicente y Granadinas</option>\r\n                        <option value=\"SH\">Santa Helena</option>\r\n                        <option value=\"LC\">Santa Lucía</option>\r\n                        <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                        <option value=\"SN\">Senegal</option>\r\n                        <option value=\"SC\">Seychelles</option>\r\n                        <option value=\"SL\">Sierra Leona</option>\r\n                        <option value=\"SG\">Singapur</option>\r\n                        <option value=\"SY\">Siria</option>\r\n                        <option value=\"SO\">Somalia</option>\r\n                        <option value=\"LK\">Sri Lanka</option>\r\n                        <option value=\"PM\">St Pierre y Miquelon</option>\r\n                        <option value=\"SZ\">Suazilandia</option>\r\n                        <option value=\"SD\">Sudán</option>\r\n                        <option value=\"SE\">Suecia</option>\r\n                        <option value=\"CH\">Suiza</option>\r\n                        <option value=\"SR\">Surinam</option>\r\n                        <option value=\"TH\">Tailandia</option>\r\n                        <option value=\"TW\">Taiwán</option>\r\n                        <option value=\"TZ\">Tanzania</option>\r\n                        <option value=\"TJ\">Tayikistán</option>\r\n                        <option value=\"TF\">Territorios franceses del Sur</option>\r\n                        <option value=\"TP\">Timor Oriental</option>\r\n                        <option value=\"TG\">Togo</option>\r\n                        <option value=\"TO\">Tonga</option>\r\n                        <option value=\"TT\">Trinidad y Tobago</option>\r\n                        <option value=\"TN\">Túnez</option>\r\n                        <option value=\"TM\">Turkmenistán</option>\r\n                        <option value=\"TR\">Turquía</option>\r\n                        <option value=\"TV\">Tuvalu</option>\r\n                        <option value=\"UA\">Ucrania</option>\r\n                        <option value=\"UG\">Uganda</option>\r\n                        <option value=\"UY\">Uruguay</option>\r\n                        <option value=\"UZ\">Uzbekistán</option>\r\n                        <option value=\"VU\">Vanuatu</option>\r\n                        <option value=\"VE\">Venezuela</option>\r\n                        <option value=\"VN\">Vietnam</option>\r\n                        <option value=\"YE\">Yemen</option>\r\n                        <option value=\"YU\">Yugoslavia</option>\r\n                        <option value=\"ZM\">Zambia</option>\r\n                        <option value=\"ZW\">Zimbabue</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                    <input type=\"text\" name=\"city\" id=\"city\"\r\n                           ng-model=\"ctrl.userRegister.newUser.city\"\r\n                           placeholder=\"Ciudad....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                        celular</label>\r\n                    <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.telephone_number\"\r\n                           placeholder=\"Número de teléfono o celular...\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"7\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                    <input type=\"text\" name=\"address\" id=\"address\"\r\n                           ng-model=\"ctrl.userRegister.newUser.address\"\r\n                           placeholder=\"Dirección de residencia....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                    <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank\"\r\n                           placeholder=\"Nombre Banco...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                    <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                            ng-model=\"ctrl.userRegister.newUser.bank_account_type\" style=\"width:auto;\" required>\r\n                        <option value=\"\">Tipo de cuenta</option>\r\n                        <option value=\"AH\">Ahorros</option>\r\n                        <option value=\"CR\">Corriente</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                    <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                           ng-model=\"ctrl.userRegister.newUser.bank_account_number\"\r\n                           placeholder=\"Número de cuenta....\"\r\n                           class=\"form-control\"\r\n                           ng-minlength=\"9\"\r\n                           ng-maxlength=\"25\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\" class=\"help-block\">Número muy\r\n                        corto.</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"checkbox-inline\">\r\n                        <input type=\"checkbox\" value=\"Ok\" id=\"terms\" ng-model=\"ctrl.userRegister.newUser.accept\"\r\n                               required>\r\n                        <span>Al hacer clic en registrarse, usted acepta nuestros <a href=\"#\">Términos y\r\n                            Condiciones</a>.</span>\r\n                    </label>\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                        {{ 'general_register'  | translate }}\r\n                    </button>\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.closeRegisterPopup()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>";
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(115);
+	var content = __webpack_require__(116);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65268,7 +65327,7 @@
 	}
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65282,7 +65341,7 @@
 
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports) {
 
 	/**
@@ -65351,7 +65410,7 @@
 
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports) {
 
 	angular.module('splashModule', []);
@@ -65369,7 +65428,7 @@
 
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var splashModule = angular.module('splashModule');
@@ -65388,24 +65447,24 @@
 	    },
 	    controller: SplashController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(119)
+	    template: __webpack_require__(120)
 	});
 
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"splash\">\r\n    <div class=\"splash-content\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                . . .\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-7\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <h3 class=\"app-title\">Freeven</h3>\r\n                        <h5 class=\"app-sub-title\"></h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n                <login></login>\r\n            </div>\r\n            <div class=\"col-md-1\"> </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(121);
+	var content = __webpack_require__(122);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65425,7 +65484,7 @@
 	}
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65433,19 +65492,19 @@
 
 
 	// module
-	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(122) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
+	exports.push([module.id, ".splash {\n  background-image: url(" + __webpack_require__(123) + ");\n  max-width: 100%;\n  background-repeat: no-repeat;\n  background-position: 0 0;\n  background-size: cover;\n  overflow-x: hidden;\n}\n.splash .splash-content {\n  font-size: 30px;\n  color: #dadada;\n  height: calc(100vh);\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.01);\n  text-align: center;\n  font-family: 'Amatic SC';\n}\n.splash .splash-content .app-title {\n  margin-top: calc(13vh);\n  font-size: 99px;\n  color: #fff;\n  font-weight: 500;\n}\n.splash .splash-content .app-sub-title {\n  font-size: 12px;\n  font-size: 99px;\n  color: #666;\n  font-family: 'Titillium Web', sans-serif;\n}\n.splash .splash-separator {\n  background-color: #17171b;\n  width: 100%;\n  height: 90px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "93db96e4fea7c96f7ea2244cc8e2b189.jpg";
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports) {
 
 	angular.module('playerPictureModule', []);
@@ -65463,7 +65522,7 @@
 
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var playerPictureModule = angular.module('playerPictureModule');
@@ -65482,24 +65541,24 @@
 	    },
 	    controller: PlayerPictureController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(125)
+	    template: __webpack_require__(126)
 	});
 
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"player-picture\">\r\n    <img class=\"picture img-responsive\" src=\"{{ ctrl.playerService.track.image }}\"/>\r\n</div>";
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(127);
+	var content = __webpack_require__(128);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65519,7 +65578,7 @@
 	}
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65533,7 +65592,7 @@
 
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports) {
 
 	angular.module('trackModule', []);
@@ -65551,7 +65610,7 @@
 
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackModule = angular.module('trackModule');
@@ -65593,24 +65652,24 @@
 	    },
 	    controller: TrackController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(130)
+	    template: __webpack_require__(131)
 	});
 
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"track\">\r\n    <div class=\"item\">\r\n        <div class=\"item-media\">\r\n            <a class=\"item-media-content img-responsive\"\r\n               style=\"background-image: url({{ ctrl.frModel.image }})\">\r\n            </a>\r\n            <div class=\"item-overlay center\">\r\n                <button ng-click=\"ctrl.play(ctrl.frModel)\" class=\"btn-playpause\">Play</button>\r\n            </div>\r\n        </div>\r\n        <div ng-if=\"!ctrl.hideItemInfo\" class=\"item-info\">\r\n            <div class=\"item-overlay bottom text-right\">\r\n                <a class=\"btn-download\"\r\n                   href=\"{{ ctrl.frModel.url }}\"\r\n                   download=\"{{ ctrl.frModel.name }}.mp3\">\r\n                    <i class=\"icon icon-download\"></i>\r\n                </a>\r\n                <a ng-click=\"ctrl.showScoreEditorPopup(ctrl.frModel)\" class=\"btn-favorite\">\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(1), 'icon-star-empty':!ctrl.greaterThanOrEqual(1)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(2), 'icon-star-empty':!ctrl.greaterThanOrEqual(2)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(3), 'icon-star-empty':!ctrl.greaterThanOrEqual(3)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(4), 'icon-star-empty':!ctrl.greaterThanOrEqual(4)}\"></i>\r\n                    <i class=\"icon\"\r\n                       ng-class=\"{'icon-star-full':ctrl.greaterThanOrEqual(5), 'icon-star-empty':!ctrl.greaterThanOrEqual(5)}\"></i>\r\n\r\n                </a>\r\n                <a href=\"#\" class=\"btn-more\" data-toggle=\"dropdown\">\r\n                    <i class=\"fa fa-ellipsis-h\"></i>\r\n                </a>\r\n                <div class=\"dropdown-menu pull-right black lt\"></div>\r\n            </div>\r\n            <div class=\"item-title text-ellipsis\">\r\n                <p>{{ ctrl.frModel.name }}</p>\r\n            </div>\r\n            <div class=\"item-author text-sm text-ellipsis\">\r\n                <a class=\"text-muted\" href=\"#/artist/{{ ctrl.frModel.artist_id }}\">{{ ctrl.frModel.artist }}</a>\r\n            </div>\r\n            <span class=\"item-meta-stats text-xs\">\r\n                 <i class=\"icon icon-star-full text-muted\"></i> <span>{{ctrl.frModel.score}}</span>\r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"fr-track-help-1\">\r\n        <help-item text=\"Aquí puedes descargar la pista musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-2\">\r\n        <help-item text=\"Comienza a escuchando esta pieza musical\"></help-item>\r\n    </div>\r\n    <div class=\"fr-track-help-3\">\r\n        <help-item text=\"Califica las piezas musicales\"></help-item>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(132);
+	var content = __webpack_require__(133);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65630,7 +65689,7 @@
 	}
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65644,7 +65703,7 @@
 
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports) {
 
 	angular.module('userEditModule', []);
@@ -65662,7 +65721,7 @@
 
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userEditModule = angular.module('userEditModule');
@@ -65805,30 +65864,30 @@
 	    },
 	    controller: UserEditController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(135)
+	    template: __webpack_require__(136)
 	});
 
-
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"user-edit\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.photoProfile[0].img }}\"\r\n                 alt=\"Profile image example\"/>\r\n            <label for=\"imageUpload\"\r\n                   class=\"freeven-accept-btn\">Cambiar\r\n                avatar</label>\r\n            <input type='file' id=\"imageUpload\" ng-model-instant\r\n                   onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                   accept=\"image/*\" style=\"display: none\"/>\r\n        </div>\r\n\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <form name=\"userForm\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"><h3>\r\n                                            {{ ctrl.userEdit.user.username }}\r\n                                        </h3></label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"email\">Email</label>\r\n                            <input type=\"email\" name=\"email\" id=\"email\"\r\n                                   ng-model=\"ctrl.userEdit.user.email\"\r\n                                   placeholder=\"Email...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                          <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                          <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                                        </span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                            <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                   placeholder=\"Nombres...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\"\r\n                                  ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                            <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                            <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                   placeholder=\"Apellidos...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n                                <label for=\"changePassword\"\r\n                                       class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar\r\n                                    contraseña</label>\r\n                                <input type='button' id=\"changePassword\" style=\"display: none\"\r\n                                       ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n                            <br/>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required\r\n                                       checked/>Personal</label>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required/>Artista</label>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n\r\n                            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                                <div class=\"col-md-12 text-center\">\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n                </form>\r\n                <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <fieldset>\r\n                                <label class=\"control-label\" for=\"artistic_name\">Nombre Artístico</label>\r\n                                <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                                       placeholder=\"Nombre artístico...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\"\r\n                                      ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                            <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                                   ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"country\">País</label>\r\n                            <select class=\"form-control\" id=\"country\"\r\n                                    ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                                <option value=\"\">Pais...</option>\r\n                                <option value=\"AF\">Afganistán</option>\r\n                                <option value=\"AL\">Albania</option>\r\n                                <option value=\"DE\">Alemania</option>\r\n                                <option value=\"AD\">Andorra</option>\r\n                                <option value=\"AO\">Angola</option>\r\n                                <option value=\"AI\">Anguilla</option>\r\n                                <option value=\"AQ\">Antártida</option>\r\n                                <option value=\"AG\">Antigua y Barbuda</option>\r\n                                <option value=\"AN\">Antillas Holandesas</option>\r\n                                <option value=\"SA\">Arabia Saudí</option>\r\n                                <option value=\"DZ\">Argelia</option>\r\n                                <option value=\"AR\">Argentina</option>\r\n                                <option value=\"AM\">Armenia</option>\r\n                                <option value=\"AW\">Aruba</option>\r\n                                <option value=\"AU\">Australia</option>\r\n                                <option value=\"AT\">Austria</option>\r\n                                <option value=\"AZ\">Azerbaiyán</option>\r\n                                <option value=\"BS\">Bahamas</option>\r\n                                <option value=\"BH\">Bahrein</option>\r\n                                <option value=\"BD\">Bangladesh</option>\r\n                                <option value=\"BB\">Barbados</option>\r\n                                <option value=\"BE\">Bélgica</option>\r\n                                <option value=\"BZ\">Belice</option>\r\n                                <option value=\"BJ\">Benin</option>\r\n                                <option value=\"BM\">Bermudas</option>\r\n                                <option value=\"BY\">Bielorrusia</option>\r\n                                <option value=\"MM\">Birmania</option>\r\n                                <option value=\"BO\">Bolivia</option>\r\n                                <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                                <option value=\"BW\">Botswana</option>\r\n                                <option value=\"BR\">Brasil</option>\r\n                                <option value=\"BN\">Brunei</option>\r\n                                <option value=\"BG\">Bulgaria</option>\r\n                                <option value=\"BF\">Burkina Faso</option>\r\n                                <option value=\"BI\">Burundi</option>\r\n                                <option value=\"BT\">Bután</option>\r\n                                <option value=\"CV\">Cabo Verde</option>\r\n                                <option value=\"KH\">Camboya</option>\r\n                                <option value=\"CM\">Camerún</option>\r\n                                <option value=\"CA\">Canadá</option>\r\n                                <option value=\"TD\">Chad</option>\r\n                                <option value=\"CL\">Chile</option>\r\n                                <option value=\"CN\">China</option>\r\n                                <option value=\"CY\">Chipre</option>\r\n                                <option value=\"VA\">Ciudad del Vaticano</option>\r\n                                <option value=\"CO\">Colombia</option>\r\n                                <option value=\"KM\">Comores</option>\r\n                                <option value=\"CG\">Congo</option>\r\n                                <option value=\"KR\">Corea</option>\r\n                                <option value=\"KP\">Corea del Norte</option>\r\n                                <option value=\"CI\">Costa de Marfíl</option>\r\n                                <option value=\"CR\">Costa Rica</option>\r\n                                <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                                <option value=\"CU\">Cuba</option>\r\n                                <option value=\"DK\">Dinamarca</option>\r\n                                <option value=\"DJ\">Djibouti</option>\r\n                                <option value=\"DM\">Dominica</option>\r\n                                <option value=\"EC\">Ecuador</option>\r\n                                <option value=\"EG\">Egipto</option>\r\n                                <option value=\"SV\">El Salvador</option>\r\n                                <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                                <option value=\"ER\">Eritrea</option>\r\n                                <option value=\"SI\">Eslovenia</option>\r\n                                <option value=\"ES\" selected>España</option>\r\n                                <option value=\"US\">Estados Unidos</option>\r\n                                <option value=\"EE\">Estonia</option>\r\n                                <option value=\"ET\">Etiopía</option>\r\n                                <option value=\"FJ\">Fiji</option>\r\n                                <option value=\"PH\">Filipinas</option>\r\n                                <option value=\"FI\">Finlandia</option>\r\n                                <option value=\"FR\">Francia</option>\r\n                                <option value=\"GA\">Gabón</option>\r\n                                <option value=\"GM\">Gambia</option>\r\n                                <option value=\"GE\">Georgia</option>\r\n                                <option value=\"GH\">Ghana</option>\r\n                                <option value=\"GI\">Gibraltar</option>\r\n                                <option value=\"GD\">Granada</option>\r\n                                <option value=\"GR\">Grecia</option>\r\n                                <option value=\"GL\">Groenlandia</option>\r\n                                <option value=\"GP\">Guadalupe</option>\r\n                                <option value=\"GU\">Guam</option>\r\n                                <option value=\"GT\">Guatemala</option>\r\n                                <option value=\"GY\">Guayana</option>\r\n                                <option value=\"GF\">Guayana Francesa</option>\r\n                                <option value=\"GN\">Guinea</option>\r\n                                <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                                <option value=\"GW\">Guinea-Bissau</option>\r\n                                <option value=\"HT\">Haití</option>\r\n                                <option value=\"HN\">Honduras</option>\r\n                                <option value=\"HU\">Hungría</option>\r\n                                <option value=\"IN\">India</option>\r\n                                <option value=\"ID\">Indonesia</option>\r\n                                <option value=\"IQ\">Irak</option>\r\n                                <option value=\"IR\">Irán</option>\r\n                                <option value=\"IE\">Irlanda</option>\r\n                                <option value=\"BV\">Isla Bouvet</option>\r\n                                <option value=\"CX\">Isla de Christmas</option>\r\n                                <option value=\"IS\">Islandia</option>\r\n                                <option value=\"KY\">Islas Caimán</option>\r\n                                <option value=\"CK\">Islas Cook</option>\r\n                                <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                                <option value=\"FO\">Islas Faroe</option>\r\n                                <option value=\"HM\">Islas Heard y McDonald</option>\r\n                                <option value=\"FK\">Islas Malvinas</option>\r\n                                <option value=\"MP\">Islas Marianas del Norte</option>\r\n                                <option value=\"MH\">Islas Marshall</option>\r\n                                <option value=\"PW\">Islas Palau</option>\r\n                                <option value=\"SB\">Islas Salomón</option>\r\n                                <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                                <option value=\"TK\">Islas Tokelau</option>\r\n                                <option value=\"TC\">Islas Turks y Caicos</option>\r\n                                <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                                <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                                <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                                <option value=\"IL\">Israel</option>\r\n                                <option value=\"IT\">Italia</option>\r\n                                <option value=\"JM\">Jamaica</option>\r\n                                <option value=\"JP\">Japón</option>\r\n                                <option value=\"JO\">Jordania</option>\r\n                                <option value=\"KZ\">Kazajistán</option>\r\n                                <option value=\"KE\">Kenia</option>\r\n                                <option value=\"KG\">Kirguizistán</option>\r\n                                <option value=\"KI\">Kiribati</option>\r\n                                <option value=\"KW\">Kuwait</option>\r\n                                <option value=\"LA\">Laos</option>\r\n                                <option value=\"LS\">Lesotho</option>\r\n                                <option value=\"LV\">Letonia</option>\r\n                                <option value=\"LB\">Líbano</option>\r\n                                <option value=\"LR\">Liberia</option>\r\n                                <option value=\"LY\">Libia</option>\r\n                                <option value=\"LI\">Liechtenstein</option>\r\n                                <option value=\"LT\">Lituania</option>\r\n                                <option value=\"LU\">Luxemburgo</option>\r\n                                <option value=\"MK\">Macedonia</option>\r\n                                <option value=\"MG\">Madagascar</option>\r\n                                <option value=\"MY\">Malasia</option>\r\n                                <option value=\"MW\">Malawi</option>\r\n                                <option value=\"MV\">Maldivas</option>\r\n                                <option value=\"ML\">Malí</option>\r\n                                <option value=\"MT\">Malta</option>\r\n                                <option value=\"MA\">Marruecos</option>\r\n                                <option value=\"MQ\">Martinica</option>\r\n                                <option value=\"MU\">Mauricio</option>\r\n                                <option value=\"MR\">Mauritania</option>\r\n                                <option value=\"YT\">Mayotte</option>\r\n                                <option value=\"MX\">México</option>\r\n                                <option value=\"FM\">Micronesia</option>\r\n                                <option value=\"MD\">Moldavia</option>\r\n                                <option value=\"MC\">Mónaco</option>\r\n                                <option value=\"MN\">Mongolia</option>\r\n                                <option value=\"MS\">Montserrat</option>\r\n                                <option value=\"MZ\">Mozambique</option>\r\n                                <option value=\"NA\">Namibia</option>\r\n                                <option value=\"NR\">Nauru</option>\r\n                                <option value=\"NP\">Nepal</option>\r\n                                <option value=\"NI\">Nicaragua</option>\r\n                                <option value=\"NE\">Níger</option>\r\n                                <option value=\"NG\">Nigeria</option>\r\n                                <option value=\"NU\">Niue</option>\r\n                                <option value=\"NF\">Norfolk</option>\r\n                                <option value=\"NO\">Noruega</option>\r\n                                <option value=\"NC\">Nueva Caledonia</option>\r\n                                <option value=\"NZ\">Nueva Zelanda</option>\r\n                                <option value=\"OM\">Omán</option>\r\n                                <option value=\"NL\">Países Bajos</option>\r\n                                <option value=\"PA\">Panamá</option>\r\n                                <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                                <option value=\"PK\">Paquistán</option>\r\n                                <option value=\"PY\">Paraguay</option>\r\n                                <option value=\"PE\">Perú</option>\r\n                                <option value=\"PN\">Pitcairn</option>\r\n                                <option value=\"PF\">Polinesia Francesa</option>\r\n                                <option value=\"PL\">Polonia</option>\r\n                                <option value=\"PT\">Portugal</option>\r\n                                <option value=\"PR\">Puerto Rico</option>\r\n                                <option value=\"QA\">Qatar</option>\r\n                                <option value=\"UK\">Reino Unido</option>\r\n                                <option value=\"CF\">República Centroafricana</option>\r\n                                <option value=\"CZ\">República Checa</option>\r\n                                <option value=\"ZA\">República de Sudáfrica</option>\r\n                                <option value=\"DO\">República Dominicana</option>\r\n                                <option value=\"SK\">República Eslovaca</option>\r\n                                <option value=\"RE\">Reunión</option>\r\n                                <option value=\"RW\">Ruanda</option>\r\n                                <option value=\"RO\">Rumania</option>\r\n                                <option value=\"RU\">Rusia</option>\r\n                                <option value=\"EH\">Sahara Occidental</option>\r\n                                <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                                <option value=\"WS\">Samoa</option>\r\n                                <option value=\"AS\">Samoa Americana</option>\r\n                                <option value=\"SM\">San Marino</option>\r\n                                <option value=\"VC\">San Vicente y Granadinas</option>\r\n                                <option value=\"SH\">Santa Helena</option>\r\n                                <option value=\"LC\">Santa Lucía</option>\r\n                                <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                                <option value=\"SN\">Senegal</option>\r\n                                <option value=\"SC\">Seychelles</option>\r\n                                <option value=\"SL\">Sierra Leona</option>\r\n                                <option value=\"SG\">Singapur</option>\r\n                                <option value=\"SY\">Siria</option>\r\n                                <option value=\"SO\">Somalia</option>\r\n                                <option value=\"LK\">Sri Lanka</option>\r\n                                <option value=\"PM\">St Pierre y Miquelon</option>\r\n                                <option value=\"SZ\">Suazilandia</option>\r\n                                <option value=\"SD\">Sudán</option>\r\n                                <option value=\"SE\">Suecia</option>\r\n                                <option value=\"CH\">Suiza</option>\r\n                                <option value=\"SR\">Surinam</option>\r\n                                <option value=\"TH\">Tailandia</option>\r\n                                <option value=\"TW\">Taiwán</option>\r\n                                <option value=\"TZ\">Tanzania</option>\r\n                                <option value=\"TJ\">Tayikistán</option>\r\n                                <option value=\"TF\">Territorios franceses del Sur</option>\r\n                                <option value=\"TP\">Timor Oriental</option>\r\n                                <option value=\"TG\">Togo</option>\r\n                                <option value=\"TO\">Tonga</option>\r\n                                <option value=\"TT\">Trinidad y Tobago</option>\r\n                                <option value=\"TN\">Túnez</option>\r\n                                <option value=\"TM\">Turkmenistán</option>\r\n                                <option value=\"TR\">Turquía</option>\r\n                                <option value=\"TV\">Tuvalu</option>\r\n                                <option value=\"UA\">Ucrania</option>\r\n                                <option value=\"UG\">Uganda</option>\r\n                                <option value=\"UY\">Uruguay</option>\r\n                                <option value=\"UZ\">Uzbekistán</option>\r\n                                <option value=\"VU\">Vanuatu</option>\r\n                                <option value=\"VE\">Venezuela</option>\r\n                                <option value=\"VN\">Vietnam</option>\r\n                                <option value=\"YE\">Yemen</option>\r\n                                <option value=\"YU\">Yugoslavia</option>\r\n                                <option value=\"ZM\">Zambia</option>\r\n                                <option value=\"ZW\">Zimbabue</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                            <input type=\"text\" name=\"city\" id=\"city\"\r\n                                   ng-model=\"ctrl.userEdit.user.city\"\r\n                                   placeholder=\"Ciudad....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                                celular</label>\r\n                            <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                                   placeholder=\"Número de teléfono o celular...\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"7\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                            <input type=\"text\" name=\"address\" id=\"address\"\r\n                                   ng-model=\"ctrl.userEdit.user.address\"\r\n                                   placeholder=\"Dirección de residencia....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank\"\r\n                                   placeholder=\"Nombre Banco...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                                    ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\"\r\n                                    required>\r\n                                <option value=\"\">Tipo de cuenta</option>\r\n                                <option value=\"AH\">Ahorros</option>\r\n                                <option value=\"CR\">Corriente</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                            <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                                   placeholder=\"Número de cuenta....\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"9\"\r\n                                   ng-maxlength=\"25\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+	module.exports = "<div class=\"user-edit\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.photoProfile[0].img }}\"\r\n                 alt=\"Profile image example\"/>\r\n            <label for=\"imageUpload\"\r\n                   class=\"freeven-accept-btn\">Cambiar\r\n                avatar</label>\r\n            <input type='file' id=\"imageUpload\" ng-model-instant\r\n                   onchange=\"angular.element(this).scope().imageUpload(event)\"\r\n                   accept=\"image/*\" style=\"display: none\"/>\r\n        </div>\r\n\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <form name=\"userForm\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n                            <fieldset class=\"form-group\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-md-12 text-center\">\r\n                                        <label class=\"control-label\"\r\n                                               for=\"username\"><h3>\r\n                                            {{ ctrl.userEdit.user.username }}\r\n                                        </h3></label>\r\n                                    </div>\r\n                                </div>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"email\">Email</label>\r\n                            <input type=\"email\" name=\"email\" id=\"email\"\r\n                                   ng-model=\"ctrl.userEdit.user.email\"\r\n                                   placeholder=\"Email...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.email.$touched\">\r\n                                          <span ng-show=\"userForm.email.$invalid\">El campo es obligatorio.</span>\r\n                                          <span ng-show=\"userForm.email.$error.email\">Email incorrecto.</span>\r\n                                        </span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n\r\n                            <label class=\"control-label\" for=\"first_name\"></i>Nombres</label>\r\n                            <input type=\"text\" name=\"first_name\" id=\"first_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.first_name\"\r\n                                   placeholder=\"Nombres...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\"\r\n                                  ng-show=\"userForm.$submitted || userForm.first_name.$touched\">\r\n                            <span ng-show=\"userForm.first_name.$error.required\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"last_name\"></i>Apellidos</label>\r\n                            <input type=\"text\" name=\"last_name\" id=\"last_name\"\r\n                                   ng-model=\"ctrl.userEdit.user.last_name\"\r\n                                   placeholder=\"Apellidos...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n                                <label for=\"changePassword\"\r\n                                       class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\">Cambiar\r\n                                    contraseña</label>\r\n                                <input type='button' id=\"changePassword\" style=\"display: none\"\r\n                                       ng-click=\"ctrl.showEditPasswordPopup()\"/>\r\n                            </fieldset>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"radioOne\">Mi tipo de cuenta</label>\r\n                            <br/>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"False\" id=\"radioOne\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required\r\n                                       checked/>Personal</label>\r\n                            <label class=\"radio-inline\">\r\n                                <input type=\"radio\" value=\"True\" id=\"radioTwo\" name=\"account\"\r\n                                       ng-model=\"ctrl.userEdit.user.is_artist\"\r\n                                       required/>Artista</label>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12 text-center\">\r\n\r\n                            <div class=\"row\" ng-hide=\"ctrl.userEdit.user.is_artist == 'True'\">\r\n                                <div class=\"col-md-12 text-center\">\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                    </div>\r\n\r\n                </form>\r\n                <form ng-show=\"ctrl.userEdit.user.is_artist == 'True'\" name=\"artistForm\">\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <fieldset>\r\n                                <label class=\"control-label\" for=\"artistic_name\">Nombre Artístico</label>\r\n                                <input type=\"text\" name=\"artistic_name\" id=\"artistic_name\"\r\n                                       ng-model=\"ctrl.userEdit.user.artistic_name\"\r\n                                       placeholder=\"Nombre artístico...\"\r\n                                       class=\"form-control\"\r\n                                       required/>\r\n                                <span class=\"messages\"\r\n                                      ng-show=\"artistForm.$submitted || artistForm.artistic_name.$touched\">\r\n            <span ng-show=\"artistForm.artistic_name.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"birth_date\">Fecha de nacimiento</label>\r\n                            <input type=\"date\" id=\"birth_date\" name=\"birth_date\" class=\"form-control\"\r\n                                   ng-model=\"ctrl.userEdit.user.birth_date\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"country\">País</label>\r\n                            <select class=\"form-control\" id=\"country\"\r\n                                    ng-model=\"ctrl.userEdit.user.country\" style=\"width:auto;\" required>\r\n                                <option value=\"\">Pais...</option>\r\n                                <option value=\"AF\">Afganistán</option>\r\n                                <option value=\"AL\">Albania</option>\r\n                                <option value=\"DE\">Alemania</option>\r\n                                <option value=\"AD\">Andorra</option>\r\n                                <option value=\"AO\">Angola</option>\r\n                                <option value=\"AI\">Anguilla</option>\r\n                                <option value=\"AQ\">Antártida</option>\r\n                                <option value=\"AG\">Antigua y Barbuda</option>\r\n                                <option value=\"AN\">Antillas Holandesas</option>\r\n                                <option value=\"SA\">Arabia Saudí</option>\r\n                                <option value=\"DZ\">Argelia</option>\r\n                                <option value=\"AR\">Argentina</option>\r\n                                <option value=\"AM\">Armenia</option>\r\n                                <option value=\"AW\">Aruba</option>\r\n                                <option value=\"AU\">Australia</option>\r\n                                <option value=\"AT\">Austria</option>\r\n                                <option value=\"AZ\">Azerbaiyán</option>\r\n                                <option value=\"BS\">Bahamas</option>\r\n                                <option value=\"BH\">Bahrein</option>\r\n                                <option value=\"BD\">Bangladesh</option>\r\n                                <option value=\"BB\">Barbados</option>\r\n                                <option value=\"BE\">Bélgica</option>\r\n                                <option value=\"BZ\">Belice</option>\r\n                                <option value=\"BJ\">Benin</option>\r\n                                <option value=\"BM\">Bermudas</option>\r\n                                <option value=\"BY\">Bielorrusia</option>\r\n                                <option value=\"MM\">Birmania</option>\r\n                                <option value=\"BO\">Bolivia</option>\r\n                                <option value=\"BA\">Bosnia y Herzegovina</option>\r\n                                <option value=\"BW\">Botswana</option>\r\n                                <option value=\"BR\">Brasil</option>\r\n                                <option value=\"BN\">Brunei</option>\r\n                                <option value=\"BG\">Bulgaria</option>\r\n                                <option value=\"BF\">Burkina Faso</option>\r\n                                <option value=\"BI\">Burundi</option>\r\n                                <option value=\"BT\">Bután</option>\r\n                                <option value=\"CV\">Cabo Verde</option>\r\n                                <option value=\"KH\">Camboya</option>\r\n                                <option value=\"CM\">Camerún</option>\r\n                                <option value=\"CA\">Canadá</option>\r\n                                <option value=\"TD\">Chad</option>\r\n                                <option value=\"CL\">Chile</option>\r\n                                <option value=\"CN\">China</option>\r\n                                <option value=\"CY\">Chipre</option>\r\n                                <option value=\"VA\">Ciudad del Vaticano</option>\r\n                                <option value=\"CO\">Colombia</option>\r\n                                <option value=\"KM\">Comores</option>\r\n                                <option value=\"CG\">Congo</option>\r\n                                <option value=\"KR\">Corea</option>\r\n                                <option value=\"KP\">Corea del Norte</option>\r\n                                <option value=\"CI\">Costa de Marfíl</option>\r\n                                <option value=\"CR\">Costa Rica</option>\r\n                                <option value=\"HR\">Croacia (Hrvatska)</option>\r\n                                <option value=\"CU\">Cuba</option>\r\n                                <option value=\"DK\">Dinamarca</option>\r\n                                <option value=\"DJ\">Djibouti</option>\r\n                                <option value=\"DM\">Dominica</option>\r\n                                <option value=\"EC\">Ecuador</option>\r\n                                <option value=\"EG\">Egipto</option>\r\n                                <option value=\"SV\">El Salvador</option>\r\n                                <option value=\"AE\">Emiratos Árabes Unidos</option>\r\n                                <option value=\"ER\">Eritrea</option>\r\n                                <option value=\"SI\">Eslovenia</option>\r\n                                <option value=\"ES\" selected>España</option>\r\n                                <option value=\"US\">Estados Unidos</option>\r\n                                <option value=\"EE\">Estonia</option>\r\n                                <option value=\"ET\">Etiopía</option>\r\n                                <option value=\"FJ\">Fiji</option>\r\n                                <option value=\"PH\">Filipinas</option>\r\n                                <option value=\"FI\">Finlandia</option>\r\n                                <option value=\"FR\">Francia</option>\r\n                                <option value=\"GA\">Gabón</option>\r\n                                <option value=\"GM\">Gambia</option>\r\n                                <option value=\"GE\">Georgia</option>\r\n                                <option value=\"GH\">Ghana</option>\r\n                                <option value=\"GI\">Gibraltar</option>\r\n                                <option value=\"GD\">Granada</option>\r\n                                <option value=\"GR\">Grecia</option>\r\n                                <option value=\"GL\">Groenlandia</option>\r\n                                <option value=\"GP\">Guadalupe</option>\r\n                                <option value=\"GU\">Guam</option>\r\n                                <option value=\"GT\">Guatemala</option>\r\n                                <option value=\"GY\">Guayana</option>\r\n                                <option value=\"GF\">Guayana Francesa</option>\r\n                                <option value=\"GN\">Guinea</option>\r\n                                <option value=\"GQ\">Guinea Ecuatorial</option>\r\n                                <option value=\"GW\">Guinea-Bissau</option>\r\n                                <option value=\"HT\">Haití</option>\r\n                                <option value=\"HN\">Honduras</option>\r\n                                <option value=\"HU\">Hungría</option>\r\n                                <option value=\"IN\">India</option>\r\n                                <option value=\"ID\">Indonesia</option>\r\n                                <option value=\"IQ\">Irak</option>\r\n                                <option value=\"IR\">Irán</option>\r\n                                <option value=\"IE\">Irlanda</option>\r\n                                <option value=\"BV\">Isla Bouvet</option>\r\n                                <option value=\"CX\">Isla de Christmas</option>\r\n                                <option value=\"IS\">Islandia</option>\r\n                                <option value=\"KY\">Islas Caimán</option>\r\n                                <option value=\"CK\">Islas Cook</option>\r\n                                <option value=\"CC\">Islas de Cocos o Keeling</option>\r\n                                <option value=\"FO\">Islas Faroe</option>\r\n                                <option value=\"HM\">Islas Heard y McDonald</option>\r\n                                <option value=\"FK\">Islas Malvinas</option>\r\n                                <option value=\"MP\">Islas Marianas del Norte</option>\r\n                                <option value=\"MH\">Islas Marshall</option>\r\n                                <option value=\"PW\">Islas Palau</option>\r\n                                <option value=\"SB\">Islas Salomón</option>\r\n                                <option value=\"SJ\">Islas Svalbard y Jan Mayen</option>\r\n                                <option value=\"TK\">Islas Tokelau</option>\r\n                                <option value=\"TC\">Islas Turks y Caicos</option>\r\n                                <option value=\"VI\">Islas Vírgenes (EEUU)</option>\r\n                                <option value=\"VG\">Islas Vírgenes (Reino Unido)</option>\r\n                                <option value=\"WF\">Islas Wallis y Futuna</option>\r\n                                <option value=\"IL\">Israel</option>\r\n                                <option value=\"IT\">Italia</option>\r\n                                <option value=\"JM\">Jamaica</option>\r\n                                <option value=\"JP\">Japón</option>\r\n                                <option value=\"JO\">Jordania</option>\r\n                                <option value=\"KZ\">Kazajistán</option>\r\n                                <option value=\"KE\">Kenia</option>\r\n                                <option value=\"KG\">Kirguizistán</option>\r\n                                <option value=\"KI\">Kiribati</option>\r\n                                <option value=\"KW\">Kuwait</option>\r\n                                <option value=\"LA\">Laos</option>\r\n                                <option value=\"LS\">Lesotho</option>\r\n                                <option value=\"LV\">Letonia</option>\r\n                                <option value=\"LB\">Líbano</option>\r\n                                <option value=\"LR\">Liberia</option>\r\n                                <option value=\"LY\">Libia</option>\r\n                                <option value=\"LI\">Liechtenstein</option>\r\n                                <option value=\"LT\">Lituania</option>\r\n                                <option value=\"LU\">Luxemburgo</option>\r\n                                <option value=\"MK\">Macedonia</option>\r\n                                <option value=\"MG\">Madagascar</option>\r\n                                <option value=\"MY\">Malasia</option>\r\n                                <option value=\"MW\">Malawi</option>\r\n                                <option value=\"MV\">Maldivas</option>\r\n                                <option value=\"ML\">Malí</option>\r\n                                <option value=\"MT\">Malta</option>\r\n                                <option value=\"MA\">Marruecos</option>\r\n                                <option value=\"MQ\">Martinica</option>\r\n                                <option value=\"MU\">Mauricio</option>\r\n                                <option value=\"MR\">Mauritania</option>\r\n                                <option value=\"YT\">Mayotte</option>\r\n                                <option value=\"MX\">México</option>\r\n                                <option value=\"FM\">Micronesia</option>\r\n                                <option value=\"MD\">Moldavia</option>\r\n                                <option value=\"MC\">Mónaco</option>\r\n                                <option value=\"MN\">Mongolia</option>\r\n                                <option value=\"MS\">Montserrat</option>\r\n                                <option value=\"MZ\">Mozambique</option>\r\n                                <option value=\"NA\">Namibia</option>\r\n                                <option value=\"NR\">Nauru</option>\r\n                                <option value=\"NP\">Nepal</option>\r\n                                <option value=\"NI\">Nicaragua</option>\r\n                                <option value=\"NE\">Níger</option>\r\n                                <option value=\"NG\">Nigeria</option>\r\n                                <option value=\"NU\">Niue</option>\r\n                                <option value=\"NF\">Norfolk</option>\r\n                                <option value=\"NO\">Noruega</option>\r\n                                <option value=\"NC\">Nueva Caledonia</option>\r\n                                <option value=\"NZ\">Nueva Zelanda</option>\r\n                                <option value=\"OM\">Omán</option>\r\n                                <option value=\"NL\">Países Bajos</option>\r\n                                <option value=\"PA\">Panamá</option>\r\n                                <option value=\"PG\">Papúa Nueva Guinea</option>\r\n                                <option value=\"PK\">Paquistán</option>\r\n                                <option value=\"PY\">Paraguay</option>\r\n                                <option value=\"PE\">Perú</option>\r\n                                <option value=\"PN\">Pitcairn</option>\r\n                                <option value=\"PF\">Polinesia Francesa</option>\r\n                                <option value=\"PL\">Polonia</option>\r\n                                <option value=\"PT\">Portugal</option>\r\n                                <option value=\"PR\">Puerto Rico</option>\r\n                                <option value=\"QA\">Qatar</option>\r\n                                <option value=\"UK\">Reino Unido</option>\r\n                                <option value=\"CF\">República Centroafricana</option>\r\n                                <option value=\"CZ\">República Checa</option>\r\n                                <option value=\"ZA\">República de Sudáfrica</option>\r\n                                <option value=\"DO\">República Dominicana</option>\r\n                                <option value=\"SK\">República Eslovaca</option>\r\n                                <option value=\"RE\">Reunión</option>\r\n                                <option value=\"RW\">Ruanda</option>\r\n                                <option value=\"RO\">Rumania</option>\r\n                                <option value=\"RU\">Rusia</option>\r\n                                <option value=\"EH\">Sahara Occidental</option>\r\n                                <option value=\"KN\">Saint Kitts y Nevis</option>\r\n                                <option value=\"WS\">Samoa</option>\r\n                                <option value=\"AS\">Samoa Americana</option>\r\n                                <option value=\"SM\">San Marino</option>\r\n                                <option value=\"VC\">San Vicente y Granadinas</option>\r\n                                <option value=\"SH\">Santa Helena</option>\r\n                                <option value=\"LC\">Santa Lucía</option>\r\n                                <option value=\"ST\">Santo Tomé y Príncipe</option>\r\n                                <option value=\"SN\">Senegal</option>\r\n                                <option value=\"SC\">Seychelles</option>\r\n                                <option value=\"SL\">Sierra Leona</option>\r\n                                <option value=\"SG\">Singapur</option>\r\n                                <option value=\"SY\">Siria</option>\r\n                                <option value=\"SO\">Somalia</option>\r\n                                <option value=\"LK\">Sri Lanka</option>\r\n                                <option value=\"PM\">St Pierre y Miquelon</option>\r\n                                <option value=\"SZ\">Suazilandia</option>\r\n                                <option value=\"SD\">Sudán</option>\r\n                                <option value=\"SE\">Suecia</option>\r\n                                <option value=\"CH\">Suiza</option>\r\n                                <option value=\"SR\">Surinam</option>\r\n                                <option value=\"TH\">Tailandia</option>\r\n                                <option value=\"TW\">Taiwán</option>\r\n                                <option value=\"TZ\">Tanzania</option>\r\n                                <option value=\"TJ\">Tayikistán</option>\r\n                                <option value=\"TF\">Territorios franceses del Sur</option>\r\n                                <option value=\"TP\">Timor Oriental</option>\r\n                                <option value=\"TG\">Togo</option>\r\n                                <option value=\"TO\">Tonga</option>\r\n                                <option value=\"TT\">Trinidad y Tobago</option>\r\n                                <option value=\"TN\">Túnez</option>\r\n                                <option value=\"TM\">Turkmenistán</option>\r\n                                <option value=\"TR\">Turquía</option>\r\n                                <option value=\"TV\">Tuvalu</option>\r\n                                <option value=\"UA\">Ucrania</option>\r\n                                <option value=\"UG\">Uganda</option>\r\n                                <option value=\"UY\">Uruguay</option>\r\n                                <option value=\"UZ\">Uzbekistán</option>\r\n                                <option value=\"VU\">Vanuatu</option>\r\n                                <option value=\"VE\">Venezuela</option>\r\n                                <option value=\"VN\">Vietnam</option>\r\n                                <option value=\"YE\">Yemen</option>\r\n                                <option value=\"YU\">Yugoslavia</option>\r\n                                <option value=\"ZM\">Zambia</option>\r\n                                <option value=\"ZW\">Zimbabue</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"city\">Ciudad</label>\r\n                            <input type=\"text\" name=\"city\" id=\"city\"\r\n                                   ng-model=\"ctrl.userEdit.user.city\"\r\n                                   placeholder=\"Ciudad....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"telephone_number\">Número de teléfono o\r\n                                celular</label>\r\n                            <input type=\"number\" name=\"telephone_number\" id=\"telephone_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.telephone_number\"\r\n                                   placeholder=\"Número de teléfono o celular...\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"7\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.telephone_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"address\">Dirección de residencia</label>\r\n                            <input type=\"text\" name=\"address\" id=\"address\"\r\n                                   ng-model=\"ctrl.userEdit.user.address\"\r\n                                   placeholder=\"Dirección de residencia....\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank\">Nombre Banco</label>\r\n                            <input type=\"text\" name=\"bank\" id=\"bank\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank\"\r\n                                   placeholder=\"Nombre Banco...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_type\">Tipo de cuenta</label>\r\n                            <select class=\"form-control user-menu\" id=\"bank_account_type\"\r\n                                    ng-model=\"ctrl.userEdit.user.bank_account_type\" style=\"width:auto;\"\r\n                                    required>\r\n                                <option value=\"\">Tipo de cuenta</option>\r\n                                <option value=\"AH\">Ahorros</option>\r\n                                <option value=\"CR\">Corriente</option>\r\n                            </select>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <label class=\"control-label\" for=\"bank_account_number\">Número de cuenta</label>\r\n                            <input type=\"number\" name=\"bank_account_number\" id=\"bank_account_number\"\r\n                                   ng-model=\"ctrl.userEdit.user.bank_account_number\"\r\n                                   placeholder=\"Número de cuenta....\"\r\n                                   class=\"form-control\"\r\n                                   ng-minlength=\"9\"\r\n                                   ng-maxlength=\"25\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"artistForm.bank_account_number.$error.minlength\"\r\n                                  class=\"help-block\">Número muy corto.</span>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-6 text-center\">\r\n                            <fieldset>\r\n                                <br>\r\n\r\n                                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                                            ng-click=\"ctrl.validateForm()\" ng-disabled=\"userForm.$invalid\">\r\n                                        {{ 'general_edit_user'  | translate }}\r\n                                    </button>\r\n\r\n                            </fieldset>\r\n                        </div>\r\n\r\n                    </div>\r\n                </form>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "e1adbc58d5f66ac0fb825bfe437bcdac.jpg";
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(138);
+	var content = __webpack_require__(139);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -65848,7 +65907,7 @@
 	}
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -65862,7 +65921,7 @@
 
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports) {
 
 	/**
@@ -65970,7 +66029,7 @@
 
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports) {
 
 	angular.module('userPasswordModule', []);
@@ -65988,7 +66047,7 @@
 
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPasswordModule = angular.module('userPasswordModule');
@@ -66030,24 +66089,24 @@
 	    },
 	    controller: UserPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(142)
+	    template: __webpack_require__(143)
 	});
 
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"user-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>Editar contraseña</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password\">Contraseña actual</label>\r\n          <input type=\"password\" name=\"password\" id=\"password\"\r\n          ng-model=\"ctrl.userPassword.user.password\"\r\n          placeholder=\"Contraseña actual...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password1\">Nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password1\" id=\"password1\"\r\n          ng-model=\"ctrl.userPassword.user.password1\"\r\n          placeholder=\"Contraseña...\"\r\n          class=\"form-control\"\r\n          required\r\n          ng-minlength=\"6\"/>\r\n          <span class=\"messages\" ng-show=\"passwordForm.password1.$error.minlength\">Contraseña muy corta</span>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n          <input type=\"password\" name=\"password2\" id=\"password2\"\r\n          ng-model=\"ctrl.userPassword.user.password2\"\r\n          placeholder=\"Repita contraseña....\"\r\n          class=\"form-control\"\r\n          required/>\r\n          <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"passwordForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n        </div>\r\n      </dvi>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n          ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n        </div>\r\n      </div>\r\n\r\n    </fieldset>\r\n\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validatePassword()\" ng-disabled=\"userForm.$invalid\">\r\n          {{ 'general_edit_user'  | translate }}\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(144);
+	var content = __webpack_require__(145);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66067,7 +66126,7 @@
 	}
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66081,7 +66140,7 @@
 
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports) {
 
 	/**
@@ -66126,7 +66185,7 @@
 
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports) {
 
 	angular.module('helpModule', []);
@@ -66144,7 +66203,7 @@
 
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66166,18 +66225,18 @@
 	    },
 	    controller: HelpController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(148)
+	    template: __webpack_require__(149)
 	});
 
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-if=\"ctrl.isEnabled()\" class=\"help overlay\">\r\n    <button type=\"button\"\r\n            class=\"freeven-accept-btn\"\r\n            ng-click=\"ctrl.closeHelp()\">\r\n        <i class=\"icon icon-checkmark\"></i>\r\n        <span>Entendido</span>\r\n    </button>\r\n</div>\r\n";
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
 	var playerModule = angular.module('helpModule');
@@ -66205,13 +66264,13 @@
 
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(151);
+	var content = __webpack_require__(152);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66231,7 +66290,7 @@
 	}
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66245,7 +66304,7 @@
 
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var helpModule = angular.module('helpModule');
@@ -66264,24 +66323,24 @@
 	    },
 	    controller: HelpItemController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(153)
+	    template: __webpack_require__(154)
 	});
 
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"help-item\">\r\n    <div ng-if=\"ctrl.isEnabled()\" class=\"help-content\">\r\n        <div class=\"dot\"></div>\r\n        <div class=\"pulse\"></div>\r\n        <span class=\"help-text\">{{ ctrl.text }}</span>\r\n    </div>\r\n</div>";
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(155);
+	var content = __webpack_require__(156);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66301,7 +66360,7 @@
 	}
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66315,7 +66374,7 @@
 
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports) {
 
 	angular.module('artistModule', []);
@@ -66333,7 +66392,7 @@
 
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var artistModule = angular.module('artistModule');
@@ -66360,24 +66419,24 @@
 	    },
 	    controller: ArtistController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(158)
+	    template: __webpack_require__(159)
 	});
 
-
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<div class=\"artist\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.artist.infoArtist.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.artist.artist.username }}</h1>\r\n                        <p>{{ ctrl.artist.artist.first_name }} {{ ctrl.artist.artist.last_name }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.city }}</p>\r\n                        <p>{{ ctrl.artist.infoArtist.country }}\r\n                            <a href=\"#\">\r\n                                <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                            </a>\r\n                        </p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.showDonationCreatorPopup(ctrl.artist.artist)\">\r\n                        Hacer una donación\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(160);
+	var content = __webpack_require__(161);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66397,7 +66456,7 @@
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66411,7 +66470,7 @@
 
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports) {
 
 	/**
@@ -66451,7 +66510,7 @@
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports) {
 
 	angular.module('topTrackListModule', []);
@@ -66469,7 +66528,7 @@
 
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var topTrackListModule = angular.module('topTrackListModule');
@@ -66494,24 +66553,24 @@
 	    },
 	    controller: TopTrackListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(164)
+	    template: __webpack_require__(165)
 	});
 
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"row top-track-list\">\r\n    <h3 class=\"top-track-list-title\">Este es el top de las obras musicales más escuchadas</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"track in ctrl.trackList.topTracks\">\r\n        <div class=\"row\">\r\n            <track class=\"top-item-track col-xs-3\"\r\n                   hide-item-info=\"true\"\r\n                   fr-model=\"track\">\r\n            </track>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"track-name\">\r\n                    <a>{{ track.name }}</a>\r\n                </h3>\r\n                <h3 class=\"track-artist\">\r\n                    <a href=\"#/artist/{{ track.artist_id }}\">{{ track.artist }}</a>\r\n                </h3>\r\n                <h5>Número de reproducciones: {{ track.quantity }}</h5>\r\n                <div class=\"top-item-position\">\r\n                    <h1> {{ track.position }}</h1>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.trackList.loading\" class=\"list-loading\">{{ 'loading_tracks' | translate }}</h3>\r\n</div>\r\n";
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(166);
+	var content = __webpack_require__(167);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66531,7 +66590,7 @@
 	}
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66545,7 +66604,7 @@
 
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports) {
 
 	angular.module('trackCreatorModule', []);
@@ -66563,7 +66622,7 @@
 
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackCreatorModule = angular.module('trackCreatorModule');
@@ -66639,30 +66698,30 @@
 	    },
 	    controller: TrackCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(169)
+	    template: __webpack_require__(170)
 	});
 
-
-/***/ },
-/* 169 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(136) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(170) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+	module.exports = "<div class=\"track-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(171) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la carátula</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para subir una pieza musical</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Género</label>\r\n\r\n                        <select placeholder=\"Género...\"\r\n                                class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"\r\n                                ng-model=\"ctrl.gender\">\r\n                            <option ng-repeat=\"genderOption in  ctrl.genderOptions\"\r\n                                    ng-value=\"genderOption.id\">{{ genderOption.name }}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Archivo de audio</label>\r\n                        <a ngf-select\r\n                           ngf-multiple=\"false\"\r\n                           accept=\".mp3\"\r\n                           filters=\".mp3\"\r\n                           ngf-change=\"ctrl.attachFile($files,'audio')\"\r\n                           class=\"form-control\">\r\n                            <i class=\"icon icon-upload\">\r\n                                <span ng-if=\"!ctrl.trackFiles.audio\">Seleccione el archivo .mp3</span>\r\n                                <span ng-if=\"ctrl.trackFiles.audio\">{{ ctrl.trackFiles.audio.name }}</span>\r\n                            </i>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear pista</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "640f3d6cdeadc529b558bfb7e2c014e0.jpg";
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(172);
+	var content = __webpack_require__(173);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66682,7 +66741,7 @@
 	}
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66696,7 +66755,7 @@
 
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports) {
 
 	angular.module('donationModule', []);
@@ -66714,7 +66773,7 @@
 
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationModule = angular.module('donationModule');
@@ -66735,24 +66794,24 @@
 	    },
 	    controller: DonationController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(175)
+	    template: __webpack_require__(176)
 	});
 
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation\">\r\n\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n            <div ng-if=\"ctrl.donationService.donations.length > 0\" class=\"col-md-12\">\r\n\r\n                <h2>Mis donaciones</h2>\r\n                <p>Lista de donaciones recibidas:</p>\r\n\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                        <tr>\r\n                        <td><h3>Nombres</h3></td>\r\n                        <td><h3>Apellidos</h3></td>\r\n                        <td><h3>Valor</h3></td>\r\n                        <td><h3>Fecha</h3></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"donation in ctrl.donationService.donations\">\r\n                        <td>{{ donation.user_first_name  }}</td>\r\n                        <td>{{ donation.user_last_name }}</td>\r\n                        <td>$ {{ donation.value | number }}</td>\r\n                        <td>{{ donation.date | date:'medium' }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n           <div ng-if=\"ctrl.donationService.listEmpty\" class=\"empty-list col-md-12\">\r\n                <h4>Aún no has recibido donaciones </h4>\r\n            </div>\r\n        </div>\r\n    </fieldset>\r\n</div>\r\n\r\n\r\n";
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(177);
+	var content = __webpack_require__(178);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66772,7 +66831,7 @@
 	}
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66786,7 +66845,7 @@
 
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports) {
 
 	/**
@@ -66812,7 +66871,7 @@
 	                        }
 	                    },
 	                    function (error) {
-	                        console.log('Error loading tracks');
+	                        console.log('Error loading donations');
 	                    });
 	            };
 
@@ -66822,7 +66881,7 @@
 
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports) {
 
 	angular.module('forgotPasswordModule', []);
@@ -66840,7 +66899,7 @@
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var forgotPasswordModule = angular.module('forgotPasswordModule');
@@ -66869,18 +66928,18 @@
 	    },
 	    controller: ForgotPasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(181)
+	    template: __webpack_require__(182)
 	});
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"forgot-password\">\r\n  <div class=\"fr-modal-header\">\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n      <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n    </button>\r\n    <h4>¿Has olvidado tu contraseña?</h4>\r\n  </div>\r\n  <form name=\"passwordForm\">\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <label class=\"control-label\" for=\"username\">Ingresa tu nombre de usuario</label>\r\n          <input type=\"text\" name=\"username\" id=\"username\"\r\n          ng-model=\"ctrl.forgotPassword.username.username\"\r\n          placeholder=\"Usuario...\"\r\n          class=\"form-control\"\r\n          required/>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 center-button-pass\">\r\n          <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n          ng-click=\"ctrl.validateForgotPassword()\" ng-disabled=\"userForm.$invalid\">\r\n         Enviar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </fieldset>\r\n    <fieldset class=\"form-group\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12 center-button-pass\">\r\n        <button id=\"idBtnCancelar2\" type=\"button\"\r\n        class=\"freeven-cancel-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n        ng-click=\"ctrl.close()\">\r\n        {{ 'general_cancel'  | translate }}\r\n      </button>\r\n    </div>\r\n  </div>\r\n</fieldset>\r\n</form>\r\n</div>\r\n";
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports) {
 
 	/**
@@ -66930,13 +66989,13 @@
 
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(184);
+	var content = __webpack_require__(185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -66956,7 +67015,7 @@
 	}
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -66970,7 +67029,7 @@
 
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports) {
 
 	angular.module('scoreEditorModule', []);
@@ -66988,7 +67047,7 @@
 
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -67027,18 +67086,18 @@
 	    },
 	    controller: ScoreEditorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(187)
+	    template: __webpack_require__(188)
 	});
 
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"score-editor\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>{{ ctrl.scoreEditorService.track.name }}</h4>\r\n    </div>\r\n    <div class=\"score-editor-container\">\r\n        <track hide-item-info=\"true\"\r\n               fr-model=\"ctrl.scoreEditorService.track\">\r\n        </track>\r\n\r\n        <div class=\"rating\">\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(5)}\" ng-click=\"ctrl.setValue(5)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(4)}\" ng-click=\"ctrl.setValue(4)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(3)}\" ng-click=\"ctrl.setValue(3)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(2)}\" ng-click=\"ctrl.setValue(2)\">☆</span>\r\n            <span ng-class=\"{'filled':ctrl.greaterThanOrEqual(1)}\" ng-click=\"ctrl.setValue(1)\">☆</span>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-accept-btn\" ng-click=\"ctrl.save()\">\r\n                    <span>Guardar</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports) {
 
 	var scoreEditorModule = angular.module('scoreEditorModule');
@@ -67084,13 +67143,13 @@
 
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(190);
+	var content = __webpack_require__(191);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67110,7 +67169,7 @@
 	}
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67124,7 +67183,7 @@
 
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports) {
 
 	angular.module('restorePasswordModule', []);
@@ -67142,7 +67201,7 @@
 
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var restorePasswordModule = angular.module('restorePasswordModule');
@@ -67184,24 +67243,24 @@
 	    },
 	    controller: RestorePasswordController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(193)
+	    template: __webpack_require__(194)
 	});
 
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"restore-password\">\r\n    <form name=\"restoreForm\">\r\n        <fieldset class=\"form-group\">\r\n            <label>Actualizar contraseña</label>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"username\">Su usuario</label>\r\n                    <input type=\"text\" name=\"username\" id=\"username\"\r\n                           ng-model=\"ctrl.restorePassword.username.username\"\r\n                           placeholder=\"Usuario...\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password\">Nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password\" id=\"password\"\r\n                           ng-model=\"ctrl.restorePassword.username.password\"\r\n                           placeholder=\"Contraseña...\"\r\n                           class=\"form-control\"\r\n                           required\r\n                           ng-minlength=\"6\"/>\r\n                    <span class=\"messages\" ng-show=\"restoreForm.password.$error.minlength\">Contraseña muy corta</span>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\" for=\"password2\">Confirme nueva Contraseña</label>\r\n                    <input type=\"password\" name=\"password2\" id=\"password2\"\r\n                           ng-model=\"ctrl.restorePassword.username.password2\"\r\n                           placeholder=\"Repita contraseña....\"\r\n                           class=\"form-control\"\r\n                           required/>\r\n                    <span class=\"messages\" ng-show=\"userForm.$submitted || userForm.password2.$touched\">\r\n            <span ng-show=\"restoreForm.password2.$error.required\">El campo es obligatorio.</span>\r\n          </span>\r\n                </div>\r\n                </dvi>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n          <span class=\"messages\"\r\n                ng-show=\"!ctrl.passwordOk\">Las contraseñas no coinciden. Por favor, verifique</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                            ng-click=\"ctrl.validateRestorePassword()\" ng-disabled=\"userForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(195);
+	var content = __webpack_require__(196);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67221,7 +67280,7 @@
 	}
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67235,7 +67294,7 @@
 
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports) {
 
 	/**
@@ -67289,7 +67348,7 @@
 
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports) {
 
 	angular.module('donationCreatorModule', []);
@@ -67307,7 +67366,7 @@
 
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67344,18 +67403,18 @@
 	    },
 	    controller: DonationCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(199)
+	    template: __webpack_require__(200)
 	});
 
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"donation-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Donación</h4>\r\n    </div>\r\n    <form ng-if=\"ctrl.step==0\" name=\"userForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <label class=\"control-label\">Monto a donar</label>\r\n                    <input type=\"number\"\r\n                           ng-model=\"ctrl.donation.value\"\r\n                           value=\"ctrl.donation.value | currency\"\r\n                           placeholder=\"$ 000 000\"\r\n                           class=\"donation-value  form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.createDonation()\">\r\n                        <span>Hacer donación</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n\r\n    <form ng-if=\"ctrl.step==1\" name=\"userForm\">\r\n\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <h5>Gracias por apoyar a los artistas, tu donación se ha realizado de manera exitosa</h5>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <button class=\"freeven-accept-btn\" ng-click=\"ctrl.close()\">\r\n                        <span>Finalizar</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </form>\r\n</div>\r\n";
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports) {
 
 	var donationCreatorModule = angular.module('donationCreatorModule');
@@ -67399,13 +67458,13 @@
 
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(202);
+	var content = __webpack_require__(203);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67425,7 +67484,7 @@
 	}
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67439,7 +67498,7 @@
 
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports) {
 
 	angular.module('bounceModule', []);
@@ -67457,7 +67516,7 @@
 
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var  bounceModule = angular.module('bounceModule');
@@ -67476,24 +67535,24 @@
 	    },
 	    controller: BounceController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(205)
+	    template: __webpack_require__(206)
 	});
 
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"bounce1\"></div>\r\n<div class=\"bounce2\"></div>\r\n<div class=\"bounce3\"></div>\r\n";
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(207);
+	var content = __webpack_require__(208);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67513,7 +67572,7 @@
 	}
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67527,7 +67586,7 @@
 
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports) {
 
 	angular.module('postCreatorModule', []);
@@ -67545,7 +67604,7 @@
 
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var postCreatorModule = angular.module('postCreatorModule');
@@ -67557,6 +67616,8 @@
 	        var self = this;
 	        self.event = postCreatorService;
 	        self.dateOk = true;
+	        self.files = {};
+	        self.image = true;
 
 
 	        self.saveEvent = function () {
@@ -67572,22 +67633,48 @@
 
 	        self.validateDate = function () {
 	            var today = new Date();
-	            var isToday = (today.toDateString() == self.event.event.date_event.toDateString());
-	            var isLess = (today.toDateString() > self.event.event.date_event.toDateString());
-	            if (isToday == false && isLess == true) {
+	            var isToday = (today.toDateString() == self.event.event.date.toDateString());
+	            var isLess = (today.toDateString() < self.event.event.date.toDateString());
+
+	            if (isToday == false && isLess == false) {
 	                return true;
 	            } else {
 	                return false;
 	            }
-	        }
+	        };
 
 	        self.validateFieldsPostCreator = function () {
-	            if (self.event.event.eventName == undefined
-	                || self.event.event.eventPlace == undefined
-	                || self.event.event.date_event == undefined
-	                || self.event.event.eventDescription == undefined) {
+	            if (self.event.event.name == undefined
+	                || self.event.event.place == undefined
+	                || self.event.event.date == undefined
+	                || self.event.event.description == undefined) {
 	                return false;
 	            } else {
+	                if (self.files) {
+	                    if (self.validateImage()) {
+	                        return true;
+	                    } else {
+	                        return false;
+	                    }
+
+	                }
+	            }
+	        }
+
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
+
+	        self.validateImage = function () {
+	            self.event.event.image = self.files.image;
+	            if (self.event.event.image == undefined) {
+	                self.image = false;
+	                return false;
+	            } else {
+	                self.image = true;
 	                return true;
 	            }
 	        }
@@ -67601,30 +67688,30 @@
 	    },
 	    controller: PostCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(210)
+	    template: __webpack_require__(211)
 	});
 
-
-/***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(211) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(212) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.eventName\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.eventPlace\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date_event\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.eventDescription\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n                        <div class=\"col-md-2\" ng-if=\"ctrl.event.loading\">\r\n                            <bounce title=\"Bounce\">Publicando evento</bounce>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "a7d964bb837d8a671f40661c2d9084af.jpg";
+	module.exports = "<div class=\"post-creator\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-track-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(212) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-track-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(213) + "\"\r\n                 alt=\"Profile image example\"/>\r\n        </div>\r\n        <div>\r\n        </div>\r\n        <div class=\"fr-track-creator-text\">\r\n            <form name=\"eventForm\">\r\n                <fieldset class=\"form-group\">\r\n                    <h4>Llena estos campos para publicar un evento</h4>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventName\">Nombre del evento</label>\r\n                            <input type=\"text\" name=\"eventName\" id=\"eventName\"\r\n                                   ng-model=\"ctrl.event.event.name\"\r\n                                   placeholder=\"Nombre del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventName.$touched\">\r\n                            <span ng-show=\"eventForm.eventName.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventPlace\">Lugar del evento</label>\r\n                            <input type=\"text\" name=\"eventPlace\" id=\"eventPlace\"\r\n                                   ng-model=\"ctrl.event.event.place\"\r\n                                   placeholder=\"Lugar del evento...\"\r\n                                   class=\"form-control\"\r\n                                   required/>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"date_event\">Fecha y Hora del evento</label>\r\n                            <input type=\"datetime-local\" id=\"date_event\" name=\"date_event\"\r\n                                   class=\"form-control\"\r\n                                   ng-model=\"ctrl.event.event.date\"\r\n                                   required/>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                    <span class=\"messages\"\r\n                          ng-show=\"!ctrl.dateOk\">La fecha no es correcta. Por favor, verifique</span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"eventDescription\">Descripción del evento</label>\r\n                            <textarea type=\"text\" name=\"eventDescription\" id=\"eventDescription\"\r\n                                      ng-model=\"ctrl.event.event.description\"\r\n                                      placeholder=\"Descripción del evento...\"\r\n                                      class=\"form-control\"\r\n                                      rows=\"3\"\r\n                                      required></textarea>\r\n                            <span class=\"messages\" ng-show=\"eventForm.$submitted || eventForm.eventPlace.$touched\">\r\n                            <span ng-show=\"eventForm.eventPlace.$invalid\">El campo es obligatorio.</span>\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                            <label class=\"control-label\" for=\"imagenEvent\">Imagen del evento</label>\r\n                            <a ngf-select\r\n                               ngf-multiple=\"false\"\r\n                               accept=\".jpg\"\r\n                               filters=\".jpg\"\r\n                               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n                               class=\"form-control track-picture-selector\">\r\n                                <i class=\"icon icon-images\"></i>\r\n                                <span ng-if=\"!ctrl.files.image\">Seleccione la imagen del evento</span>\r\n                                <span ng-if=\"ctrl.files.image\">{{ ctrl.files.image.name }}</span>\r\n                            </a>\r\n\r\n                        </div>\r\n                        <div class=\"col-md-12\">\r\n                                  <span class=\"messages\"\r\n                                        ng-show=\"!ctrl.image\">¿Olvido agregar una imagen?</span>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n                <fieldset class=\"form-group\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-10\">\r\n                            <button class=\"freeven-accept-btn\" ng-click=\"ctrl.saveEvent()\">\r\n                                <span>Publicar evento</span>\r\n                            </button>\r\n                        </div>\r\n\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ },
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "55772eb4043520f5770a55cb7b8d7454.png";
+	module.exports = __webpack_require__.p + "a7d964bb837d8a671f40661c2d9084af.jpg";
 
 /***/ },
 /* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "55772eb4043520f5770a55cb7b8d7454.png";
+
+/***/ },
+/* 214 */
 /***/ function(module, exports) {
 
 	/**
@@ -67633,8 +67720,8 @@
 
 	var postCreatorModule = angular.module('postCreatorModule');
 	postCreatorModule.factory('postCreatorService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore', 'UserApiService', 'Upload',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore, UserApiService, Upload) {
 	        var postCreatorService = function () {
 
 	            var self = this;
@@ -67643,12 +67730,31 @@
 
 	            self.loading = false;
 
-	            self.idUserAuth = $cookieStore.get('user_data').id_user;
+	            self.idUserAuth = mainService.getArtistId();
 
 	            self.saveEvent = function () {
-	                self.event.artistId = self.idUserAuth;
-	                console.log("saveEvent");
-	                console.log(self.event);
+	                self.event.artist = self.idUserAuth;
+	                Upload.upload({
+	                    url: 'api/user/event-create/',
+	                    data: {
+	                        name: self.event.name,
+	                        date: self.event.date,
+	                        place: self.event.place,
+	                        latitude: 0,
+	                        longitude: 0,
+	                        description: self.event.description,
+	                        image: self.event.image,
+	                        artist: self.event.artist,
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    if (status == 201) {
+	                        notifierService.success("Eventos", "Tu evento ha sido creado");
+	                        window.location.assign("#/events");
+	                    } else {
+	                        notifierService.error("Eventos", "Error creando el evento");
+	                    }
+	                });
 
 	                setTimeout(function () {
 	                    self.loading = true;
@@ -67662,13 +67768,13 @@
 
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(215);
+	var content = __webpack_require__(216);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -67688,7 +67794,7 @@
 	}
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -67702,7 +67808,7 @@
 
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports) {
 
 	angular.module('eventListModule', []);
@@ -67720,7 +67826,7 @@
 
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports) {
 
 	/**
@@ -67729,8 +67835,8 @@
 
 	var eventListModule = angular.module('eventListModule');
 	eventListModule.factory('eventListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
-	    'mainService', '$cookieStore',
-	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore) {
+	    'mainService', '$cookieStore','UserApiService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore,UserApiService) {
 	        var eventListService = function () {
 
 	            var self = this;
@@ -67744,7 +67850,15 @@
 
 	            self.listEvents = function () {
 	                self.events = [];
-	                self.loadMockData();
+	                UserApiService.getEvents(
+	                    {},
+	                    function (response) {
+	                         self.events = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading events');
+	                    }
+	                );
 
 	            };
 
@@ -67776,7 +67890,7 @@
 
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eventListModule = angular.module('eventListModule');
@@ -67804,21 +67918,15 @@
 	    },
 	    controller: EventListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(219)
+	    template: __webpack_require__(220)
 	});
 
 
 /***/ },
-/* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(220) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.eventName }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artistName }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date_event | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.eventPlace }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.eventDescription }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
-
-/***/ },
 /* 220 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = __webpack_require__.p + "d009533eb0f70eae18ac7fa16841e466.jpg";
+	module.exports = "<div class=\"row event-list\">\r\n    <h3 class=\"top-event-list-title\">Próximos eventos</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"event in ctrl.eventList.events\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                 <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ event.image }}\"\r\n                 alt=\"Profile image example\"\r\n                    height=\"200\" width=\"200\"/>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h3 class=\"event-name\">\r\n                    {{ event.name }}\r\n                </h3>\r\n                <h3 class=\"event-artist\">\r\n                    <a href=\"#/artist/{{ event.artist_id }}\">{{ event.artist }}</a>\r\n                </h3>\r\n                <h5>Fecha: {{ event.date | date:'medium' }}</h5>\r\n                <h5>Lugar: {{ event.place }}\r\n                    <a href=\"#\">\r\n                        <span class=\"glyphicon glyphicon-map-marker\"></span>\r\n                    </a>\r\n                </h5>\r\n                <h5>Descripción {{ event.description }}</h5>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n    <h3 ng-if=\"ctrl.eventList.loading\" class=\"list-loading\">{{ 'loading_events' | translate }}</h3>\r\n</div>";
 
 /***/ },
 /* 221 */
@@ -67856,6 +67964,471 @@
 
 	// module
 	exports.push([module.id, ".event-list {\n  padding: 68px 10%;\n  display: block;\n}\n.event-list .top-event-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\n.event-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\n.event-list .top-item-description {\n  color: #555555;\n}\n.event-list .top-item-description .event-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\n.event-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\n.event-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.event-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\n.event-list a {\n  cursor: pointer;\n  color: inherit;\n}\n.event-list .text {\n  font-size: 1rem;\n}\n.event-list .text-xs,\n.event-list .text-xxs {\n  font-size: 12px;\n}\n.event-list .text-sm {\n  font-size: 13px;\n}\n.event-list .text-md {\n  font-size: 1.125rem;\n}\n.event-list .text-lg {\n  font-size: 1.5rem;\n}\n.event-list .text-2x {\n  font-size: 2em;\n}\n.event-list .text-3x {\n  font-size: 3em;\n}\n.event-list .text-4x {\n  font-size: 4em;\n}\n.event-list .list-loading {\n  text-align: center;\n}\n.event-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\n.event-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\n.event-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.event-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\n.event-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 223 */
+/***/ function(module, exports) {
+
+	angular.module('competitionListModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/competitionList/competitionListModule.js');
+	 require('../app/competitionList/competitionListComponent.js');
+	 require('../app/competitionList/competitionList.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <competition-list title ="CompetitionList"> </competition-list>
+	*/
+
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var competitionListModule = angular.module('competitionListModule');
+	var CompetitionListController = ['$i18n', 'competitionListService', 'mainService', 'Upload',
+	    '$freevenModal', 'notifierService',
+	    function ($i18n, competitionListService, mainService, Upload, $freevenModal, notifierService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+	        self.competitionList = competitionListService;
+
+	        self.competitionList.listCompetitions();
+
+	        self.participate = function (id) {
+	            var authenticated = mainService.isAuthenticated();
+	            if (authenticated) {
+	                var isArtist = mainService.isArtist();
+	                if (isArtist) {
+	                    self.loadPopUp(id);
+	                } else {
+	                    notifierService.info("Convocatorias", "Sólo los artistas pueden participar");
+	                }
+	            } else {
+	                notifierService.warning("Convocatorias", "Por favor, inice sesión para participar");
+	            }
+	        }
+
+	        self.loadPopUp = function (id) {
+	            self.competitionList.showLoadTrackPopup(id);
+	        }
+
+	    }];
+
+	competitionListModule.component('competitionList', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: CompetitionListController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(225)
+	});
+
+
+/***/ },
+/* 225 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"row competition-list\">\r\n    <h3 class=\"top-competition-list-title\">Listado de convocatorias</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"competition in ctrl.competitionList.competitions\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n                <br>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <button class=\"freeven-accept-btn\"\r\n                                ng-click=\"ctrl.participate(competition.id)\">\r\n                            Participar\r\n                        </button>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in competition.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <br/>\r\n</div>";
+
+/***/ },
+/* 226 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by diego on 8/10/2016.
+	 */
+
+	var competitionListModule = angular.module('competitionListModule');
+	competitionListModule.factory('competitionListService', ['UserApiService', '$i18n', '$freevenModal', 'notifierService',
+	    'mainService', '$cookieStore', 'CompetitionApiService',
+	    function (UserApiService, $i18n, $freevenModal, notifierService, mainService, $cookieStore,
+	              CompetitionApiService) {
+	        var competitionListService = function () {
+
+	            var self = this;
+
+	            self.competitions = [];
+
+	            self.loading = false;
+
+	            self.listCompetitions = function () {
+	                self.competitions = [];
+
+	                CompetitionApiService.get(
+	                    {},
+	                    function (response) {
+	                        self.competitions = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading competitions');
+	                    }
+	                );
+
+	            };
+
+	            self.showLoadTrackPopup = function (id) {
+	                var self = this;
+	                self.selectedIdCompetition = id
+	                $freevenModal.showPopup({}, {
+	                    template: '<competition-participate></competition-participate>'
+	                });
+	            };
+
+	            self.getSelectedIdCompetition = function () {
+	                var self = this;
+	                return self.selectedIdCompetition;
+	            };
+
+	        };
+	        return new competitionListService();
+	    }]);
+
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(228);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionList.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionList.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "competition-list {\n  padding: 68px 10%;\n  display: block;\n}\ncompetition-list .top-competition-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\ncompetition-list .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\ncompetition-list .top-item-description {\n  color: #555555;\n}\ncompetition-list .top-item-description .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-list .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\ncompetition-list .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\ncompetition-list .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\ncompetition-list a {\n  cursor: pointer;\n  color: inherit;\n}\ncompetition-list .text {\n  font-size: 1rem;\n}\ncompetition-list .text-xs,\ncompetition-list .text-xxs {\n  font-size: 12px;\n}\ncompetition-list .text-sm {\n  font-size: 13px;\n}\ncompetition-list .text-md {\n  font-size: 1.125rem;\n}\ncompetition-list .text-lg {\n  font-size: 1.5rem;\n}\ncompetition-list .text-2x {\n  font-size: 2em;\n}\ncompetition-list .text-3x {\n  font-size: 3em;\n}\ncompetition-list .text-4x {\n  font-size: 4em;\n}\ncompetition-list .list-loading {\n  text-align: center;\n}\ncompetition-list .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\ncompetition-list .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\ncompetition-list .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-list .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-list .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\ncompetition-list .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 229 */
+/***/ function(module, exports) {
+
+	angular.module('competitionParticipateModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/competitionParticipate/competitionParticipateModule.js');
+	 require('../app/competitionParticipate/competitionParticipateComponent.js');
+	 require('../app/competitionParticipate/competitionParticipate.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <competition-participate title ="CompetitionParticipate"> </competition-participate>
+	*/
+
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var competitionParticipateModule = angular.module('competitionParticipateModule');
+	var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService', 'Upload', 'notifierService',
+	    'competitionListService', 'CompetitionApiService', 'ArtistApiService',
+	    function ($i18n, $freevenModal, mainService, Upload, notifierService, competitionListService,
+	              CompetitionApiService, ArtistApiService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+
+
+	        self.idCompetition = competitionListService.getSelectedIdCompetition();
+
+	        self.participateValidate = function () {
+	            self.goToParticipate();
+	        }
+	        self.trackFiles = {};
+	        self.loading = false;
+	        self.itemsSelected = {};
+	        self.tracksSelected = [];
+	        self.participateData = {};
+
+	        self.filters = [];
+
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.trackFiles[fieldName] = file;
+	            }
+	        };
+
+	        self.goToParticipate = function () {
+	            var self = this;
+	            var user = mainService.getUserData();
+	            self.tracksSelected = self.filters;
+	            self.loading = true;
+	            self.createRelationItemTrack();
+
+	        };
+
+	        self.loadFullCompetition = function (id) {
+
+	            if (id != undefined) {
+	                self.participateData.IdCompetition = id;
+	                CompetitionApiService.getCompetition(
+	                    {guidCompetition: id},
+	                    function (response) {
+	                        self.items = response.results[0].items;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full competition');
+	                    });
+	            }
+	        };
+
+	        self.loadFullTracksArtist = function (id) {
+
+	            if (id != undefined) {
+	                ArtistApiService.getTracksForArtist(
+	                    {guidArtist: id},
+	                    function (response) {
+	                        self.tracksArtist = response.results;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full tracks artist');
+	                    });
+	            }
+
+	        };
+
+	        self.createRelationItemTrack = function () {
+	            var self = this;
+	            var relations = [];
+	            for (var i = 0; i < self.items.length; i++) {
+	                var relation = {};
+	                relation.idItem = self.items[i].id;
+	                relation.idTrack = self.items[i].track.id;
+	                relations.push(relation);
+	            }
+	            self.participateData.relations = relations;
+	            console.log(self.participateData);
+
+	        };
+
+	        self.loadFullCompetition(self.idCompetition);
+	        self.loadFullTracksArtist(mainService.getArtistId());
+
+
+	        self.close = function () {
+	            $freevenModal.closePopup();
+	        };
+
+	    }];
+
+	competitionParticipateModule.component('competitionParticipate', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: CompetitionParticipateController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(231)
+	});
+
+
+/***/ },
+/* 231 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"competition-participate\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{ 'general_close' | translate }}</span>\r\n        </button>\r\n        <h4>Participar en convocatoria</h4>\r\n    </div>\r\n    <form name=\"competitionForm\">\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <h4>Por favor, asocia una obra a cada item</h4>\r\n                    <table class=\"table\" border=\"1px\">\r\n                        <tbody>\r\n                        <tr>\r\n                            <td><strong>Identificación</strong></td>\r\n                            <td><strong>Nombre</strong></td>\r\n                            <td><strong>Tipo</strong></td>\r\n                            <td><strong>Mi obra seleccionada</strong></td>\r\n                        </tr>\r\n                        <tr ng-repeat=\"item in ctrl.items\">\r\n                            <td>{{ item.id }}</td>\r\n                            <td>{{ item.name }}</td>\r\n                            <td>{{ item.gender }}</td>\r\n                            <td><select ng-options=\"track.name for track in ctrl.tracksArtist\"\r\n                                        ng-model=\"item.track\" required>\r\n                                <option value=\"\" disabled>Seleccionar obra</option>\r\n                            </select>\r\n                            </td>\r\n                        </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.participateValidate()\" ng-disabled=\"competitionForm.$invalid\">\r\n                        Enviar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n        <fieldset class=\"form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 center-button-pass\">\r\n                    <button id=\"idBtnCancelar2\" type=\"button\"\r\n                            class=\"freeven-cancel-btn\"\r\n                            ng-click=\"ctrl.close()\">\r\n                        {{ 'general_cancel'  | translate }}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n    </form>\r\n</div>\r\n";
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(233);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionParticipate.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionParticipate.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "competition-participate {\n  background: #c1bdba;\n  font-family: 'Titillium Web', sans-serif;\n}\ncompetition-participate .fr-modal-header,\ncompetition-participate .fr-modal-content,\ncompetition-participate .fr-modal-footer {\n  padding: 15px 20px;\n  border: none;\n  background: white;\n  color: black;\n  text-align: center;\n}\ncompetition-participate form {\n  background: white;\n  padding: 40px;\n  max-width: 600px;\n}\ncompetition-participate form table {\n  color: black;\n}\ncompetition-participate form a {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\ncompetition-participate form a:hover {\n  color: #179b77;\n}\ncompetition-participate form span {\n  color: black;\n}\ncompetition-participate form h4 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h6 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form p {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form h1 {\n  text-align: center;\n  color: black;\n  margin: 0 0 40px;\n}\ncompetition-participate form label {\n  color: black;\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n}\ncompetition-participate form label .req {\n  margin: 2px;\n  color: #1ab188;\n}\ncompetition-participate form label.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\ncompetition-participate form label.active .req {\n  opacity: 0;\n}\ncompetition-participate form label.highlight {\n  color: black;\n}\ncompetition-participate form input.ng-invalid.ng-touched {\n  border-color: #FA787E;\n}\ncompetition-participate form .freeven-cancel-btn {\n  background-color: #999999;\n  border: 1px solid #999999;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\ncompetition-participate form.ng-submitted input.ng-invalid {\n  border-color: #FA787E;\n}\ncompetition-participate .messages {\n  color: #FA787E;\n}\ncompetition-participate .colorMensajes {\n  color: red;\n}\ncompetition-participate input.ng-valid {\n  border: 1px solid green;\n}\ncompetition-participate input:required:valid {\n  border: 1px solid green;\n}\ncompetition-participate .center-button-pass {\n  text-align: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 234 */
+/***/ function(module, exports) {
+
+	angular.module('announcementCreatorModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/announcementCreator/announcementCreatorModule.js');
+	 require('../app/announcementCreator/announcementCreatorComponent.js');
+	 require('../app/announcementCreator/announcementCreator.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <announcement-creator title ="AnnouncementCreator"> </announcement-creator>
+	*/
+
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var announcementCreatorModule = angular.module('announcementCreatorModule');
+	var AnnouncementCreatorController = ['Upload', 'mainService',
+	    function (Upload, mainService) {
+	        var self = this;
+	        self.files = {};
+	        self.loading = false;
+	        self.attachFile = function (files, fieldName) {
+	            if (files && files.length > 0) {
+	                var file = files[0];
+	                self.files[fieldName] = file;
+	            }
+	        };
+
+	        self.uploadFilesAndData = function () {
+	            var self = this;
+	            var user = mainService.getUserData();
+	            self.loading = true;
+	            if (self.files) {
+	                Upload.upload({
+	                    url: 'announcement/create/',
+	                    data: {
+	                        name: self.name,
+	                        description: self.description,
+	                        start_date: "2016-01-02",
+	                        end_date: "2016-05-02",
+	                        image: self.files.image,
+	                        popular_selection: true,
+	                        open: true,
+	                        owner: user.id_agent || 1,
+	                        score: 0
+	                    }
+	                }).progress(function (evt) {
+	                }).success(function (data, status, headers, config) {
+	                    self.loading = false;
+	                    console.log('subido correctamente');
+	                    notifierService.success("La convocatoria se ha creado correctamente", ".");
+	                });
+	            }
+	        };
+	    }];
+
+	announcementCreatorModule.component('announcementCreator', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: AnnouncementCreatorController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(236)
+	});
+
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"announcement-creator\">\r\n    <div class=\"fr-announcement-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(137) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-announcement-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"" + __webpack_require__(237) + "\"\r\n                 alt=\"Profile image example\"/>\r\n            <a ngf-select\r\n               ngf-multiple=\"false\"\r\n               accept=\".jpg\"\r\n               filters=\".jpg\"\r\n               ngf-change=\"ctrl.attachFile($files,'image')\"\r\n               class=\"form-control track-picture-selector\">\r\n                <i class=\"icon icon-images\"></i>\r\n                <span>Seleccione la imagen de la convocatoria</span>\r\n            </a>\r\n        </div>\r\n\r\n\r\n        <div>\r\n\r\n        </div>\r\n        <div class=\"fr-announcement-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <h4>Llena estos campos para crear una convocatoria</h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\" for=\"artistic_name\">Nombre de la pista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.name\"\r\n                               placeholder=\"Nombre de la pista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Descripción</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.description\"\r\n                               placeholder=\"Descripción...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de inicio</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.start_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Fecha de cierre</label>\r\n                        <input type=\"date\" class=\"form-control\"\r\n                               ng-model=\"ctrl.end_date\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">El ganador se escogerá po seleccion popular</label>\r\n                        <input type=\"checkbox\" class=\"form-control\"\r\n                               ng-model=\"ctrl.popular_selection\"\r\n                               class=\"form-control\"\r\n                               required/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-10\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.uploadFilesAndData()\">\r\n                            <span>Crear convocatoria</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n                        <bounce title=\"Bounce\"></bounce>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "255d428492ecce6251791d7ad424e634.jpg";
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(239);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./announcementCreator.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".announcement-creator {\n  padding: 0 6% 100px 6%;\n}\n.announcement-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.announcement-creator .form-group .control-label {\n  color: black;\n}\n.announcement-creator h1,\n.announcement-creator h3,\n.announcement-creator h4,\n.announcement-creator p {\n  color: black;\n}\n.announcement-creator .fr-announcement-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.announcement-creator .fr-image-announcement-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector span {\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.announcement-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
 
 	// exports
 

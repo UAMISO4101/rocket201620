@@ -1,0 +1,59 @@
+<div class="competition-participate">
+    <div class="fr-modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ctrl.close()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">{{ 'general_close' | translate }}</span>
+        </button>
+        <h4>Participar en convocatoria</h4>
+    </div>
+    <form name="competitionForm">
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Por favor, asocia una obra a cada item</h4>
+                    <table class="table" border="1px">
+                        <tbody>
+                        <tr>
+                            <td><strong>Identificación</strong></td>
+                            <td><strong>Nombre</strong></td>
+                            <td><strong>Tipo</strong></td>
+                            <td><strong>Mi obra seleccionada</strong></td>
+                        </tr>
+                        <tr ng-repeat="item in ctrl.items">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.gender }}</td>
+                            <td><select ng-options="track.name for track in ctrl.tracksArtist"
+                                        ng-model="item.track" required>
+                                <option value="" disabled>Seleccionar obra</option>
+                            </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-12 center-button-pass">
+                    <button class="freeven-accept-btn"
+                            ng-click="ctrl.participateValidate()" ng-disabled="competitionForm.$invalid">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-12 center-button-pass">
+                    <button id="idBtnCancelar2" type="button"
+                            class="freeven-cancel-btn"
+                            ng-click="ctrl.close()">
+                        {{ 'general_cancel'  | translate }}
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

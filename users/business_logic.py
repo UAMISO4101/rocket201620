@@ -56,7 +56,7 @@ def register_user_in_model(json_data):
     is_artist = str_to_bool(is_artist)
 
     if (username != "" and password1 != "" and password2 != "" and
-                email != "" and first_name != "" and last_name != ""):
+       email != "" and first_name != "" and last_name != ""):
 
         exist_user = User.objects.filter(username=username)
 
@@ -166,6 +166,7 @@ def login_service(request):
 
 
 def login_user_to_json(user):
+    # Is Artist
     try:
         artist = Artist.objects.get(user__id=user.id)
         is_artist = True
@@ -173,6 +174,13 @@ def login_user_to_json(user):
     except:
         is_artist = False
         id_artist = -1
+    # Is Business Agent
+    try:
+        agent = BusinessAgent.objects.get(user__id=user.id)
+        id_agent = agent.id
+    except:
+        id_agent = -1
+    # Generate Token
     try:
         token = Token.objects.create(user=user)
     except:
@@ -186,7 +194,8 @@ def login_user_to_json(user):
         'token': token.key,
         'is_artist': is_artist,
         'id_user': user.id,
-        'id_artist': id_artist
+        'id_artist': id_artist,
+        'id_agent': id_agent
     }
     return json_data
 
@@ -200,8 +209,8 @@ def register_business_agent(request):
     password2 = request.POST.get('password2')
 
     if (username is not "" and password1 is not "" and password2 is not "" and
-                email is not "" and first_name is not "" and
-                last_name is not ""):
+       email is not "" and first_name is not "" and
+       last_name is not ""):
 
         exist_user = User.objects.filter(username=username)
         if exist_user.count() > 0:
@@ -357,7 +366,7 @@ def change_password_op_action(request):
     old_password = request.GET.get('password')
 
     if (username is not None and password is not None and
-                old_password is not None):
+       old_password is not None):
         user = authenticate(username=username, password=old_password)
         if user is not None:
             user.set_password(password)
@@ -379,7 +388,7 @@ def update_profile_action(json_data):
     status = ''
 
     if (username != "" and email != "" and first_name != "" and
-                last_name != ""):
+       last_name != ""):
 
         user = User.objects.get(username=username)
 

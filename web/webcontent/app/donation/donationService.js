@@ -21,7 +21,7 @@ donationModule.factory('donationService', ['DonationApiService', 'mainService',
                         }
                     },
                     function (error) {
-                        console.log('Error loading tracks');
+                        console.log('Error loading donations');
                     });
             };
 

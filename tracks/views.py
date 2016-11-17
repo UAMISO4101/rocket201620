@@ -37,6 +37,14 @@ class TrackListView(ListAPIView):
     )
 
 
+class TrackForArtisticListView(ListAPIView):
+    serializer_class = TrackSerializer
+
+    def get_queryset(self):
+        tracks = Track.objects.filter(artist_id=self.kwargs['artist_id'])
+        return tracks
+
+
 class Top10(ListAPIView):
     queryset = Top.objects.filter(
         top_type='daily', action='play').order_by('-quantity')[:10]
