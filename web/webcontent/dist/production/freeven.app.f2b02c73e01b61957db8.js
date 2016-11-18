@@ -84,7 +84,8 @@
 	    'eventListModule',
 	    'competitionListModule',
 	    'competitionParticipateModule',
-	    'announcementCreatorModule'
+	    'announcementCreatorModule',
+	    'competitionDetailModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -289,9 +290,13 @@
 	__webpack_require__(230);
 	__webpack_require__(232);
 
-	 __webpack_require__(234);
-	 __webpack_require__(235);
-	 __webpack_require__(238);
+	__webpack_require__(234);
+	__webpack_require__(235);
+	__webpack_require__(238);
+
+	__webpack_require__(240);
+	__webpack_require__(241);
+	__webpack_require__(243);
 
 /***/ },
 /* 2 */
@@ -62426,7 +62431,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                           return checkAuthentication($q, mainService, $location);
+	                            return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62438,7 +62443,7 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                             return checkAuthentication($q, mainService, $location);
+	                            return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -62447,17 +62452,21 @@
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                             return checkAuthentication($q, mainService, $location);
+	                            return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
+	                $routeProvider.when('/competitions/detail/:idCompetition', {
+	                    template: '<competition-detail></competition-detail>',
 
-	                 $routeProvider.when('/announcement', {
+	                });
+
+	                $routeProvider.when('/announcement', {
 	                    template: '<announcement-creator> </announcement-creator>',
 	                    requireAuthentication: true,
 	                    resolve: {
 	                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-	                             return checkAuthentication($q, mainService, $location);
+	                            return checkAuthentication($q, mainService, $location);
 	                        }]
 	                    }
 	                });
@@ -63988,6 +63997,10 @@
 	                return self.user.id_artist;
 	            };
 
+	            self.getUserId = function () {
+	                return self.user.id_user;
+	            };
+
 	            self.setUserData = function (userData) {
 	                self.user = userData;
 	                self.saveUserCookies(userData);
@@ -64246,10 +64259,22 @@
 	     * */
 	    return $resource('announcement/:guidCompetition', {guid: '@guid'}, {
 	        /*custom urls*/
-	            getCompetition: {
+	        getCompetition: {
 	            url: 'announcement/full/:guidCompetition',
 	            method: 'GET',
 	            params: {guidCompetition: '@id'},
+	            isArray: false
+	        },
+	        createVote: {
+	            url: 'announcement/vote-create/',
+	            method: 'POST',
+	            params: {item: '@string', user: '@string', track: '@string'},
+	            isArray: false
+	        },
+	        getVotesUser: {
+	            url: 'announcement/vote-get/:guidItem/:guidUser',
+	            method: 'GET',
+	            params: {guidItem: '@id', guidUser: '@id'},
 	            isArray: false
 	        }
 	    });
@@ -68429,6 +68454,144 @@
 
 	// module
 	exports.push([module.id, ".announcement-creator {\n  padding: 0 6% 100px 6%;\n}\n.announcement-creator .form-group {\n  width: 60%;\n  display: block;\n}\n.announcement-creator .form-group .control-label {\n  color: black;\n}\n.announcement-creator h1,\n.announcement-creator h3,\n.announcement-creator h4,\n.announcement-creator p {\n  color: black;\n}\n.announcement-creator .fr-announcement-creator img.fr-image-lg {\n  z-index: 0;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.announcement-creator .fr-image-announcement-creator {\n  margin: -90px 10px 0px 50px;\n  z-index: 9;\n  width: 20%;\n  float: left;\n  position: relative;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector {\n  background-color: rgba(238, 238, 238, 0.76);\n  opacity: 0.1;\n  z-index: 100000;\n  display: block;\n  width: 97%;\n  height: 96%;\n  margin: 1% 0;\n  position: absolute;\n  text-align: center;\n  padding: 31% 0 0 0;\n  text-decoration: none;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector i {\n  font-size: 47px;\n  display: block;\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector span {\n  color: black;\n}\n.announcement-creator .fr-image-announcement-creator .track-picture-selector:hover {\n  opacity: 1;\n}\n.announcement-creator .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+	angular.module('competitionDetailModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/competitionDetail/competitionDetailModule.js');
+	 require('../app/competitionDetail/competitionDetailComponent.js');
+	 require('../app/competitionDetail/competitionDetail.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <competition-detail title ="CompetitionDetail"> </competition-detail>
+	*/
+
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var competitionDetailModule = angular.module('competitionDetailModule');
+	var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routeParams', 'mainService',
+	    function ($i18n, CompetitionApiService, $routeParams, mainService) {
+	        /**
+	         * Tip: add here only visual logic
+	         */
+	        var self = this;
+	        self.items = [];
+	        self.competition = {};
+
+	        self.loadCompetitionDetail = function (id) {
+	            self.items = [];
+	            if (id != undefined) {
+	                CompetitionApiService.getCompetition(
+	                    {guidCompetition: id},
+	                    function (response) {
+	                        self.competition = response.results[0];
+	                        self.items = response.results[0].items;
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full competition');
+	                    });
+
+	                CompetitionApiService.getVotesUser(
+	                    {
+	                        guidItem: 1,
+	                        guidUser: 1
+	                    },
+	                    function (response) {
+	                        console.log("Votos");
+	                        console.log(response);
+	                    },
+	                    function (error) {
+	                        console.log('Error loading full Votos');
+	                    });
+	            }
+	        };
+
+	        self.loadCompetitionDetail($routeParams.idCompetition);
+
+	        self.vote = function (itemId, trackId) {
+	            var params = {
+	                item: itemId,
+	                user: mainService.getUserId(),
+	                track: trackId
+	            };
+	            CompetitionApiService.createVote(
+	                params,
+	                function (response) {
+	                    console.log(response);
+	                },
+	                function (error, response) {
+	                    console.log('Error creating vote');
+	                    console.log(error.data.non_field_errors[0]);
+	                });
+	        }
+
+	    }];
+
+	competitionDetailModule.component('competitionDetail', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: CompetitionDetailController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(242)
+	});
+
+
+/***/ },
+/* 242 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"row competition-detail\">\r\n    <h3 class=\"top-competition-list-title\">Detalle convocatoria</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\">\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ ctrl.competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ ctrl.competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ ctrl.competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in ctrl.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br/>\r\n    <h3 class=\"top-competition-list-title\">Obras musicales participantes por item</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"item in ctrl.items\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n                <h4 class=\"competition-name\">{{ item.name }}</h4>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row tracks-items\" ng-repeat=\"track in item.tracks\">\r\n            <div class=\"col-md-4\">\r\n                {{ track.name }}\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                Votos: {{ track.votes }}\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div class=\"col-xs-12 text-center\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.vote(item.id,track.id)\">\r\n                        Votar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n</div>\r\n</div>";
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(244);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(36)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionDetail.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./competitionDetail.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "competition-detail {\n  padding: 68px 10%;\n  display: block;\n}\ncompetition-detail .top-competition-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\ncompetition-detail .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\ncompetition-detail .top-item-description {\n  color: #555555;\n}\ncompetition-detail .top-item-description .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .tracks-items {\n  color: black;\n}\ncompetition-detail .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\ncompetition-detail .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\ncompetition-detail .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\ncompetition-detail a {\n  cursor: pointer;\n  color: inherit;\n}\ncompetition-detail .text {\n  font-size: 1rem;\n}\ncompetition-detail .text-xs,\ncompetition-detail .text-xxs {\n  font-size: 12px;\n}\ncompetition-detail .text-sm {\n  font-size: 13px;\n}\ncompetition-detail .text-md {\n  font-size: 1.125rem;\n}\ncompetition-detail .text-lg {\n  font-size: 1.5rem;\n}\ncompetition-detail .text-2x {\n  font-size: 2em;\n}\ncompetition-detail .text-3x {\n  font-size: 3em;\n}\ncompetition-detail .text-4x {\n  font-size: 4em;\n}\ncompetition-detail .list-loading {\n  text-align: center;\n}\ncompetition-detail .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\ncompetition-detail .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\ncompetition-detail .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\ncompetition-detail .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
 
 	// exports
 
