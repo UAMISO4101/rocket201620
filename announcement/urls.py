@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^vote-get/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteListView.as_view(),
         name='vote-get'),
-    url(r'^vote-create/$', VoteCreateView.as_view(),
+    url(r'^vote-create', VoteCreateView.as_view(),
         name='vote-create'),
     url(r'^vote-update/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteUpdateView.as_view(),

@@ -1,62 +1,40 @@
-<div class="row competition-list">
-    <h3 class="top-competition-list-title">Listado de convocatorias</h3>
-    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="competition in ctrl.competitionList.competitions">
-
+<div class="row competition-detail">
+    <h3 class="top-competition-list-title">Detalle convocatoria</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12">
         <div class="row">
             <div class="top-item-track col-xs-3">
                 <div class="row">
                     <div class="col-xs-12">
                         <img align="left"
                              class=""
-                             src="{{ competition.image }}"
+                             src="{{ ctrl.competition.image }}"
                              alt="Profile image example"
                              height="200" width="200"
                         />
                     </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <button class="freeven-accept-btn"
-                                ng-click="ctrl.participate(competition.id)">
-                            Participar
-                        </button>
-                    </div>
 
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <a href="#/competitions/detail/{{ competition.id }}">
-                            <button class="freeven-accept-btn"
-                                    ng-click="">
-                                Ver detalle
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
             </div>
             <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
                 <h4 class="competition-name">
-                    {{ competition.name }}
+                    {{ ctrl.competition.name }}
                 </h4>
                 <div class="row">
                     <div class="col-xs-6">
                         <span class=" glyphicon glyphicon-calendar">
                 <strong>Desde:</strong>
-                    <h5>{{ competition.start_date | date:'medium' }}</h5>
+                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>
                 </span>
                     </div>
                     <div class="col-xs-6">
                 <span class=" glyphicon glyphicon-calendar">
                <strong>Hasta:</strong>
                         <h5>
-                            {{ competition.end_date | date:'medium' }}</h5>
+                            {{ ctrl.competition.end_date | date:'medium' }}</h5>
                </span>
                     </div>
                 </div>
-                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>
+                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>
                 <h5><strong>Items</strong></h5>
                 <table class="table" border="1px">
                     <tbody>
@@ -65,19 +43,43 @@
                         <td><strong>Tipo</strong></td>
                         <td><strong>Descripción</strong></td>
                     </tr>
-                    <tr ng-repeat="item in competition.items">
+                    <tr ng-repeat="item in ctrl.items">
                         <td>{{ item.name }}</td>
                         <td>{{ item.gender }}</td>
                         <td>{{ item.description }}</td>
                     </tr>
                     </tbody>
                 </table>
-
             </div>
-
+        </div>
+    </div>
+    <br/>
+    <h3 class="top-competition-list-title">Obras musicales participantes por item</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="item in ctrl.items">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h4 class="competition-name">{{ item.name }}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row tracks-items" ng-repeat="track in item.tracks">
+            <div class="col-md-4">
+                {{ track.name }}
+            </div>
+            <div class="col-md-4">
+                Votos: {{ track.votes }}
+            </div>
+            <div class="col-md-4">
+                <div class="col-xs-12 text-center">
+                    <button class="freeven-accept-btn"
+                            ng-click="ctrl.vote(item.id,track.id)">
+                        Votar
+                    </button>
+                </div>
+            </div>
         </div>
 
     </div>
-
-    <br/>
+</div>
+</div>
 </div>
