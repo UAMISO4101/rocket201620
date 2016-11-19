@@ -1,6 +1,6 @@
 var announcementCreatorModule = angular.module('announcementCreatorModule');
-var AnnouncementCreatorController = ['Upload', 'mainService',
-    function (Upload, mainService) {
+var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreatorService', 'notifierService',
+    function (Upload, mainService, announcementCreatorService, notifierService) {
         var self = this;
         self.files = {};
         self.loading = false;
@@ -32,11 +32,17 @@ var AnnouncementCreatorController = ['Upload', 'mainService',
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
                     self.loading = false;
+                    announcementCreatorService.closeCreatorPopup();
                     console.log('subido correctamente');
                     notifierService.success("La convocatoria se ha creado correctamente", ".");
                 });
             }
         };
+
+        self.close = function (){
+            announcementCreatorService.closeCreatorPopup();
+        };
+
     }];
 
 announcementCreatorModule.component('announcementCreator', {

@@ -1,9 +1,12 @@
 <div class="announcement-creator">
+    <div class="fr-modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ctrl.close()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">{{'general_close' | translate}}</span>
+        </button>
+        <h4>Nueva convocatoria</h4>
+    </div>
     <div class="fr-announcement-creator">
-        <img align="left"
-             class="fr-image-lg"
-             src="../styles/images/portada.jpg"
-             alt="Profile image example"/>
 
         <div class="fr-image-announcement-creator thumbnail">
             <img align="left"
@@ -30,10 +33,10 @@
                 <h4>Llena estos campos para crear una convocatoria</h4>
                 <div class="row">
                     <div class="col-md-12">
-                        <label class="control-label" for="artistic_name">Nombre de la pista</label>
+                        <label class="control-label">Nombre de la convocatoria</label>
                         <input type="text"
                                ng-model="ctrl.name"
-                               placeholder="Nombre de la pista..."
+                               placeholder="Nombre de la convocatoria..."
                                class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
                     </div>
                     <div class="col-md-12">

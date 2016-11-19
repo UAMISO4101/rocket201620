@@ -192,6 +192,7 @@ require('../app/competitionParticipate/competitionParticipate.less');
 
 require('../app/announcementCreator/announcementCreatorModule.js');
 require('../app/announcementCreator/announcementCreatorComponent.js');
+require('../app/announcementCreator/announcementCreatorService.js');
 require('../app/announcementCreator/announcementCreator.less');
 
 require('../app/competitionDetail/competitionDetailModule.js');
