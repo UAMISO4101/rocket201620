@@ -13,7 +13,6 @@
                         />
                     </div>
                 </div>
-
             </div>
             <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
                 <h4 class="competition-name">
@@ -54,31 +53,35 @@
         </div>
     </div>
     <br/>
-    <h3 class="top-competition-list-title">Obras musicales participantes por item</h3>
-    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="item in ctrl.items">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h4 class="competition-name">{{ item.name }}</h4>
+    <div ng-if="ctrl.showItems">
+        <h3 class="top-competition-list-title">Obras musicales participantes por item</h3>
+        <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="item in ctrl.items">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="competition-name">{{ item.name }}</h4>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="row tracks-items" ng-repeat="track in item.tracks">
-            <div class="col-md-4">
-                {{ track.name }}
-            </div>
-            <div class="col-md-4">
-                Votos: {{ track.votes }}
-            </div>
-            <div class="col-md-4">
-                <div class="col-xs-12 text-center">
+            <br>
+            <div class="row tracks-items" ng-repeat="track in item.tracks">
+                <div class="col-md-8 text-center">
+                    <track class="col-xs-4 col-sm-4 col-md-3"
+                           fr-model="track">
+                    </track>
                     <button class="freeven-accept-btn"
                             ng-click="ctrl.vote(item.id,track.id)">
                         Votar
                     </button>
                 </div>
+                <div class="col-md-4">
+                    <h4 class="competition-name">Votos</h4>
+                    <br>
+                    <h4 class="competition-name">{{ track.votes }}</h4>
+                </div>
             </div>
         </div>
-
+    </div>
+    <div ng-if="!ctrl.showItems">
+        <h3 class="top-competition-list-title">Aún no hay obras musicales participantes</h3>
     </div>
 </div>
 </div>
