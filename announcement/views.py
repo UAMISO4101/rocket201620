@@ -1,3 +1,7 @@
+
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from .models import Announcement, Item, Vote
 from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
@@ -5,8 +9,10 @@ from .serializers import (AnnouncementSerializer, AnnouncementUploadSerializer,
                           VoteSerializer, VoteUpdateSerializer,
                           ParticipateSerializer, SelectWinnerSerializer,
                           ItemSerializer, ItemFullSerializer)
+from .business_logic import particitate_announcement_action
 from rest_framework import filters
 from rest_framework.generics import (ListAPIView, CreateAPIView, UpdateAPIView)
+from tracks.models import Track
 
 
 class AnnouncementListView(ListAPIView):
@@ -94,6 +100,17 @@ class ParticipateView(UpdateAPIView):
     def get_queryset(self):
         item = Item.objects.filter(pk=self.kwargs['pk'])
         return item
+
+
+@csrf_exempt
+def particitate_announcement(request):
+    if request.method == 'POST':
+        json_data = json.loads(request.body.decode('utf-8'))
+        response = particitate_announcement_action(json_data)
+        return JsonResponse(response, safe=False)
+    else:
+        status = "Incorrect method."
+        return JsonResponse(status, safe=False)
 
 
 class SelectWinnerView(UpdateAPIView):

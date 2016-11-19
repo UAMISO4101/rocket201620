@@ -3,7 +3,7 @@ from .views import (AnnouncementListView, AnnouncementCreateView,
                     ItemCreateView, AnnouncementUpdateView, ItemUpdateView,
                     AnnouncementCompleteListView, VoteListView, VoteCreateView,
                     VoteUpdateView, ParticipateView, ItemListView,
-                    SelectWinnerView)
+                    SelectWinnerView, particitate_announcement)
 
 
 urlpatterns = [
@@ -28,6 +28,8 @@ urlpatterns = [
         name='vote-update'),
     url(r'^participate/(?P<pk>\d+)/$', ParticipateView.as_view(),
         name='anct-participate'),
+    url(r'^participatef/$', particitate_announcement,
+        name='anct-participatef'),
     url(r'^select-winner/(?P<pk>\d+)/$', SelectWinnerView.as_view(),
         name='select-winner'),
 ]
