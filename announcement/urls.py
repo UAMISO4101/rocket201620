@@ -27,7 +27,7 @@ urlpatterns = [
         name='vote-update'),
     url(r'^participate/(?P<pk>\d+)/$', ParticipateView.as_view(),
         name='anct-participate'),
-    url(r'^participatef/$', particitate_announcement,
+    url(r'^participatef', particitate_announcement,
         name='anct-participatef'),
     url(r'^select-winner/(?P<pk>\d+)/$', SelectWinnerView.as_view(),
         name='select-winner'),

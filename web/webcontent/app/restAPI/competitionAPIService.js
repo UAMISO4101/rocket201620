@@ -22,7 +22,13 @@ restApiModule.factory('CompetitionApiService', ['$resource', function ($resource
             method: 'GET',
             params: {guidItem: '@id', guidUser: '@id'},
             isArray: false
-        }
+        },
+        createRelationsItemsVsTracks: {
+            url: 'announcement/participatef/',
+            method: 'POST',
+            params: {idAnnouncement: '@string', relations: '@string'},
+            isArray: false
+        },
     });
 }]);
 
