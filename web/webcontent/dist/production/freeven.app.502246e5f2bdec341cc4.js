@@ -65103,7 +65103,7 @@
 /* 108 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
+	module.exports = "<div class=\"login\">\r\n    <form name=\"userLogin\">\r\n        <!--<div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social google\">\r\n                    <i class=\"icon icon-google-plus\"></i>\r\n                    <span>Iniciar sesión con Google+</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <a class=\"btn btn-social facebook\">\r\n                    <i class=\"icon icon-facebook\"></i>\r\n                    <span>Iniciar sesión con Facebook</span>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">o</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <br>-->\r\n         <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <div class=\"login-section\">\r\n                    <h3 class=\"login-or\">Iniciar sesión en Freeven</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <!--<div class=\"loading regular\" style=\"padding: 43px 0px 0px;\"></div>-->\r\n                <input type=\"text\" name=\"username\" id=\"username\"\r\n                       ng-model=\"ctrl.userLogin.user.username\"\r\n                       placeholder=\"Usuario\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <span class=\"messages\" ng-show=\"userLogin.$submitted || userLogin.username.$touched\">\r\n                    <span ng-show=\"userLogin.username.$error.required\">El campo es obligatorio.</span>\r\n                    </span>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-12\">\r\n                <input type=\"password\" name=\"password\" id=\"password\"\r\n                       ng-model=\"ctrl.userLogin.user.password\"\r\n                       placeholder=\"Contraseña...\"\r\n                       class=\"form-control\"\r\n                       required/>\r\n                <!--<span class=\"messages\" ng-show=\"userLogin.password.$error.minlength\">Contraseña muy corta</span>-->\r\n            </div>\r\n\r\n        </div>\r\n        <br>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <button class=\"freeven-login-btn  g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        ng-click=\"ctrl.login()\">\r\n                    {{ 'general_login'  | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <br>\r\n\r\n        <div class=\"row\">\r\n            <a href=\"\" ng-click=\"ctrl.showForgotPasswordPopup()\">\r\n                ¿Has olvidado tu contraseña?\r\n            </a>\r\n        </div>\r\n\r\n    </form>\r\n    <form>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <label>¿Aún no tienes una cuenta de Freeven?</label>\r\n                <br>\r\n                <button class=\"freeven-sing-up-btn g-opacity-transition sc-button sc-button-medium signupButton sc-button-cta\"\r\n                        tabindex=\"0\"\r\n                        title=\"Crear cuenta en Freeve\"\r\n                        ng-click=\"ctrl.showRegisterPopup()\"\r\n                        data-toggle=\"modal\" data-target=\"\">\r\n                    {{ 'general_create_account' | translate }}\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n";
 
 /***/ },
 /* 109 */
@@ -68481,14 +68481,15 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var competitionDetailModule = angular.module('competitionDetailModule');
-	var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routeParams', 'mainService',
-	    function ($i18n, CompetitionApiService, $routeParams, mainService) {
+	var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routeParams', 'mainService', 'notifierService',
+	    function ($i18n, CompetitionApiService, $routeParams, mainService, notifierService) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
 	        var self = this;
 	        self.items = [];
 	        self.competition = {};
+	        self.showItems = false;
 
 	        self.loadCompetitionDetail = function (id) {
 	            self.items = [];
@@ -68498,6 +68499,16 @@
 	                    function (response) {
 	                        self.competition = response.results[0];
 	                        self.items = response.results[0].items;
+	                        console.log(response.results[0].items.length);
+	                        for (var i = 0; i < response.results[0].items.length; i++) {
+	                            if (response.results[0].items[i].tracks.length == 0) {
+	                                self.showItems = false;
+	                            } else {
+	                                self.showItems = true;
+	                                break;
+	                            }
+	                        }
+
 	                    },
 	                    function (error) {
 	                        console.log('Error loading full competition');
@@ -68521,20 +68532,26 @@
 	        self.loadCompetitionDetail($routeParams.idCompetition);
 
 	        self.vote = function (itemId, trackId) {
-	            var params = {
-	                item: itemId,
-	                user: mainService.getUserId(),
-	                track: trackId
-	            };
-	            CompetitionApiService.createVote(
-	                params,
-	                function (response) {
-	                    console.log(response);
-	                },
-	                function (error, response) {
-	                    console.log('Error creating vote');
-	                    console.log(error.data.non_field_errors[0]);
-	                });
+	            var authenticated = mainService.isAuthenticated();
+	            if (authenticated) {
+	                var params = {
+	                    item: itemId,
+	                    user: mainService.getUserId(),
+	                    track: trackId
+	                };
+	                CompetitionApiService.createVote(
+	                    params,
+	                    function (response) {
+	                        console.log(response);
+	                    },
+	                    function (error, response) {
+	                        console.log('Error creating vote');
+	                        console.log(error.data.non_field_errors[0]);
+	                    });
+	            } else {
+	                notifierService.warning("Convocatorias", "Por favor, inice sesión para votar");
+	            }
+
 	        }
 
 	    }];
@@ -68554,7 +68571,7 @@
 /* 242 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"row competition-detail\">\r\n    <h3 class=\"top-competition-list-title\">Detalle convocatoria</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\">\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ ctrl.competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ ctrl.competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ ctrl.competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in ctrl.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br/>\r\n    <h3 class=\"top-competition-list-title\">Obras musicales participantes por item</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"item in ctrl.items\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 text-center\">\r\n                <h4 class=\"competition-name\">{{ item.name }}</h4>\r\n            </div>\r\n        </div>\r\n        <br>\r\n        <div class=\"row tracks-items\" ng-repeat=\"track in item.tracks\">\r\n            <div class=\"col-md-4\">\r\n                {{ track.name }}\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                Votos: {{ track.votes }}\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div class=\"col-xs-12 text-center\">\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.vote(item.id,track.id)\">\r\n                        Votar\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n</div>\r\n</div>";
+	module.exports = "<div class=\"row competition-detail\">\r\n    <h3 class=\"top-competition-list-title\">Detalle convocatoria</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\">\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12\">\r\n                        <img align=\"left\"\r\n                             class=\"\"\r\n                             src=\"{{ ctrl.competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"200\" width=\"200\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ ctrl.competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ ctrl.competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in ctrl.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br/>\r\n    <div ng-if=\"ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Obras musicales participantes por item</h3>\r\n        <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"item in ctrl.items\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 text-center\">\r\n                    <h4 class=\"competition-name\">{{ item.name }}</h4>\r\n                </div>\r\n            </div>\r\n            <br>\r\n            <div class=\"row tracks-items\" ng-repeat=\"track in item.tracks\">\r\n                <div class=\"col-md-8 text-center\">\r\n                    <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n                           fr-model=\"track\">\r\n                    </track>\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.vote(item.id,track.id)\">\r\n                        Votar\r\n                    </button>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <h4 class=\"competition-name\">Votos</h4>\r\n                    <br>\r\n                    <h4 class=\"competition-name\">{{ track.votes }}</h4>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div ng-if=\"!ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Aún no hay obras musicales participantes</h3>\r\n    </div>\r\n</div>\r\n</div>\r\n</div>";
 
 /***/ },
 /* 243 */
