@@ -1,4 +1,4 @@
-from .models import Track, Top, Gender
+from .models import Track, Top, Gender, Playlist
 from rest_framework import serializers
 
 
@@ -192,3 +192,26 @@ class TopSerializer(serializers.ModelSerializer):
             return obj.track.artist.artistic_name
         except:
             return None
+
+
+class PlaylistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Playlist
+        fields = (
+            'id',
+            'name',
+            'user',
+        )
+
+
+class PlaylistFullSerializer(serializers.ModelSerializer):
+    tracks = TrackSerializer(many=True)
+
+    class Meta:
+        model = Playlist
+        fields = (
+            'id',
+            'name',
+            'user',
+            'tracks',
+        )
