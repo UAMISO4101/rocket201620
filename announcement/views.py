@@ -10,7 +10,7 @@ from rest_framework.generics import (ListAPIView, CreateAPIView, UpdateAPIView)
 
 
 class AnnouncementListView(ListAPIView):
-    queryset = Announcement.objects.all()
+    queryset = Announcement.objects.all().order_by('-start_date')
     serializer_class = AnnouncementSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = (
