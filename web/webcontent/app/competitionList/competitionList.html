@@ -1,5 +1,6 @@
 <div class="row competition-list">
     <h3 class="top-competition-list-title">Listado de convocatorias</h3>
+    <button ng-click="ctrl.showCreatorPopup()" class="btn freeven-accept-btn">Crear nueva convocatoria</button>
     <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="competition in ctrl.competitionList.competitions">
 
         <div class="row">
@@ -21,6 +22,18 @@
                                 ng-click="ctrl.participate(competition.id)">
                             Participar
                         </button>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <a href="#/competitions/detail/{{ competition.id }}">
+                            <button class="freeven-accept-btn"
+                                    ng-click="">
+                                Ver detalle
+                            </button>
+                        </a>
                     </div>
 
                 </div>

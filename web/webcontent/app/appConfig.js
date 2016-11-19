@@ -44,7 +44,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                           return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -56,7 +56,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -65,17 +65,21 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
+                $routeProvider.when('/competitions/detail/:idCompetition', {
+                    template: '<competition-detail></competition-detail>',
 
-                 $routeProvider.when('/announcement', {
+                });
+
+                $routeProvider.when('/announcement', {
                     template: '<announcement-creator> </announcement-creator>',
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });

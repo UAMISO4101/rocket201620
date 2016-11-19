@@ -41,7 +41,7 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
         self.loadFullCompetition = function (id) {
 
             if (id != undefined) {
-                self.participateData.IdCompetition = id;
+                self.participateData.idAnnouncement = id;
                 CompetitionApiService.getCompetition(
                     {guidCompetition: id},
                     function (response) {
@@ -78,7 +78,15 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
                 relations.push(relation);
             }
             self.participateData.relations = relations;
-            console.log(self.participateData);
+            CompetitionApiService.createRelationsItemsVsTracks(
+                self.participateData,
+                function (response) {
+                    notifierService.info("Convocatorias", "Gracias por participar");
+                    self.close();
+                },
+                function (error) {
+                    console.log('Error creating relations');
+                });
 
         };
 

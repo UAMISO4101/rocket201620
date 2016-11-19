@@ -5,12 +5,30 @@ restApiModule.factory('CompetitionApiService', ['$resource', function ($resource
      * */
     return $resource('announcement/:guidCompetition', {guid: '@guid'}, {
         /*custom urls*/
-            getCompetition: {
+        getCompetition: {
             url: 'announcement/full/:guidCompetition',
             method: 'GET',
             params: {guidCompetition: '@id'},
             isArray: false
-        }
+        },
+        createVote: {
+            url: 'announcement/vote-create/',
+            method: 'POST',
+            params: {item: '@string', user: '@string', track: '@string'},
+            isArray: false
+        },
+        getVotesUser: {
+            url: 'announcement/vote-get/:guidItem/:guidUser',
+            method: 'GET',
+            params: {guidItem: '@id', guidUser: '@id'},
+            isArray: false
+        },
+        createRelationsItemsVsTracks: {
+            url: 'announcement/participatef/',
+            method: 'POST',
+            params: {idAnnouncement: '@string', relations: '@string'},
+            isArray: false
+        },
     });
 }]);
 

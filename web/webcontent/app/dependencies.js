@@ -190,6 +190,11 @@ require('../app/competitionParticipate/competitionParticipateModule.js');
 require('../app/competitionParticipate/competitionParticipateComponent.js');
 require('../app/competitionParticipate/competitionParticipate.less');
 
- require('../app/announcementCreator/announcementCreatorModule.js');
- require('../app/announcementCreator/announcementCreatorComponent.js');
- require('../app/announcementCreator/announcementCreator.less');
+require('../app/announcementCreator/announcementCreatorModule.js');
+require('../app/announcementCreator/announcementCreatorComponent.js');
+require('../app/announcementCreator/announcementCreatorService.js');
+require('../app/announcementCreator/announcementCreator.less');
+
+require('../app/competitionDetail/competitionDetailModule.js');
+require('../app/competitionDetail/competitionDetailComponent.js');
+require('../app/competitionDetail/competitionDetail.less');
