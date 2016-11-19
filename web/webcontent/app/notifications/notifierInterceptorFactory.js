@@ -19,7 +19,12 @@ notifierModule.factory('notifierInterceptor', ['notifierService', '$q', function
                 return $q.reject(rejection);
             }
             if (rejection && rejection.status === 400) {
-                notifierService.error('Bad request', rejection.statusText + ' ' + rejection.config.url);
+                if (rejection.data && rejection.data.non_field_errors[0] == 'Los campos item, user deben formar un conjunto único.' && rejection.config.url == 'announcement/vote-create') {
+                    notifierService.warning('Ya has votado por esta obra musical', ' ');
+                } else {
+                    notifierService.error('Bad request', rejection.statusText + ' ' + rejection.config.url);
+                }
+
             }
             if (rejection && rejection.status === 401) {
                 notifierService.warning('Unauthorized', rejection.statusText + ' ' + rejection.config.url);
