@@ -20,7 +20,7 @@ notifierModule.factory('notifierInterceptor', ['notifierService', '$q', function
             }
             if (rejection && rejection.status === 400) {
                 if (rejection.data && rejection.data.non_field_errors[0] == 'Los campos item, user deben formar un conjunto único.' && rejection.config.url == 'announcement/vote-create') {
-                    notifierService.warning('Ya has votado por esta obra musical', ' ');
+                    notifierService.warning('Ya has votado a este item', 'Sólo puedes votar una obra por item');
                 } else {
                     notifierService.error('Bad request', rejection.statusText + ' ' + rejection.config.url);
                 }

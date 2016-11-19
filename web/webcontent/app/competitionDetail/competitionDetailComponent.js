@@ -17,7 +17,6 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
                     function (response) {
                         self.competition = response.results[0];
                         self.items = response.results[0].items;
-                        console.log(response.results[0].items.length);
                         for (var i = 0; i < response.results[0].items.length; i++) {
                             if (response.results[0].items[i].tracks.length == 0) {
                                 self.showItems = false;
@@ -32,18 +31,6 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
                         console.log('Error loading full competition');
                     });
 
-                CompetitionApiService.getVotesUser(
-                    {
-                        guidItem: 1,
-                        guidUser: 1
-                    },
-                    function (response) {
-                        console.log("Votos");
-                        console.log(response);
-                    },
-                    function (error) {
-                        console.log('Error loading full Votos');
-                    });
             }
         };
 
@@ -60,11 +47,9 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
                 CompetitionApiService.createVote(
                     params,
                     function (response) {
-                        console.log(response);
+                        notifierService.info("Convocatorias", "Gracias por tu voto");
                     },
-                    function (error, response) {
-                        console.log('Error creating vote');
-                        console.log(error.data.non_field_errors[0]);
+                    function (error) {
                     });
             } else {
                 notifierService.warning("Convocatorias", "Por favor, inice sesión para votar");
