@@ -27,6 +27,9 @@
                 $routeProvider.when('/artist/:idArtist', {
                     template: '<artist></artist>'
                 });
+                $routeProvider.when('/user/:idUser', {
+                    template: '<user-profile></user-profile>'
+                });
                 $routeProvider.when('/top', {
                     template: '<top-track-list></top-track-list>'
                 });
