@@ -114,7 +114,7 @@ class ArtistUpdateView(UpdateAPIView):
 
 
 class EventListView(ListAPIView):
-    queryset = Event.objects.all()
+    queryset = Event.objects.all().order_by('date')
     serializer_class = EventSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = (
