@@ -84,9 +84,7 @@ class ArtistRetrieveSerializer(serializers.ModelSerializer):
         )
 
 
-class BussinessAgentSerializer(serializers.ModelSerializer):
-    avatar = serializers.SerializerMethodField()
-
+class BussinessAgentRetrieveSerializer(serializers.ModelSerializer):
     class Meta:
         model = BusinessAgent
         fields = (
@@ -97,17 +95,10 @@ class BussinessAgentSerializer(serializers.ModelSerializer):
             'telephone_number',
         )
 
-        @classmethod
-        def get_avatar(self, obj):
-            try:
-                return obj.avatar.url
-            except:
-                return None
-
 
 class UserRetriveSerializer(serializers.ModelSerializer):
     artist = ArtistRetrieveSerializer()
-    agent = BussinessAgentSerializer()
+    agent = BussinessAgentRetrieveSerializer()
 
     class Meta:
         model = User
