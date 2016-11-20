@@ -37,4 +37,3 @@ requests-oauthlib==0.6.2
 selenium==3.0.1
 six==1.10.0
 static3==0.5.1
-travis==0.0.2
