@@ -48,6 +48,12 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
                 name: '@string'
             },
             isArray: false
+        },
+        listPlayList: {
+            url: 'api/track/playlist-list/:userId',
+            method: 'GET',
+            params: {},
+            isArray: false
         }
     });
 }]);

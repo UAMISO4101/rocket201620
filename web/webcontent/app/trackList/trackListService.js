@@ -1,6 +1,6 @@
 var trackListModule = angular.module('trackListModule');
-trackListModule.factory('trackListService', ['TracksApiService', 'playerService',
-    function (TrackApiService, playerService) {
+trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService',
+    function (TrackApiService, playerService, mainService) {
         var TrackListService = function () {
             var self = this;
             self.selectedTrack = {};
@@ -12,11 +12,24 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
             self.tracks = [];
             self.indexTrack = 0;
+
+            self.loadPlayList = function () {
+                var user = mainService.getUserData();
+                TrackApiService.listPlayList(
+                    {userId: user.id_user || 0},
+                    {},
+                    function (response) {
+                        self.playLists = response.results;
+                    },
+                    function (error) {
+                        console.log('Error loading playList');
+                    });
+            };
             self.loadTracks = function (params) {
                 var self = this;
                 self.loading = true;
                 TrackApiService.searchTracks(
-                   params,
+                    params,
                     function (response) {
                         self.loading = false;
                         self.tracks = response.results;
@@ -95,6 +108,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     self.playSelected(prevTrack);
                 }
             };
+            self.loadPlayList();
         };
         return new TrackListService();
     }]);
