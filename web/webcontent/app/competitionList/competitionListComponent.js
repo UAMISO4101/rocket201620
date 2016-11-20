@@ -37,7 +37,11 @@ var CompetitionListController = ['$i18n', 'competitionListService', 'mainService
 
         self.loadPopUp = function (id) {
             self.competitionList.showLoadTrackPopup(id);
-        }
+        };
+
+        self.isAgent = function (){
+            return mainService.isAgent();
+        };
 
     }];
 

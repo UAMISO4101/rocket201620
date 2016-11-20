@@ -26,6 +26,9 @@ mainModule.factory('mainService', ['$i18n', '$freevenModal', 'notifierService', 
             self.isArtist = function () {
                 return self.user.is_artist;
             };
+            self.isAgent = function () {
+                return true; //todo: fix
+            };
 
             self.getArtistId = function () {
                 return self.user.id_artist;
