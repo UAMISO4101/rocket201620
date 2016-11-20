@@ -55,14 +55,6 @@ class DonationList(ListAPIView):
     )
 
 
-class ArtistRetrieveView(RetrieveAPIView):
-    serializer_class = ArtistSerializer
-
-    def get_queryset(self):
-        artist = Artist.objects.filter(pk=self.kwargs['pk'])
-        return artist
-
-
 @csrf_exempt
 def request_password_restore(request):
     if request.method == 'GET':
@@ -105,12 +97,22 @@ class UserRetrieveView(RetrieveAPIView):
         return user
 
 
-class ArtistUpdateView(UpdateAPIView):
+class ArtistView():
     serializer_class = ArtistSerializer
 
     def get_queryset(self):
         artist = Artist.objects.filter(pk=self.kwargs['pk'])
         return artist
+
+
+class ArtistRetrieveView(ArtistView, RetrieveAPIView):
+    def __init__(self):
+        ArtistView.__init__(self)
+
+
+class ArtistUpdateView(ArtistView, UpdateAPIView):
+    def __init__(self):
+        ArtistView.__init__(self)
 
 
 class EventListView(ListAPIView):

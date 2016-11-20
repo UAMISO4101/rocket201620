@@ -200,7 +200,7 @@ def login_user_to_json(user):
     return json_data
 
 
-def register_business_agent(request):
+def business_agent_create_action(request):
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     username = request.POST.get('username')
@@ -227,7 +227,7 @@ def register_business_agent(request):
                     last_name=last_name)
                 user.save()
 
-                if create_business_agent(user, request):
+                if business_agent_create_subaction(user, request):
                     status = ''
                 else:
                     status = 'Error guardando el agente comercial.'
@@ -236,7 +236,7 @@ def register_business_agent(request):
     return status
 
 
-def create_business_agent(user, request):
+def business_agent_create_subaction(user, request):
     agent = BusinessAgent()
 
     agent.telephone_number = request.POST.get('telephone_number')
@@ -250,7 +250,7 @@ def create_business_agent(user, request):
     return True
 
 
-def update_business_agent(request, id_user):
+def business_agent_update_action(request, id_user):
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     email = request.POST.get('email')
@@ -268,7 +268,7 @@ def update_business_agent(request, id_user):
             user.last_name = last_name
             user.save()
 
-            if update_business_agent_process(user, request):
+            if business_agent_update_subaction(user, request):
                 status = ''
             else:
                 status = 'Error guardando el agente comercial.'
@@ -277,7 +277,7 @@ def update_business_agent(request, id_user):
     return status
 
 
-def update_business_agent_process(user, request):
+def business_agent_update_subaction(user, request):
     agent = BusinessAgent.objects.get(user__id=user.id)
 
     agent.telephone_number = request.POST.get('telephone_number')
