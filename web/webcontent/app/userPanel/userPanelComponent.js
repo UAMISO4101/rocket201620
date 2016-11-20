@@ -1,11 +1,12 @@
 var userPanelModule = angular.module('userPanelModule');
 var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService',
-    function (trackListService, mainService, helpService, listCreatorService ) {
+    function (trackListService, mainService, helpService, listCreatorService) {
         /**
          * Tip: add here only visual logic
          */
         var self = this;
         self.mainService = mainService;
+        self.trackListService = trackListService;
         self.loadTopTracks = function () {
             trackListService.loadTopTracks();
         };
@@ -14,7 +15,7 @@ var UserPanelController = ['trackListService', 'mainService', 'helpService', 'li
             helpService.enablePlayer();
         };
 
-        self.showListCreator = function(){
+        self.showListCreator = function () {
             listCreatorService.showCreatorPopup();
         };
     }];
