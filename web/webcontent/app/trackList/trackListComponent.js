@@ -8,6 +8,9 @@ var TrackListController = ['$routeParams', 'trackListService', function ($routeP
 
     if($routeParams && $routeParams.idPlayList){
         self.trackList.showPlayListContent($routeParams.idPlayList);
+    }else{
+        self.trackList.setShowAll(true);
+       // self.trackList.nextPage();
     }
     //self.trackList.loadTracks();
 }];

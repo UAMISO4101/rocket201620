@@ -13,6 +13,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             self.tracks = [];
             self.indexTrack = 0;
             localStorage.playListPairs = [];
+            self.showAll = true;
             self.addToPlayList = function (track, playList) {
                 var self = this;
                 var user = mainService.getUserData();
@@ -39,6 +40,8 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
 
             self.showPlayListContent = function (playListId) {
                 var self = this;
+                self.showAll = false;
+                self.params.offset = 0;
                 $q.when(self.loadPlayList()).then(
                     function handleResolve(response) {
                         var list = response.results.filter(function (item) {
@@ -104,25 +107,34 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     });
             };
             self.nextPage = function () {
-                self.loading = true;
-                self.busy = true;
-                TrackApiService.searchTracks(
-                    self.params,
-                    function (response) {
-                        self.loading = false;
-                        self.busy = false;
-                        if (response.results.length > 0) {
-                            self.tracks = self.tracks.concat(response.results);
-                            self.params.offset += 10;
-                        }
-                        else {
-                            self.empty = self.tracks.length <= 0;
-                        }
-                    },
-                    function (error) {
-                        self.busy = false;
-                        console.log('Error loading tracks');
-                    });
+                if (self.showAll) {
+                    self.loading = true;
+                    self.busy = true;
+                    TrackApiService.searchTracks(
+                        self.params,
+                        function (response) {
+                            self.loading = false;
+                            self.busy = false;
+                            if (response.results.length > 0) {
+                                self.tracks = self.tracks.concat(response.results);
+                                self.params.offset += 10;
+                            }
+                            else {
+                                self.empty = self.tracks.length <= 0;
+                            }
+                        },
+                        function (error) {
+                            self.busy = false;
+                            console.log('Error loading tracks');
+                        });
+                }
+            };
+
+            self.setShowAll = function (value) {
+                self.showAll = value;
+                if (value) {
+                    self.tracks = [];
+                }
             };
             self.playSelected = function (track) {
                 self.selectedTrack = track;
