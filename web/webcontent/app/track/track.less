@@ -33,14 +33,15 @@
       .btn-track-menu {
         z-index: 10;
         position: absolute;
-        right: 2px;
-        top: 2px;
+        right: 5px;
+        top: 5px;
         opacity: 0;
 
         ul {
           opacity: 1;
           background-color: rgba(0, 0, 0, 0.87);
           li {
+            border: 1px solid transparent;
             a {
               i, span {
                 color: rgba(250, 250, 250, 0.84);
@@ -60,6 +61,11 @@
                   color: #ffffff;
                 }
               }
+            }
+            &:hover {
+              background-color: rgba(20, 20, 20, 0.87);
+              border-top: 1px solid rgba(241, 241, 241, 0.87);
+              border-bottom: 1px solid rgba(241, 241, 241, 0.87);
             }
           }
         }

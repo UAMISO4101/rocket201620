@@ -1,6 +1,6 @@
 var trackListModule = angular.module('trackListModule');
-trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService',
-    function (TrackApiService, playerService, mainService) {
+trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService',
+    function (TrackApiService, playerService, mainService, notifierService) {
         var TrackListService = function () {
             var self = this;
             self.selectedTrack = {};
@@ -12,6 +12,30 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
             self.tracks = [];
             self.indexTrack = 0;
+            localStorage.playListPairs = [];
+            self.addToPlayList = function (track, playList) {
+                var self = this;
+                var user = mainService.getUserData();
+                var pairKey = "playListKey_" + user.id_user + "_" + track.id + "_" + playList.id;
+                if (localStorage[pairKey]) {
+                    notifierService.info("La Obra " + track.name, "ya se ha agregado previamente a <b>" + playList.name + "</b>");
+                } else {
+                    localStorage[pairKey] = true;
+                    TrackApiService.addToPlayList(
+                        {},
+                        {
+                            idList: playList.id,
+                            idTrack: track.id
+                        },
+                        function (response) {
+                            notifierService.info("La Obra " + track.name, "Se agregó correctamente a la lista <b>" + playList.name + "</b>");
+                        },
+                        function (error) {
+                            console.log('Error loading playList');
+                        });
+                }
+
+            };
 
             self.loadPlayList = function () {
                 var user = mainService.getUserData();

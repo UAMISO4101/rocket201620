@@ -6,16 +6,11 @@
                       <i class="icon icon-list"></i>
                   </a>
                   <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
-                      <li>
+                      <li ng-click="ctrl.addToPlayList(ctrl.frModel, playList)"
+                          ng-repeat="playList in ctrl.trackListService.playLists">
                           <a>
-                              <i class="bz-icon bz-icon-plus"></i>
-                              <span>opcion 1</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a>
-                              <i class="bz-icon bz-icon-plus"></i>
-                              <span>opcion 2</span>
+                              <i class="icon icon-indent-increase"></i>
+                              <span>{{playList.name}}</span>
                           </a>
                       </li>
                   </ul>

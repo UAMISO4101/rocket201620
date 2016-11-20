@@ -3,6 +3,7 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
     function ($i18n, trackListService, mainService, artistService, scoreEditorService) {
 
         var self = this;
+        self.trackListService = trackListService;
 
         self.play = function (track) {
             trackListService.playSelected(track);
@@ -13,9 +14,13 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
         };
 
         self.showScoreEditorPopup = function (track) {
-            if(mainService.isAuthenticated()){
-                 scoreEditorService.showScoreEditorPopup(track);
+            if (mainService.isAuthenticated()) {
+                scoreEditorService.showScoreEditorPopup(track);
             }
+        };
+
+        self.addToPlayList = function (track, playList) {
+            trackListService.addToPlayList(track, playList);
         };
 
         self.greaterThanOrEqual = function (value) {
