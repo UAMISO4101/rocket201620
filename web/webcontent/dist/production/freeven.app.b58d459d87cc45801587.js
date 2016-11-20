@@ -306,15 +306,15 @@
 	__webpack_require__(248);
 	__webpack_require__(250);
 
-	__webpack_require__(252);
 	__webpack_require__(253);
-	__webpack_require__(255);
+	__webpack_require__(254);
 	__webpack_require__(256);
+	__webpack_require__(257);
 
-	__webpack_require__(258);
 	__webpack_require__(259);
-	__webpack_require__(261);
+	__webpack_require__(260);
 	__webpack_require__(262);
+	__webpack_require__(263);
 
 /***/ },
 /* 2 */
@@ -62450,6 +62450,9 @@
 	                $routeProvider.when('/upload', {
 	                    template: '<track-creator></track-creator>'
 	                });
+	                $routeProvider.when('/list/:idPlayList', {
+	                    template: '<track-list></track-list>'
+	                });
 	                $routeProvider.when('/donation', {
 	                    template: '<donation></donation>',
 	                    requireAuthentication: true,
@@ -64524,12 +64527,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var trackListModule = angular.module('trackListModule');
-	var TrackListController = ['$i18n', 'trackListService', function ($i18n, trackListService) {
+	var TrackListController = ['$routeParams', 'trackListService', function ($routeParams, trackListService) {
 	    /**
 	     * Tip: add here only visual logic
 	     */
 	    var self = this;
 	    self.trackList = trackListService;
+
+	    if($routeParams && $routeParams.idPlayList){
+	        self.trackList.showPlayListContent($routeParams.idPlayList);
+	    }
 	    //self.trackList.loadTracks();
 	}];
 
@@ -64555,8 +64562,8 @@
 /***/ function(module, exports) {
 
 	var trackListModule = angular.module('trackListModule');
-	trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService',
-	    function (TrackApiService, playerService, mainService, notifierService) {
+	trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService', '$q',
+	    function (TrackApiService, playerService, mainService, notifierService, $q) {
 	        var TrackListService = function () {
 	            var self = this;
 	            self.selectedTrack = {};
@@ -64593,17 +64600,36 @@
 
 	            };
 
+	            self.showPlayListContent = function (playListId) {
+	                var self = this;
+	                $q.when(self.loadPlayList()).then(
+	                    function handleResolve(response) {
+	                        var list = response.results.filter(function (item) {
+	                            if (item.id == playListId) {
+	                                return true;
+	                            }
+	                            return false;
+	                        });
+	                        self.tracks = list[0].tracks;
+	                    }
+	                );
+	            };
 	            self.loadPlayList = function () {
+	                var self = this;
+	                var deferred = $q.defer();
 	                var user = mainService.getUserData();
 	                TrackApiService.listPlayList(
 	                    {userId: user.id_user || 0},
 	                    {},
 	                    function (response) {
 	                        self.playLists = response.results;
+	                        deferred.resolve(response);
 	                    },
 	                    function (error) {
 	                        console.log('Error loading playList');
+	                        deferred.reject(error);
 	                    });
+	                return deferred.promise;
 	            };
 	            self.loadTracks = function (params) {
 	                var self = this;
@@ -64757,8 +64783,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var userPanelModule = angular.module('userPanelModule');
-	var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService',
-	    function (trackListService, mainService, helpService, listCreatorService) {
+	var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService', '$q',
+	    function (trackListService, mainService, helpService, listCreatorService, $q) {
 	        /**
 	         * Tip: add here only visual logic
 	         */
@@ -64774,7 +64800,13 @@
 	        };
 
 	        self.showListCreator = function () {
-	            listCreatorService.showCreatorPopup();
+	            var self = this;
+	            var deferred = listCreatorService.showCreatorPopup();
+	            $q.when(deferred).then(
+	                function handleResolve(value) {
+	                    self.trackListService.loadPlayList();
+	                }
+	            );
 	        };
 	    }];
 
@@ -64793,7 +64825,7 @@
 /* 92 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-logo\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-music-note\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/events\">\r\n                <i class=\"icon icon-earth\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"icon icon-sphere\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-share\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n\r\n    <ul class=\"nav nav-sidebar play-list\">\r\n        <li>\r\n            <a class=\"header-item\" ng-click=\"ctrl.showListCreator()\">\r\n                <i>+</i>\r\n                <span>Crear lista</span>\r\n            </a>\r\n        </li>\r\n        <li ng-repeat=\"playList in ctrl.trackListService.playLists\">\r\n            <a>\r\n                <i class=\"icon icon-indent-increase\"></i>\r\n                <span>{{playList.name}}</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"user-panel\">\r\n    <!--Search component-->\r\n    <ul class=\"nav nav-sidebar\">\r\n        <li>\r\n            <a href=\"#/top\">\r\n                <i class=\"music-logo\"></i>\r\n                <span>Ver el top de pistas más escuchadas</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver todas las pistas</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/competitions\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver convocatorias</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/upload\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-music-note\"></i>\r\n                <span>Publicar obra musical</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/events\">\r\n                <i class=\"icon icon-earth\"></i>\r\n                <span>Ver eventos</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/post\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"icon icon-sphere\"></i>\r\n                <span>Publicar evento</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a href=\"#/donation\" class=\"header-item\" ng-if=\"ctrl.mainService.isArtist()\">\r\n                <i class=\"music-share\"></i>\r\n                <span>Mis donaciones</span>\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a class=\"header-item\" ng-if=\"ctrl.mainService.isAuthenticated()\" ng-click=\"ctrl.enableHelp()\">\r\n                <i class=\"music-side-menu-albums\"></i>\r\n                <span>Ver ayuda</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n\r\n    <ul class=\"nav nav-sidebar play-list\">\r\n        <li>\r\n            <a class=\"header-item\" ng-click=\"ctrl.showListCreator()\">\r\n                <i>+</i>\r\n                <span>Crear lista</span>\r\n            </a>\r\n        </li>\r\n        <li ng-repeat=\"playList in ctrl.trackListService.playLists\">\r\n            <a href=\"#/list/{{playList.id}}\">\r\n                <i class=\"icon icon-indent-increase\"></i>\r\n                <span>{{playList.name}}</span>\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 93 */
@@ -68994,6 +69026,9 @@
 	        self.competition = {};
 	        self.showItems = false;
 	        self.announcementId;
+	        self.showWinnerButton = false;
+
+	        self.showWinnerButton = mainService.isAgent();
 
 	        self.loadCompetitionDetail = function (id) {
 	            self.items = [];
@@ -69076,7 +69111,7 @@
 /* 249 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"row competition-detail\">\r\n    <h3 class=\"top-competition-list-title\">Detalle convocatoria</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\">\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <img\r\n                             src=\"{{ ctrl.competition.image }}\"\r\n                             alt=\"Profile image example\"\r\n                             height=\"100\" width=\"100\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ ctrl.competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ ctrl.competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in ctrl.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br/>\r\n    <div ng-if=\"ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Obras musicales participantes por item</h3>\r\n        <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"item in ctrl.items\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 text-center\">\r\n                    <h4 class=\"competition-name\">{{ item.name }}</h4>\r\n                </div>\r\n            </div>\r\n            <br>\r\n\r\n            <div class=\"row tracks-items\" ng-repeat=\"track in item.tracks\">\r\n                <div class=\"col-md-8 text-center\">\r\n                    <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n                           fr-model=\"track\">\r\n                    </track>\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.vote(item.id,track.id)\">\r\n                        Votar\r\n                    </button>\r\n                    <button class=\"freeven-accept-btn\"\r\n                            ng-click=\"ctrl.selectWinner(item.id,track.id)\">\r\n                        Seleccionar como ganador\r\n                    </button>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <h4 class=\"competition-name\">Votos</h4>\r\n                    <br>\r\n                    <h4 class=\"competition-name\">{{ track.votes }}</h4>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div ng-if=\"!ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Aún no hay obras musicales participantes</h3>\r\n    </div>\r\n</div>\r\n</div>\r\n</div>";
+	module.exports = "<div class=\"row competition-detail\">\r\n    <h3 class=\"top-competition-list-title\">Detalle convocatoria</h3>\r\n    <div class=\"top-item col-xs-12 col-sm-12 col-md-12\">\r\n        <div class=\"row\">\r\n            <div class=\"top-item-track col-xs-3\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-12 text-center\">\r\n                        <img\r\n                                src=\"{{ ctrl.competition.image }}\"\r\n                                alt=\"Profile image example\"\r\n                                height=\"100\" width=\"100\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"top-item-description col-xs-9 col-sm-9 col-md-9\">\r\n                <h4 class=\"competition-name\">\r\n                    {{ ctrl.competition.name }}\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-xs-6\">\r\n                        <span class=\" glyphicon glyphicon-calendar\">\r\n                <strong>Desde:</strong>\r\n                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>\r\n                </span>\r\n                    </div>\r\n                    <div class=\"col-xs-6\">\r\n                <span class=\" glyphicon glyphicon-calendar\">\r\n               <strong>Hasta:</strong>\r\n                        <h5>\r\n                            {{ ctrl.competition.end_date | date:'medium' }}</h5>\r\n               </span>\r\n                    </div>\r\n                </div>\r\n                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>\r\n                <h5><strong>Items</strong></h5>\r\n                <table class=\"table\" border=\"1px\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td><strong>Nombre</strong></td>\r\n                        <td><strong>Tipo</strong></td>\r\n                        <td><strong>Descripción</strong></td>\r\n                    </tr>\r\n                    <tr ng-repeat=\"item in ctrl.items\">\r\n                        <td>{{ item.name }}</td>\r\n                        <td>{{ item.gender }}</td>\r\n                        <td>{{ item.description }}</td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br/>\r\n    <div ng-if=\"ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Obras musicales participantes por item</h3>\r\n        <div class=\"top-item col-xs-12 col-sm-12 col-md-12\" ng-repeat=\"item in ctrl.items\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12 text-center\">\r\n                    <h4 class=\"competition-name\">{{ item.name }}</h4>\r\n                </div>\r\n            </div>\r\n            <br>\r\n            <div class=\"row tracks-items\" ng-repeat=\"track in item.tracks\">\r\n                <div class=\"col-md-12 text-center bordered\">\r\n                    <track class=\"col-xs-4 col-sm-4 col-md-3\"\r\n                           fr-model=\"track\">\r\n                    </track>\r\n                    <div>\r\n                        <span class=\"title-song\">{{ track.name }}</span>\r\n                    </div>\r\n                    <span class=\"g-opacity-transition\">\r\n                        <div id=\"top-numero-variacion\">\r\n                        <div id=\"top-numero\">{{ track.votes }}</div>\r\n                             <h5>Usuarios que han votado por esta obra.</h5>\r\n                        </div>\r\n                    </span>\r\n                    <fieldset class=\"form-group\">\r\n                        <button class=\"freeven-accept-btn g-opacity-transition\"\r\n                                ng-click=\"ctrl.vote(item.id,track.id)\">\r\n                            Votar\r\n                        </button>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <button ng-if=\"ctrl.showWinnerButton\"\r\n                                class=\"freeven-winner-btn g-opacity-transition\"\r\n                                ng-click=\"ctrl.selectWinner(item.id,track.id)\">\r\n                            Seleccionar ganador\r\n                        </button>\r\n                    </fieldset>\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div ng-if=\"!ctrl.showItems\">\r\n        <h3 class=\"top-competition-list-title\">Aún no hay obras musicales participantes</h3>\r\n    </div>\r\n</div>\r\n</div>\r\n</div>";
 
 /***/ },
 /* 250 */
@@ -69113,13 +69148,19 @@
 
 
 	// module
-	exports.push([module.id, "competition-detail {\n  padding: 68px 10%;\n  display: block;\n}\ncompetition-detail .top-competition-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\ncompetition-detail .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\ncompetition-detail .top-item-description {\n  color: #555555;\n}\ncompetition-detail .top-item-description .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .tracks-items {\n  color: black;\n}\ncompetition-detail .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\ncompetition-detail .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\ncompetition-detail .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\ncompetition-detail a {\n  cursor: pointer;\n  color: inherit;\n}\ncompetition-detail .text {\n  font-size: 1rem;\n}\ncompetition-detail .text-xs,\ncompetition-detail .text-xxs {\n  font-size: 12px;\n}\ncompetition-detail .text-sm {\n  font-size: 13px;\n}\ncompetition-detail .text-md {\n  font-size: 1.125rem;\n}\ncompetition-detail .text-lg {\n  font-size: 1.5rem;\n}\ncompetition-detail .text-2x {\n  font-size: 2em;\n}\ncompetition-detail .text-3x {\n  font-size: 3em;\n}\ncompetition-detail .text-4x {\n  font-size: 4em;\n}\ncompetition-detail .list-loading {\n  text-align: center;\n}\ncompetition-detail .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\ncompetition-detail .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\ncompetition-detail .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\ncompetition-detail .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 50px;\n  color: white;\n}\n", ""]);
+	exports.push([module.id, "competition-detail {\n  padding: 68px 10%;\n  display: block;\n}\ncompetition-detail .top-competition-list-title {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 23px;\n}\ncompetition-detail .top-item {\n  margin: 20px 0 20px 0;\n  padding: 10px;\n  background-color: rgba(218, 218, 218, 0.4);\n}\ncompetition-detail .top-item-description {\n  color: #555555;\n}\ncompetition-detail .top-item-description .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .tracks-items {\n  color: black;\n}\ncompetition-detail .competition-name {\n  font-weight: 500;\n  line-height: 1.1;\n  color: black;\n  font-size: 36px;\n}\ncompetition-detail .top-item-position {\n  background-color: #dadada;\n  color: rgba(68, 68, 68, 0.88);\n  position: absolute;\n  right: -15px;\n  top: 21%;\n  width: 70px;\n  text-align: center;\n  font-weight: bolder;\n}\ncompetition-detail .top-item-position h1 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\ncompetition-detail .top-item-position:hover {\n  background-color: #afafaf;\n  color: #444444;\n}\ncompetition-detail a {\n  cursor: pointer;\n  color: inherit;\n}\ncompetition-detail .text {\n  font-size: 1rem;\n}\ncompetition-detail .text-xs,\ncompetition-detail .text-xxs {\n  font-size: 12px;\n}\ncompetition-detail .text-sm {\n  font-size: 13px;\n}\ncompetition-detail .text-md {\n  font-size: 1.125rem;\n}\ncompetition-detail .text-lg {\n  font-size: 1.5rem;\n}\ncompetition-detail .text-2x {\n  font-size: 2em;\n}\ncompetition-detail .text-3x {\n  font-size: 3em;\n}\ncompetition-detail .text-4x {\n  font-size: 4em;\n}\ncompetition-detail .list-loading {\n  text-align: center;\n}\ncompetition-detail .brick {\n  -webkit-transition: all 400ms ease;\n  transition: all 400ms ease;\n}\ncompetition-detail .brick.ng-leave {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n}\ncompetition-detail .brick.ng-leave.ng-leave-active {\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter {\n  -webkit-transition: all ease 400ms;\n  transition: all ease 400ms;\n  -webkit-transition-delay: 500ms;\n  transition-delay: 500ms;\n  -webkit-transform: scale(0.5);\n  transform: scale(0.5);\n  opacity: 0;\n}\ncompetition-detail .brick.ng-enter.ng-enter-active {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n}\ncompetition-detail .freeven-accept-btn {\n  background-color: #02b875;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 13px;\n  color: white;\n}\ncompetition-detail .bordered {\n  border: 1px solid #1ab188;\n  padding: 22px 20px 143px;\n  margin: 1em;\n}\ncompetition-detail #top-numero {\n  color: black;\n  font-weight: 700;\n  font-size: 3.5em;\n  font-family: Viga;\n  background: url(" + __webpack_require__(252) + ");\n  background-repeat: no-repeat;\n  text-align: center;\n  background-position: right;\n  background-size: cover;\n  height: 100px;\n  padding: 6px 0;\n}\ncompetition-detail #top-numero-variacion {\n  width: 22%;\n  float: right;\n  position: relative;\n}\ncompetition-detail .title-song {\n  color: black;\n  font-weight: 500;\n  font-size: 2.5em;\n  font-family: Viga cursive;\n}\ncompetition-detail .freeven-winner-btn {\n  background-color: #4571fa;\n  border: 1px solid #02b875;\n  border-radius: 3px;\n  padding: 10px 13px;\n  color: white;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "21ee602c93df2abcdc7127a1a523a72d.png";
+
+/***/ },
+/* 253 */
 /***/ function(module, exports) {
 
 	angular.module('userProfileModule', []);
@@ -69137,7 +69178,7 @@
 
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var userProfileModule = angular.module('userProfileModule');
@@ -69160,18 +69201,18 @@
 	    },
 	    controller: UserProfileController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(254)
+	    template: __webpack_require__(255)
 	});
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = "<div class=\"user-profile\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <div class=\"fr-profile-creator\">\r\n        <img align=\"left\"\r\n             class=\"fr-image-lg\"\r\n             src=\"" + __webpack_require__(143) + "\"\r\n             alt=\"Profile image example\"/>\r\n\r\n        <div class=\"fr-image-profile-creator thumbnail\">\r\n            <img align=\"left\"\r\n                 class=\"\"\r\n                 src=\"{{ ctrl.user.userProfile.avatar }}\"\r\n                 alt=\"Profile image example\"/>\r\n            </a>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div class=\"fr-profile-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <h1>{{ ctrl.user.userProfile.username }}</h1>\r\n                        <p>{{ ctrl.user.userProfile.first_name }} {{ ctrl.user.userProfile.last_name }}</p>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n\r\n\r\n        <fieldset class=\"align-right form-group\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    Gracias\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports) {
 
 	/**
@@ -69213,13 +69254,13 @@
 
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(257);
+	var content = __webpack_require__(258);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -69239,7 +69280,7 @@
 	}
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();
@@ -69253,7 +69294,7 @@
 
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports) {
 
 	angular.module('listCreatorModule', []);
@@ -69271,7 +69312,7 @@
 
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var  listCreatorModule = angular.module('listCreatorModule');
@@ -69294,18 +69335,18 @@
 	    },
 	    controller: ListCreatorController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(260)
+	    template: __webpack_require__(261)
 	});
 
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"playlist-creator\">\r\n    <div class=\"fr-modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" ng-click=\"ctrl.close()\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n            <span class=\"sr-only\">{{'general_close' | translate}}</span>\r\n        </button>\r\n        <h4><b>Nueva lista</b></h4>\r\n    </div>\r\n    <br/><br/>\r\n    <br/>\r\n    <div class=\"fr-playlist-creator\">\r\n        <div class=\"fr-playlist-creator-text\">\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"control-label\">Nombre de la lista</label>\r\n                        <input type=\"text\"\r\n                               ng-model=\"ctrl.list.name\"\r\n                               placeholder=\"Nombre de la lista...\"\r\n                               class=\"form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required\"/>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n            <fieldset class=\"form-group\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12 text-right\">\r\n                        <button class=\"freeven-accept-btn\" ng-click=\"ctrl.create()\">\r\n                            <span>Crear</span>\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n            </fieldset>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-2\" ng-if=\"ctrl.loading\">\r\n        <bounce title=\"Bounce\"></bounce>\r\n    </div>\r\n\r\n</div>";
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports) {
 
 	var listCreatorModule = angular.module('listCreatorModule');
@@ -69350,13 +69391,13 @@
 
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(263);
+	var content = __webpack_require__(264);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -69376,7 +69417,7 @@
 	}
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(30)();

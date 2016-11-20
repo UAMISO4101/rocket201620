@@ -9,6 +9,9 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
         self.competition = {};
         self.showItems = false;
         self.announcementId;
+        self.showWinnerButton = false;
+
+        self.showWinnerButton = mainService.isAgent();
 
         self.loadCompetitionDetail = function (id) {
             self.items = [];

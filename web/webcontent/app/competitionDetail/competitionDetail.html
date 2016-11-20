@@ -6,9 +6,9 @@
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <img
-                             src="{{ ctrl.competition.image }}"
-                             alt="Profile image example"
-                             height="100" width="100"
+                                src="{{ ctrl.competition.image }}"
+                                alt="Profile image example"
+                                height="100" width="100"
                         />
                     </div>
                 </div>
@@ -61,25 +61,34 @@
                 </div>
             </div>
             <br>
-
             <div class="row tracks-items" ng-repeat="track in item.tracks">
-                <div class="col-md-8 text-center">
+                <div class="col-md-12 text-center bordered">
                     <track class="col-xs-4 col-sm-4 col-md-3"
                            fr-model="track">
                     </track>
-                    <button class="freeven-accept-btn"
-                            ng-click="ctrl.vote(item.id,track.id)">
-                        Votar
-                    </button>
-                    <button class="freeven-accept-btn"
-                            ng-click="ctrl.selectWinner(item.id,track.id)">
-                        Seleccionar como ganador
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h4 class="competition-name">Votos</h4>
-                    <br>
-                    <h4 class="competition-name">{{ track.votes }}</h4>
+                    <div>
+                        <span class="title-song">{{ track.name }}</span>
+                    </div>
+                    <span class="g-opacity-transition">
+                        <div id="top-numero-variacion">
+                        <div id="top-numero">{{ track.votes }}</div>
+                             <h5>Usuarios que han votado por esta obra.</h5>
+                        </div>
+                    </span>
+                    <fieldset class="form-group">
+                        <button class="freeven-accept-btn g-opacity-transition"
+                                ng-click="ctrl.vote(item.id,track.id)">
+                            Votar
+                        </button>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <button ng-if="ctrl.showWinnerButton"
+                                class="freeven-winner-btn g-opacity-transition"
+                                ng-click="ctrl.selectWinner(item.id,track.id)">
+                            Seleccionar ganador
+                        </button>
+                    </fieldset>
+
                 </div>
             </div>
         </div>
