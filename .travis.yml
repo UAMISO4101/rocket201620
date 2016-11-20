@@ -5,7 +5,11 @@ install:
 - pip install -r requirements.txt
 script: nosetests
 before_deploy:
+    - "cd web/webcontent"
+    - "npm install"
     - "npm run webpack:prod"
+    - "cd .."
+    - "cd .."
 deploy:
   provider: heroku
   email: "rtaimal@gmail.com "
