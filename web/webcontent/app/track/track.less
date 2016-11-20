@@ -28,7 +28,7 @@
       display: block;
       padding: 0;
       border-radius: inherit;
-      overflow: hidden;
+      /*overflow: hidden;*/
 
       .btn-track-menu {
         z-index: 10;
@@ -36,6 +36,34 @@
         right: 2px;
         top: 2px;
         opacity: 0;
+
+        ul {
+          opacity: 1;
+          background-color: rgba(0, 0, 0, 0.87);
+          li {
+            a {
+              i, span {
+                color: rgba(250, 250, 250, 0.84);
+              }
+              &:hover {
+                background: transparent;
+                cursor: pointer;
+                i, span {
+                  color: #ffffff;
+                }
+              }
+              &:focus {
+                color: #f1f1f1;
+                background: transparent;
+                cursor: pointer;
+                i, span {
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+
       }
 
       .btn-playpause {

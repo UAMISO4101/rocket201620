@@ -1,9 +1,25 @@
 <div class="track">
     <div class="item">
         <div class="item-media">
-            <a class="btn-track-menu">
-                <i class="icon icon-list"></i>
-            </a>
+            <span class="btn-track-menu" uib-dropdown on-toggle="toggled(open)">
+                  <a href id="simple-dropdown" uib-dropdown-toggle>
+                      <i class="icon icon-list"></i>
+                  </a>
+                  <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+                      <li>
+                          <a>
+                              <i class="bz-icon bz-icon-plus"></i>
+                              <span>opcion 1</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a>
+                              <i class="bz-icon bz-icon-plus"></i>
+                              <span>opcion 2</span>
+                          </a>
+                      </li>
+                  </ul>
+            </span>
             <a class="item-media-content img-responsive"
                style="background-image: url({{ ctrl.frModel.image }})">
             </a>
