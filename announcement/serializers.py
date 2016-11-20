@@ -1,5 +1,7 @@
-from .models import Announcement, Item
+from .models import Announcement, Item, Vote
+from tracks.models import Track
 from rest_framework import serializers
+from tracks.serializers import TrackSerializer
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -42,6 +44,7 @@ class ItemUploadSerializer(serializers.ModelSerializer):
             'description',
             'image',
             'gender',
+            'winner',
             'announcement',
         )
 
@@ -134,4 +137,114 @@ class AnnouncementUploadSerializer(serializers.ModelSerializer):
             'open',
             'owner',
             # 'items',
+        )
+
+
+class TrackAnctSerializer(TrackSerializer):
+    votes = serializers.SerializerMethodField()
+    itemid = 1
+
+    def __init__(self, *args, **kwargs):
+        super(TrackAnctSerializer, self).__init__(*args, **kwargs)
+        print(kwargs['context']['id'])
+        itemid = kwargs['context']['id']
+
+    class Meta:
+        model = Track
+        fields = (
+            'id',
+            'name',
+            'description',
+            'gender',
+            'image',
+            'url',
+            'score',
+            'artist',
+            'artist_id',
+            'artistic_name',
+            'votes',
+        )
+
+    @classmethod
+    def get_votes(self, obj):
+        try:
+            count_votes = Vote.objects.filter(
+                track__id=obj.id, item__id=self.itemid).count()
+            print(self.itemid)
+            return count_votes
+        except:
+            return None
+
+
+class ItemFullSerializer(ItemSerializer):
+    tracks = TrackAnctSerializer(many=True, context={'id': 100})
+
+    class Meta:
+        model = Item
+        fields = (
+            'id',
+            'name',
+            'description',
+            'image',
+            'gender',
+            'winner',
+            'tracks',
+        )
+
+
+class AnnouncementFullSerializer(AnnouncementSerializer):
+    items = ItemFullSerializer(many=True)
+
+    class Meta:
+        model = Announcement
+        fields = (
+            'id',
+            'name',
+            'description',
+            'start_date',
+            'end_date',
+            'image',
+            'popular_selection',
+            'open',
+            'owner',
+            'owner_id',
+            'owner_user_id',
+            'owner_name',
+            'owner_email',
+            'items',
+        )
+
+
+class VoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vote
+        fields = (
+            'id',
+            'item',
+            'user',
+            'track',
+        )
+
+
+class VoteUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vote
+        fields = (
+            'track',
+        )
+
+
+class ParticipateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = (
+            'tracks',
+        )
+
+
+class SelectWinnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = (
+            'winner',
         )

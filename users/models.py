@@ -44,7 +44,7 @@ class Artist(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=50)
-    date = models.DateField(blank=False, null=False)
+    date = models.DateTimeField(blank=False, null=False)
     place = models.CharField(max_length=50, blank=False, null=False)
     latitude = models.CharField(max_length=10, blank=True, null=True)
     longitude = models.CharField(max_length=10, blank=True, null=True)

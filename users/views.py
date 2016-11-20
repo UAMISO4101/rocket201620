@@ -9,9 +9,10 @@ from users.business_logic import (
     update_profile_action, change_password_op_action
 )
 from rest_framework.generics import CreateAPIView, UpdateAPIView
-from .models import Donation, Artist
+from .models import Donation, Artist, Event
 from .serializers import (DonationSerializer, ArtistSerializer,
-                          UserRetriveSerializer)
+                          UserRetriveSerializer, EventSerializer,
+                          EventUploadSerializer)
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from django.contrib.auth.models import User
@@ -52,14 +53,6 @@ class DonationList(ListAPIView):
     filter_fields = (
         'artist__id',
     )
-
-
-class ArtistRetrieveView(RetrieveAPIView):
-    serializer_class = ArtistSerializer
-
-    def get_queryset(self):
-        artist = Artist.objects.filter(pk=self.kwargs['pk'])
-        return artist
 
 
 @csrf_exempt
@@ -104,9 +97,43 @@ class UserRetrieveView(RetrieveAPIView):
         return user
 
 
-class ArtistUpdateView(UpdateAPIView):
+class ArtistView():
     serializer_class = ArtistSerializer
 
     def get_queryset(self):
         artist = Artist.objects.filter(pk=self.kwargs['pk'])
         return artist
+
+
+class ArtistRetrieveView(ArtistView, RetrieveAPIView):
+    def __init__(self):
+        ArtistView.__init__(self)
+
+
+class ArtistUpdateView(ArtistView, UpdateAPIView):
+    def __init__(self):
+        ArtistView.__init__(self)
+
+
+class EventListView(ListAPIView):
+    queryset = Event.objects.all().order_by('date')
+    serializer_class = EventSerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = (
+        'name',
+        'description',
+        'id',
+    )
+
+
+class EventCreateView(CreateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventUploadSerializer
+
+
+class EventUpdateView(UpdateAPIView):
+    serializer_class = EventUploadSerializer
+
+    def get_queryset(self):
+        event = Event.objects.filter(pk=self.kwargs['pk'])
+        return event

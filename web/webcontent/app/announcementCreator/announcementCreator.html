@@ -1,0 +1,130 @@
+<div class="announcement-creator">
+    <div class="fr-modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ctrl.close()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">{{'general_close' | translate}}</span>
+        </button>
+        <h4>Nueva convocatoria</h4>
+    </div>
+    <div ng-if="!ctrl.showItem" class="fr-announcement-creator">
+
+        <div class="fr-image-announcement-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="../styles/images/announcement.jpg"
+                 alt="Profile image example"/>
+            <a ngf-select
+               ngf-multiple="false"
+               accept=".jpg"
+               filters=".jpg"
+               ngf-change="ctrl.attachFile($files,'image')"
+               class="form-control track-picture-selector">
+                <i class="icon icon-images"></i>
+                <span>Seleccione la imagen de la convocatoria</span>
+            </a>
+        </div>
+
+
+        <div>
+
+        </div>
+        <div class="fr-announcement-creator-text">
+            <fieldset class="form-group">
+                <h4>Llena estos campos para crear una convocatoria</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label">Nombre de la convocatoria</label>
+                        <input type="text"
+                               ng-model="ctrl.name"
+                               placeholder="Nombre de la convocatoria..."
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Descripción</label>
+                        <input type="text"
+                               ng-model="ctrl.description"
+                               placeholder="Descripción..."
+                               class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Fecha de inicio</label>
+                        <input type="date" class="form-control"
+                               ng-model="ctrl.start_date"
+                               class="form-control"
+                               required/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Fecha de cierre</label>
+                        <input type="date" class="form-control"
+                               ng-model="ctrl.end_date"
+                               class="form-control"
+                               required/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">El ganador se escogerá po seleccion popular</label>
+                        <input type="checkbox" class="form-control"
+                               ng-model="ctrl.popular_selection"
+                               class="form-control"
+                               required/>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-10">
+                        <button class="freeven-accept-btn" ng-click="ctrl.showItemView()">
+                            <span>Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div ng-if="ctrl.showItem" class="fr-announcement-creator">
+        <fieldset class="form-group" style="width: 100%">
+            <h4>Datos del <b>item {{ctrl.items.length + 1}}</b> asociado a la convocatoria</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Nombre del item</label>
+                    <input type="text"
+                           ng-model="ctrl.selectedItem.name"
+                           placeholder="Nombre del Item {{ctrl.items.length + 1}} ..."
+                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label">Descripción</label>
+                    <input type="text"
+                           ng-model="ctrl.selectedItem.description"
+                           placeholder="Descripción..."
+                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label">Género</label>
+
+                    <select placeholder="Género..."
+                            class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"
+                            ng-model="ctrl.selectedItem.gender">
+                        <option ng-repeat="genderOption in  ctrl.genderOptions"
+                                ng-value="genderOption.id">{{ genderOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+         </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    <button class="freeven-accept-btn" ng-click="ctrl.createAnnouncement()">
+                        <span>Crear convocatoria</span>
+                    </button>
+                    <button class="freeven-accept-btn" ng-click="ctrl.addItem()">
+                        <span>Agregar Otro item</span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-md-2" ng-if="ctrl.loading">
+        <bounce title="Bounce"></bounce>
+    </div>
+
+</div>

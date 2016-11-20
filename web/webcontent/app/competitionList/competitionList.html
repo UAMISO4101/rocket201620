@@ -1,0 +1,87 @@
+<div class="row competition-list">
+    <h3 class="top-competition-list-title">Listado de convocatorias</h3>
+    <button ng-if="ctrl.isAgent()"
+            ng-click="ctrl.showCreatorPopup()"
+            class="btn freeven-accept-btn">Crear nueva convocatoria
+    </button>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="competition in ctrl.competitionList.competitions">
+
+        <div class="row">
+            <div class="top-item-track col-xs-3">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img align="left"
+                             class=""
+                             src="{{ competition.image }}"
+                             alt="Profile image example"
+                             height="200" width="200"
+                        />
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <button class="freeven-accept-btn"
+                                ng-click="ctrl.participate(competition.id)">
+                            Participar
+                        </button>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <a href="#/competitions/detail/{{ competition.id }}">
+                            <button class="freeven-accept-btn"
+                                    ng-click="">
+                                Ver detalle
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h4 class="competition-name">
+                    {{ competition.name }}
+                </h4>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <span class=" glyphicon glyphicon-calendar">
+                <strong>Desde:</strong>
+                    <h5>{{ competition.start_date | date:'medium' }}</h5>
+                </span>
+                    </div>
+                    <div class="col-xs-6">
+                <span class=" glyphicon glyphicon-calendar">
+               <strong>Hasta:</strong>
+                        <h5>
+                            {{ competition.end_date | date:'medium' }}</h5>
+               </span>
+                    </div>
+                </div>
+                <h5><strong>Descripción:</strong> {{ competition.description }}</h5>
+                <h5><strong>Items</strong></h5>
+                <table class="table" border="1px">
+                    <tbody>
+                    <tr>
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Tipo</strong></td>
+                        <td><strong>Descripción</strong></td>
+                    </tr>
+                    <tr ng-repeat="item in competition.items">
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.gender }}</td>
+                        <td>{{ item.description }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/>
+</div>

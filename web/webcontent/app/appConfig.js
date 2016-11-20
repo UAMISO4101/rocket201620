@@ -1,6 +1,17 @@
 (function (window, document) {
     'use strict';
     var appConfigurations = window.appConfigurations || (window.appConfigurations = {});
+    var checkAuthentication = function ($q, mainService, $location) {
+        var deferred = $q.defer();
+        var authenticated = mainService.isAuthenticated();
+        if (authenticated) {
+            deferred.resolve();
+        } else {
+            deferred.reject();
+            $location.url('#/');
+        }
+        return deferred.promise;
+    };
     angular.extend(appConfigurations, {
         'productionConfiguration': ['$routeProvider', '$httpProvider', '$translateProvider',
             function configuration($routeProvider, $httpProvider, $translateProvider) {
@@ -16,11 +27,17 @@
                 $routeProvider.when('/artist/:idArtist', {
                     template: '<artist></artist>'
                 });
+                $routeProvider.when('/user/:idUser', {
+                    template: '<user-profile></user-profile>'
+                });
                 $routeProvider.when('/top', {
                     template: '<top-track-list></top-track-list>'
                 });
                 $routeProvider.when('/events', {
                     template: '<event-list></event-list>'
+                });
+                $routeProvider.when('/competitions', {
+                    template: '<competition-list></competition-list>'
                 });
                 $routeProvider.when('/upload', {
                     template: '<track-creator></track-creator>'
@@ -30,15 +47,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -50,15 +59,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -67,15 +68,21 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                            var deferred = $q.defer();
-                            var authenticated = mainService.isAuthenticated();
-                            if (authenticated) {
-                                deferred.resolve();
-                            } else {
-                                deferred.reject();
-                                $location.url('#/');
-                            }
-                            return deferred.promise;
+                            return checkAuthentication($q, mainService, $location);
+                        }]
+                    }
+                });
+                $routeProvider.when('/competitions/detail/:idCompetition', {
+                    template: '<competition-detail></competition-detail>',
+
+                });
+
+                $routeProvider.when('/announcement', {
+                    template: '<announcement-creator> </announcement-creator>',
+                    requireAuthentication: true,
+                    resolve: {
+                        auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });

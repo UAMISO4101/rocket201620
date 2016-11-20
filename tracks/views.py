@@ -1,7 +1,10 @@
+import json
+from django.http import JsonResponse
 from rest_framework.generics import ListAPIView, CreateAPIView
-from .models import Track, Top, Gender
+from .models import Track, Top, Gender, Playlist
 from .serializers import (
-    TrackSerializer,  TopSerializer, TrackUploadSerializer, GenderSerializer
+    TrackSerializer,  TopSerializer, TrackUploadSerializer, GenderSerializer,
+    PlaylistSerializer, PlaylistFullSerializer
 )
 from rest_framework import filters
 from rest_framework.decorators import api_view
@@ -11,7 +14,7 @@ from .trace_manager import TraceManager
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from tracks.business_logic import (
-    register_rate_track_action
+    register_rate_track_action, add_track_playlist_action
 )
 
 
@@ -35,6 +38,14 @@ class TrackListView(ListAPIView):
         'gender__name',
         'artist__user__username',
     )
+
+
+class TrackForArtisticListView(ListAPIView):
+    serializer_class = TrackSerializer
+
+    def get_queryset(self):
+        tracks = Track.objects.filter(artist_id=self.kwargs['artist_id'])
+        return tracks
 
 
 class Top10(ListAPIView):
@@ -78,3 +89,28 @@ def trace(request):
         get_client_ip(request),
     )
     return Response(status=status.HTTP_201_CREATED)
+
+
+class PlaylistCreateView(CreateAPIView):
+    queryset = Playlist.objects.all()
+    serializer_class = PlaylistSerializer
+
+
+class PlaylistListView(ListAPIView):
+    serializer_class = PlaylistFullSerializer
+
+    def get_queryset(self):
+        playlist = Playlist.objects.filter(user__id=self.kwargs['user_id'])
+        return playlist
+
+
+@csrf_exempt
+def add_track_playlist(request):
+    if request.method == 'POST':
+        json_data = json.loads(request.body.decode('utf-8'))
+        print("PASO 1")
+        response = add_track_playlist_action(json_data)
+        return JsonResponse(response, safe=False)
+    else:
+        status = "Incorrect method."
+        return JsonResponse(status, safe=False)

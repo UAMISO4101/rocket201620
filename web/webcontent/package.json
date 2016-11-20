@@ -11,7 +11,8 @@
     "webpack:prod": "webpack --config webpack-prod.config.js  --hide-modules",
     "webpack:dev": "webpack --config webpack.config.js",
     "server:dev": "webpack-dev-server --config webpack-development.config.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base ./",
-    "start": "npm run server:dev"
+    "start": "npm run server:dev",
+    "mocks": "node expressServerMocks.js"
   },
   "devDependencies": {
     "angular-base64": "^2.0.5",
@@ -68,6 +69,9 @@
     "angular": "^1.5.5",
     "angular-local-storage": "^0.2.2",
     "loader-utils": "^0.2.11",
-    "strip-json-comments": "^2.0.1"
+    "strip-json-comments": "^2.0.1",
+    "ejs": "2.4.1",
+    "express": "4.13.3",
+    "http-proxy-middleware": "^0.17.2"
   }
 }

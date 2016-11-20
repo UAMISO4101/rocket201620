@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 from django.contrib.auth.models import User
-from tracks.models import Track, RateTrack
+from tracks.models import Track, RateTrack, Playlist
 from django.db.models import Avg
 
 
@@ -52,3 +52,24 @@ def register_rate_track_action(request):
     else:
         status = 'Todos los campos son obligatorios.'
     return {'status': status}
+
+
+def add_track_playlist_action(json_data):
+    track_id = json_data['idTrack']
+    playlist_id = json_data['idList']
+
+    print(track_id)
+    print(playlist_id)
+
+    status = "OK"
+    try:
+        playlist = Playlist.objects.get(id=playlist_id)
+        print(playlist)
+        try:
+            track = Track.objects.get(id=track_id)
+            playlist.tracks.add(track)
+        except:
+            status = status + 'Obra musical no encontrada.'
+    except:
+        status = 'Lista de Reproduccion no encontrada.'
+    return status

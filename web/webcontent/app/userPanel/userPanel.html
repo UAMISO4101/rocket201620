@@ -3,15 +3,19 @@
     <ul class="nav nav-sidebar">
         <li>
             <a href="#/top">
-                <i class="music-side-menu-albums"></i>
+                <i class="music-logo"></i>
                 <span>Ver el top de pistas más escuchadas</span>
             </a>
             <a href="#/">
                 <i class="music-side-menu-albums"></i>
                 <span>Ver todas las pistas</span>
             </a>
-            <a href="#/upload" class="header-item" ng-if="ctrl.mainService.isArtist()">
+              <a href="#/competitions">
                 <i class="music-side-menu-albums"></i>
+                <span>Ver convocatorias</span>
+            </a>
+            <a href="#/upload" class="header-item" ng-if="ctrl.mainService.isArtist()">
+                <i class="music-music-note"></i>
                 <span>Publicar obra musical</span>
             </a>
             <a href="#/events">
@@ -23,7 +27,7 @@
                 <span>Publicar evento</span>
             </a>
             <a href="#/donation" class="header-item" ng-if="ctrl.mainService.isArtist()">
-                <i class="music-side-menu-albums"></i>
+                <i class="music-share"></i>
                 <span>Mis donaciones</span>
             </a>
             <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">

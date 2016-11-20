@@ -35,7 +35,12 @@ var appModules = [
     'donationCreatorModule',
     'bounceModule',
     'postCreatorModule',
-    'eventListModule'
+    'eventListModule',
+    'competitionListModule',
+    'competitionParticipateModule',
+    'announcementCreatorModule',
+    'competitionDetailModule',
+    'userProfileModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;
