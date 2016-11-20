@@ -1,6 +1,6 @@
 var trackListModule = angular.module('trackListModule');
-trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService',
-    function (TrackApiService, playerService, mainService, notifierService) {
+trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService', '$q',
+    function (TrackApiService, playerService, mainService, notifierService, $q) {
         var TrackListService = function () {
             var self = this;
             self.selectedTrack = {};
@@ -37,17 +37,36 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
 
             };
 
+            self.showPlayListContent = function (playListId) {
+                var self = this;
+                $q.when(self.loadPlayList()).then(
+                    function handleResolve(response) {
+                        var list = response.results.filter(function (item) {
+                            if (item.id == playListId) {
+                                return true;
+                            }
+                            return false;
+                        });
+                        self.tracks = list[0].tracks;
+                    }
+                );
+            };
             self.loadPlayList = function () {
+                var self = this;
+                var deferred = $q.defer();
                 var user = mainService.getUserData();
                 TrackApiService.listPlayList(
                     {userId: user.id_user || 0},
                     {},
                     function (response) {
                         self.playLists = response.results;
+                        deferred.resolve(response);
                     },
                     function (error) {
                         console.log('Error loading playList');
+                        deferred.reject(error);
                     });
+                return deferred.promise;
             };
             self.loadTracks = function (params) {
                 var self = this;

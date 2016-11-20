@@ -1,6 +1,6 @@
 var userPanelModule = angular.module('userPanelModule');
-var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService',
-    function (trackListService, mainService, helpService, listCreatorService) {
+var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService', '$q',
+    function (trackListService, mainService, helpService, listCreatorService, $q) {
         /**
          * Tip: add here only visual logic
          */
@@ -16,7 +16,13 @@ var UserPanelController = ['trackListService', 'mainService', 'helpService', 'li
         };
 
         self.showListCreator = function () {
-            listCreatorService.showCreatorPopup();
+            var self = this;
+            var deferred = listCreatorService.showCreatorPopup();
+            $q.when(deferred).then(
+                function handleResolve(value) {
+                    self.trackListService.loadPlayList();
+                }
+            );
         };
     }];
 

@@ -1,10 +1,14 @@
 var trackListModule = angular.module('trackListModule');
-var TrackListController = ['$i18n', 'trackListService', function ($i18n, trackListService) {
+var TrackListController = ['$routeParams', 'trackListService', function ($routeParams, trackListService) {
     /**
      * Tip: add here only visual logic
      */
     var self = this;
     self.trackList = trackListService;
+
+    if($routeParams && $routeParams.idPlayList){
+        self.trackList.showPlayListContent($routeParams.idPlayList);
+    }
     //self.trackList.loadTracks();
 }];
 

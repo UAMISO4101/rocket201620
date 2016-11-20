@@ -45,6 +45,9 @@
                 $routeProvider.when('/upload', {
                     template: '<track-creator></track-creator>'
                 });
+                $routeProvider.when('/list/:idPlayList', {
+                    template: '<track-list></track-list>'
+                });
                 $routeProvider.when('/donation', {
                     template: '<donation></donation>',
                     requireAuthentication: true,

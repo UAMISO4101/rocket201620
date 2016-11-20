@@ -59,7 +59,7 @@
             </a>
         </li>
         <li ng-repeat="playList in ctrl.trackListService.playLists">
-            <a>
+            <a href="#/list/{{playList.id}}">
                 <i class="icon icon-indent-increase"></i>
                 <span>{{playList.name}}</span>
             </a>
