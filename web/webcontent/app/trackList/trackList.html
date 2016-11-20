@@ -1,5 +1,5 @@
 <div class="track-list">
-    <h3 class="track-list-title">Esto es lo mas reciente</h3>
+    <h3 class="track-list-title">{{ctrl.trackList.listTitle}}</h3>
     <div class="row "
          infinite-scroll='ctrl.trackList.nextPage()'
          infinite-scroll-disabled='ctrl.trackList.busy'
@@ -8,8 +8,10 @@
                fr-model="track"
                ng-repeat="track in ctrl.trackList.tracks">
         </track>
-        <br/>
-        <h3 ng-if="ctrl.trackList.loading" class="list-loading">{{ 'loading_tracks' | translate }}</h3>
-        <h3 class="view-more"><i class="icon icon-arrow-down"></i></h3>
+    </div>
+    <br/>  <br/>  <br/>
+    <div class="row text-center">
+        <bounce ng-if="ctrl.trackList.loading" title="Bounce"></bounce>
+        <h3 class="view-more"><i class="icon icon-circle-down"></i></h3>
     </div>
 </div>

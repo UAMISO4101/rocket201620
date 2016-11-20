@@ -14,6 +14,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             self.indexTrack = 0;
             localStorage.playListPairs = [];
             self.showAll = true;
+            self.listTitle = "Esto es lo más reciente";
             self.addToPlayList = function (track, playList) {
                 var self = this;
                 var user = mainService.getUserData();
@@ -50,6 +51,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                             }
                             return false;
                         });
+                        self.listTitle = list[0].name;
                         self.tracks = list[0].tracks;
                     }
                 );
@@ -133,6 +135,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             self.setShowAll = function (value) {
                 self.showAll = value;
                 if (value) {
+                    self.listTitle = "Esto es lo más Reciente"
                     self.tracks = [];
                 }
             };
