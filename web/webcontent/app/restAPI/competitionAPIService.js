@@ -29,6 +29,12 @@ restApiModule.factory('CompetitionApiService', ['$resource', function ($resource
             params: {idAnnouncement: '@string', relations: '@string'},
             isArray: false
         },
+        selectWinner: {
+            url: 'announcement/select-winner/:announcementId/',
+            method: 'PUT',
+            params: {track: '@string'},
+            isArray: false
+        }
     });
 }]);
 

@@ -9,7 +9,7 @@
                              class=""
                              src="{{ ctrl.competition.image }}"
                              alt="Profile image example"
-                             height="200" width="200"
+                             height="150" width="150"
                         />
                     </div>
                 </div>
@@ -71,6 +71,10 @@
                     <button class="freeven-accept-btn"
                             ng-click="ctrl.vote(item.id,track.id)">
                         Votar
+                    </button>
+                    <button class="freeven-accept-btn"
+                            ng-click="ctrl.selectWinner(item.id,track.id)">
+                        Seleccionar como ganador
                     </button>
                 </div>
                 <div class="col-md-4">

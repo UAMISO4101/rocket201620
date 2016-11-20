@@ -8,9 +8,11 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
         self.items = [];
         self.competition = {};
         self.showItems = false;
+        self.announcementId;
 
         self.loadCompetitionDetail = function (id) {
             self.items = [];
+            self.announcementId = id;
             if (id != undefined) {
                 CompetitionApiService.getCompetition(
                     {guidCompetition: id},
@@ -55,6 +57,21 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
                 notifierService.warning("Convocatorias", "Por favor, inice sesión para votar");
             }
 
+        };
+        self.selectWinner = function (itemId, trackId) {
+            var authenticated = mainService.isAuthenticated();
+            if (authenticated) {
+                CompetitionApiService.selectWinner(
+                    {announcementId: self.announcementId},
+                    {track: trackId},
+                    function (response) {
+                        notifierService.info("Convocatorias", "Gracias por tu voto");
+                    },
+                    function (error) {
+                    });
+            } else {
+                notifierService.warning("Convocatorias", "Por favor, inice sesión para elegir el ganador");
+            }
         }
 
     }];

@@ -29,6 +29,6 @@ urlpatterns = [
         name='anct-participate'),
     url(r'^participatef', particitate_announcement,
         name='anct-participatef'),
-    url(r'^select-winner/(?P<pk>\d+)/$', SelectWinnerView.as_view(),
+    url(r'^select-winner/(?P<pk>\d+)', SelectWinnerView.as_view(),
         name='select-winner'),
 ]
