@@ -15,15 +15,6 @@
                  src="../styles/images/announcement.jpg"
                  alt="Profile image example"
                  height="100" width="100"/>
-            <a ngf-select
-               ngf-multiple="false"
-               accept=".jpg"
-               filters=".jpg"
-               ngf-change="ctrl.attachFile($files,'image')"
-               class="form-control track-picture-selector">
-                <i class="icon icon-images"></i>
-                <span>Agregar imagen</span>
-            </a>
         </div>
         <form name="announcementForm">
             <div class="fr-announcement-creator-text">
@@ -60,12 +51,25 @@
                                    class="form-control"
                                    required/>
                         </div>
+                        <div class="col-md-12">
+                            <label class="control-label" for="imagenEvent">Imagen de la convocatoria</label>
+                            <a ngf-select
+                               ngf-multiple="false"
+                               accept=".jpg"
+                               filters=".jpg"
+                               ngf-change="ctrl.attachFile($files,'image')"
+                               class="form-control track-picture-selector">
+                                <i class="icon icon-images"></i>
+                                <span ng-if="!ctrl.files.image">Seleccione la imagen de la convocatoria</span>
+                                <span ng-if="ctrl.files.image">{{ ctrl.files.image.name }}</span>
+                            </a>
+                        </div>
                         <div class="col-md-12 checkbox">
                             <label class="control-label">
                                 <input type="checkbox"
                                        ng-model="ctrl.popular_selection"
-                                       required/>
-                                El ganador se escogerá po selección popular</label>
+                                />
+                                El ganador se escogerá por selección popular</label>
                         </div>
                     </div>
                 </fieldset>
