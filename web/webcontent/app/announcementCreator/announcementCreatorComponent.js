@@ -18,14 +18,18 @@ var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreat
             if (self.validateFields()) {
                 self.showItem = true;
             } else {
-                notifierService.error("Error", "Faltan campos por diligenciar");
+                notifierService.error("Error Convocatoria", "Faltan campos por diligenciar");
             }
         };
 
         self.addItem = function () {
             var self = this;
-            self.items.push(JSON.parse(JSON.stringify(self.selectedItem)));
-            self.selectedItem = {};
+            if (self.validateFieldsItem()) {
+                self.items.push(JSON.parse(JSON.stringify(self.selectedItem)));
+                self.selectedItem = {};
+            } else {
+                notifierService.error("Error Item", "Faltan campos por diligenciar");
+            }
         };
 
         self.createAnnouncement = function () {
@@ -120,6 +124,15 @@ var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreat
                 self.start_date != undefined &&
                 self.end_date != undefined &&
                 self.files.image != undefined) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        self.validateFieldsItem = function () {
+            if (self.selectedItem.description != undefined
+                && self.selectedItem.name != undefined &&
+                self.selectedItem.gender != undefined) {
                 return true;
             } else {
                 return false;
