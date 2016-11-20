@@ -85,7 +85,6 @@ var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreat
                 }).progress(function (evt) {
                 }).success(function (data, status, headers, config) {
                     self.loading = false;
-                    announcementCreatorService.closeCreatorPopup();
                     notifierService.success("Item creado correctamente", ".");
                 }).error(function (data, status, headers, config) {
                     announcementCreatorService.closeCreatorPopup();
