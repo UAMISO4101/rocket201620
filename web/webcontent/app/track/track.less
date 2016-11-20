@@ -28,7 +28,50 @@
       display: block;
       padding: 0;
       border-radius: inherit;
-      overflow: hidden;
+      /*overflow: hidden;*/
+
+      .btn-track-menu {
+        z-index: 10;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        opacity: 0;
+
+        ul {
+          opacity: 1;
+          background-color: rgba(0, 0, 0, 0.87);
+          li {
+            border: 1px solid transparent;
+            a {
+              i, span {
+                color: rgba(250, 250, 250, 0.84);
+              }
+              &:hover {
+                background: transparent;
+                cursor: pointer;
+                i, span {
+                  color: #ffffff;
+                }
+              }
+              &:focus {
+                color: #f1f1f1;
+                background: transparent;
+                cursor: pointer;
+                i, span {
+                  color: #ffffff;
+                }
+              }
+            }
+            &:hover {
+              background-color: rgba(20, 20, 20, 0.87);
+              border-top: 1px solid rgba(241, 241, 241, 0.87);
+              border-bottom: 1px solid rgba(241, 241, 241, 0.87);
+            }
+          }
+        }
+
+      }
+
       .btn-playpause {
         color: #fff;
         font-size: 0;
@@ -182,6 +225,16 @@
   .item:hover .item-overlay {
     opacity: 1;
     display: block
+  }
+
+  .item:hover .btn-track-menu {
+    opacity: 1;
+  }
+
+  .item:hover .item-media a.item-media-content .top-overlay{
+    background-image: linear-gradient(to top, transparent, rgba(14, 14, 14, 0.4));
+    width: 100%;
+    height: 39%;
   }
 
   .item::after {

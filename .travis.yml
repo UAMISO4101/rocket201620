@@ -3,9 +3,19 @@ python:
 - 3.5.2
 install:
 - pip install -r requirements.txt
+#- sudo apt-get -y install nodejs
 script: nosetests
+before_deploy:
+    #- "npm --version"
+    #- "cd web/webcontent"
+    #- "npm install"
+    #- "npm run webpack:prod"
+    #- "cd .."
+    #- "cd .."
 deploy:
   provider: heroku
+  #email: "rtaimal@gmail.com "
+  #skip_cleanup: true
   api_key:
     secure: Xh+AhgJUGyQxdvyFJrau7grLkbKOgNxxjLtisscIaZA0VsWrtnd49UTpB4i18HdyoaDZslFaB9okgy5P3VUlEXF8/w4BCOpvI0RdKXU7Psd4N2PlblTlOR+CZO4rpo6Ml6whXGgkFiusAuRzuVGgOj9yOQ4GmIDgRbkDcvl1XWhqZnZCwyAC3JJ1I828M8oCOHdU6yMJEawjZZB1a+rPxc0KI3rEwLUiAoMoXt1NFZerrJz4yr9/3Hz/tm//CssVL63oL6bWS9Yyb6IgzYxqgfkILr0fR1lte46XLMB/Rif8cWHmb/XzllCl0WHs/XbeO9r+fsVfW5aTPJwwVjN1Jq/0c66jsPf5KIrXep/WERAe3L1itKmTdfVXcBCT9hwUycT1zUPdVv1Wj2Jlpjo8CJFZWCHgFFztgLLo9XjCP+gNu7NqUHlIqRtowTSHHFhVSQT8SvN/UyeJg7ohcWYU4tE/cRwOfhE4AAYUxe2CkJvs38DiEh8b6dV1bBCLpj4VgBfWaSafsVAq6KkgPkpZklr9hRK2fS1sL9/0MKSolvteLF7dPDVAK1BYxGjzJcGI3fwPcU8aeGORMfxgvm221dAGxCeRSYH5w+sSZe6kcKwh852ngM9aWyAUsi+NvuVV1M0I10kJrIeaGXGj+kxOIXY6onpqk0K+XCpjOsDq4wk=
   app:

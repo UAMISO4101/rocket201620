@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, TemplateView, UpdateView, CreateView
 from django.core.urlresolvers import reverse
 from users.business_logic import (
-    register_business_agent, update_business_agent
+    business_agent_create_action, business_agent_update_action
 )
 from users.security import StaffuserRequiredMixin
 from tracks.trace_manager import TraceManager
@@ -91,11 +91,11 @@ class BusinessAgentListView(StaffuserRequiredMixin, ListView):
 
 
 @csrf_exempt
-def businessAgentCreate(request):
+def business_agent_create(request):
     if request.user.is_authenticated() and request.user.is_staff:
         mensaje = ''
         if request.method == 'POST':
-            mensaje = register_business_agent(request)
+            mensaje = business_agent_create_action(request)
             if mensaje == '':
                 return redirect(reverse('agent-list'))
         return render(request,
@@ -105,11 +105,11 @@ def businessAgentCreate(request):
 
 
 @csrf_exempt
-def businessAgentUpdate(request, pk):
+def business_agent_update(request, pk):
     if request.user.is_authenticated() and request.user.is_staff:
         mensaje = ''
         if request.method == 'POST':
-            mensaje = update_business_agent(request, pk)
+            mensaje = business_agent_update_action(request, pk)
             if mensaje == '':
                 return redirect(reverse('agent-list'))
         elif request.method == 'GET':

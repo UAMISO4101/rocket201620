@@ -1,0 +1,101 @@
+<div class="row competition-detail">
+    <h3 class="top-competition-list-title">Detalle convocatoria</h3>
+    <div class="top-item col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+            <div class="top-item-track col-xs-3">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <img
+                                src="{{ ctrl.competition.image }}"
+                                alt="Profile image example"
+                                height="100" width="100"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="top-item-description col-xs-9 col-sm-9 col-md-9">
+                <h4 class="competition-name">
+                    {{ ctrl.competition.name }}
+                </h4>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <span class=" glyphicon glyphicon-calendar">
+                <strong>Desde:</strong>
+                    <h5>{{ ctrl.competition.start_date | date:'medium' }}</h5>
+                </span>
+                    </div>
+                    <div class="col-xs-6">
+                <span class=" glyphicon glyphicon-calendar">
+               <strong>Hasta:</strong>
+                        <h5>
+                            {{ ctrl.competition.end_date | date:'medium' }}</h5>
+               </span>
+                    </div>
+                </div>
+                <h5><strong>Descripción:</strong> {{ ctrl.competition.description }}</h5>
+                <h5><strong>Items</strong></h5>
+                <table class="table" border="1px">
+                    <tbody>
+                    <tr>
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Tipo</strong></td>
+                        <td><strong>Descripción</strong></td>
+                    </tr>
+                    <tr ng-repeat="item in ctrl.items">
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.gender }}</td>
+                        <td>{{ item.description }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div ng-if="ctrl.showItems">
+        <h3 class="top-competition-list-title">Obras musicales participantes por item</h3>
+        <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="item in ctrl.items">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="competition-name">{{ item.name }}</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row tracks-items" ng-repeat="track in item.tracks">
+                <div class="col-md-12 text-center bordered">
+                    <track class="col-xs-4 col-sm-4 col-md-3"
+                           fr-model="track">
+                    </track>
+                    <div>
+                        <span class="title-song">{{ track.name }}</span>
+                    </div>
+                    <span class="g-opacity-transition">
+                        <div id="top-numero-variacion">
+                        <div id="top-numero">{{ track.votes }}</div>
+                             <h5>Usuarios que han votado por esta obra.</h5>
+                        </div>
+                    </span>
+                    <fieldset class="form-group">
+                        <button class="freeven-accept-btn g-opacity-transition"
+                                ng-click="ctrl.vote(item.id,track.id)">
+                            Votar
+                        </button>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <button ng-if="ctrl.showWinnerButton"
+                                class="freeven-winner-btn g-opacity-transition"
+                                ng-click="ctrl.selectWinner(item.id,track.id)">
+                            Seleccionar ganador
+                        </button>
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!ctrl.showItems">
+        <h3 class="top-competition-list-title">Aún no hay obras musicales participantes</h3>
+    </div>
+</div>
+</div>
+</div>

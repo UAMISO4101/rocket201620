@@ -1,6 +1,6 @@
 var trackListModule = angular.module('trackListModule');
-trackListModule.factory('trackListService', ['TracksApiService', 'playerService',
-    function (TrackApiService, playerService) {
+trackListModule.factory('trackListService', ['TracksApiService', 'playerService', 'mainService', 'notifierService', '$q',
+    function (TrackApiService, playerService, mainService, notifierService, $q) {
         var TrackListService = function () {
             var self = this;
             self.selectedTrack = {};
@@ -12,11 +12,70 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             };
             self.tracks = [];
             self.indexTrack = 0;
+            localStorage.playListPairs = [];
+            self.showAll = true;
+            self.addToPlayList = function (track, playList) {
+                var self = this;
+                var user = mainService.getUserData();
+                var pairKey = "playListKey_" + user.id_user + "_" + track.id + "_" + playList.id;
+                if (localStorage[pairKey]) {
+                    notifierService.info("La Obra " + track.name, "ya se ha agregado previamente a <b>" + playList.name + "</b>");
+                } else {
+                    localStorage[pairKey] = true;
+                    TrackApiService.addToPlayList(
+                        {},
+                        {
+                            idList: playList.id,
+                            idTrack: track.id
+                        },
+                        function (response) {
+                            notifierService.info("La Obra " + track.name, "Se agregó correctamente a la lista <b>" + playList.name + "</b>");
+                        },
+                        function (error) {
+                            console.log('Error loading playList');
+                        });
+                }
+
+            };
+
+            self.showPlayListContent = function (playListId) {
+                var self = this;
+                self.showAll = false;
+                self.params.offset = 0;
+                $q.when(self.loadPlayList()).then(
+                    function handleResolve(response) {
+                        var list = response.results.filter(function (item) {
+                            if (item.id == playListId) {
+                                return true;
+                            }
+                            return false;
+                        });
+                        self.tracks = list[0].tracks;
+                    }
+                );
+            };
+            self.loadPlayList = function () {
+                var self = this;
+                var deferred = $q.defer();
+                var user = mainService.getUserData();
+                TrackApiService.listPlayList(
+                    {userId: user.id_user || 0},
+                    {},
+                    function (response) {
+                        self.playLists = response.results;
+                        deferred.resolve(response);
+                    },
+                    function (error) {
+                        console.log('Error loading playList');
+                        deferred.reject(error);
+                    });
+                return deferred.promise;
+            };
             self.loadTracks = function (params) {
                 var self = this;
                 self.loading = true;
                 TrackApiService.searchTracks(
-                   params,
+                    params,
                     function (response) {
                         self.loading = false;
                         self.tracks = response.results;
@@ -48,25 +107,34 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     });
             };
             self.nextPage = function () {
-                self.loading = true;
-                self.busy = true;
-                TrackApiService.searchTracks(
-                    self.params,
-                    function (response) {
-                        self.loading = false;
-                        self.busy = false;
-                        if (response.results.length > 0) {
-                            self.tracks = self.tracks.concat(response.results);
-                            self.params.offset += 10;
-                        }
-                        else {
-                            self.empty = self.tracks.length <= 0;
-                        }
-                    },
-                    function (error) {
-                        self.busy = false;
-                        console.log('Error loading tracks');
-                    });
+                if (self.showAll) {
+                    self.loading = true;
+                    self.busy = true;
+                    TrackApiService.searchTracks(
+                        self.params,
+                        function (response) {
+                            self.loading = false;
+                            self.busy = false;
+                            if (response.results.length > 0) {
+                                self.tracks = self.tracks.concat(response.results);
+                                self.params.offset += 10;
+                            }
+                            else {
+                                self.empty = self.tracks.length <= 0;
+                            }
+                        },
+                        function (error) {
+                            self.busy = false;
+                            console.log('Error loading tracks');
+                        });
+                }
+            };
+
+            self.setShowAll = function (value) {
+                self.showAll = value;
+                if (value) {
+                    self.tracks = [];
+                }
             };
             self.playSelected = function (track) {
                 self.selectedTrack = track;
@@ -95,6 +163,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
                     self.playSelected(prevTrack);
                 }
             };
+            self.loadPlayList();
         };
         return new TrackListService();
     }]);

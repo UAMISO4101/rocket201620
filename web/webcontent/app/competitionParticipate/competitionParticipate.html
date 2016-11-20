@@ -9,29 +9,28 @@
     <form name="competitionForm">
         <fieldset class="form-group">
             <div class="row">
-                <div class="col-md-6">
-                    <span>Seleccionar items</span>
-                </div>
-                <div class="col-md-6">
-                    <select class="form-control" name="items" multiple
-                            ng-model="ctrl.itemsSelected">
-                        <option ng-repeat="item in  ctrl.items"
-                                ng-value="item.id">{{ item.name }}</option>
-                    </select>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset class="form-group">
-            <div class="row">
-                <div class="col-md-6">
-                    <span>Seleccionar mis obras</span>
-                </div>
-                <div class="col-md-6">
-                    <select class="form-control" name="tracks" multiple
-                            ng-model="ctrl.tracksSelected">
-                        <option ng-repeat="track in  ctrl.tracksArtist"
-                                ng-value="track.id">{{ track.name }}</option>
-                    </select>
+                <div class="col-md-12">
+                    <h4>Por favor, asocia una obra a cada item</h4>
+                    <table class="table" border="1px">
+                        <tbody>
+                        <tr>
+                            <td><strong>Identificación</strong></td>
+                            <td><strong>Nombre</strong></td>
+                            <td><strong>Tipo</strong></td>
+                            <td><strong>Mi obra seleccionada</strong></td>
+                        </tr>
+                        <tr ng-repeat="item in ctrl.items">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.gender }}</td>
+                            <td><select ng-options="track.name for track in ctrl.tracksArtist"
+                                        ng-model="item.track" required>
+                                <option value="" disabled>Seleccionar obra</option>
+                            </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </fieldset>

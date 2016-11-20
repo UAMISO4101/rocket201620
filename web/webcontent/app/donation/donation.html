@@ -9,14 +9,14 @@
 
                 <table class="table" border="1px">
                     <tbody>
-                        <tr>
+                    <tr>
                         <td><h3>Nombres</h3></td>
                         <td><h3>Apellidos</h3></td>
                         <td><h3>Valor</h3></td>
                         <td><h3>Fecha</h3></td>
                     </tr>
                     <tr ng-repeat="donation in ctrl.donationService.donations">
-                        <td>{{ donation.user_first_name  }}</td>
+                        <td><a href="#/user/{{ donation.user }}">{{ donation.user_first_name }} </a></td>
                         <td>{{ donation.user_last_name }}</td>
                         <td>$ {{ donation.value | number }}</td>
                         <td>{{ donation.date | date:'medium' }}</td>
@@ -25,7 +25,7 @@
                 </table>
 
             </div>
-           <div ng-if="ctrl.donationService.listEmpty" class="empty-list col-md-12">
+            <div ng-if="ctrl.donationService.listEmpty" class="empty-list col-md-12">
                 <h4>Aún no has recibido donaciones </h4>
             </div>
         </div>

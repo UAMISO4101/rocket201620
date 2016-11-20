@@ -1,7 +1,7 @@
 var competitionListModule = angular.module('competitionListModule');
 var CompetitionListController = ['$i18n', 'competitionListService', 'mainService', 'Upload',
-    '$freevenModal', 'notifierService',
-    function ($i18n, competitionListService, mainService, Upload, $freevenModal, notifierService) {
+    '$freevenModal', 'notifierService', 'announcementCreatorService', '$q',
+    function ($i18n, competitionListService, mainService, Upload, $freevenModal, notifierService, announcementCreatorService,$q) {
         /**
          * Tip: add here only visual logic
          */
@@ -23,11 +23,25 @@ var CompetitionListController = ['$i18n', 'competitionListService', 'mainService
             } else {
                 notifierService.warning("Convocatorias", "Por favor, inice sesión para participar");
             }
-        }
+        };
+
+        self.showCreatorPopup = function () {
+            var self = this;
+            var deferred = announcementCreatorService.showCreatorPopup();
+            $q.when(deferred).then(
+                function handleResolve(value) {
+                    self.competitionList.listCompetitions();
+                }
+            );
+        };
 
         self.loadPopUp = function (id) {
             self.competitionList.showLoadTrackPopup(id);
-        }
+        };
+
+        self.isAgent = function (){
+            return mainService.isAgent();
+        };
 
     }];
 

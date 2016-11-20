@@ -5,7 +5,6 @@ from .views import (AnnouncementListView, AnnouncementCreateView,
                     VoteUpdateView, ParticipateView, ItemListView,
                     SelectWinnerView, particitate_announcement)
 
-
 urlpatterns = [
     url(r'^$', AnnouncementListView.as_view(), name='anct-list'),
     url(r'^full/(?P<pk>\d+)/$', AnnouncementCompleteListView.as_view(),
@@ -21,15 +20,15 @@ urlpatterns = [
     url(r'^vote-get/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteListView.as_view(),
         name='vote-get'),
-    url(r'^vote-create/$', VoteCreateView.as_view(),
+    url(r'^vote-create', VoteCreateView.as_view(),
         name='vote-create'),
     url(r'^vote-update/(?P<item>\d+)/(?P<user>\d+)/$',
         VoteUpdateView.as_view(),
         name='vote-update'),
     url(r'^participate/(?P<pk>\d+)/$', ParticipateView.as_view(),
         name='anct-participate'),
-    url(r'^participatef/$', particitate_announcement,
+    url(r'^participatef', particitate_announcement,
         name='anct-participatef'),
-    url(r'^select-winner/(?P<pk>\d+)/$', SelectWinnerView.as_view(),
+    url(r'^select-winner/(?P<pk>\d+)', SelectWinnerView.as_view(),
         name='select-winner'),
 ]

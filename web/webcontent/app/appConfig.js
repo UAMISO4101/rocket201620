@@ -21,11 +21,17 @@
                 $translateProvider.translations('en-us', languageEn);
                 $translateProvider.preferredLanguage('en-co');
                 $translateProvider.useSanitizeValueStrategy(null);
+                $routeProvider.when('/icons', {
+                    template: '<icons> </icons>'
+                });
                 $routeProvider.when('/', {
                     template: '<track-list> </track-list>'
                 });
                 $routeProvider.when('/artist/:idArtist', {
                     template: '<artist></artist>'
+                });
+                $routeProvider.when('/user/:idUser', {
+                    template: '<user-profile></user-profile>'
                 });
                 $routeProvider.when('/top', {
                     template: '<top-track-list></top-track-list>'
@@ -39,12 +45,15 @@
                 $routeProvider.when('/upload', {
                     template: '<track-creator></track-creator>'
                 });
+                $routeProvider.when('/list/:idPlayList', {
+                    template: '<track-list></track-list>'
+                });
                 $routeProvider.when('/donation', {
                     template: '<donation></donation>',
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                           return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -56,7 +65,7 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
@@ -65,17 +74,21 @@
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });
+                $routeProvider.when('/competitions/detail/:idCompetition', {
+                    template: '<competition-detail></competition-detail>',
 
-                 $routeProvider.when('/announcement', {
+                });
+
+                $routeProvider.when('/announcement', {
                     template: '<announcement-creator> </announcement-creator>',
                     requireAuthentication: true,
                     resolve: {
                         auth: ['$q', 'mainService', '$location', function ($q, mainService, $location) {
-                             return checkAuthentication($q, mainService, $location);
+                            return checkAuthentication($q, mainService, $location);
                         }]
                     }
                 });

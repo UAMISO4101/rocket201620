@@ -53,12 +53,16 @@ require('../app/restAPI/artistAPIService.js');
 require('../app/restAPI/donationAPIService.js');
 require('../app/restAPI/genderAPIService.js');
 require('../app/restAPI/competitionAPIService.js');
+require('../app/restAPI/userProfileAPIService.js');
 
 /**
  * Registro de componentes nuevos
  */
 
 require('../app/commons/directives/modal/modalService.js');
+require('../app/icons/iconsModule.js');
+require('../app/icons/iconsComponent.js');
+require('../app/icons/icons.less');
 
 require('../app/trackList/trackListModule.js');
 require('../app/trackList/trackListComponent.js');
@@ -190,6 +194,21 @@ require('../app/competitionParticipate/competitionParticipateModule.js');
 require('../app/competitionParticipate/competitionParticipateComponent.js');
 require('../app/competitionParticipate/competitionParticipate.less');
 
- require('../app/announcementCreator/announcementCreatorModule.js');
- require('../app/announcementCreator/announcementCreatorComponent.js');
- require('../app/announcementCreator/announcementCreator.less');
+require('../app/announcementCreator/announcementCreatorModule.js');
+require('../app/announcementCreator/announcementCreatorComponent.js');
+require('../app/announcementCreator/announcementCreatorService.js');
+require('../app/announcementCreator/announcementCreator.less');
+
+require('../app/competitionDetail/competitionDetailModule.js');
+require('../app/competitionDetail/competitionDetailComponent.js');
+require('../app/competitionDetail/competitionDetail.less');
+
+require('../app/userProfile/userProfileModule.js');
+require('../app/userProfile/userProfileComponent.js');
+require('../app/userProfile/userProfileService.js');
+require('../app/userProfile/userProfile.less');
+
+require('../app/listCreator/listCreatorModule.js');
+require('../app/listCreator/listCreatorComponent.js');
+require('../app/listCreator/listCreatorService.js');
+require('../app/listCreator/listCreator.less');

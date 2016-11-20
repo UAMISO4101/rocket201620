@@ -1,4 +1,3 @@
-
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -16,7 +15,7 @@ from tracks.models import Track
 
 
 class AnnouncementListView(ListAPIView):
-    queryset = Announcement.objects.all()
+    queryset = Announcement.objects.all().order_by('-start_date')
     serializer_class = AnnouncementSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = (

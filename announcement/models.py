@@ -34,8 +34,7 @@ class Item(models.Model):
                                      on_delete=models.CASCADE,
                                      related_name='items')
     gender = models.ForeignKey(Gender, blank=True, null=True)
-    tracks = models.ManyToManyField(Track, blank=True, null=True,
-                                    related_name='ancts')
+    tracks = models.ManyToManyField(Track, related_name='ancts')
     winner = models.ForeignKey(Track, blank=True, null=True)
 
     def save(self, *args, **kwargs):
@@ -55,6 +54,8 @@ class Item(models.Model):
             except:
                 error = 'Obra no inscrita en esta categoría.'
                 raise serializers.ValidationError(error)
+        else:
+            super(Item, self).save(*args, **kwargs)
 
     def send_mail_to_winner_action(artist, item):
         try:

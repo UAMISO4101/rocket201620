@@ -6,37 +6,62 @@
                 <i class="music-logo"></i>
                 <span>Ver el top de pistas más escuchadas</span>
             </a>
+        </li>
+        <li>
             <a href="#/">
                 <i class="music-side-menu-albums"></i>
                 <span>Ver todas las pistas</span>
             </a>
-              <a href="#/competitions">
+        </li>
+        <li>
+            <a href="#/competitions">
                 <i class="music-side-menu-albums"></i>
                 <span>Ver convocatorias</span>
             </a>
+        </li>
+        <li>
             <a href="#/upload" class="header-item" ng-if="ctrl.mainService.isArtist()">
                 <i class="music-music-note"></i>
                 <span>Publicar obra musical</span>
             </a>
+        </li>
+        <li>
             <a href="#/events">
-                <i class="music-side-menu-albums"></i>
+                <i class="icon icon-earth"></i>
                 <span>Ver eventos</span>
             </a>
+        </li>
+        <li>
             <a href="#/post" class="header-item" ng-if="ctrl.mainService.isArtist()">
-                <i class="music-side-menu-albums"></i>
+                <i class="icon icon-sphere"></i>
                 <span>Publicar evento</span>
             </a>
+        </li>
+        <li>
             <a href="#/donation" class="header-item" ng-if="ctrl.mainService.isArtist()">
                 <i class="music-share"></i>
                 <span>Mis donaciones</span>
             </a>
-            <a ng-href="#/announcement" class="header-item" ng-if="ctrl.mainService.isAuthenticated()">
-                <i class="music-side-menu-discover"></i>
-                <span>Crear convocatoria</span>
-            </a>
+        </li>
+        <li>
             <a class="header-item" ng-if="ctrl.mainService.isAuthenticated()" ng-click="ctrl.enableHelp()">
                 <i class="music-side-menu-albums"></i>
                 <span>Ver ayuda</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="nav nav-sidebar play-list">
+        <li>
+            <a class="header-item" ng-click="ctrl.showListCreator()">
+                <i>+</i>
+                <span>Crear lista</span>
+            </a>
+        </li>
+        <li ng-repeat="playList in ctrl.trackListService.playLists">
+            <a href="#/list/{{playList.id}}">
+                <i class="icon icon-indent-increase"></i>
+                <span>{{playList.name}}</span>
             </a>
         </li>
     </ul>

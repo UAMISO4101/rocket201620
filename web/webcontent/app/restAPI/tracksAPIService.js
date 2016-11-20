@@ -39,6 +39,30 @@ restApiModule.factory('TracksApiService', ['$resource', function ($resource) {
                 action: '@string'
             },
             isArray: false
+        },
+        createPlayList: {
+            url: 'api/track/playlist-create/',
+            method: 'POST',
+            params: {
+                user: '@string',
+                name: '@string'
+            },
+            isArray: false
+        },
+        listPlayList: {
+            url: 'api/track/playlist-list/:userId',
+            method: 'GET',
+            params: {},
+            isArray: false
+        },
+        addToPlayList: {
+            url: 'api/track/playlist-add',
+            method: 'POST',
+            params: {
+                idList: '@string',
+                idTrack: '@string'
+            },
+            isArray: false
         }
     });
 }]);

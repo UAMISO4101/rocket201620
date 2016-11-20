@@ -8,15 +8,19 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
          */
         var self = this;
 
+
         self.idCompetition = competitionListService.getSelectedIdCompetition();
 
         self.participateValidate = function () {
-            self.uploadFileToParticipate();
+            self.goToParticipate();
         }
         self.trackFiles = {};
         self.loading = false;
-        self.itemsSelected = [];
+        self.itemsSelected = {};
         self.tracksSelected = [];
+        self.participateData = {};
+
+        self.filters = [];
 
         self.attachFile = function (files, fieldName) {
             if (files && files.length > 0) {
@@ -25,30 +29,19 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
             }
         };
 
-        self.uploadFileToParticipate = function () {
+        self.goToParticipate = function () {
             var self = this;
             var user = mainService.getUserData();
+            self.tracksSelected = self.filters;
             self.loading = true;
-            if (self.trackFiles) {
-                Upload.upload({
-                    url: 'api/announcement/participate/',
-                    data: {
-                        items: self.itemsSelected,
-                        tracks: self.tracksSelected,
-                        artist_id: user.id_artist,
-                    }
-                }).progress(function (evt) {
-                }).success(function (data, status, headers, config) {
-                    self.loading = false;
-                    self.close();
-                    console.log('Enviado a convocatoria correctamente');
-                    notifierService.success("La pieza musical se ha sido enviada para participar", ".");
-                });
-            }
+            self.createRelationItemTrack();
+
         };
 
         self.loadFullCompetition = function (id) {
+
             if (id != undefined) {
+                self.participateData.idAnnouncement = id;
                 CompetitionApiService.getCompetition(
                     {guidCompetition: id},
                     function (response) {
@@ -58,10 +51,10 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
                         console.log('Error loading full competition');
                     });
             }
-
         };
 
         self.loadFullTracksArtist = function (id) {
+
             if (id != undefined) {
                 ArtistApiService.getTracksForArtist(
                     {guidArtist: id},
@@ -75,8 +68,30 @@ var CompetitionParticipateController = ['$i18n', '$freevenModal', 'mainService',
 
         };
 
+        self.createRelationItemTrack = function () {
+            var self = this;
+            var relations = [];
+            for (var i = 0; i < self.items.length; i++) {
+                var relation = {};
+                relation.idItem = self.items[i].id;
+                relation.idTrack = self.items[i].track.id;
+                relations.push(relation);
+            }
+            self.participateData.relations = relations;
+            CompetitionApiService.createRelationsItemsVsTracks(
+                self.participateData,
+                function (response) {
+                    notifierService.info("Convocatorias", "Gracias por participar");
+                    self.close();
+                },
+                function (error) {
+                    console.log('Error creating relations');
+                });
+
+        };
+
         self.loadFullCompetition(self.idCompetition);
-        self.loadFullTracksArtist(2);
+        self.loadFullTracksArtist(mainService.getArtistId());
 
 
         self.close = function () {

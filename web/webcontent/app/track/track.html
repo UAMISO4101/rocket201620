@@ -1,8 +1,23 @@
 <div class="track">
     <div class="item">
         <div class="item-media">
+            <span class="btn-track-menu" uib-dropdown on-toggle="toggled(open)">
+                  <a href id="simple-dropdown" uib-dropdown-toggle>
+                      <i class="icon icon-list"></i>
+                  </a>
+                  <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+                      <li ng-click="ctrl.addToPlayList(ctrl.frModel, playList)"
+                          ng-repeat="playList in ctrl.trackListService.playLists">
+                          <a>
+                              <i class="icon icon-indent-increase"></i>
+                              <span>{{playList.name}}</span>
+                          </a>
+                      </li>
+                  </ul>
+            </span>
             <a class="item-media-content img-responsive"
                style="background-image: url({{ ctrl.frModel.image }})">
+                <div class="top-overlay"></div>
             </a>
             <div class="item-overlay center">
                 <button ng-click="ctrl.play(ctrl.frModel)" class="btn-playpause">Play</button>

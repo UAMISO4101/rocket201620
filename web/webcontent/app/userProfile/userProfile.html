@@ -1,0 +1,38 @@
+<div class="user-profile" xmlns="http://www.w3.org/1999/html">
+    <div class="fr-profile-creator">
+        <img align="left"
+             class="fr-image-lg"
+             src="../styles/images/portada.jpg"
+             alt="Profile image example"/>
+
+        <div class="fr-image-profile-creator thumbnail">
+            <img align="left"
+                 class=""
+                 src="{{ ctrl.user.userProfile.avatar }}"
+                 alt="Profile image example"/>
+            </a>
+        </div>
+
+        <div></div>
+        <div class="fr-profile-creator-text">
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>{{ ctrl.user.userProfile.username }}</h1>
+                        <p>{{ ctrl.user.userProfile.first_name }} {{ ctrl.user.userProfile.last_name }}</p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <fieldset class="align-right form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    Gracias
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+</div>
