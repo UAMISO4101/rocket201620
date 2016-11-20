@@ -15,7 +15,11 @@ var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreat
         };
         self.showItemView = function () {
             var self = this;
-            self.showItem = true;
+            if (self.validateFields()) {
+                self.showItem = true;
+            } else {
+                notifierService.error("Error", "Faltan campos por diligenciar");
+            }
         };
 
         self.addItem = function () {
@@ -109,6 +113,19 @@ var AnnouncementCreatorController = ['Upload', 'mainService', 'announcementCreat
         self.close = function () {
             announcementCreatorService.closeCreatorPopup();
         };
+
+        self.validateFields = function () {
+            if (self.name != undefined
+                && self.description != undefined &&
+                self.start_date != undefined &&
+                self.end_date != undefined &&
+                self.files.image != undefined) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
         self.loadGenders();
 
     }];
