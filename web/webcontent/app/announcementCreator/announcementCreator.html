@@ -6,7 +6,7 @@
         </button>
         <h4>Nueva convocatoria</h4>
     </div>
-    <div class="fr-announcement-creator">
+    <div ng-if="!ctrl.showItem" class="fr-announcement-creator">
 
         <div class="fr-image-announcement-creator thumbnail">
             <img align="left"
@@ -72,15 +72,59 @@
             <fieldset class="form-group">
                 <div class="row">
                     <div class="col-md-10">
-                        <button class="freeven-accept-btn" ng-click="ctrl.uploadFilesAndData()">
-                            <span>Crear convocatoria</span>
+                        <button class="freeven-accept-btn" ng-click="ctrl.showItemView()">
+                            <span>Siguiente</span>
                         </button>
-                    </div>
-                    <div class="col-md-2" ng-if="ctrl.loading">
-                        <bounce title="Bounce"></bounce>
                     </div>
                 </div>
             </fieldset>
         </div>
     </div>
+    <div ng-if="ctrl.showItem" class="fr-announcement-creator">
+        <fieldset class="form-group" style="width: 100%">
+            <h4>Datos del <b>item {{ctrl.items.length + 1}}</b> asociado a la convocatoria</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Nombre del item</label>
+                    <input type="text"
+                           ng-model="ctrl.selectedItem.name"
+                           placeholder="Nombre del Item {{ctrl.items.length + 1}} ..."
+                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label">Descripción</label>
+                    <input type="text"
+                           ng-model="ctrl.selectedItem.description"
+                           placeholder="Descripción..."
+                           class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"/>
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label">Género</label>
+
+                    <select placeholder="Género..."
+                            class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required"
+                            ng-model="ctrl.selectedItem.gender">
+                        <option ng-repeat="genderOption in  ctrl.genderOptions"
+                                ng-value="genderOption.id">{{ genderOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+         </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    <button class="freeven-accept-btn" ng-click="ctrl.createAnnouncement()">
+                        <span>Crear convocatoria</span>
+                    </button>
+                    <button class="freeven-accept-btn" ng-click="ctrl.addItem()">
+                        <span>Agregar Otro item</span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-md-2" ng-if="ctrl.loading">
+        <bounce title="Bounce"></bounce>
+    </div>
+
 </div>
