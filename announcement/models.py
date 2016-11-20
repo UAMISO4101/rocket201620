@@ -54,6 +54,8 @@ class Item(models.Model):
             except:
                 error = 'Obra no inscrita en esta categoría.'
                 raise serializers.ValidationError(error)
+        else:
+            super(Item, self).save(*args, **kwargs)
 
     def send_mail_to_winner_action(artist, item):
         try:
