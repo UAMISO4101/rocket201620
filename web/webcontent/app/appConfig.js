@@ -21,6 +21,9 @@
                 $translateProvider.translations('en-us', languageEn);
                 $translateProvider.preferredLanguage('en-co');
                 $translateProvider.useSanitizeValueStrategy(null);
+                $routeProvider.when('/icons', {
+                    template: '<icons> </icons>'
+                });
                 $routeProvider.when('/', {
                     template: '<track-list> </track-list>'
                 });

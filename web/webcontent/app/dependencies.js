@@ -60,6 +60,9 @@ require('../app/restAPI/userProfileAPIService.js');
  */
 
 require('../app/commons/directives/modal/modalService.js');
+require('../app/icons/iconsModule.js');
+require('../app/icons/iconsComponent.js');
+require('../app/icons/icons.less');
 
 require('../app/trackList/trackListModule.js');
 require('../app/trackList/trackListComponent.js');
@@ -204,3 +207,8 @@ require('../app/userProfile/userProfileModule.js');
 require('../app/userProfile/userProfileComponent.js');
 require('../app/userProfile/userProfileService.js');
 require('../app/userProfile/userProfile.less');
+
+require('../app/listCreator/listCreatorModule.js');
+require('../app/listCreator/listCreatorComponent.js');
+require('../app/listCreator/listCreatorService.js');
+require('../app/listCreator/listCreator.less');

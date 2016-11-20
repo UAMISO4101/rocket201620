@@ -1,6 +1,6 @@
 var userPanelModule = angular.module('userPanelModule');
-var UserPanelController = ['trackListService', 'mainService', 'helpService',
-    function (trackListService, mainService, helpService ) {
+var UserPanelController = ['trackListService', 'mainService', 'helpService', 'listCreatorService',
+    function (trackListService, mainService, helpService, listCreatorService ) {
         /**
          * Tip: add here only visual logic
          */
@@ -12,6 +12,10 @@ var UserPanelController = ['trackListService', 'mainService', 'helpService',
         self.enableHelp = function () {
             helpService.setEnable(true);
             helpService.enablePlayer();
+        };
+
+        self.showListCreator = function(){
+            listCreatorService.showCreatorPopup();
         };
     }];
 

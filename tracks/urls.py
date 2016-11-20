@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^trace', trace, name="trace"),
     url(r'^top10/$', Top10.as_view(), name='top10'),
     url(r'^gender', GenderListView.as_view(), name="gender-list-api"),
-    url(r'^playlist-create/$', PlaylistCreateView.as_view(),
+    url(r'^playlist-create', PlaylistCreateView.as_view(),
         name='playlist-create'),
     url(r'^playlist-list/(?P<user_id>\d+)/$', PlaylistListView.as_view(),
         name='playlist-list'),
