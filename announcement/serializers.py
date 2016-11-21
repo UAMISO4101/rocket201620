@@ -142,11 +142,10 @@ class AnnouncementUploadSerializer(serializers.ModelSerializer):
 
 class TrackAnctSerializer(TrackSerializer):
     votes = serializers.SerializerMethodField()
-    itemid = 1
+    itemid = None
 
     def __init__(self, *args, **kwargs):
-        super(TrackAnctSerializer, self).__init__(*args, **kwargs)
-        print(kwargs['context']['id'])
+        super(TrackSerializer, self).__init__(*args, **kwargs)
         itemid = kwargs['context']['id']
 
     class Meta:
@@ -169,15 +168,18 @@ class TrackAnctSerializer(TrackSerializer):
     def get_votes(self, obj):
         try:
             count_votes = Vote.objects.filter(
-                track__id=obj.id, item__id=self.itemid).count()
-            print(self.itemid)
+                track__id=obj.id, item__id=self.get_itemid()).count()
             return count_votes
         except:
             return None
 
+    def get_itemid():
+        return itemid
+
 
 class ItemFullSerializer(ItemSerializer):
-    tracks = TrackAnctSerializer(many=True, context={'id': 100})
+    # tracks = TrackAnctSerializer(many=True, context={'id': 100})
+    tracks = serializers.SerializerMethodField()
 
     class Meta:
         model = Item
@@ -190,6 +192,33 @@ class ItemFullSerializer(ItemSerializer):
             'winner',
             'tracks',
         )
+
+    @classmethod
+    def get_tracks(self, obj):
+        tracks = []
+        for track in obj.tracks.all():
+            track_js = self.track_to_json(track, obj)
+            tracks.append(track_js)
+        return tracks
+
+    def track_to_json(track, item):
+        count_votes = Vote.objects.filter(
+            track__id=track.id, item__id=item.id).count()
+
+        json_data = {
+            'id': track.id,
+            'name': track.name,
+            'description': track.description,
+            'gender': track.gender.name,
+            'image': track.image.url,
+            'url': track.file.url,
+            'score': track.score,
+            'artist': track.artist.user.username,
+            'artist_id': track.artist.id,
+            'artistic_name': track.artist.artistic_name,
+            'votes': count_votes
+        }
+        return json_data
 
 
 class AnnouncementFullSerializer(AnnouncementSerializer):
