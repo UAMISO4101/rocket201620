@@ -31,6 +31,31 @@ html, body {
   *:focus {
     outline: none;
   }
+
+  .table {
+    font-size: 14px;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    tr {
+      border-bottom: 1px solid #dfe8f1;
+      td {
+        border-bottom: 1px solid #dfe8f1;
+        border-top: 1px solid #dfe8f1;
+        color: #8da0aa
+      }
+      &:first-child {
+        background-color: #f9fafe;
+        td {
+          border-bottom: 2px solid #dfe8f1;
+          border-top: 2px solid #dfe8f1;
+          color: #4b5056;
+        }
+      }
+    }
+
+  }
+
 }
 
 .main {
