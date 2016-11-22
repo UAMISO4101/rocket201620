@@ -55,13 +55,41 @@
     <div ng-if="ctrl.showItems">
         <h3 class="top-competition-list-title">Obras musicales participantes por item</h3>
         <div class="top-item col-xs-12 col-sm-12 col-md-12" ng-repeat="item in ctrl.items">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h4 class="competition-name">{{ item.name }}</h4>
-                </div>
-            </div>
             <br>
-            <div class="row tracks-items" ng-repeat="track in item.tracks">
+            <div class="item-title-frame">
+                <h4 class="competition-name">{{ item.name }}</h4>
+            </div>
+            <table class="table">
+                <tbody>
+                <tr ng-repeat="track in item.tracks">
+                    <td>
+                        <track class="track-table" fr-model="track" hide-item-info="true">
+                        </track>
+                        <h4 class="text-center">{{ track.name }}</h4>
+                    </td>
+                    <td>
+                        <div id="top-numero-variacion">
+                            <div id="top-numero">{{ track.votes }}</div>
+                            <h5>Usuarios que han votado por esta obra.</h5>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <button ng-if="ctrl.showWinnerButton"
+                                class="freeven-winner-btn g-opacity-transition"
+                                ng-click="ctrl.selectWinner(item.id,track.id)">
+                            Seleccionar ganador
+                        </button>
+                        <button class="freeven-accept-btn g-opacity-transition"
+                                ng-click="ctrl.vote(item.id,track.id)">
+                            Votar
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <!--<div class="row tracks-items" ng-repeat="track in item.tracks">
                 <div class="col-md-12 text-center bordered">
                     <track class="col-xs-4 col-sm-4 col-md-3"
                            fr-model="track">
@@ -90,7 +118,7 @@
                     </fieldset>
 
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     <div ng-if="!ctrl.showItems">

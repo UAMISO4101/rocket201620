@@ -68,7 +68,7 @@ var CompetitionDetailController = ['$i18n', 'CompetitionApiService', '$routePara
                     {announcementId: self.announcementId},
                     {track: trackId},
                     function (response) {
-                        notifierService.info("Convocatorias", "Gracias por tu voto");
+                        notifierService.info("Seleccionaste un ganador,", "Le enviamos un email para notificarle ");
                     },
                     function (error) {
                     });
