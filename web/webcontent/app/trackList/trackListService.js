@@ -135,6 +135,7 @@ trackListModule.factory('trackListService', ['TracksApiService', 'playerService'
             self.setShowAll = function (value) {
                 self.showAll = value;
                 if (value) {
+                    self.params.offset = 0;
                     self.listTitle = "Esto es lo más Reciente"
                     self.tracks = [];
                 }
