@@ -4,4 +4,4 @@ localDevConfig.entry = {
 };
 localDevConfig.devtool = 'source-map';
 module.exports = localDevConfig;
-//dev
+//contingency
