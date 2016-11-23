@@ -51,7 +51,7 @@
         </li>
     </ul>
 
-    <ul class="nav nav-sidebar play-list">
+    <ul ng-if="ctrl.mainService.isAuthenticated()" class="nav nav-sidebar play-list">
         <li>
             <a class="header-item" ng-click="ctrl.showListCreator()">
                 <i>+</i>

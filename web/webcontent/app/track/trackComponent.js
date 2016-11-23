@@ -12,6 +12,9 @@ var TrackController = ['$i18n', 'trackListService', 'mainService', 'artistServic
         self.loadArtist = function () {
             artistService.loadArtist();
         };
+        self.isAuthenticated = function(){
+            return mainService.isAuthenticated();
+        };
 
         self.showScoreEditorPopup = function (track) {
             if (mainService.isAuthenticated()) {
