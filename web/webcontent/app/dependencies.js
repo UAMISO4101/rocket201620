@@ -212,3 +212,7 @@ require('../app/listCreator/listCreatorModule.js');
 require('../app/listCreator/listCreatorComponent.js');
 require('../app/listCreator/listCreatorService.js');
 require('../app/listCreator/listCreator.less');
+
+require('../app/donationReturn/donationReturnModule.js');
+require('../app/donationReturn/donationReturnComponent.js');
+require('../app/donationReturn/donationReturn.less');

@@ -42,7 +42,8 @@ var appModules = [
     'competitionDetailModule',
     'userProfileModule',
     'listCreatorModule',
-    'iconsModule'
+    'iconsModule',
+    'donationReturnModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

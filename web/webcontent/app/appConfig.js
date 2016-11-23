@@ -49,7 +49,7 @@
                     template: '<track-list></track-list>'
                 });
                 $routeProvider.when('/donation_return', {
-                    template: '<track-list></track-list>' //esto debe tener un texto de agradecimiento por donar
+                    template: '<donation-return> </donation-return>' //esto debe tener un texto de agradecimiento por donar
                 });
                 $routeProvider.when('/donation', {
                     template: '<donation></donation>',
